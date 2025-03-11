@@ -41,5 +41,9 @@ prefabs.json
 /pokeemerald-*.png
 src/data/map_group_count.h
 tools/trainerproc/trainerproc
+*.Identifier
+*.smol
+*.fastSmol
+*.smolTM
 data/maps/*/scripts.inc
 *:Zone.Identifier
