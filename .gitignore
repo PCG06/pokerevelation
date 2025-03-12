@@ -45,5 +45,6 @@ tools/trainerproc/trainerproc
 *.smol
 *.fastSmol
 *.smolTM
+__pycache__
 data/maps/*/scripts.inc
 *:Zone.Identifier
