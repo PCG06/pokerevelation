@@ -4359,3 +4359,21 @@ void GetCodeFeedback(void)
     else
         gSpecialVar_Result = 0;
 }
+
+#include "data/text/species_names_for_codes.h"
+const u8 gSpeciesNamesForCodes[][CODE_NAME_LENGTH + 1];
+
+void GetPokemonFromCodeFeedback(void)
+{
+    u32 i;
+    for (i = 0; i < NUM_SPECIES; i++)
+    {
+        if (!StringCompare(gStringVar2, gSpeciesNamesForCodes[i]))
+        {
+            gSpecialVar_Result = i;
+            break;
+        }
+        else
+            gSpecialVar_Result = 0;
+    }
+}

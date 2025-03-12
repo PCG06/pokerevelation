@@ -1099,6 +1099,76 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
+EventScript_GetPokemonFromCodeEntry::
+    lockall
+    msgbox EnterCode_EnterCodeText, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
+    special EnterCode
+    waitstate
+    special GetPokemonFromCodeFeedback
+    goto_if_eq VAR_RESULT, 0, EventScript_CodeFailed
+    goto EventScript_ReceivedMon
+	end
+
+EventScript_ReceivedMon::
+	bufferspeciesname STR_VAR_1, VAR_RESULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_RESULT
+	msgbox EnterCode_SucceededText, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	givemon VAR_RESULT, 100, ITEM_NONE
+	message EnterCode_ReceivedGiftMon
+	waitfanfare
+    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMon
+    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMon
+	goto Common_EventScript_NoMoreRoomForPokemon
+	msgbox Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	end
+
+EventScript_NicknamePartyMon::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
+	call Common_EventScript_GetGiftMonPartySlot 
+	call Common_EventScript_NameReceivedPartyMon 
+	goto EventScript_CodeExit
+	end
+
+EventScript_NicknamePCMon::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO 
+	goto_if_eq VAR_RESULT, NO, EventScript_TransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+EventScript_TransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto EventScript_CodeExit
+	end
+
+EventScript_CodeFailed::
+    msgbox EnterCode_FailedText, MSGBOX_DEFAULT
+    releaseall
+    end
+
+EventScript_CodeExit::
+    releaseall
+    end
+
+EnterCode_EnterCodeText:
+    .string "Would you like to purchase\n"
+	.string "a Pokémon?$"
+
+EnterCode_FailedText:
+    .string "Hmm…\n"
+	.string "Are you sure you have entered the\l"
+	.string "right name?$"
+
+EnterCode_SucceededText:
+    .string "Ok!\n"
+	.string "Here's a {STR_VAR_1}!$"
+
+EnterCode_ReceivedGiftMon:
+	.string "{PLAYER} received a {STR_VAR_1}!$"
+
+Text_PleaseVisitAgain:
+	.string "Please visit again!$"
+
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
 	.include "data/scripts/abnormal_weather.inc"
