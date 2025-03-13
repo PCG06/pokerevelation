@@ -4366,9 +4366,9 @@ const u8 gSpeciesNamesForCodes[][CODE_NAME_LENGTH + 1];
 void GetPokemonFromCodeFeedback(void)
 {
     u32 i;
+    StringCopyUppercase(gStringVar1, gStringVar2);
     for (i = 0; i < NUM_SPECIES; i++)
     {
-        StringCopyUppercase(gStringVar1, gStringVar2);
         StringCopyUppercase(gStringVar3, gSpeciesNamesForCodes[i]);
         if (!StringCompare(gStringVar1, gStringVar3))
         {
