@@ -1112,20 +1112,21 @@ EventScript_GetPokemonFromCodeEntry::
 
 EventScript_ReceivedMon::
 	bufferspeciesname STR_VAR_1, VAR_RESULT
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_RESULT
+	copyvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_RESULT
 	msgbox EnterCode_SucceededText, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
-	givemon VAR_RESULT, 100, ITEM_NONE
 	message EnterCode_ReceivedGiftMon
+	givemon VAR_TEMP_TRANSFERRED_SPECIES, 100, ITEM_NONE
+	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, 10, 3
 	waitfanfare
     goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMon
     goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMon
-	goto Common_EventScript_NoMoreRoomForPokemon
-	msgbox Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	goto EventScript_CodeExit
 	end
 
 EventScript_NicknamePartyMon::
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
 	call Common_EventScript_GetGiftMonPartySlot 
 	call Common_EventScript_NameReceivedPartyMon 
@@ -1133,7 +1134,8 @@ EventScript_NicknamePartyMon::
 	end
 
 EventScript_NicknamePCMon::
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO 
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, EventScript_TransferredToPC
 	call Common_EventScript_NameReceivedBoxMon
 EventScript_TransferredToPC::
@@ -1147,12 +1149,13 @@ EventScript_CodeFailed::
     end
 
 EventScript_CodeExit::
+	msgbox Text_PleaseVisitAgain, MSGBOX_DEFAULT
     releaseall
     end
 
 EnterCode_EnterCodeText:
-    .string "Would you like to purchase\n"
-	.string "a Pokémon?$"
+    .string "Hello, {PLAYER}!\n"
+	.string "Would you like to purchase a Pokémon?$"
 
 EnterCode_FailedText:
     .string "Hmm…\n"

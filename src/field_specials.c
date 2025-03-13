@@ -4368,7 +4368,9 @@ void GetPokemonFromCodeFeedback(void)
     u32 i;
     for (i = 0; i < NUM_SPECIES; i++)
     {
-        if (!StringCompare(gStringVar2, gSpeciesNamesForCodes[i]))
+        StringCopyUppercase(gStringVar1, gStringVar2);
+        StringCopyUppercase(gStringVar3, gSpeciesNamesForCodes[i]);
+        if (!StringCompare(gStringVar1, gStringVar3))
         {
             gSpecialVar_Result = i;
             break;
