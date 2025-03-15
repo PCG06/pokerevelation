@@ -5714,14 +5714,14 @@ u8 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
     u16 learnedMoves[MAX_MON_MOVES];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
-    u16 allMoves[ITEM_HM08 - ITEM_TM01 + 1];
+    u16 allMoves[NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES];
     u32 i, j, k;
     u32 totalMoveCount = 0;
 
-    for (i = ITEM_TM01; i < ITEM_HM08; i++)
+    for (i = ITEM_TM01; i <= ITEM_HM08; i++)
     {
         j = ItemIdToBattleMoveId(i);
-        if (CheckBagHasItem(i, 1) && CanLearnTeachableMove(species, j))
+        if (CanLearnTeachableMove(species, j))
             allMoves[totalMoveCount++] = j;
     }
 

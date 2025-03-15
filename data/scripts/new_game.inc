@@ -275,6 +275,8 @@ EventScript_ResetAllMapFlags::
 	call EventScript_ResetAllBerries
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	callnative SetSpeciesPokedexFlags
 	givemon SPECIES_PIKACHU_WORLD, 100, ITEM_LIGHT_BALL, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_THUNDERBOLT, MOVE_GRASS_KNOT, MOVE_SURF, MOVE_FAKE_OUT
-	
 	end
