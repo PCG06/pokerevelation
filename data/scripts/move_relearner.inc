@@ -1,5 +1,3 @@
-@ I originally wrote this script in .pory, hence why this is so ugly.
-
 Common_EventScript_MoveRelearner::
 	lock
 	faceplayer
