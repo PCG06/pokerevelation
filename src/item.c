@@ -6,6 +6,7 @@
 #include "text.h"
 #include "event_data.h"
 #include "malloc.h"
+#include "move.h"
 #include "secret_base.h"
 #include "item_menu.h"
 #include "party_menu.h"
@@ -907,8 +908,15 @@ u32 ItemId_GetHoldEffectParam(u32 itemId)
     return gItemsInfo[SanitizeItemId(itemId)].holdEffectParam;
 }
 
+EWRAM_DATA u8 tmStringVar[0x100] = {0};
+
 const u8 *ItemId_GetDescription(u16 itemId)
 {
+    if (GetPocketByItemId(SanitizeItemId(itemId)) == POCKET_TM_HM)
+    {
+        FormatTextByWidth(tmStringVar, 100, FONT_SMALL_NARROW, gMovesInfo[gItemsInfo[itemId].secondaryId].description, 1);
+        return tmStringVar;
+    }
     return gItemsInfo[SanitizeItemId(itemId)].description;
 }
 
