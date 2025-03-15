@@ -2949,11 +2949,8 @@ static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
 	if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
-    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_MEW)
-    {
-        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMMoves(&mons[slotId]) > 0)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
-    }
+    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMMoves(&mons[slotId]) > 0)
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
 
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
