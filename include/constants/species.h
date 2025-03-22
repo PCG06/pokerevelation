@@ -1638,7 +1638,18 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
-#define SPECIES_EGG                                     (SPECIES_MIMIKYU_BUSTED_TOTEM + 1)
+// Skibidmons
+
+#define SPECIES_MEWTWO_APOCALYPSE                       1524
+#define SPECIES_AMANISTE                                1525
+#define SPECIES_STRATOSPIRA                             1526
+#define SPECIES_MANTISTRIKE                             1527
+#define SPECIES_PHANTOMAR                               1528
+#define SPECIES_E                                       1529
+#define SPECIES_ZOJZION                                 1530
+#define SPECIES_PYROLIN                                 1531
+
+#define SPECIES_EGG                                     (SPECIES_PYROLIN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
