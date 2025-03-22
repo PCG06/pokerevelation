@@ -453,7 +453,7 @@ static const u16 sFriendshipIcon_Pal[]                      = INCBIN_U16("graphi
 static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.lz");
 // rave note: yeah I know doing this with a sprite is mad jank, but I promise I have my reasons
 #if BW_SUMMARY_DECAP == TRUE
-static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt_decap.4bpp.lz");
+static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/allrelearn_prompt_decap.4bpp.lz");
 #else
 static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt.4bpp.lz");
 #endif
@@ -843,9 +843,16 @@ static const struct SpriteTemplate sSpriteTemplate_CategoryIcons =
     .callback = SpriteCallbackDummy
 };
 
+enum MoveRelearnerType
+{
+    MOVE_RELEARNER_STATE_LEVEL,
+    MOVE_RELEARNER_STATE_EGG,
+    MOVE_RELEARNER_STATE_TUTOR,
+};
+
 static const struct OamData sOamData_RelearnPrompt =
 {
-    .size = SPRITE_SIZE(64x32),
+    .size = SPRITE_SIZE(64x64),
     .shape = SPRITE_SHAPE(64x32),
     .priority = 0,
 };
@@ -853,8 +860,33 @@ static const struct OamData sOamData_RelearnPrompt =
 static const struct CompressedSpriteSheet sSpriteSheet_RelearnPrompt =
 {
     .data = sRelearnPrompt_Gfx,
-    .size = 64*32/2,
+    .size = 64*32*3/2,
     .tag = TAG_RELEARN_PROMPT,
+};
+
+static const union AnimCmd sSpriteAnim_LevelRelearnPrompt[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_EggRelearnPrompt[] =
+{
+    ANIMCMD_FRAME(16, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_TMRelearnPrompt[] =
+{
+    ANIMCMD_FRAME(32, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_RelearnPrompt[] =
+{
+    [MOVE_RELEARNER_STATE_LEVEL] = sSpriteAnim_LevelRelearnPrompt,
+    [MOVE_RELEARNER_STATE_EGG] = sSpriteAnim_EggRelearnPrompt,
+    [MOVE_RELEARNER_STATE_TUTOR] = sSpriteAnim_TMRelearnPrompt,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_RelearnPrompt =
@@ -862,7 +894,7 @@ static const struct SpriteTemplate sSpriteTemplate_RelearnPrompt =
     .tileTag = TAG_RELEARN_PROMPT,
     .paletteTag = TAG_MON_MARKINGS,
     .oam = &sOamData_RelearnPrompt,
-    .anims = gDummySpriteAnimTable,
+    .anims = sSpriteAnimTable_RelearnPrompt,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
@@ -2246,7 +2278,21 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);        
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
-        sMonSummaryScreen->relearnableMovesNum = P_SUMMARY_SCREEN_MOVE_RELEARNER ? GetNumberOfRelearnableMoves(mon) : 0;
+        if (P_SUMMARY_SCREEN_MOVE_RELEARNER)
+        {
+            switch (VarGet(VAR_MOVE_RELEARNER_STATE))
+            {
+                case MOVE_RELEARNER_EGG_MOVES:
+                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfEggMoves(mon);
+                    break;
+                case MOVE_RELEARNER_TM_MOVES: 
+                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(mon);
+                    break;
+                default:
+                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(mon);
+                    break;
+            }
+        }
         return TRUE;
     }
     sMonSummaryScreen->switchCounter++;
@@ -2417,6 +2463,7 @@ static void Task_HandleInput(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u8 defaultSkillsState = (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED) ? SKILL_STATE_IVS : SKILL_STATE_STATS;
+    u16 state;
 
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
@@ -2500,6 +2547,34 @@ static void Task_HandleInput(u8 taskId)
             StopPokemonAnimations();
             PlaySE(SE_SELECT);
             CloseSummaryScreen(taskId);
+        }
+        else if (JOY_NEW(R_BUTTON))
+        {
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES)
+            {
+                state = VarGet(VAR_MOVE_RELEARNER_STATE);
+                VarSet(VAR_MOVE_RELEARNER_STATE, (state + 1) % 3);
+
+                if (sMonSummaryScreen->relearnableMovesNum <= 0)
+                    VarSet(VAR_MOVE_RELEARNER_STATE, 0);
+
+                StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]], VarGet(VAR_MOVE_RELEARNER_STATE));
+                PlaySE(SE_SELECT);
+            }
+        }
+        else if (JOY_NEW(L_BUTTON))
+        {
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES)
+            {
+                state = VarGet(VAR_MOVE_RELEARNER_STATE);
+                VarSet(VAR_MOVE_RELEARNER_STATE, (state - 1) % 3);
+
+                if (sMonSummaryScreen->relearnableMovesNum <= 0)
+                    VarSet(VAR_MOVE_RELEARNER_STATE, 0);
+
+                StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]], VarGet(VAR_MOVE_RELEARNER_STATE));
+                PlaySE(SE_SELECT);
+            }
         }
     }
 }
@@ -5451,9 +5526,10 @@ static inline bool32 ShouldShowMoveRelearner(void)
 static void ShowMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] == SPRITE_NONE)
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 155, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 150, 0);
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
+    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]], VarGet(VAR_MOVE_RELEARNER_STATE));
 }
 
 static void HideMoveRelearner(void)
