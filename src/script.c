@@ -1,14 +1,17 @@
 #include "global.h"
 #include "script.h"
 #include "event_data.h"
+#include "field_message_box.h"
+#include "field_weather.h"
 #include "mystery_gift.h"
 #include "random.h"
+#include "task.h"
 #include "trainer_see.h"
+#include "ui_birch_case.h"
 #include "util.h"
 #include "constants/event_objects.h"
 #include "constants/flags.h"
 #include "constants/map_scripts.h"
-#include "field_message_box.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -636,4 +639,10 @@ void Script_RequestWriteVar_Internal(u32 varId)
     if (SPECIAL_VARS_START <= varId && varId <= SPECIAL_VARS_END)
         return;
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+}
+
+void StartNewPokeballCaseUI(void)
+{
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_OpenBirchCase, 0);
 }
