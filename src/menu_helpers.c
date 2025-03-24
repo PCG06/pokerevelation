@@ -251,8 +251,6 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *quantity, u16 max)
 
 u8 GetLRKeysPressed(void)
 {
-    return FALSE;
-
     if (gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)
     {
         if (JOY_NEW(L_BUTTON))
