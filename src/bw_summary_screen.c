@@ -454,7 +454,7 @@ static const u16 sFriendshipIcon_Pal[]                      = INCBIN_U16("graphi
 static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.lz");
 // rave note: yeah I know doing this with a sprite is mad jank, but I promise I have my reasons
 #if BW_SUMMARY_DECAP == TRUE
-static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/allrelearn_prompt_decap.4bpp.lz");
+static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/multi_relearn_prompt_decap.4bpp.lz");
 #else
 static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt.4bpp.lz");
 #endif
@@ -5586,7 +5586,7 @@ static inline bool32 ShouldShowMoveRelearner(void)
 static void ShowMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] == SPRITE_NONE)
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 165, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 164, 0);
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
     StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]], VarGet(VAR_MOVE_RELEARNER_STATE));
