@@ -620,7 +620,6 @@ static void DoMoveRelearnerMain(void)
 
             if (selection == 0)
             {
-                PrintMessageWithPlaceholders(gText_MoveRelearnerWhichMoveToForget);
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_WHICH_MOVE_PROMPT;
             }
             else if (selection == MENU_B_PRESSED || selection == 1)
@@ -978,20 +977,19 @@ static void CreateLearnableMovesList(void)
     s32 i;
     u8 nickname[POKEMON_NAME_LENGTH + 1];
 
-    switch(VarGet(VAR_MOVE_RELEARNER_STATE))
+    switch (VarGet(VAR_MOVE_RELEARNER_STATE))
     {
-    
         case MOVE_RELEARNER_EGG_MOVES:
             sMoveRelearnerStruct->numMenuChoices = GetRelearnerEggMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-        break;
+            break;
 
         case MOVE_RELEARNER_TM_MOVES:
             sMoveRelearnerStruct->numMenuChoices = GetRelearnerTMMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-        break;
+            break;
 
         default:
             sMoveRelearnerStruct->numMenuChoices = GetRelearnerLevelUpMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-        break;
+            break;
 	}
 
     for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)

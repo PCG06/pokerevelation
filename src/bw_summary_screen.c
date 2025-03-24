@@ -2276,8 +2276,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         {
             u8 state = 0;
             GetSetMoveRelearnerVar(&state);
-            VarSet(VAR_MOVE_RELEARNER_STATE, state);
-            switch (VarGet(VAR_MOVE_RELEARNER_STATE))
+            switch (state) // Changing the var here causes issues when teaching a move
             {
                 case MOVE_RELEARNER_EGG_MOVES:
                     sMonSummaryScreen->relearnableMovesNum = GetNumberOfEggMoves(mon);
