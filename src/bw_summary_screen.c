@@ -847,14 +847,14 @@ static const struct SpriteTemplate sSpriteTemplate_CategoryIcons =
 static const struct OamData sOamData_RelearnPrompt =
 {
     .size = SPRITE_SIZE(64x64),
-    .shape = SPRITE_SHAPE(64x32),
+    .shape = SPRITE_SHAPE(64x64),
     .priority = 0,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_RelearnPrompt =
 {
     .data = sRelearnPrompt_Gfx,
-    .size = 64*32*3/2,
+    .size = 64*64*3/2,
     .tag = TAG_RELEARN_PROMPT,
 };
 
@@ -866,13 +866,13 @@ static const union AnimCmd sSpriteAnim_LevelRelearnPrompt[] =
 
 static const union AnimCmd sSpriteAnim_EggRelearnPrompt[] =
 {
-    ANIMCMD_FRAME(16, 0),
+    ANIMCMD_FRAME(64, 0),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_TMRelearnPrompt[] =
 {
-    ANIMCMD_FRAME(32, 0),
+    ANIMCMD_FRAME(128, 0),
     ANIMCMD_END
 };
 
@@ -5586,7 +5586,7 @@ static inline bool32 ShouldShowMoveRelearner(void)
 static void ShowMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] == SPRITE_NONE)
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 150, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 165, 0);
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
     StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]], VarGet(VAR_MOVE_RELEARNER_STATE));
