@@ -1646,10 +1646,6 @@
 	callnative BS_TryTriggerStatusForm
 	.endm
 
-	.macro setdynamicmovecategory
-	callnative BS_SetDynamicMoveCategory
-	.endm
-
 	.macro tryupperhand failInstr:req
 	callnative BS_TryUpperHand
 	.4byte \failInstr
@@ -1820,6 +1816,12 @@
 	.macro jumpifcriticalhit failInstr:req
 	callnative BS_JumpIfCriticalHit
 	.4byte \failInstr
+	.endm
+
+	.macro jumpifcangigantamax battler:req, jumpInstr:req
+	callnative BS_JumpIfCanGigantamax
+	.byte \battler
+	.4byte \jumpInstr
 	.endm
 
 @ various command changed to more readable macros
