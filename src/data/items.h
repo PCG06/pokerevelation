@@ -10431,8 +10431,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TAKE_DOWN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CHARM] =
@@ -10446,8 +10444,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CHARM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FAKE_TEARS] =
@@ -10461,8 +10457,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FAKE_TEARS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AGILITY] =
@@ -10476,8 +10470,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AGILITY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MUD_SLAP] =
@@ -10491,8 +10483,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MUD_SLAP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SCARY_FACE] =
@@ -10506,8 +10496,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SCARY_FACE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PROTECT] =
@@ -10521,8 +10509,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PROTECT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FIRE_FANG] =
@@ -10536,8 +10522,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FIRE_FANG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THUNDER_FANG] =
@@ -10551,8 +10535,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THUNDER_FANG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICE_FANG] =
@@ -10566,8 +10548,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICE_FANG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WATER_PULSE] =
@@ -10581,8 +10561,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WATER_PULSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LOW_KICK] =
@@ -10596,8 +10574,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LOW_KICK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ACID_SPRAY] =
@@ -10611,8 +10587,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ACID_SPRAY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ACROBATICS] =
@@ -10626,8 +10600,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ACROBATICS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STRUGGLE_BUG] =
@@ -10641,8 +10613,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STRUGGLE_BUG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYBEAM] =
@@ -10656,8 +10626,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYBEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CONFUSE_RAY] =
@@ -10671,8 +10639,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CONFUSE_RAY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THIEF] =
@@ -10686,8 +10652,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THIEF,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DISARMING_VOICE] =
@@ -10701,8 +10665,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DISARMING_VOICE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TRAILBLAZE] =
@@ -10716,8 +10678,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TRAILBLAZE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POUNCE] =
@@ -10731,8 +10691,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POUNCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CHILLING_WATER] =
@@ -10746,8 +10704,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CHILLING_WATER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CHARGE_BEAM] =
@@ -10761,8 +10717,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CHARGE_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FIRE_SPIN] =
@@ -10776,8 +10730,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FIRE_SPIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FACADE] =
@@ -10791,8 +10743,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FACADE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POISON_TAIL] =
@@ -10806,8 +10756,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POISON_TAIL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AERIAL_ACE] =
@@ -10821,8 +10769,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AERIAL_ACE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BULLDOZE] =
@@ -10836,8 +10782,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BULLDOZE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HEX] =
@@ -10851,8 +10795,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HEX,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SNARL] =
@@ -10866,8 +10808,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SNARL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_METAL_CLAW] =
@@ -10881,8 +10821,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_METAL_CLAW,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SWIFT] =
@@ -10896,8 +10834,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SWIFT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MAGICAL_LEAF] =
@@ -10911,8 +10847,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MAGICAL_LEAF,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICY_WIND] =
@@ -10926,8 +10860,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICY_WIND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MUD_SHOT] =
@@ -10941,8 +10873,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MUD_SHOT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ROCK_TOMB] =
@@ -10956,8 +10886,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ROCK_TOMB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAINING_KISS] =
@@ -10971,8 +10899,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAINING_KISS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLAME_CHARGE] =
@@ -10986,8 +10912,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLAME_CHARGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LOW_SWEEP] =
@@ -11001,8 +10925,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LOW_SWEEP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AIR_CUTTER] =
@@ -11016,8 +10938,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AIR_CUTTER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STORED_POWER] =
@@ -11031,8 +10951,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STORED_POWER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_NIGHT_SHADE] =
@@ -11046,8 +10964,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_NIGHT_SHADE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLING] =
@@ -11061,8 +10977,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLING,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAGON_TAIL] =
@@ -11076,8 +10990,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAGON_TAIL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_VENOSHOCK] =
@@ -11091,8 +11003,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_VENOSHOCK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AVALANCHE] =
@@ -11106,8 +11016,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AVALANCHE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ENDURE] =
@@ -11121,8 +11029,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ENDURE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_VOLT_SWITCH] =
@@ -11136,8 +11042,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_VOLT_SWITCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SUNNY_DAY] =
@@ -11151,8 +11055,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SUNNY_DAY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_RAIN_DANCE] =
@@ -11166,8 +11068,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_RAIN_DANCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SANDSTORM] =
@@ -11181,8 +11081,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SANDSTORM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SNOWSCAPE] =
@@ -11196,8 +11094,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SNOWSCAPE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SMART_STRIKE] =
@@ -11211,8 +11107,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SMART_STRIKE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYSHOCK] =
@@ -11226,8 +11120,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYSHOCK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DIG] =
@@ -11241,8 +11133,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DIG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BULLET_SEED] =
@@ -11256,8 +11146,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BULLET_SEED,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FALSE_SWIPE] =
@@ -11271,8 +11159,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FALSE_SWIPE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BRICK_BREAK] =
@@ -11286,8 +11172,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BRICK_BREAK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ZEN_HEADBUTT] =
@@ -11301,8 +11185,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ZEN_HEADBUTT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_U_TURN] =
@@ -11316,8 +11198,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_U_TURN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SHADOW_CLAW] =
@@ -11331,8 +11211,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SHADOW_CLAW,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FOUL_PLAY] =
@@ -11346,8 +11224,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FOUL_PLAY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYCHIC_FANGS] =
@@ -11361,8 +11237,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYCHIC_FANGS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BULK_UP] =
@@ -11376,8 +11250,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BULK_UP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AIR_SLASH] =
@@ -11391,8 +11263,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AIR_SLASH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BODY_SLAM] =
@@ -11406,8 +11276,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BODY_SLAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FIRE_PUNCH] =
@@ -11421,8 +11289,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FIRE_PUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THUNDER_PUNCH] =
@@ -11436,8 +11302,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THUNDER_PUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICE_PUNCH] =
@@ -11451,8 +11315,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICE_PUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SLEEP_TALK] =
@@ -11466,8 +11328,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SLEEP_TALK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SEED_BOMB] =
@@ -11481,8 +11341,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SEED_BOMB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ELECTRO_BALL] =
@@ -11496,8 +11354,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ELECTRO_BALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAIN_PUNCH] =
@@ -11511,8 +11367,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAIN_PUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_REFLECT] =
@@ -11526,8 +11380,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_REFLECT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LIGHT_SCREEN] =
@@ -11541,8 +11393,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LIGHT_SCREEN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ROCK_BLAST] =
@@ -11556,8 +11406,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ROCK_BLAST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WATERFALL] =
@@ -11571,8 +11419,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WATERFALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAGON_CLAW] =
@@ -11586,8 +11432,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAGON_CLAW,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DAZZLING_GLEAM] =
@@ -11601,8 +11445,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DAZZLING_GLEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_METRONOME] =
@@ -11616,8 +11458,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_METRONOME,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GRASS_KNOT] =
@@ -11631,8 +11471,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GRASS_KNOT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THUNDER_WAVE] =
@@ -11646,8 +11484,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THUNDER_WAVE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POISON_JAB] =
@@ -11661,8 +11497,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POISON_JAB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STOMPING_TANTRUM] =
@@ -11676,8 +11510,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STOMPING_TANTRUM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_REST] =
@@ -11691,8 +11523,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_REST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ROCK_SLIDE] =
@@ -11706,8 +11536,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ROCK_SLIDE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TAUNT] =
@@ -11721,8 +11549,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TAUNT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SWORDS_DANCE] =
@@ -11736,8 +11562,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SWORDS_DANCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BODY_PRESS] =
@@ -11751,8 +11575,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BODY_PRESS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SPIKES] =
@@ -11766,8 +11588,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SPIKES,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TOXIC_SPIKES] =
@@ -11781,8 +11601,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TOXIC_SPIKES,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_IMPRISON] =
@@ -11796,8 +11614,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_IMPRISON,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLASH_CANNON] =
@@ -11811,8 +11627,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLASH_CANNON,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DARK_PULSE] =
@@ -11826,8 +11640,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DARK_PULSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LEECH_LIFE] =
@@ -11841,8 +11653,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LEECH_LIFE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_EERIE_IMPULSE] =
@@ -11856,8 +11666,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_EERIE_IMPULSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLY] =
@@ -11871,8 +11679,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SKILL_SWAP] =
@@ -11886,8 +11692,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SKILL_SWAP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_IRON_HEAD] =
@@ -11901,8 +11705,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_IRON_HEAD,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAGON_DANCE] =
@@ -11916,8 +11718,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAGON_DANCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POWER_GEM] =
@@ -11931,8 +11731,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POWER_GEM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GUNK_SHOT] =
@@ -11946,8 +11744,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GUNK_SHOT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SUBSTITUTE] =
@@ -11961,8 +11757,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SUBSTITUTE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_IRON_DEFENSE] =
@@ -11976,8 +11770,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_IRON_DEFENSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_X_SCISSOR] =
@@ -11991,8 +11783,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_X_SCISSOR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRILL_RUN] =
@@ -12006,8 +11796,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRILL_RUN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WILL_O_WISP] =
@@ -12021,8 +11809,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WILL_O_WISP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CRUNCH] =
@@ -12036,8 +11822,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CRUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TRICK] =
@@ -12051,8 +11835,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TRICK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LIQUIDATION] =
@@ -12066,8 +11848,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LIQUIDATION,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GIGA_DRAIN] =
@@ -12081,8 +11861,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GIGA_DRAIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AURA_SPHERE] =
@@ -12096,8 +11874,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AURA_SPHERE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TAILWIND] =
@@ -12111,8 +11887,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TAILWIND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SHADOW_BALL] =
@@ -12126,8 +11900,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SHADOW_BALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAGON_PULSE] =
@@ -12141,8 +11913,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAGON_PULSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STEALTH_ROCK] =
@@ -12156,8 +11926,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STEALTH_ROCK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HYPER_VOICE] =
@@ -12171,8 +11939,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HYPER_VOICE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HEAT_WAVE] =
@@ -12186,8 +11952,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HEAT_WAVE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ENERGY_BALL] =
@@ -12201,8 +11965,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ENERGY_BALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYCHIC] =
@@ -12216,8 +11978,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYCHIC,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HEAVY_SLAM] =
@@ -12231,8 +11991,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HEAVY_SLAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ENCORE] =
@@ -12246,8 +12004,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ENCORE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SURF] =
@@ -12261,8 +12017,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SURF,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICE_SPINNER] =
@@ -12276,8 +12030,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICE_SPINNER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLAMETHROWER] =
@@ -12291,8 +12043,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLAMETHROWER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THUNDERBOLT] =
@@ -12306,8 +12056,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THUNDERBOLT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PLAY_ROUGH] =
@@ -12321,8 +12069,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PLAY_ROUGH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_AMNESIA] =
@@ -12336,8 +12082,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_AMNESIA,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CALM_MIND] =
@@ -12351,8 +12095,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CALM_MIND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HELPING_HAND] =
@@ -12366,8 +12108,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HELPING_HAND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POLLEN_PUFF] =
@@ -12381,8 +12121,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POLLEN_PUFF,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BATON_PASS] =
@@ -12396,8 +12134,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BATON_PASS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_EARTH_POWER] =
@@ -12411,8 +12147,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_EARTH_POWER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_REVERSAL] =
@@ -12426,8 +12160,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_REVERSAL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICE_BEAM] =
@@ -12441,8 +12173,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICE_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ELECTRIC_TERRAIN] =
@@ -12456,8 +12186,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ELECTRIC_TERRAIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GRASSY_TERRAIN] =
@@ -12471,8 +12199,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GRASSY_TERRAIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYCHIC_TERRAIN] =
@@ -12486,8 +12212,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYCHIC_TERRAIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MISTY_TERRAIN] =
@@ -12501,8 +12225,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MISTY_TERRAIN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_NASTY_PLOT] =
@@ -12516,8 +12238,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_NASTY_PLOT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FIRE_BLAST] =
@@ -12531,8 +12251,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FIRE_BLAST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HYDRO_PUMP] =
@@ -12546,8 +12264,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HYDRO_PUMP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BLIZZARD] =
@@ -12561,8 +12277,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BLIZZARD,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FIRE_PLEDGE] =
@@ -12576,8 +12290,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FIRE_PLEDGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WATER_PLEDGE] =
@@ -12591,8 +12303,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WATER_PLEDGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GRASS_PLEDGE] =
@@ -12606,8 +12316,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GRASS_PLEDGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WILD_CHARGE] =
@@ -12621,8 +12329,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WILD_CHARGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SLUDGE_BOMB] =
@@ -12636,8 +12342,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SLUDGE_BOMB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_EARTHQUAKE] =
@@ -12651,8 +12355,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_EARTHQUAKE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STONE_EDGE] =
@@ -12666,8 +12368,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STONE_EDGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PHANTOM_FORCE] =
@@ -12681,8 +12381,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PHANTOM_FORCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GIGA_IMPACT] =
@@ -12696,8 +12394,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GIGA_IMPACT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BLAST_BURN] =
@@ -12711,8 +12407,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BLAST_BURN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HYDRO_CANNON] =
@@ -12726,8 +12420,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HYDRO_CANNON,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FRENZY_PLANT] =
@@ -12741,8 +12433,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FRENZY_PLANT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_OUTRAGE] =
@@ -12756,8 +12446,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_OUTRAGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_OVERHEAT] =
@@ -12771,8 +12459,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_OVERHEAT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FOCUS_BLAST] =
@@ -12786,8 +12472,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FOCUS_BLAST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LEAF_STORM] =
@@ -12801,8 +12485,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LEAF_STORM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HURRICANE] =
@@ -12816,8 +12498,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HURRICANE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TRICK_ROOM] =
@@ -12831,8 +12511,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TRICK_ROOM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BUG_BUZZ] =
@@ -12846,8 +12524,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BUG_BUZZ,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HYPER_BEAM] =
@@ -12861,8 +12537,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HYPER_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BRAVE_BIRD] =
@@ -12876,8 +12550,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BRAVE_BIRD,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLARE_BLITZ] =
@@ -12891,8 +12563,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLARE_BLITZ,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THUNDER] =
@@ -12906,8 +12576,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THUNDER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CLOSE_COMBAT] =
@@ -12921,8 +12589,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CLOSE_COMBAT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SOLAR_BEAM] =
@@ -12936,8 +12602,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SOLAR_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRACO_METEOR] =
@@ -12951,8 +12615,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRACO_METEOR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_STEEL_BEAM] =
@@ -12966,8 +12628,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_STEEL_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TERA_BLAST] =
@@ -12981,8 +12641,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TERA_BLAST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ROAR] =
@@ -12996,8 +12654,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ROAR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CHARGE] =
@@ -13011,8 +12667,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CHARGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HAZE] =
@@ -13026,8 +12680,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HAZE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TOXIC] =
@@ -13041,8 +12693,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TOXIC,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SAND_TOMB] =
@@ -13056,8 +12706,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SAND_TOMB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SPITE] =
@@ -13071,8 +12719,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SPITE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GRAVITY] =
@@ -13086,8 +12732,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GRAVITY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SMACK_DOWN] =
@@ -13101,8 +12745,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SMACK_DOWN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GYRO_BALL] =
@@ -13116,8 +12758,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GYRO_BALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_KNOCK_OFF] =
@@ -13131,8 +12771,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_KNOCK_OFF,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BUG_BITE] =
@@ -13146,8 +12784,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BUG_BITE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SUPER_FANG] =
@@ -13161,8 +12797,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SUPER_FANG,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_VACUUM_WAVE] =
@@ -13176,8 +12810,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_VACUUM_WAVE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LUNGE] =
@@ -13191,8 +12823,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LUNGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HIGH_HORSEPOWER] =
@@ -13206,8 +12836,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HIGH_HORSEPOWER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ICICLE_SPEAR] =
@@ -13221,8 +12849,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ICICLE_SPEAR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SCALD] =
@@ -13236,8 +12862,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SCALD,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HEAT_CRASH] =
@@ -13251,8 +12875,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HEAT_CRASH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SOLAR_BLADE] =
@@ -13266,8 +12888,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SOLAR_BLADE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_UPROAR] =
@@ -13281,8 +12901,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_UPROAR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FOCUS_PUNCH] =
@@ -13296,8 +12914,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FOCUS_PUNCH,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WEATHER_BALL] =
@@ -13311,8 +12927,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WEATHER_BALL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_GRASSY_GLIDE] =
@@ -13326,8 +12940,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_GRASSY_GLIDE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BURNING_JEALOUSY] =
@@ -13341,8 +12953,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BURNING_JEALOUSY,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FLIP_TURN] =
@@ -13356,8 +12966,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FLIP_TURN,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DUAL_WINGBEAT] =
@@ -13371,8 +12979,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DUAL_WINGBEAT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_POLTERGEIST] =
@@ -13386,8 +12992,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_POLTERGEIST,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_LASH_OUT] =
@@ -13401,8 +13005,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_LASH_OUT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SCALE_SHOT] =
@@ -13416,8 +13018,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SCALE_SHOT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MISTY_EXPLOSION] =
@@ -13431,8 +13031,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MISTY_EXPLOSION,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PAIN_SPLIT] =
@@ -13446,8 +13044,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PAIN_SPLIT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYCH_UP] =
@@ -13461,8 +13057,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYCH_UP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DOUBLE_EDGE] =
@@ -13476,8 +13070,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DOUBLE_EDGE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ENDEAVOR] =
@@ -13491,8 +13083,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ENDEAVOR,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PETAL_BLIZZARD] =
@@ -13506,8 +13096,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PETAL_BLIZZARD,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TEMPER_FLARE] =
@@ -13521,8 +13109,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TEMPER_FLARE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_WHIRLPOOL] =
@@ -13536,8 +13122,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_WHIRLPOOL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_MUDDY_WATER] =
@@ -13551,8 +13135,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_MUDDY_WATER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SUPERCELL_SLAM] =
@@ -13566,8 +13148,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SUPERCELL_SLAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ELECTROWEB] =
@@ -13581,8 +13161,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ELECTROWEB,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_TRIPLE_AXEL] =
@@ -13596,8 +13174,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_TRIPLE_AXEL,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_COACHING] =
@@ -13611,8 +13187,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_COACHING,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SLUDGE_WAVE] =
@@ -13626,8 +13200,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SLUDGE_WAVE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SCORCHING_SANDS] =
@@ -13641,8 +13213,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SCORCHING_SANDS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FEATHER_DANCE] =
@@ -13656,8 +13226,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FEATHER_DANCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_FUTURE_SIGHT] =
@@ -13671,8 +13239,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_FUTURE_SIGHT,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_EXPANDING_FORCE] =
@@ -13686,8 +13252,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_EXPANDING_FORCE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_SKITTER_SMACK] =
@@ -13701,8 +13265,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_SKITTER_SMACK,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_METEOR_BEAM] =
@@ -13716,8 +13278,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_METEOR_BEAM,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_THROAT_CHOP] =
@@ -13731,8 +13291,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_THROAT_CHOP,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_BREAKING_SWIPE] =
@@ -13746,8 +13304,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_BREAKING_SWIPE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_METAL_SOUND] =
@@ -13761,8 +13317,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_METAL_SOUND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_CURSE] =
@@ -13776,8 +13330,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_CURSE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HARD_PRESS] =
@@ -13791,8 +13343,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_HARD_PRESS,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_DRAGON_CHEER] =
@@ -13806,8 +13356,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DRAGON_CHEER,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_ALLURING_VOICE] =
@@ -13821,8 +13369,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_ALLURING_VOICE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_PSYCHIC_NOISE] =
@@ -13836,8 +13382,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_PSYCHIC_NOISE,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_UPPER_HAND] =
@@ -13851,8 +13395,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_UPPER_HAND,
-        .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
     },
 
     [ITEM_TM_HIDDEN_POWER] =
