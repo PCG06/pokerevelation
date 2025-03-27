@@ -6,7 +6,7 @@ REVISION    := 0
 KEEP_TEMPS  ?= 0
 
 # `File name`.gba
-FILE_NAME := pokeskibidimons
+FILE_NAME := pokerevelation
 BUILD_DIR := build
 
 # Compares the ROM to a checksum of the original - only makes sense using when non-modern
@@ -259,7 +259,7 @@ debug: all
 # Uncomment the next line, and then comment the 4 lines after it to reenable agbcc.
 #agbcc: all
 agbcc:
-	@echo "'make agbcc' is deprecated as of pokeskibidimons-expansion 1.9 and will be removed in 1.10."
+	@echo "'make agbcc' is deprecated as of pokerevelation-expansion 1.9 and will be removed in 1.10."
 	@echo "Search for 'agbcc: all' in Makefile to reenable agbcc."
 	@exit 1
 

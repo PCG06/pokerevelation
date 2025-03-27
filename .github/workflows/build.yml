@@ -75,8 +75,8 @@ jobs:
       - name: Upload ROM
         uses: actions/upload-artifact@v4
         with:
-          name: pokeskibidimons
-          path: pokeskibidimons.gba
+          name: pokerevelation
+          path: pokerevelation.gba
 
       - name: Get Artifact ID
         id: artifact
