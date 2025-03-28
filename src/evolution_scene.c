@@ -7,6 +7,7 @@
 #include "data.h"
 #include "decompress.h"
 #include "evolution_scene.h"
+#include "event_data.h"
 #include "evolution_graphics.h"
 #include "gpu_regs.h"
 #include "item.h"
@@ -766,6 +767,9 @@ static void Task_EvolutionScene(u8 taskId)
         if (IsCryFinished())
         {
             u32 zero = 0;
+            u16 evosLeft = VarGet(VAR_NO_OF_EVOS);
+            evosLeft = (evosLeft != 1) ? evosLeft - 1 : 0;
+
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
             PlayBGM(MUS_EVOLVED);
@@ -777,6 +781,7 @@ static void Task_EvolutionScene(u8 taskId)
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
+            VarSet(VAR_NO_OF_EVOS, evosLeft);
         }
         break;
     case EVOSTATE_TRY_LEARN_MOVE:
