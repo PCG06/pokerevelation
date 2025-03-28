@@ -781,7 +781,12 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
         CopyWindowToVram(RELEARNERWIN_DESC_BATTLE, COPYWIN_GFX);
         return;
     }
-    str = gTypesInfo[GetMoveType(chosenMove)].name;
+
+    if (P_SHOW_DYNAMIC_TYPES)
+        str = gTypesInfo[CheckDynamicMoveRelearnerType(chosenMove)].name;
+    else
+        str = gTypesInfo[GetMoveType(chosenMove)].name;
+
     AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL);
 
     x = 4 + GetStringWidth(FONT_NORMAL, gText_MoveRelearnerPP, 0);

@@ -1064,3 +1064,8 @@ void MoveRelearnerShowHideCategoryIcon(s32 moveId)
         StartSpriteAnim(&gSprites[sMoveRelearnerStruct->categoryIconSpriteId], GetBattleMoveCategory(moveId));
     }
 }
+
+u32 CheckDynamicMoveRelearnerType(u32 chosenMove)
+{
+    return CheckDynamicMoveType(&gPlayerParty[sMoveRelearnerStruct->partyMon], chosenMove, 0);
+}
