@@ -137,7 +137,9 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	callnative StartNewPokeballCaseUI
+	lock
+	givemon SPECIES_SPINDA, 100, ITEM_ORAN_BERRY, isShiny=TRUE
+	call Common_EventScript_PlayerReceivedPokemon
 	release
 	end
 

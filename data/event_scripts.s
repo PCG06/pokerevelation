@@ -1119,14 +1119,14 @@ EventScript_ReceivedMon::
 	playfanfare MUS_OBTAIN_ITEM
 	message EnterCode_ReceivedGiftMon
 	givemon VAR_TEMP_TRANSFERRED_SPECIES, 100, ITEM_NONE
-	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, 10, 3
+	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
 	waitfanfare
-    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMon
-    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMon
+    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMonFromCode
+    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMonFromCode
 	goto EventScript_CodeExit
 	end
 
-EventScript_NicknamePartyMon::
+EventScript_NicknamePartyMonFromCode::
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	hidemonpic
 	goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
@@ -1135,7 +1135,7 @@ EventScript_NicknamePartyMon::
 	goto EventScript_CodeExit
 	end
 
-EventScript_NicknamePCMon::
+EventScript_NicknamePCMonFromCode::
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	hidemonpic
 	goto_if_eq VAR_RESULT, NO, EventScript_TransferredToPC

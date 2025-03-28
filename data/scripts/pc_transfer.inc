@@ -1,3 +1,52 @@
+@ Call this script after receiving a gift Pokémon to handle fanfare, nickname, sending to box
+Common_EventScript_PlayerReceivedPokemon::
+	playfanfare MUS_OBTAIN_ITEM
+	call_if_eq VAR_0x8000, TRUE, EventScript_PlayShinySoundSE
+	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, VAR_0x8000, 10, 3
+	message gText_PlayerReceivedPokemon
+	waitse
+	waitfanfare
+	waitbuttonpress
+	hidemonpic
+	closemessage
+	call Common_EventScript_ShowPokemonNature
+	call Common_EventScript_NicknameGiftPokemon
+	return
+
+EventScript_PlayShinySoundSE:
+	playse SE_SHINY
+	return
+
+Common_EventScript_ShowPokemonNature::
+	message gText_ItHasTheXNature
+	waitbuttonpress
+	return
+
+Common_EventScript_NicknameGiftPokemon::
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMonYesNo
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknameBoxMonYesNo
+	return
+
+EventScript_NicknamePartyMonYesNo::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_NicknamePartyMon
+	return
+
+EventScript_NicknamePartyMon::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+EventScript_NicknameBoxMonYesNo::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_NicknameBoxMon
+	goto Common_EventScript_TransferredToPC
+	return
+
+EventScript_NicknameBoxMon::
+	call Common_EventScript_NameReceivedBoxMon
+	return
+
 @ VAR_0x8004 here is used by ChangePokemonNickname
 Common_EventScript_GetGiftMonPartySlot::
 	getpartysize

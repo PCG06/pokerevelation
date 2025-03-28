@@ -466,6 +466,14 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
             GetSetPokedexFlag(nationalDexNum, FLAG_SET_CAUGHT);
         }
     }
+    
+    // for scripting
+    StringCopy(gStringVar2, GetSpeciesName(species));
+    StringCopy(gStringVar3, gNaturesInfo[nature].name);
+
+    gSpecialVar_0x8000 = GetMonData(&mon, MON_DATA_IS_SHINY) ? TRUE : FALSE;
+    gMonPersonality = GetMonData(&mon, MON_DATA_PERSONALITY);
+    VarSet(VAR_TEMP_TRANSFERRED_SPECIES, species);
 
     return sentToPc;
 }
