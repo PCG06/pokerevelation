@@ -5818,7 +5818,6 @@ u8 GetNumberOfLevelUpMoves(struct Pokemon *mon)
         }
     }
 
-    SortMovesAlphabetically(moves, numMoves);
     return numMoves;
 }
 
