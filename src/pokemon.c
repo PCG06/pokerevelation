@@ -5618,6 +5618,31 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     }
 }
 
+static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
+{
+    for (u32 i = 0; i < numMoves - 1; i++)
+    {
+        bool8 swapped = FALSE;
+
+        for (u32 j = 0; j < numMoves - i - 1; j++)
+        {
+            u16 moveA = moves[j];
+            u16 moveB = moves[j + 1];
+            
+            if (StringCompare(GetMoveName(moveA), GetMoveName(moveB)) > 0)
+            {
+                u16 temp = moves[j];
+                moves[j] = moves[j + 1];
+                moves[j + 1] = temp;
+                swapped = TRUE;
+            }
+        }
+
+        if (!swapped) 
+            break; // Early exit if no swaps occurred
+    }
+}
+
 u8 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves)
 {
     u16 learnedMoves[4];
@@ -5655,6 +5680,7 @@ u8 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves)
         }
     }
 
+    SortMovesAlphabetically(moves, numMoves);
     return numMoves;
 }
 
@@ -5708,6 +5734,8 @@ u8 GetRelearnerEggMoves(struct Pokemon *mon, u16 *moves)
             }
         }
     }
+
+    SortMovesAlphabetically(moves, numMoves);
     return numMoves;
 }
 
@@ -5744,6 +5772,8 @@ u8 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
                 moves[numMoves++] = allMoves[i];
         }
     }
+
+    SortMovesAlphabetically(moves, numMoves);
     return numMoves;
 }
 
@@ -5788,6 +5818,7 @@ u8 GetNumberOfLevelUpMoves(struct Pokemon *mon)
         }
     }
 
+    SortMovesAlphabetically(moves, numMoves);
     return numMoves;
 }
 
