@@ -5769,6 +5769,9 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
 
 static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
 {
+    if (numMoves == 0)
+        return;
+
     for (u32 i = 0; i < numMoves - 1; i++)
     {
         bool8 swapped = FALSE;
@@ -5777,7 +5780,10 @@ static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
         {
             u16 moveA = moves[j];
             u16 moveB = moves[j + 1];
-            
+
+            if (moveA == MOVE_NONE || moveB == MOVE_NONE)
+                continue;
+
             if (StringCompare(GetMoveName(moveA), GetMoveName(moveB)) > 0)
             {
                 u16 temp = moves[j];
@@ -5787,7 +5793,7 @@ static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
             }
         }
 
-        if (!swapped) 
+        if (!swapped)
             break; // Early exit if no swaps occurred
     }
 }
