@@ -2,11 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - upcoming
-
-permissions:
-  contents: read
 
 jobs:
   build:
