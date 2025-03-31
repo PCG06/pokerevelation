@@ -165,18 +165,18 @@ enum {
 static EWRAM_DATA struct
 {
     u8 state;
-    u8 heartSpriteIds[16];                                   /*0x001*/
-    u16 movesToLearn[MAX_RELEARNER_MOVES];                   /*0x01A*/
-    u8 partyMon;                                             /*0x044*/
-    u8 moveSlot;                                             /*0x045*/
-    struct ListMenuItem menuItems[MAX_RELEARNER_MOVES + 1];  /*0x0E8*/
-    u8 numMenuChoices;                                       /*0x110*/
-    u8 numToShowAtOnce;                                      /*0x111*/
-    u8 moveListMenuTask;                                     /*0x112*/
-    u8 moveListScrollArrowTask;                              /*0x113*/
-    u8 moveDisplayArrowTask;                                 /*0x114*/
-    u16 scrollOffset;                                        /*0x116*/
-    u8 categoryIconSpriteId;                                 /*0x117*/
+    u8 heartSpriteIds[16];                                  /*0x001*/
+    u32 movesToLearn[MAX_RELEARNER_MOVES];                  /*0x011*/
+    u8 partyMon;                                            /*0x211*/
+    u8 moveSlot;                                            /*0x212*/
+    struct ListMenuItem menuItems[MAX_RELEARNER_MOVES + 1]; /*0x213*/
+    u32 numMenuChoices;                                     /*0x417*/
+    u8 numToShowAtOnce;                                     /*0x41B*/
+    u8 moveListMenuTask;                                    /*0x41C*/
+    u8 moveListScrollArrowTask;                             /*0x41D*/
+    u8 moveDisplayArrowTask;                                /*0x41E*/
+    u16 scrollOffset;                                       /*0x420*/
+    u8 categoryIconSpriteId;                                /*0x422*/
 } *sMoveRelearnerStruct = {0};
 
 static EWRAM_DATA struct {
@@ -410,19 +410,6 @@ void CB2_InitLearnMove(void)
     sMoveRelearnerMenuSate.listRow = 0;
     sMoveRelearnerMenuSate.showContestInfo = gOriginSummaryScreenPage == PSS_PAGE_CONTEST_MOVES;
 
-    switch (VarGet(VAR_MOVE_RELEARNER_STATE))
-    {
-        case MOVE_RELEARNER_EGG_MOVES:
-            StringCopy(gStringVar3, COMPOUND_STRING("egg move"));
-            break;
-        case MOVE_RELEARNER_TM_MOVES: 
-            StringCopy(gStringVar3, COMPOUND_STRING("TM move"));
-            break;
-        default:
-            StringCopy(gStringVar3, COMPOUND_STRING("level up move"));
-            break;
-    }
-
     CreateLearnableMovesList();
 
     LoadSpriteSheet(&sMoveRelearnerSpriteSheet);
@@ -612,9 +599,7 @@ static void DoMoveRelearnerMain(void)
             s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
 
             if (selection == 0)
-            {
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_WHICH_MOVE_PROMPT;
-            }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_STOP_TEACHING;
@@ -762,7 +747,7 @@ static void DoMoveRelearnerMain(void)
             {
                 u16 moveId = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_MOVE1 + sMoveRelearnerStruct->moveSlot);
                 u8 originalPP = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_PP1 + sMoveRelearnerStruct->moveSlot);
-
+                
                 StringCopy(gStringVar3, GetMoveName(moveId));
                 RemoveMonPPBonus(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->moveSlot);
                 SetMonMoveSlot(&gPlayerParty[sMoveRelearnerStruct->partyMon], GetCurrentSelectedMove(), sMoveRelearnerStruct->moveSlot);
@@ -778,7 +763,7 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_DOUBLE_FANFARE_FORGOT_MOVE:
         if (!MoveRelearnerRunTextPrinters())
         {
-            PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnForgotMoveAndLearnedNew);
+            PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnLearnedMove);
             sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEXT_THEN_FANFARE;
             PlayFanfare(MUS_LEVEL_UP);
         }
@@ -968,20 +953,7 @@ static void CreateLearnableMovesList(void)
     s32 i;
     u8 nickname[POKEMON_NAME_LENGTH + 1];
 
-    switch (VarGet(VAR_MOVE_RELEARNER_STATE))
-    {
-        case MOVE_RELEARNER_EGG_MOVES:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerEggMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-
-        case MOVE_RELEARNER_TM_MOVES:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerTMMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-
-        default:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerLevelUpMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-	}
+    sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
 
     for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)
     {
