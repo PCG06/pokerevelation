@@ -218,7 +218,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 secondMoveIndex;
     bool8 lockMovesFlag; // This is used to prevent the player from changing position of moves in a battle or when trading.
     u8 bgDisplayOrder; // unused
-    u8 relearnableMovesNum;
+    u16 relearnableMovesNum;
     u8 windowIds[8];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 handleDeoxys;
@@ -2285,7 +2285,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
                     sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(mon);
                     break;
                 default:
-                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(mon);
+                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfRelearnerMoves(mon);
                     break;
             }
         }
@@ -2562,7 +2562,7 @@ static void Task_HandleInput(u8 taskId)
                             sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(&sMonSummaryScreen->currentMon);
                             break;
                         default: // MOVE_RELEARNER_LEVEL_UP_MOVES
-                            sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(&sMonSummaryScreen->currentMon);
+                            sMonSummaryScreen->relearnableMovesNum = GetNumberOfRelearnerMoves(&sMonSummaryScreen->currentMon);
                             break;
                     }
                 } while (sMonSummaryScreen->relearnableMovesNum == 0 && --attempts);
@@ -2589,7 +2589,7 @@ static void Task_HandleInput(u8 taskId)
                             sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(&sMonSummaryScreen->currentMon);
                             break;
                         default: // MOVE_RELEARNER_LEVEL_UP_MOVES
-                            sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(&sMonSummaryScreen->currentMon);
+                            sMonSummaryScreen->relearnableMovesNum = GetNumberOfRelearnerMoves(&sMonSummaryScreen->currentMon);
                             break;
                     }
                 } while (sMonSummaryScreen->relearnableMovesNum == 0 && --attempts);
@@ -2787,7 +2787,7 @@ static void GetSetMoveRelearnerVar(u8 *state)
 {
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
 
-    if (*state == MOVE_RELEARNER_LEVEL_UP_MOVES && !GetNumberOfLevelUpMoves(mon))
+    if (*state == MOVE_RELEARNER_LEVEL_UP_MOVES && !GetNumberOfRelearnerMoves(mon))
         *state = MOVE_RELEARNER_EGG_MOVES;
 
     if (*state == MOVE_RELEARNER_EGG_MOVES && !GetNumberOfEggMoves(mon))
@@ -2809,7 +2809,7 @@ static void GetSetMoveRelearnerVar(u8 *state)
             sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(mon);
             break;
         default:
-            sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(mon);
+            sMonSummaryScreen->relearnableMovesNum = GetNumberOfRelearnerMoves(mon);
             break;
     }
 }

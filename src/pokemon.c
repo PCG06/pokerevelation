@@ -5798,6 +5798,80 @@ static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
     }
 }
 
+u16 GetRelearnerMoves(struct Pokemon *mon, u16 *moves)
+{
+    u16 learnedMoves[MAX_MON_MOVES];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u16 numMoves = 0;
+    u32 i, j;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    // Level-up moves
+    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
+    for (i = 0; learnset[i].move != LEVEL_UP_MOVE_END && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        if (learnset[i].level <= 100)
+        {
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++);
+            if (j == MAX_MON_MOVES)
+                moves[numMoves++] = learnset[i].move;
+        }
+    }
+
+    // Egg moves
+    const u16 *eggMoves = GetSpeciesEggMoves(species);
+    if (eggMoves != sNoneEggMoveLearnset)
+    {
+        for (i = 0; eggMoves[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
+        {
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != eggMoves[i]; j++);
+            if (j == MAX_MON_MOVES)
+                moves[numMoves++] = eggMoves[i];
+        }
+    }
+
+    // TM moves
+    for (i = ITEM_TM01; i <= ITEM_HM08 && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        u16 moveId = ItemIdToBattleMoveId(i);
+        if (CanLearnTeachableMove(species, moveId))
+        {
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
+            if (j == MAX_MON_MOVES)
+                moves[numMoves++] = moveId;
+        }
+    }
+
+    // Remove duplicates
+    for (i = 0; i < numMoves; i++)
+    {
+        for (j = i + 1; j < numMoves; j++)
+        {
+            if (moves[i] == moves[j])
+            {
+                moves[j] = moves[--numMoves];
+                j--;
+            }
+        }
+    }
+
+    SortMovesAlphabetically(moves, numMoves);
+    return numMoves;
+}
+
+u8 GetNumberOfRelearnerMoves(struct Pokemon *mon)
+{
+    u16 moves[MAX_RELEARNER_MOVES];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+
+    if (species == SPECIES_EGG)
+        return 0;
+
+    return GetRelearnerMoves(mon, moves);
+}
+
 u8 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves)
 {
     u16 learnedMoves[4];

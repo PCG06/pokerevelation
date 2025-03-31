@@ -979,7 +979,7 @@ static void CreateLearnableMovesList(void)
             break;
 
         default:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerLevelUpMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+            sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
             break;
 	}
 

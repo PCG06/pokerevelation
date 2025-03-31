@@ -1129,7 +1129,7 @@ static void DisplayPartyPokemonDataForRelearner(u8 slot)
         break;
         default:
         {
-            if (GetNumberOfLevelUpMoves(&gPlayerParty[slot]) == 0)
+            if (GetNumberOfRelearnerMoves(&gPlayerParty[slot]) == 0)
                 DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NOT_ABLE_2);
             else
                 DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_ABLE_2);
@@ -7954,7 +7954,7 @@ static void CB2_ChooseMonForMoveRelearner(void)
             gSpecialVar_0x8005 = GetNumberOfTMMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
         default:
-            gSpecialVar_0x8005 = GetNumberOfLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004]);
+            gSpecialVar_0x8005 = GetNumberOfRelearnerMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
     }
     gFieldCallback2 = CB2_FadeFromPartyMenu;

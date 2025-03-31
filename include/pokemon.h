@@ -751,6 +751,8 @@ u8 CanLearnTeachableMove(u16 species, u16 move);
 u8 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves);
 u8 GetRelearnerEggMoves(struct Pokemon *mon, u16 *moves);
 u8 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves);
+u16 GetRelearnerMoves(struct Pokemon *mon, u16 *moves);
+u8 GetNumberOfRelearnerMoves(struct Pokemon *mon);
 u8 GetNumberOfLevelUpMoves(struct Pokemon *mon);
 u8 GetNumberOfEggMoves(struct Pokemon *mon);
 u8 GetNumberOfTMMoves(struct Pokemon *mon);
