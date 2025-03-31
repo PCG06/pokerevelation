@@ -5465,7 +5465,7 @@ static inline bool32 ShouldShowMoveRelearner(void)
 static void ShowMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] == SPRITE_NONE)
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 150, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 61, 152, 0);
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
 }
