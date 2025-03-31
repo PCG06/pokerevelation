@@ -165,18 +165,18 @@ enum {
 static EWRAM_DATA struct
 {
     u8 state;
-    u8 heartSpriteIds[16];                                   /*0x001*/
-    u16 movesToLearn[MAX_RELEARNER_MOVES];                   /*0x01A*/
-    u8 partyMon;                                             /*0x044*/
-    u8 moveSlot;                                             /*0x045*/
-    struct ListMenuItem menuItems[MAX_RELEARNER_MOVES + 1];  /*0x0E8*/
-    u8 numMenuChoices;                                       /*0x110*/
-    u8 numToShowAtOnce;                                      /*0x111*/
-    u8 moveListMenuTask;                                     /*0x112*/
-    u8 moveListScrollArrowTask;                              /*0x113*/
-    u8 moveDisplayArrowTask;                                 /*0x114*/
-    u16 scrollOffset;                                        /*0x116*/
-    u8 categoryIconSpriteId;                                 /*0x117*/
+    u8 heartSpriteIds[16];                                  /*0x001*/
+    u32 movesToLearn[MAX_RELEARNER_MOVES];                  /*0x011*/
+    u8 partyMon;                                            /*0x211*/
+    u8 moveSlot;                                            /*0x212*/
+    struct ListMenuItem menuItems[MAX_RELEARNER_MOVES + 1]; /*0x213*/
+    u32 numMenuChoices;                                     /*0x417*/
+    u8 numToShowAtOnce;                                     /*0x41B*/
+    u8 moveListMenuTask;                                    /*0x41C*/
+    u8 moveListScrollArrowTask;                             /*0x41D*/
+    u8 moveDisplayArrowTask;                                /*0x41E*/
+    u16 scrollOffset;                                       /*0x420*/
+    u8 categoryIconSpriteId;                                /*0x422*/
 } *sMoveRelearnerStruct = {0};
 
 static EWRAM_DATA struct {
@@ -763,7 +763,7 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_DOUBLE_FANFARE_FORGOT_MOVE:
         if (!MoveRelearnerRunTextPrinters())
         {
-            PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnForgotMoveAndLearnedNew);
+            PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnLearnedMove);
             sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEXT_THEN_FANFARE;
             PlayFanfare(MUS_LEVEL_UP);
         }

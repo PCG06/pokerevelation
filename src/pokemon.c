@@ -5767,7 +5767,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     }
 }
 
-static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
+static void SortMovesAlphabetically(u32 *moves, u32 numMoves)
 {
     if (numMoves == 0)
         return;
@@ -5798,11 +5798,11 @@ static void SortMovesAlphabetically(u16 *moves, u8 numMoves)
     }
 }
 
-u16 GetRelearnerMoves(struct Pokemon *mon, u16 *moves)
+u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
 {
     u16 learnedMoves[MAX_MON_MOVES];
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    u16 numMoves = 0;
+    u32 numMoves = 0;
     u32 i, j;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -5861,9 +5861,9 @@ u16 GetRelearnerMoves(struct Pokemon *mon, u16 *moves)
     return numMoves;
 }
 
-u8 GetNumberOfRelearnerMoves(struct Pokemon *mon)
+u32 GetNumberOfRelearnerMoves(struct Pokemon *mon)
 {
-    u16 moves[MAX_RELEARNER_MOVES];
+    u32 moves[MAX_RELEARNER_MOVES];
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
 
     if (species == SPECIES_EGG)
