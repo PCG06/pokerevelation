@@ -410,19 +410,6 @@ void CB2_InitLearnMove(void)
     sMoveRelearnerMenuSate.listRow = 0;
     sMoveRelearnerMenuSate.showContestInfo = gOriginSummaryScreenPage == PSS_PAGE_CONTEST_MOVES;
 
-    switch (VarGet(VAR_MOVE_RELEARNER_STATE))
-    {
-        case MOVE_RELEARNER_EGG_MOVES:
-            StringCopy(gStringVar3, COMPOUND_STRING("egg move"));
-            break;
-        case MOVE_RELEARNER_TM_MOVES: 
-            StringCopy(gStringVar3, COMPOUND_STRING("TM move"));
-            break;
-        default:
-            StringCopy(gStringVar3, COMPOUND_STRING("level up move"));
-            break;
-    }
-
     CreateLearnableMovesList();
 
     LoadSpriteSheet(&sMoveRelearnerSpriteSheet);
@@ -966,21 +953,7 @@ static void CreateLearnableMovesList(void)
     s32 i;
     u8 nickname[POKEMON_NAME_LENGTH + 1];
 
-    switch (VarGet(VAR_MOVE_RELEARNER_STATE))
-    {
-    
-        case MOVE_RELEARNER_EGG_MOVES:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerEggMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-
-        case MOVE_RELEARNER_TM_MOVES:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerTMMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-
-        default:
-            sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
-            break;
-	}
+    sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
 
     for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)
     {
