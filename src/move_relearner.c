@@ -597,16 +597,9 @@ static void DoMoveRelearnerMain(void)
         }
         break;
     case MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT:
-        if (VarGet(VAR_TEMP_1) > VarGet(VAR_TEMP_2))
-        {
-            PrintMessageWithPlaceholders(gText_MoveRelearnerCantAffordThatMove);
-            sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_TEXT;
-        }
-        else
-        {
-            PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnTryingToLearnMove);
-            sMoveRelearnerStruct->state++;
-        }
+        PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnTryingToLearnMove);
+        sMoveRelearnerStruct->state++;
+        break;
     case MENU_STATE_WAIT_FOR_TRYING_TO_LEARN:
         if (!MoveRelearnerRunTextPrinters())
         {
