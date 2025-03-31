@@ -612,9 +612,7 @@ static void DoMoveRelearnerMain(void)
             s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
 
             if (selection == 0)
-            {
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_WHICH_MOVE_PROMPT;
-            }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_STOP_TEACHING;
@@ -762,7 +760,7 @@ static void DoMoveRelearnerMain(void)
             {
                 u16 moveId = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_MOVE1 + sMoveRelearnerStruct->moveSlot);
                 u8 originalPP = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_PP1 + sMoveRelearnerStruct->moveSlot);
-
+                
                 StringCopy(gStringVar3, GetMoveName(moveId));
                 RemoveMonPPBonus(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->moveSlot);
                 SetMonMoveSlot(&gPlayerParty[sMoveRelearnerStruct->partyMon], GetCurrentSelectedMove(), sMoveRelearnerStruct->moveSlot);
@@ -970,6 +968,7 @@ static void CreateLearnableMovesList(void)
 
     switch (VarGet(VAR_MOVE_RELEARNER_STATE))
     {
+    
         case MOVE_RELEARNER_EGG_MOVES:
             sMoveRelearnerStruct->numMenuChoices = GetRelearnerEggMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
             break;
