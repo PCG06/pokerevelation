@@ -500,7 +500,8 @@ static struct Pokemon *ReturnPartyMon()
 static void SampleUi_DrawMonIcon(u16 dexNum)
 {
     u16 speciesId = dexNum;
-    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
+    u32 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
+    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, personality, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
 
     gSprites[sStatEditorDataPtr->monIconSpriteId].oam.priority = 0;
 }
@@ -636,10 +637,11 @@ static void PrintMonStats()
 {
     u8 i;
     u16 currentStat;
-    u16 nature;
     u8 text[2];
+    u16 nature = GetNature(ReturnPartyMon());
+    u16 ability = GetMonAbility(ReturnPartyMon());
     u16 level = GetMonData(ReturnPartyMon(), MON_DATA_LEVEL);
-    u16 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
+    u32 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
     u16 gender = GetGenderFromSpeciesAndPersonality(sStatEditorDataPtr->speciesID, personality);
 
     FillWindowPixelBuffer(WINDOW_2, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -700,15 +702,8 @@ static void PrintMonStats()
     ConvertIntToDecimalStringN(gStringVar2, sStatEditorDataPtr->ivTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
     AddTextPrinterParameterized4(WINDOW_2, 1, STARTING_X + THIRD_COLUMN, STARTING_Y + (DISTANCE_BETWEEN_STATS_Y * 6), 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-
     // Print ability / nature / name / level / gender
-
-#ifdef POKEMON_EXPANSION
-    StringCopy(gStringVar2, GetSpeciesName(sStatEditorDataPtr->speciesID));
-#else
-    StringCopy(gStringVar2, gSpeciesNames[sStatEditorDataPtr->speciesID]);
-#endif
-
+    GetMonNickname(ReturnPartyMon(), gStringVar2);
     AddTextPrinterParameterized4(WINDOW_3, FONT_NARROW, 4, 2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
     ConvertIntToDecimalStringN(gStringVar1, level, STR_CONV_MODE_RIGHT_ALIGN, 3);
@@ -725,11 +720,12 @@ static void PrintMonStats()
         AddTextPrinterParameterized4(WINDOW_3, FONT_NORMAL, 41 + 8, 19, 0, 0, sGenderColors[(gender == MON_FEMALE)], TEXT_SKIP_DRAW, text);
     }
 
-    nature = GetNature(ReturnPartyMon());
+    
     StringCopy(gStringVar2, gNaturesInfo[nature].name);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 50, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    StringCopy(gStringVar2, gAbilitiesInfo[gSpeciesInfo[sStatEditorDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]].name);
+    ability = GetMonAbility(ReturnPartyMon());
+    StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 34, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
     PutWindowTilemap(WINDOW_3);
@@ -833,7 +829,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
     {
         u16 partyid = sStatEditorDataPtr->partyid;
         if (partyid == 0)
-            partyid = gPlayerPartyCount - 1;
+            partyid = 1;
         else
             partyid -= 1;
         sStatEditorDataPtr->partyid = partyid;
