@@ -463,6 +463,9 @@
 388. Walking Wake           - Water/Dragon
 389. Iron Leaves            - Grass/Psychic
 390. Ogerpon                - Grass
+    - Ogerpon Wellspring    - Grass/Water
+    - Ogerpon Hearthflame   - Grass/Fire
+    - Ogerpon Cornerstone   - Grass/Rock
 391. Gouging Fire           - Fire/Dragon
 392. Raging Bolt            - Electric/Dragon
 393. Iron Boulder           - Rock/Psychic
