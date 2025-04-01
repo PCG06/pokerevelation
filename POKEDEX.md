@@ -33,7 +33,7 @@
 022. Meowth                 - Normal
     - Alolan Meowth         - Dark
     - Galarian Meowth       - Steel
-23. Persian                 - Normal
+023. Persian                 - Normal
     - Alolan Persian        - Dark
 024. Perrserker             - Steel
 025. Mankey                 - Fighting
@@ -47,7 +47,7 @@
     - Galarian Slowpoke     - Poison/Psychic
 033. Slowbro                - Water/Psychic
     - Mega Slowbro          - Water/Psychic
-    - Galarian Slowpoke     - Poison/Psychic
+    - Galarian Slowbro      - Poison/Psychic
 034. Slowking               - Water/Psychic
     - Galarian Slowking     - Poison/Psychic
 035. Magnemite              - Electric/Steel
@@ -125,17 +125,17 @@
 097. Azumarill              - Water/Fairy
 098. Bonsly                 - Rock
 099. Sudowoodo              - Rock
-0100. Aipom                  - Normal
-11. Ambipom                - Normal
-12. Unown                  - Psychic
-13. Girafarig              - Normal/Psychic
-14. Farigiraf              - Normal/Psychic
-15. Dunsparce              - Normal
-16. Dudunsparce            - Normal
+100. Aipom                  - Normal
+101. Ambipom                - Normal
+102. Unown                  - Psychic
+103. Girafarig              - Normal/Psychic
+104. Farigiraf              - Normal/Psychic
+105. Dunsparce              - Normal
+106. Dudunsparce            - Normal
     - Dudunsparce Three     - Normal
-17. Gligar                 - Ground/Flying
-18. Gliscor                - Ground/Flying
-19. Shuckle                - Bug/Rock
+107. Gligar                 - Ground/Flying
+108. Gliscor                - Ground/Flying
+109. Shuckle                - Bug/Rock
 110. Sneasel                - Dark/Ice
     - Hisuian Sneasel       - Fighting/Poison
 111. Weavile                - Dark/Ice
@@ -276,9 +276,9 @@
 219. Krokorok               - Ground/Dark
 220. Krookodile             - Ground/Dark
 221. Zorua                  - Dark
-    - Zorua                 - Normal/Ghost
+    - Hisuian Zorua         - Normal/Ghost
 222. Zoroark                - Dark
-    - Zoroark               - Normal/Ghost
+    - Hisuian Zoroark       - Normal/Ghost
 223. Ferroseed              - Grass/Steel
 224. Ferrothorn             - Grass/Steel
 225. Golett                 - Ground/Ghost
@@ -364,18 +364,18 @@
 297. Buzzwole               - Bug/Fighting
 298. Pheromosa              - Bug/Fighting
 299. Xurkitree              - Electric
-2100. Celesteela             - Steel/Flying
-31. Kartana                - Grass/Steel
-32. Guzzlord               - Dark/Dragon
-33. Necrozma               - Psychic
+300. Celesteela             - Steel/Flying
+301. Kartana                - Grass/Steel
+302. Guzzlord               - Dark/Dragon
+303. Necrozma               - Psychic
     - Dusk Mane Necrozma    - Psychic/Steel
     - Dawn Wings Necrozma   - Psychic/Ghost
-34. Poipole                - Poison
-35. Naganadel              - Poison/Dragon
-36. Stakataka              - Rock/Steel
-37. Blacephalon            - Fire/Ghost
-38. Meltan                 - Steel
-39. Melmetal               - Steel
+304. Poipole                - Poison
+305. Naganadel              - Poison/Dragon
+306. Stakataka              - Rock/Steel
+307. Blacephalon            - Fire/Ghost
+308. Meltan                 - Steel
+309. Melmetal               - Steel
 310. Grookey                - Grass
 311. Thwackey               - Grass
 312. Rillaboom              - Grass
