@@ -405,71 +405,71 @@
 335. Arctovish              - Ice/Water
 336. Duraludon              - Steel/Dragon
 337. Archaludon              - Steel/Dragon
-337. Dreepy                 - Dragon/Ghost
-338. Drakloak               - Dragon/Ghost
-339. Dragapult              - Dragon/Ghost
-340. Kubfu                  - Fighting
-341. Urshifu                - Fighting/Dark
+338. Dreepy                 - Dragon/Ghost
+339. Drakloak               - Dragon/Ghost
+340. Dragapult              - Dragon/Ghost
+341. Kubfu                  - Fighting
+342. Urshifu                - Fighting/Dark
     - Urshifu Single Strike - Fighting/Water
-342. Enamorus               - Fairy/Flying
+343. Enamorus               - Fairy/Flying
     - Enamorus Therian      - Fairy/Flying
-343. Sprigatito             - Grass
-344. Floragato              - Grass
-345. Meowscarada            - Grass/Dark
-346. Fuecoco                - Fire
-347. Crocalor               - Fire
-348. Skeledirge             - Fire/Ghost
-349. Quaxly                 - Water
-350. Quaxwell               - Water/Fighting
-351. Quaquaval              - Water/Fighting
-352. Nymble                 - Bug
-353. Lokix                  - Bug/Dark
-354. Charcadet              - Fire
-355. Armarouge              - Fire/Psychic
-356. Ceruledge              - Fire/Ghost
-357. Tadbulb                - Electric
-358. Bellibolt              - Electric
-359. Finizen                - Water
-360. Palafin                - Water
+344. Sprigatito             - Grass
+345. Floragato              - Grass
+346. Meowscarada            - Grass/Dark
+347. Fuecoco                - Fire
+348. Crocalor               - Fire
+349. Skeledirge             - Fire/Ghost
+350. Quaxly                 - Water
+351. Quaxwell               - Water/Fighting
+352. Quaquaval              - Water/Fighting
+353. Nymble                 - Bug
+354. Lokix                  - Bug/Dark
+355. Charcadet              - Fire
+356. Armarouge              - Fire/Psychic
+357. Ceruledge              - Fire/Ghost
+358. Tadbulb                - Electric
+359. Bellibolt              - Electric
+360. Finizen                - Water
+361. Palafin                - Water
     - Palafin Hero          - Water
-361. Greavard               - Ghost
-362. Houndstone             - Ghost
-363. Dondozo                - Water
-364. Tatsugiri              - Dragon/Water
+362. Greavard               - Ghost
+363. Houndstone             - Ghost
+364. Dondozo                - Water
+365. Tatsugiri              - Dragon/Water
     - Tatsugiri Droopy      - Dragon/Water
     - Tatsugiri Stretchy    - Dragon/Water
-365. Great Tusk             - Ground/Fighting
-366. Scream Tail            - Fairy/Psychic
-367. Brute Bonnet           - Grass/Dark
-368. Flutter Mane           - Fairy/Ghost
-369. Slither Wing           - Bug/Fighting
-370. Sandy Shocks           - Electric/Ground
-371. Iron Treads            - Ground/Steel
-372. Iron Bundle            - Ice/Water
-373. Iron Hands             - Fighting/Electric
-374. Iron Jugulis           - Dark/Flying
-375. Iron Moth              - Fire/Poison
-376. Iron Thorns            - Electric/Steel
-377. Frigibax               - Dragon/Ice
-378. Arctibax               - Dragon/Ice
-379. Baxcalibur             - Dragon/Ice
-380. Gimmighoul             - Ghost
+366. Great Tusk             - Ground/Fighting
+367. Scream Tail            - Fairy/Psychic
+368. Brute Bonnet           - Grass/Dark
+369. Flutter Mane           - Fairy/Ghost
+370. Slither Wing           - Bug/Fighting
+371. Sandy Shocks           - Electric/Ground
+372. Iron Treads            - Ground/Steel
+373. Iron Bundle            - Ice/Water
+374. Iron Hands             - Fighting/Electric
+375. Iron Jugulis           - Dark/Flying
+376. Iron Moth              - Fire/Poison
+377. Iron Thorns            - Electric/Steel
+378. Frigibax               - Dragon/Ice
+379. Arctibax               - Dragon/Ice
+380. Baxcalibur             - Dragon/Ice
+381. Gimmighoul             - Ghost
     - Gimmighoul Roaming    - Ghost
-381. Gholdengo              - Steel/Ghost
-382. Wo-Chien               - Dark/Grass
-383. Chien-Pao              - Dark/Ice
-384. Ting-Lu                - Dark/Ground
-385. Chi-Yu                 - Dark/Fire
-386. Roaring Moon           - Dragon/Dark
-387. Iron Valiant           - Fairy/Fighting
-388. Walking Wake           - Water/Dragon
-389. Iron Leaves            - Grass/Psychic
-390. Ogerpon                - Grass
+382. Gholdengo              - Steel/Ghost
+383. Wo-Chien               - Dark/Grass
+384. Chien-Pao              - Dark/Ice
+385. Ting-Lu                - Dark/Ground
+386. Chi-Yu                 - Dark/Fire
+387. Roaring Moon           - Dragon/Dark
+388. Iron Valiant           - Fairy/Fighting
+389. Walking Wake           - Water/Dragon
+390. Iron Leaves            - Grass/Psychic
+391. Ogerpon                - Grass
     - Ogerpon Wellspring    - Grass/Water
     - Ogerpon Hearthflame   - Grass/Fire
     - Ogerpon Cornerstone   - Grass/Rock
-391. Gouging Fire           - Fire/Dragon
-392. Raging Bolt            - Electric/Dragon
-393. Iron Boulder           - Rock/Psychic
-394. Iron Crown             - Steel/Psychic
+392. Gouging Fire           - Fire/Dragon
+393. Raging Bolt            - Electric/Dragon
+394. Iron Boulder           - Rock/Psychic
+395. Iron Crown             - Steel/Psychic
 ```
