@@ -1101,6 +1101,7 @@ EventScript_VsSeekerChargingDone::
 
 EventScript_GetPokemonFromCodeEntry::
     lockall
+	goto_if_eq VAR_NO_OF_CATCHES, 0, EventScript_CodeCantBuyPkmn
     msgbox EnterCode_EnterCodeText, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
     special EnterCode
@@ -1118,6 +1119,7 @@ EventScript_ReceivedMon::
 	message EnterCode_ReceivedGiftMon
 	givemon VAR_TEMP_TRANSFERRED_SPECIES, 100, ITEM_NONE
 	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
+	subvar VAR_NO_OF_CATCHES, 1
 	waitfanfare
     goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMonFromCode
     goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMonFromCode
@@ -1144,12 +1146,14 @@ EventScript_TransferredToPC::
 	end
 
 EventScript_CodeFailed::
-    msgbox EnterCode_FailedText, MSGBOX_DEFAULT
+    msgbox EnterCode_FailedText, MSGBOX_AUTOCLOSE
     releaseall
     end
 
+EventScript_CodeCantBuyPkmn::
+	msgbox Text_CantBuyPkmn, MSGBOX_DEFAULT
 EventScript_CodeExit::
-	msgbox Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	msgbox Text_PleaseVisitAgain, MSGBOX_AUTOCLOSE
     releaseall
     end
 
@@ -1168,6 +1172,10 @@ EnterCode_SucceededText:
 
 EnterCode_ReceivedGiftMon:
 	.string "{PLAYER} received a {STR_VAR_1}!$"
+
+Text_CantBuyPkmn:
+	.string "I'm sorry, but you cannot purchase a\n"
+	.string "Pokémon right now.$"
 
 Text_PleaseVisitAgain:
 	.string "Please visit again!$"

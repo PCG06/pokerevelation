@@ -15838,6 +15838,8 @@ static void Cmd_handleballthrow(void)
 
     u16 ballMultiplier = 100;
     s8 ballAddition = 0;
+    u16 catchesLeft = VarGet(VAR_NO_OF_CATCHES);
+    catchesLeft = (catchesLeft != 1) ? catchesLeft - 1 : 0;
 
     if (gBattleControllerExecFlags)
         return;
@@ -16058,6 +16060,7 @@ static void Cmd_handleballthrow(void)
             BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_3_SHAKES_SUCCESS);
             MarkBattlerForControllerExec(gBattlerAttacker);
             TryBattleFormChange(gBattlerTarget, FORM_CHANGE_END_BATTLE);
+            VarSet(VAR_NO_OF_CATCHES, catchesLeft);
             gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
             SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &ballId);
 
@@ -16117,6 +16120,7 @@ static void Cmd_handleballthrow(void)
                     gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = TRUE;
 
                 TryBattleFormChange(gBattlerTarget, FORM_CHANGE_END_BATTLE);
+                VarSet(VAR_NO_OF_CATCHES, catchesLeft);
                 gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
                 SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &ballId);
 
