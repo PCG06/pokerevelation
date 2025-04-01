@@ -2,6 +2,7 @@
 
 - Does not include the upcoming Fakemon, as of yet.
 
+```
 001. Bulbasaur              - Grass/Poison
 002. Ivysaur                - Grass/Poison
 003. Venusaur               - Grass/Poison
@@ -462,3 +463,4 @@
 391. Raging Bolt            - Electric/Dragon
 392. Iron Boulder           - Rock/Psychic
 393. Iron Crown             - Steel/Psychic
+```
