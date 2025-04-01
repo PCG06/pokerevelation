@@ -2,12 +2,12 @@
 language = "en"
 multilingual = false
 src = "."
-title = "pokeemerald-expansion"
+title = "Pokémon Revelation"
 
 [output.html]
-git-repository-url = "https://github.com/rh-hideout/pokeemerald-expansion"
-edit-url-template = "https://github.com/rh-hideout/pokeemerald-expansion/edit/master/docs/{path}"
-site-url = "/pokeemerald-expansion/"
+git-repository-url = "https://github.com/TheMangoDevs/pokerevelation"
+edit-url-template = "https://github.com/TheMangoDevs/pokerevelation/edit/upcoming/docs/{path}"
+site-url = "/pokerevelation/"
 
 [preprocessor.fix_links]
 command = "python3 fix_links.py"
