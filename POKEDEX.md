@@ -404,6 +404,7 @@
 334. Dracovish              - Water/Dragon
 335. Arctovish              - Ice/Water
 336. Duraludon              - Steel/Dragon
+337. Archaludon              - Steel/Dragon
 337. Dreepy                 - Dragon/Ghost
 338. Drakloak               - Dragon/Ghost
 339. Dragapult              - Dragon/Ghost
@@ -453,6 +454,7 @@
 378. Arctibax               - Dragon/Ice
 379. Baxcalibur             - Dragon/Ice
 380. Gimmighoul             - Ghost
+    - Gimmighoul Roaming    - Ghost
 381. Gholdengo              - Steel/Ghost
 382. Wo-Chien               - Dark/Grass
 383. Chien-Pao              - Dark/Ice
