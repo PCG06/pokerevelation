@@ -39,7 +39,7 @@ EventScript_NicknamePartyMon::
 
 EventScript_NicknameBoxMonYesNo::
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_NicknameBoxMon
+	call_if_eq VAR_RESULT, YES, EventScript_NicknameBoxMon
 	goto Common_EventScript_TransferredToPC
 	return
 
