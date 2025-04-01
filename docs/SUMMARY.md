@@ -1,5 +1,6 @@
 # Summary
 
+- [POKEDEX](./POKEDEX.md)
 - [README](./README.md)
 - [Installation](./INSTALL.md)
     - [Setting up WSL1 (Legacy Portion)](./legacy_WSL1_INSTALL.md)
