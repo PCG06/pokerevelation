@@ -1,4 +1,4 @@
 # Summary
 
 - [Pokémon Revelation](./README.md)
-- [Pokédex](./revelation/POKEDEX.md)
+- [Pokédex](./revelation/pokedex.md)
