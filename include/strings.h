@@ -652,10 +652,7 @@ extern const u8 gText_Phoebe[];
 extern const u8 gText_Glacia[];
 
 extern const u8 gText_MoveRelearnerPkmnLearnedMove[];
-extern const u8 gText_MoveRelearnerPkmnTryingToLearnMove[];
-extern const u8 gText_MoveRelearnerStopTryingToTeachMove[];
 extern const u8 gText_TeachWhichMoveToPkmn[];
-extern const u8 gText_MoveRelearnerGiveUp[];
 extern const u8 gText_MoveRelearnerTeachMoveConfirm[];
 extern const u8 gText_MoveRelearnerBattleMoves[];
 extern const u8 gText_MoveRelearnerPP[];
