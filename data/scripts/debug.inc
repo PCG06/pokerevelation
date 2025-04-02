@@ -137,8 +137,13 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	setvar VAR_NO_OF_CATCHES, 2
+	goto_if_set B_FLAG_NO_BAG_USE, EventScript_ClearFlag
+	setflag B_FLAG_NO_BAG_USE
 	release
+	end
+
+EventScript_ClearFlag:
+	clearflag B_FLAG_NO_BAG_USE
 	end
 
 Debug_EventScript_Script_2::
