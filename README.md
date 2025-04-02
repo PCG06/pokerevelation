@@ -26,5 +26,4 @@ Based off RHH's [pokeemerald-expansion](https://github.com/rh-hideout/pokeemeral
     - Regional dex of 395 Pokémon from Generations 1-9!
     - Custom Gym Leaders! `*`
     - Custom Pokémon League tournament! `*`
-    - Evolution and Catching Limitation!
     - New events! `*`
