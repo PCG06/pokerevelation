@@ -1,3 +1,5 @@
+# This script converts the Pokémon dex from a Markdown format to a CSV format.
+
 import csv
 
 input_file = "docs/revelation/pokedex.md"
@@ -31,4 +33,4 @@ with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'a', n
 
         writer.writerow([dex_no, name, type1, type2])
 
-print(f"Converted {input_file} to {output_file}.")
+print(f"Converted {input_file} to {output_file}")
