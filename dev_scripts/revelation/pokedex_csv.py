@@ -1,9 +1,13 @@
 # This script converts the Pokémon dex from a Markdown format to a CSV format.
 
 import csv
+import os
+
+# Create directory garbodor if it doesn't exist
+os.makedirs("garbodor", exist_ok=True)
 
 input_file = "docs/revelation/pokedex.md"
-output_file = "pokedex.csv"
+output_file = "garbodor/pokedex.csv"
 
 with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
     writer = csv.writer(outfile)
@@ -18,7 +22,8 @@ with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'a', n
         if '|' not in line or '---' in line:
             continue  # Skip invalid lines
 
-        parts = [p.strip() for p in line.split('|')[1:-1]]  # Remove empty first & last elements
+        # Remove empty first & last elements
+        parts = [p.strip() for p in line.split('|')[1:-1]]
         if len(parts) < 3:
             continue
 

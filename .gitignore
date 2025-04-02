@@ -48,3 +48,4 @@ tools/trainerproc/trainerproc
 __pycache__
 data/maps/*/scripts.inc
 *:Zone.Identifier
+garbodor/
