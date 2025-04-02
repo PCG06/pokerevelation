@@ -4625,7 +4625,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
     u16 evolutionTracker = GetMonData(mon, MON_DATA_EVOLUTION_TRACKER, 0);
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
 
-    if (evolutions == NULL || VarGet(VAR_NO_OF_EVOS) == 0)
+    if (evolutions == NULL)
         return SPECIES_NONE;
 
     if (tradePartner != NULL)
