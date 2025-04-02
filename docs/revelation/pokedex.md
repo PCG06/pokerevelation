@@ -386,8 +386,8 @@
 | 316    | Sobble                 | Water      |            |
 | 317    | Drizzile               | Water      |            |
 | 318    | Inteleon               | Water      |            |
-| 319    | Rookidee               | Flying     | Normal     |
-| 320    | Corvisquire            | Flying     | Normal     |
+| 319    | Rookidee               | Flying     |            |
+| 320    | Corvisquire            | Flying     |            |
 | 321    | Corviknight            | Flying     | Steel      |
 | 322    | Arrokuda               | Water      |            |
 | 323    | Barraskewda            | Water      |            |
