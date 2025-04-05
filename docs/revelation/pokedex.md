@@ -208,6 +208,7 @@
 | 165    | Feebas                 | Water      |            |
 | 166    | Milotic                | Water      |            |
 | 167    | Absol                  | Dark       |            |
+|        | Mega Absol             | Dark       |            |
 | 168    | Snorunt                | Ice        |            |
 | 169    | Glalie                 | Ice        |            |
 |        | Mega Glalie            | Ice        |            |
