@@ -33,8 +33,6 @@ import typing
 
 
 CONFIG_ENABLED_PAT = re.compile(r"#define P_LEARNSET_HELPER_TEACHABLE\s+(?P<cfg_val>[^ ]*)")
-INCFILE_HAS_TUTOR_PAT = re.compile(r"special ChooseMonForMoveTutor")
-INCFILE_MOVE_PAT = re.compile(r"setvar VAR_0x8005, (MOVE_.*)")
 TMHM_MACRO_PAT = re.compile(r"F\((\w+)\)")
 UNIVERSAL_MOVES_PAT = re.compile(r"static const u16 sUniversalMoves\[\]\s*=\s*{((.|\n)*?)\n};")
 TEACHABLE_ARRAY_DECL_PAT = re.compile(r"(?P<decl>static const u16 s(?P<name>\w+)TeachableLearnset\[\]) = {[\s\S]*?};")
@@ -53,17 +51,16 @@ def enabled() -> bool:
 
 def extract_repo_tutors() -> typing.Generator[str, None, None]:
     """
-    Yield MOVE constants which are *likely* assigned to a move tutor. This isn't
-    foolproof, but it's suitable.
+    Yield all MOVE constants listed in src/data/tutor_moves.h.
     """
-    for inc_fname in chain(glob.glob("./data/scripts/*.inc"), glob.glob("./data/maps/*/scripts.inc")):
-        with open(inc_fname, "r") as inc_fp:
-            incfile = inc_fp.read()
-            if not INCFILE_HAS_TUTOR_PAT.search(incfile):
-                continue
-
-            for move in INCFILE_MOVE_PAT.finditer(incfile):
-                yield move.group(1)
+    with open("./src/data/tutor_moves.h", "r") as tutor_fp:
+        tutor_moves = tutor_fp.read()
+        match_it = re.finditer(r"MOVE_[A-Z0-9_]+", tutor_moves)
+        
+        for match in match_it:
+            # Exclude TUTOR_MOVE_COUNT from the list
+            if match.group(0) != "TUTOR_MOVE_COUNT":
+                yield match.group(0)
 
 
 def extract_repo_tms() -> typing.Generator[str, None, None]:

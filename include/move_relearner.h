@@ -9,6 +9,6 @@ u32 CheckDynamicMoveRelearnerType(u32 chosenMove);
 
 extern u8 gOriginSummaryScreenPage;
 
-#define MAX_RELEARNER_MOVES 250
+#define MAX_RELEARNER_MOVES 300
 
 #endif //GUARD_MOVE_RELEARNER_H

@@ -96,6 +96,7 @@ EWRAM_DATA u16 gFollowerSteps = 0;
 EWRAM_DATA u32 gMonPersonality = 0;
 
 #include "data/abilities.h"
+#include "data/tutor_moves.h"
 
 // Used in an unreferenced function in RS.
 // Unreferenced here and in FRLG.
@@ -5744,10 +5745,11 @@ static const u16 sUniversalMoves[] =
 
 u8 CanLearnTeachableMove(u16 species, u16 move)
 {
-    if (species == SPECIES_EGG)
-    {
+    if (move == MOVE_NONE)
         return FALSE;
-    }
+
+    if (species == SPECIES_EGG)
+        return FALSE;
     else if (species == SPECIES_MEW)
     {
         switch (move)
@@ -5849,6 +5851,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     u16 learnedMoves[MAX_MON_MOVES];
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u32 numMoves = 0;
+    u16 moveId;
     u32 i, j;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -5860,9 +5863,10 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     {
         if (learnset[i].level <= 100)
         {
-            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++);
+            moveId = learnset[i].move;
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
             if (j == MAX_MON_MOVES)
-                moves[numMoves++] = learnset[i].move;
+                moves[numMoves++] = moveId;
         }
     }
 
@@ -5872,16 +5876,29 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     {
         for (i = 0; eggMoves[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
         {
-            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != eggMoves[i]; j++);
+            moveId = eggMoves[i];
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
             if (j == MAX_MON_MOVES)
-                moves[numMoves++] = eggMoves[i];
+                moves[numMoves++] = moveId;
         }
     }
 
     // TM moves
     for (i = ITEM_TM01; i <= ITEM_HM08 && numMoves < MAX_RELEARNER_MOVES; i++)
     {
-        u16 moveId = ItemIdToBattleMoveId(i);
+        moveId = ItemIdToBattleMoveId(i);
+        if (CanLearnTeachableMove(species, moveId))
+        {
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
+            if (j == MAX_MON_MOVES)
+                moves[numMoves++] = moveId;
+        }
+    }
+
+    // Tutor moves
+    for (i = 0; i < TUTOR_MOVE_COUNT; i++)
+    {
+        moveId = gTutorMoves[i];
         if (CanLearnTeachableMove(species, moveId))
         {
             for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
@@ -5893,15 +5910,24 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     // Remove duplicates
     for (i = 0; i < numMoves; i++)
     {
-        for (j = i + 1; j < numMoves; j++)
+        if (moves[i] == MOVE_NONE || moves[i] == MOVE_UNAVAILABLE)
+        {
+            moves[i] = moves[--numMoves];
+            i--;
+            continue;
+        }
+    
+        for (j = 0; j < i; j++)
         {
             if (moves[i] == moves[j])
             {
-                moves[j] = moves[--numMoves];
-                j--;
+                moves[i] = moves[--numMoves];
+                i--;
+                break;
             }
         }
     }
+    
 
     SortMovesAlphabetically(moves, numMoves);
     return numMoves;
