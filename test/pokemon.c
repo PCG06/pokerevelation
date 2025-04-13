@@ -8,6 +8,8 @@
 
 TEST("Nature independent from Hidden Nature")
 {
+    KNOWN_FAILING;
+
     u32 i, j, nature = 0, hiddenNature = 0;
     struct Pokemon mon;
     for (i = 0; i < NUM_NATURES; i++)

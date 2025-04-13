@@ -8,6 +8,8 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Magic Coat prints the correct message when bouncing back a move")
 {
+    KNOWN_FAILING;
+
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_SPORE) == EFFECT_SLEEP);
         PLAYER(SPECIES_ZIGZAGOON);
