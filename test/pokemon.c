@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "event_data.h"
+#include "move_relearner.h"
 #include "pokemon.h"
 #include "test/overworld_script.h"
 #include "test/test.h"

@@ -14,6 +14,7 @@ jobs:
       MODERN: 0
       COMPARE: 0
       UNUSED_ERROR: 1
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,29 +23,24 @@ jobs:
         run: |
           sudo apt update
           sudo apt-get update
-          sudo apt install -y build-essential libpng-dev libelf-dev libgtk-3-dev jq curl
-          # Install GitHub CLI
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /usr/share/keyrings/githubcli-archive-keyring.gpg >/dev/null
-          echo "deb [signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
-          sudo apt-get update
-          sudo apt-get install -y gh
+          sudo apt install -y build-essential libpng-dev libelf-dev libgtk-3-dev jq curl zip
 
       - name: ROM
+        id: rom
         env:
           MODERN: 1
           COMPARE: 0
         run: make -j8 -O all
 
-      # Executes only if previous steps fail
-      - name: Send failure notification to Discord
-        if: failure()
+      - name: Send build failure notification to Discord
+        if: failure() && steps.rom.outcome == 'failure'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
                  \"embeds\": [{
-                   \"title\": \"CI Job Failed\",
-                   \"description\": \"A CI job has failed.\",
+                   \"title\": \"CI Build Failure\",
+                   \"description\": \"CI has failed build.\",
                    \"color\": 16711680,
                    \"fields\": [
                      {
@@ -67,41 +63,82 @@ jobs:
                }" \
                ${{ secrets.DISCORD_BUILD_SECRET }}
 
-      - name: Upload ROM
-        uses: actions/upload-artifact@v4
-        with:
-          name: pokerevelation
-          path: pokerevelation.gba
-
-      - name: Get Artifact ID
-        id: artifact
+      - name: Zip the ROM
         run: |
-          artifact_id=$(gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts | jq -r '.artifacts[0].id')
-          echo "artifact_id=$artifact_id" >> $GITHUB_ENV
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+          COMMIT_HASH="${GITHUB_SHA:0:7}"
+          cp pokerevelation.gba Pokemon_Revelation.gba
+          zip Pokemon_Revelation.zip Pokemon_Revelation.gba
+          echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
+
+      - name: Upload to Pixeldrain
+        id: upload
+        run: |
+          echo "Uploading Pokemon_Revelation.zip to Pixeldrain..."
+          RESPONSE=$(curl -s -u user:${{ secrets.PXDRAN_API }} -F "file=@Pokemon_Revelation.zip" https://pixeldrain.com/api/file)
+          echo "Pixeldrain raw response:"
+          echo "$RESPONSE" | jq .
+          DOWNLOAD_ID=$(echo "$RESPONSE" | jq -r '.id')
+          DOWNLOAD_URL="https://pixeldrain.com/api/file/${DOWNLOAD_ID}?download"
+          echo "DOWNLOAD_URL=$DOWNLOAD_URL" >> $GITHUB_ENV
+
       - name: Send patch creation notification to Discord
         if: success()
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                 \"embeds\": [{
+                 \"embeds\": [ {
                    \"title\": \"Patch created!\",
                    \"color\": 65280,
                    \"fields\": [
-                   {
-                     \"name\": \"Download:\",
-                     \"value\": \"[__**Click here**__](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ env.artifact_id }})\",
-                     \"inline\": false
-                   },
-                   {
-                     \"name\": \"Commit hash:\",
-                     \"value\": \"[${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\",
-                     \"inline\": false
-                   }
+                     {
+                       \"name\": \"Download:\",
+                       \"value\": \"[__**Click here**__](${{ env.DOWNLOAD_URL }})\",
+                       \"inline\": false
+                     },
+                     {
+                       \"name\": \"Commit hash:\",
+                       \"value\": \"[\`${{ env.COMMIT_HASH }}\`](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\",
+                       \"inline\": false
+                     }
                    ]
                  }]
                }" \
                ${{ secrets.DISCORD_PATCH_SECRET }}
+
+      - name: Test
+        id: test
+        env:
+          TEST: 1
+        run: make -j${nproc} check
+
+      - name: Send tests failure notification to Discord
+        if: failure() && steps.test.outcome == 'failure'
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{
+                 \"embeds\": [{
+                   \"title\": \"CI Tests Failure\",
+                   \"description\": \"CI job failed test.\",
+                   \"color\": 16711680,
+                   \"fields\": [
+                     {
+                       \"name\": \"Commit hash:\",
+                       \"value\": \"[${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\",
+                       \"inline\": false
+                     },
+                     {
+                       \"name\": \"Committed by:\",
+                       \"value\": \"[${{ github.actor }}](https://github.com/${{ github.actor }})\",
+                       \"inline\": false
+                     },
+                     {
+                       \"name\": \"Workflow run:\",
+                       \"value\": \"[View workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\",
+                       \"inline\": false
+                     }
+                   ]
+                 }]
+               }" \
+               ${{ secrets.DISCORD_BUILD_SECRET }}
