@@ -38,7 +38,7 @@ jobs:
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                 \"embeds\": [{
+                 \"embeds\": [ {
                    \"title\": \"CI Build Failure\",
                    \"description\": \"CI has failed build.\",
                    \"color\": 16711680,
@@ -64,6 +64,7 @@ jobs:
                ${{ secrets.DISCORD_BUILD_SECRET }}
 
       - name: Zip the ROM
+        shell: bash
         run: |
           COMMIT_HASH="${GITHUB_SHA:0:7}"
           cp pokerevelation.gba Pokemon_Revelation.gba
@@ -110,7 +111,7 @@ jobs:
         id: test
         env:
           TEST: 1
-        run: make -j${nproc} check
+        run: make -j$(nproc) check
 
       - name: Send tests failure notification to Discord
         if: failure() && steps.test.outcome == 'failure'
@@ -118,7 +119,7 @@ jobs:
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                 \"embeds\": [{
+                 \"embeds\": [ {
                    \"title\": \"CI Tests Failure\",
                    \"description\": \"CI job failed test.\",
                    \"color\": 16711680,
