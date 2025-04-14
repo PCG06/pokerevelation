@@ -33,7 +33,7 @@ jobs:
         run: make -j8 -O all
 
       - name: Send build failure notification to Discord
-        if: failure() && steps.rom.outcome == 'failure'
+        if: steps.rom.outcome == 'failure'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
@@ -67,7 +67,7 @@ jobs:
         shell: bash
         run: |
           COMMIT_HASH="${GITHUB_SHA:0:7}"
-          cp pokerevelation.gba Pokemon_Revelation.gba
+          cp pokerevelation.gba pokerevelation_${COMMIT_HASH}.gba
           zip Pokemon_Revelation.zip Pokemon_Revelation.gba
           echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
 
@@ -114,7 +114,7 @@ jobs:
         run: make -j$(nproc) check
 
       - name: Send tests failure notification to Discord
-        if: failure() && steps.test.outcome == 'failure'
+        if: steps.test.outcome == 'failure'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
