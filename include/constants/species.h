@@ -1641,15 +1641,15 @@
 // Skibidmons
 
 #define SPECIES_MEWTWO_APOCALYPSE                       1524
-#define SPECIES_AMANISTE                                1525
-#define SPECIES_STRATOSPIRA                             1526
-#define SPECIES_MANTISTRIKE                             1527
-#define SPECIES_PHANTOMAR                               1528
-#define SPECIES_E                                       1529
-#define SPECIES_ZOJZION                                 1530
-#define SPECIES_PYROLIN                                 1531
+#define SPECIES_STRATOSPIRA                             1525
+#define SPECIES_PHANTOMAR                               1526
+#define SPECIES_LEVIADON                                1527
+#define SPECIES_ZOJZION                                 1528
+#define SPECIES_MANTISTRIKE                             1529
+#define SPECIES_PYROLIN                                 1530
+#define SPECIES_AMANISTE                                1531
 
-#define SPECIES_EGG                                     (SPECIES_PYROLIN + 1)
+#define SPECIES_EGG                                     (SPECIES_AMANISTE + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

@@ -604,4 +604,6 @@
 #define P_FAMILY_TERAPAGOS               P_GEN_9_POKEMON
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
 
+#define P_REVELATION_MONS                TRUE // Dex
+
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H
