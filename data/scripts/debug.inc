@@ -147,11 +147,16 @@ EventScript_ClearFlag:
 	end
 
 Debug_EventScript_Script_2::
-	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
+	cleartrainerflag TRAINER_SAWYER_1
+	trainerbattle_no_intro TRAINER_SAWYER_1, Text_Defeat
 	release
 	end
 
+Text_Defeat:
+	.string "Play YAEEH$"
+
 Debug_EventScript_Script_3::
+	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
 	release
 	end
 

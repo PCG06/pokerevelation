@@ -43,6 +43,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "constants/abilities.h"
 #include "caps.h"
 #include "menu.h"
 #include "pokemon_summary_screen.h"
@@ -1816,39 +1817,27 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     u32 atkAbility = GetBattlerAbility(battler);
     u32 holdEffectAtk = GetBattlerHoldEffect(battler, TRUE);
     //u8 cat = gMovesInfo[move].category;
-    u32 moveEffect = gMovesInfo[move].effect;
+    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
 
     // Initialize DamageCalculationData struct
     struct DamageCalculationData damageCalcData = {
         .battlerAtk = battler,
         .battlerDef = BATTLE_OPPOSITE(battler),
         .move = move,
-        .moveType = gMovesInfo[move].type,
+        .moveType = CheckDynamicMoveType(mon, move, battler),
         .isCrit = FALSE,  // Not relevant for this calculation
-        .randomFactor = 0, // Unused in this context
-        .updateFlags = 0, // No special flags needed
-        .padding = 0  // Zero padding for safety
+        .randomFactor = FALSE, // Unused in this context
+        .updateFlags = FALSE, // No special flags needed
+        .padding = FALSE  // Zero padding for safety
     };
 
-    if (B_DYNAMIC_MOVE_INFO
-        && move != MOVE_NONE && move != 0xFFFF && moveEffect != EFFECT_KNOCK_OFF 
-        && moveEffect != EFFECT_BRINE && moveEffect != EFFECT_LOW_KICK)
+    if (B_DYNAMIC_MOVE_INFO && move != MOVE_NONE && move != 0xFFFF)
     {
         if (gMovesInfo[move].category == DAMAGE_CATEGORY_STATUS)
             pwr = 0;
-        else 
-        {
-            // NON-STATUS MOVES: Modify both power and accuracy
-            pwr = CalcMoveBasePowerAfterModifiers(&damageCalcData, atkAbility, 0, holdEffectAtk, gBattleWeather);
-
-            if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && moveEffect == EFFECT_EARTHQUAKE)
-                pwr /= 2;
-        }
-
-        acc = GetTotalAccuracy(damageCalcData.battlerAtk, damageCalcData.battlerDef, damageCalcData.move, atkAbility, 0, holdEffectAtk, HOLD_EFFECT_NONE);
-
-        if (acc > 100)
-            acc = 100;
+        else // NON-STATUS MOVES: Modify both power and accuracy
+            pwr = CalcMoveBasePowerAfterModifiers(&damageCalcData, atkAbility, ABILITY_NONE, holdEffectAtk, gBattleWeather);
+        acc = GetTotalAccuracy(damageCalcData.battlerAtk, damageCalcData.battlerDef, damageCalcData.move, atkAbility, ABILITY_NONE, holdEffectAtk, HOLD_EFFECT_NONE);
     }
     else
     {
