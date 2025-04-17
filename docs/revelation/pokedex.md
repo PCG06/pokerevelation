@@ -105,6 +105,7 @@
 | 079    | Mewtwo                 | Psychic    |            |
 |        | Mega Mewtwo X          | Psychic    | Fighting   |
 |        | Mega Mewtwo Y          | Psychic    |            |
+|        | Mewtwo Apocalypse      | Dark       | Fire       |
 | 080    | Mew                    | Psychic    |            |
 | 081    | Chikorita              | Grass      |            |
 | 082    | Bayleef                | Grass      |            |
@@ -474,3 +475,10 @@
 | 393    | Raging Bolt            | Electric   | Dragon     |
 | 394    | Iron Boulder           | Rock       | Psychic    |
 | 395    | Iron Crown             | Steel      | Psychic    |
+| 396    | Stratospira            | Steel      | Flying     |
+| 397    | Phantomar              | Ghost      | Ground     |
+| 398    | Leviadon               | Dragon     | Water      |
+| 399    | Zojzion                | Electric   | Poison     |
+| 400    | Mantistrike            | Water      | Rock       |
+| 401    | Pyrolin                | Fire       | Steel      |
+| 402    | Amaniste               | Fairy      | Poison     |
