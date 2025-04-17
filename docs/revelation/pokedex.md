@@ -1,6 +1,14 @@
 # Pokédex for Pokémon Revelation
 
-- Does not include the upcoming Fakemon, as of yet.
+### Includes the following Fakemon
+- Mewtwo Apocalypse
+- Stratospira
+- Phantomar
+- Leviadon
+- Zojzion
+- Mantistrike
+- Pyrolin
+- Amaniste
 
 |Dex No. | Pokémon                | Type 1     | Type 2     |
 |--------|------------------------|------------|------------|
