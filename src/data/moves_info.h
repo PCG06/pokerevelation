@@ -105,6 +105,18 @@ static const u8 sFeintDescription[] = _(
     "An attack that hits foes\n"
     "using moves like Protect.");
 
+static const u8 sThunderboltDescription[] = _(
+    "A strong electrical attack\n"
+    "that may paralyze the foe.");
+
+static const u8 sWoodHammerDescription[] = _(
+    "Slams the body into a foe.\n"
+    "The user gets hurt too.");
+
+static const u8 sJetPunchDescription[] = _(
+    "A punch is thrown at blinding\n"
+    "speed to strike first.");
+
 const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 {
     [MOVE_NONE] =
@@ -2263,9 +2275,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_THUNDERBOLT] =
     {
         .name = COMPOUND_STRING("Thunderbolt"),
-        .description = COMPOUND_STRING(
-            "A strong electrical attack\n"
-            "that may paralyze the foe."),
+        .description = sThunderboltDescription,
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95,
         .type = TYPE_ELECTRIC,
@@ -11631,9 +11641,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_WOOD_HAMMER] =
     {
         .name = COMPOUND_STRING("Wood Hammer"),
-        .description = COMPOUND_STRING(
-            "Slams the body into a foe.\n"
-            "The user gets hurt too."),
+        .description = sWoodHammerDescription,
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_GRASS,
@@ -19699,9 +19707,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_JET_PUNCH] =
     {
         .name = COMPOUND_STRING("Jet Punch"),
-        .description = COMPOUND_STRING(
-            "A punch is thrown at blinding\n"
-            "speed to strike first."),
+        .description = sJetPunchDescription,
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_WATER,
@@ -22601,10 +22607,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .alwaysCriticalHit = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Inferno,
     },
 
@@ -22629,9 +22631,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_DRACONIC_FURY] =
     {
         .name = COMPOUND_STRING("Draconic Fury"),
-        .description = COMPOUND_STRING(
-            "Slams the body into a foe.\n"
-            "The user gets hurt too."),
+        .description = sWoodHammerDescription,
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_DRAGON,
@@ -22642,10 +22642,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .argument = { .recoilPercentage = 33 },
         .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_DragonAscent,
     },
 
@@ -22653,7 +22649,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Spectral Wrath"),
         .description = COMPOUND_STRING(
-            "Attacks foe with rage.\n"
+            "Attacks the foe with rage.\n"
             "High critical-hit ratio."),
         .effect = EFFECT_HIT,
         .power = 100,
@@ -22664,19 +22660,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Poltergeist,
     },
 
     [MOVE_LIGHTNING_VORTEX] =
     {
         .name = COMPOUND_STRING("Lightning Vortex"),
-        .description = COMPOUND_STRING(
-            "A strong electrical attack\n"
-            "that may paralyze the foe."),
+        .description = sThunderboltDescription,
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_ELECTRIC,
@@ -22689,19 +22679,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 70,
         }),
-        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_CHARGE},
         .battleAnimScript = gBattleAnimMove_Thunderbolt,
     },
 
     [MOVE_SMASH_STRIKE] =
     {
         .name = COMPOUND_STRING("Smash Strike"),
-        .description = COMPOUND_STRING(
-            "Smashes a high-speed rock at\n"
-            "the foe that always goes first."),
+        .description = sJetPunchDescription,
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_ROCK,
@@ -22729,10 +22713,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_UTurn,
     },
 
@@ -22754,10 +22734,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .snatchAffected = TRUE,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_ShellSmash,
     },
 };

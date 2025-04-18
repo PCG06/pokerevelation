@@ -33,7 +33,7 @@ jobs:
         run: make -j8 -O all
 
       - name: Send build failure notification to Discord
-        if: steps.rom.outcome == 'failure'
+        if: failure() && steps.rom.outcome == 'failure'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
@@ -114,7 +114,7 @@ jobs:
         run: make -j$(nproc) check
 
       - name: Send tests failure notification to Discord
-        if: steps.test.outcome == 'failure'
+        if: failure() && steps.test.outcome == 'failure'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \

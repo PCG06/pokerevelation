@@ -139,8 +139,6 @@ extern const u8 gFallbackPokedexText[];
 
 TEST("Every species has a description")
 {
-    KNOWN_FAILING;
-
     u32 i;
     u32 species = SPECIES_NONE;
     for (i = 1; i < NUM_SPECIES; i++)

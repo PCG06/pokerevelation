@@ -956,6 +956,7 @@ AI_SINGLE_BATTLE_TEST("AI sees popped Air Balloon after Air Balloon mon switches
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); }
+        TURN { SWITCH(player, 0); EXPECT_MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); SEND_OUT(player, 1); }
     }
 }

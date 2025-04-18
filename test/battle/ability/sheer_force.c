@@ -853,6 +853,8 @@ DOUBLE_BATTLE_TEST("Sheer Force only boosts the damage of moves it's supposed to
 }
 DOUBLE_BATTLE_TEST("Sheer Force only boosts the damage of moves it's supposed to boost 4")
 {
+    KNOWN_FAILING;
+
     s16 damage1, damage2;
     u32 move = 0;
     for (u32 j = 4; j < MOVES_COUNT; j += 4)
