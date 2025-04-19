@@ -503,7 +503,6 @@ static void CursorCb_Register(u8);
 static void CursorCb_Trade1(u8);
 static void CursorCb_Trade2(u8);
 static void CursorCb_Toss(u8);
-static void CursorCb_FieldMove(u8);
 static void CursorCb_CatalogBulb(u8);
 static void CursorCb_CatalogOven(u8);
 static void CursorCb_CatalogWashing(u8);
@@ -2948,10 +2947,11 @@ static u8 DisplaySelectionWindow(u8 windowType)
     {
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT) ? 5 : 3;
+        /*
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(sFieldMoves[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES]);
-        else
-            text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
+        else */
+        text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
     }
@@ -3005,12 +3005,11 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
-
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
 
+    /*
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -3023,6 +3022,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             }
         }
     }
+    */
 
     if (!InBattlePike())
     {
@@ -3157,17 +3157,19 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
         case MENU_B_PRESSED:
             PlaySE(SE_SELECT);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
+            /*
             if (sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
-            else
-                sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
+            else */
+            sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
             break;
         default:
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
+            /*
             if (sPartyMenuInternal->actions[input] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
-            else
-                sCursorOptions[sPartyMenuInternal->actions[input]].func(taskId);
+            else */
+            sCursorOptions[sPartyMenuInternal->actions[input]].func(taskId);
             break;
         }
     }
@@ -4128,7 +4130,7 @@ static void Task_HandleSpinTradeYesNoInput(u8 taskId)
     }
 }
 
-static void CursorCb_FieldMove(u8 taskId)
+static void UNUSED CursorCb_FieldMove(u8 taskId)
 {
     u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
     const struct MapHeader *mapHeader;
