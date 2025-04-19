@@ -175,7 +175,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (TryRunOnFrameMapScript() == TRUE)
         return TRUE;
 
-    if (input->pressedBButton && TrySetupDiveEmergeScript() == TRUE)
+    if (input->pressedAButton && TrySetupDiveEmergeScript() == TRUE) // Switched to A because B will be used for faster movement speed
         return TRUE;
     if (input->tookStep)
     {
