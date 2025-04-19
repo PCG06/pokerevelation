@@ -56,11 +56,9 @@ def extract_repo_tutors() -> typing.Generator[str, None, None]:
     with open("./src/data/tutor_moves.h", "r") as tutor_fp:
         tutor_moves = tutor_fp.read()
         match_it = re.finditer(r"MOVE_[A-Z0-9_]+", tutor_moves)
-        
+
         for match in match_it:
-            # Exclude TUTOR_MOVE_COUNT from the list
-            if match.group(0) != "TUTOR_MOVE_COUNT":
-                yield match.group(0)
+            yield match.group(0)
 
 
 def extract_repo_tms() -> typing.Generator[str, None, None]:

@@ -1,12 +1,13 @@
 #include "constants/moves.h"
 
-const u16 gTutorMoves[TUTOR_MOVE_COUNT] = {
+const u16 gTutorMoves[] = {
     MOVE_COUNTER,
     MOVE_DEFENSE_CURL,
     MOVE_DREAM_EATER,
     MOVE_DYNAMIC_PUNCH,
     MOVE_ENDURE,
     MOVE_EXPLOSION,
+    MOVE_FURY_CUTTER,
     MOVE_MEGA_KICK,
     MOVE_MEGA_PUNCH,
     MOVE_MIMIC,

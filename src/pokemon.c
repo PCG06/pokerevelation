@@ -5896,7 +5896,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     }
 
     // Tutor moves
-    for (i = 0; i < TUTOR_MOVE_COUNT; i++)
+    for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
     {
         moveId = gTutorMoves[i];
         if (CanLearnTeachableMove(species, moveId))

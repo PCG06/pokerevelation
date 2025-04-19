@@ -98008,5 +98008,375 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": []
+  },
+  "MEWTWO_APOCALYPSE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_FIREBALL"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_DARK_PULSE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_RECOVER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_OVERHEAT",
+      "MOVE_FLAMETHROWER",
+      "MOVE_DARK_PULSE",
+      "MOVE_SHADOW_BALL",
+      "MOVE_TAUNT",
+      "MOVE_NASTY_PLOT",
+      "MOVE_FOUL_PLAY",
+      "MOVE_FIRE_BLAST",
+      "MOVE_HEAT_WAVE",
+      "MOVE_HYPER_BEAM",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "STRATOSPIRA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_JETSTREAM_BLAST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FLASH_CANNON"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_KNOCK_OFF"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_U_TURN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FLASH_CANNON",
+      "MOVE_IRON_HEAD",
+      "MOVE_AERIAL_ACE",
+      "MOVE_DUAL_WINGBEAT",
+      "MOVE_KNOCK_OFF",
+      "MOVE_BRAVE_BIRD",
+      "MOVE_FLY",
+      "MOVE_U_TURN",
+      "MOVE_STEEL_BEAM",
+      "MOVE_HURRICANE",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "PHANTOMAR": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SPECTRAL_WRATH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_KNOCK_OFF"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_U_TURN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_SHADOW_BALL",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_POLTERGEIST",
+      "MOVE_EARTHQUAKE",
+      "MOVE_BULLDOZE",
+      "MOVE_KNOCK_OFF",
+      "MOVE_U_TURN",
+      "MOVE_HEX",
+      "MOVE_DARK_PULSE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "LEVIADON": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_DRACONIC_FURY"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_DRACO_METEOR"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WAVE_CRASH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FLIP_TURN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_DRACO_METEOR",
+      "MOVE_DRAGON_PULSE",
+      "MOVE_OUTRAGE",
+      "MOVE_WAVE_CRASH",
+      "MOVE_FLIP_TURN",
+      "MOVE_SURF",
+      "MOVE_HYDRO_PUMP",
+      "MOVE_ICE_BEAM",
+      "MOVE_DIVE",
+      "MOVE_SCALE_SHOT",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "ZOJZION": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_LIGHTNING_VORTEX"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SLUDGE_WAVE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_OVERHEAT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_VOLT_SWITCH"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_THUNDERBOLT",
+      "MOVE_SLUDGE_WAVE",
+      "MOVE_SLUDGE_BOMB",
+      "MOVE_OVERHEAT",
+      "MOVE_THUNDER",
+      "MOVE_VOLT_SWITCH",
+      "MOVE_DISCHARGE",
+      "MOVE_TOXIC",
+      "MOVE_WEATHER_BALL",
+      "MOVE_TERA_BLAST",
+      "MOVE_WILD_CHARGE",
+      "MOVE_SUPERCELL_SLAM",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "MANTISTRIKE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SMASH_STRIKE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STONE_EDGE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_JET_PUNCH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FLIP_TURN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_STONE_EDGE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_JET_PUNCH",
+      "MOVE_FLIP_TURN",
+      "MOVE_WATERFALL",
+      "MOVE_SURF",
+      "MOVE_ICE_SPINNER",
+      "MOVE_RAZOR_SHELL",
+      "MOVE_ROCK_BLAST",
+      "MOVE_DUAL_CHOP",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "PYROLIN": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_DRILL_OUT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FIRE_LASH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_KNOCK_OFF"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_RAPID_SPIN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FIRE_LASH",
+      "MOVE_IRON_HEAD",
+      "MOVE_DRILL_RUN",
+      "MOVE_KNOCK_OFF",
+      "MOVE_RAPID_SPIN",
+      "MOVE_FLARE_BLITZ",
+      "MOVE_HEAT_CRASH",
+      "MOVE_SCORCHING_SANDS",
+      "MOVE_STEEL_BEAM",
+      "MOVE_WILD_CHARGE",
+      "MOVE_SUPERCELL_SLAM",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "AMANISTE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_MYCO_SHIFT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MOONBLAST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TOXIC"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_RECOVER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_MOONBLAST",
+      "MOVE_TOXIC",
+      "MOVE_RECOVER",
+      "MOVE_DAZZLING_GLEAM",
+      "MOVE_SLUDGE_BOMB",
+      "MOVE_CALM_MIND",
+      "MOVE_VENOSHOCK",
+      "MOVE_DRAINING_KISS",
+      "MOVE_PSYSHOCK",
+      "MOVE_ENERGY_BALL",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
   }
 }

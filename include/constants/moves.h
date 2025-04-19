@@ -910,6 +910,7 @@
 
 #define MOVES_COUNT_GEN9 848
 
+// Revelation moves
 #define MOVE_FIREBALL 848
 #define MOVE_JETSTREAM_BLAST 849
 #define MOVE_DRACONIC_FURY 850

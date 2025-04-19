@@ -5153,7 +5153,7 @@ static bool8 CalculateMoves(void)
     }
 
     //Tutor moves
-    for (i = 0; i < TUTOR_MOVE_COUNT; i++) // Can't do array size, nor can include tutor_moves.h :(
+    for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
     {
         move = gTutorMoves[i];
         if (move != MOVE_UNAVAILABLE && CanLearnTeachableMove(species, move))

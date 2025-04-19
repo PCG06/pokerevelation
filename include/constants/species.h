@@ -1638,8 +1638,7 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
-// Skibidmons
-
+// Revelation mons
 #define SPECIES_MEWTWO_APOCALYPSE                       1524
 #define SPECIES_STRATOSPIRA                             1525
 #define SPECIES_PHANTOMAR                               1526

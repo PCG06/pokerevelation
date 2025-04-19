@@ -278,7 +278,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             "It used its psychic powers to crush the\n"
             "Earth's core, absorbing the planet's\n"
             "heat and transforming itself into a\n"
-            "living inferno."),
+            "living inferno, burning all in its path."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -299,7 +299,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sMewtwoApocalypseLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sMewtwoApocalypseTeachableLearnset,
         .formSpeciesIdTable = sMewtwoFormSpeciesIdTable,
         .formChangeTable = sMewtwoFormChangeTable,
     },
@@ -333,8 +333,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .description = COMPOUND_STRING(
             "Soaring at extreme speeds, it commands\n"
             "the skies. Legends say its passage\n"
-            "controls the winds, shaping storms and\n"
-            "clear skies."),
+            "controls the winds. Storms form in its\n"
+            "wake as it tears through clouds."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -355,7 +355,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sStratospiraLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sStratospiraTeachableLearnset,
     },
 
     [SPECIES_PHANTOMAR] =
@@ -386,9 +386,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 970,
         .description = COMPOUND_STRING(
             "A silent stalker of the land, it melts\n"
-            "into shadows. Its piercing gaze alone\n"
-            "is said to terrify even the bravest of\n"
-            "souls."),
+            "into shadows. Its piercing gaze is said\n"
+            "to strike fear into even the bravest\n"
+            "of souls, freezing them in place."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -409,7 +409,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sPhantomarLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sPhantomarTeachableLearnset,
     },
 
     [SPECIES_LEVIADON] =
@@ -442,9 +442,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 6460,
         .description = COMPOUND_STRING(
             "This ancient predator once ruled the seas.\n"
-            "Its armored skull letting it ram through\n"
-            "ships without harm. Its bite can sever\n"
-            "islands."),
+            "Its armored skull let it ram through ships\n"
+            "without harm. Its bite is strong enough to\n"
+            "shear islands in two."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -465,7 +465,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sLeviadonLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sLeviadonTeachableLearnset,
     },
 
     [SPECIES_ZOJZION] =
@@ -496,8 +496,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 360,
         .description = COMPOUND_STRING(
             "It drifts through the sky, crackling\n"
-            "with unstable energy. When angered,\n"
-            "it unleashes bolts hotter than the sun."),
+            "with unstable energy. When angered, it\n"
+            "unleashes bolts hotter than the sun. Its\n"
+            "toxins ride lightning to paralyze prey."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -518,7 +519,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sZojzionLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sZojzionTeachableLearnset,
     },
 
     [SPECIES_MANTISTRIKE] =
@@ -549,9 +550,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 300,
         .description = COMPOUND_STRING(
             "This deep-sea hunter uses its powerful\n"
-            "claws to punch with explosive force,\n"
-            "capable of cracking boulders. Its vivid\n"
-            "colors warn predators to stay away."),
+            "claws to strike with blistering speed,\n"
+            "creating shockwaves that stun prey.\n"
+            "Its colors are a deadly warning sign."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -572,7 +573,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sMantistrikeLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sMantistrikeTeachableLearnset,
     },
 
     [SPECIES_PYROLIN] =
@@ -603,9 +604,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 140,
         .description = COMPOUND_STRING(
             "Superheated metal drips from its armored\n"
-            "body. When threatened, it curls into a\n"
-            "blazing sphere that melts anything it\n"
-            "it touches."),
+            "body. This fiery pangolin curls into a\n"
+            "blazing sphere when attacked, scorching\n"
+            "everything in its path with searing heat."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -626,7 +627,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sPyrolinLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sPyrolinTeachableLearnset,
     },
 
     [SPECIES_AMANISTE] =
@@ -680,7 +681,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sAmanisteLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sAmanisteTeachableLearnset,
     },
 };
 #endif // P_REVELATION_MONS
