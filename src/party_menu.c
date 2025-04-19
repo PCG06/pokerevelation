@@ -66,6 +66,7 @@
 #include "trade.h"
 #include "union_room.h"
 #include "window.h"
+#include "wild_encounter.h"
 #include "constants/battle.h"
 #include "constants/battle_frontier.h"
 #include "constants/field_effects.h"
@@ -76,6 +77,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/weather.h"
 #include "ui_stat_editor.h"
 
 enum {
@@ -107,6 +109,7 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_SUB_FIELD_MOVES,
     MENU_FIELD_MOVES
 };
 
@@ -128,6 +131,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_FIELDMOVE_SUB,
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -215,7 +219,7 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[9];
+    u8 actions[13];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
@@ -360,6 +364,7 @@ static void Task_CancelParticipationYesNo(u8);
 static void Task_HandleCancelParticipationYesNoInput(u8);
 static bool8 ShouldUseChooseMonText(void);
 static void SetPartyMonFieldSelectionActions(struct Pokemon *, u8);
+static void SetPartyMonFieldMoveSelectionActions(struct Pokemon*, u8);
 static u8 GetPartyMenuActionsTypeInBattle(struct Pokemon *);
 static u8 GetPartySlotEntryStatus(s8);
 static void Task_UpdateHeldItemSprite(u8);
@@ -503,6 +508,8 @@ static void CursorCb_Register(u8);
 static void CursorCb_Trade1(u8);
 static void CursorCb_Trade2(u8);
 static void CursorCb_Toss(u8);
+static void CursorCb_FieldMovesSubMenu(u8);
+static void CursorCb_FieldMove(u8);
 static void CursorCb_CatalogBulb(u8);
 static void CursorCb_CatalogOven(u8);
 static void CursorCb_CatalogWashing(u8);
@@ -2946,12 +2953,11 @@ static u8 DisplaySelectionWindow(u8 windowType)
     for (i = 0; i < sPartyMenuInternal->numActions; i++)
     {
         const u8 *text;
-        u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT) ? 5 : 3;
-        /*
+        u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_SUB_FIELD_MOVES) ? 4 : (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT) ? 5 : 3;
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(sFieldMoves[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES]);
-        else */
-        text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
+        else
+            text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
     }
@@ -2995,6 +3001,11 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     {
         SetPartyMonFieldSelectionActions(mons, slotId);
     }
+    else if (action == ACTIONS_FIELDMOVE_SUB)
+    {
+        sPartyMenuInternal->numActions = 0;
+        SetPartyMonFieldMoveSelectionActions(mons, slotId);
+    }
     else
     {
         sPartyMenuInternal->numActions = sPartyMenuActionCounts[action];
@@ -3003,26 +3014,79 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
-static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
+bool8 IsFieldMoveAlreadyInList(u16 fieldMove)
 {
-    sPartyMenuInternal->numActions = 0;
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
+    for (int i = 0; i < sPartyMenuInternal->numActions; i++)
+    {
+        if (sPartyMenuInternal->actions[i] == fieldMove)
+            return TRUE;
+    }
+    return FALSE;
+}
 
-    /*
+
+static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId)
+{
+    u32 i,j, move;
+
+    // Adds field moves to the Pokémon's field moves list without knowing them
+    if (gMapHeader.cave && !FlagGet(FLAG_SYS_USE_FLASH))
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
+
+    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_TELEPORT);
+    }
+
+    if (CanUseDigOrEscapeRopeOnCurMap())
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DIG);
+
+    if (CanUseSoftBoiled())
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED);
+    }
+
+    if (MapHasWildEncounters())
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT);
+
+    if ((gWeather.currWeather == WEATHER_FOG_HORIZONTAL || gWeather.currWeather == WEATHER_FOG_DIAGONAL))
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DEFOG);
+
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
+        move = GetMonData(&mons[slotId], MON_DATA_MOVE1 + i);
+        for (j = 0; j < FIELD_MOVES_COUNT; j++) // don't rely on terminal value
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
+            if (move == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                break;
+                if (!IsFieldMoveAlreadyInList(j + MENU_FIELD_MOVES))
+                {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    break;
+                }
             }
         }
     }
-    */
+
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+}
+
+static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
+{
+    sPartyMenuInternal->numActions = 0;
+
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+
+    if ((gMapHeader.cave && !FlagGet(FLAG_SYS_USE_FLASH))
+    || Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
+    || CanUseDigOrEscapeRopeOnCurMap()
+    || CanUseSoftBoiled()
+    || MapHasWildEncounters()
+    || (gWeather.currWeather == WEATHER_FOG_HORIZONTAL || gWeather.currWeather == WEATHER_FOG_DIAGONAL))
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
 
     if (!InBattlePike())
     {
@@ -3157,19 +3221,17 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
         case MENU_B_PRESSED:
             PlaySE(SE_SELECT);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
-            /*
             if (sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
-            else */
-            sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
+            else
+                sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
             break;
         default:
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
-            /*
             if (sPartyMenuInternal->actions[input] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
-            else */
-            sCursorOptions[sPartyMenuInternal->actions[input]].func(taskId);
+            else
+                sCursorOptions[sPartyMenuInternal->actions[input]].func(taskId);
             break;
         }
     }
@@ -4130,7 +4192,19 @@ static void Task_HandleSpinTradeYesNoInput(u8 taskId)
     }
 }
 
-static void UNUSED CursorCb_FieldMove(u8 taskId)
+static void CursorCb_FieldMovesSubMenu(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_FIELDMOVE_SUB);
+    DisplaySelectionWindow(SELECTWINDOW_ACTIONS);
+    DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_MON);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_FieldMove(u8 taskId)
 {
     u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
     const struct MapHeader *mapHeader;
@@ -4295,7 +4369,7 @@ static void FieldCallback_Surf(void)
 
 static bool8 SetUpFieldMove_Surf(void)
 {
-    if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if (CheckBagHasItem(ITEM_HM_SURF, 1) == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;

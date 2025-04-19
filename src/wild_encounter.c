@@ -1272,3 +1272,22 @@ bool32 MapHasNoEncounterData(void)
 {
     return (GetCurrentMapWildMonHeaderId() == HEADER_NONE);
 }
+
+bool8 MapHasWildEncounters(void)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId == HEADER_NONE)
+        return FALSE;
+
+    enum TimeOfDay time;
+    const struct WildPokemonInfo *landMons, *waterMons;
+
+    time = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    landMons = gWildMonHeaders[headerId].encounterTypes[time].landMonsInfo;
+
+    time = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+    waterMons = gWildMonHeaders[headerId].encounterTypes[time].waterMonsInfo;
+
+    return (landMons != NULL || waterMons != NULL);
+}

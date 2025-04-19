@@ -21,6 +21,7 @@ bool8 IsEscalatorMoving(void);
 bool8 SetUpFieldMove_SoftBoiled(void);
 void Task_TryUseSoftboiledOnPartyMon(u8 taskId);
 void ChooseMonForSoftboiled(u8 taskId);
+bool8 CanUseSoftBoiled(void);
 
 // flash
 bool8 SetUpFieldMove_Flash(void);
