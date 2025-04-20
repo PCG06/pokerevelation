@@ -47,6 +47,7 @@
 #include "safari_zone.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -534,6 +535,7 @@ static void CB2_InitBattleInternal(void)
     gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
     SetVBlankCallback(VBlankCB_Battle);
     SetUpBattleVarsAndBirchZigzagoon();
+    HealPlayerParty();
 
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
         SetMainCallback2(CB2_HandleStartMultiPartnerBattle);

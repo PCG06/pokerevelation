@@ -130,7 +130,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToSpawn(void)
 {
-    SetWarpDestination(MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), WARP_ID_NONE, 9, 10);
+    SetWarpDestination(MAP_GROUP(EVER_GRANDE_CITY), MAP_NUM(EVER_GRANDE_CITY), WARP_ID_NONE, 18, 6);
     WarpIntoMap();
 }
 

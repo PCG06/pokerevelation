@@ -4592,48 +4592,62 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Force Setup First Turn
+AI: Smart Trainer / Ace Pokemon / Force Setup First Turn
 Mugshot: Purple
 
-Mightyena
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
-- Crunch
+Absol @ Absolite  
+Ability: Pressure  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Knock Off  
+- Sucker Punch  
+- Play Rough  
 
-Shiftry
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
+Zoroark-Hisui @ Choice Specs  
+Ability: Illusion  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Shadow Ball  
+- Flamethrower  
+- U-turn  
+- Trick  
 
-Cacturne
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
+Greninja @ Focus Sash  
+Ability: Protean  
+EVs: 4 Def / 252 SpA / 252 Spe  
+Timid Nature  
+- Dark Pulse  
+- Ice Beam  
+- Spikes  
+- Taunt  
 
-Crawdaunt
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
-- Swords Dance
-- Strength
-- Facade
+Tyranitar @ Choice Band  
+Ability: Sand Stream  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Stone Edge  
+- Crunch  
+- Pursuit  
+- Earthquake  
 
-Absol @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
+Hydreigon @ Leftovers  
+Ability: Levitate  
+EVs: 252 HP / 4 SpA / 252 SpD  
+Calm Nature  
+- Dark Pulse  
+- Roost  
+- Flash Cannon  
+- Stealth Rock  
+
+Kingambit @ Black Glasses  
+Ability: Supreme Overlord  
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Kowtow Cleave  
+- Iron Head  
+- Sucker Punch  
+- Swords Dance  
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4643,48 +4657,62 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Green
 
-Dusclops
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
+Banette @ Banettite  
+Ability: Insomnia  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Shadow Claw  
+- Knock Off  
+- Will-O-Wisp  
+- Destiny Bond  
 
-Banette
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
+Mimikyu @ Life Orb  
+Ability: Disguise  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Shadow Claw  
+- Play Rough  
+- Swords Dance  
+- Shadow Sneak  
 
-Sableye
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
+Gengar @ Focus Sash  
+Ability: Cursed Body  
+EVs: 4 Def / 252 SpA / 252 Spe  
+Timid Nature  
+- Shadow Ball  
+- Sludge Bomb  
+- Destiny Bond  
+- Taunt  
 
-Banette
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
+Skeledirge @ Heavy-Duty Boots  
+Ability: Unaware  
+EVs: 252 HP / 4 Def / 252 SpD  
+Calm Nature  
+- Torch Song  
+- Shadow Ball  
+- Slack Off  
+- Will-O-Wisp  
 
-Dusclops @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
+Annihilape @ Leftovers  
+Ability: Defiant  
+EVs: 252 HP / 4 Atk / 252 Spe  
+Jolly Nature  
+- Rage Fist  
+- Drain Punch  
+- Taunt  
+- Bulk Up  
+
+Dragapult @ Choice Band  
+Ability: Infiltrator  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Phantom Force  
+- Dragon Darts  
+- U-turn  
+- Sucker Punch  
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4694,48 +4722,62 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
 
-Sealeo
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
+Ninetales Alola @ Light Clay  
+Ability: Snow Warning  
+EVs: 248 HP / 8 SpD / 252 Spe  
+Timid Nature  
+- Aurora Veil  
+- Freeze-Dry  
+- Encore  
+- Hypnosis  
 
-Glalie
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
+Weavile @ Choice Band  
+Ability: Pressure  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Icicle Crash  
+- Knock Off  
+- Ice Shard  
+- Low Kick  
 
-Sealeo
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
-- Hail
-- Blizzard
+Cloyster @ Kings Rock  
+Ability: Skill Link  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Shell Smash  
+- Icicle Spear  
+- Rock Blast  
+- Ice Shard  
 
-Glalie
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+Chien-Pao @ Focus Sash  
+Ability: Sword of Ruin  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Icicle Crash  
+- Sacred Sword  
+- Sucker Punch  
+- Swords Dance  
 
-Walrein @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+Iron Bundle @ Booster Energy  
+Ability: Quark Drive  
+EVs: 252 SpA / 4 Def / 252 Spe  
+Timid Nature  
+- Freeze-Dry  
+- Hydro Pump  
+- Flip Turn  
+- Encore  
+
+Glalie @ Glalitite  
+Ability: Inner Focus  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Double-Edge  
+- Earthquake  
+- Iron Head  
+- Crunch  
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4745,48 +4787,62 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 
-Shelgon
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
+Garchomp @ Rocky Helmet  
+Ability: Rough Skin  
+EVs: 252 HP / 88 Def / 168 Spe  
+Impish Nature  
+- Earthquake  
+- Dragon Tail  
+- Stealth Rock  
+- Fire Blast  
 
-Altaria
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Dragonite @ Heavy-Duty Boots  
+Ability: Multiscale  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Dragon Dance  
+- Extreme Speed  
+- Earthquake  
+- Ice Spinner  
 
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+Dragapult @ Choice Specs  
+Ability: Infiltrator  
+EVs: 4 Def / 252 SpA / 252 Spe  
+Timid Nature  
+- Draco Meteor  
+- Shadow Ball  
+- Thunderbolt  
+- U-turn  
 
-Flygon
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
+Hydreigon @ Leftovers  
+Ability: Levitate  
+EVs: 252 HP / 4 SpA / 252 SpD  
+Calm Nature  
+- Dark Pulse  
+- Flash Cannon  
+- Substitute  
+- Roost  
 
-Salamence @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+Baxcalibur @ Loaded Dice  
+Ability: Thermal Exchange  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Glaive Rush  
+- Icicle Spear  
+- Earthquake  
+- Dragon Dance  
+
+Salamence @ Salamencite  
+Ability: Intimidate  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Dragon Dance  
+- Dual Wingbeat  
+- Earthquake  
+- Outrage  
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -15855,61 +15911,68 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_STEVEN ===
 Name: STEVEN
-Class: Rival
+Class: Champion
 Pic: Steven
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Yellow 
 
-Skarmory
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Aerial Ace
-- Spikes
-- Steel Wing
+Excadrill @ Focus Sash  
+Ability: Mold Breaker  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Stealth Rock  
+- Earthquake  
+- Iron Head  
+- Rapid Spin  
 
-Claydol
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Light Screen
-- Ancient Power
-- Earthquake
+Corviknight @ Leftovers  
+Ability: Pressure  
+EVs: 252 HP / 168 Def / 88 SpD  
+Impish Nature  
+- Defog  
+- Body Press  
+- Roost  
+- U-turn  
 
-Aggron
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Earthquake
-- Solar Beam
-- Dragon Claw
+Iron Treads @ Assault Vest  
+Ability: Quark Drive  
+EVs: 252 HP / 44 Atk / 212 SpD  
+Adamant Nature  
+- Earthquake  
+- Knock Off  
+- Rapid Spin  
+- Volt Switch  
 
-Cradily
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Confuse Ray
+Tyranitar @ Smooth Rock  
+Ability: Sand Stream  
+EVs: 252 HP / 252 SpD / 4 Atk  
+Careful Nature  
+- Rock Slide  
+- Thunder Wave  
+- Pursuit  
+- Crunch  
 
-Armaldo
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Ancient Power
-- Aerial Ace
-- Slash
+Scizor @ Choice Band  
+Ability: Technician  
+EVs: 248 HP / 252 Atk / 8 Spe  
+Adamant Nature  
+- Bullet Punch  
+- U-turn  
+- Superpower  
+- Knock Off  
 
-Metagross @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Psychic
-- Meteor Mash
-- Shadow Ball
+Metagross @ Metagrossite  
+Ability: Clear Body  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Meteor Mash  
+- Ice Punch  
+- Earthquake  
+- Bullet Punch 
 
 === TRAINER_ANABEL ===
 Name: ANABEL

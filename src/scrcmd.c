@@ -3149,3 +3149,12 @@ void SetSpeciesPokedexFlags(void)
         GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
     }
 }
+
+void GivePlayerAllTMHMs(void)
+{
+    for (u16 itemId = ITEM_TM01; itemId <= ITEM_HM08; itemId++)
+    {
+        if (CheckBagHasSpace(itemId, 1) && ItemIdToBattleMoveId(itemId) != MOVE_NONE)
+            AddBagItem(itemId, 1);
+    }
+}
