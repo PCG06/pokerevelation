@@ -130,7 +130,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToSpawn(void)
 {
-    SetWarpDestination(MAP_GROUP(BATTLE_FRONTIER_RECEPTION_GATE), MAP_NUM(BATTLE_FRONTIER_RECEPTION_GATE), WARP_ID_NONE, 4, 8);
+    SetWarpDestination(MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), WARP_ID_NONE, 9, 10);
     WarpIntoMap();
 }
 
