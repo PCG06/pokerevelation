@@ -135,16 +135,16 @@ enum {
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
-// Badge flag names are commented here for people searching for references to remove the badge requirement.
+// Badge requirement is now removed.
 enum {
-    FIELD_MOVE_CUT,         // FLAG_BADGE01_GET
-    FIELD_MOVE_FLASH,       // FLAG_BADGE02_GET
-    FIELD_MOVE_ROCK_SMASH,  // FLAG_BADGE03_GET
-    FIELD_MOVE_STRENGTH,    // FLAG_BADGE04_GET
-    FIELD_MOVE_SURF,        // FLAG_BADGE05_GET
-    FIELD_MOVE_FLY,         // FLAG_BADGE06_GET
-    FIELD_MOVE_DIVE,        // FLAG_BADGE07_GET
-    FIELD_MOVE_WATERFALL,   // FLAG_BADGE08_GET
+    FIELD_MOVE_CUT,
+    FIELD_MOVE_FLASH,
+    FIELD_MOVE_ROCK_SMASH,
+    FIELD_MOVE_STRENGTH,
+    FIELD_MOVE_SURF,
+    FIELD_MOVE_FLY,
+    FIELD_MOVE_DIVE,
+    FIELD_MOVE_WATERFALL,
     FIELD_MOVE_TELEPORT,
     FIELD_MOVE_DIG,
     FIELD_MOVE_SECRET_POWER,
@@ -3016,14 +3016,13 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 bool8 IsFieldMoveAlreadyInList(u16 fieldMove)
 {
-    for (int i = 0; i < sPartyMenuInternal->numActions; i++)
+    for (u8 i = 0; i < sPartyMenuInternal->numActions; i++)
     {
         if (sPartyMenuInternal->actions[i] == fieldMove)
             return TRUE;
     }
     return FALSE;
 }
-
 
 static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId)
 {
@@ -3057,9 +3056,9 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        move = GetMonData(&mons[slotId], MON_DATA_MOVE1 + i);
-        for (j = 0; j < FIELD_MOVES_COUNT; j++) // don't rely on terminal value
+        for (j = 0; j < FIELD_MOVES_COUNT; j++)
         {
+            move = GetMonData(&mons[slotId], i + MON_DATA_MOVE1);
             if (move == sFieldMoves[j])
             {
                 if (!IsFieldMoveAlreadyInList(j + MENU_FIELD_MOVES))
@@ -4226,13 +4225,7 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
-        {
-            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-        }
-        else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
+        if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
             switch (fieldMove)
             {
