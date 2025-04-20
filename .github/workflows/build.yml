@@ -30,7 +30,7 @@ jobs:
         env:
           MODERN: 1
           COMPARE: 0
-        run: make -j8 -O all
+        run: make -j${nproc} -O all
 
       - name: Send build failure notification to Discord
         if: failure() && steps.rom.outcome == 'failure'
@@ -111,7 +111,7 @@ jobs:
         id: test
         env:
           TEST: 1
-        run: make -j$(nproc) check
+        run: make -j${nproc} check
 
       - name: Send tests failure notification to Discord
         if: failure() && steps.test.outcome == 'failure'

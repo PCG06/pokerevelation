@@ -7933,7 +7933,6 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_ELITE_FOUR_SIDNEY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -7941,20 +7940,20 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_ABSOL,
+            .species = SPECIES_GRENINJA,
             .gender = TRAINER_MON_RANDOM_GENDER,
-            .heldItem = ITEM_ABSOLITE,
-            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+            .heldItem = ITEM_FOCUS_SASH,
+            .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_PRESSURE,
+            .ability = ABILITY_PROTEAN,
             .lvl = 100,
-            .nature = NATURE_JOLLY,
+            .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-                MOVE_SWORDS_DANCE,
-                MOVE_KNOCK_OFF,
-                MOVE_SUCKER_PUNCH,
-                MOVE_PLAY_ROUGH,
+                MOVE_DARK_PULSE,
+                MOVE_ICE_BEAM,
+                MOVE_SPIKES,
+                MOVE_TAUNT,
             },
             },
             {
@@ -7972,23 +7971,6 @@ F_TRAINER_FEMALE |
                 MOVE_FLAMETHROWER,
                 MOVE_U_TURN,
                 MOVE_TRICK,
-            },
-            },
-            {
-            .species = SPECIES_GRENINJA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .heldItem = ITEM_FOCUS_SASH,
-            .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_PROTEAN,
-            .lvl = 100,
-            .nature = NATURE_TIMID,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-                MOVE_DARK_PULSE,
-                MOVE_ICE_BEAM,
-                MOVE_SPIKES,
-                MOVE_TAUNT,
             },
             },
             {
@@ -8042,6 +8024,23 @@ F_TRAINER_FEMALE |
                 MOVE_SWORDS_DANCE,
             },
             },
+            {
+            .species = SPECIES_ABSOL,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .heldItem = ITEM_ABSOLITE,
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_PRESSURE,
+            .lvl = 100,
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_SWORDS_DANCE,
+                MOVE_KNOCK_OFF,
+                MOVE_SUCKER_PUNCH,
+                MOVE_PLAY_ROUGH,
+            },
+            },
         },
     },
     [DIFFICULTY_NORMAL][TRAINER_PHOEBE] =
@@ -8052,13 +8051,29 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON,
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
+            {
+            .species = SPECIES_DRAGAPULT,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .heldItem = ITEM_CHOICE_BAND,
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_INFILTRATOR,
+            .lvl = 100,
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_PHANTOM_FORCE,
+                MOVE_DRAGON_DARTS,
+                MOVE_U_TURN,
+                MOVE_SUCKER_PUNCH,
+            },
+            },
             {
             .species = SPECIES_BANETTE,
             .gender = TRAINER_MON_RANDOM_GENDER,
@@ -8144,23 +8159,6 @@ F_TRAINER_FEMALE |
                 MOVE_BULK_UP,
             },
             },
-            {
-            .species = SPECIES_DRAGAPULT,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .heldItem = ITEM_CHOICE_BAND,
-            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_INFILTRATOR,
-            .lvl = 100,
-            .nature = NATURE_JOLLY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-                MOVE_PHANTOM_FORCE,
-                MOVE_DRAGON_DARTS,
-                MOVE_U_TURN,
-                MOVE_SUCKER_PUNCH,
-            },
-            },
         },
     },
     [DIFFICULTY_NORMAL][TRAINER_GLACIA] =
@@ -8171,9 +8169,8 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .partySize = 6,
         .party = (const struct TrainerMon[])
@@ -8289,9 +8286,8 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .partySize = 6,
         .party = (const struct TrainerMon[])
@@ -27986,9 +27982,8 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_STEVEN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .partySize = 6,
         .party = (const struct TrainerMon[])

@@ -4590,28 +4590,9 @@ Class: Elite Four
 Pic: Elite Four Sidney
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon / Force Setup First Turn
 Mugshot: Purple
-
-Absol @ Absolite  
-Ability: Pressure  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Swords Dance  
-- Knock Off  
-- Sucker Punch  
-- Play Rough  
-
-Zoroark-Hisui @ Choice Specs  
-Ability: Illusion  
-EVs: 4 HP / 252 SpA / 252 Spe  
-Timid Nature  
-- Shadow Ball  
-- Flamethrower  
-- U-turn  
-- Trick  
 
 Greninja @ Focus Sash  
 Ability: Protean  
@@ -4621,6 +4602,15 @@ Timid Nature
 - Ice Beam  
 - Spikes  
 - Taunt  
+
+Zoroark-Hisui @ Choice Specs  
+Ability: Illusion  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Shadow Ball  
+- Flamethrower  
+- U-turn  
+- Trick  
 
 Tyranitar @ Choice Band  
 Ability: Sand Stream  
@@ -4649,16 +4639,33 @@ Adamant Nature
 - Sucker Punch  
 - Swords Dance  
 
+Absol @ Absolite  
+Ability: Pressure  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Knock Off  
+- Sucker Punch  
+- Play Rough  
+
 === TRAINER_PHOEBE ===
 Name: PHOEBE
 Class: Elite Four
 Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Green
+
+Dragapult @ Choice Band  
+Ability: Infiltrator  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Phantom Force  
+- Dragon Darts  
+- U-turn  
+- Sucker Punch  
 
 Banette @ Banettite  
 Ability: Insomnia  
@@ -4705,24 +4712,14 @@ Jolly Nature
 - Taunt  
 - Bulk Up  
 
-Dragapult @ Choice Band  
-Ability: Infiltrator  
-EVs: 252 Atk / 4 Def / 252 Spe  
-Jolly Nature  
-- Phantom Force  
-- Dragon Darts  
-- U-turn  
-- Sucker Punch  
-
 === TRAINER_GLACIA ===
 Name: GLACIA
 Class: Elite Four
 Pic: Elite Four Glacia
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon
+AI: Smart Trainer / Ace Pokemon / Force Setup First Turn
 Mugshot: Pink
 
 Ninetales Alola @ Light Clay  
@@ -4785,9 +4782,8 @@ Class: Elite Four
 Pic: Elite Four Drake
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon
+AI: Smart Trainer / Ace Pokemon / Force Setup First Turn
 Mugshot: Blue
 
 Garchomp @ Rocky Helmet  
@@ -15915,9 +15911,8 @@ Class: Champion
 Pic: Steven
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon
+AI: Smart Trainer / Ace Pokemon / Force Setup First Turn
 Mugshot: Yellow 
 
 Excadrill @ Focus Sash  
