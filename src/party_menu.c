@@ -525,6 +525,8 @@ static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+static bool8 IsFieldMoveAlreadyInList(u16 fieldMove);
+static bool8 DoesMonKnowFieldMove(struct Pokemon *mon, u8 slotId);
 
 // static const data
 #include "data/party_menu.h"
@@ -1796,70 +1798,7 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
 {
     if (gPartyMenu.layout != PARTY_LAYOUT_SINGLE) //Custom party menu
     {
-    // PARTY_SIZE + 1 is Cancel, PARTY_SIZE is Confirm
-    switch (movementDir)
-    {
-    case MENU_DIR_UP:
-        if (*slotPtr == 0)
-        {
-            *slotPtr = PARTY_SIZE + 1;
-        }
-        else if (*slotPtr == PARTY_SIZE)
-        {
-            *slotPtr = gPlayerPartyCount - 1;
-        }
-        else if (*slotPtr == PARTY_SIZE + 1)
-        {
-            if (sPartyMenuInternal->chooseHalf)
-                *slotPtr = PARTY_SIZE;
-            else
-                *slotPtr = gPlayerPartyCount - 1;
-        }
-        else
-        {
-            (*slotPtr)--;
-        }
-        break;
-    case MENU_DIR_DOWN:
-        if (*slotPtr == PARTY_SIZE + 1)
-        {
-            *slotPtr = 0;
-        }
-        else
-        {
-            if (*slotPtr == gPlayerPartyCount - 1)
-            {
-                if (sPartyMenuInternal->chooseHalf)
-                    *slotPtr = PARTY_SIZE;
-                else
-                    *slotPtr = PARTY_SIZE + 1;
-            }
-            else
-            {
-                (*slotPtr)++;
-            }
-        }
-        break;
-    case MENU_DIR_RIGHT:
-        if (gPlayerPartyCount != 1 && *slotPtr == 0)
-        {
-            if (sPartyMenuInternal->lastSelectedSlot == 0)
-                *slotPtr = 1;
-            else
-                *slotPtr = sPartyMenuInternal->lastSelectedSlot;
-        }
-        break;
-    case MENU_DIR_LEFT:
-        if (*slotPtr != 0 && *slotPtr != PARTY_SIZE && *slotPtr != PARTY_SIZE + 1)
-        {
-            sPartyMenuInternal->lastSelectedSlot = *slotPtr;
-            *slotPtr = 0;
-        }
-        break;
-    }
-}
-    else //Custom party menu
-    {// PARTY_SIZE + 1 is Cancel, PARTY_SIZE is Confirm
+        // PARTY_SIZE + 1 is Cancel, PARTY_SIZE is Confirm
         switch (movementDir)
         {
         case MENU_DIR_UP:
@@ -1878,9 +1817,9 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
                 else
                     *slotPtr = gPlayerPartyCount - 1;
             }
-            else if (*slotPtr-2 >= 0)
+            else
             {
-                *slotPtr -= 2; //(*slotPtr)--;
+                (*slotPtr)--;
             }
             break;
         case MENU_DIR_DOWN:
@@ -1897,33 +1836,67 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
                     else
                         *slotPtr = PARTY_SIZE + 1;
                 }
-                else if(*slotPtr+2 < gPlayerPartyCount)
+                else
                 {
-                    *slotPtr += 2;//(*slotPtr)++;
-                }else
                     (*slotPtr)++;
+                }
             }
             break;
         case MENU_DIR_RIGHT:
-            if (gPlayerPartyCount != 1 && *slotPtr%2 == 0)
+            if (gPlayerPartyCount != 1 && *slotPtr == 0)
             {
-                if (*slotPtr+1 < gPlayerPartyCount)
-                    (*slotPtr)++;
-                // else
-                //     *slotPtr = sPartyMenuInternal->lastSelectedSlot;
+                if (sPartyMenuInternal->lastSelectedSlot == 0)
+                    *slotPtr = 1;
+                else
+                    *slotPtr = sPartyMenuInternal->lastSelectedSlot;
             }
             break;
         case MENU_DIR_LEFT:
             if (*slotPtr != 0 && *slotPtr != PARTY_SIZE && *slotPtr != PARTY_SIZE + 1)
             {
-                if (*slotPtr-1 >= 0 && *slotPtr%2 == 1)
-                    (*slotPtr)--;
-                // sPartyMenuInternal->lastSelectedSlot = *slotPtr;
-                // *slotPtr = 0;
+                sPartyMenuInternal->lastSelectedSlot = *slotPtr;
+                *slotPtr = 0;
             }
             break;
         }
-    }//
+    }
+    else // Custom party menu
+    {
+        // PARTY_SIZE + 1 is Cancel, PARTY_SIZE is Confirm
+        switch (movementDir)
+        {
+        case MENU_DIR_UP:
+            if (*slotPtr == 0 || *slotPtr == 1)
+                *slotPtr = PARTY_SIZE + 1;
+            else
+                *slotPtr -= 2;
+            break;
+        case MENU_DIR_DOWN:
+            if (*slotPtr == PARTY_SIZE + 1)
+                *slotPtr = 0;
+            else if (*slotPtr + 2 < gPlayerPartyCount)
+                *slotPtr += 2;
+            else
+                *slotPtr = PARTY_SIZE + 1;
+            break;
+        case MENU_DIR_LEFT:
+            if (*slotPtr == 0)
+                *slotPtr = PARTY_SIZE + 1;
+            else if (*slotPtr == PARTY_SIZE + 1)
+                *slotPtr = 5;
+            else if (*slotPtr > 0 && *slotPtr <= 5)
+                (*slotPtr)--;
+            break;
+        case MENU_DIR_RIGHT:
+            if (*slotPtr == 5)
+                *slotPtr = PARTY_SIZE + 1;
+            else if (*slotPtr == PARTY_SIZE + 1)
+                *slotPtr = 0;
+            else if (*slotPtr >= 0 && *slotPtr < 5)
+                (*slotPtr)++;
+            break;
+        }
+    }
 }
 
 static void UpdatePartySelectionDoubleLayout(s8 *slotPtr, s8 movementDir)
@@ -3014,16 +2987,6 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
-bool8 IsFieldMoveAlreadyInList(u16 fieldMove)
-{
-    for (u8 i = 0; i < sPartyMenuInternal->numActions; i++)
-    {
-        if (sPartyMenuInternal->actions[i] == fieldMove)
-            return TRUE;
-    }
-    return FALSE;
-}
-
 static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u32 i,j, move;
@@ -3031,6 +2994,9 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     // Adds field moves to the Pokémon's field moves list without knowing them
     if (gMapHeader.cave && !FlagGet(FLAG_SYS_USE_FLASH))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
+
+    if (IsPlayerFacingSurfableFishableWater())
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_SURF);
 
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
     {
@@ -3080,10 +3046,12 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
     if ((gMapHeader.cave && !FlagGet(FLAG_SYS_USE_FLASH))
+    || IsPlayerFacingSurfableFishableWater()
     || Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
     || CanUseDigOrEscapeRopeOnCurMap()
     || CanUseSoftBoiled()
     || MapHasWildEncounters()
+    || DoesMonKnowFieldMove(mons, slotId)
     || (gWeather.currWeather == WEATHER_FOG_HORIZONTAL || gWeather.currWeather == WEATHER_FOG_DIAGONAL))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
 
@@ -4191,6 +4159,32 @@ static void Task_HandleSpinTradeYesNoInput(u8 taskId)
     }
 }
 
+static bool8 IsFieldMoveAlreadyInList(u16 fieldMove)
+{
+    for (u8 i = 0; i < sPartyMenuInternal->numActions; i++)
+    {
+        if (sPartyMenuInternal->actions[i] == fieldMove)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 DoesMonKnowFieldMove(struct Pokemon *mon, u8 slotId)
+{
+    for (u8 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        for (u8 j = 0; j < FIELD_MOVES_COUNT; j++)
+        {
+            u32 move = GetMonData(&mon[slotId], i + MON_DATA_MOVE1);
+            if (move == sFieldMoves[j])
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
 static void CursorCb_FieldMovesSubMenu(u8 taskId)
 {
     PlaySE(SE_SELECT);
@@ -4520,18 +4514,28 @@ static void SpriteCB_UpdatePartyMonIcon(struct Sprite *sprite)
 
 static void CreatePartyMonHeldItemSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
 {
+    u8 partyLayout = GetPartyLayoutFromBattleType();
+
     if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
     {
-        menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2] + 4, menuBox->spriteCoords[3], 0);
+        if (partyLayout == PARTY_LAYOUT_SINGLE)
+            menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2] - 7, menuBox->spriteCoords[3] - 9, 0);
+        else
+            menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2], menuBox->spriteCoords[3], 0);
         UpdatePartyMonHeldItemSprite(mon, menuBox);
     }
 }
 
 static void CreatePartyMonHeldItemSpriteParameterized(u16 species, u16 item, struct PartyMenuBox *menuBox)
 {
+    u8 partyLayout = GetPartyLayoutFromBattleType();
+
     if (species != SPECIES_NONE)
     {
-        menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2] + 4, menuBox->spriteCoords[3], 0);
+        if (partyLayout == PARTY_LAYOUT_SINGLE)
+            menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2] - 7, menuBox->spriteCoords[3] - 9, 0);
+        else
+            menuBox->itemSpriteId = CreateSprite(&sSpriteTemplate_HeldItem, menuBox->spriteCoords[2], menuBox->spriteCoords[3], 0);
         gSprites[menuBox->itemSpriteId].oam.priority = 0;
         ShowOrHideHeldItemSprite(item, menuBox);
     }
