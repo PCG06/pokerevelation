@@ -706,6 +706,7 @@ u8 GetSecretBaseTrainerPicIndex(void);
 u8 GetSecretBaseTrainerClass(void);
 bool8 IsPlayerPartyAndPokemonStorageFull(void);
 bool8 IsPokemonStorageFull(void);
+const u8 *GetSpeciesCodeName(u16 species);
 const u8 *GetSpeciesName(u16 species);
 const u8 *GetSpeciesCategory(u16 species);
 const u8 *GetSpeciesPokedexDescription(u16 species);

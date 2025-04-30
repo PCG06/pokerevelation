@@ -1099,79 +1099,6 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
-EventScript_GetPokemonFromCodeEntry::
-    lockall
-    msgbox EnterCode_EnterCodeText, MSGBOX_YESNO
-    goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
-    special EnterCode
-    waitstate
-    special GetPokemonFromCodeFeedback
-    goto_if_eq VAR_RESULT, 0, EventScript_CodeFailed
-    goto EventScript_ReceivedMon
-	end
-
-EventScript_ReceivedMon::
-	bufferspeciesname STR_VAR_1, VAR_RESULT
-	copyvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_RESULT
-	msgbox EnterCode_SucceededText, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message EnterCode_ReceivedGiftMon
-	givemon VAR_TEMP_TRANSFERRED_SPECIES, 100, ITEM_NONE
-	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
-	waitfanfare
-    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_NicknamePartyMonFromCode
-    goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_NicknamePCMonFromCode
-	goto EventScript_CodeExit
-	end
-
-EventScript_NicknamePartyMonFromCode::
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	hidemonpic
-	goto_if_eq VAR_RESULT, NO, EventScript_CodeExit
-	call Common_EventScript_GetGiftMonPartySlot 
-	call Common_EventScript_NameReceivedPartyMon 
-	goto EventScript_CodeExit
-	end
-
-EventScript_NicknamePCMonFromCode::
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	hidemonpic
-	goto_if_eq VAR_RESULT, NO, EventScript_TransferredToPC
-	call Common_EventScript_NameReceivedBoxMon
-EventScript_TransferredToPC::
-	call Common_EventScript_TransferredToPC
-	goto EventScript_CodeExit
-	end
-
-EventScript_CodeFailed::
-    msgbox EnterCode_FailedText, MSGBOX_DEFAULT
-    releaseall
-    end
-
-EventScript_CodeExit::
-	msgbox Text_PleaseVisitAgain, MSGBOX_DEFAULT
-    releaseall
-    end
-
-EnterCode_EnterCodeText:
-    .string "Hello, {PLAYER}!\n"
-	.string "Would you like to purchase a Pokémon?$"
-
-EnterCode_FailedText:
-    .string "Hmm…\n"
-	.string "Are you sure you have entered the\l"
-	.string "right name?$"
-
-EnterCode_SucceededText:
-    .string "Ok!\n"
-	.string "Here's a {STR_VAR_1}!$"
-
-EnterCode_ReceivedGiftMon:
-	.string "{PLAYER} received a {STR_VAR_1}!$"
-
-Text_PleaseVisitAgain:
-	.string "Please visit again!$"
-
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
 	.include "data/scripts/abnormal_weather.inc"
@@ -1227,3 +1154,4 @@ Text_PleaseVisitAgain:
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/scripts/dynmultichoices.inc"

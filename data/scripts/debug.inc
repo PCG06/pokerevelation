@@ -134,24 +134,18 @@ Debug_EventScript_Text_OffensiveIVs:
 Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
-Debug_EventScript_Script_1::
-	goto_if_set B_FLAG_NO_BAG_USE, EventScript_ClearFlag
-	setflag B_FLAG_NO_BAG_USE
-	release
-	end
+Text_Defeat:
+	.string "Play YAEEH!$"
 
-EventScript_ClearFlag:
-	clearflag B_FLAG_NO_BAG_USE
+Debug_EventScript_Script_1::
+	cleartrainerflag TRAINER_TESTING
+	trainerbattle_no_intro TRAINER_TESTING, Text_Defeat
+	release
 	end
 
 Debug_EventScript_Script_2::
-	cleartrainerflag TRAINER_SAWYER_1
-	trainerbattle_no_intro TRAINER_SAWYER_1, Text_Defeat
 	release
 	end
-
-Text_Defeat:
-	.string "Play YAEEH$"
 
 Debug_EventScript_Script_3::
 	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget

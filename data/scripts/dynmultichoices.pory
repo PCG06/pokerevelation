@@ -1,0 +1,725 @@
+script Common_EventScript_TrainerBattleMenu {
+	lock
+	faceplayer
+	message("Select a category of Trainers.")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Gym Leaders", "Challenge Trainers", "Postgame Trainers", "Nevermind")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(EventScript_GymLeaderChoices)
+		case 1:
+			goto(EventScript_ChallengeTrainerChoices)
+		case 2:
+			goto(EventScript_PostgameTrainerChoices)
+		default:
+		case 3:
+			msgbox("Come back when you're ready!", MSGBOX_DEFAULT)
+			release
+			end
+	}
+	release
+	end
+}
+
+text Text_UghILost {
+	"Ugh, I lost!"
+}
+
+text Text_WhichTrainerToChallenge {
+	"Which Trainer do you want to\n"
+	"challenge?"
+}
+
+text Text_AllTrainersDefeated {
+	"You have already defeated all\n"
+	"Trainers here!\p"
+	"Would you like to battle again?"
+}
+
+text Text_YouHaveAlreadyDefeatedTrainer {
+	"You have already defeated this\n"
+	"Trainer!\p"
+	"Would you like to battle again?"
+}
+
+text Text_YouHaveAlreadyDefeatedChallenger {
+	"You have already defeated this\n"
+	"Challenger!\p"
+	"Would you like to battle again?"
+}
+
+text Text_YouHaveAlreadyDefeatedPostgameTrainer {
+	"You have already defeated this\n"
+	"Postgame Trainer!\p"
+	"Would you like to battle again?"
+}
+
+script EventScript_GymLeaderChoices {
+	message("Select a Gym.")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"Jake's Gym 1", "Reeve's Gym 2", "Prem's Gym 3", "Jaison's Gym 4", "Prajith's Gym 5", "Varun's Gym 6", "Snehal's Gym 7", "Rajesh's Gym 8", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(EventScript_Gym1Trainers)
+		case 1:
+			goto(EventScript_Gym2Trainers)
+		case 2:
+			goto(EventScript_Gym3Trainers)
+		case 3:
+			goto(EventScript_Gym4Trainers)
+		case 4:
+			goto(EventScript_Gym5Trainers)
+		case 5:
+			goto(EventScript_Gym6Trainers)
+		case 6:
+			goto(EventScript_Gym7Trainers)
+		case 7:
+			goto(EventScript_Gym8Trainers)
+		default:
+		case 8:
+			goto(Common_EventScript_TrainerBattleMenu)
+	}
+	release
+	end
+}
+
+script EventScript_ChallengeGym1 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+	"Trainer Pawan", "Trainer Prajesh", "Leader Jake", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_PAWAN)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_PAWAN, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_PAWAN, Text_UghILost)
+			}
+			goto(EventScript_Gym1Trainers)
+		case 1:
+			if (defeated(TRAINER_PRAJESH)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_PRAJESH, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_PRAJESH, Text_UghILost)
+			}
+			goto(EventScript_Gym1Trainers)
+		case 2:
+			if (defeated(TRAINER_JAKE)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_JAKE, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_JAKE, Text_UghILost)
+			}
+			goto(EventScript_Gym1Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym1Trainers {
+	if (defeated(TRAINER_PAWAN) && defeated(TRAINER_PRAJESH) && defeated(TRAINER_JAKE)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym1)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym1)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym2 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Hanston", "Trainer Premal", "Leader Reeve", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_HANSTON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_HANSTON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_HANSTON, Text_UghILost)
+			}
+			goto(EventScript_Gym2Trainers)
+		case 1:
+			if (defeated(TRAINER_PREMAL)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_PREMAL, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_PREMAL, Text_UghILost)
+			}
+			goto(EventScript_Gym2Trainers)
+		case 2:
+			if (defeated(TRAINER_REEVE)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_REEVE, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_REEVE, Text_UghILost)
+			}
+			goto(EventScript_Gym2Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym2Trainers {
+	if (defeated(TRAINER_HANSTON) && defeated(TRAINER_PREMAL) && defeated(TRAINER_REEVE)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			goto(EventScript_ChallengeGym2)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym2)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym3 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Rashel", "Trainer Don", "Leader Prem", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_RASHEL)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_RASHEL, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_RASHEL, Text_UghILost)
+			}
+			goto(EventScript_Gym3Trainers)
+		case 1:
+			if (defeated(TRAINER_DON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_DON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_DON, Text_UghILost)
+			}
+			goto(EventScript_Gym3Trainers)
+		case 2:
+			if (defeated(TRAINER_PREM)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_PREM, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_PREM, Text_UghILost)
+			}
+			goto(EventScript_Gym3Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym3Trainers {
+	if (defeated(TRAINER_RASHEL) && defeated(TRAINER_DON) && defeated(TRAINER_PREM)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym3)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym3)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym4 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Akshara", "Trainer Dara", "Leader Jaison", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_AKSHARA)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_AKSHARA, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_AKSHARA, Text_UghILost)
+			}
+			goto(EventScript_Gym4Trainers)
+		case 1:
+			if (defeated(TRAINER_DARA)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_DARA, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_DARA, Text_UghILost)
+			}
+			goto(EventScript_Gym4Trainers)
+		case 2:
+			if (defeated(TRAINER_JAISON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_JAISON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_JAISON, Text_UghILost)
+			}
+			goto(EventScript_Gym4Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym4Trainers {
+	if (defeated(TRAINER_AKSHARA) && defeated(TRAINER_DARA) && defeated(TRAINER_JAISON)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym4)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym4)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym5 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Gilston", "Trainer Delson", "Leader Prajith", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_GILSTON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_GILSTON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_GILSTON, Text_UghILost)
+			}
+			goto(EventScript_Gym5Trainers)
+		case 1:
+			if (defeated(TRAINER_DELSON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_DELSON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_DELSON, Text_UghILost)
+			}
+			goto(EventScript_Gym5Trainers)
+		case 2:
+			if (defeated(TRAINER_PRAJITH)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_PRAJITH, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_PRAJITH, Text_UghILost)
+			}
+			goto(EventScript_Gym5Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym5Trainers {
+	if (defeated(TRAINER_GILSTON) && defeated(TRAINER_DELSON) && defeated(TRAINER_PRAJITH)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym5)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym5)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym6 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Monvish", "Trainer Darwin", "Leader Varun", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_MONVISH)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_MONVISH, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_MONVISH, Text_UghILost)
+			}
+			goto(EventScript_Gym6Trainers)
+		case 1:
+			if (defeated(TRAINER_DARWIN)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_DARWIN, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_DARWIN, Text_UghILost)
+			}
+			goto(EventScript_Gym6Trainers)
+		case 2:
+			if (defeated(TRAINER_VARUN)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_VARUN, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_VARUN, Text_UghILost)
+			}
+			goto(EventScript_Gym6Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym6Trainers {
+	if (defeated(TRAINER_MONVISH) && defeated(TRAINER_DARWIN) && defeated(TRAINER_VARUN)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym6)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym6)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym7 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Adithya", "Trainer Handam", "Leader Snehal", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_ADITHYA)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_ADITHYA, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_ADITHYA, Text_UghILost)
+			}
+			goto(EventScript_Gym7Trainers)
+		case 1:
+			if (defeated(TRAINER_HANDAM)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_HANDAM, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_HANDAM, Text_UghILost)
+			}
+			goto(EventScript_Gym7Trainers)
+		case 2:
+			if (defeated(TRAINER_SNEHAL)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_SNEHAL, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_SNEHAL, Text_UghILost)
+			}
+			goto(EventScript_Gym7Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym7Trainers {
+	if (defeated(TRAINER_ADITHYA) && defeated(TRAINER_HANDAM) && defeated(TRAINER_SNEHAL)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym7)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym7)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeGym8 {
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Rion", "Trainer Deon", "Leader Rajesh", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_RION)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_RION, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_RION, Text_UghILost)
+			}
+			goto(EventScript_Gym8Trainers)
+		case 1:
+			if (defeated(TRAINER_DEON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_DEON, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_DEON, Text_UghILost)
+			}
+			goto(EventScript_Gym8Trainers)
+		case 2:
+			if (defeated(TRAINER_RAJESH)) {
+				msgbox(Text_YouHaveAlreadyDefeatedTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_RAJESH, Text_UghILost)
+				}
+			} else {
+				trainerbattle_no_intro(TRAINER_RAJESH, Text_UghILost)
+			}
+			goto(EventScript_Gym8Trainers)
+		default:
+		case 3:
+			goto(EventScript_GymLeaderChoices)
+			end
+	}
+}
+
+script EventScript_Gym8Trainers {
+	if (defeated(TRAINER_RION) && defeated(TRAINER_DEON) && defeated(TRAINER_RAJESH)) {
+		msgbox(Text_AllTrainersDefeated, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeGym8)
+		} else {
+			goto(EventScript_GymLeaderChoices)
+		}
+	} else {
+		call(EventScript_ChallengeGym8)
+		goto(EventScript_GymLeaderChoices)
+	}
+}
+
+script EventScript_ChallengeTrainers {
+    message("Which Challenger do you want to\nchallenge?")
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+        "Challenger Manvitha", "Challenger Kevin", "Challenger Lohith",
+        "Challenger Anmol", "Challenger Arshad", "Challenger Melwin",
+        "Champion Bardar", "Back")
+    closemessage
+    switch (var(VAR_RESULT)) {
+        case 0:
+            if (defeated(TRAINER_MANVITHA)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 1:
+            if (defeated(TRAINER_KEVIN)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 2:
+            if (defeated(TRAINER_LOHITH)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 3:
+            if (defeated(TRAINER_ANMOL)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 4:
+            if (defeated(TRAINER_ARSHAD)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 5:
+            if (defeated(TRAINER_MELWIN)) {
+                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        case 6:
+            if (defeated(TRAINER_YASHAS)) {
+                msgbox("You have already defeated the\n"
+						"Champion!\p"
+						"Would you like to battle again?", MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
+                    goto(EventScript_ChallengeTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
+                goto(EventScript_ChallengeTrainerChoices)
+            }
+        default:
+		case 7:
+            goto(Common_EventScript_TrainerBattleMenu)
+    }
+}
+
+script EventScript_ChallengeTrainerChoices {
+    if (defeated(TRAINER_MANVITHA) && defeated(TRAINER_KEVIN) && defeated(TRAINER_LOHITH) 
+        && defeated(TRAINER_ANMOL) && defeated(TRAINER_ARSHAD) && defeated(TRAINER_MELWIN) 
+        && defeated(TRAINER_YASHAS)) {
+        msgbox("You have already defeated all\n"
+				"Challengers here!\p"
+				"Would you like to battle again?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE) {
+            call(EventScript_ChallengeTrainers)
+        }
+        else {
+            goto(Common_EventScript_TrainerBattleMenu)
+        }
+    }
+    else {
+        call(EventScript_ChallengeTrainers)
+    }
+}
+
+script EventScript_ChallengePostgameTrainers {
+    message(Text_WhichTrainerToChallenge)
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+        "Professor Benny", "Master Aaron", "Back")
+    closemessage
+    switch (var(VAR_RESULT)) {
+        case 0:
+            if (defeated(TRAINER_BENNY)) {
+                msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
+                    goto(EventScript_PostgameTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
+                goto(EventScript_PostgameTrainerChoices)
+            }
+        case 1:
+            if (defeated(TRAINER_AARON)) {
+                msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == TRUE) {
+                    trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
+                    goto(EventScript_PostgameTrainerChoices)
+                }
+            }
+            else {
+                trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
+                goto(EventScript_PostgameTrainerChoices)
+            }
+        default:
+		case 2:
+            goto(Common_EventScript_TrainerBattleMenu)
+    }
+}
+
+script EventScript_PostgameTrainerChoices {
+    if (defeated(TRAINER_BENNY) && defeated(TRAINER_AARON)) {
+        msgbox("You have already defeated all\n"
+				"Postgame Trainers here!\p"
+				"Would you like to battle again?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE) {
+            call(EventScript_ChallengePostgameTrainers)
+        }
+        else {
+            goto(Common_EventScript_TrainerBattleMenu)
+        }
+    }
+    else {
+        call(EventScript_ChallengePostgameTrainers)
+    }
+}
