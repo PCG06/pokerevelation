@@ -835,8 +835,8 @@ AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player'
 AI_SINGLE_BATTLE_TEST("AI won't use Sucker Punch if it expects a move of the same priority bracket and the opponent is faster")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_QUICK_ATTACK].priority == 1);
-        ASSUME(gMovesInfo[MOVE_SUCKER_PUNCH].priority == 1);
+        ASSUME(GetMovePriority(MOVE_QUICK_ATTACK) == 1);
+        ASSUME(GetMovePriority(MOVE_SUCKER_PUNCH) == 1);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET) { Speed(300); Moves(MOVE_QUICK_ATTACK); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_SUCKER_PUNCH, MOVE_TACKLE); }
@@ -900,36 +900,6 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI considers Focus Sash when det
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI won't boost stats against opponent with Unaware")
-{
-    GIVEN {
-        MoveHasAdditionalEffectSelf(MOVE_SWORDS_DANCE, MOVE_EFFECT_ATK_PLUS_2);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY);
-        PLAYER(SPECIES_QUAGSIRE) { Ability(ABILITY_UNAWARE); Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_BODY_SLAM, MOVE_SWORDS_DANCE); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_BODY_SLAM); }
-    }
-}
-
-AI_SINGLE_BATTLE_TEST("AI won't use status moves against opponents that would benefit")
-{
-    u32 aiMove;
-    PARAMETRIZE { aiMove = MOVE_WILL_O_WISP; }
-    PARAMETRIZE { aiMove = MOVE_TOXIC; }
-    PARAMETRIZE { aiMove = MOVE_THUNDER_WAVE; }
-    GIVEN {
-        ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_WILL_O_WISP);
-        ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_TOXIC);
-        ASSUME(GetMoveEffect(MOVE_THUNDER_WAVE) == EFFECT_PARALYZE);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_SWELLOW) { Ability(ABILITY_GUTS); Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE, aiMove); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_TACKLE); }
-    }
-}
-
 AI_SINGLE_BATTLE_TEST("AI sees popped Air Balloon")
 {
     GIVEN {
@@ -958,5 +928,35 @@ AI_SINGLE_BATTLE_TEST("AI sees popped Air Balloon after Air Balloon mon switches
         TURN { SWITCH(player, 1); EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); }
         TURN { SWITCH(player, 0); EXPECT_MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); SEND_OUT(player, 1); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI won't boost stats against opponent with Unaware")
+{
+    GIVEN {
+        MoveHasAdditionalEffectSelf(MOVE_SWORDS_DANCE, MOVE_EFFECT_ATK_PLUS_2);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY);
+        PLAYER(SPECIES_QUAGSIRE) { Ability(ABILITY_UNAWARE); Moves(MOVE_TACKLE); }
+        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_BODY_SLAM, MOVE_SWORDS_DANCE); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_BODY_SLAM); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI won't use status moves against opponents that would benefit")
+{
+    u32 aiMove;
+    PARAMETRIZE { aiMove = MOVE_WILL_O_WISP; }
+    PARAMETRIZE { aiMove = MOVE_TOXIC; }
+    PARAMETRIZE { aiMove = MOVE_THUNDER_WAVE; }
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_WILL_O_WISP);
+        ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_TOXIC);
+        ASSUME(GetMoveEffect(MOVE_THUNDER_WAVE) == EFFECT_PARALYZE);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_SWELLOW) { Ability(ABILITY_GUTS); Moves(MOVE_TACKLE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE, aiMove); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_TACKLE); }
     }
 }
