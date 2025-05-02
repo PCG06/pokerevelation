@@ -260,7 +260,6 @@
 // - MOVE_SOFT_BOILED                                  //
 // - MOVE_SWAGGER                                      //
 // - MOVE_UNAVAILABLE                                  //
-// - MOVE_UNAVAILABLE                                  //
 // *************************************************** //
 // Near-universal moves found from sUniversalMoves:    //
 // - MOVE_BIDE                                         //
