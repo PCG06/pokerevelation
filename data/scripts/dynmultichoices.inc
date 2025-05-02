@@ -1195,73 +1195,73 @@ EventScript_GymLeaderChoices_Text_9:
 	.string "Back$"
 
 EventScript_ChallengeGym1_Text_0:
-	.string "Trainer Pawan$"
+	.string "Bug Catcher Pawan$"
 
 EventScript_ChallengeGym1_Text_1:
-	.string "Trainer Prajesh$"
+	.string "Camper Prajesh$"
 
 EventScript_ChallengeGym1_Text_2:
 	.string "Leader Jake$"
 
 EventScript_ChallengeGym2_Text_0:
-	.string "Trainer Hanston$"
+	.string "Collector Hanston$"
 
 EventScript_ChallengeGym2_Text_1:
-	.string "Trainer Premal$"
+	.string "Burglar Premal$"
 
 EventScript_ChallengeGym2_Text_2:
 	.string "Leader Reeve$"
 
 EventScript_ChallengeGym3_Text_0:
-	.string "Trainer Rashel$"
+	.string "Psychic Rashel$"
 
 EventScript_ChallengeGym3_Text_1:
-	.string "Trainer Don$"
+	.string "Psychic Don$"
 
 EventScript_ChallengeGym3_Text_2:
 	.string "Leader Prem$"
 
 EventScript_ChallengeGym4_Text_0:
-	.string "Trainer Akshara$"
+	.string "Lady Akshara$"
 
 EventScript_ChallengeGym4_Text_1:
-	.string "Trainer Dara$"
+	.string "Lass Dara$"
 
 EventScript_ChallengeGym4_Text_2:
 	.string "Leader Jaison$"
 
 EventScript_ChallengeGym5_Text_0:
-	.string "Trainer Gilston$"
+	.string "Black Belt Gilston$"
 
 EventScript_ChallengeGym5_Text_1:
-	.string "Trainer Delson$"
+	.string "Kindler Delson$"
 
 EventScript_ChallengeGym5_Text_2:
 	.string "Leader Prajith$"
 
 EventScript_ChallengeGym6_Text_0:
-	.string "Trainer Monvish$"
+	.string "Guitarist Monvish$"
 
 EventScript_ChallengeGym6_Text_1:
-	.string "Trainer Darwin$"
+	.string "Scientist Darwin$"
 
 EventScript_ChallengeGym6_Text_2:
 	.string "Leader Varun$"
 
 EventScript_ChallengeGym7_Text_0:
-	.string "Trainer Adithya$"
+	.string "Fisherman Adithya$"
 
 EventScript_ChallengeGym7_Text_1:
-	.string "Trainer Handam$"
+	.string "Youngster Handam$"
 
 EventScript_ChallengeGym7_Text_2:
 	.string "Leader Snehal$"
 
 EventScript_ChallengeGym8_Text_0:
-	.string "Trainer Rion$"
+	.string "Expert Rion$"
 
 EventScript_ChallengeGym8_Text_1:
-	.string "Trainer Deon$"
+	.string "Dragon Tamer Deon$"
 
 EventScript_ChallengeGym8_Text_2:
 	.string "Leader Rajesh$"

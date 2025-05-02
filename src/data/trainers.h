@@ -401,7 +401,7 @@
     {
         .trainerName = _("Premal"),
         .trainerClass = TRAINER_CLASS_BURGLAR,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerPic = TRAINER_PIC_BURGLAR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_AQUA,
         .doubleBattle = FALSE,
@@ -1215,8 +1215,8 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_MONVISH] =
     {
         .trainerName = _("Monvish"),
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
         .doubleBattle = FALSE,
@@ -1332,7 +1332,7 @@ F_TRAINER_FEMALE |
     {
         .trainerName = _("Darwin"),
         .trainerClass = TRAINER_CLASS_SCIENTIST,
-        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerPic = TRAINER_PIC_SCIENTIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
@@ -1563,8 +1563,8 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_HANDAM] =
     {
         .trainerName = _("Handam"),
-        .trainerClass = TRAINER_CLASS_CAMPER,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerClass = TRAINER_CLASS_YOUNGSTER,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
@@ -2640,7 +2640,7 @@ F_TRAINER_FEMALE |
     {
         .trainerName = _("Benny"),
         .trainerClass = TRAINER_CLASS_PROFESSOR,
-        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerPic = TRAINER_PIC_BIRCH,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .doubleBattle = FALSE,

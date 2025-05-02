@@ -297,7 +297,7 @@ Jolly Nature
 === TRAINER_PREMAL ===
 Name: Premal
 Class: Burglar
-Pic: Aqua Grunt M
+Pic: Burglar
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -750,8 +750,8 @@ Careful Nature
 
 === TRAINER_MONVISH ===
 Name: Monvish
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Guitarist
+Pic: Guitarist
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -815,7 +815,7 @@ Jolly Nature
 === TRAINER_DARWIN ===
 Name: Darwin
 Class: Scientist
-Pic: Collector
+Pic: Scientist
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -945,8 +945,8 @@ Adamant Nature
 
 === TRAINER_HANDAM ===
 Name: Handam
-Class: Camper
-Pic: Camper
+Class: Youngster
+Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1545,7 +1545,7 @@ Adamant Nature
 === TRAINER_BENNY ===
 Name: Benny
 Class: Professor
-Pic: Expert M
+Pic: Birch
 Gender: Male
 Music: Intense
 Double Battle: No

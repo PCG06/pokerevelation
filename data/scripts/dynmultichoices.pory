@@ -90,7 +90,7 @@ script EventScript_ChallengeGym1 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-	"Trainer Pawan", "Trainer Prajesh", "Leader Jake", "Back")
+	"Bug Catcher Pawan", "Camper Prajesh", "Leader Jake", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -148,7 +148,7 @@ script EventScript_ChallengeGym2 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Hanston", "Trainer Premal", "Leader Reeve", "Back")
+		"Collector Hanston", "Burglar Premal", "Leader Reeve", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -206,7 +206,7 @@ script EventScript_ChallengeGym3 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Rashel", "Trainer Don", "Leader Prem", "Back")
+		"Psychic Rashel", "Psychic Don", "Leader Prem", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -264,7 +264,7 @@ script EventScript_ChallengeGym4 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Akshara", "Trainer Dara", "Leader Jaison", "Back")
+		"Lady Akshara", "Lass Dara", "Leader Jaison", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -322,7 +322,7 @@ script EventScript_ChallengeGym5 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Gilston", "Trainer Delson", "Leader Prajith", "Back")
+		"Black Belt Gilston", "Kindler Delson", "Leader Prajith", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -380,7 +380,7 @@ script EventScript_ChallengeGym6 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Monvish", "Trainer Darwin", "Leader Varun", "Back")
+		"Guitarist Monvish", "Scientist Darwin", "Leader Varun", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -438,7 +438,7 @@ script EventScript_ChallengeGym7 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Adithya", "Trainer Handam", "Leader Snehal", "Back")
+		"Fisherman Adithya", "Youngster Handam", "Leader Snehal", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -496,7 +496,7 @@ script EventScript_ChallengeGym8 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Rion", "Trainer Deon", "Leader Rajesh", "Back")
+		"Expert Rion", "Dragon Tamer Deon", "Leader Rajesh", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
