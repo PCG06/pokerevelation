@@ -493,6 +493,21 @@ u32 BirchCase_GiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 
     return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel);
 }
 
+static u32 GiveMonSet(u16 species)
+{
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, MAX_LEVEL,
+        (u16)gPokemonSets[species].item, ITEM_POKE_BALL, (u8)gPokemonSets[species].nature,
+        CheckMonAbilitySlot(species, gPokemonSets[species].ability), MON_GENDERLESS, 
+        (u8 *)gPokemonSets[species].evs, (u8 *)gPokemonSets[species].ivs, (u16 *)gPokemonSets[species].moves, FALSE, FALSE, (u8)gPokemonSets[species].teraType, 0);
+}
+
+void ScrCmd_givemonset(struct ScriptContext *ctx)
+{
+    u16 species = VarGet(ScriptReadHalfword(ctx));
+
+    gSpecialVar_Result = GiveMonSet(species);
+}
+
 #define PARSE_FLAG(n, default_) (flags & (1 << (n))) ? VarGet(ScriptReadHalfword(ctx)) : (default_)
 
 /* Give or create a mon to either player or opponent

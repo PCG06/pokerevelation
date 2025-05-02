@@ -4362,22 +4362,16 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
-#include "data/text/species_names_for_codes.h"
-const u8 gSpeciesNamesForCodes[][CODE_NAME_LENGTH + 1];
-
-void GetPokemonFromCodeFeedback(void)
+void GetPokemonNameFeedback(void)
 {
-    u32 i;
-    StringCopyUppercase(gStringVar1, gStringVar2);
-    for (i = 0; i < NUM_SPECIES; i++)
+    for (u16 i = SPECIES_BULBASAUR; i < NUM_SPECIES; i++)
     {
-        StringCopyUppercase(gStringVar3, gSpeciesNamesForCodes[i]);
-        if (!StringCompare(gStringVar1, gStringVar3))
+        if (!StringCompare(gStringVar2, gPokemonSets[i].name))
         {
             gSpecialVar_Result = i;
-            break;
+            return;
         }
-        else
-            gSpecialVar_Result = 0;
     }
+    gSpecialVar_Result = 0;
+    return;
 }

@@ -464,8 +464,14 @@ $(LEARNSET_HELPERS_BUILD_DIR):
 $(ALL_LEARNABLES_JSON): $(wildcard $(LEARNSET_HELPERS_DATA_DIR)/*.json) | $(LEARNSET_HELPERS_BUILD_DIR)
 	python3 $(LEARNSET_HELPERS_DIR)/make_learnables.py $(LEARNSET_HELPERS_DATA_DIR) $@
 
+POKESETS_DEPS :=  $(DATA_SRC_SUBDIR)/pokemon/pokemon.sets
+
 $(DATA_SRC_SUBDIR)/pokemon/teachable_learnsets.h: $(TEACHABLE_DEPS)
 	python3 $(LEARNSET_HELPERS_DIR)/make_teachables.py $<
+
+$(DATA_SRC_SUBDIR)/pokemon/pokemon_sets.h: $(POKESETS_DEPS)
+	python3 $(TOOLS_DIR)/pokemon_sets/convert_sets.py
+	python3 $(TOOLS_DIR)/pokemon_sets/missing_sets.py
 
 # Linker script
 LD_SCRIPT := ld_script_modern.ld
