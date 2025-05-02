@@ -1620,11 +1620,11 @@ script EventScript_Group4Choices {
 	message(Text_SelectPkmn)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
-		"86. Obstagoon", "87. Palossand", "88. Perrserker", "89. Persian", "90. Persian-A", "91. Pidgeot",
-		"92. Politoed", "93. Poliwrath", "94. Raichu", "95. Raichu-A", "96. Roserade", "97. Rotom",
-		"98. Rotom-Fan", "99. Rotom-Frost", "100. Rotom-Heat", "101. Rotom-Mow", "102. Rotom-Wash", "103. Sableye",
-		"104. Salamence", "105. Salazzle", "106. Scizor", "107. Sharpedo", "108. Shiftry", "109. Shuckle",
-		"110. Skarmory", "111. Slowbro", "112. Slowbro-G", "113. Slowking", "Back"
+		"85. Obstagoon", "86. Palossand", "87. Perrserker", "88. Persian", "89. Persian-A", "90. Pidgeot",
+		"91. Politoed", "92. Poliwrath", "93. Raichu", "94. Raichu-A", "95. Roserade", "96. Rotom",
+		"97. Rotom-Fan", "98. Rotom-Frost", "99. Rotom-Heat", "100. Rotom-Mow", "101. Rotom-Wash", "102. Sableye",
+		"103. Salamence", "104. Salazzle", "105. Scizor", "106. Sharpedo", "107. Shiftry", "108. Shuckle",
+		"109. Skarmory", "110. Slowbro", "111. Slowbro-G", "112. Slowking", "Back"
 	)
 	closemessage
 	switch (var(VAR_RESULT)) {
@@ -1890,11 +1890,11 @@ script EventScript_Group5Choices {
 	message(Text_SelectPkmn)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
-		"115. Slowking-G", "116. Sneasler", "117. Snorlax", "118. Staraptor", "119. Sudowoodo", "120. Swellow",
-		"121. Sylveon", "122. Talonflame", "123. Tatsugiri", "124. Togekiss", "125. Torkoal", "126. Toxtricity",
-		"127. Toxtricity-L", "128. Tyranitar", "129. Tyrantrum", "130. Umbreon", "131. Unown", "132. Ursaluna",
-		"133. Ursaluna-B", "134. Vaporeon", "135. Volbeat", "136. Volcarona", "137. Wailord", "138. Weavile",
-		"139. Wyrdeer", "140. Zoroark", "141. Zoroark-H", "Back"
+		"113. Slowking-G", "114. Sneasler", "115. Snorlax", "116. Staraptor", "117. Sudowoodo", "118. Swellow",
+		"119. Sylveon", "120. Talonflame", "121. Tatsugiri", "122. Togekiss", "123. Torkoal", "124. Toxtricity",
+		"125. Toxtricity-LK", "126. Tyranitar", "127. Tyrantrum", "128. Umbreon", "129. Unown", "130. Ursaluna",
+		"131. Ursaluna-BM", "132. Vaporeon", "133. Volbeat", "134. Volcarona", "135. Wailord", "136. Weavile",
+		"137. Wyrdeer", "138. Zoroark", "139. Zoroark-H", "Back"
 	)
 	closemessage
 	switch (var(VAR_RESULT)) {
