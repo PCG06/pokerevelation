@@ -59,7 +59,7 @@ script EventScript_GymLeaderChoices {
 	message("Select a Gym.")
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
-		"Jake's Gym 1", "Reeve's Gym 2", "Prem's Gym 3", "Jaison's Gym 4", "Prajith's Gym 5", "Varun's Gym 6", "Snehal's Gym 7", "Rajesh's Gym 8", "Back")
+		"1. Jake's Gym", "2. Reeve's Gym", "3. Prem's Gym", "4. Jaison's Gym", "5. Prajith's Gym", "6. Varun's Gym", "7. Snehal's Gym", "8. Rajesh's Gym", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -551,175 +551,1598 @@ script EventScript_Gym8Trainers {
 }
 
 script EventScript_ChallengeTrainers {
-    message("Which Challenger do you want to\nchallenge?")
-    waitmessage
-    dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
-        "Challenger Manvitha", "Challenger Kevin", "Challenger Lohith",
-        "Challenger Anmol", "Challenger Arshad", "Challenger Melwin",
-        "Champion Bardar", "Back")
-    closemessage
-    switch (var(VAR_RESULT)) {
-        case 0:
-            if (defeated(TRAINER_MANVITHA)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 1:
-            if (defeated(TRAINER_KEVIN)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 2:
-            if (defeated(TRAINER_LOHITH)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 3:
-            if (defeated(TRAINER_ANMOL)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 4:
-            if (defeated(TRAINER_ARSHAD)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 5:
-            if (defeated(TRAINER_MELWIN)) {
-                msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        case 6:
-            if (defeated(TRAINER_YASHAS)) {
-                msgbox("You have already defeated the\n"
+	message("Which Challenger do you want to\nchallenge?")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"1. Challenger Manvitha", "2. Challenger Kevin", "3. Challenger Lohith",
+		"4. Challenger Anmol", "5. Challenger Arshad", "6. Challenger Melwin",
+		"7. Champion Bardar", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_MANVITHA)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_MANVITHA, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 1:
+			if (defeated(TRAINER_KEVIN)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_KEVIN, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 2:
+			if (defeated(TRAINER_LOHITH)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_LOHITH, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 3:
+			if (defeated(TRAINER_ANMOL)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_ANMOL, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 4:
+			if (defeated(TRAINER_ARSHAD)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_ARSHAD, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 5:
+			if (defeated(TRAINER_MELWIN)) {
+				msgbox(Text_YouHaveAlreadyDefeatedChallenger, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_MELWIN, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		case 6:
+			if (defeated(TRAINER_YASHAS)) {
+				msgbox("You have already defeated the\n"
 						"Champion!\p"
 						"Would you like to battle again?", MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
-                    goto(EventScript_ChallengeTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
-                goto(EventScript_ChallengeTrainerChoices)
-            }
-        default:
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
+					goto(EventScript_ChallengeTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_YASHAS, Text_UghILost)
+				goto(EventScript_ChallengeTrainerChoices)
+			}
+		default:
 		case 7:
-            goto(Common_EventScript_TrainerBattleMenu)
-    }
+			goto(Common_EventScript_TrainerBattleMenu)
+	}
 }
 
 script EventScript_ChallengeTrainerChoices {
-    if (defeated(TRAINER_MANVITHA) && defeated(TRAINER_KEVIN) && defeated(TRAINER_LOHITH) 
-        && defeated(TRAINER_ANMOL) && defeated(TRAINER_ARSHAD) && defeated(TRAINER_MELWIN) 
-        && defeated(TRAINER_YASHAS)) {
-        msgbox("You have already defeated all\n"
+	if (defeated(TRAINER_MANVITHA) && defeated(TRAINER_KEVIN) && defeated(TRAINER_LOHITH) 
+		&& defeated(TRAINER_ANMOL) && defeated(TRAINER_ARSHAD) && defeated(TRAINER_MELWIN) 
+		&& defeated(TRAINER_YASHAS)) {
+		msgbox("You have already defeated all\n"
 				"Challengers here!\p"
 				"Would you like to battle again?", MSGBOX_YESNO)
-        if (var(VAR_RESULT) == TRUE) {
-            call(EventScript_ChallengeTrainers)
-        }
-        else {
-            goto(Common_EventScript_TrainerBattleMenu)
-        }
-    }
-    else {
-        call(EventScript_ChallengeTrainers)
-    }
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengeTrainers)
+		}
+		else {
+			goto(Common_EventScript_TrainerBattleMenu)
+		}
+	}
+	else {
+		call(EventScript_ChallengeTrainers)
+	}
 }
 
 script EventScript_ChallengePostgameTrainers {
-    message(Text_WhichTrainerToChallenge)
-    waitmessage
-    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
-        "Professor Benny", "Master Aaron", "Back")
-    closemessage
-    switch (var(VAR_RESULT)) {
-        case 0:
-            if (defeated(TRAINER_BENNY)) {
-                msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
-                    goto(EventScript_PostgameTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
-                goto(EventScript_PostgameTrainerChoices)
-            }
-        case 1:
-            if (defeated(TRAINER_AARON)) {
-                msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
-                if (var(VAR_RESULT) == TRUE) {
-                    trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
-                    goto(EventScript_PostgameTrainerChoices)
-                }
-            }
-            else {
-                trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
-                goto(EventScript_PostgameTrainerChoices)
-            }
-        default:
+	message(Text_WhichTrainerToChallenge)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+		"1. Professor Benny", "2. Master Aaron", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (defeated(TRAINER_BENNY)) {
+				msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
+					goto(EventScript_PostgameTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_BENNY, Text_UghILost)
+				goto(EventScript_PostgameTrainerChoices)
+			}
+		case 1:
+			if (defeated(TRAINER_AARON)) {
+				msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
+					goto(EventScript_PostgameTrainerChoices)
+				}
+			}
+			else {
+				trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)
+				goto(EventScript_PostgameTrainerChoices)
+			}
+		default:
 		case 2:
-            goto(Common_EventScript_TrainerBattleMenu)
-    }
+			goto(Common_EventScript_TrainerBattleMenu)
+	}
 }
 
 script EventScript_PostgameTrainerChoices {
-    if (defeated(TRAINER_BENNY) && defeated(TRAINER_AARON)) {
-        msgbox("You have already defeated all\n"
+	if (defeated(TRAINER_BENNY) && defeated(TRAINER_AARON)) {
+		msgbox("You have already defeated all\n"
 				"Postgame Trainers here!\p"
 				"Would you like to battle again?", MSGBOX_YESNO)
-        if (var(VAR_RESULT) == TRUE) {
-            call(EventScript_ChallengePostgameTrainers)
-        }
-        else {
-            goto(Common_EventScript_TrainerBattleMenu)
-        }
-    }
-    else {
-        call(EventScript_ChallengePostgameTrainers)
-    }
+		if (var(VAR_RESULT) == TRUE) {
+			call(EventScript_ChallengePostgameTrainers)
+		}
+		else {
+			goto(Common_EventScript_TrainerBattleMenu)
+		}
+	}
+	else {
+		call(EventScript_ChallengePostgameTrainers)
+	}
+}
+
+# Pokémon menu
+script Common_EventScript_ChoosePkmnMenu {
+	lock
+	faceplayer
+	if (var(VAR_GOT_PARTY_PKMN) < 2) {
+		setvar(VAR_GOT_PARTY_PKMN, 1)
+	}
+	goto(Common_EventScript_ChoosePkmnMulti)
+	release
+	end
+}
+
+script Common_EventScript_ChoosePkmnMulti {
+	if (var(VAR_GOT_PARTY_PKMN) == 6) {
+		setflag(FLAG_GOT_PARTY_PKMN)
+	}
+	if (flag(FLAG_GOT_PARTY_PKMN) == true) {		
+		msgbox("You have chosen your Pokémon!\n"
+				"Start your adventure!", MSGBOX_NPC)
+	} else {
+		message("Select a group of Pokémon.")
+		waitmessage
+		dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Nevermind")
+		closemessage
+		switch (var(VAR_RESULT)) {
+			case 0:
+				goto(EventScript_Group1Choices)
+			case 1:
+				goto(EventScript_Group2Choices)
+			case 2:
+				goto(EventScript_Group3Choices)
+			case 3:
+				goto(EventScript_Group4Choices)
+			case 4:
+				goto(EventScript_Group5Choices)
+			default:
+			case 5:
+				buffernumberstring(STR_VAR_2, VAR_GOT_PARTY_PKMN)
+				msgbox("Start adventure with only {STR_VAR_2} Pokémon?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					setflag(FLAG_GOT_PARTY_PKMN)
+					msgbox("Start your adventure!", MSGBOX_DEFAULT)
+					release
+					end
+				} else {
+					goto(Common_EventScript_ChoosePkmnMulti)
+				}
+		}
+	}
+	release
+	end
+}
+
+text Text_SelectPkmn {
+	"Please select your Pokémon."
+}
+
+text Text_DoYouWantPkmn {
+	"Do you want {STR_VAR_1}?"
+}
+
+script EventScript_Givemonset {
+	playfanfare(MUS_OBTAIN_ITEM)
+	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
+	addvar(VAR_GOT_PARTY_PKMN, 1)
+	buffernumberstring(STR_VAR_2, VAR_GOT_PARTY_PKMN)
+	message("{PKMN} No {STR_VAR_2}.\n"
+			"{PLAYER} received {STR_VAR_1}!")
+	showmonpic(VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3)
+	waitmessage
+	waitfanfare
+	msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+	hidemonpic
+	if (var(VAR_RESULT) == FALSE) {
+		goto(Common_EventScript_ChoosePkmnMulti)
+	}
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Common_EventScript_ChoosePkmnMulti)
+	end
+}
+
+script EventScript_Group1Choices {
+	message(Text_SelectPkmn)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"1. Absol", "2. Aegislash", "3. Aerodactyl", "4. Altaria", "5. Ambipom", "6. Annihilape",
+		"7. Araquanid", "8. Archaludon", "9. Armarouge", "10. Azumarill", "11. Barraskewda", "12. Basculegion",
+		"13. Basculegion-F", "14. Baxcalibur", "15. Bellibolt", "16. Bronzong", "17. Camerupt", "18. Ceruledge",
+		"19. Clawitzer", "20. Corviknight", "21. Crawdaunt", "22. Dondozo", "23. Dragapult", "24. Dragonite",
+		"25. Dudunsparce", "26. Electivire", "27. Espeon", "28. Excadrill", "Back"
+	)
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_ABSOL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ABSOL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_AEGISLASH)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AEGISLASH)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_AERODACTYL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_ALTARIA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ALTARIA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 4:
+			bufferspeciesname(STR_VAR_1, SPECIES_AMBIPOM)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AMBIPOM)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 5:
+			bufferspeciesname(STR_VAR_1, SPECIES_ANNIHILAPE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANNIHILAPE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 6:
+			bufferspeciesname(STR_VAR_1, SPECIES_ARAQUANID)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARAQUANID)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 7:
+			bufferspeciesname(STR_VAR_1, SPECIES_ARCHALUDON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCHALUDON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 8:
+			bufferspeciesname(STR_VAR_1, SPECIES_ARMAROUGE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARMAROUGE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 9:
+			bufferspeciesname(STR_VAR_1, SPECIES_AZUMARILL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AZUMARILL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 10:
+			bufferspeciesname(STR_VAR_1, SPECIES_BARRASKEWDA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BARRASKEWDA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 11:
+			bufferspeciesname(STR_VAR_1, SPECIES_BASCULEGION)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 12:
+			bufferspeciesname(STR_VAR_1, SPECIES_BASCULEGION_F)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION_F)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 13:
+			bufferspeciesname(STR_VAR_1, SPECIES_BAXCALIBUR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BAXCALIBUR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 14:
+			bufferspeciesname(STR_VAR_1, SPECIES_BELLIBOLT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELLIBOLT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 15:
+			bufferspeciesname(STR_VAR_1, SPECIES_BRONZONG)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRONZONG)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 16:
+			bufferspeciesname(STR_VAR_1, SPECIES_CAMERUPT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 17:
+			bufferspeciesname(STR_VAR_1, SPECIES_CERULEDGE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CERULEDGE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 18:
+			bufferspeciesname(STR_VAR_1, SPECIES_CLAWITZER)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CLAWITZER)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 19:
+			bufferspeciesname(STR_VAR_1, SPECIES_CORVIKNIGHT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CORVIKNIGHT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 20:
+			bufferspeciesname(STR_VAR_1, SPECIES_CRAWDAUNT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRAWDAUNT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 21:
+			bufferspeciesname(STR_VAR_1, SPECIES_DONDOZO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DONDOZO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 22:
+			bufferspeciesname(STR_VAR_1, SPECIES_DRAGAPULT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGAPULT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 23:
+			bufferspeciesname(STR_VAR_1, SPECIES_DRAGONITE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGONITE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_DUDUNSPARCE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUDUNSPARCE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 25:
+			bufferspeciesname(STR_VAR_1, SPECIES_ELECTIVIRE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ELECTIVIRE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 26:
+			bufferspeciesname(STR_VAR_1, SPECIES_ESPEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ESPEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		case 27:
+			bufferspeciesname(STR_VAR_1, SPECIES_EXCADRILL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EXCADRILL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group1Choices)
+			}
+		default:
+		case 28:
+			goto(Common_EventScript_ChoosePkmnMulti)
+	}
+}
+
+script EventScript_Group2Choices {
+	message(Text_SelectPkmn)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"29. Farigiraf", "30. Ferrothorn", "31. Flareon", "32. Froslass", "33. Garchomp", "34. Gengar",
+		"35. Gholdengo", "36. Glaceon", "37. Glalie", "38. Gliscor", "39. Gogoat", "40. Golurk",
+		"41. Goodra", "42. Goodra-H", "43. Grimmsnarl", "44. Gyarados", "45. Hatterene", "46. Hawlucha",
+		"47. Hitmonchan", "48. Hitmonlee", "49. Hitmontop", "50. Houndstone", "51. Hydreigon", "52. Illumise",
+		"53. Jolteon", "54. Jynx", "55. Kingambit", "56. Kingdra", "Back"
+	)
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_FARIGIRAF)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FARIGIRAF)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_FERROTHORN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERROTHORN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_FLAREON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLAREON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_FROSLASS)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FROSLASS)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 4:
+			bufferspeciesname(STR_VAR_1, SPECIES_GARCHOMP)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GARCHOMP)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 5:
+			bufferspeciesname(STR_VAR_1, SPECIES_GENGAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GENGAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 6:
+			bufferspeciesname(STR_VAR_1, SPECIES_GHOLDENGO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GHOLDENGO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 7:
+			bufferspeciesname(STR_VAR_1, SPECIES_GLACEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLACEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 8:
+			bufferspeciesname(STR_VAR_1, SPECIES_GLALIE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLALIE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 9:
+			bufferspeciesname(STR_VAR_1, SPECIES_GLISCOR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLISCOR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 10:
+			bufferspeciesname(STR_VAR_1, SPECIES_GOGOAT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOGOAT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 11:
+			bufferspeciesname(STR_VAR_1, SPECIES_GOLURK)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLURK)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 12:
+			bufferspeciesname(STR_VAR_1, SPECIES_GOODRA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 13:
+			bufferspeciesname(STR_VAR_1, SPECIES_GOODRA_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 14:
+			bufferspeciesname(STR_VAR_1, SPECIES_GRIMMSNARL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRIMMSNARL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 15:
+			bufferspeciesname(STR_VAR_1, SPECIES_GYARADOS)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GYARADOS)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 16:
+			bufferspeciesname(STR_VAR_1, SPECIES_HATTERENE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HATTERENE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 17:
+			bufferspeciesname(STR_VAR_1, SPECIES_HAWLUCHA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HAWLUCHA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 18:
+			bufferspeciesname(STR_VAR_1, SPECIES_HITMONCHAN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONCHAN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 19:
+			bufferspeciesname(STR_VAR_1, SPECIES_HITMONLEE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONLEE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 20:
+			bufferspeciesname(STR_VAR_1, SPECIES_HITMONTOP)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONTOP)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 21:
+			bufferspeciesname(STR_VAR_1, SPECIES_HOUNDSTONE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOUNDSTONE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 22:
+			bufferspeciesname(STR_VAR_1, SPECIES_HYDREIGON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HYDREIGON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 23:
+			bufferspeciesname(STR_VAR_1, SPECIES_ILLUMISE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ILLUMISE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_JOLTEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JOLTEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 25:
+			bufferspeciesname(STR_VAR_1, SPECIES_JYNX)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JYNX)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 26:
+			bufferspeciesname(STR_VAR_1, SPECIES_KINGAMBIT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGAMBIT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		case 27:
+			bufferspeciesname(STR_VAR_1, SPECIES_KINGDRA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGDRA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group2Choices)
+			}
+		default:
+		case 28:
+			goto(Common_EventScript_ChoosePkmnMulti)
+	}
+}
+
+script EventScript_Group3Choices {
+	message(Text_SelectPkmn)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"57. Kleavor", "58. Kommo-o", "59. Krookodile", "60. Lanturn", "61. Leafeon", "62. Lilligant",
+		"63. Lilligant-H", "64. Linoone", "65. Lokix", "66. Lucario", "67. Ludicolo", "68. Luxray",
+		"69. Lycanroc", "70. Lycanroc-D", "71. Lycanroc-M", "72. Magmortar", "73. Magnezone", "74. Malamar",
+		"75. Mamoswine", "76. Mantine", "77. Mawile", "78. Metagross", "79. Mew", "80. Milotic",
+		"81. Mimikyu", "82. Nidoking", "83. Nidoqueen", "84. Noivern", "Back"
+	)
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_KLEAVOR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KLEAVOR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_KOMMO_O)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KOMMO_O)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_KROOKODILE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KROOKODILE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_LANTURN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LANTURN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 4:
+			bufferspeciesname(STR_VAR_1, SPECIES_LEAFEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LEAFEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 5:
+			bufferspeciesname(STR_VAR_1, SPECIES_LILLIGANT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILLIGANT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 6:
+			bufferspeciesname(STR_VAR_1, SPECIES_LILLIGANT_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILLIGANT_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 7:
+			bufferspeciesname(STR_VAR_1, SPECIES_LINOONE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LINOONE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 8:
+			bufferspeciesname(STR_VAR_1, SPECIES_LOKIX)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LOKIX)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 9:
+			bufferspeciesname(STR_VAR_1, SPECIES_LUCARIO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUCARIO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 10:
+			bufferspeciesname(STR_VAR_1, SPECIES_LUDICOLO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUDICOLO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 11:
+			bufferspeciesname(STR_VAR_1, SPECIES_LUXRAY)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUXRAY)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 12:
+			bufferspeciesname(STR_VAR_1, SPECIES_LYCANROC)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 13:
+			bufferspeciesname(STR_VAR_1, SPECIES_LYCANROC_DUSK)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC_DUSK)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 14:
+			bufferspeciesname(STR_VAR_1, SPECIES_LYCANROC_MIDNIGHT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC_MIDNIGHT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 15:
+			bufferspeciesname(STR_VAR_1, SPECIES_MAGMORTAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGMORTAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 16:
+			bufferspeciesname(STR_VAR_1, SPECIES_MAGNEZONE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGNEZONE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 17:
+			bufferspeciesname(STR_VAR_1, SPECIES_MALAMAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MALAMAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 18:
+			bufferspeciesname(STR_VAR_1, SPECIES_MAMOSWINE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 19:
+			bufferspeciesname(STR_VAR_1, SPECIES_MANTINE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MANTINE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 20:
+			bufferspeciesname(STR_VAR_1, SPECIES_MAWILE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAWILE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 21:
+			bufferspeciesname(STR_VAR_1, SPECIES_METAGROSS)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_METAGROSS)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 22:
+			bufferspeciesname(STR_VAR_1, SPECIES_MEW)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 23:
+			bufferspeciesname(STR_VAR_1, SPECIES_MILOTIC)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILOTIC)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_MIMIKYU)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MIMIKYU)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 25:
+			bufferspeciesname(STR_VAR_1, SPECIES_NIDOKING)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NIDOKING)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 26:
+			bufferspeciesname(STR_VAR_1, SPECIES_NIDOQUEEN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NIDOQUEEN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		case 27:
+			bufferspeciesname(STR_VAR_1, SPECIES_NOIVERN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NOIVERN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group3Choices)
+			}
+		default:
+		case 28:
+			goto(Common_EventScript_ChoosePkmnMulti)
+	}
+}
+
+script EventScript_Group4Choices {
+	message(Text_SelectPkmn)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"86. Obstagoon", "87. Palossand", "88. Perrserker", "89. Persian", "90. Persian-A", "91. Pidgeot",
+		"92. Politoed", "93. Poliwrath", "94. Raichu", "95. Raichu-A", "96. Roserade", "97. Rotom",
+		"98. Rotom-Fan", "99. Rotom-Frost", "100. Rotom-Heat", "101. Rotom-Mow", "102. Rotom-Wash", "103. Sableye",
+		"104. Salamence", "105. Salazzle", "106. Scizor", "107. Sharpedo", "108. Shiftry", "109. Shuckle",
+		"110. Skarmory", "111. Slowbro", "112. Slowbro-G", "113. Slowking", "Back"
+	)
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_OBSTAGOON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OBSTAGOON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_PALOSSAND)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PALOSSAND)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_PERRSERKER)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERRSERKER)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_PERSIAN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 4:
+			bufferspeciesname(STR_VAR_1, SPECIES_PERSIAN_ALOLA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN_ALOLA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 5:
+			bufferspeciesname(STR_VAR_1, SPECIES_PIDGEOT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIDGEOT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 6:
+			bufferspeciesname(STR_VAR_1, SPECIES_POLITOED)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLITOED)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 7:
+			bufferspeciesname(STR_VAR_1, SPECIES_POLIWRATH)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLIWRATH)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 8:
+			bufferspeciesname(STR_VAR_1, SPECIES_RAICHU)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 9:
+			bufferspeciesname(STR_VAR_1, SPECIES_RAICHU_ALOLA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU_ALOLA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 10:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROSERADE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROSERADE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 11:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 12:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM_FAN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FAN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 13:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM_FROST)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FROST)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 14:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM_HEAT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_HEAT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 15:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM_MOW)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_MOW)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 16:
+			bufferspeciesname(STR_VAR_1, SPECIES_ROTOM_WASH)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_WASH)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 17:
+			bufferspeciesname(STR_VAR_1, SPECIES_SABLEYE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 18:
+			bufferspeciesname(STR_VAR_1, SPECIES_SALAMENCE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAMENCE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 19:
+			bufferspeciesname(STR_VAR_1, SPECIES_SALAZZLE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAZZLE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 20:
+			bufferspeciesname(STR_VAR_1, SPECIES_SCIZOR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCIZOR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 21:
+			bufferspeciesname(STR_VAR_1, SPECIES_SHARPEDO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHARPEDO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 22:
+			bufferspeciesname(STR_VAR_1, SPECIES_SHIFTRY)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIFTRY)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 23:
+			bufferspeciesname(STR_VAR_1, SPECIES_SHUCKLE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHUCKLE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_SKARMORY)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKARMORY)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 25:
+			bufferspeciesname(STR_VAR_1, SPECIES_SLOWBRO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 26:
+			bufferspeciesname(STR_VAR_1, SPECIES_SLOWBRO_GALAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO_GALAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		case 27:
+			bufferspeciesname(STR_VAR_1, SPECIES_SLOWKING)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group4Choices)
+			}
+		default:
+		case 28:
+			goto(Common_EventScript_ChoosePkmnMulti)
+	}
+}
+
+script EventScript_Group5Choices {
+	message(Text_SelectPkmn)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"115. Slowking-G", "116. Sneasler", "117. Snorlax", "118. Staraptor", "119. Sudowoodo", "120. Swellow",
+		"121. Sylveon", "122. Talonflame", "123. Tatsugiri", "124. Togekiss", "125. Torkoal", "126. Toxtricity",
+		"127. Toxtricity-L", "128. Tyranitar", "129. Tyrantrum", "130. Umbreon", "131. Unown", "132. Ursaluna",
+		"133. Ursaluna-B", "134. Vaporeon", "135. Volbeat", "136. Volcarona", "137. Wailord", "138. Weavile",
+		"139. Wyrdeer", "140. Zoroark", "141. Zoroark-H", "Back"
+	)
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_SLOWKING_GALAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_SNEASLER)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNEASLER)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_SNORLAX)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_STARAPTOR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_STARAPTOR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 4:
+			bufferspeciesname(STR_VAR_1, SPECIES_SUDOWOODO)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SUDOWOODO)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 5:
+			bufferspeciesname(STR_VAR_1, SPECIES_SWELLOW)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWELLOW)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 6:
+			bufferspeciesname(STR_VAR_1, SPECIES_SYLVEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SYLVEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 7:
+			bufferspeciesname(STR_VAR_1, SPECIES_TALONFLAME)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TALONFLAME)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 8:
+			bufferspeciesname(STR_VAR_1, SPECIES_TATSUGIRI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TATSUGIRI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 9:
+			bufferspeciesname(STR_VAR_1, SPECIES_TOGEKISS)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEKISS)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 10:
+			bufferspeciesname(STR_VAR_1, SPECIES_TORKOAL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORKOAL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 11:
+			bufferspeciesname(STR_VAR_1, SPECIES_TOXTRICITY)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 12:
+			bufferspeciesname(STR_VAR_1, SPECIES_TOXTRICITY_LOW_KEY)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY_LOW_KEY)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 13:
+			bufferspeciesname(STR_VAR_1, SPECIES_TYRANITAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANITAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 14:
+			bufferspeciesname(STR_VAR_1, SPECIES_TYRANTRUM)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANTRUM)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 15:
+			bufferspeciesname(STR_VAR_1, SPECIES_UMBREON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UMBREON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 16:
+			bufferspeciesname(STR_VAR_1, SPECIES_UNOWN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNOWN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 17:
+			bufferspeciesname(STR_VAR_1, SPECIES_URSALUNA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 18:
+			bufferspeciesname(STR_VAR_1, SPECIES_URSALUNA_BLOODMOON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA_BLOODMOON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 19:
+			bufferspeciesname(STR_VAR_1, SPECIES_VAPOREON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VAPOREON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 20:
+			bufferspeciesname(STR_VAR_1, SPECIES_VOLBEAT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLBEAT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 21:
+			bufferspeciesname(STR_VAR_1, SPECIES_VOLCARONA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCARONA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 22:
+			bufferspeciesname(STR_VAR_1, SPECIES_WAILORD)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WAILORD)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 23:
+			bufferspeciesname(STR_VAR_1, SPECIES_WEAVILE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WEAVILE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_WYRDEER)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WYRDEER)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 25:
+			bufferspeciesname(STR_VAR_1, SPECIES_ZOROARK)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 26:
+			bufferspeciesname(STR_VAR_1, SPECIES_ZOROARK_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		default:
+		case 27:
+			goto(Common_EventScript_ChoosePkmnMulti)
+	}
 }

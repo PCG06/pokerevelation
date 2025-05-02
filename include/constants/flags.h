@@ -43,6 +43,7 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
+// COnfig Flags
 #define FLAG_INVERSE_BATTLE         0x20
 #define FLAG_NO_BAG_USE             0x21
 #define FLAG_NO_RUNNING             0x22
@@ -54,7 +55,8 @@
 #define FLAG_NO_COLLISION           0x28
 #define FLAG_POKE_RIDER             0x29
 #define FLAG_MOVE_UNION_ROOM_CHECK  0x2A
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+
+#define FLAG_GOT_PARTY_PKMN  0x2B
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag

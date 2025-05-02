@@ -35,10 +35,10 @@ gText_NoMoreRoomForPokemon::
 
 gText_NicknameThisPokemon::
 	.string "Do you want to give a nickname to\n"
-	.string "this {STR_VAR_2}?$"
+	.string "this {STR_VAR_1}?$"
 
 gText_PlayerReceivedPokemon::
-	.string "{PLAYER} received a {STR_VAR_2}!$"
+	.string "{PLAYER} received a {STR_VAR_1}!$"
 
 gText_ItHasTheXNature::
 	.string "It has the {STR_VAR_3} nature!$"

@@ -26,7 +26,7 @@ pokemon = [
     "Zoroark", "Zoroark Hisuian"
 ]
 
-num_groups = 6
+num_groups = 5
 group_size = len(pokemon) // num_groups
 remainder = len(pokemon) % num_groups
 
