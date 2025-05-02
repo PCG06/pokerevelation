@@ -3716,169 +3716,169 @@ EventScript_Group3Choices_Text_27:
 	.string "84. Noivern$"
 
 EventScript_Group4Choices_Text_0:
-	.string "86. Obstagoon$"
+	.string "85. Obstagoon$"
 
 EventScript_Group4Choices_Text_1:
-	.string "87. Palossand$"
+	.string "86. Palossand$"
 
 EventScript_Group4Choices_Text_2:
-	.string "88. Perrserker$"
+	.string "87. Perrserker$"
 
 EventScript_Group4Choices_Text_3:
-	.string "89. Persian$"
+	.string "88. Persian$"
 
 EventScript_Group4Choices_Text_4:
-	.string "90. Persian-A$"
+	.string "89. Persian-A$"
 
 EventScript_Group4Choices_Text_5:
-	.string "91. Pidgeot$"
+	.string "90. Pidgeot$"
 
 EventScript_Group4Choices_Text_6:
-	.string "92. Politoed$"
+	.string "91. Politoed$"
 
 EventScript_Group4Choices_Text_7:
-	.string "93. Poliwrath$"
+	.string "92. Poliwrath$"
 
 EventScript_Group4Choices_Text_8:
-	.string "94. Raichu$"
+	.string "93. Raichu$"
 
 EventScript_Group4Choices_Text_9:
-	.string "95. Raichu-A$"
+	.string "94. Raichu-A$"
 
 EventScript_Group4Choices_Text_10:
-	.string "96. Roserade$"
+	.string "95. Roserade$"
 
 EventScript_Group4Choices_Text_11:
-	.string "97. Rotom$"
+	.string "96. Rotom$"
 
 EventScript_Group4Choices_Text_12:
-	.string "98. Rotom-Fan$"
+	.string "97. Rotom-Fan$"
 
 EventScript_Group4Choices_Text_13:
-	.string "99. Rotom-Frost$"
+	.string "98. Rotom-Frost$"
 
 EventScript_Group4Choices_Text_14:
-	.string "100. Rotom-Heat$"
+	.string "99. Rotom-Heat$"
 
 EventScript_Group4Choices_Text_15:
-	.string "101. Rotom-Mow$"
+	.string "100. Rotom-Mow$"
 
 EventScript_Group4Choices_Text_16:
-	.string "102. Rotom-Wash$"
+	.string "101. Rotom-Wash$"
 
 EventScript_Group4Choices_Text_17:
-	.string "103. Sableye$"
+	.string "102. Sableye$"
 
 EventScript_Group4Choices_Text_18:
-	.string "104. Salamence$"
+	.string "103. Salamence$"
 
 EventScript_Group4Choices_Text_19:
-	.string "105. Salazzle$"
+	.string "104. Salazzle$"
 
 EventScript_Group4Choices_Text_20:
-	.string "106. Scizor$"
+	.string "105. Scizor$"
 
 EventScript_Group4Choices_Text_21:
-	.string "107. Sharpedo$"
+	.string "106. Sharpedo$"
 
 EventScript_Group4Choices_Text_22:
-	.string "108. Shiftry$"
+	.string "107. Shiftry$"
 
 EventScript_Group4Choices_Text_23:
-	.string "109. Shuckle$"
+	.string "108. Shuckle$"
 
 EventScript_Group4Choices_Text_24:
-	.string "110. Skarmory$"
+	.string "109. Skarmory$"
 
 EventScript_Group4Choices_Text_25:
-	.string "111. Slowbro$"
+	.string "110. Slowbro$"
 
 EventScript_Group4Choices_Text_26:
-	.string "112. Slowbro-G$"
+	.string "111. Slowbro-G$"
 
 EventScript_Group4Choices_Text_27:
-	.string "113. Slowking$"
+	.string "112. Slowking$"
 
 EventScript_Group5Choices_Text_0:
-	.string "115. Slowking-G$"
+	.string "113. Slowking-G$"
 
 EventScript_Group5Choices_Text_1:
-	.string "116. Sneasler$"
+	.string "114. Sneasler$"
 
 EventScript_Group5Choices_Text_2:
-	.string "117. Snorlax$"
+	.string "115. Snorlax$"
 
 EventScript_Group5Choices_Text_3:
-	.string "118. Staraptor$"
+	.string "116. Staraptor$"
 
 EventScript_Group5Choices_Text_4:
-	.string "119. Sudowoodo$"
+	.string "117. Sudowoodo$"
 
 EventScript_Group5Choices_Text_5:
-	.string "120. Swellow$"
+	.string "118. Swellow$"
 
 EventScript_Group5Choices_Text_6:
-	.string "121. Sylveon$"
+	.string "119. Sylveon$"
 
 EventScript_Group5Choices_Text_7:
-	.string "122. Talonflame$"
+	.string "120. Talonflame$"
 
 EventScript_Group5Choices_Text_8:
-	.string "123. Tatsugiri$"
+	.string "121. Tatsugiri$"
 
 EventScript_Group5Choices_Text_9:
-	.string "124. Togekiss$"
+	.string "122. Togekiss$"
 
 EventScript_Group5Choices_Text_10:
-	.string "125. Torkoal$"
+	.string "123. Torkoal$"
 
 EventScript_Group5Choices_Text_11:
-	.string "126. Toxtricity$"
+	.string "124. Toxtricity$"
 
 EventScript_Group5Choices_Text_12:
-	.string "127. Toxtricity-L$"
+	.string "125. Toxtricity-LK$"
 
 EventScript_Group5Choices_Text_13:
-	.string "128. Tyranitar$"
+	.string "126. Tyranitar$"
 
 EventScript_Group5Choices_Text_14:
-	.string "129. Tyrantrum$"
+	.string "127. Tyrantrum$"
 
 EventScript_Group5Choices_Text_15:
-	.string "130. Umbreon$"
+	.string "128. Umbreon$"
 
 EventScript_Group5Choices_Text_16:
-	.string "131. Unown$"
+	.string "129. Unown$"
 
 EventScript_Group5Choices_Text_17:
-	.string "132. Ursaluna$"
+	.string "130. Ursaluna$"
 
 EventScript_Group5Choices_Text_18:
-	.string "133. Ursaluna-B$"
+	.string "131. Ursaluna-BM$"
 
 EventScript_Group5Choices_Text_19:
-	.string "134. Vaporeon$"
+	.string "132. Vaporeon$"
 
 EventScript_Group5Choices_Text_20:
-	.string "135. Volbeat$"
+	.string "133. Volbeat$"
 
 EventScript_Group5Choices_Text_21:
-	.string "136. Volcarona$"
+	.string "134. Volcarona$"
 
 EventScript_Group5Choices_Text_22:
-	.string "137. Wailord$"
+	.string "135. Wailord$"
 
 EventScript_Group5Choices_Text_23:
-	.string "138. Weavile$"
+	.string "136. Weavile$"
 
 EventScript_Group5Choices_Text_24:
-	.string "139. Wyrdeer$"
+	.string "137. Wyrdeer$"
 
 EventScript_Group5Choices_Text_25:
-	.string "140. Zoroark$"
+	.string "138. Zoroark$"
 
 EventScript_Group5Choices_Text_26:
-	.string "141. Zoroark-H$"
+	.string "139. Zoroark-H$"
 
 Text_UghILost::
 	.string "Ugh, I lost!$"
