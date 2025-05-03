@@ -5914,7 +5914,15 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     }
 
     // Egg moves
-    const u16 *eggMoves = GetSpeciesEggMoves(species);
+    u16 preSpecies = species;
+    const u16 *eggMoves = sNoneEggMoveLearnset;
+
+    while (preSpecies != SPECIES_NONE)
+    {
+        eggMoves = GetSpeciesEggMoves(preSpecies);
+        preSpecies = GetSpeciesPreEvolution(preSpecies);
+    }
+
     if (eggMoves != sNoneEggMoveLearnset)
     {
         for (i = 0; eggMoves[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
