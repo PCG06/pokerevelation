@@ -728,9 +728,12 @@ script EventScript_PostgameTrainerChoices {
 script Common_EventScript_ChooseStarterMenu {
 	lock
 	faceplayer
+	if (flag(FLAG_SYS_STARTER_GOT)) {
+		goto(Common_EventScript_ChoosePkmnMenu)
+	}
 	message ("Select your region.")
 	waitmessage
-	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea", "Hisui", "Skip")
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea", "Hisui", "Skip", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -753,7 +756,6 @@ script Common_EventScript_ChooseStarterMenu {
 			goto(Common_EventScript_PaldeaStarters)
 		case 9:
 			goto(Common_EventScript_HisuiStarters)
-		default:
 		case 10:
 			msgbox("Would you like to skip starter\n"
 					"Pokémon selection?", MSGBOX_YESNO)
@@ -764,9 +766,12 @@ script Common_EventScript_ChooseStarterMenu {
 			} else {
 				goto(Common_EventScript_ChooseStarterMenu)
 			}
-			release
-			end
+		default:
+		case 11:
+			msgbox("Come back when you're ready!", MSGBOX_NPC)
 	}
+	release
+	end
 }
 
 text Text_SelectStarter {
@@ -778,6 +783,7 @@ script EventScript_Givestarterset {
 	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
 	setvar(VAR_GOT_PARTY_PKMN, 1)
 	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_SYS_STARTER_GOT)
 	message("{PLAYER} received {STR_VAR_1}!")
 	showmonpic(VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3)
 	waitmessage
@@ -1075,45 +1081,6 @@ script Common_EventScript_AlolaStarters {
 	}
 }
 
-script Common_EventScript_PaldeaStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Meowscarada", "Skeledirge", "Quaquaval", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_MEOWSCARADA)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_SKELEDIRGE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_QUAQUAVAL)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
 script Common_EventScript_GalarStarters {
 	message(Text_SelectStarter)
 	waitmessage
@@ -1146,6 +1113,45 @@ script Common_EventScript_GalarStarters {
 				goto(EventScript_Givestarterset)
 			} else {
 				goto(Common_EventScript_GalarStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_PaldeaStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Meowscarada", "Skeledirge", "Quaquaval", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_MEOWSCARADA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA)
+				goto(EventScript_Givestarterset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_SKELEDIRGE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE)
+				goto(EventScript_Givestarterset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_QUAQUAVAL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL)
+				goto(EventScript_Givestarterset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
 			}
 		default:
 		case 3:
@@ -1194,14 +1200,6 @@ script Common_EventScript_HisuiStarters {
 
 # Pokémon menu
 script Common_EventScript_ChoosePkmnMenu {
-	lock
-	faceplayer
-	goto(Common_EventScript_ChoosePkmnMulti)
-	release
-	end
-}
-
-script Common_EventScript_ChoosePkmnMulti {
 	if (var(VAR_GOT_PARTY_PKMN) == 6) {
 		setflag(FLAG_GOT_PARTY_PKMN)
 	}
@@ -1211,7 +1209,7 @@ script Common_EventScript_ChoosePkmnMulti {
 	} else {
 		message("Select a group of Pokémon.")
 		waitmessage
-		dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Nevermind")
+		dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Start", "Back")
 		closemessage
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -1224,7 +1222,6 @@ script Common_EventScript_ChoosePkmnMulti {
 				goto(EventScript_Group4Choices)
 			case 4:
 				goto(EventScript_Group5Choices)
-			default:
 			case 5:
 				if (var(VAR_GOT_PARTY_PKMN) == 0) {
 					msgbox("You need to choose at least one\n"
@@ -1239,9 +1236,12 @@ script Common_EventScript_ChoosePkmnMulti {
 						release
 						end
 					} else {
-						goto(Common_EventScript_ChoosePkmnMulti)
+						goto(Common_EventScript_ChoosePkmnMenu)
 					}
 				}
+			default:
+			case 6:
+				msgbox("Come back when you're ready!", MSGBOX_NPC)
 		}
 	}
 	release
@@ -1272,11 +1272,11 @@ script EventScript_Givemonset {
 	msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
 	hidemonpic
 	if (var(VAR_RESULT) == FALSE) {
-		goto(Common_EventScript_ChoosePkmnMulti)
+		goto(Common_EventScript_ChoosePkmnMenu)
 	}
 	call(Common_EventScript_GetGiftMonPartySlot)
 	call(Common_EventScript_NameReceivedPartyMon)
-	goto(Common_EventScript_ChoosePkmnMulti)
+	goto(Common_EventScript_ChoosePkmnMenu)
 	end
 }
 
@@ -1546,7 +1546,7 @@ script EventScript_Group1Choices {
 			}
 		default:
 		case 28:
-			goto(Common_EventScript_ChoosePkmnMulti)
+			goto(Common_EventScript_ChoosePkmnMenu)
 	}
 }
 
@@ -1816,7 +1816,7 @@ script EventScript_Group2Choices {
 			}
 		default:
 		case 28:
-			goto(Common_EventScript_ChoosePkmnMulti)
+			goto(Common_EventScript_ChoosePkmnMenu)
 	}
 }
 
@@ -2086,7 +2086,7 @@ script EventScript_Group3Choices {
 			}
 		default:
 		case 28:
-			goto(Common_EventScript_ChoosePkmnMulti)
+			goto(Common_EventScript_ChoosePkmnMenu)
 	}
 }
 
@@ -2356,7 +2356,7 @@ script EventScript_Group4Choices {
 			}
 		default:
 		case 28:
-			goto(Common_EventScript_ChoosePkmnMulti)
+			goto(Common_EventScript_ChoosePkmnMenu)
 	}
 }
 
@@ -2626,6 +2626,6 @@ script EventScript_Group5Choices {
 			}
 		default:
 		case 28:
-			goto(Common_EventScript_ChoosePkmnMulti)
+			goto(Common_EventScript_ChoosePkmnMenu)
 	}
 }
