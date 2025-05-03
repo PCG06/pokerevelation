@@ -2368,7 +2368,7 @@ script EventScript_Group5Choices {
 		"119. Sylveon", "120. Talonflame", "121. Tatsugiri", "122. Togekiss", "123. Torkoal", "124. Toxtricity",
 		"125. Toxtricity-LK", "126. Tyranitar", "127. Tyrantrum", "128. Umbreon", "129. Unown", "130. Ursaluna",
 		"131. Ursaluna-BM", "132. Vaporeon", "133. Volbeat", "134. Volcarona", "135. Wailord", "136. Weavile",
-		"137. Wyrdeer", "138. Zoroark", "139. Zoroark-H", "Back"
+		"137. Whimsicott", "138. Wyrdeer", "139. Zoroark", "140. Zoroark-H", "Back"
 	)
 	closemessage
 	switch (var(VAR_RESULT)) {
@@ -2589,6 +2589,15 @@ script EventScript_Group5Choices {
 				goto(EventScript_Group5Choices)
 			}
 		case 24:
+			bufferspeciesname(STR_VAR_1, SPECIES_WHIMSICOTT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WHIMSICOTT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(EventScript_Group5Choices)
+			}
+		case 25:
 			bufferspeciesname(STR_VAR_1, SPECIES_WYRDEER)
 			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == TRUE) {
@@ -2597,7 +2606,7 @@ script EventScript_Group5Choices {
 			} else {
 				goto(EventScript_Group5Choices)
 			}
-		case 25:
+		case 26:
 			bufferspeciesname(STR_VAR_1, SPECIES_ZOROARK)
 			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == TRUE) {
@@ -2606,7 +2615,7 @@ script EventScript_Group5Choices {
 			} else {
 				goto(EventScript_Group5Choices)
 			}
-		case 26:
+		case 27:
 			bufferspeciesname(STR_VAR_1, SPECIES_ZOROARK_HISUI)
 			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == TRUE) {
@@ -2616,7 +2625,7 @@ script EventScript_Group5Choices {
 				goto(EventScript_Group5Choices)
 			}
 		default:
-		case 27:
+		case 28:
 			goto(Common_EventScript_ChoosePkmnMulti)
 	}
 }

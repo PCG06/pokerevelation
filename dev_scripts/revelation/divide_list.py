@@ -22,8 +22,8 @@ pokemon = [
     "Sharpedo", "Shiftry", "Shuckle", "Skarmory", "Slowbro", "Slowbro Galarian", "Slowking", "Slowking Galarian",
     "Sneasler", "Snorlax", "Staraptor", "Sudowoodo", "Swellow", "Sylveon", "Talonflame", "Tatsugiri",
     "Togekiss", "Torkoal", "Toxtricity", "Toxtricity Low Key", "Tyranitar", "Tyrantrum", "Umbreon", "Unown",
-    "Ursaluna", "Ursaluna Bloodmoon", "Vaporeon", "Volbeat", "Volcarona", "Wailord", "Weavile", "Wyrdeer",
-    "Zoroark", "Zoroark Hisuian"
+    "Ursaluna", "Ursaluna Bloodmoon", "Vaporeon", "Volbeat", "Volcarona", "Wailord", "Weavile", "Whimsicott",
+    "Wyrdeer", "Zoroark", "Zoroark Hisuian"
 ]
 
 num_groups = 5

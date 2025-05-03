@@ -3565,7 +3565,7 @@ EventScript_Group4Choices_112:
 EventScript_Group5Choices::
 	message Text_SelectPkmn
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group5Choices_Text_0, EventScript_Group5Choices_Text_1, EventScript_Group5Choices_Text_2, EventScript_Group5Choices_Text_3, EventScript_Group5Choices_Text_4, EventScript_Group5Choices_Text_5, EventScript_Group5Choices_Text_6, EventScript_Group5Choices_Text_7, EventScript_Group5Choices_Text_8, EventScript_Group5Choices_Text_9, EventScript_Group5Choices_Text_10, EventScript_Group5Choices_Text_11, EventScript_Group5Choices_Text_12, EventScript_Group5Choices_Text_13, EventScript_Group5Choices_Text_14, EventScript_Group5Choices_Text_15, EventScript_Group5Choices_Text_16, EventScript_Group5Choices_Text_17, EventScript_Group5Choices_Text_18, EventScript_Group5Choices_Text_19, EventScript_Group5Choices_Text_20, EventScript_Group5Choices_Text_21, EventScript_Group5Choices_Text_22, EventScript_Group5Choices_Text_23, EventScript_Group5Choices_Text_24, EventScript_Group5Choices_Text_25, EventScript_Group5Choices_Text_26, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group5Choices_Text_0, EventScript_Group5Choices_Text_1, EventScript_Group5Choices_Text_2, EventScript_Group5Choices_Text_3, EventScript_Group5Choices_Text_4, EventScript_Group5Choices_Text_5, EventScript_Group5Choices_Text_6, EventScript_Group5Choices_Text_7, EventScript_Group5Choices_Text_8, EventScript_Group5Choices_Text_9, EventScript_Group5Choices_Text_10, EventScript_Group5Choices_Text_11, EventScript_Group5Choices_Text_12, EventScript_Group5Choices_Text_13, EventScript_Group5Choices_Text_14, EventScript_Group5Choices_Text_15, EventScript_Group5Choices_Text_16, EventScript_Group5Choices_Text_17, EventScript_Group5Choices_Text_18, EventScript_Group5Choices_Text_19, EventScript_Group5Choices_Text_20, EventScript_Group5Choices_Text_21, EventScript_Group5Choices_Text_22, EventScript_Group5Choices_Text_23, EventScript_Group5Choices_Text_24, EventScript_Group5Choices_Text_25, EventScript_Group5Choices_Text_26, EventScript_Group5Choices_Text_27, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group5Choices_2
@@ -3596,7 +3596,8 @@ EventScript_Group5Choices::
 	case 25, EventScript_Group5Choices_27
 	case 26, EventScript_Group5Choices_28
 	case 27, EventScript_Group5Choices_29
-EventScript_Group5Choices_29:
+	case 28, EventScript_Group5Choices_30
+EventScript_Group5Choices_30:
 	goto Common_EventScript_ChoosePkmnMulti
 	return
 
@@ -3604,7 +3605,7 @@ EventScript_Group5Choices_2:
 	bufferspeciesname STR_VAR_1, SPECIES_SLOWKING_GALAR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_30
+	goto_if_eq EventScript_Group5Choices_31
 	goto EventScript_Group5Choices
 	return
 
@@ -3612,7 +3613,7 @@ EventScript_Group5Choices_3:
 	bufferspeciesname STR_VAR_1, SPECIES_SNEASLER
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_33
+	goto_if_eq EventScript_Group5Choices_34
 	goto EventScript_Group5Choices
 	return
 
@@ -3620,7 +3621,7 @@ EventScript_Group5Choices_4:
 	bufferspeciesname STR_VAR_1, SPECIES_SNORLAX
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_36
+	goto_if_eq EventScript_Group5Choices_37
 	goto EventScript_Group5Choices
 	return
 
@@ -3628,7 +3629,7 @@ EventScript_Group5Choices_5:
 	bufferspeciesname STR_VAR_1, SPECIES_STARAPTOR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_39
+	goto_if_eq EventScript_Group5Choices_40
 	goto EventScript_Group5Choices
 	return
 
@@ -3636,7 +3637,7 @@ EventScript_Group5Choices_6:
 	bufferspeciesname STR_VAR_1, SPECIES_SUDOWOODO
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_42
+	goto_if_eq EventScript_Group5Choices_43
 	goto EventScript_Group5Choices
 	return
 
@@ -3644,7 +3645,7 @@ EventScript_Group5Choices_7:
 	bufferspeciesname STR_VAR_1, SPECIES_SWELLOW
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_45
+	goto_if_eq EventScript_Group5Choices_46
 	goto EventScript_Group5Choices
 	return
 
@@ -3652,7 +3653,7 @@ EventScript_Group5Choices_8:
 	bufferspeciesname STR_VAR_1, SPECIES_SYLVEON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_48
+	goto_if_eq EventScript_Group5Choices_49
 	goto EventScript_Group5Choices
 	return
 
@@ -3660,7 +3661,7 @@ EventScript_Group5Choices_9:
 	bufferspeciesname STR_VAR_1, SPECIES_TALONFLAME
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_51
+	goto_if_eq EventScript_Group5Choices_52
 	goto EventScript_Group5Choices
 	return
 
@@ -3668,7 +3669,7 @@ EventScript_Group5Choices_10:
 	bufferspeciesname STR_VAR_1, SPECIES_TATSUGIRI
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_54
+	goto_if_eq EventScript_Group5Choices_55
 	goto EventScript_Group5Choices
 	return
 
@@ -3676,7 +3677,7 @@ EventScript_Group5Choices_11:
 	bufferspeciesname STR_VAR_1, SPECIES_TOGEKISS
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_57
+	goto_if_eq EventScript_Group5Choices_58
 	goto EventScript_Group5Choices
 	return
 
@@ -3684,7 +3685,7 @@ EventScript_Group5Choices_12:
 	bufferspeciesname STR_VAR_1, SPECIES_TORKOAL
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_60
+	goto_if_eq EventScript_Group5Choices_61
 	goto EventScript_Group5Choices
 	return
 
@@ -3692,7 +3693,7 @@ EventScript_Group5Choices_13:
 	bufferspeciesname STR_VAR_1, SPECIES_TOXTRICITY
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_63
+	goto_if_eq EventScript_Group5Choices_64
 	goto EventScript_Group5Choices
 	return
 
@@ -3700,7 +3701,7 @@ EventScript_Group5Choices_14:
 	bufferspeciesname STR_VAR_1, SPECIES_TOXTRICITY_LOW_KEY
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_66
+	goto_if_eq EventScript_Group5Choices_67
 	goto EventScript_Group5Choices
 	return
 
@@ -3708,7 +3709,7 @@ EventScript_Group5Choices_15:
 	bufferspeciesname STR_VAR_1, SPECIES_TYRANITAR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_69
+	goto_if_eq EventScript_Group5Choices_70
 	goto EventScript_Group5Choices
 	return
 
@@ -3716,7 +3717,7 @@ EventScript_Group5Choices_16:
 	bufferspeciesname STR_VAR_1, SPECIES_TYRANTRUM
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_72
+	goto_if_eq EventScript_Group5Choices_73
 	goto EventScript_Group5Choices
 	return
 
@@ -3724,7 +3725,7 @@ EventScript_Group5Choices_17:
 	bufferspeciesname STR_VAR_1, SPECIES_UMBREON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_75
+	goto_if_eq EventScript_Group5Choices_76
 	goto EventScript_Group5Choices
 	return
 
@@ -3732,7 +3733,7 @@ EventScript_Group5Choices_18:
 	bufferspeciesname STR_VAR_1, SPECIES_UNOWN
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_78
+	goto_if_eq EventScript_Group5Choices_79
 	goto EventScript_Group5Choices
 	return
 
@@ -3740,7 +3741,7 @@ EventScript_Group5Choices_19:
 	bufferspeciesname STR_VAR_1, SPECIES_URSALUNA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_81
+	goto_if_eq EventScript_Group5Choices_82
 	goto EventScript_Group5Choices
 	return
 
@@ -3748,7 +3749,7 @@ EventScript_Group5Choices_20:
 	bufferspeciesname STR_VAR_1, SPECIES_URSALUNA_BLOODMOON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_84
+	goto_if_eq EventScript_Group5Choices_85
 	goto EventScript_Group5Choices
 	return
 
@@ -3756,7 +3757,7 @@ EventScript_Group5Choices_21:
 	bufferspeciesname STR_VAR_1, SPECIES_VAPOREON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_87
+	goto_if_eq EventScript_Group5Choices_88
 	goto EventScript_Group5Choices
 	return
 
@@ -3764,7 +3765,7 @@ EventScript_Group5Choices_22:
 	bufferspeciesname STR_VAR_1, SPECIES_VOLBEAT
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_90
+	goto_if_eq EventScript_Group5Choices_91
 	goto EventScript_Group5Choices
 	return
 
@@ -3772,7 +3773,7 @@ EventScript_Group5Choices_23:
 	bufferspeciesname STR_VAR_1, SPECIES_VOLCARONA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_93
+	goto_if_eq EventScript_Group5Choices_94
 	goto EventScript_Group5Choices
 	return
 
@@ -3780,7 +3781,7 @@ EventScript_Group5Choices_24:
 	bufferspeciesname STR_VAR_1, SPECIES_WAILORD
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_96
+	goto_if_eq EventScript_Group5Choices_97
 	goto EventScript_Group5Choices
 	return
 
@@ -3788,165 +3789,178 @@ EventScript_Group5Choices_25:
 	bufferspeciesname STR_VAR_1, SPECIES_WEAVILE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_99
+	goto_if_eq EventScript_Group5Choices_100
 	goto EventScript_Group5Choices
 	return
 
 EventScript_Group5Choices_26:
-	bufferspeciesname STR_VAR_1, SPECIES_WYRDEER
+	bufferspeciesname STR_VAR_1, SPECIES_WHIMSICOTT
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_102
+	goto_if_eq EventScript_Group5Choices_103
 	goto EventScript_Group5Choices
 	return
 
 EventScript_Group5Choices_27:
-	bufferspeciesname STR_VAR_1, SPECIES_ZOROARK
+	bufferspeciesname STR_VAR_1, SPECIES_WYRDEER
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_105
+	goto_if_eq EventScript_Group5Choices_106
 	goto EventScript_Group5Choices
 	return
 
 EventScript_Group5Choices_28:
-	bufferspeciesname STR_VAR_1, SPECIES_ZOROARK_HISUI
+	bufferspeciesname STR_VAR_1, SPECIES_ZOROARK
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Group5Choices_108
+	goto_if_eq EventScript_Group5Choices_109
 	goto EventScript_Group5Choices
 	return
 
-EventScript_Group5Choices_30:
+EventScript_Group5Choices_29:
+	bufferspeciesname STR_VAR_1, SPECIES_ZOROARK_HISUI
+	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_Group5Choices_112
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_31:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_33:
+EventScript_Group5Choices_34:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNEASLER
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_36:
+EventScript_Group5Choices_37:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_39:
+EventScript_Group5Choices_40:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_STARAPTOR
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_42:
+EventScript_Group5Choices_43:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SUDOWOODO
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_45:
+EventScript_Group5Choices_46:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWELLOW
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_48:
+EventScript_Group5Choices_49:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SYLVEON
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_51:
+EventScript_Group5Choices_52:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TALONFLAME
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_54:
+EventScript_Group5Choices_55:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TATSUGIRI
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_57:
+EventScript_Group5Choices_58:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEKISS
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_60:
+EventScript_Group5Choices_61:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORKOAL
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_63:
+EventScript_Group5Choices_64:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_66:
+EventScript_Group5Choices_67:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY_LOW_KEY
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_69:
+EventScript_Group5Choices_70:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANITAR
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_72:
+EventScript_Group5Choices_73:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANTRUM
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_75:
+EventScript_Group5Choices_76:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UMBREON
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_78:
+EventScript_Group5Choices_79:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNOWN
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_81:
+EventScript_Group5Choices_82:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_84:
+EventScript_Group5Choices_85:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA_BLOODMOON
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_87:
+EventScript_Group5Choices_88:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VAPOREON
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_90:
+EventScript_Group5Choices_91:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLBEAT
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_93:
+EventScript_Group5Choices_94:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCARONA
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_96:
+EventScript_Group5Choices_97:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WAILORD
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_99:
+EventScript_Group5Choices_100:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WEAVILE
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_102:
+EventScript_Group5Choices_103:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WHIMSICOTT
+	goto EventScript_Givemonset
+	return
+
+EventScript_Group5Choices_106:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WYRDEER
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_105:
+EventScript_Group5Choices_109:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK
 	goto EventScript_Givemonset
 	return
 
-EventScript_Group5Choices_108:
+EventScript_Group5Choices_112:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK_HISUI
 	goto EventScript_Givemonset
 	return
@@ -4701,13 +4715,16 @@ EventScript_Group5Choices_Text_23:
 	.string "136. Weavile$"
 
 EventScript_Group5Choices_Text_24:
-	.string "137. Wyrdeer$"
+	.string "137. Whimsicott$"
 
 EventScript_Group5Choices_Text_25:
-	.string "138. Zoroark$"
+	.string "138. Wyrdeer$"
 
 EventScript_Group5Choices_Text_26:
-	.string "139. Zoroark-H$"
+	.string "139. Zoroark$"
+
+EventScript_Group5Choices_Text_27:
+	.string "140. Zoroark-H$"
 
 Text_UghILost::
 	.string "Ugh, I lost!$"

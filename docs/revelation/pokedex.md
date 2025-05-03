@@ -278,215 +278,217 @@
 | 214    | Petilil                | Grass      |            |
 | 215    | Lilligant              | Grass      |            |
 |        | Hisuian Lilligant      | Grass      | Fighting   |
-| 216    | Basculin               | Water      |            |
+| 216    | Cottonee               | Grass      | Fairy      |
+| 217    | Whimsicott             | Grass      | Fairy      |
+| 218    | Basculin               | Water      |            |
 |        | Basculin Blue          | Water      |            |
 |        | Basculin White         | Water      |            |
-| 217    | Basculegion            | Water      | Ghost      |
+| 219    | Basculegion            | Water      | Ghost      |
 |        | Basculegion Female     | Water      | Ghost      |
-| 218    | Sandile                | Ground     | Dark       |
-| 219    | Krokorok               | Ground     | Dark       |
-| 220    | Krookodile             | Ground     | Dark       |
-| 221    | Zorua                  | Dark       |            |
+| 220    | Sandile                | Ground     | Dark       |
+| 221    | Krokorok               | Ground     | Dark       |
+| 222    | Krookodile             | Ground     | Dark       |
+| 223    | Zorua                  | Dark       |            |
 |        | Hisuian Zorua          | Normal     | Ghost      |
-| 222    | Zoroark                | Dark       |            |
+| 224    | Zoroark                | Dark       |            |
 |        | Hisuian Zoroark        | Normal     | Ghost      |
-| 223    | Ferroseed              | Grass      | Steel      |
-| 224    | Ferrothorn             | Grass      | Steel      |
-| 225    | Golett                 | Ground     | Ghost      |
-| 226    | Golurk                 | Ground     | Ghost      |
-| 227    | Pawniard               | Dark       | Steel      |
-| 228    | Bisharp                | Dark       | Steel      |
-| 229    | Kingambit              | Dark       | Steel      |
-| 230    | Deino                  | Dark       | Dragon     |
-| 231    | Zweilous               | Dark       | Dragon     |
-| 232    | Hydreigon              | Dark       | Dragon     |
-| 233    | Larvesta               | Bug        | Fire       |
-| 234    | Volcarona              | Bug        | Fire       |
-| 235    | Tornadus               | Flying     |            |
+| 225    | Ferroseed              | Grass      | Steel      |
+| 226    | Ferrothorn             | Grass      | Steel      |
+| 227    | Golett                 | Ground     | Ghost      |
+| 228    | Golurk                 | Ground     | Ghost      |
+| 229    | Pawniard               | Dark       | Steel      |
+| 230    | Bisharp                | Dark       | Steel      |
+| 231    | Kingambit              | Dark       | Steel      |
+| 232    | Deino                  | Dark       | Dragon     |
+| 233    | Zweilous               | Dark       | Dragon     |
+| 234    | Hydreigon              | Dark       | Dragon     |
+| 235    | Larvesta               | Bug        | Fire       |
+| 236    | Volcarona              | Bug        | Fire       |
+| 237    | Tornadus               | Flying     |            |
 |        | Tornadus Therian       | Flying     |            |
-| 236    | Thundurus              | Electric   | Flying     |
+| 238    | Thundurus              | Electric   | Flying     |
 |        | Thundurus Therian      | Electric   | Flying     |
-| 237    | Landorus               | Ground     | Flying     |
+| 239    | Landorus               | Ground     | Flying     |
 |        | Landorus Therian       | Ground     | Flying     |
-| 238    | Chespin                | Grass      |            |
-| 239    | Quilladin              | Grass      |            |
-| 240    | Chesnaught             | Grass      | Fighting   |
-| 241    | Fennekin               | Fire       |            |
-| 242    | Braixen                | Fire       |            |
-| 243    | Delphox                | Fire       | Psychic    |
-| 244    | Froakie                | Water      |            |
-| 245    | Frogadier              | Water      |            |
-| 246    | Greninja               | Water      | Dark       |
-| 247    | Fletchling             | Normal     | Flying     |
-| 248    | Fletchinder            | Fire       | Flying     |
-| 249    | Talonflame             | Fire       | Flying     |
-| 250    | Skiddo                 | Grass      |            |
-| 251    | Gogoat                 | Grass      |            |
-| 252    | Honedge                | Steel      | Ghost      |
-| 253    | Doublade               | Steel      | Ghost      |
-| 254    | Aegislash              | Steel      | Ghost      |
-| 255    | Inkay                  | Dark       | Psychic    |
-| 256    | Malamar                | Dark       | Psychic    |
-| 257    | Clauncher              | Water      |            |
-| 258    | Clawitzer              | Water      |            |
-| 259    | Tyrunt                 | Rock       | Dragon     |
-| 260    | Tyrantrum              | Rock       | Dragon     |
-| 261    | Hawlucha               | Fighting   | Flying     |
-| 262    | Goomy                  | Dragon     |            |
-| 263    | Sliggoo                | Dragon     |            |
+| 240    | Chespin                | Grass      |            |
+| 241    | Quilladin              | Grass      |            |
+| 242    | Chesnaught             | Grass      | Fighting   |
+| 243    | Fennekin               | Fire       |            |
+| 244    | Braixen                | Fire       |            |
+| 245    | Delphox                | Fire       | Psychic    |
+| 246    | Froakie                | Water      |            |
+| 247    | Frogadier              | Water      |            |
+| 248    | Greninja               | Water      | Dark       |
+| 249    | Fletchling             | Normal     | Flying     |
+| 250    | Fletchinder            | Fire       | Flying     |
+| 251    | Talonflame             | Fire       | Flying     |
+| 252    | Skiddo                 | Grass      |            |
+| 253    | Gogoat                 | Grass      |            |
+| 254    | Honedge                | Steel      | Ghost      |
+| 255    | Doublade               | Steel      | Ghost      |
+| 256    | Aegislash              | Steel      | Ghost      |
+| 257    | Inkay                  | Dark       | Psychic    |
+| 258    | Malamar                | Dark       | Psychic    |
+| 259    | Clauncher              | Water      |            |
+| 260    | Clawitzer              | Water      |            |
+| 261    | Tyrunt                 | Rock       | Dragon     |
+| 262    | Tyrantrum              | Rock       | Dragon     |
+| 263    | Hawlucha               | Fighting   | Flying     |
+| 264    | Goomy                  | Dragon     |            |
+| 265    | Sliggoo                | Dragon     |            |
 |        | Hisuian Sliggoo        | Dragon     | Steel      |
-| 264    | Goodra                 | Dragon     |            |
+| 266    | Goodra                 | Dragon     |            |
 |        | Hisuian Goodra         | Dragon     | Steel      |
-| 265    | Noibat                 | Flying     | Dragon     |
-| 266    | Noivern                | Flying     | Dragon     |
-| 267    | Rowlet                 | Grass      | Flying     |
-| 268    | Dartrix                | Grass      | Flying     |
-| 269    | Decidueye              | Grass      | Ghost      |
+| 267    | Noibat                 | Flying     | Dragon     |
+| 268    | Noivern                | Flying     | Dragon     |
+| 269    | Rowlet                 | Grass      | Flying     |
+| 270    | Dartrix                | Grass      | Flying     |
+| 271    | Decidueye              | Grass      | Ghost      |
 |        | Hisuian Decidueye      | Grass      | Fighting   |
-| 270    | Litten                 | Fire       |            |
-| 271    | Torracat               | Fire       |            |
-| 272    | Incineroar             | Fire       | Dark       |
-| 273    | Popplio                | Water      |            |
-| 274    | Brionne                | Water      |            |
-| 275    | Primarina              | Water      | Fairy      |
-| 276    | Rockruff               | Rock       |            |
-| 277    | Lycanroc               | Rock       |            |
+| 272    | Litten                 | Fire       |            |
+| 273    | Torracat               | Fire       |            |
+| 274    | Incineroar             | Fire       | Dark       |
+| 275    | Popplio                | Water      |            |
+| 276    | Brionne                | Water      |            |
+| 277    | Primarina              | Water      | Fairy      |
+| 278    | Rockruff               | Rock       |            |
+| 279    | Lycanroc               | Rock       |            |
 |        | Lycanroc Midnight      | Rock       |            |
 |        | Lycanroc Dusk          | Rock       |            |
-| 278    | Dewpider               | Water      | Bug        |
-| 279    | Araquanid              | Water      | Bug        |
-| 280    | Salandit               | Fire       | Poison     |
-| 281    | Salazzle               | Fire       | Poison     |
-| 282    | Sandygast              | Ghost      | Ground     |
-| 283    | Palossand              | Ghost      | Ground     |
-| 284    | Mimikyu                | Ghost      | Fairy      |
-| 285    | Jangmo-o               | Dragon     |            |
-| 286    | Hakamo-o               | Dragon     | Fighting   |
-| 287    | Kommo-o                | Dragon     | Fighting   |
-| 288    | Tapu Koko              | Electric   | Fairy      |
-| 289    | Tapu Lele              | Psychic    | Fairy      |
-| 290    | Tapu Bulu              | Grass      | Fairy      |
-| 291    | Tapu Fini              | Water      | Fairy      |
-| 292    | Cosmog                 | Psychic    |            |
-| 293    | Cosmoem                | Psychic    |            |
-| 294    | Solgaleo               | Psychic    | Steel      |
-| 295    | Lunala                 | Psychic    | Ghost      |
-| 296    | Nihilego               | Rock       | Poison     |
-| 297    | Buzzwole               | Bug        | Fighting   |
-| 298    | Pheromosa              | Bug        | Fighting   |
-| 299    | Xurkitree              | Electric   |            |
-| 300    | Celesteela             | Steel      | Flying     |
-| 301    | Kartana                | Grass      | Steel      |
-| 302    | Guzzlord               | Dark       | Dragon     |
-| 303    | Necrozma               | Psychic    |            |
+| 280    | Dewpider               | Water      | Bug        |
+| 281    | Araquanid              | Water      | Bug        |
+| 282    | Salandit               | Fire       | Poison     |
+| 283    | Salazzle               | Fire       | Poison     |
+| 284    | Sandygast              | Ghost      | Ground     |
+| 285    | Palossand              | Ghost      | Ground     |
+| 286    | Mimikyu                | Ghost      | Fairy      |
+| 287    | Jangmo-o               | Dragon     |            |
+| 288    | Hakamo-o               | Dragon     | Fighting   |
+| 289    | Kommo-o                | Dragon     | Fighting   |
+| 290    | Tapu Koko              | Electric   | Fairy      |
+| 291    | Tapu Lele              | Psychic    | Fairy      |
+| 292    | Tapu Bulu              | Grass      | Fairy      |
+| 293    | Tapu Fini              | Water      | Fairy      |
+| 294    | Cosmog                 | Psychic    |            |
+| 295    | Cosmoem                | Psychic    |            |
+| 296    | Solgaleo               | Psychic    | Steel      |
+| 297    | Lunala                 | Psychic    | Ghost      |
+| 298    | Nihilego               | Rock       | Poison     |
+| 299    | Buzzwole               | Bug        | Fighting   |
+| 300    | Pheromosa              | Bug        | Fighting   |
+| 301    | Xurkitree              | Electric   |            |
+| 302    | Celesteela             | Steel      | Flying     |
+| 303    | Kartana                | Grass      | Steel      |
+| 304    | Guzzlord               | Dark       | Dragon     |
+| 305    | Necrozma               | Psychic    |            |
 |        | Dusk Mane Necrozma     | Psychic    | Steel      |
 |        | Dawn Wings Necrozma    | Psychic    | Ghost      |
-| 304    | Poipole                | Poison     |            |
-| 305    | Naganadel              | Poison     | Dragon     |
-| 306    | Stakataka              | Rock       | Steel      |
-| 307    | Blacephalon            | Fire       | Ghost      |
-| 308    | Meltan                 | Steel      |            |
-| 309    | Melmetal               | Steel      |            |
-| 310    | Grookey                | Grass      |            |
-| 311    | Thwackey               | Grass      |            |
-| 312    | Rillaboom              | Grass      |            |
-| 313    | Scorbunny              | Fire       |            |
-| 314    | Raboot                 | Fire       |            |
-| 315    | Cinderace              | Fire       |            |
-| 316    | Sobble                 | Water      |            |
-| 317    | Drizzile               | Water      |            |
-| 318    | Inteleon               | Water      |            |
-| 319    | Rookidee               | Flying     |            |
-| 320    | Corvisquire            | Flying     |            |
-| 321    | Corviknight            | Flying     | Steel      |
-| 322    | Arrokuda               | Water      |            |
-| 323    | Barraskewda            | Water      |            |
-| 324    | Toxel                  | Electric   | Poison     |
-| 325    | Toxtricity             | Electric   | Poison     |
+| 306    | Poipole                | Poison     |            |
+| 307    | Naganadel              | Poison     | Dragon     |
+| 308    | Stakataka              | Rock       | Steel      |
+| 309    | Blacephalon            | Fire       | Ghost      |
+| 310    | Meltan                 | Steel      |            |
+| 311    | Melmetal               | Steel      |            |
+| 312    | Grookey                | Grass      |            |
+| 313    | Thwackey               | Grass      |            |
+| 314    | Rillaboom              | Grass      |            |
+| 315    | Scorbunny              | Fire       |            |
+| 316    | Raboot                 | Fire       |            |
+| 317    | Cinderace              | Fire       |            |
+| 318    | Sobble                 | Water      |            |
+| 319    | Drizzile               | Water      |            |
+| 320    | Inteleon               | Water      |            |
+| 321    | Rookidee               | Flying     |            |
+| 322    | Corvisquire            | Flying     |            |
+| 323    | Corviknight            | Flying     | Steel      |
+| 324    | Arrokuda               | Water      |            |
+| 325    | Barraskewda            | Water      |            |
+| 326    | Toxel                  | Electric   | Poison     |
+| 327    | Toxtricity             | Electric   | Poison     |
 |        | Toxtricity Low Key     | Electric   | Poison     |
-| 326    | Hatenna                | Psychic    |            |
-| 327    | Hattrem                | Psychic    |            |
-| 328    | Hatterene              | Psychic    | Fairy      |
-| 329    | Impidimp               | Dark       | Fairy      |
-| 330    | Morgrem                | Dark       | Fairy      |
-| 331    | Grimmsnarl             | Dark       | Fairy      |
-| 332    | Dracozolt              | Dragon     | Electric   |
-| 333    | Arctozolt              | Electric   | Ice        |
-| 334    | Dracovish              | Water      | Dragon     |
-| 335    | Arctovish              | Ice        | Water      |
-| 336    | Duraludon              | Steel      | Dragon     |
-| 337    | Archaludon             | Steel      | Dragon     |
-| 338    | Dreepy                 | Dragon     | Ghost      |
-| 339    | Drakloak               | Dragon     | Ghost      |
-| 340    | Dragapult              | Dragon     | Ghost      |
-| 341    | Kubfu                  | Fighting   |            |
-| 342    | Urshifu                | Fighting   | Dark       |
+| 328    | Hatenna                | Psychic    |            |
+| 329    | Hattrem                | Psychic    |            |
+| 330    | Hatterene              | Psychic    | Fairy      |
+| 331    | Impidimp               | Dark       | Fairy      |
+| 332    | Morgrem                | Dark       | Fairy      |
+| 333    | Grimmsnarl             | Dark       | Fairy      |
+| 334    | Dracozolt              | Dragon     | Electric   |
+| 335    | Arctozolt              | Electric   | Ice        |
+| 336    | Dracovish              | Water      | Dragon     |
+| 337    | Arctovish              | Ice        | Water      |
+| 338    | Duraludon              | Steel      | Dragon     |
+| 339    | Archaludon             | Steel      | Dragon     |
+| 340    | Dreepy                 | Dragon     | Ghost      |
+| 341    | Drakloak               | Dragon     | Ghost      |
+| 342    | Dragapult              | Dragon     | Ghost      |
+| 343    | Kubfu                  | Fighting   |            |
+| 344    | Urshifu                | Fighting   | Dark       |
 |        | Urshifu Single Strike  | Fighting   | Water      |
-| 343    | Enamorus               | Fairy      | Flying     |
+| 345    | Enamorus               | Fairy      | Flying     |
 |        | Enamorus Therian       | Fairy      | Flying     |
-| 344    | Sprigatito             | Grass      |            |
-| 345    | Floragato              | Grass      |            |
-| 346    | Meowscarada            | Grass      | Dark       |
-| 347    | Fuecoco                | Fire       |            |
-| 348    | Crocalor               | Fire       |            |
-| 349    | Skeledirge             | Fire       | Ghost      |
-| 350    | Quaxly                 | Water      |            |
-| 351    | Quaxwell               | Water      | Fighting   |
-| 352    | Quaquaval              | Water      | Fighting   |
-| 353    | Nymble                 | Bug        |            |
-| 354    | Lokix                  | Bug        | Dark       |
-| 355    | Charcadet              | Fire       |            |
-| 356    | Armarouge              | Fire       | Psychic    |
-| 357    | Ceruledge              | Fire       | Ghost      |
-| 358    | Tadbulb                | Electric   |            |
-| 359    | Bellibolt              | Electric   |            |
-| 360    | Finizen                | Water      |            |
-| 361    | Palafin                | Water      |            |
+| 346    | Sprigatito             | Grass      |            |
+| 347    | Floragato              | Grass      |            |
+| 348    | Meowscarada            | Grass      | Dark       |
+| 349    | Fuecoco                | Fire       |            |
+| 350    | Crocalor               | Fire       |            |
+| 351    | Skeledirge             | Fire       | Ghost      |
+| 352    | Quaxly                 | Water      |            |
+| 353    | Quaxwell               | Water      | Fighting   |
+| 354    | Quaquaval              | Water      | Fighting   |
+| 355    | Nymble                 | Bug        |            |
+| 356    | Lokix                  | Bug        | Dark       |
+| 357    | Charcadet              | Fire       |            |
+| 358    | Armarouge              | Fire       | Psychic    |
+| 359    | Ceruledge              | Fire       | Ghost      |
+| 360    | Tadbulb                | Electric   |            |
+| 361    | Bellibolt              | Electric   |            |
+| 362    | Finizen                | Water      |            |
+| 363    | Palafin                | Water      |            |
 |        | Palafin Hero           | Water      |            |
-| 362    | Greavard               | Ghost      |            |
-| 363    | Houndstone             | Ghost      |            |
-| 364    | Dondozo                | Water      |            |
-| 365    | Tatsugiri              | Dragon     | Water      |
+| 364    | Greavard               | Ghost      |            |
+| 365    | Houndstone             | Ghost      |            |
+| 366    | Dondozo                | Water      |            |
+| 367    | Tatsugiri              | Dragon     | Water      |
 |        | Tatsugiri Droopy       | Dragon     | Water      |
 |        | Tatsugiri Stretchy     | Dragon     | Water      |
-| 366    | Great Tusk             | Ground     | Fighting   |
-| 367    | Scream Tail            | Fairy      | Psychic    |
-| 368    | Brute Bonnet           | Grass      | Dark       |
-| 369    | Flutter Mane           | Fairy      | Ghost      |
-| 370    | Slither Wing           | Bug        | Fighting   |
-| 371    | Sandy Shocks           | Electric   | Ground     |
-| 372    | Iron Treads            | Ground     | Steel      |
-| 373    | Iron Bundle            | Ice        | Water      |
-| 374    | Iron Hands             | Fighting   | Electric   |
-| 375    | Iron Jugulis           | Dark       | Flying     |
-| 376    | Iron Moth              | Fire       | Poison     |
-| 377    | Iron Thorns            | Electric   | Steel      |
-| 378    | Frigibax               | Dragon     | Ice        |
-| 379    | Arctibax               | Dragon     | Ice        |
-| 380    | Baxcalibur             | Dragon     | Ice        |
-| 381    | Gimmighoul             | Ghost      |            |
+| 368    | Great Tusk             | Ground     | Fighting   |
+| 369    | Scream Tail            | Fairy      | Psychic    |
+| 370    | Brute Bonnet           | Grass      | Dark       |
+| 371    | Flutter Mane           | Fairy      | Ghost      |
+| 372    | Slither Wing           | Bug        | Fighting   |
+| 373    | Sandy Shocks           | Electric   | Ground     |
+| 374    | Iron Treads            | Ground     | Steel      |
+| 375    | Iron Bundle            | Ice        | Water      |
+| 376    | Iron Hands             | Fighting   | Electric   |
+| 377    | Iron Jugulis           | Dark       | Flying     |
+| 378    | Iron Moth              | Fire       | Poison     |
+| 379    | Iron Thorns            | Electric   | Steel      |
+| 380    | Frigibax               | Dragon     | Ice        |
+| 381    | Arctibax               | Dragon     | Ice        |
+| 382    | Baxcalibur             | Dragon     | Ice        |
+| 383    | Gimmighoul             | Ghost      |            |
 |        | Gimmighoul Roaming     | Ghost      |            |
-| 382    | Gholdengo              | Steel      | Ghost      |
-| 383    | Wo-Chien               | Dark       | Grass      |
-| 384    | Chien-Pao              | Dark       | Ice        |
-| 385    | Ting-Lu                | Dark       | Ground     |
-| 386    | Chi-Yu                 | Dark       | Fire       |
-| 387    | Roaring Moon           | Dragon     | Dark       |
-| 388    | Iron Valiant           | Fairy      | Fighting   |
-| 389    | Walking Wake           | Water      | Dragon     |
-| 390    | Iron Leaves            | Grass      | Psychic    |
-| 391    | Ogerpon                | Grass      |            |
+| 384    | Gholdengo              | Steel      | Ghost      |
+| 385    | Wo-Chien               | Dark       | Grass      |
+| 386    | Chien-Pao              | Dark       | Ice        |
+| 387    | Ting-Lu                | Dark       | Ground     |
+| 388    | Chi-Yu                 | Dark       | Fire       |
+| 389    | Roaring Moon           | Dragon     | Dark       |
+| 390    | Iron Valiant           | Fairy      | Fighting   |
+| 391    | Walking Wake           | Water      | Dragon     |
+| 392    | Iron Leaves            | Grass      | Psychic    |
+| 393    | Ogerpon                | Grass      |            |
 |        | Ogerpon Wellspring     | Grass      | Water      |
 |        | Ogerpon Hearthflame    | Grass      | Fire       |
 |        | Ogerpon Cornerstone    | Grass      | Rock       |
-| 392    | Gouging Fire           | Fire       | Dragon     |
-| 393    | Raging Bolt            | Electric   | Dragon     |
-| 394    | Iron Boulder           | Rock       | Psychic    |
-| 395    | Iron Crown             | Steel      | Psychic    |
-| 396    | Stratospira            | Steel      | Flying     |
-| 397    | Phantomar              | Ghost      | Ground     |
-| 398    | Leviadon               | Dragon     | Water      |
-| 399    | Zojzion                | Electric   | Poison     |
-| 400    | Mantistrike            | Water      | Rock       |
-| 401    | Pyrolin                | Fire       | Steel      |
-| 402    | Amaniste               | Fairy      | Poison     |
+| 394    | Gouging Fire           | Fire       | Dragon     |
+| 395    | Raging Bolt            | Electric   | Dragon     |
+| 396    | Iron Boulder           | Rock       | Psychic    |
+| 397    | Iron Crown             | Steel      | Psychic    |
+| 398    | Stratospira            | Steel      | Flying     |
+| 399    | Phantomar              | Ghost      | Ground     |
+| 400    | Leviadon               | Dragon     | Water      |
+| 401    | Zojzion                | Electric   | Poison     |
+| 402    | Mantistrike            | Water      | Rock       |
+| 403    | Pyrolin                | Fire       | Steel      |
+| 404    | Amaniste               | Fairy      | Poison     |
