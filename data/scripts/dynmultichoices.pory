@@ -724,480 +724,6 @@ script EventScript_PostgameTrainerChoices {
 	}
 }
 
-# Starters menu
-script Common_EventScript_ChooseStarterMenu {
-	lock
-	faceplayer
-	if (flag(FLAG_SYS_STARTER_GOT)) {
-		goto(Common_EventScript_ChoosePkmnMenu)
-	}
-	message ("Select your region.")
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea", "Hisui", "Skip", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			goto(Common_EventScript_KantoStarters)
-		case 1:
-			goto(Common_EventScript_JohtoStarters)
-		case 2:
-			goto(Common_EventScript_HoennStarters)
-		case 3:
-			goto(Common_EventScript_SinnohStarters)
-		case 4:
-			goto(Common_EventScript_UnovaStarters)
-		case 5:
-			goto(Common_EventScript_KalosStarters)
-		case 6:
-			goto(Common_EventScript_AlolaStarters)
-		case 7:
-			goto(Common_EventScript_GalarStarters)
-		case 8:
-			goto(Common_EventScript_PaldeaStarters)
-		case 9:
-			goto(Common_EventScript_HisuiStarters)
-		case 10:
-			msgbox("Would you like to skip starter\n"
-					"Pokémon selection?", MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				message("Okay, fine.")
-				waitmessage
-				goto(Common_EventScript_ChoosePkmnMenu)
-			} else {
-				goto(Common_EventScript_ChooseStarterMenu)
-			}
-		default:
-		case 11:
-			msgbox("Come back when you're ready!", MSGBOX_NPC)
-	}
-	release
-	end
-}
-
-text Text_SelectStarter {
-	"Please select your starter."
-}
-
-script EventScript_Givestarterset {
-	playfanfare(MUS_OBTAIN_ITEM)
-	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
-	setvar(VAR_GOT_PARTY_PKMN, 1)
-	setflag(FLAG_SYS_POKEMON_GET)
-	setflag(FLAG_SYS_STARTER_GOT)
-	message("{PLAYER} received {STR_VAR_1}!")
-	showmonpic(VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3)
-	waitmessage
-	waitfanfare
-	msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
-	hidemonpic
-	if (var(VAR_RESULT) == FALSE) {
-		goto(Common_EventScript_ChoosePkmnMenu)
-	}
-	call(Common_EventScript_GetGiftMonPartySlot)
-	call(Common_EventScript_NameReceivedPartyMon)
-	goto(Common_EventScript_ChoosePkmnMenu)
-	end
-}
-
-script Common_EventScript_KantoStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Venusaur", "Charizard", "Blastoise", "Pikachu", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_VENUSAUR)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KantoStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_CHARIZARD)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARIZARD)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KantoStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_BLASTOISE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLASTOISE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KantoStarters)
-			}
-		case 3:
-			bufferspeciesname(STR_VAR_1, SPECIES_PIKACHU)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIKACHU)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KantoStarters)
-			}
-		default:
-		case 4:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_JohtoStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Meganium", "Typhlosion", "Feraligatr", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_MEGANIUM)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEGANIUM)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_JohtoStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_TYPHLOSION)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_JohtoStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_FERALIGATR)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERALIGATR)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_JohtoStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_HoennStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Sceptile", "Blaziken", "Swampert", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_SCEPTILE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCEPTILE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HoennStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_BLAZIKEN)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLAZIKEN)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HoennStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_SWAMPERT)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWAMPERT)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HoennStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_SinnohStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Torterra", "Infernape", "Empoleon", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_TORTERRA)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORTERRA)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_SinnohStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_INFERNAPE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INFERNAPE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_SinnohStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_EMPOLEON)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMPOLEON)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_SinnohStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_UnovaStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Serperior", "Emboar", "Samurott", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_SERPERIOR)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_UnovaStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_EMBOAR)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMBOAR)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_UnovaStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_SAMUROTT)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_UnovaStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_KalosStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Chesnaught", "Delphox", "Greninja", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_CHESNAUGHT)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHESNAUGHT)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KalosStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_DELPHOX)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KalosStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_GRENINJA)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_KalosStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_AlolaStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Decidueye", "Incineroar", "Primarina", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_DECIDUEYE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_AlolaStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_INCINEROAR)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INCINEROAR)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_AlolaStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_PRIMARINA)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PRIMARINA)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_AlolaStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_GalarStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Rillaboom", "Cinderace", "Inteleon", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_RILLABOOM)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RILLABOOM)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_GalarStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_CINDERACE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CINDERACE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_GalarStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_INTELEON)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INTELEON)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_GalarStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_PaldeaStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Meowscarada", "Skeledirge", "Quaquaval", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_MEOWSCARADA)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_SKELEDIRGE)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_QUAQUAVAL)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_PaldeaStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
-script Common_EventScript_HisuiStarters {
-	message(Text_SelectStarter)
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Decidueye-H", "Typhlosion-H", "Samurott-H", "Back")
-	closemessage
-	switch (var(VAR_RESULT)) {
-		case 0:
-			bufferspeciesname(STR_VAR_1, SPECIES_DECIDUEYE_HISUI)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE_HISUI)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HisuiStarters)
-			}
-		case 1:
-			bufferspeciesname(STR_VAR_1, SPECIES_TYPHLOSION_HISUI)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION_HISUI)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HisuiStarters)
-			}
-		case 2:
-			bufferspeciesname(STR_VAR_1, SPECIES_SAMUROTT_HISUI)
-			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT_HISUI)
-				goto(EventScript_Givestarterset)
-			} else {
-				goto(Common_EventScript_HisuiStarters)
-			}
-		default:
-		case 3:
-			goto(Common_EventScript_ChooseStarterMenu)
-	}
-}
-
 # Pokémon menu
 script Common_EventScript_ChoosePkmnMenu {
 	if (var(VAR_GOT_PARTY_PKMN) == 6) {
@@ -1209,24 +735,26 @@ script Common_EventScript_ChoosePkmnMenu {
 	} else {
 		message("Select a group of Pokémon.")
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Start", "Back")
+		dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Starters", "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Start", "Back")
 		closemessage
 		switch (var(VAR_RESULT)) {
 			case 0:
-				goto(EventScript_Group1Choices)
+				goto(Common_EventScript_ChooseStarterMenu)
 			case 1:
-				goto(EventScript_Group2Choices)
+				goto(EventScript_Group1Choices)
 			case 2:
-				goto(EventScript_Group3Choices)
+				goto(EventScript_Group2Choices)
 			case 3:
-				goto(EventScript_Group4Choices)
+				goto(EventScript_Group3Choices)
 			case 4:
-				goto(EventScript_Group5Choices)
+				goto(EventScript_Group4Choices)
 			case 5:
+				goto(EventScript_Group5Choices)
+			case 6:
 				if (var(VAR_GOT_PARTY_PKMN) == 0) {
 					msgbox("You need to choose at least one\n"
 							"Pokémon!", MSGBOX_DEFAULT)
-					goto(Common_EventScript_ChooseStarterMenu)
+					goto(Common_EventScript_ChoosePkmnMenu)
 				} else {
 					buffernumberstring(STR_VAR_2, VAR_GOT_PARTY_PKMN)
 					msgbox("Start adventure with only {STR_VAR_2} Pokémon?", MSGBOX_YESNO)
@@ -1240,7 +768,7 @@ script Common_EventScript_ChoosePkmnMenu {
 					}
 				}
 			default:
-			case 6:
+			case 7:
 				msgbox("Come back when you're ready!", MSGBOX_NPC)
 		}
 	}
@@ -1278,6 +806,445 @@ script EventScript_Givemonset {
 	call(Common_EventScript_NameReceivedPartyMon)
 	goto(Common_EventScript_ChoosePkmnMenu)
 	end
+}
+
+script Common_EventScript_ChooseStarterMenu {
+	lock
+	faceplayer
+	message ("Select your region.")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea", "Hisui", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Common_EventScript_KantoStarters)
+		case 1:
+			goto(Common_EventScript_JohtoStarters)
+		case 2:
+			goto(Common_EventScript_HoennStarters)
+		case 3:
+			goto(Common_EventScript_SinnohStarters)
+		case 4:
+			goto(Common_EventScript_UnovaStarters)
+		case 5:
+			goto(Common_EventScript_KalosStarters)
+		case 6:
+			goto(Common_EventScript_AlolaStarters)
+		case 7:
+			goto(Common_EventScript_GalarStarters)
+		case 8:
+			goto(Common_EventScript_PaldeaStarters)
+		case 9:
+			goto(Common_EventScript_HisuiStarters)
+		default:
+		case 10:
+			goto(Common_EventScript_ChoosePkmnMenu)
+	}
+	release
+	end
+}
+
+text Text_SelectStarter {
+	"Please select your starter."
+}
+
+script Common_EventScript_KantoStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Venusaur", "Charizard", "Blastoise", "Pikachu", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_VENUSAUR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KantoStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_CHARIZARD)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARIZARD)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KantoStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_BLASTOISE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLASTOISE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KantoStarters)
+			}
+		case 3:
+			bufferspeciesname(STR_VAR_1, SPECIES_PIKACHU)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIKACHU)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KantoStarters)
+			}
+		default:
+		case 4:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_JohtoStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Meganium", "Typhlosion", "Feraligatr", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_MEGANIUM)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEGANIUM)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_JohtoStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_TYPHLOSION)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_JohtoStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_FERALIGATR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERALIGATR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_JohtoStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_HoennStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Sceptile", "Blaziken", "Swampert", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_SCEPTILE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCEPTILE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HoennStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_BLAZIKEN)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLAZIKEN)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HoennStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_SWAMPERT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWAMPERT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HoennStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_SinnohStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Torterra", "Infernape", "Empoleon", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_TORTERRA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORTERRA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_SinnohStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_INFERNAPE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INFERNAPE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_SinnohStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_EMPOLEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMPOLEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_SinnohStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_UnovaStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Serperior", "Emboar", "Samurott", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_SERPERIOR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_UnovaStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_EMBOAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMBOAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_UnovaStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_SAMUROTT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_UnovaStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_KalosStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Chesnaught", "Delphox", "Greninja", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_CHESNAUGHT)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHESNAUGHT)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KalosStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_DELPHOX)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KalosStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_GRENINJA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_KalosStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_AlolaStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Decidueye", "Incineroar", "Primarina", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_DECIDUEYE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_AlolaStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_INCINEROAR)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INCINEROAR)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_AlolaStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_PRIMARINA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PRIMARINA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_AlolaStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_GalarStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Rillaboom", "Cinderace", "Inteleon", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_RILLABOOM)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RILLABOOM)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_GalarStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_CINDERACE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CINDERACE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_GalarStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_INTELEON)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INTELEON)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_GalarStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_PaldeaStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Meowscarada", "Skeledirge", "Quaquaval", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_MEOWSCARADA)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_SKELEDIRGE)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_QUAQUAVAL)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_PaldeaStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
+}
+
+script Common_EventScript_HisuiStarters {
+	message(Text_SelectStarter)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Decidueye-H", "Typhlosion-H", "Samurott-H", "Back")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferspeciesname(STR_VAR_1, SPECIES_DECIDUEYE_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HisuiStarters)
+			}
+		case 1:
+			bufferspeciesname(STR_VAR_1, SPECIES_TYPHLOSION_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HisuiStarters)
+			}
+		case 2:
+			bufferspeciesname(STR_VAR_1, SPECIES_SAMUROTT_HISUI)
+			msgbox(Text_DoYouWantPkmn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT_HISUI)
+				goto(EventScript_Givemonset)
+			} else {
+				goto(Common_EventScript_HisuiStarters)
+			}
+		default:
+		case 3:
+			goto(Common_EventScript_ChooseStarterMenu)
+	}
 }
 
 script EventScript_Group1Choices {

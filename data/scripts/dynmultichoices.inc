@@ -1146,115 +1146,178 @@ EventScript_PostgameTrainerChoices_6:
 	return
 
 
-Common_EventScript_ChooseStarterMenu::
-	lock
-	faceplayer
-	goto_if_set FLAG_SYS_STARTER_GOT, Common_EventScript_ChooseStarterMenu_2
-Common_EventScript_ChooseStarterMenu_1:
-	message Common_EventScript_ChooseStarterMenu_Text_0
+Common_EventScript_ChoosePkmnMenu::
+	compare VAR_GOT_PARTY_PKMN, 6
+	goto_if_eq Common_EventScript_ChoosePkmnMenu_2
+Common_EventScript_ChoosePkmnMenu_1:
+	goto_if_set FLAG_GOT_PARTY_PKMN, Common_EventScript_ChoosePkmnMenu_5
+	message Common_EventScript_ChoosePkmnMenu_Text_1
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChooseStarterMenu_Text_1, Common_EventScript_ChooseStarterMenu_Text_2, Common_EventScript_ChooseStarterMenu_Text_3, Common_EventScript_ChooseStarterMenu_Text_4, Common_EventScript_ChooseStarterMenu_Text_5, Common_EventScript_ChooseStarterMenu_Text_6, Common_EventScript_ChooseStarterMenu_Text_7, Common_EventScript_ChooseStarterMenu_Text_8, Common_EventScript_ChooseStarterMenu_Text_9, Common_EventScript_ChooseStarterMenu_Text_10, Common_EventScript_ChooseStarterMenu_Text_11, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChoosePkmnMenu_Text_2, Common_EventScript_ChoosePkmnMenu_Text_3, Common_EventScript_ChoosePkmnMenu_Text_4, Common_EventScript_ChoosePkmnMenu_Text_5, Common_EventScript_ChoosePkmnMenu_Text_6, Common_EventScript_ChoosePkmnMenu_Text_7, Common_EventScript_ChoosePkmnMenu_Text_8, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_ChooseStarterMenu_6
-	case 1, Common_EventScript_ChooseStarterMenu_7
-	case 2, Common_EventScript_ChooseStarterMenu_8
-	case 3, Common_EventScript_ChooseStarterMenu_9
-	case 4, Common_EventScript_ChooseStarterMenu_10
-	case 5, Common_EventScript_ChooseStarterMenu_11
-	case 6, Common_EventScript_ChooseStarterMenu_12
-	case 7, Common_EventScript_ChooseStarterMenu_13
-	case 8, Common_EventScript_ChooseStarterMenu_14
-	case 9, Common_EventScript_ChooseStarterMenu_15
-	case 10, Common_EventScript_ChooseStarterMenu_16
-	case 11, Common_EventScript_ChooseStarterMenu_17
-Common_EventScript_ChooseStarterMenu_17:
+	case 0, Common_EventScript_ChoosePkmnMenu_9
+	case 1, Common_EventScript_ChoosePkmnMenu_10
+	case 2, Common_EventScript_ChoosePkmnMenu_11
+	case 3, Common_EventScript_ChoosePkmnMenu_12
+	case 4, Common_EventScript_ChoosePkmnMenu_13
+	case 5, Common_EventScript_ChoosePkmnMenu_14
+	case 6, Common_EventScript_ChoosePkmnMenu_15
+	case 7, Common_EventScript_ChoosePkmnMenu_16
+Common_EventScript_ChoosePkmnMenu_16:
 	msgbox Common_EventScript_TrainerBattleMenu_Text_5, MSGBOX_NPC
-Common_EventScript_ChooseStarterMenu_4:
+Common_EventScript_ChoosePkmnMenu_4:
 	release
 	end
 
-Common_EventScript_ChooseStarterMenu_2:
-	goto Common_EventScript_ChoosePkmnMenu
-	goto Common_EventScript_ChooseStarterMenu_1
+Common_EventScript_ChoosePkmnMenu_2:
+	setflag FLAG_GOT_PARTY_PKMN
+	goto Common_EventScript_ChoosePkmnMenu_1
 
-Common_EventScript_ChooseStarterMenu_6:
-	goto Common_EventScript_KantoStarters
-	goto Common_EventScript_ChooseStarterMenu_4
+Common_EventScript_ChoosePkmnMenu_5:
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_0, MSGBOX_NPC
+	goto Common_EventScript_ChoosePkmnMenu_4
 
-Common_EventScript_ChooseStarterMenu_7:
-	goto Common_EventScript_JohtoStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_8:
-	goto Common_EventScript_HoennStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_9:
-	goto Common_EventScript_SinnohStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_10:
-	goto Common_EventScript_UnovaStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_11:
-	goto Common_EventScript_KalosStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_12:
-	goto Common_EventScript_AlolaStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_13:
-	goto Common_EventScript_GalarStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_14:
-	goto Common_EventScript_PaldeaStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_15:
-	goto Common_EventScript_HisuiStarters
-	goto Common_EventScript_ChooseStarterMenu_4
-
-Common_EventScript_ChooseStarterMenu_16:
-	msgbox Common_EventScript_ChooseStarterMenu_Text_12, MSGBOX_YESNO
-	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_ChooseStarterMenu_18
+Common_EventScript_ChoosePkmnMenu_9:
 	goto Common_EventScript_ChooseStarterMenu
-	goto Common_EventScript_ChooseStarterMenu_4
+	goto Common_EventScript_ChoosePkmnMenu_4
 
-Common_EventScript_ChooseStarterMenu_18:
-	message Common_EventScript_ChooseStarterMenu_Text_13
-	waitmessage
+Common_EventScript_ChoosePkmnMenu_10:
+	goto EventScript_Group1Choices
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_11:
+	goto EventScript_Group2Choices
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_12:
+	goto EventScript_Group3Choices
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_13:
+	goto EventScript_Group4Choices
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_14:
+	goto EventScript_Group5Choices
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_15:
+	compare VAR_GOT_PARTY_PKMN, 0
+	goto_if_eq Common_EventScript_ChoosePkmnMenu_17
+	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_10, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq Common_EventScript_ChoosePkmnMenu_20
 	goto Common_EventScript_ChoosePkmnMenu
-	goto Common_EventScript_ChooseStarterMenu_4
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_17:
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_9, MSGBOX_DEFAULT
+	goto Common_EventScript_ChoosePkmnMenu
+	goto Common_EventScript_ChoosePkmnMenu_4
+
+Common_EventScript_ChoosePkmnMenu_20:
+	setflag FLAG_GOT_PARTY_PKMN
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_11, MSGBOX_DEFAULT
+	release
+	end
 
 
-EventScript_Givestarterset::
+EventScript_Givemonset::
 	playfanfare MUS_OBTAIN_ITEM
 	givemonset VAR_TEMP_TRANSFERRED_SPECIES
-	setvar VAR_GOT_PARTY_PKMN, 1
-	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_SYS_STARTER_GOT
-	message EventScript_Givestarterset_Text_0
+	addvar VAR_GOT_PARTY_PKMN, 1
+	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
+EventScript_Givemonset_1:
+	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
+	message EventScript_Givemonset_Text_0
 	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
 	waitmessage
 	waitfanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	hidemonpic
 	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_Givestarterset_2
-EventScript_Givestarterset_1:
+	goto_if_eq EventScript_Givemonset_5
+EventScript_Givemonset_4:
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto Common_EventScript_ChoosePkmnMenu
 	end
 
-EventScript_Givestarterset_2:
+EventScript_Givemonset_2:
+	setflag FLAG_SYS_POKEMON_GET
+	goto EventScript_Givemonset_1
+
+EventScript_Givemonset_5:
 	goto Common_EventScript_ChoosePkmnMenu
-	goto EventScript_Givestarterset_1
+	goto EventScript_Givemonset_4
+
+
+Common_EventScript_ChooseStarterMenu::
+	lock
+	faceplayer
+	message Common_EventScript_ChooseStarterMenu_Text_0
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChooseStarterMenu_Text_1, Common_EventScript_ChooseStarterMenu_Text_2, Common_EventScript_ChooseStarterMenu_Text_3, Common_EventScript_ChooseStarterMenu_Text_4, Common_EventScript_ChooseStarterMenu_Text_5, Common_EventScript_ChooseStarterMenu_Text_6, Common_EventScript_ChooseStarterMenu_Text_7, Common_EventScript_ChooseStarterMenu_Text_8, Common_EventScript_ChooseStarterMenu_Text_9, Common_EventScript_ChooseStarterMenu_Text_10, EventScript_GymLeaderChoices_Text_9
+	closemessage
+	switch VAR_RESULT
+	case 0, Common_EventScript_ChooseStarterMenu_3
+	case 1, Common_EventScript_ChooseStarterMenu_4
+	case 2, Common_EventScript_ChooseStarterMenu_5
+	case 3, Common_EventScript_ChooseStarterMenu_6
+	case 4, Common_EventScript_ChooseStarterMenu_7
+	case 5, Common_EventScript_ChooseStarterMenu_8
+	case 6, Common_EventScript_ChooseStarterMenu_9
+	case 7, Common_EventScript_ChooseStarterMenu_10
+	case 8, Common_EventScript_ChooseStarterMenu_11
+	case 9, Common_EventScript_ChooseStarterMenu_12
+	case 10, Common_EventScript_ChooseStarterMenu_13
+Common_EventScript_ChooseStarterMenu_13:
+	goto Common_EventScript_ChoosePkmnMenu
+Common_EventScript_ChooseStarterMenu_1:
+	release
+	end
+
+Common_EventScript_ChooseStarterMenu_3:
+	goto Common_EventScript_KantoStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_4:
+	goto Common_EventScript_JohtoStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_5:
+	goto Common_EventScript_HoennStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_6:
+	goto Common_EventScript_SinnohStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_7:
+	goto Common_EventScript_UnovaStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_8:
+	goto Common_EventScript_KalosStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_9:
+	goto Common_EventScript_AlolaStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_10:
+	goto Common_EventScript_GalarStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_11:
+	goto Common_EventScript_PaldeaStarters
+	goto Common_EventScript_ChooseStarterMenu_1
+
+Common_EventScript_ChooseStarterMenu_12:
+	goto Common_EventScript_HisuiStarters
+	goto Common_EventScript_ChooseStarterMenu_1
 
 
 Common_EventScript_KantoStarters::
@@ -1306,22 +1369,22 @@ Common_EventScript_KantoStarters_5:
 
 Common_EventScript_KantoStarters_7:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_KantoStarters_10:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARIZARD
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_KantoStarters_13:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLASTOISE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_KantoStarters_16:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIKACHU
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1365,17 +1428,17 @@ Common_EventScript_JohtoStarters_4:
 
 Common_EventScript_JohtoStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEGANIUM
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_JohtoStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_JohtoStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERALIGATR
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1419,17 +1482,17 @@ Common_EventScript_HoennStarters_4:
 
 Common_EventScript_HoennStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCEPTILE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_HoennStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLAZIKEN
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_HoennStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWAMPERT
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1473,17 +1536,17 @@ Common_EventScript_SinnohStarters_4:
 
 Common_EventScript_SinnohStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORTERRA
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_SinnohStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INFERNAPE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_SinnohStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMPOLEON
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1527,17 +1590,17 @@ Common_EventScript_UnovaStarters_4:
 
 Common_EventScript_UnovaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_UnovaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMBOAR
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_UnovaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1581,17 +1644,17 @@ Common_EventScript_KalosStarters_4:
 
 Common_EventScript_KalosStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHESNAUGHT
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_KalosStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_KalosStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1635,17 +1698,17 @@ Common_EventScript_AlolaStarters_4:
 
 Common_EventScript_AlolaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_AlolaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INCINEROAR
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_AlolaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PRIMARINA
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1689,17 +1752,17 @@ Common_EventScript_GalarStarters_4:
 
 Common_EventScript_GalarStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RILLABOOM
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_GalarStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CINDERACE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_GalarStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INTELEON
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1743,17 +1806,17 @@ Common_EventScript_PaldeaStarters_4:
 
 Common_EventScript_PaldeaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_PaldeaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_PaldeaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 
@@ -1797,121 +1860,18 @@ Common_EventScript_HisuiStarters_4:
 
 Common_EventScript_HisuiStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE_HISUI
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_HisuiStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION_HISUI
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
 
 Common_EventScript_HisuiStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT_HISUI
-	goto EventScript_Givestarterset
+	goto EventScript_Givemonset
 	return
-
-
-Common_EventScript_ChoosePkmnMenu::
-	compare VAR_GOT_PARTY_PKMN, 6
-	goto_if_eq Common_EventScript_ChoosePkmnMenu_2
-Common_EventScript_ChoosePkmnMenu_1:
-	goto_if_set FLAG_GOT_PARTY_PKMN, Common_EventScript_ChoosePkmnMenu_5
-	message Common_EventScript_ChoosePkmnMenu_Text_1
-	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChoosePkmnMenu_Text_2, Common_EventScript_ChoosePkmnMenu_Text_3, Common_EventScript_ChoosePkmnMenu_Text_4, Common_EventScript_ChoosePkmnMenu_Text_5, Common_EventScript_ChoosePkmnMenu_Text_6, Common_EventScript_ChoosePkmnMenu_Text_7, EventScript_GymLeaderChoices_Text_9
-	closemessage
-	switch VAR_RESULT
-	case 0, Common_EventScript_ChoosePkmnMenu_9
-	case 1, Common_EventScript_ChoosePkmnMenu_10
-	case 2, Common_EventScript_ChoosePkmnMenu_11
-	case 3, Common_EventScript_ChoosePkmnMenu_12
-	case 4, Common_EventScript_ChoosePkmnMenu_13
-	case 5, Common_EventScript_ChoosePkmnMenu_14
-	case 6, Common_EventScript_ChoosePkmnMenu_15
-Common_EventScript_ChoosePkmnMenu_15:
-	msgbox Common_EventScript_TrainerBattleMenu_Text_5, MSGBOX_NPC
-Common_EventScript_ChoosePkmnMenu_4:
-	release
-	end
-
-Common_EventScript_ChoosePkmnMenu_2:
-	setflag FLAG_GOT_PARTY_PKMN
-	goto Common_EventScript_ChoosePkmnMenu_1
-
-Common_EventScript_ChoosePkmnMenu_5:
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_0, MSGBOX_NPC
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_9:
-	goto EventScript_Group1Choices
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_10:
-	goto EventScript_Group2Choices
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_11:
-	goto EventScript_Group3Choices
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_12:
-	goto EventScript_Group4Choices
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_13:
-	goto EventScript_Group5Choices
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_14:
-	compare VAR_GOT_PARTY_PKMN, 0
-	goto_if_eq Common_EventScript_ChoosePkmnMenu_16
-	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_9, MSGBOX_YESNO
-	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_ChoosePkmnMenu_19
-	goto Common_EventScript_ChoosePkmnMenu
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_16:
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_8, MSGBOX_DEFAULT
-	goto Common_EventScript_ChooseStarterMenu
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_19:
-	setflag FLAG_GOT_PARTY_PKMN
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_10, MSGBOX_DEFAULT
-	release
-	end
-
-
-EventScript_Givemonset::
-	playfanfare MUS_OBTAIN_ITEM
-	givemonset VAR_TEMP_TRANSFERRED_SPECIES
-	addvar VAR_GOT_PARTY_PKMN, 1
-	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
-EventScript_Givemonset_1:
-	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
-	message EventScript_Givemonset_Text_0
-	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
-	waitmessage
-	waitfanfare
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	hidemonpic
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_Givemonset_5
-EventScript_Givemonset_4:
-	call Common_EventScript_GetGiftMonPartySlot
-	call Common_EventScript_NameReceivedPartyMon
-	goto Common_EventScript_ChoosePkmnMenu
-	end
-
-EventScript_Givemonset_2:
-	setflag FLAG_SYS_POKEMON_GET
-	goto EventScript_Givemonset_1
-
-EventScript_Givemonset_5:
-	goto Common_EventScript_ChoosePkmnMenu
-	goto EventScript_Givemonset_4
 
 
 EventScript_Group1Choices::
@@ -4099,6 +4059,48 @@ EventScript_PostgameTrainerChoices_Text_0:
 	.string "Postgame Trainers here!\p"
 	.string "Would you like to battle again?$"
 
+Common_EventScript_ChoosePkmnMenu_Text_0:
+	.string "You have chosen your Pokémon!\n"
+	.string "Start your adventure!$"
+
+Common_EventScript_ChoosePkmnMenu_Text_1:
+	.string "Select a group of Pokémon.$"
+
+Common_EventScript_ChoosePkmnMenu_Text_2:
+	.string "Starters$"
+
+Common_EventScript_ChoosePkmnMenu_Text_3:
+	.string "Group 1 (A-E)$"
+
+Common_EventScript_ChoosePkmnMenu_Text_4:
+	.string "Group 2 (F-K)$"
+
+Common_EventScript_ChoosePkmnMenu_Text_5:
+	.string "Group 3 (K-N)$"
+
+Common_EventScript_ChoosePkmnMenu_Text_6:
+	.string "Group 4 (O-S)$"
+
+Common_EventScript_ChoosePkmnMenu_Text_7:
+	.string "Group 5 (S-Z)$"
+
+Common_EventScript_ChoosePkmnMenu_Text_8:
+	.string "Start$"
+
+Common_EventScript_ChoosePkmnMenu_Text_9:
+	.string "You need to choose at least one\n"
+	.string "Pokémon!$"
+
+Common_EventScript_ChoosePkmnMenu_Text_10:
+	.string "Start adventure with only {STR_VAR_2} Pokémon?$"
+
+Common_EventScript_ChoosePkmnMenu_Text_11:
+	.string "Start your adventure!$"
+
+EventScript_Givemonset_Text_0:
+	.string "Pokémon No: {STR_VAR_2}.\n"
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
 Common_EventScript_ChooseStarterMenu_Text_0:
 	.string "Select your region.$"
 
@@ -4131,19 +4133,6 @@ Common_EventScript_ChooseStarterMenu_Text_9:
 
 Common_EventScript_ChooseStarterMenu_Text_10:
 	.string "Hisui$"
-
-Common_EventScript_ChooseStarterMenu_Text_11:
-	.string "Skip$"
-
-Common_EventScript_ChooseStarterMenu_Text_12:
-	.string "Would you like to skip starter\n"
-	.string "Pokémon selection?$"
-
-Common_EventScript_ChooseStarterMenu_Text_13:
-	.string "Okay, fine.$"
-
-EventScript_Givestarterset_Text_0:
-	.string "{PLAYER} received {STR_VAR_1}!$"
 
 Common_EventScript_KantoStarters_Text_0:
 	.string "Venusaur$"
@@ -4237,45 +4226,6 @@ Common_EventScript_HisuiStarters_Text_1:
 
 Common_EventScript_HisuiStarters_Text_2:
 	.string "Samurott-H$"
-
-Common_EventScript_ChoosePkmnMenu_Text_0:
-	.string "You have chosen your Pokémon!\n"
-	.string "Start your adventure!$"
-
-Common_EventScript_ChoosePkmnMenu_Text_1:
-	.string "Select a group of Pokémon.$"
-
-Common_EventScript_ChoosePkmnMenu_Text_2:
-	.string "Group 1 (A-E)$"
-
-Common_EventScript_ChoosePkmnMenu_Text_3:
-	.string "Group 2 (F-K)$"
-
-Common_EventScript_ChoosePkmnMenu_Text_4:
-	.string "Group 3 (K-N)$"
-
-Common_EventScript_ChoosePkmnMenu_Text_5:
-	.string "Group 4 (O-S)$"
-
-Common_EventScript_ChoosePkmnMenu_Text_6:
-	.string "Group 5 (S-Z)$"
-
-Common_EventScript_ChoosePkmnMenu_Text_7:
-	.string "Start$"
-
-Common_EventScript_ChoosePkmnMenu_Text_8:
-	.string "You need to choose at least one\n"
-	.string "Pokémon!$"
-
-Common_EventScript_ChoosePkmnMenu_Text_9:
-	.string "Start adventure with only {STR_VAR_2} Pokémon?$"
-
-Common_EventScript_ChoosePkmnMenu_Text_10:
-	.string "Start your adventure!$"
-
-EventScript_Givemonset_Text_0:
-	.string "Pokémon No: {STR_VAR_2}.\n"
-	.string "{PLAYER} received {STR_VAR_1}!$"
 
 EventScript_Group1Choices_Text_0:
 	.string "1. Absol$"
@@ -4724,11 +4674,11 @@ Text_YouHaveAlreadyDefeatedPostgameTrainer::
 	.string "Postgame Trainer!\p"
 	.string "Would you like to battle again?$"
 
-Text_SelectStarter::
-	.string "Please select your starter.$"
-
 Text_SelectPkmn::
 	.string "Please select your Pokémon.$"
 
 Text_DoYouWantPkmn::
 	.string "Do you want {STR_VAR_1}?$"
+
+Text_SelectStarter::
+	.string "Please select your starter.$"
