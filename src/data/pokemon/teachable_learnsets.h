@@ -57978,6 +57978,51 @@ static const u16 sMewtwoApocalypseTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sZojzionTeachableLearnset[] = {
+    MOVE_OVERHEAT,
+    MOVE_PROTECT,
+    MOVE_SLUDGE_BOMB,
+    MOVE_SLUDGE_WAVE,
+    MOVE_SUPERCELL_SLAM,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_TOXIC,
+    MOVE_VOLT_SWITCH,
+    MOVE_WEATHER_BALL,
+    MOVE_WILD_CHARGE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMantistrikeTeachableLearnset[] = {
+    MOVE_FLIP_TURN,
+    MOVE_ICE_SPINNER,
+    MOVE_PROTECT,
+    MOVE_ROCK_BLAST,
+    MOVE_ROCK_SLIDE,
+    MOVE_STONE_EDGE,
+    MOVE_SURF,
+    MOVE_WATERFALL,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sPyrolinTeachableLearnset[] = {
+    MOVE_DRILL_RUN,
+    MOVE_FIRE_BLAST,
+    MOVE_FIRE_FANG,
+    MOVE_FLAMETHROWER,
+    MOVE_FLAME_CHARGE,
+    MOVE_FLARE_BLITZ,
+    MOVE_HEAT_CRASH,
+    MOVE_IRON_HEAD,
+    MOVE_KNOCK_OFF,
+    MOVE_PROTECT,
+    MOVE_SCORCHING_SANDS,
+    MOVE_STEEL_BEAM,
+    MOVE_SUPERCELL_SLAM,
+    MOVE_WILD_CHARGE,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sStratospiraTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BRAVE_BIRD,
@@ -58019,47 +58064,6 @@ static const u16 sLeviadonTeachableLearnset[] = {
     MOVE_PROTECT,
     MOVE_SCALE_SHOT,
     MOVE_SURF,
-    MOVE_UNAVAILABLE,
-};
-
-static const u16 sZojzionTeachableLearnset[] = {
-    MOVE_OVERHEAT,
-    MOVE_PROTECT,
-    MOVE_SLUDGE_BOMB,
-    MOVE_SLUDGE_WAVE,
-    MOVE_SUPERCELL_SLAM,
-    MOVE_THUNDER,
-    MOVE_THUNDERBOLT,
-    MOVE_TOXIC,
-    MOVE_VOLT_SWITCH,
-    MOVE_WEATHER_BALL,
-    MOVE_WILD_CHARGE,
-    MOVE_UNAVAILABLE,
-};
-
-static const u16 sMantistrikeTeachableLearnset[] = {
-    MOVE_FLIP_TURN,
-    MOVE_ICE_SPINNER,
-    MOVE_PROTECT,
-    MOVE_ROCK_BLAST,
-    MOVE_ROCK_SLIDE,
-    MOVE_STONE_EDGE,
-    MOVE_SURF,
-    MOVE_WATERFALL,
-    MOVE_UNAVAILABLE,
-};
-
-static const u16 sPyrolinTeachableLearnset[] = {
-    MOVE_DRILL_RUN,
-    MOVE_FLARE_BLITZ,
-    MOVE_HEAT_CRASH,
-    MOVE_IRON_HEAD,
-    MOVE_KNOCK_OFF,
-    MOVE_PROTECT,
-    MOVE_SCORCHING_SANDS,
-    MOVE_STEEL_BEAM,
-    MOVE_SUPERCELL_SLAM,
-    MOVE_WILD_CHARGE,
     MOVE_UNAVAILABLE,
 };
 

@@ -98055,6 +98055,149 @@
     "EggMoves": [],
     "TutorMoves": []
   },
+  "ZOJZION": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_LIGHTNING_VORTEX"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SLUDGE_WAVE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_OVERHEAT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_VOLT_SWITCH"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_THUNDERBOLT",
+      "MOVE_SLUDGE_WAVE",
+      "MOVE_SLUDGE_BOMB",
+      "MOVE_OVERHEAT",
+      "MOVE_THUNDER",
+      "MOVE_VOLT_SWITCH",
+      "MOVE_DISCHARGE",
+      "MOVE_TOXIC",
+      "MOVE_WEATHER_BALL",
+      "MOVE_TERA_BLAST",
+      "MOVE_WILD_CHARGE",
+      "MOVE_SUPERCELL_SLAM",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "MANTISTRIKE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SMASH_STRIKE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STONE_EDGE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_JET_PUNCH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FLIP_TURN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_STONE_EDGE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_JET_PUNCH",
+      "MOVE_FLIP_TURN",
+      "MOVE_WATERFALL",
+      "MOVE_SURF",
+      "MOVE_ICE_SPINNER",
+      "MOVE_RAZOR_SHELL",
+      "MOVE_ROCK_BLAST",
+      "MOVE_DUAL_CHOP",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+  "PYROLIN": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_DRILL_OUT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FIRE_LASH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_KNOCK_OFF"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_RAPID_SPIN"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_IRON_HEAD",
+      "MOVE_DRILL_RUN",
+      "MOVE_KNOCK_OFF",
+      "MOVE_RAPID_SPIN",
+      "MOVE_FIRE_FANG",
+      "MOVE_FIRE_BLAST",
+      "MOVE_FLAME_CHARGE",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FLARE_BLITZ",
+      "MOVE_HEAT_CRASH",
+      "MOVE_SCORCHING_SANDS",
+      "MOVE_STEEL_BEAM",
+      "MOVE_WILD_CHARGE",
+      "MOVE_SUPERCELL_SLAM",
+      "MOVE_BIDE",
+      "MOVE_FRUSTRATION",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_MIMIC",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_RAGE",
+      "MOVE_RETURN",
+      "MOVE_SECRET_POWER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_PROTECT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
   "STRATOSPIRA": {
     "LevelMoves": [
       {
@@ -98178,146 +98321,6 @@
       "MOVE_ICE_BEAM",
       "MOVE_DIVE",
       "MOVE_SCALE_SHOT",
-      "MOVE_BIDE",
-      "MOVE_FRUSTRATION",
-      "MOVE_HIDDEN_POWER",
-      "MOVE_MIMIC",
-      "MOVE_NATURAL_GIFT",
-      "MOVE_RAGE",
-      "MOVE_RETURN",
-      "MOVE_SECRET_POWER",
-      "MOVE_SUBSTITUTE",
-      "MOVE_TERA_BLAST",
-      "MOVE_PROTECT"
-    ],
-    "EggMoves": [],
-    "TutorMoves": []
-  },
-  "ZOJZION": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_LIGHTNING_VORTEX"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SLUDGE_WAVE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_OVERHEAT"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_VOLT_SWITCH"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_THUNDERBOLT",
-      "MOVE_SLUDGE_WAVE",
-      "MOVE_SLUDGE_BOMB",
-      "MOVE_OVERHEAT",
-      "MOVE_THUNDER",
-      "MOVE_VOLT_SWITCH",
-      "MOVE_DISCHARGE",
-      "MOVE_TOXIC",
-      "MOVE_WEATHER_BALL",
-      "MOVE_TERA_BLAST",
-      "MOVE_WILD_CHARGE",
-      "MOVE_SUPERCELL_SLAM",
-      "MOVE_BIDE",
-      "MOVE_FRUSTRATION",
-      "MOVE_HIDDEN_POWER",
-      "MOVE_MIMIC",
-      "MOVE_NATURAL_GIFT",
-      "MOVE_RAGE",
-      "MOVE_RETURN",
-      "MOVE_SECRET_POWER",
-      "MOVE_SUBSTITUTE",
-      "MOVE_PROTECT"
-    ],
-    "EggMoves": [],
-    "TutorMoves": []
-  },
-  "MANTISTRIKE": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_SMASH_STRIKE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_STONE_EDGE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_JET_PUNCH"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FLIP_TURN"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_STONE_EDGE",
-      "MOVE_ROCK_SLIDE",
-      "MOVE_JET_PUNCH",
-      "MOVE_FLIP_TURN",
-      "MOVE_WATERFALL",
-      "MOVE_SURF",
-      "MOVE_ICE_SPINNER",
-      "MOVE_RAZOR_SHELL",
-      "MOVE_ROCK_BLAST",
-      "MOVE_DUAL_CHOP",
-      "MOVE_BIDE",
-      "MOVE_FRUSTRATION",
-      "MOVE_HIDDEN_POWER",
-      "MOVE_MIMIC",
-      "MOVE_NATURAL_GIFT",
-      "MOVE_RAGE",
-      "MOVE_RETURN",
-      "MOVE_SECRET_POWER",
-      "MOVE_SUBSTITUTE",
-      "MOVE_TERA_BLAST",
-      "MOVE_PROTECT"
-    ],
-    "EggMoves": [],
-    "TutorMoves": []
-  },
-  "PYROLIN": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_DRILL_OUT"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FIRE_LASH"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_KNOCK_OFF"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_RAPID_SPIN"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_FIRE_LASH",
-      "MOVE_IRON_HEAD",
-      "MOVE_DRILL_RUN",
-      "MOVE_KNOCK_OFF",
-      "MOVE_RAPID_SPIN",
-      "MOVE_FLARE_BLITZ",
-      "MOVE_HEAT_CRASH",
-      "MOVE_SCORCHING_SANDS",
-      "MOVE_STEEL_BEAM",
-      "MOVE_WILD_CHARGE",
-      "MOVE_SUPERCELL_SLAM",
       "MOVE_BIDE",
       "MOVE_FRUSTRATION",
       "MOVE_HIDDEN_POWER",

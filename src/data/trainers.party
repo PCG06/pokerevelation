@@ -1533,14 +1533,59 @@ Music: Elite Four
 Double Battle: No
 AI: Smart Trainer
 
-Sudowoodo (M) @ Choice Band  
-Ability: Rock Head    
-EVs: 248 HP / 252 Atk / 8 SpD  
+Mantistrike @ Choice Band  
+Ability: Technician  
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
-- Head Smash  
-- Wood Hammer  
+- Stone Edge  
+- Jet Punch  
+- Smash Strike  
+- Flip Turn  
+
+Zojzion @ Assault Vest  
+Ability: Levitate  
+EVs: 252 HP / 252 Def / 4 Spe  
+Bold Nature  
+- Sludge Wave  
+- Lightning Vortex  
+- Overheat  
+- Volt Switch  
+
+Pyrolin @ Leftovers  
+Ability: Earth Eater  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Pyro Ball  
+- Knock Off  
+- Rapid Spin  
+- Drill Out  
+
+Phantomar @ Choice Scarf  
+Ability: Intimidate  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Spectral Wrath  
 - Earthquake  
-- Thunder Punch  
+- Knock Off  
+- U-turn  
+
+Stratospira @ Assault Vest  
+Ability: Regenerator  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Flash Cannon  
+- Jetstream Blast  
+- Knock Off  
+- U-turn  
+
+Leviadon @ Eject Pack  
+Ability: Rock Head  
+EVs: 252 Atk / 4 SpA / 252 Spe  
+Naughty Nature  
+- Draco Meteor  
+- Draconic Fury  
+- Wave Crash  
+- Flip Turn  
 
 === TRAINER_BENNY ===
 Name: Benny
@@ -6037,7 +6082,7 @@ Jolly Nature
 
 Mantistrike @ Choice Band  
 Ability: Technician  
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe  
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
 - Stone Edge  
 - Jet Punch  
@@ -6166,7 +6211,7 @@ IVs: 0 Atk
 
 Phantomar @ Choice Scarf  
 Ability: Intimidate  
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe  
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
 - Spectral Wrath  
 - Earthquake  
@@ -6295,9 +6340,9 @@ Jolly Nature
 
 Pyrolin @ Leftovers  
 Ability: Earth Eater  
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe  
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
-- Fire Lash  
+- Pyro Ball  
 - Knock Off  
 - Rapid Spin  
 - Drill Out  
@@ -6360,15 +6405,6 @@ IVs: 0 Atk
 - Will-O-Wisp  
 - Pain Split  
 
-Zojzion @ Assault Vest  
-Ability: Levitate  
-EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 4 Spe  
-Bold Nature  
-- Sludge Wave  
-- Lightning Vortex  
-- Overheat  
-- Volt Switch  
-
 === TRAINER_SNEHAL ===
 Name: Snehal
 Class: Leader
@@ -6425,7 +6461,7 @@ Careful Nature
 
 Stratospira @ Assault Vest  
 Ability: Regenerator  
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe  
+EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Flash Cannon  
 - Jetstream Blast  
@@ -6496,7 +6532,7 @@ IVs: 0 Atk
 
 Leviadon @ Eject Pack  
 Ability: Rock Head  
-EVs: 0 HP / 252 Atk / 0 Def / 4 SpA / 0 SpD / 252 Spe  
+EVs: 252 Atk / 4 SpA / 252 Spe  
 Naughty Nature  
 - Draco Meteor  
 - Draconic Fury  

@@ -22816,6 +22816,30 @@ static const struct LevelUpMove sMewtwoApocalypseLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+static const struct LevelUpMove sZojzionLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_LIGHTNING_VORTEX),
+    LEVEL_UP_MOVE( 1, MOVE_SLUDGE_WAVE),
+    LEVEL_UP_MOVE( 1, MOVE_OVERHEAT),
+    LEVEL_UP_MOVE( 1, MOVE_VOLT_SWITCH),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sMantistrikeLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_SMASH_STRIKE),
+    LEVEL_UP_MOVE( 1, MOVE_STONE_EDGE),
+    LEVEL_UP_MOVE( 1, MOVE_JET_PUNCH),
+    LEVEL_UP_MOVE( 1, MOVE_FLIP_TURN),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sPyrolinLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_DRILL_OUT),
+    LEVEL_UP_MOVE( 1, MOVE_PYRO_BALL),
+    LEVEL_UP_MOVE( 1, MOVE_KNOCK_OFF),
+    LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
+    LEVEL_UP_END
+};
+
 static const struct LevelUpMove sStratospiraLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_JETSTREAM_BLAST),
     LEVEL_UP_MOVE( 1, MOVE_FLASH_CANNON),
@@ -22837,30 +22861,6 @@ static const struct LevelUpMove sLeviadonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_DRACO_METEOR),
     LEVEL_UP_MOVE( 1, MOVE_WAVE_CRASH),
     LEVEL_UP_MOVE( 1, MOVE_FLIP_TURN),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sZojzionLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_LIGHTNING_VORTEX),
-    LEVEL_UP_MOVE( 1, MOVE_SLUDGE_WAVE),
-    LEVEL_UP_MOVE( 1, MOVE_OVERHEAT),
-    LEVEL_UP_MOVE( 1, MOVE_VOLT_SWITCH),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sMantistrikeLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_SMASH_STRIKE),
-    LEVEL_UP_MOVE( 1, MOVE_STONE_EDGE),
-    LEVEL_UP_MOVE( 1, MOVE_JET_PUNCH),
-    LEVEL_UP_MOVE( 1, MOVE_FLIP_TURN),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sPyrolinLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_DRILL_OUT),
-    LEVEL_UP_MOVE( 1, MOVE_FIRE_LASH),
-    LEVEL_UP_MOVE( 1, MOVE_KNOCK_OFF),
-    LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
     LEVEL_UP_END
 };
 

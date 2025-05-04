@@ -2,12 +2,12 @@
 
 ### Includes the following Fakemon
 - Mewtwo Apocalypse
-- Stratospira
-- Phantomar
-- Leviadon
 - Zojzion
 - Mantistrike
 - Pyrolin
+- Stratospira
+- Phantomar
+- Leviadon
 - Amaniste
 
 |Dex No. | Pokémon                | Type 1     | Type 2     |
@@ -485,10 +485,10 @@
 | 395    | Raging Bolt            | Electric   | Dragon     |
 | 396    | Iron Boulder           | Rock       | Psychic    |
 | 397    | Iron Crown             | Steel      | Psychic    |
-| 398    | Stratospira            | Steel      | Flying     |
-| 399    | Phantomar              | Ghost      | Ground     |
-| 400    | Leviadon               | Dragon     | Water      |
-| 401    | Zojzion                | Electric   | Poison     |
-| 402    | Mantistrike            | Water      | Rock       |
-| 403    | Pyrolin                | Fire       | Steel      |
+| 398    | Zojzion                | Electric   | Poison     |
+| 399    | Mantistrike            | Water      | Rock       |
+| 400    | Pyrolin                | Fire       | Steel      |
+| 401    | Stratospira            | Steel      | Flying     |
+| 402    | Phantomar              | Ghost      | Ground     |
+| 403    | Leviadon               | Dragon     | Water      |
 | 404    | Amaniste               | Fairy      | Poison     |
