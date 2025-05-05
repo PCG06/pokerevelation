@@ -1179,7 +1179,7 @@ Common_EventScript_ChoosePkmnMenu_5:
 	goto Common_EventScript_ChoosePkmnMenu_4
 
 Common_EventScript_ChoosePkmnMenu_9:
-	goto Common_EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu
 	goto Common_EventScript_ChoosePkmnMenu_4
 
 Common_EventScript_ChoosePkmnMenu_10:
@@ -1254,621 +1254,621 @@ EventScript_Givemonset_5:
 	goto EventScript_Givemonset_4
 
 
-Common_EventScript_ChooseStarterMenu::
+EventScript_ChooseStarterMenu::
 	lock
 	faceplayer
-	message Common_EventScript_ChooseStarterMenu_Text_0
+	message EventScript_ChooseStarterMenu_Text_0
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChooseStarterMenu_Text_1, Common_EventScript_ChooseStarterMenu_Text_2, Common_EventScript_ChooseStarterMenu_Text_3, Common_EventScript_ChooseStarterMenu_Text_4, Common_EventScript_ChooseStarterMenu_Text_5, Common_EventScript_ChooseStarterMenu_Text_6, Common_EventScript_ChooseStarterMenu_Text_7, Common_EventScript_ChooseStarterMenu_Text_8, Common_EventScript_ChooseStarterMenu_Text_9, Common_EventScript_ChooseStarterMenu_Text_10, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChooseStarterMenu_Text_1, EventScript_ChooseStarterMenu_Text_2, EventScript_ChooseStarterMenu_Text_3, EventScript_ChooseStarterMenu_Text_4, EventScript_ChooseStarterMenu_Text_5, EventScript_ChooseStarterMenu_Text_6, EventScript_ChooseStarterMenu_Text_7, EventScript_ChooseStarterMenu_Text_8, EventScript_ChooseStarterMenu_Text_9, EventScript_ChooseStarterMenu_Text_10, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_ChooseStarterMenu_3
-	case 1, Common_EventScript_ChooseStarterMenu_4
-	case 2, Common_EventScript_ChooseStarterMenu_5
-	case 3, Common_EventScript_ChooseStarterMenu_6
-	case 4, Common_EventScript_ChooseStarterMenu_7
-	case 5, Common_EventScript_ChooseStarterMenu_8
-	case 6, Common_EventScript_ChooseStarterMenu_9
-	case 7, Common_EventScript_ChooseStarterMenu_10
-	case 8, Common_EventScript_ChooseStarterMenu_11
-	case 9, Common_EventScript_ChooseStarterMenu_12
-	case 10, Common_EventScript_ChooseStarterMenu_13
-Common_EventScript_ChooseStarterMenu_13:
+	case 0, EventScript_ChooseStarterMenu_3
+	case 1, EventScript_ChooseStarterMenu_4
+	case 2, EventScript_ChooseStarterMenu_5
+	case 3, EventScript_ChooseStarterMenu_6
+	case 4, EventScript_ChooseStarterMenu_7
+	case 5, EventScript_ChooseStarterMenu_8
+	case 6, EventScript_ChooseStarterMenu_9
+	case 7, EventScript_ChooseStarterMenu_10
+	case 8, EventScript_ChooseStarterMenu_11
+	case 9, EventScript_ChooseStarterMenu_12
+	case 10, EventScript_ChooseStarterMenu_13
+EventScript_ChooseStarterMenu_13:
 	goto Common_EventScript_ChoosePkmnMenu
-Common_EventScript_ChooseStarterMenu_1:
+EventScript_ChooseStarterMenu_1:
 	release
 	end
 
-Common_EventScript_ChooseStarterMenu_3:
-	goto Common_EventScript_KantoStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_3:
+	goto EventScript_KantoStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_4:
-	goto Common_EventScript_JohtoStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_4:
+	goto EventScript_JohtoStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_5:
-	goto Common_EventScript_HoennStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_5:
+	goto EventScript_HoennStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_6:
-	goto Common_EventScript_SinnohStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_6:
+	goto EventScript_SinnohStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_7:
-	goto Common_EventScript_UnovaStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_7:
+	goto EventScript_UnovaStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_8:
-	goto Common_EventScript_KalosStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_8:
+	goto EventScript_KalosStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_9:
-	goto Common_EventScript_AlolaStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_9:
+	goto EventScript_AlolaStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_10:
-	goto Common_EventScript_GalarStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_10:
+	goto EventScript_GalarStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_11:
-	goto Common_EventScript_PaldeaStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_11:
+	goto EventScript_PaldeaStarters
+	goto EventScript_ChooseStarterMenu_1
 
-Common_EventScript_ChooseStarterMenu_12:
-	goto Common_EventScript_HisuiStarters
-	goto Common_EventScript_ChooseStarterMenu_1
+EventScript_ChooseStarterMenu_12:
+	goto EventScript_HisuiStarters
+	goto EventScript_ChooseStarterMenu_1
 
 
-Common_EventScript_KantoStarters::
+EventScript_KantoStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_KantoStarters_Text_0, Common_EventScript_KantoStarters_Text_1, Common_EventScript_KantoStarters_Text_2, Common_EventScript_KantoStarters_Text_3, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, EventScript_KantoStarters_Text_0, EventScript_KantoStarters_Text_1, EventScript_KantoStarters_Text_2, EventScript_KantoStarters_Text_3, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_KantoStarters_2
-	case 1, Common_EventScript_KantoStarters_3
-	case 2, Common_EventScript_KantoStarters_4
-	case 3, Common_EventScript_KantoStarters_5
-	case 4, Common_EventScript_KantoStarters_6
-Common_EventScript_KantoStarters_6:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_KantoStarters_2
+	case 1, EventScript_KantoStarters_3
+	case 2, EventScript_KantoStarters_4
+	case 3, EventScript_KantoStarters_5
+	case 4, EventScript_KantoStarters_6
+EventScript_KantoStarters_6:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_KantoStarters_2:
+EventScript_KantoStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_VENUSAUR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KantoStarters_7
-	goto Common_EventScript_KantoStarters
+	goto_if_eq EventScript_KantoStarters_7
+	goto EventScript_KantoStarters
 	return
 
-Common_EventScript_KantoStarters_3:
+EventScript_KantoStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_CHARIZARD
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KantoStarters_10
-	goto Common_EventScript_KantoStarters
+	goto_if_eq EventScript_KantoStarters_10
+	goto EventScript_KantoStarters
 	return
 
-Common_EventScript_KantoStarters_4:
+EventScript_KantoStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_BLASTOISE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KantoStarters_13
-	goto Common_EventScript_KantoStarters
+	goto_if_eq EventScript_KantoStarters_13
+	goto EventScript_KantoStarters
 	return
 
-Common_EventScript_KantoStarters_5:
+EventScript_KantoStarters_5:
 	bufferspeciesname STR_VAR_1, SPECIES_PIKACHU
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KantoStarters_16
-	goto Common_EventScript_KantoStarters
+	goto_if_eq EventScript_KantoStarters_16
+	goto EventScript_KantoStarters
 	return
 
-Common_EventScript_KantoStarters_7:
+EventScript_KantoStarters_7:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_KantoStarters_10:
+EventScript_KantoStarters_10:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARIZARD
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_KantoStarters_13:
+EventScript_KantoStarters_13:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLASTOISE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_KantoStarters_16:
+EventScript_KantoStarters_16:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIKACHU
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_JohtoStarters::
+EventScript_JohtoStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_JohtoStarters_Text_0, Common_EventScript_JohtoStarters_Text_1, Common_EventScript_JohtoStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, EventScript_JohtoStarters_Text_0, EventScript_JohtoStarters_Text_1, EventScript_JohtoStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_JohtoStarters_2
-	case 1, Common_EventScript_JohtoStarters_3
-	case 2, Common_EventScript_JohtoStarters_4
-	case 3, Common_EventScript_JohtoStarters_5
-Common_EventScript_JohtoStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_JohtoStarters_2
+	case 1, EventScript_JohtoStarters_3
+	case 2, EventScript_JohtoStarters_4
+	case 3, EventScript_JohtoStarters_5
+EventScript_JohtoStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_JohtoStarters_2:
+EventScript_JohtoStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_MEGANIUM
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_JohtoStarters_6
-	goto Common_EventScript_JohtoStarters
+	goto_if_eq EventScript_JohtoStarters_6
+	goto EventScript_JohtoStarters
 	return
 
-Common_EventScript_JohtoStarters_3:
+EventScript_JohtoStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_TYPHLOSION
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_JohtoStarters_9
-	goto Common_EventScript_JohtoStarters
+	goto_if_eq EventScript_JohtoStarters_9
+	goto EventScript_JohtoStarters
 	return
 
-Common_EventScript_JohtoStarters_4:
+EventScript_JohtoStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_FERALIGATR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_JohtoStarters_12
-	goto Common_EventScript_JohtoStarters
+	goto_if_eq EventScript_JohtoStarters_12
+	goto EventScript_JohtoStarters
 	return
 
-Common_EventScript_JohtoStarters_6:
+EventScript_JohtoStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEGANIUM
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_JohtoStarters_9:
+EventScript_JohtoStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_JohtoStarters_12:
+EventScript_JohtoStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERALIGATR
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_HoennStarters::
+EventScript_HoennStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_HoennStarters_Text_0, Common_EventScript_HoennStarters_Text_1, Common_EventScript_HoennStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_HoennStarters_Text_0, EventScript_HoennStarters_Text_1, EventScript_HoennStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_HoennStarters_2
-	case 1, Common_EventScript_HoennStarters_3
-	case 2, Common_EventScript_HoennStarters_4
-	case 3, Common_EventScript_HoennStarters_5
-Common_EventScript_HoennStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_HoennStarters_2
+	case 1, EventScript_HoennStarters_3
+	case 2, EventScript_HoennStarters_4
+	case 3, EventScript_HoennStarters_5
+EventScript_HoennStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_HoennStarters_2:
+EventScript_HoennStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_SCEPTILE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HoennStarters_6
-	goto Common_EventScript_HoennStarters
+	goto_if_eq EventScript_HoennStarters_6
+	goto EventScript_HoennStarters
 	return
 
-Common_EventScript_HoennStarters_3:
+EventScript_HoennStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_BLAZIKEN
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HoennStarters_9
-	goto Common_EventScript_HoennStarters
+	goto_if_eq EventScript_HoennStarters_9
+	goto EventScript_HoennStarters
 	return
 
-Common_EventScript_HoennStarters_4:
+EventScript_HoennStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_SWAMPERT
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HoennStarters_12
-	goto Common_EventScript_HoennStarters
+	goto_if_eq EventScript_HoennStarters_12
+	goto EventScript_HoennStarters
 	return
 
-Common_EventScript_HoennStarters_6:
+EventScript_HoennStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCEPTILE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_HoennStarters_9:
+EventScript_HoennStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLAZIKEN
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_HoennStarters_12:
+EventScript_HoennStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWAMPERT
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_SinnohStarters::
+EventScript_SinnohStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_SinnohStarters_Text_0, Common_EventScript_SinnohStarters_Text_1, Common_EventScript_SinnohStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_SinnohStarters_Text_0, EventScript_SinnohStarters_Text_1, EventScript_SinnohStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_SinnohStarters_2
-	case 1, Common_EventScript_SinnohStarters_3
-	case 2, Common_EventScript_SinnohStarters_4
-	case 3, Common_EventScript_SinnohStarters_5
-Common_EventScript_SinnohStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_SinnohStarters_2
+	case 1, EventScript_SinnohStarters_3
+	case 2, EventScript_SinnohStarters_4
+	case 3, EventScript_SinnohStarters_5
+EventScript_SinnohStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_SinnohStarters_2:
+EventScript_SinnohStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_TORTERRA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_SinnohStarters_6
-	goto Common_EventScript_SinnohStarters
+	goto_if_eq EventScript_SinnohStarters_6
+	goto EventScript_SinnohStarters
 	return
 
-Common_EventScript_SinnohStarters_3:
+EventScript_SinnohStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_INFERNAPE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_SinnohStarters_9
-	goto Common_EventScript_SinnohStarters
+	goto_if_eq EventScript_SinnohStarters_9
+	goto EventScript_SinnohStarters
 	return
 
-Common_EventScript_SinnohStarters_4:
+EventScript_SinnohStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_EMPOLEON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_SinnohStarters_12
-	goto Common_EventScript_SinnohStarters
+	goto_if_eq EventScript_SinnohStarters_12
+	goto EventScript_SinnohStarters
 	return
 
-Common_EventScript_SinnohStarters_6:
+EventScript_SinnohStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORTERRA
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_SinnohStarters_9:
+EventScript_SinnohStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INFERNAPE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_SinnohStarters_12:
+EventScript_SinnohStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMPOLEON
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_UnovaStarters::
+EventScript_UnovaStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_UnovaStarters_Text_0, Common_EventScript_UnovaStarters_Text_1, Common_EventScript_UnovaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_UnovaStarters_Text_0, EventScript_UnovaStarters_Text_1, EventScript_UnovaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_UnovaStarters_2
-	case 1, Common_EventScript_UnovaStarters_3
-	case 2, Common_EventScript_UnovaStarters_4
-	case 3, Common_EventScript_UnovaStarters_5
-Common_EventScript_UnovaStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_UnovaStarters_2
+	case 1, EventScript_UnovaStarters_3
+	case 2, EventScript_UnovaStarters_4
+	case 3, EventScript_UnovaStarters_5
+EventScript_UnovaStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_UnovaStarters_2:
+EventScript_UnovaStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_SERPERIOR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_UnovaStarters_6
-	goto Common_EventScript_UnovaStarters
+	goto_if_eq EventScript_UnovaStarters_6
+	goto EventScript_UnovaStarters
 	return
 
-Common_EventScript_UnovaStarters_3:
+EventScript_UnovaStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_EMBOAR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_UnovaStarters_9
-	goto Common_EventScript_UnovaStarters
+	goto_if_eq EventScript_UnovaStarters_9
+	goto EventScript_UnovaStarters
 	return
 
-Common_EventScript_UnovaStarters_4:
+EventScript_UnovaStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_SAMUROTT
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_UnovaStarters_12
-	goto Common_EventScript_UnovaStarters
+	goto_if_eq EventScript_UnovaStarters_12
+	goto EventScript_UnovaStarters
 	return
 
-Common_EventScript_UnovaStarters_6:
+EventScript_UnovaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_UnovaStarters_9:
+EventScript_UnovaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMBOAR
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_UnovaStarters_12:
+EventScript_UnovaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_KalosStarters::
+EventScript_KalosStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_KalosStarters_Text_0, Common_EventScript_KalosStarters_Text_1, Common_EventScript_KalosStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_KalosStarters_Text_0, EventScript_KalosStarters_Text_1, EventScript_KalosStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_KalosStarters_2
-	case 1, Common_EventScript_KalosStarters_3
-	case 2, Common_EventScript_KalosStarters_4
-	case 3, Common_EventScript_KalosStarters_5
-Common_EventScript_KalosStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_KalosStarters_2
+	case 1, EventScript_KalosStarters_3
+	case 2, EventScript_KalosStarters_4
+	case 3, EventScript_KalosStarters_5
+EventScript_KalosStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_KalosStarters_2:
+EventScript_KalosStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_CHESNAUGHT
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KalosStarters_6
-	goto Common_EventScript_KalosStarters
+	goto_if_eq EventScript_KalosStarters_6
+	goto EventScript_KalosStarters
 	return
 
-Common_EventScript_KalosStarters_3:
+EventScript_KalosStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_DELPHOX
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KalosStarters_9
-	goto Common_EventScript_KalosStarters
+	goto_if_eq EventScript_KalosStarters_9
+	goto EventScript_KalosStarters
 	return
 
-Common_EventScript_KalosStarters_4:
+EventScript_KalosStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_GRENINJA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_KalosStarters_12
-	goto Common_EventScript_KalosStarters
+	goto_if_eq EventScript_KalosStarters_12
+	goto EventScript_KalosStarters
 	return
 
-Common_EventScript_KalosStarters_6:
+EventScript_KalosStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHESNAUGHT
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_KalosStarters_9:
+EventScript_KalosStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_KalosStarters_12:
+EventScript_KalosStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_AlolaStarters::
+EventScript_AlolaStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_AlolaStarters_Text_0, Common_EventScript_AlolaStarters_Text_1, Common_EventScript_AlolaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_AlolaStarters_Text_0, EventScript_AlolaStarters_Text_1, EventScript_AlolaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_AlolaStarters_2
-	case 1, Common_EventScript_AlolaStarters_3
-	case 2, Common_EventScript_AlolaStarters_4
-	case 3, Common_EventScript_AlolaStarters_5
-Common_EventScript_AlolaStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_AlolaStarters_2
+	case 1, EventScript_AlolaStarters_3
+	case 2, EventScript_AlolaStarters_4
+	case 3, EventScript_AlolaStarters_5
+EventScript_AlolaStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_AlolaStarters_2:
+EventScript_AlolaStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_DECIDUEYE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_AlolaStarters_6
-	goto Common_EventScript_AlolaStarters
+	goto_if_eq EventScript_AlolaStarters_6
+	goto EventScript_AlolaStarters
 	return
 
-Common_EventScript_AlolaStarters_3:
+EventScript_AlolaStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_INCINEROAR
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_AlolaStarters_9
-	goto Common_EventScript_AlolaStarters
+	goto_if_eq EventScript_AlolaStarters_9
+	goto EventScript_AlolaStarters
 	return
 
-Common_EventScript_AlolaStarters_4:
+EventScript_AlolaStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_PRIMARINA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_AlolaStarters_12
-	goto Common_EventScript_AlolaStarters
+	goto_if_eq EventScript_AlolaStarters_12
+	goto EventScript_AlolaStarters
 	return
 
-Common_EventScript_AlolaStarters_6:
+EventScript_AlolaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_AlolaStarters_9:
+EventScript_AlolaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INCINEROAR
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_AlolaStarters_12:
+EventScript_AlolaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PRIMARINA
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_GalarStarters::
+EventScript_GalarStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_GalarStarters_Text_0, Common_EventScript_GalarStarters_Text_1, Common_EventScript_GalarStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_GalarStarters_Text_0, EventScript_GalarStarters_Text_1, EventScript_GalarStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_GalarStarters_2
-	case 1, Common_EventScript_GalarStarters_3
-	case 2, Common_EventScript_GalarStarters_4
-	case 3, Common_EventScript_GalarStarters_5
-Common_EventScript_GalarStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_GalarStarters_2
+	case 1, EventScript_GalarStarters_3
+	case 2, EventScript_GalarStarters_4
+	case 3, EventScript_GalarStarters_5
+EventScript_GalarStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_GalarStarters_2:
+EventScript_GalarStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_RILLABOOM
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_GalarStarters_6
-	goto Common_EventScript_GalarStarters
+	goto_if_eq EventScript_GalarStarters_6
+	goto EventScript_GalarStarters
 	return
 
-Common_EventScript_GalarStarters_3:
+EventScript_GalarStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_CINDERACE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_GalarStarters_9
-	goto Common_EventScript_GalarStarters
+	goto_if_eq EventScript_GalarStarters_9
+	goto EventScript_GalarStarters
 	return
 
-Common_EventScript_GalarStarters_4:
+EventScript_GalarStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_INTELEON
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_GalarStarters_12
-	goto Common_EventScript_GalarStarters
+	goto_if_eq EventScript_GalarStarters_12
+	goto EventScript_GalarStarters
 	return
 
-Common_EventScript_GalarStarters_6:
+EventScript_GalarStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RILLABOOM
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_GalarStarters_9:
+EventScript_GalarStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CINDERACE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_GalarStarters_12:
+EventScript_GalarStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INTELEON
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_PaldeaStarters::
+EventScript_PaldeaStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_PaldeaStarters_Text_0, Common_EventScript_PaldeaStarters_Text_1, Common_EventScript_PaldeaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_PaldeaStarters_Text_0, EventScript_PaldeaStarters_Text_1, EventScript_PaldeaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_PaldeaStarters_2
-	case 1, Common_EventScript_PaldeaStarters_3
-	case 2, Common_EventScript_PaldeaStarters_4
-	case 3, Common_EventScript_PaldeaStarters_5
-Common_EventScript_PaldeaStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_PaldeaStarters_2
+	case 1, EventScript_PaldeaStarters_3
+	case 2, EventScript_PaldeaStarters_4
+	case 3, EventScript_PaldeaStarters_5
+EventScript_PaldeaStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_PaldeaStarters_2:
+EventScript_PaldeaStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_MEOWSCARADA
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_PaldeaStarters_6
-	goto Common_EventScript_PaldeaStarters
+	goto_if_eq EventScript_PaldeaStarters_6
+	goto EventScript_PaldeaStarters
 	return
 
-Common_EventScript_PaldeaStarters_3:
+EventScript_PaldeaStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_SKELEDIRGE
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_PaldeaStarters_9
-	goto Common_EventScript_PaldeaStarters
+	goto_if_eq EventScript_PaldeaStarters_9
+	goto EventScript_PaldeaStarters
 	return
 
-Common_EventScript_PaldeaStarters_4:
+EventScript_PaldeaStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_QUAQUAVAL
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_PaldeaStarters_12
-	goto Common_EventScript_PaldeaStarters
+	goto_if_eq EventScript_PaldeaStarters_12
+	goto EventScript_PaldeaStarters
 	return
 
-Common_EventScript_PaldeaStarters_6:
+EventScript_PaldeaStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_PaldeaStarters_9:
+EventScript_PaldeaStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_PaldeaStarters_12:
+EventScript_PaldeaStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL
 	goto EventScript_Givemonset
 	return
 
 
-Common_EventScript_HisuiStarters::
+EventScript_HisuiStarters::
 	message Text_SelectStarter
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_HisuiStarters_Text_0, Common_EventScript_HisuiStarters_Text_1, Common_EventScript_HisuiStarters_Text_2, EventScript_GymLeaderChoices_Text_9
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_HisuiStarters_Text_0, EventScript_HisuiStarters_Text_1, EventScript_HisuiStarters_Text_2, EventScript_GymLeaderChoices_Text_9
 	closemessage
 	switch VAR_RESULT
-	case 0, Common_EventScript_HisuiStarters_2
-	case 1, Common_EventScript_HisuiStarters_3
-	case 2, Common_EventScript_HisuiStarters_4
-	case 3, Common_EventScript_HisuiStarters_5
-Common_EventScript_HisuiStarters_5:
-	goto Common_EventScript_ChooseStarterMenu
+	case 0, EventScript_HisuiStarters_2
+	case 1, EventScript_HisuiStarters_3
+	case 2, EventScript_HisuiStarters_4
+	case 3, EventScript_HisuiStarters_5
+EventScript_HisuiStarters_5:
+	goto EventScript_ChooseStarterMenu
 	return
 
-Common_EventScript_HisuiStarters_2:
+EventScript_HisuiStarters_2:
 	bufferspeciesname STR_VAR_1, SPECIES_DECIDUEYE_HISUI
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HisuiStarters_6
-	goto Common_EventScript_HisuiStarters
+	goto_if_eq EventScript_HisuiStarters_6
+	goto EventScript_HisuiStarters
 	return
 
-Common_EventScript_HisuiStarters_3:
+EventScript_HisuiStarters_3:
 	bufferspeciesname STR_VAR_1, SPECIES_TYPHLOSION_HISUI
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HisuiStarters_9
-	goto Common_EventScript_HisuiStarters
+	goto_if_eq EventScript_HisuiStarters_9
+	goto EventScript_HisuiStarters
 	return
 
-Common_EventScript_HisuiStarters_4:
+EventScript_HisuiStarters_4:
 	bufferspeciesname STR_VAR_1, SPECIES_SAMUROTT_HISUI
 	msgbox Text_DoYouWantPkmn, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_HisuiStarters_12
-	goto Common_EventScript_HisuiStarters
+	goto_if_eq EventScript_HisuiStarters_12
+	goto EventScript_HisuiStarters
 	return
 
-Common_EventScript_HisuiStarters_6:
+EventScript_HisuiStarters_6:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE_HISUI
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_HisuiStarters_9:
+EventScript_HisuiStarters_9:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION_HISUI
 	goto EventScript_Givemonset
 	return
 
-Common_EventScript_HisuiStarters_12:
+EventScript_HisuiStarters_12:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT_HISUI
 	goto EventScript_Givemonset
 	return
@@ -4101,130 +4101,130 @@ EventScript_Givemonset_Text_0:
 	.string "Pokémon No: {STR_VAR_2}.\n"
 	.string "{PLAYER} received {STR_VAR_1}!$"
 
-Common_EventScript_ChooseStarterMenu_Text_0:
+EventScript_ChooseStarterMenu_Text_0:
 	.string "Select your region.$"
 
-Common_EventScript_ChooseStarterMenu_Text_1:
+EventScript_ChooseStarterMenu_Text_1:
 	.string "Kanto$"
 
-Common_EventScript_ChooseStarterMenu_Text_2:
+EventScript_ChooseStarterMenu_Text_2:
 	.string "Johto$"
 
-Common_EventScript_ChooseStarterMenu_Text_3:
+EventScript_ChooseStarterMenu_Text_3:
 	.string "Hoenn$"
 
-Common_EventScript_ChooseStarterMenu_Text_4:
+EventScript_ChooseStarterMenu_Text_4:
 	.string "Sinnoh$"
 
-Common_EventScript_ChooseStarterMenu_Text_5:
+EventScript_ChooseStarterMenu_Text_5:
 	.string "Unova$"
 
-Common_EventScript_ChooseStarterMenu_Text_6:
+EventScript_ChooseStarterMenu_Text_6:
 	.string "Kalos$"
 
-Common_EventScript_ChooseStarterMenu_Text_7:
+EventScript_ChooseStarterMenu_Text_7:
 	.string "Alola$"
 
-Common_EventScript_ChooseStarterMenu_Text_8:
+EventScript_ChooseStarterMenu_Text_8:
 	.string "Galar$"
 
-Common_EventScript_ChooseStarterMenu_Text_9:
+EventScript_ChooseStarterMenu_Text_9:
 	.string "Paldea$"
 
-Common_EventScript_ChooseStarterMenu_Text_10:
+EventScript_ChooseStarterMenu_Text_10:
 	.string "Hisui$"
 
-Common_EventScript_KantoStarters_Text_0:
+EventScript_KantoStarters_Text_0:
 	.string "Venusaur$"
 
-Common_EventScript_KantoStarters_Text_1:
+EventScript_KantoStarters_Text_1:
 	.string "Charizard$"
 
-Common_EventScript_KantoStarters_Text_2:
+EventScript_KantoStarters_Text_2:
 	.string "Blastoise$"
 
-Common_EventScript_KantoStarters_Text_3:
+EventScript_KantoStarters_Text_3:
 	.string "Pikachu$"
 
-Common_EventScript_JohtoStarters_Text_0:
+EventScript_JohtoStarters_Text_0:
 	.string "Meganium$"
 
-Common_EventScript_JohtoStarters_Text_1:
+EventScript_JohtoStarters_Text_1:
 	.string "Typhlosion$"
 
-Common_EventScript_JohtoStarters_Text_2:
+EventScript_JohtoStarters_Text_2:
 	.string "Feraligatr$"
 
-Common_EventScript_HoennStarters_Text_0:
+EventScript_HoennStarters_Text_0:
 	.string "Sceptile$"
 
-Common_EventScript_HoennStarters_Text_1:
+EventScript_HoennStarters_Text_1:
 	.string "Blaziken$"
 
-Common_EventScript_HoennStarters_Text_2:
+EventScript_HoennStarters_Text_2:
 	.string "Swampert$"
 
-Common_EventScript_SinnohStarters_Text_0:
+EventScript_SinnohStarters_Text_0:
 	.string "Torterra$"
 
-Common_EventScript_SinnohStarters_Text_1:
+EventScript_SinnohStarters_Text_1:
 	.string "Infernape$"
 
-Common_EventScript_SinnohStarters_Text_2:
+EventScript_SinnohStarters_Text_2:
 	.string "Empoleon$"
 
-Common_EventScript_UnovaStarters_Text_0:
+EventScript_UnovaStarters_Text_0:
 	.string "Serperior$"
 
-Common_EventScript_UnovaStarters_Text_1:
+EventScript_UnovaStarters_Text_1:
 	.string "Emboar$"
 
-Common_EventScript_UnovaStarters_Text_2:
+EventScript_UnovaStarters_Text_2:
 	.string "Samurott$"
 
-Common_EventScript_KalosStarters_Text_0:
+EventScript_KalosStarters_Text_0:
 	.string "Chesnaught$"
 
-Common_EventScript_KalosStarters_Text_1:
+EventScript_KalosStarters_Text_1:
 	.string "Delphox$"
 
-Common_EventScript_KalosStarters_Text_2:
+EventScript_KalosStarters_Text_2:
 	.string "Greninja$"
 
-Common_EventScript_AlolaStarters_Text_0:
+EventScript_AlolaStarters_Text_0:
 	.string "Decidueye$"
 
-Common_EventScript_AlolaStarters_Text_1:
+EventScript_AlolaStarters_Text_1:
 	.string "Incineroar$"
 
-Common_EventScript_AlolaStarters_Text_2:
+EventScript_AlolaStarters_Text_2:
 	.string "Primarina$"
 
-Common_EventScript_GalarStarters_Text_0:
+EventScript_GalarStarters_Text_0:
 	.string "Rillaboom$"
 
-Common_EventScript_GalarStarters_Text_1:
+EventScript_GalarStarters_Text_1:
 	.string "Cinderace$"
 
-Common_EventScript_GalarStarters_Text_2:
+EventScript_GalarStarters_Text_2:
 	.string "Inteleon$"
 
-Common_EventScript_PaldeaStarters_Text_0:
+EventScript_PaldeaStarters_Text_0:
 	.string "Meowscarada$"
 
-Common_EventScript_PaldeaStarters_Text_1:
+EventScript_PaldeaStarters_Text_1:
 	.string "Skeledirge$"
 
-Common_EventScript_PaldeaStarters_Text_2:
+EventScript_PaldeaStarters_Text_2:
 	.string "Quaquaval$"
 
-Common_EventScript_HisuiStarters_Text_0:
+EventScript_HisuiStarters_Text_0:
 	.string "Decidueye-H$"
 
-Common_EventScript_HisuiStarters_Text_1:
+EventScript_HisuiStarters_Text_1:
 	.string "Typhlosion-H$"
 
-Common_EventScript_HisuiStarters_Text_2:
+EventScript_HisuiStarters_Text_2:
 	.string "Samurott-H$"
 
 EventScript_Group1Choices_Text_0:
