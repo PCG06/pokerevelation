@@ -1231,6 +1231,7 @@ EventScript_Givemonset::
 	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
 EventScript_Givemonset_1:
 	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
+	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
 	message EventScript_Givemonset_Text_0
 	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
 	waitmessage

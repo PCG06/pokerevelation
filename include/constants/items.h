@@ -948,13 +948,13 @@
 #define ITEM_TM228 809
 #define ITEM_TM229 810
 #define ITEM_TM230 811
+#define ITEM_TM231 812
+#define ITEM_TM232 813
+#define ITEM_TM233 814
+#define ITEM_TM234 815
+#define ITEM_TM235 816
 
 //HMs
-#define ITEM_HM01 812
-#define ITEM_HM02 813
-#define ITEM_HM03 814
-#define ITEM_HM04 815
-#define ITEM_HM05 816
 #define ITEM_HM06 817
 #define ITEM_HM07 818
 #define ITEM_HM08 819
@@ -1158,8 +1158,7 @@
 #define MAIL_NONE 0xFF
 #define ITEM_TO_MULCH(itemId)(((itemId) - ITEM_GROWTH_MULCH) + 1)
 
-#define NUM_TECHNICAL_MACHINES 230
-#define NUM_HIDDEN_MACHINES 8
+#define NUM_TECHNICAL_MACHINES 235
 
 #define MAX_BAG_ITEM_CAPACITY         999
 #define MAX_PC_ITEM_CAPACITY          999

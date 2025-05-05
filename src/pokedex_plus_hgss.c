@@ -290,9 +290,9 @@ static EWRAM_DATA u16 sLastSelectedPokemon = 0;
 static EWRAM_DATA u8 sPokeBallRotation = 0;
 static EWRAM_DATA struct PokedexListItem *sPokedexListItem = NULL;
 //Pokedex Plus HGSS_Ui
-#define MOVES_COUNT_TOTAL (EGG_MOVES_ARRAY_COUNT + MAX_LEVEL_UP_MOVES + NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES)
+#define MOVES_COUNT_TOTAL (EGG_MOVES_ARRAY_COUNT + MAX_LEVEL_UP_MOVES + NUM_TECHNICAL_MACHINES)
 EWRAM_DATA static u16 sStatsMoves[MOVES_COUNT_TOTAL] = {0};
-EWRAM_DATA static u16 sStatsMovesTMHM_ID[NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES] = {0};
+EWRAM_DATA static u16 sStatsMovesTMHM_ID[NUM_TECHNICAL_MACHINES] = {0};
 
 
 struct SearchOptionText
@@ -5073,7 +5073,7 @@ static u16 AddTMTutorMoves(u16 species, u16 movesTotal, u16 *numTMHMMoves, u8 *n
     // TM Moves
     if (HGSS_SORT_TMS_BY_NUM)
     {
-        for (i = 0; i < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; i++)
+        for (i = 0; i < NUM_TECHNICAL_MACHINES; i++)
         {
             move = ItemIdToBattleMoveId(ITEM_TM01 + i);
             if (move != MOVE_NONE && CanLearnTeachableMove(species, move))
@@ -5091,7 +5091,7 @@ static u16 AddTMTutorMoves(u16 species, u16 movesTotal, u16 *numTMHMMoves, u8 *n
         for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
         {
             move = teachableLearnset[i];
-            for (u16 j = 0; j < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; j++)
+            for (u16 j = 0; j < NUM_TECHNICAL_MACHINES; j++)
             {
                 if (ItemIdToBattleMoveId(ITEM_TM01 + j) == move)
                 {

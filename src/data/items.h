@@ -13410,9 +13410,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_HIDDEN_POWER,
     },
 
-    [ITEM_HM_CUT] =
+    [ITEM_TM_CUT] =
     {
-        .name = _("HM01"),
+        .name = _("TM231"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Attacks the foe\n"
@@ -13425,39 +13425,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_CUT,
     },
 
-    [ITEM_HM_FLY] =
+    [ITEM_TM_STRENGTH] =
     {
-        .name = _("HM02"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Flies up on the\n"
-            "first turn, then\n"
-            "attacks next turn."),
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FLY,
-    },
-
-    [ITEM_HM_SURF] =
-    {
-        .name = _("HM03"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Creates a huge\n"
-            "wave, then crashes\n"
-            "it down on the foe."),
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SURF,
-    },
-
-    [ITEM_HM_STRENGTH] =
-    {
-        .name = _("HM04"),
+        .name = _("TM232"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Builds enormous\n"
@@ -13470,9 +13440,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_STRENGTH,
     },
 
-    [ITEM_HM_FLASH] =
+    [ITEM_TM_FLASH] =
     {
-        .name = _("HM05"),
+        .name = _("TM233"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Looses a powerful\n"
@@ -13485,9 +13455,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_FLASH,
     },
 
-    [ITEM_HM_ROCK_SMASH] =
+    [ITEM_TM_ROCK_SMASH] =
     {
-        .name = _("HM06"),
+        .name = _("TM234"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A rock-crushingly\n"
@@ -13500,24 +13470,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_ROCK_SMASH,
     },
 
-    [ITEM_HM_WATERFALL] =
+    [ITEM_TM_DIVE] =
     {
-        .name = _("HM07"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Attacks the foe\n"
-            "with enough power\n"
-            "to climb waterfalls."),
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_WATERFALL,
-    },
-
-    [ITEM_HM_DIVE] =
-    {
-        .name = _("HM08"),
+        .name = _("TM235"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Dives underwater\n"

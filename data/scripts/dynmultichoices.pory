@@ -792,6 +792,7 @@ script EventScript_Givemonset {
 		setflag(FLAG_SYS_POKEMON_GET)
 	}
 	buffernumberstring(STR_VAR_2, VAR_GOT_PARTY_PKMN)
+	bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
 	message("Pokémon No: {STR_VAR_2}.\n"
 			"{PLAYER} received {STR_VAR_1}!")
 	showmonpic(VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3)
