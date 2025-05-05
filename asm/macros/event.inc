@@ -2645,3 +2645,14 @@
 	callnative ScriptChangeFollowerNPCBattlePartner
 	.2byte \battlePartner
 	.endm
+
+	@ Shows a preview of the trainer's party
+	.macro showteampreview trainerId:req
+	setvar VAR_0x8000, \trainerId
+	callnative ScrCmd_showteampreview, requests_effects=1
+	.2byte \trainerId
+	.endm
+
+	.macro hideteampreview
+	callnative ScrCmd_hideteampreview, requests_effects=1
+	.endm
