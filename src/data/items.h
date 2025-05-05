@@ -138,6 +138,8 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+static const u8 sPlaceholderDesc[]  = _("Placeholder string");
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -10424,8 +10426,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM01"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10437,8 +10438,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM02"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10450,8 +10450,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM03"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10463,8 +10462,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM04"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10476,8 +10474,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM05"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10489,8 +10486,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM06"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10502,8 +10498,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM07"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10515,8 +10510,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM08"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10528,8 +10522,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM09"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10541,8 +10534,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM10"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10554,8 +10546,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM11"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10567,8 +10558,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM12"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10580,8 +10570,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM13"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10593,8 +10582,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM14"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10606,8 +10594,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM15"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10619,8 +10606,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM16"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10632,8 +10618,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM17"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10645,8 +10630,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM18"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10658,8 +10642,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM19"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10671,8 +10654,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM20"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10684,8 +10666,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM21"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10697,8 +10678,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM22"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10710,8 +10690,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM23"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10723,8 +10702,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM24"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10736,8 +10714,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM25"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10749,8 +10726,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM26"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10762,8 +10738,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM27"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10775,8 +10750,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM28"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10788,8 +10762,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM29"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10801,8 +10774,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM30"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10814,8 +10786,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM31"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10827,8 +10798,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM32"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10840,8 +10810,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM33"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10853,8 +10822,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM34"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10866,8 +10834,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM35"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10879,8 +10846,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM36"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10892,8 +10858,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM37"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10905,8 +10870,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM38"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10918,8 +10882,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM39"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10931,8 +10894,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM40"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10944,8 +10906,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM41"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10957,8 +10918,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM42"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10970,8 +10930,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM43"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10983,8 +10942,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM44"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10996,8 +10954,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM45"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11009,8 +10966,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM46"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11022,8 +10978,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM47"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11035,8 +10990,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM48"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11048,8 +11002,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM49"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11061,8 +11014,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM50"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11074,8 +11026,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM51"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11087,8 +11038,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM52"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11100,8 +11050,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM53"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11113,8 +11062,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM54"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11126,8 +11074,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM55"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11139,8 +11086,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM56"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11152,8 +11098,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM57"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11165,8 +11110,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM58"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11178,8 +11122,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM59"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11191,8 +11134,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM60"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11204,8 +11146,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM61"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11217,8 +11158,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM62"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11230,8 +11170,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM63"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11243,8 +11182,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM64"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11256,8 +11194,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM65"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11269,8 +11206,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM66"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11282,8 +11218,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM67"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11295,8 +11230,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM68"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11308,8 +11242,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM69"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11321,8 +11254,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM70"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11334,8 +11266,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM71"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11347,8 +11278,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM72"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11360,8 +11290,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM73"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11373,8 +11302,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM74"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11386,8 +11314,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM75"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11399,8 +11326,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM76"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11412,8 +11338,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM77"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11425,8 +11350,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM78"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11438,8 +11362,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM79"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11451,8 +11374,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM80"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11464,8 +11386,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM81"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11477,8 +11398,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM82"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11490,8 +11410,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM83"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11503,8 +11422,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM84"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11516,8 +11434,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM85"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11529,8 +11446,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM86"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11542,8 +11458,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM87"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11555,8 +11470,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM88"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11568,8 +11482,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM89"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11581,8 +11494,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM90"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11594,8 +11506,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM91"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11607,8 +11518,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM92"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11620,8 +11530,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM93"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11633,8 +11542,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM94"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11646,8 +11554,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM95"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11659,8 +11566,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM96"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11672,8 +11578,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM97"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11685,8 +11590,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM98"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11698,8 +11602,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM99"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11711,8 +11614,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM100"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11724,8 +11626,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM101"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11737,8 +11638,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM102"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11750,8 +11650,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM103"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11763,8 +11662,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM104"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11776,8 +11674,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM105"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11789,8 +11686,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM106"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11802,8 +11698,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM107"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11815,8 +11710,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM108"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11828,8 +11722,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM109"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11841,8 +11734,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM110"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11854,8 +11746,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM111"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11867,8 +11758,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM112"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11880,8 +11770,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM113"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11893,8 +11782,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM114"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11906,8 +11794,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM115"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11919,8 +11806,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM116"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11932,8 +11818,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM117"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11945,8 +11830,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM118"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11958,8 +11842,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM119"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11971,8 +11854,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM120"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11984,8 +11866,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM121"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11997,8 +11878,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM122"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12010,8 +11890,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM123"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12023,8 +11902,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM124"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12036,8 +11914,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM125"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12049,8 +11926,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM126"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12062,8 +11938,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM127"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12075,8 +11950,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM128"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12088,8 +11962,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM129"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12101,8 +11974,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM130"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12114,8 +11986,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM131"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12127,8 +11998,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM132"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12140,8 +12010,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM133"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12153,8 +12022,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM134"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12166,8 +12034,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM135"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12179,8 +12046,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM136"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12192,8 +12058,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM137"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12205,8 +12070,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM138"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12218,8 +12082,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM139"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12231,8 +12094,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM140"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12244,8 +12106,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM141"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12257,8 +12118,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM142"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12270,8 +12130,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM143"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12283,8 +12142,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM144"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12296,8 +12154,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM145"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12309,8 +12166,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM146"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12322,8 +12178,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM147"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12335,8 +12190,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM148"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12348,8 +12202,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM149"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12361,8 +12214,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM150"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12374,8 +12226,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM151"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12387,8 +12238,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM152"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12400,8 +12250,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM153"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12413,8 +12262,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM154"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12426,8 +12274,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM155"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12439,8 +12286,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM156"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12452,8 +12298,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM157"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12465,8 +12310,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM158"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12478,8 +12322,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM159"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12491,8 +12334,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM160"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12504,8 +12346,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM161"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12517,8 +12358,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM162"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12530,8 +12370,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM163"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12543,8 +12382,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM164"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12556,8 +12394,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM165"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12569,8 +12406,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM166"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12582,8 +12418,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM167"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12595,8 +12430,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM168"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12608,8 +12442,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM169"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12621,8 +12454,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM170"),
         .price = 10000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12634,8 +12466,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM171"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12647,8 +12478,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM172"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12660,8 +12490,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM173"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12673,8 +12502,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM174"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12686,8 +12514,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM175"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12699,8 +12526,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM176"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12712,8 +12538,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM177"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12725,8 +12550,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM178"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12738,8 +12562,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM179"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12751,8 +12574,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM180"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12764,8 +12586,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM181"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12777,8 +12598,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM182"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12790,8 +12610,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM183"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12803,8 +12622,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM184"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12816,8 +12634,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM185"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12829,8 +12646,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM186"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12842,8 +12658,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM187"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12855,8 +12670,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM188"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12868,8 +12682,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM189"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12881,8 +12694,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM190"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12894,8 +12706,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM191"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12907,8 +12718,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM192"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12920,8 +12730,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM193"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12933,8 +12742,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM194"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12946,8 +12754,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM195"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12959,8 +12766,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM196"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12972,8 +12778,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM197"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12985,8 +12790,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM198"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12998,8 +12802,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM199"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13011,8 +12814,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM200"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13024,8 +12826,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM201"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13037,8 +12838,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM202"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13050,8 +12850,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM203"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13063,8 +12862,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM204"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13076,8 +12874,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM205"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13089,8 +12886,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM206"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13102,8 +12898,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM207"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13115,8 +12910,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM208"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13128,8 +12922,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM209"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13141,8 +12934,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM210"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13154,8 +12946,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM211"),
         .price = 8000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13167,8 +12958,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM212"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13180,8 +12970,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM213"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13193,8 +12982,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM214"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13206,8 +12994,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM215"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13219,8 +13006,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM216"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13232,8 +13018,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM217"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13245,8 +13030,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM218"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13258,8 +13042,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM219"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13271,8 +13054,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM220"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13284,8 +13066,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM221"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13297,8 +13078,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM222"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13310,8 +13090,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM223"),
         .price = 3000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13323,8 +13102,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM224"),
         .price = 1000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13336,8 +13114,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM225"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13349,8 +13126,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM226"),
         .price = 2000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13362,8 +13138,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM227"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13375,8 +13150,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM228"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13388,8 +13162,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM229"),
         .price = 500,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13401,8 +13174,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM230"),
         .price = 5000,
-        .description = COMPOUND_STRING(
-            "Placeholder string"),
+        .description = sPlaceholderDesc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13414,10 +13186,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM231"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Attacks the foe\n"
-            "with sharp blades\n"
-            "or claws."),
+        .description = sPlaceholderDesc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13429,10 +13198,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM232"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Builds enormous\n"
-            "power, then slams\n"
-            "the foe."),
+        .description = sPlaceholderDesc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13444,10 +13210,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM233"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Looses a powerful\n"
-            "blast of light that\n"
-            "reduces accuracy."),
+        .description = sPlaceholderDesc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13459,10 +13222,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM234"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "A rock-crushingly\n"
-            "tough attack that\n"
-            "may lower Defense."),
+        .description = sPlaceholderDesc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13474,15 +13234,45 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM235"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Dives underwater\n"
-            "the 1st turn, then\n"
-            "attacks next turn."),
+        .description = sPlaceholderDesc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DIVE,
+    },
+
+    [ITEM_HM06] =
+    {
+        .name = _("HM06"),
+        .price = 0,
+        .description = sQuestionMarksDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_HM07] =
+    {
+        .name = _("TM235"),
+        .price = 0,
+        .description = sQuestionMarksDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_HM08] =
+    {
+        .name = _("TM235"),
+        .price = 0,
+        .description = sQuestionMarksDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
 
