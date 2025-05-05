@@ -3173,18 +3173,18 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
         StopScript(ctx);
 }
 
-void SetSpeciesPokedexFlags(void)
+void SetRegionalPokedexFlags(void)
 {
-    for (u16 i = 1; i <= NATIONAL_DEX_COUNT; i++)
+    for (u16 i = REGIONAL_DEX_BULBASAUR; i <= REGIONAL_DEX_COUNT; i++)
     {
-        GetSetPokedexFlag(i, FLAG_SET_SEEN);
-        GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
+        GetSetPokedexFlag(RegionalToNationalOrder(i), FLAG_SET_SEEN);
+        GetSetPokedexFlag(RegionalToNationalOrder(i), FLAG_SET_CAUGHT);
     }
 }
 
-void GivePlayerAllTMHMs(void)
+void GivePlayerAllTMs(void)
 {
-    for (u16 itemId = ITEM_TM01; itemId <= ITEM_HM08; itemId++)
+    for (u16 itemId = ITEM_TM01; itemId <= ITEM_TM235; itemId++)
     {
         if (CheckBagHasSpace(itemId, 1) && ItemIdToBattleMoveId(itemId) != MOVE_NONE)
             AddBagItem(itemId, 1);

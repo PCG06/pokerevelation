@@ -274,10 +274,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	call EventScript_ResetAllBerries
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
-	callnative SetSpeciesPokedexFlags
-	callnative GivePlayerAllTMHMs
+	callnative SetRegionalPokedexFlags
+	callnative GivePlayerAllTMs
 	additem ITEM_MEGA_RING
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
 	end
