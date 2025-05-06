@@ -240,6 +240,13 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kindler;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdKeeper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SuperNerd;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
@@ -492,6 +499,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
+    [OBJ_EVENT_GFX_BURGLAR] =                  &gObjectEventGraphicsInfo_Burglar,
+    [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
+    [OBJ_EVENT_GFX_BIRD_KEEPER] =              &gObjectEventGraphicsInfo_BirdKeeper,
+    [OBJ_EVENT_GFX_GUITARIST] =                &gObjectEventGraphicsInfo_Guitarist,
+    [OBJ_EVENT_GFX_SUPER_NERD] =               &gObjectEventGraphicsInfo_SuperNerd,
+    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_DRAGON_TAMER] =             &gObjectEventGraphicsInfo_DragonTamer,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

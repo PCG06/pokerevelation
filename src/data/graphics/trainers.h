@@ -298,6 +298,9 @@ const u16 gTrainerPalette_Burglar[] = INCBIN_U16("graphics/trainers/front_pics/b
 const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist.4bpp.lz");
 const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics/scientist.gbapal");
 
+const u32 gTrainerFrontPic_SuperNerd[] = INCBIN_U32("graphics/trainers/front_pics/super_nerd.4bpp.lz");
+const u16 gTrainerPalette_SuperNerd[] = INCBIN_U16("graphics/trainers/front_pics/super_nerd.gbapal");
+
 const u32 gTrainerFrontPic_Birch[] = INCBIN_U32("graphics/trainers/front_pics/birch.4bpp.lz");
 const u16 gTrainerPalette_Birch[] = INCBIN_U16("graphics/trainers/front_pics/birch.gbapal");
 
@@ -412,6 +415,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_BURGLAR, gTrainerFrontPic_Burglar, gTrainerPalette_Burglar),
     TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
+    TRAINER_SPRITE(TRAINER_PIC_SUPER_NERD, gTrainerFrontPic_SuperNerd, gTrainerPalette_SuperNerd),
     TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_Birch, gTrainerPalette_Birch),
 };
 

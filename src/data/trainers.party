@@ -231,8 +231,8 @@ Jolly Nature
 
 === TRAINER_HANSTON ===
 Name: Hanston
-Class: Collector
-Pic: Collector
+Class: Super Nerd
+Pic: Super Nerd
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -361,8 +361,8 @@ Naive Nature
 
 === TRAINER_RASHEL ===
 Name: Rashel
-Class: Psychic
-Pic: Psychic F
+Class: Hex Maniac
+Pic: Hex Maniac
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -559,10 +559,10 @@ Jolly Nature
 
 === TRAINER_DARA ===
 Name: Dara
-Class: Lass
-Pic: Lass
+Class: School Kid
+Pic: School Kid F
 Gender: Female
-Music: Female
+Music: Girl
 Double Battle: No
 AI: Smart Trainer
 
@@ -945,8 +945,8 @@ Adamant Nature
 
 === TRAINER_HANDAM ===
 Name: Handam
-Class: Youngster
-Pic: Youngster
+Class: Bird Keeper
+Pic: Bird Keeper
 Gender: Male
 Music: Male
 Double Battle: No

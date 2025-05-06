@@ -284,8 +284,8 @@
     [DIFFICULTY_NORMAL][TRAINER_HANSTON] =
     {
         .trainerName = _("Hanston"),
-        .trainerClass = TRAINER_CLASS_COLLECTOR,
-        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerClass = TRAINER_CLASS_SUPER_NERD,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .doubleBattle = FALSE,
@@ -516,8 +516,8 @@
     [DIFFICULTY_NORMAL][TRAINER_RASHEL] =
     {
         .trainerName = _("Rashel"),
-        .trainerClass = TRAINER_CLASS_PSYCHIC,
-        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .trainerPic = TRAINER_PIC_HEX_MANIAC,
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -866,11 +866,11 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_DARA] =
     {
         .trainerName = _("Dara"),
-        .trainerClass = TRAINER_CLASS_LASS,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_GIRL,
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
@@ -1563,8 +1563,8 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_HANDAM] =
     {
         .trainerName = _("Handam"),
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,

@@ -3953,7 +3953,7 @@ EventScript_ChallengeGym1_Text_2:
 	.string "Leader Jake$"
 
 EventScript_ChallengeGym2_Text_0:
-	.string "Collector Hanston$"
+	.string "Super Nerd Hanston$"
 
 EventScript_ChallengeGym2_Text_1:
 	.string "Burglar Premal$"
@@ -3974,7 +3974,7 @@ EventScript_ChallengeGym4_Text_0:
 	.string "Lady Akshara$"
 
 EventScript_ChallengeGym4_Text_1:
-	.string "Lass Dara$"
+	.string "School Kid Dara$"
 
 EventScript_ChallengeGym4_Text_2:
 	.string "Leader Jaison$"
@@ -4001,7 +4001,7 @@ EventScript_ChallengeGym7_Text_0:
 	.string "Fisherman Adithya$"
 
 EventScript_ChallengeGym7_Text_1:
-	.string "Youngster Handam$"
+	.string "Bird Keeper Handam$"
 
 EventScript_ChallengeGym7_Text_2:
 	.string "Leader Snehal$"
