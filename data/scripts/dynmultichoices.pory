@@ -760,7 +760,7 @@ script Common_EventScript_ChoosePkmnMenu {
 					msgbox("Start adventure with only {STR_VAR_2} Pokémon?", MSGBOX_YESNO)
 					if (var(VAR_RESULT) == TRUE) {
 						setflag(FLAG_GOT_PARTY_PKMN)
-						msgbox("Start your adventure!", MSGBOX_DEFAULT)
+						msgbox("Start your adventure!", MSGBOX_NPC)
 						release
 						end
 					} else {
@@ -769,7 +769,7 @@ script Common_EventScript_ChoosePkmnMenu {
 				}
 			default:
 			case 7:
-				msgbox("Come back when you're ready!", MSGBOX_NPC)
+				msgbox("Talk to me when you're ready.", MSGBOX_NPC)
 		}
 	}
 	release
@@ -810,8 +810,6 @@ script EventScript_Givemonset {
 }
 
 script EventScript_ChooseStarterMenu {
-	lock
-	faceplayer
 	message ("Select your region.")
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea", "Hisui", "Back")

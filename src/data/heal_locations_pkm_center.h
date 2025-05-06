@@ -140,6 +140,13 @@ static const struct HealLocation sHealLocationsPokemonCenter[HEAL_LOCATION_COUNT
         .map = MAP_NUM(BATTLE_FRONTIER_POKEMON_CENTER_1F),
         DEFAULT_POKEMON_CENTER_COORDS,
     },
+    [HEAL_LOCATION_REVELATION_LOBBY - 1] = 
+    {
+        .group = MAP_GROUP(REVELATION_MAP_LOBBY),
+        .map = MAP_NUM(REVELATION_MAP_LOBBY),
+        .x = 7,
+        .y = 5,
+    }
 };
 
 #undef DEFAULT_POKEMON_CENTER_COORDS

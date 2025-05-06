@@ -1,0 +1,19 @@
+const LOCALID_MYSTERYGIFT_MAN = 1
+
+mapscripts RevelationMap_Lobby_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE{
+		map_script_2(VAR_TALKED_TO_MYSTGIFT_MAN, 0, RevelationMap_Lobby_MysteryGiftMan) 
+	}
+}
+
+script RevelationMap_Lobby_MysteryGiftMan {
+	lock
+	applymove(LOCALID_MYSTERYGIFT_MAN, moves(walk_down * 3, face_right))
+	turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+	msgbox("HEllo, {PLAYER}\n"
+			"Welcome to Revelation!\l"
+			"It's time to choose Pokemon!", MSGBOX_DEFAULT)
+	setvar(VAR_TALKED_TO_MYSTGIFT_MAN, 1)
+	goto(Common_EventScript_ChoosePkmnMenu)
+	end
+}

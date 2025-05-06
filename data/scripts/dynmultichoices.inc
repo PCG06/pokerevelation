@@ -1165,7 +1165,7 @@ Common_EventScript_ChoosePkmnMenu_1:
 	case 6, Common_EventScript_ChoosePkmnMenu_15
 	case 7, Common_EventScript_ChoosePkmnMenu_16
 Common_EventScript_ChoosePkmnMenu_16:
-	msgbox Common_EventScript_TrainerBattleMenu_Text_5, MSGBOX_NPC
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_12, MSGBOX_NPC
 Common_EventScript_ChoosePkmnMenu_4:
 	release
 	end
@@ -1219,7 +1219,7 @@ Common_EventScript_ChoosePkmnMenu_17:
 
 Common_EventScript_ChoosePkmnMenu_20:
 	setflag FLAG_GOT_PARTY_PKMN
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_11, MSGBOX_DEFAULT
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_11, MSGBOX_NPC
 	release
 	end
 
@@ -1256,8 +1256,6 @@ EventScript_Givemonset_5:
 
 
 EventScript_ChooseStarterMenu::
-	lock
-	faceplayer
 	message EventScript_ChooseStarterMenu_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChooseStarterMenu_Text_1, EventScript_ChooseStarterMenu_Text_2, EventScript_ChooseStarterMenu_Text_3, EventScript_ChooseStarterMenu_Text_4, EventScript_ChooseStarterMenu_Text_5, EventScript_ChooseStarterMenu_Text_6, EventScript_ChooseStarterMenu_Text_7, EventScript_ChooseStarterMenu_Text_8, EventScript_ChooseStarterMenu_Text_9, EventScript_ChooseStarterMenu_Text_10, EventScript_GymLeaderChoices_Text_9
@@ -4097,6 +4095,9 @@ Common_EventScript_ChoosePkmnMenu_Text_10:
 
 Common_EventScript_ChoosePkmnMenu_Text_11:
 	.string "Start your adventure!$"
+
+Common_EventScript_ChoosePkmnMenu_Text_12:
+	.string "Talk to me when you're ready.$"
 
 EventScript_Givemonset_Text_0:
 	.string "Pokémon No: {STR_VAR_2}.\n"

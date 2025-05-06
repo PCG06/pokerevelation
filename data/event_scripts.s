@@ -1156,3 +1156,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/dynmultichoices.inc"
+
+	.include "data/maps/RevelationMap_Lobby/scripts.inc"
+	.include "data/maps/RevelationMap_EntryPoint/scripts.inc"

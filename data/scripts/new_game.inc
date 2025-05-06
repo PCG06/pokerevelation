@@ -277,5 +277,5 @@ EventScript_ResetAllMapFlags::
 	callnative SetRegionalPokedexFlags
 	callnative GivePlayerAllTMs
 	additem ITEM_MEGA_RING
-	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
+	setrespawn HEAL_LOCATION_REVELATION_LOBBY
 	end

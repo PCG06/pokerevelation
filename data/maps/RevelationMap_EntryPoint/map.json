@@ -1,0 +1,111 @@
+{
+  "id": "MAP_REVELATION_MAP_ENTRY_POINT",
+  "name": "RevelationMap_EntryPoint",
+  "layout": "LAYOUT_REVELATION_MAP_ENTRY_POINT",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 22,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_LOBBY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_LOBBY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_LOBBY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}
