@@ -5946,6 +5946,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
         }
     }
 
+#if P_TUTOR_MOVES_ARRAY
     // Tutor moves
     for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
     {
@@ -5957,6 +5958,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
                 moves[numMoves++] = moveId;
         }
     }
+#endif
 
     // Remove duplicates
     for (i = 0; i < numMoves; i++)
