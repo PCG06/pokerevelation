@@ -71,7 +71,7 @@
       "elevation": 0,
       "var": "VAR_GOT_PARTY_PKMN",
       "var_value": "0",
-      "script": "RevelationMap_Lobby_MysteryGiftMan"
+      "script": "RevelationMap_Lobby_Trigger0"
     },
     {
       "type": "trigger",

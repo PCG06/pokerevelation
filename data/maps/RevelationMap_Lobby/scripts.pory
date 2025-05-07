@@ -1,11 +1,9 @@
 const LOCALID_BIRCH = 1
 const LOCALID_ZIGGY = 2
 
-mapscripts RevelationMap_Lobby_MapScripts {
-	// MAP_SCRIPT_ON_FRAME_TABLE{}
-}
+mapscripts RevelationMap_Lobby_MapScripts {}
 
-script RevelationMap_Lobby_MysteryGiftMan {
+script RevelationMap_Lobby_Trigger0 {
 	lock
 	applymove(LOCALID_BIRCH, moves(face_right))
 	msgbox("Benny: Excuse me, {PLAYER}!", MSGBOX_DEFAULT)

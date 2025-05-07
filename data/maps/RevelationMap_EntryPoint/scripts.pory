@@ -1,16 +1,12 @@
 mapscripts RevelationMap_EntryPoint_MapScripts{
-	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE{
-		map_script_2(VAR_PLAYER_FACE_DIR, 0, RevelationMap_EntryPoint_EventScript_PlayerTurnNorth) // Set this to 1 when going to gym scripts
-		map_script_2(VAR_GYM_DEFEATED_COUNTER, 8, RevelationMap_EntryPoint_EventScript_OpenDoors) // Open the main door when all gym leaders are defeated
-	}
-}
-
-script RevelationMap_EntryPoint_EventScript_PlayerTurnNorth{
-	turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH) // Only runs when entering the Entry Point from Lobby (expects the var to be 0)
-}
-
-script RevelationMap_EntryPoint_EventScript_OpenDoors{
-	setmetatile(23, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE)
-	setmetatile(23, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
-	special(DrawWholeMapView)
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_PLAYER_FACE_DIR, 0 {  // Set this to 1 when going to gym scripts
+			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+		}
+		VAR_GYM_DEFEATED_COUNTER, 8 { // Opens the main door when all gym leaders are defeated
+			setmetatile(23, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE)
+			setmetatile(23, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
+			special(DrawWholeMapView)
+		}
+	]
 }
