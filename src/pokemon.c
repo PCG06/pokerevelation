@@ -5935,7 +5935,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     }
 
     // TM moves
-    for (i = ITEM_TM01; i <= ITEM_HM08 && numMoves < MAX_RELEARNER_MOVES; i++)
+    for (i = ITEM_TM01; i <= ITEM_TM235 && numMoves < MAX_RELEARNER_MOVES; i++)
     {
         moveId = ItemIdToBattleMoveId(i);
         if (CanLearnTeachableMove(species, moveId))
@@ -5948,7 +5948,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
 
 #if P_TUTOR_MOVES_ARRAY
     // Tutor moves
-    for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
+    for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
     {
         moveId = gTutorMoves[i];
         if (CanLearnTeachableMove(species, moveId))

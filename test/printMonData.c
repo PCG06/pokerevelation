@@ -4,6 +4,8 @@
 #include "test/test.h"
 #include "constants/abilities.h"
 
+// Credit to Hedara
+
 TEST("Print mons")
 {
     u32 endVal = NUM_SPECIES;
@@ -94,7 +96,13 @@ TEST("Print mons")
         //  Egg moves
         shouldContinue = TRUE;
         moveIndex = 0;
-        const u16 *eggMoves = GetSpeciesEggMoves(i);
+        u16 preSpecies = i;
+        const u16 *eggMoves = NULL;
+        while (preSpecies != SPECIES_NONE)
+        {
+            eggMoves = GetSpeciesEggMoves(preSpecies);
+            preSpecies = GetSpeciesPreEvolution(preSpecies);
+        }
         if (eggMoves[moveIndex] != MOVE_UNAVAILABLE)
         {
             DebugPrintf("    \"eggMoves\": [");
@@ -125,8 +133,22 @@ TEST("Print mons")
         //  Print forms
         if (currSpecies->isMegaEvolution)
             DebugPrintf("    \"form\": \"mega\",");
+        else if (currSpecies->isPrimalReversion)
+            DebugPrintf("    \"form\": \"primal reversion\",");
+        else if (currSpecies->isUltraBurst)
+            DebugPrintf("    \"form\": \"ultra burst\",");
         else if (currSpecies->isGigantamax)
             DebugPrintf("    \"form\": \"gigantamax\",");
+        else if (currSpecies->isTeraForm)
+            DebugPrintf("    \"form\": \"tera\",");
+        else if (currSpecies->isAlolanForm)
+            DebugPrintf("    \"form\": \"alolan\",");
+        else if (currSpecies->isGalarianForm)
+            DebugPrintf("    \"form\": \"galarian\",");
+        else if (currSpecies->isHisuianForm)
+            DebugPrintf("    \"form\": \"hisuian\",");
+        else if (currSpecies->isPaldeanForm)
+            DebugPrintf("    \"form\": \"paldean\",");
 
         DebugPrintf("}");
     }
