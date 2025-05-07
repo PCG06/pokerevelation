@@ -145,7 +145,7 @@ static const struct HealLocation sHealLocationsPokemonCenter[HEAL_LOCATION_COUNT
         .group = MAP_GROUP(REVELATION_MAP_LOBBY),
         .map = MAP_NUM(REVELATION_MAP_LOBBY),
         .x = 7,
-        .y = 5,
+        .y = 6,
     }
 };
 

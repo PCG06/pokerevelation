@@ -1147,6 +1147,8 @@ EventScript_PostgameTrainerChoices_6:
 
 
 Common_EventScript_ChoosePkmnMenu::
+	lock
+	faceplayer
 	compare VAR_GOT_PARTY_PKMN, 6
 	goto_if_eq Common_EventScript_ChoosePkmnMenu_2
 Common_EventScript_ChoosePkmnMenu_1:
@@ -1228,6 +1230,8 @@ EventScript_Givemonset::
 	playfanfare MUS_OBTAIN_ITEM
 	givemonset VAR_TEMP_TRANSFERRED_SPECIES
 	addvar VAR_GOT_PARTY_PKMN, 1
+	setvar VAR_REV_STATE, 1
+	setvar VAR_TEMP_0, 0
 	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
 EventScript_Givemonset_1:
 	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN

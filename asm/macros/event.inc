@@ -700,6 +700,11 @@
 	.byte \direction
 	.endm
 
+	@ turnobject, but specifically for the player ID.
+	.macro turnplayer direction:req
+	turnobject OBJ_EVENT_ID_PLAYER, \direction
+	.endm
+
 	NULL = 0
 	OBJ_ID_NONE = 0
 
@@ -2491,6 +2496,11 @@
 	waitmovement 0
 	applymovement \localid, Common_Movement_Delay48
 	waitmovement 0
+	.endm
+
+	@ emote but specifically for the player ID
+	.macro emoteplayer emoteArg
+	emote OBJ_EVENT_ID_PLAYER, \emoteArg
 	.endm
 
 	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.

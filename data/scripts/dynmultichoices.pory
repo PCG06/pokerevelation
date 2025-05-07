@@ -726,6 +726,8 @@ script EventScript_PostgameTrainerChoices {
 
 # Pokémon menu
 script Common_EventScript_ChoosePkmnMenu {
+	lock
+	faceplayer
 	if (var(VAR_GOT_PARTY_PKMN) == 6) {
 		setflag(FLAG_GOT_PARTY_PKMN)
 	}
@@ -788,6 +790,8 @@ script EventScript_Givemonset {
 	playfanfare(MUS_OBTAIN_ITEM)
 	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
 	addvar(VAR_GOT_PARTY_PKMN, 1)
+	setvar(VAR_REV_STATE, 1)
+	setvar(VAR_TEMP_0, 0)
 	if (!flag(FLAG_SYS_POKEMON_GET)) {
 		setflag(FLAG_SYS_POKEMON_GET)
 	}
