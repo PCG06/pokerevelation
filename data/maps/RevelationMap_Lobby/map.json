@@ -2,11 +2,11 @@
   "id": "MAP_REVELATION_MAP_LOBBY",
   "name": "RevelationMap_Lobby",
   "layout": "LAYOUT_REVELATION_MAP_LOBBY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_FRONTIER",
   "region_map_section": "MAPSEC_REVELATION_MAPS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -60,7 +60,7 @@
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

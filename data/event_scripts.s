@@ -577,6 +577,9 @@ gStdScripts_End::
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
+	.include "data/maps/RevelationMap_Lobby/scripts.inc"
+	.include "data/maps/RevelationMap_EntryPoint/scripts.inc"
+	.include "data/maps/RevelationMap_ChallengersArena/scripts.inc"
 
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
@@ -1159,6 +1162,3 @@ Text_MonCryScript::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/dynmultichoices.inc"
-
-	.include "data/maps/RevelationMap_Lobby/scripts.inc"
-	.include "data/maps/RevelationMap_EntryPoint/scripts.inc"
