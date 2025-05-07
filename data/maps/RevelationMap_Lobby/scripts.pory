@@ -1,4 +1,5 @@
-const LOCALID_MYSTERYGIFT_MAN = 1
+const LOCALID_BIRCH = 1
+const LOCALID_ZIGGY = 2
 
 mapscripts RevelationMap_Lobby_MapScripts {
 	// MAP_SCRIPT_ON_FRAME_TABLE{}
@@ -6,11 +7,12 @@ mapscripts RevelationMap_Lobby_MapScripts {
 
 script RevelationMap_Lobby_MysteryGiftMan {
 	lock
-	applymove(LOCALID_MYSTERYGIFT_MAN, moves(face_right))
-	msgbox("Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
+	applymove(LOCALID_BIRCH, moves(face_right))
+	msgbox("Benny: Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
 	emoteplayer(EMOTE_EXCLAM)
 	turnplayer(DIR_SOUTH)
-	msgbox("You have not chosen any Pokémon, yet!\n"
+	msgbox("Benny: You have not chosen any Pokémon,\n"
+			"yet!\l"
 			"How do you plan on challenging the\l"
 			"Trainers inside, with your bare fists?\l"
 			"Please step back and choose your\l"
@@ -22,18 +24,30 @@ script RevelationMap_Lobby_MysteryGiftMan {
 
 script RevelationMap_Lobby_Trigger1 {
 	lock
-	msgbox("{PLAYER},\n"
+	msgbox("Benny: {PLAYER},\n"
 			"once you go through that door,\l"
 			"you cannot return, for any reasons.\l"
 			"Incase you did something wrong,\l"
 			"you will have to start over.\p"
-			"So, {PLAYER}, are you absolutely sure\n"
-			"that you're ready?", MSGBOX_YESNO)
+			"Benny: So, {PLAYER}, are you absolutely\n"
+			"sure that you're ready?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == TRUE) {
-		msgbox("Good luck, {PLAYER}!", MSGBOX_AUTOCLOSE)
+		msgbox("Benny: Good luck, {PLAYER}!", MSGBOX_AUTOCLOSE)
 		setvar(VAR_REV_STATE, 2)
 	} else {
-		msgbox("Alright, take your time.", MSGBOX_AUTOCLOSE)
+		msgbox("Benny: Alright, take your time.", MSGBOX_AUTOCLOSE)
 		applymoveplayer(moves(walk_down))
 	}
+}
+
+script RevelationMap_Lobby_Zigzagoon {
+	lock
+	if (var(VAR_FACING) == DIR_NORTH) {
+		applymovement(LOCALID_ZIGGY, moves(jump_in_place_up_down))
+	} else {
+		applymovement(LOCALID_ZIGGY, moves(jump_in_place_right_left))
+	}
+	moncryscript(SPECIES_ZIGZAGOON, "Goon! Goon!", "Ziggy")
+	release
+	end
 }

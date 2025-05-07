@@ -4,7 +4,6 @@ Common_EventScript_TrainerBattleMenu::
 	message Common_EventScript_TrainerBattleMenu_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_TrainerBattleMenu_Text_1, Common_EventScript_TrainerBattleMenu_Text_2, Common_EventScript_TrainerBattleMenu_Text_3, Common_EventScript_TrainerBattleMenu_Text_4
-	closemessage
 	switch VAR_RESULT
 	case 0, Common_EventScript_TrainerBattleMenu_3
 	case 1, Common_EventScript_TrainerBattleMenu_4
@@ -36,7 +35,6 @@ EventScript_GymLeaderChoices::
 	message EventScript_GymLeaderChoices_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_GymLeaderChoices_Text_1, EventScript_GymLeaderChoices_Text_2, EventScript_GymLeaderChoices_Text_3, EventScript_GymLeaderChoices_Text_4, EventScript_GymLeaderChoices_Text_5, EventScript_GymLeaderChoices_Text_6, EventScript_GymLeaderChoices_Text_7, EventScript_GymLeaderChoices_Text_8, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_GymLeaderChoices_3
 	case 1, EventScript_GymLeaderChoices_4
@@ -90,7 +88,6 @@ EventScript_ChallengeGym1::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym1_Text_0, EventScript_ChallengeGym1_Text_1, EventScript_ChallengeGym1_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym1_2
 	case 1, EventScript_ChallengeGym1_3
@@ -189,7 +186,6 @@ EventScript_ChallengeGym2::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym2_Text_0, EventScript_ChallengeGym2_Text_1, EventScript_ChallengeGym2_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym2_2
 	case 1, EventScript_ChallengeGym2_3
@@ -288,7 +284,6 @@ EventScript_ChallengeGym3::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym3_Text_0, EventScript_ChallengeGym3_Text_1, EventScript_ChallengeGym3_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym3_2
 	case 1, EventScript_ChallengeGym3_3
@@ -387,7 +382,6 @@ EventScript_ChallengeGym4::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym4_Text_0, EventScript_ChallengeGym4_Text_1, EventScript_ChallengeGym4_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym4_2
 	case 1, EventScript_ChallengeGym4_3
@@ -486,7 +480,6 @@ EventScript_ChallengeGym5::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym5_Text_0, EventScript_ChallengeGym5_Text_1, EventScript_ChallengeGym5_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym5_2
 	case 1, EventScript_ChallengeGym5_3
@@ -585,7 +578,6 @@ EventScript_ChallengeGym6::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym6_Text_0, EventScript_ChallengeGym6_Text_1, EventScript_ChallengeGym6_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym6_2
 	case 1, EventScript_ChallengeGym6_3
@@ -684,7 +676,6 @@ EventScript_ChallengeGym7::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym7_Text_0, EventScript_ChallengeGym7_Text_1, EventScript_ChallengeGym7_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym7_2
 	case 1, EventScript_ChallengeGym7_3
@@ -783,7 +774,6 @@ EventScript_ChallengeGym8::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym8_Text_0, EventScript_ChallengeGym8_Text_1, EventScript_ChallengeGym8_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym8_2
 	case 1, EventScript_ChallengeGym8_3
@@ -882,7 +872,6 @@ EventScript_ChallengeTrainers::
 	message EventScript_ChallengeTrainers_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeTrainers_Text_1, EventScript_ChallengeTrainers_Text_2, EventScript_ChallengeTrainers_Text_3, EventScript_ChallengeTrainers_Text_4, EventScript_ChallengeTrainers_Text_5, EventScript_ChallengeTrainers_Text_6, EventScript_ChallengeTrainers_Text_7, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeTrainers_2
 	case 1, EventScript_ChallengeTrainers_3
@@ -1076,7 +1065,6 @@ EventScript_ChallengePostgameTrainers::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengePostgameTrainers_Text_0, EventScript_ChallengePostgameTrainers_Text_1, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengePostgameTrainers_2
 	case 1, EventScript_ChallengePostgameTrainers_3
@@ -1155,8 +1143,7 @@ Common_EventScript_ChoosePkmnMenu_1:
 	goto_if_set FLAG_GOT_PARTY_PKMN, Common_EventScript_ChoosePkmnMenu_5
 	message Common_EventScript_ChoosePkmnMenu_Text_1
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChoosePkmnMenu_Text_2, Common_EventScript_ChoosePkmnMenu_Text_3, Common_EventScript_ChoosePkmnMenu_Text_4, Common_EventScript_ChoosePkmnMenu_Text_5, Common_EventScript_ChoosePkmnMenu_Text_6, Common_EventScript_ChoosePkmnMenu_Text_7, Common_EventScript_ChoosePkmnMenu_Text_8, EventScript_GymLeaderChoices_Text_9
-	closemessage
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_ChoosePkmnMenu_Text_2, Common_EventScript_ChoosePkmnMenu_Text_3, Common_EventScript_ChoosePkmnMenu_Text_4, Common_EventScript_ChoosePkmnMenu_Text_5, Common_EventScript_ChoosePkmnMenu_Text_6, Common_EventScript_ChoosePkmnMenu_Text_7, EventScript_GymLeaderChoices_Text_9
 	switch VAR_RESULT
 	case 0, Common_EventScript_ChoosePkmnMenu_9
 	case 1, Common_EventScript_ChoosePkmnMenu_10
@@ -1165,9 +1152,8 @@ Common_EventScript_ChoosePkmnMenu_1:
 	case 4, Common_EventScript_ChoosePkmnMenu_13
 	case 5, Common_EventScript_ChoosePkmnMenu_14
 	case 6, Common_EventScript_ChoosePkmnMenu_15
-	case 7, Common_EventScript_ChoosePkmnMenu_16
-Common_EventScript_ChoosePkmnMenu_16:
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_12, MSGBOX_NPC
+Common_EventScript_ChoosePkmnMenu_15:
+	msgbox Common_EventScript_ChoosePkmnMenu_Text_8, MSGBOX_NPC
 Common_EventScript_ChoosePkmnMenu_4:
 	release
 	end
@@ -1203,27 +1189,6 @@ Common_EventScript_ChoosePkmnMenu_13:
 Common_EventScript_ChoosePkmnMenu_14:
 	goto EventScript_Group5Choices
 	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_15:
-	compare VAR_GOT_PARTY_PKMN, 0
-	goto_if_eq Common_EventScript_ChoosePkmnMenu_17
-	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_10, MSGBOX_YESNO
-	compare VAR_RESULT, TRUE
-	goto_if_eq Common_EventScript_ChoosePkmnMenu_20
-	goto Common_EventScript_ChoosePkmnMenu
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_17:
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_9, MSGBOX_DEFAULT
-	goto Common_EventScript_ChoosePkmnMenu
-	goto Common_EventScript_ChoosePkmnMenu_4
-
-Common_EventScript_ChoosePkmnMenu_20:
-	setflag FLAG_GOT_PARTY_PKMN
-	msgbox Common_EventScript_ChoosePkmnMenu_Text_11, MSGBOX_NPC
-	release
-	end
 
 
 EventScript_Givemonset::
@@ -1263,7 +1228,6 @@ EventScript_ChooseStarterMenu::
 	message EventScript_ChooseStarterMenu_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChooseStarterMenu_Text_1, EventScript_ChooseStarterMenu_Text_2, EventScript_ChooseStarterMenu_Text_3, EventScript_ChooseStarterMenu_Text_4, EventScript_ChooseStarterMenu_Text_5, EventScript_ChooseStarterMenu_Text_6, EventScript_ChooseStarterMenu_Text_7, EventScript_ChooseStarterMenu_Text_8, EventScript_ChooseStarterMenu_Text_9, EventScript_ChooseStarterMenu_Text_10, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChooseStarterMenu_3
 	case 1, EventScript_ChooseStarterMenu_4
@@ -1327,7 +1291,6 @@ EventScript_KantoStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, EventScript_KantoStarters_Text_0, EventScript_KantoStarters_Text_1, EventScript_KantoStarters_Text_2, EventScript_KantoStarters_Text_3, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_KantoStarters_2
 	case 1, EventScript_KantoStarters_3
@@ -1395,7 +1358,6 @@ EventScript_JohtoStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, EventScript_JohtoStarters_Text_0, EventScript_JohtoStarters_Text_1, EventScript_JohtoStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_JohtoStarters_2
 	case 1, EventScript_JohtoStarters_3
@@ -1449,7 +1411,6 @@ EventScript_HoennStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_HoennStarters_Text_0, EventScript_HoennStarters_Text_1, EventScript_HoennStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_HoennStarters_2
 	case 1, EventScript_HoennStarters_3
@@ -1503,7 +1464,6 @@ EventScript_SinnohStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_SinnohStarters_Text_0, EventScript_SinnohStarters_Text_1, EventScript_SinnohStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_SinnohStarters_2
 	case 1, EventScript_SinnohStarters_3
@@ -1557,7 +1517,6 @@ EventScript_UnovaStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_UnovaStarters_Text_0, EventScript_UnovaStarters_Text_1, EventScript_UnovaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_UnovaStarters_2
 	case 1, EventScript_UnovaStarters_3
@@ -1611,7 +1570,6 @@ EventScript_KalosStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_KalosStarters_Text_0, EventScript_KalosStarters_Text_1, EventScript_KalosStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_KalosStarters_2
 	case 1, EventScript_KalosStarters_3
@@ -1665,7 +1623,6 @@ EventScript_AlolaStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_AlolaStarters_Text_0, EventScript_AlolaStarters_Text_1, EventScript_AlolaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_AlolaStarters_2
 	case 1, EventScript_AlolaStarters_3
@@ -1719,7 +1676,6 @@ EventScript_GalarStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_GalarStarters_Text_0, EventScript_GalarStarters_Text_1, EventScript_GalarStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_GalarStarters_2
 	case 1, EventScript_GalarStarters_3
@@ -1773,7 +1729,6 @@ EventScript_PaldeaStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_PaldeaStarters_Text_0, EventScript_PaldeaStarters_Text_1, EventScript_PaldeaStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_PaldeaStarters_2
 	case 1, EventScript_PaldeaStarters_3
@@ -1827,7 +1782,6 @@ EventScript_HisuiStarters::
 	message Text_SelectStarter
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_HisuiStarters_Text_0, EventScript_HisuiStarters_Text_1, EventScript_HisuiStarters_Text_2, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_HisuiStarters_2
 	case 1, EventScript_HisuiStarters_3
@@ -1881,7 +1835,6 @@ EventScript_Group1Choices::
 	message Text_SelectPkmn
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group1Choices_Text_0, EventScript_Group1Choices_Text_1, EventScript_Group1Choices_Text_2, EventScript_Group1Choices_Text_3, EventScript_Group1Choices_Text_4, EventScript_Group1Choices_Text_5, EventScript_Group1Choices_Text_6, EventScript_Group1Choices_Text_7, EventScript_Group1Choices_Text_8, EventScript_Group1Choices_Text_9, EventScript_Group1Choices_Text_10, EventScript_Group1Choices_Text_11, EventScript_Group1Choices_Text_12, EventScript_Group1Choices_Text_13, EventScript_Group1Choices_Text_14, EventScript_Group1Choices_Text_15, EventScript_Group1Choices_Text_16, EventScript_Group1Choices_Text_17, EventScript_Group1Choices_Text_18, EventScript_Group1Choices_Text_19, EventScript_Group1Choices_Text_20, EventScript_Group1Choices_Text_21, EventScript_Group1Choices_Text_22, EventScript_Group1Choices_Text_23, EventScript_Group1Choices_Text_24, EventScript_Group1Choices_Text_25, EventScript_Group1Choices_Text_26, EventScript_Group1Choices_Text_27, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group1Choices_2
 	case 1, EventScript_Group1Choices_3
@@ -2285,7 +2238,6 @@ EventScript_Group2Choices::
 	message Text_SelectPkmn
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group2Choices_Text_0, EventScript_Group2Choices_Text_1, EventScript_Group2Choices_Text_2, EventScript_Group2Choices_Text_3, EventScript_Group2Choices_Text_4, EventScript_Group2Choices_Text_5, EventScript_Group2Choices_Text_6, EventScript_Group2Choices_Text_7, EventScript_Group2Choices_Text_8, EventScript_Group2Choices_Text_9, EventScript_Group2Choices_Text_10, EventScript_Group2Choices_Text_11, EventScript_Group2Choices_Text_12, EventScript_Group2Choices_Text_13, EventScript_Group2Choices_Text_14, EventScript_Group2Choices_Text_15, EventScript_Group2Choices_Text_16, EventScript_Group2Choices_Text_17, EventScript_Group2Choices_Text_18, EventScript_Group2Choices_Text_19, EventScript_Group2Choices_Text_20, EventScript_Group2Choices_Text_21, EventScript_Group2Choices_Text_22, EventScript_Group2Choices_Text_23, EventScript_Group2Choices_Text_24, EventScript_Group2Choices_Text_25, EventScript_Group2Choices_Text_26, EventScript_Group2Choices_Text_27, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group2Choices_2
 	case 1, EventScript_Group2Choices_3
@@ -2689,7 +2641,6 @@ EventScript_Group3Choices::
 	message Text_SelectPkmn
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group3Choices_Text_0, EventScript_Group3Choices_Text_1, EventScript_Group3Choices_Text_2, EventScript_Group3Choices_Text_3, EventScript_Group3Choices_Text_4, EventScript_Group3Choices_Text_5, EventScript_Group3Choices_Text_6, EventScript_Group3Choices_Text_7, EventScript_Group3Choices_Text_8, EventScript_Group3Choices_Text_9, EventScript_Group3Choices_Text_10, EventScript_Group3Choices_Text_11, EventScript_Group3Choices_Text_12, EventScript_Group3Choices_Text_13, EventScript_Group3Choices_Text_14, EventScript_Group3Choices_Text_15, EventScript_Group3Choices_Text_16, EventScript_Group3Choices_Text_17, EventScript_Group3Choices_Text_18, EventScript_Group3Choices_Text_19, EventScript_Group3Choices_Text_20, EventScript_Group3Choices_Text_21, EventScript_Group3Choices_Text_22, EventScript_Group3Choices_Text_23, EventScript_Group3Choices_Text_24, EventScript_Group3Choices_Text_25, EventScript_Group3Choices_Text_26, EventScript_Group3Choices_Text_27, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group3Choices_2
 	case 1, EventScript_Group3Choices_3
@@ -3093,7 +3044,6 @@ EventScript_Group4Choices::
 	message Text_SelectPkmn
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group4Choices_Text_0, EventScript_Group4Choices_Text_1, EventScript_Group4Choices_Text_2, EventScript_Group4Choices_Text_3, EventScript_Group4Choices_Text_4, EventScript_Group4Choices_Text_5, EventScript_Group4Choices_Text_6, EventScript_Group4Choices_Text_7, EventScript_Group4Choices_Text_8, EventScript_Group4Choices_Text_9, EventScript_Group4Choices_Text_10, EventScript_Group4Choices_Text_11, EventScript_Group4Choices_Text_12, EventScript_Group4Choices_Text_13, EventScript_Group4Choices_Text_14, EventScript_Group4Choices_Text_15, EventScript_Group4Choices_Text_16, EventScript_Group4Choices_Text_17, EventScript_Group4Choices_Text_18, EventScript_Group4Choices_Text_19, EventScript_Group4Choices_Text_20, EventScript_Group4Choices_Text_21, EventScript_Group4Choices_Text_22, EventScript_Group4Choices_Text_23, EventScript_Group4Choices_Text_24, EventScript_Group4Choices_Text_25, EventScript_Group4Choices_Text_26, EventScript_Group4Choices_Text_27, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group4Choices_2
 	case 1, EventScript_Group4Choices_3
@@ -3497,7 +3447,6 @@ EventScript_Group5Choices::
 	message Text_SelectPkmn
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_Group5Choices_Text_0, EventScript_Group5Choices_Text_1, EventScript_Group5Choices_Text_2, EventScript_Group5Choices_Text_3, EventScript_Group5Choices_Text_4, EventScript_Group5Choices_Text_5, EventScript_Group5Choices_Text_6, EventScript_Group5Choices_Text_7, EventScript_Group5Choices_Text_8, EventScript_Group5Choices_Text_9, EventScript_Group5Choices_Text_10, EventScript_Group5Choices_Text_11, EventScript_Group5Choices_Text_12, EventScript_Group5Choices_Text_13, EventScript_Group5Choices_Text_14, EventScript_Group5Choices_Text_15, EventScript_Group5Choices_Text_16, EventScript_Group5Choices_Text_17, EventScript_Group5Choices_Text_18, EventScript_Group5Choices_Text_19, EventScript_Group5Choices_Text_20, EventScript_Group5Choices_Text_21, EventScript_Group5Choices_Text_22, EventScript_Group5Choices_Text_23, EventScript_Group5Choices_Text_24, EventScript_Group5Choices_Text_25, EventScript_Group5Choices_Text_26, EventScript_Group5Choices_Text_27, EventScript_GymLeaderChoices_Text_9
-	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_Group5Choices_2
 	case 1, EventScript_Group5Choices_3
@@ -4063,11 +4012,11 @@ EventScript_PostgameTrainerChoices_Text_0:
 	.string "Would you like to battle again?$"
 
 Common_EventScript_ChoosePkmnMenu_Text_0:
-	.string "You have chosen your Pokémon!\n"
+	.string "Benny: You have chosen your Pokémon!\n"
 	.string "Start your adventure!$"
 
 Common_EventScript_ChoosePkmnMenu_Text_1:
-	.string "Select a group of Pokémon.$"
+	.string "Benny: Select a group of Pokémon.$"
 
 Common_EventScript_ChoosePkmnMenu_Text_2:
 	.string "Starters$"
@@ -4088,27 +4037,14 @@ Common_EventScript_ChoosePkmnMenu_Text_7:
 	.string "Group 5 (S-Z)$"
 
 Common_EventScript_ChoosePkmnMenu_Text_8:
-	.string "Start$"
-
-Common_EventScript_ChoosePkmnMenu_Text_9:
-	.string "You need to choose at least one\n"
-	.string "Pokémon!$"
-
-Common_EventScript_ChoosePkmnMenu_Text_10:
-	.string "Start adventure with only {STR_VAR_2} Pokémon?$"
-
-Common_EventScript_ChoosePkmnMenu_Text_11:
-	.string "Start your adventure!$"
-
-Common_EventScript_ChoosePkmnMenu_Text_12:
-	.string "Talk to me when you're ready.$"
+	.string "Benny: Talk to me when you're ready.$"
 
 EventScript_Givemonset_Text_0:
 	.string "Pokémon No: {STR_VAR_2}.\n"
 	.string "{PLAYER} received {STR_VAR_1}!$"
 
 EventScript_ChooseStarterMenu_Text_0:
-	.string "Select your region.$"
+	.string "Benny: Select your region.$"
 
 EventScript_ChooseStarterMenu_Text_1:
 	.string "Kanto$"
@@ -4681,10 +4617,10 @@ Text_YouHaveAlreadyDefeatedPostgameTrainer::
 	.string "Would you like to battle again?$"
 
 Text_SelectPkmn::
-	.string "Please select your Pokémon.$"
+	.string "Benny: Please select your Pokémon.$"
 
 Text_DoYouWantPkmn::
-	.string "Do you want {STR_VAR_1}?$"
+	.string "Benny: Do you want {STR_VAR_1}?$"
 
 Text_SelectStarter::
-	.string "Please select your starter.$"
+	.string "Benny: Please select your starter.$"

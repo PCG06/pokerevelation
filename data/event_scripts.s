@@ -1100,6 +1100,9 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
+Text_MonCryScript::
+	.string "{STR_VAR_2}: {STR_VAR_3}$"
+
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
 	.include "data/scripts/abnormal_weather.inc"
