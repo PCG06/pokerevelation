@@ -138,12 +138,13 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	cleartrainerflag TRAINER_TESTING
-	trainerbattle_no_intro TRAINER_TESTING, Text_Defeat
+	callnative GivePlayerItems
 	release
 	end
 
 Debug_EventScript_Script_2::
+	cleartrainerflag TRAINER_TESTING
+	trainerbattle_no_intro TRAINER_TESTING, Text_Defeat
 	release
 	end
 

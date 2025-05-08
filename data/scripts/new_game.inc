@@ -275,7 +275,6 @@ EventScript_ResetAllMapFlags::
 	call EventScript_ResetAllBerries
 	setflag FLAG_SYS_POKEDEX_GET
 	callnative SetRegionalPokedexFlags
-	callnative GivePlayerAllTMs
-	additem ITEM_MEGA_RING
+	callnative GivePlayerItems
 	setrespawn HEAL_LOCATION_REVELATION_LOBBY
 	end
