@@ -298,11 +298,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sMewtwoApocalypseLevelUpLearnset,
         .teachableLearnset = sMewtwoApocalypseTeachableLearnset,
         .formSpeciesIdTable = sMewtwoFormSpeciesIdTable,
-        .formChangeTable = sMewtwoFormChangeTable,
     },
 
     [SPECIES_ZOJZION] =
@@ -354,6 +354,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sZojzionLevelUpLearnset,
         .teachableLearnset = sZojzionTeachableLearnset,
@@ -408,6 +409,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sMantistrikeLevelUpLearnset,
         .teachableLearnset = sMantistrikeTeachableLearnset,
@@ -462,6 +464,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sPyrolinLevelUpLearnset,
         .teachableLearnset = sPyrolinTeachableLearnset,
@@ -516,6 +519,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sStratospiraLevelUpLearnset,
         .teachableLearnset = sStratospiraTeachableLearnset,
@@ -570,6 +574,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sPhantomarLevelUpLearnset,
         .teachableLearnset = sPhantomarTeachableLearnset,
@@ -626,6 +631,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isLegendary = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sLeviadonLevelUpLearnset,
         .teachableLearnset = sLeviadonTeachableLearnset,
@@ -680,6 +686,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
+        .isMythical = TRUE,
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sAmanisteLevelUpLearnset,
         .teachableLearnset = sAmanisteTeachableLearnset,

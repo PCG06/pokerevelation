@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "item.h"
 #include "pokemon.h"
 #include "test/test.h"
 #include "constants/abilities.h"
@@ -35,7 +36,7 @@ TEST("Print mons")
         DebugPrintf("        \"defense\": %u,", currSpecies->baseDefense);
         DebugPrintf("        \"spAttack\": %u,", currSpecies->baseSpAttack);
         DebugPrintf("        \"spDefense\": %u,", currSpecies->baseSpDefense);
-        DebugPrintf("        \"speed\": %u,", currSpecies->baseHP);
+        DebugPrintf("        \"speed\": %u", currSpecies->baseSpeed);
         DebugPrintf("    },");
 
         //  Print abilities
@@ -125,6 +126,24 @@ TEST("Print mons")
         //  Various data
         DebugPrintf("    \"catchRate\": %u,", currSpecies->catchRate);
         DebugPrintf("    \"expYield\": %u,", currSpecies->expYield);
+        if (currSpecies->evYield_HP)
+            DebugPrintf("    \"evYield_HP\": %u,", currSpecies->evYield_HP);
+        if (currSpecies->evYield_Attack)
+            DebugPrintf("    \"evYield_Attack\": %u,", currSpecies->evYield_Attack);
+        if (currSpecies->evYield_Defense)
+            DebugPrintf("    \"evYield_Defense\": %u,", currSpecies->evYield_Defense);
+        if (currSpecies->evYield_SpAttack)
+            DebugPrintf("    \"evYield_SpAttack\": %u,", currSpecies->evYield_SpAttack);
+        if (currSpecies->evYield_SpDefense)
+            DebugPrintf("    \"evYield_SpDefense\": %u,", currSpecies->evYield_SpDefense);
+        if (currSpecies->evYield_Speed)
+            DebugPrintf("    \"evYield_Speed\": %u,", currSpecies->evYield_Speed);
+        DebugPrintf("    \"height\": \"%d.%d m\",",  currSpecies->height / 10,  currSpecies->height % 10);
+        DebugPrintf("    \"weight\": \"%d.%d kg\",",  currSpecies->weight / 10,  currSpecies->weight % 10);
+        if (currSpecies->itemCommon)
+            DebugPrintf("    \"itemCommon\": \"%S\",", ItemId_GetName(currSpecies->itemCommon));
+        if (currSpecies->itemRare)
+            DebugPrintf("    \"itemRare\": \"%S\",", ItemId_GetName(currSpecies->itemRare));
         DebugPrintf("    \"eggCycles\": %u,", currSpecies->eggCycles);
         DebugPrintf("    \"monCategory\": \"%S\",", currSpecies->categoryName);
         DebugPrintf("    \"natDexNum\": %u,", currSpecies->natDexNum);
@@ -132,24 +151,29 @@ TEST("Print mons")
 
         //  Print forms
         if (currSpecies->isMegaEvolution)
-            DebugPrintf("    \"form\": \"mega\",");
+            DebugPrintf("    \"form\": \"mega\"");
         else if (currSpecies->isPrimalReversion)
-            DebugPrintf("    \"form\": \"primal reversion\",");
+            DebugPrintf("    \"form\": \"primal reversion\"");
         else if (currSpecies->isUltraBurst)
-            DebugPrintf("    \"form\": \"ultra burst\",");
+            DebugPrintf("    \"form\": \"ultra burst\"");
         else if (currSpecies->isGigantamax)
-            DebugPrintf("    \"form\": \"gigantamax\",");
+            DebugPrintf("    \"form\": \"gigantamax\"");
         else if (currSpecies->isTeraForm)
-            DebugPrintf("    \"form\": \"tera\",");
+            DebugPrintf("    \"form\": \"tera\"");
         else if (currSpecies->isAlolanForm)
-            DebugPrintf("    \"form\": \"alolan\",");
+            DebugPrintf("    \"form\": \"alolan\"");
         else if (currSpecies->isGalarianForm)
-            DebugPrintf("    \"form\": \"galarian\",");
+            DebugPrintf("    \"form\": \"galarian\"");
         else if (currSpecies->isHisuianForm)
-            DebugPrintf("    \"form\": \"hisuian\",");
+            DebugPrintf("    \"form\": \"hisuian\"");
         else if (currSpecies->isPaldeanForm)
-            DebugPrintf("    \"form\": \"paldean\",");
+            DebugPrintf("    \"form\": \"paldean\"");
+        else
+            DebugPrintf("    \"form\": \"normal\"");
 
-        DebugPrintf("}");
+        if (i != endVal - 1)
+            DebugPrintf("},");
+        else
+            DebugPrintf("}");
     }
 }
