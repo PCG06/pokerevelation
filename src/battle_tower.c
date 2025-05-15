@@ -1969,12 +1969,20 @@ static void HandleSpecialTrainerBattleEnd(void)
     case SPECIAL_BATTLE_PYRAMID:
         if (gSaveBlock2Ptr->frontier.battlesCount < 0xFFFFFF)
         {
+            FlagClear(FLAG_FRONTIER_LEVEL);
+
+            for (i = 0; i < PARTY_SIZE; i++)
+                CalculateMonStats(&gPlayerParty[i]);
             gSaveBlock2Ptr->frontier.battlesCount++;
             if (gSaveBlock2Ptr->frontier.battlesCount % 20 == 0)
                 UpdateGymLeaderRematch();
         }
         else
         {
+            FlagClear(FLAG_FRONTIER_LEVEL);
+
+            for (i = 0; i < PARTY_SIZE; i++)
+                CalculateMonStats(&gPlayerParty[i]);
             gSaveBlock2Ptr->frontier.battlesCount = 0xFFFFFF;
         }
         break;
@@ -2012,8 +2020,13 @@ static void Task_StartBattleAfterTransition(u8 taskId)
 
 void DoSpecialTrainerBattle(void)
 {
-    s32 i;
+    s32 i, j;
 
+
+    FlagSet(FLAG_FRONTIER_LEVEL);
+
+    for (j = 0; j < PARTY_SIZE; j++)
+        CalculateMonStats(&gPlayerParty[j]);
     gBattleScripting.specialTrainerBattleType = gSpecialVar_0x8004;
     switch (gSpecialVar_0x8004)
     {
@@ -3348,9 +3361,7 @@ u8 GetFrontierEnemyMonLevel(u8 lvlMode)
         level = FRONTIER_MAX_LEVEL_50;
         break;
     case FRONTIER_LVL_OPEN:
-        level = GetHighestLevelInPlayerParty();
-        if (level < FRONTIER_MIN_LEVEL_OPEN)
-            level = FRONTIER_MIN_LEVEL_OPEN;
+        level = 50;
         break;
     }
 
@@ -3420,7 +3431,7 @@ static u16 GetBattleTentTrainerId(void)
 
 static u8 SetTentPtrsGetLevel(void)
 {
-    u8 level = TENT_MIN_LEVEL;
+    u8 level = 50;
     u32 facility = VarGet(VAR_FRONTIER_FACILITY);
 
     if (facility == FRONTIER_FACILITY_FACTORY)
@@ -3444,9 +3455,9 @@ static u8 SetTentPtrsGetLevel(void)
         gFacilityTrainerMons = gBattleFrontierMons;
     }
 
-    level = GetHighestLevelInPlayerParty();
-    if (level < TENT_MIN_LEVEL)
-        level = TENT_MIN_LEVEL;
+    level = 50;
+    //if (level < TENT_MIN_LEVEL)
+    //    level = TENT_MIN_LEVEL;
 
     return level;
 }
