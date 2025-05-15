@@ -70,8 +70,8 @@ static void ValidateApprenticesChecksums(void);
 static void SetNextBattleTentOpponent(void);
 static void CopyEReaderTrainerFarewellMessage(void);
 static void ClearBattleTowerRecord(struct EmeraldBattleTowerRecord *record);
-static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount);
-static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u8 monCount);
+static void FillTrainerParty(u16 trainerId, u8 firstMonId, u16 monCount);
+static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u16 monCount);
 static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId);
 static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId);
 static u8 GetFrontierTrainerFixedIvs(u16 trainerId);
@@ -1545,20 +1545,20 @@ static bool8 IsFrontierTrainerFemale(u16 trainerId)
         return FALSE;
 }
 
-void FillFrontierTrainerParty(u8 monsCount)
+void FillFrontierTrainerParty(u16 monsCount)
 {
     ZeroEnemyPartyMons();
     FillTrainerParty(TRAINER_BATTLE_PARAM.opponentA, 0, monsCount);
 }
 
-void FillFrontierTrainersParties(u8 monsCount)
+void FillFrontierTrainersParties(u16 monsCount)
 {
     ZeroEnemyPartyMons();
     FillTrainerParty(TRAINER_BATTLE_PARAM.opponentA, 0, monsCount);
     FillTrainerParty(TRAINER_BATTLE_PARAM.opponentB, 3, monsCount);
 }
 
-static void FillTentTrainerParty(u8 monsCount)
+static void FillTentTrainerParty(u16 monsCount)
 {
     ZeroEnemyPartyMons();
     FillTentTrainerParty_(TRAINER_BATTLE_PARAM.opponentA, 0, monsCount);
@@ -1652,13 +1652,13 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     CalculateMonStats(dst);
 }
 
-static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
+static void FillTrainerParty(u16 trainerId, u8 firstMonId, u16 monCount)
 {
     s32 i, j;
     u16 chosenMonIndices[MAX_FRONTIER_PARTY_SIZE];
     u8 level = SetFacilityPtrsGetLevel();
     u8 fixedIV = 0;
-    u8 bfMonCount;
+    u16 bfMonCount;
     const u16 *monSet = NULL;
     u32 otID = 0;
 
@@ -1763,7 +1763,7 @@ u16 GetRandomFrontierMonFromSet(u16 trainerId)
 {
     u8 level = SetFacilityPtrsGetLevel();
     const u16 *monSet = gFacilityTrainers[trainerId].monSet;
-    u8 numMons = 0;
+    u16 numMons = 0;
     u32 monId = monSet[numMons];
 
     while (monId != 0xFFFF)
@@ -3423,13 +3423,13 @@ static void SetNextBattleTentOpponent(void)
        gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum] = TRAINER_BATTLE_PARAM.opponentA;
 }
 
-static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u8 monCount)
+static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u16 monCount)
 {
     s32 i, j;
     u16 chosenMonIndices[MAX_FRONTIER_PARTY_SIZE];
     u8 level = SetTentPtrsGetLevel();
     u8 fixedIV = 0;
-    u8 bfMonCount;
+    u16 bfMonCount;
     const u16 *monSet = NULL;
     u32 otID = 0;
     u16 monId;

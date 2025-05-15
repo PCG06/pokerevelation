@@ -2206,7 +2206,7 @@ static void CreateDomeOpponentMon(u8 monPartyId, u16 tournamentTrainerId, u8 tou
 
 static void CreateDomeOpponentMons(u16 tournamentTrainerId)
 {
-    u8 monsCount = 0;
+    u16 monsCount = 0;
     u32 otId = 0;
     int i, selectedMonBits;
 
