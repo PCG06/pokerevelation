@@ -73,7 +73,7 @@
 #define FLAG_DEFEATED_SNEHAL        0x39
 #define FLAG_DEFEATED_RAJESH        0x3A
 
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_FRONTIER_LEVEL         0x3B
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag

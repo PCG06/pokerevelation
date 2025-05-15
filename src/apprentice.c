@@ -328,7 +328,7 @@ static u16 GetRandomAlternateMove(u8 monId)
     if (PLAYER_APPRENTICE.lvlMode == APPRENTICE_LVL_MODE_50)
         level = FRONTIER_MAX_LEVEL_50;
     else // == APPRENTICE_LVL_MODE_OPEN
-        level = 60; // Despite being open level, level up moves are only read up to level 60
+        level = 50; // Despite being open level, level up moves are only read up to level 60
 
     for (j = 0; learnset[j].move != LEVEL_UP_MOVE_END; j++)
     {
@@ -444,7 +444,7 @@ static void GetLatestLearnedMoves(u16 species, u16 *moves)
     if (PLAYER_APPRENTICE.lvlMode == APPRENTICE_LVL_MODE_50)
         level = FRONTIER_MAX_LEVEL_50;
     else // == APPRENTICE_LVL_MODE_OPEN
-        level = 60;
+        level = 50;
 
     learnset = GetSpeciesLevelUpLearnset(species);
     for (i = 0; learnset[i].move != LEVEL_UP_MOVE_END; i++)

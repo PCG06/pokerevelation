@@ -1946,6 +1946,16 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     SetMonData(mon, field, &n);                                 \
 }
 
+#define CALC_STAT50(base, iv, ev, statIndex, field)               \
+{                                                               \
+    u8 baseStat = gSpeciesInfo[species].base;                   \
+    s32 n = (((2 * baseStat + iv + ev / 4) * 50) / 100) + 5; \
+    n = ModifyStatByNature(nature, n, statIndex);               \
+    if (B_FRIENDSHIP_BOOST == TRUE)                             \
+        n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));\
+    SetMonData(mon, field, &n);                                 \
+}
+
 void CalculateMonStats(struct Pokemon *mon)
 {
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
@@ -1967,6 +1977,15 @@ void CalculateMonStats(struct Pokemon *mon)
     s32 level = GetLevelFromMonExp(mon);
     s32 newMaxHP;
 
+    if (FlagGet(FLAG_FRONTIER_LEVEL) == TRUE) {
+        level = 50;
+        SetMonData(mon, MON_DATA_LEVEL, &level);
+    } else {
+        SetMonData(mon, MON_DATA_LEVEL, &level);
+    }
+    
+    //SetMonData(mon, MON_DATA_LEVEL, &level);
+
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE, NULL);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
@@ -1978,7 +1997,14 @@ void CalculateMonStats(struct Pokemon *mon)
     else
     {
         s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
-        newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
+        if (FlagGet(FLAG_FRONTIER_LEVEL) == TRUE)
+        {
+            newMaxHP = (((n + hpEV / 4) * 50) / 100) + 50 + 10;
+        } 
+        else 
+        {
+            newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
+        }
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
@@ -1987,11 +2013,21 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_MAX_HP, &newMaxHP);
 
-    CALC_STAT(baseAttack, attackIV, attackEV, STAT_ATK, MON_DATA_ATK)
-    CALC_STAT(baseDefense, defenseIV, defenseEV, STAT_DEF, MON_DATA_DEF)
-    CALC_STAT(baseSpeed, speedIV, speedEV, STAT_SPEED, MON_DATA_SPEED)
-    CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
-    CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
+    if (FlagGet(FLAG_FRONTIER_LEVEL) == TRUE)
+    {
+        CALC_STAT50(baseAttack, attackIV, attackEV, STAT_ATK, MON_DATA_ATK)
+        CALC_STAT50(baseDefense, defenseIV, defenseEV, STAT_DEF, MON_DATA_DEF)
+        CALC_STAT50(baseSpeed, speedIV, speedEV, STAT_SPEED, MON_DATA_SPEED)
+        CALC_STAT50(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
+        CALC_STAT50(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
+    } else {
+        CALC_STAT(baseAttack, attackIV, attackEV, STAT_ATK, MON_DATA_ATK)
+        CALC_STAT(baseDefense, defenseIV, defenseEV, STAT_DEF, MON_DATA_DEF)
+        CALC_STAT(baseSpeed, speedIV, speedEV, STAT_SPEED, MON_DATA_SPEED)
+        CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
+        CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
+    }
+    
 
     // Since a pokemon's maxHP data could either not have
     // been initialized at this point or this pokemon is

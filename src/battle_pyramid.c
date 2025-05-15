@@ -1134,6 +1134,12 @@ static void GetInBattlePyramid(void)
 
 static void UpdatePyramidLightRadius(void)
 {
+    s32 j;
+    
+    FlagSet(FLAG_FRONTIER_LEVEL);
+
+    for (j = 0; j < PARTY_SIZE; j++)
+        CalculateMonStats(&gPlayerParty[j]);
     switch (gSpecialVar_0x8006)
     {
     case PYRAMID_LIGHT_SET_RADIUS:
@@ -1181,6 +1187,12 @@ static void ClearPyramidPartyHeldItems(void)
 {
     int i, j;
     u16 item = 0;
+    s32 g;
+    
+    FlagClear(FLAG_FRONTIER_LEVEL);
+
+    for (g = 0; g < PARTY_SIZE; g++)
+        CalculateMonStats(&gPlayerParty[g]);
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -1484,15 +1496,7 @@ void GenerateBattlePyramidWildMon(void)
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, &name);
 
     // set level
-    if (lvl != FRONTIER_LVL_50)
-    {
-        lvl = SetFacilityPtrsGetLevel();
-        lvl -= (5 + (Random() % (TOTAL_PYRAMID_ROUNDS - round)/2));
-    }
-    else
-    {
-        lvl = 50 - (5 + (Random() % (TOTAL_PYRAMID_ROUNDS - round)/4));
-    }
+    lvl = 50;
     SetMonData(&gEnemyParty[0],
                MON_DATA_EXP,
                &gExperienceTables[gSpeciesInfo[species].growthRate][lvl]);
