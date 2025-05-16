@@ -56,14 +56,15 @@
 #define FLAG_POKE_RIDER             0x29
 #define FLAG_MOVE_UNION_ROOM_CHECK  0x2A
 
-#define FLAG_GOT_PARTY_PKMN  0x2B
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_GOT_PARTY_PKMN         0x2B
+#define FLAG_HIDE_CHALLENGER_1      0x2C
+#define FLAG_HIDE_CHALLENGER_2      0x2D
+#define FLAG_HIDE_CHALLENGER_3      0x2E
+#define FLAG_HIDE_CHALLENGER_4      0x2F
+#define FLAG_HIDE_CHALLENGER_5      0x30
+#define FLAG_HIDE_CHALLENGER_6      0x31
+#define FLAG_HIDE_CHAMPION          0x32
+
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag

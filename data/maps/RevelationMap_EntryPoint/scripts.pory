@@ -1,12 +1,15 @@
-mapscripts RevelationMap_EntryPoint_MapScripts{
+mapscripts RevelationMap_EntryPoint_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_PLAYER_FACE_DIR, 0 {  // Set this to 1 when going to gym scripts
+		VAR_REV_STATE, 2 {
 			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+			setvar(VAR_REV_STATE, 3)
 		}
-		VAR_GYM_DEFEATED_COUNTER, 8 { // Opens the main door when all gym leaders are defeated
+	]
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_GYM_DEFEATED_COUNTER) == 8) { // Opens the main door when all gym leaders are defeated
 			setmetatile(23, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE)
 			setmetatile(23, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
 			special(DrawWholeMapView)
 		}
-	]
+	}
 }

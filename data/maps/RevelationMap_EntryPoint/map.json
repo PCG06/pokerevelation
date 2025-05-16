@@ -21,7 +21,7 @@
       "x": 23,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
+      "dest_map": "MAP_REVELATION_MAP_LOBBY",
       "dest_warp_id": "0"
     },
     {

@@ -22,6 +22,7 @@ script RevelationMap_Lobby_Trigger0 {
 
 script RevelationMap_Lobby_Trigger1 {
 	lock
+	applymove(LOCALID_BIRCH, moves(face_right))
 	msgbox("Benny: {PLAYER},\n"
 			"once you go through that door,\l"
 			"you cannot return, for any reasons.\l"

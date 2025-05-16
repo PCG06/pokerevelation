@@ -1,8 +1,135 @@
+const LOCALID_CHALLENGER_1 = 1
+const LOCALID_CHALLENGER_2 = 2
+const LOCALID_CHALLENGER_3 = 3
+const LOCALID_CHALLENGER_4 = 4
+const LOCALID_CHALLENGER_5 = 5
+const LOCALID_CHALLENGER_6 = 6
+const LOCALID_CHAMPION = 6
+
 mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_PLAYER_FACE_DIR, 1 {
+		VAR_REV_STATE, 3 {
 			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-			setvar(VAR_PLAYER_FACE_DIR, 2)
 		}
 	]
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_REV_STATE, 3 {
+			setvar(VAR_REV_STATE, 4)
+			call(RevelationMap_ChallengersArea_PlayerEnters)
+		}
+	]
+}
+
+script RevelationMap_ChallengersArea_PlayerEnters {
+	delay(8)
+	lock
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: Welcome to the Revelation\n"
+			"Tournament!", MSGBOX_AUTOCLOSE)
+	delay(16)
+	applymoveplayer(moves(walk_up * 2, walk_left * 4, walk_up * 3, walk_right * 3))
+	msgbox("Announcer: On the left side, we have a\n"
+			"new Trainer challenging the Strong 6!\p"
+			"This Trainer's name is {PLAYER},\n"
+			"from Littleroot Town, Hoenn!\l"
+			"Good luck to you, Trainer!", MSGBOX_AUTOCLOSE)
+	delay(16)
+	// Trainer fights
+	call(RevelationMap_ChallengersArea_FightManvitha)
+}
+
+script RevelationMap_ChallengersArea_FightManvitha {
+	addobject(LOCALID_CHALLENGER_1)
+	applymove(LOCALID_CHALLENGER_1, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Manvitha: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MANVITHA, "Defeat text…")
+	msgbox("Manvitha: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his first\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 2!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_1, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_1)
+	delay(60)
+	call(RevelationMap_ChallengersArea_FightKevin)
+}
+
+script RevelationMap_ChallengersArea_FightKevin {
+	addobject(LOCALID_CHALLENGER_2)
+	applymove(LOCALID_CHALLENGER_2, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_KEVIN, "Defeat text…")
+	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his second\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 3!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_2, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_2)
+	delay(60)
+	call(RevelationMap_ChallengersArea_FightLohith)
+}
+
+script RevelationMap_ChallengersArea_FightLohith {
+	addobject(LOCALID_CHALLENGER_3)
+	applymove(LOCALID_CHALLENGER_3, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_LOHITH, "Defeat text…")
+	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his third\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 4!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_3, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_3)
+	delay(60)
+	call(RevelationMap_ChallengersArea_FightAnmol)
+}
+
+script RevelationMap_ChallengersArea_FightAnmol {
+	addobject(LOCALID_CHALLENGER_4)
+	applymove(LOCALID_CHALLENGER_4, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ANMOL, "Defeat text…")
+	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his fourth\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 5!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_4, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_4)
+	delay(60)
+	call(RevelationMap_ChallengersArea_FightArshad)
+}
+
+script RevelationMap_ChallengersArea_FightArshad {
+	addobject(LOCALID_CHALLENGER_5)
+	applymove(LOCALID_CHALLENGER_5, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ARSHAD, "Defeat text…")
+	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his fifth\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 6!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_5, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_5)
+	delay(60)
+	call(RevelationMap_ChallengersArea_FightMelwin)
+}
+
+script RevelationMap_ChallengersArea_FightMelwin {
+	addobject(LOCALID_CHALLENGER_6)
+	applymove(LOCALID_CHALLENGER_6, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
+	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MELWIN, "Defeat text…")
+	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: {PLAYER} gets his sixth\n"
+			"victory in the Revelation Tournament!\l"
+			"Now! On to Round 3!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_6, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	removeobject(LOCALID_CHALLENGER_6)
+	delay(60)
+	end
 }

@@ -138,7 +138,13 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	callnative GivePlayerItems
+	setflag FLAG_HIDE_CHALLENGER_1
+	setflag FLAG_HIDE_CHALLENGER_2
+	setflag FLAG_HIDE_CHALLENGER_3
+	setflag FLAG_HIDE_CHALLENGER_4
+	setflag FLAG_HIDE_CHALLENGER_5
+	setflag FLAG_HIDE_CHALLENGER_6
+	setflag FLAG_HIDE_CHAMPION
 	release
 	end
 
