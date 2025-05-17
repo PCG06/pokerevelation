@@ -95,7 +95,7 @@ static void Task_ReadyBikeScene(u8);
 static void Task_SetBikeScene(u8);
 static void Task_LoadShowMons(u8);
 static void Task_ReadyShowMons(u8);
-static void Task_CreditsTheEnd1(u8);
+static void UNUSED Task_CreditsTheEnd1(u8);
 static void Task_CreditsTheEnd2(u8);
 static void Task_CreditsTheEnd3(u8);
 static void Task_CreditsTheEnd4(u8);
@@ -103,7 +103,7 @@ static void Task_CreditsTheEnd5(u8);
 static void Task_CreditsTheEnd6(u8);
 static void Task_CreditsSoftReset(u8);
 static void ResetGpuAndVram(void);
-static void Task_UpdatePage(u8);
+static void UNUSED Task_UpdatePage(u8);
 static u8 CheckChangeScene(u8, u8);
 static void Task_ShowMons(u8);
 static void Task_CycleSceneryPalette(u8);
@@ -115,7 +115,7 @@ static void DrawTheEnd(u16, u16);
 static void SpriteCB_Player(struct Sprite *);
 static void SpriteCB_Rival(struct Sprite *);
 static u8 CreateCreditsMonSprite(u16, s16, s16, u16);
-static void DeterminePokemonToShow(void);
+static void UNUSED DeterminePokemonToShow(void);
 
 static const u8 sTheEnd_LetterMap_T[] =
 {
@@ -397,8 +397,6 @@ static void PrintCreditsText(const u8 *string, u8 y, bool8 isTitle)
 void CB2_StartCreditsSequence(void)
 {
     u8 taskId;
-    s16 bikeTaskId;
-    u8 pageTaskId;
 
     ResetGpuAndVram();
     SetVBlankCallback(NULL);
@@ -409,40 +407,17 @@ void CB2_StartCreditsSequence(void)
 
     taskId = CreateTask(Task_WaitPaletteFade, 0);
 
-    gTasks[taskId].tEndCredits = FALSE;
+    gTasks[taskId].tEndCredits = TRUE; // Skip all credits scenes and go straight to "THE END"
     gTasks[taskId].tSceneNum = SCENE_OCEAN_MORNING;
     gTasks[taskId].tNextMode = MODE_NONE;
     gTasks[taskId].tCurrentMode = MODE_BIKE_SCENE;
-
-    while (TRUE)
-    {
-        if (LoadBikeScene(SCENE_OCEAN_MORNING, taskId))
-            break;
-    }
-
-    bikeTaskId = gTasks[taskId].tTaskId_BikeScene;
-    gTasks[bikeTaskId].tState = 40;
-
-    SetGpuReg(REG_OFFSET_BG0VOFS, 0xFFFC);
-
-    pageTaskId = CreateTask(Task_UpdatePage, 0);
-
-    gTasks[pageTaskId].tMainTaskId = taskId;
-    gTasks[taskId].tTaskId_UpdatePage = pageTaskId;
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     EnableInterrupts(INTR_FLAG_VBLANK);
     SetVBlankCallback(VBlankCB_Credits);
     m4aSongNumStart(MUS_CREDITS);
     SetMainCallback2(CB2_Credits);
-    sCreditsData = AllocZeroed(sizeof(struct CreditsData));
-
-    DeterminePokemonToShow();
-
-    sCreditsData->imgCounter = 0;
-    sCreditsData->nextImgPos = POS_LEFT;
-    sCreditsData->currShownMon = 0;
-
+    
     sSavedTaskId = taskId;
 }
 
@@ -461,8 +436,8 @@ static void Task_CreditsMain(u8 taskId)
         s16 bikeTaskId = gTasks[taskId].tTaskId_BikeScene;
         gTasks[bikeTaskId].tState = 30;
 
-        gTasks[taskId].tTheEndDelay = 256;
-        gTasks[taskId].func = Task_CreditsTheEnd1;
+        gTasks[taskId].tTheEndDelay = 16;
+        gTasks[taskId].func = Task_CreditsTheEnd3;
         return;
     }
 
@@ -590,14 +565,8 @@ static void Task_LoadShowMons(u8 taskId)
     }
 }
 
-static void Task_CreditsTheEnd1(u8 taskId)
+static void UNUSED Task_CreditsTheEnd1(u8 taskId)
 {
-    if (gTasks[taskId].tTheEndDelay)
-    {
-        gTasks[taskId].tTheEndDelay--;
-        return;
-    }
-
     BeginNormalPaletteFade(PALETTES_ALL, 12, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_CreditsTheEnd2;
 }
@@ -632,18 +601,12 @@ static void Task_CreditsTheEnd3(u8 taskId)
                                 | DISPCNT_OBJ_1D_MAP
                                 | DISPCNT_BG0_ON);
 
-    gTasks[taskId].tDelay = 235; //set this to 215 to actually show "THE END" in time to the last song beat
+    gTasks[taskId].tDelay = 16;
     gTasks[taskId].func = Task_CreditsTheEnd4;
 }
 
 static void Task_CreditsTheEnd4(u8 taskId)
 {
-    if (gTasks[taskId].tDelay)
-    {
-        gTasks[taskId].tDelay--;
-        return;
-    }
-
     BeginNormalPaletteFade(PALETTES_ALL, 6, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_CreditsTheEnd5;
 }
@@ -655,7 +618,7 @@ static void Task_CreditsTheEnd5(u8 taskId)
         DrawTheEnd(0x3800, 0);
 
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0, RGB_BLACK);
-        gTasks[taskId].tDelay = 7200;
+        gTasks[taskId].tDelay = 60;
         gTasks[taskId].func = Task_CreditsTheEnd6;
     }
 }
@@ -672,10 +635,10 @@ static void Task_CreditsTheEnd6(u8 taskId)
             return;
         }
 
-        if (gTasks[taskId].tDelay == 7144)
+        if (gTasks[taskId].tDelay == 60)
             FadeOutBGM(8);
 
-        if (gTasks[taskId].tDelay == 6840)
+        if (gTasks[taskId].tDelay == 30)
             m4aSongNumStart(MUS_END);
 
         gTasks[taskId].tDelay--;
@@ -715,7 +678,7 @@ static void ResetGpuAndVram(void)
 #define tCurrentPage data[2]
 #define tDelay       data[3]
 
-static void Task_UpdatePage(u8 taskId)
+static void UNUSED Task_UpdatePage(u8 taskId)
 {
     int i;
 
@@ -1540,7 +1503,7 @@ static void SpriteCB_CreditsMonBg(struct Sprite *sprite)
     sprite->y = gSprites[sprite->sMonSpriteId].y;
 }
 
-static void DeterminePokemonToShow(void)
+static void UNUSED DeterminePokemonToShow(void)
 {
     u16 starter = SpeciesToNationalPokedexNum(GetStarterPokemon(VarGet(VAR_STARTER_MON)));
     u16 page;
