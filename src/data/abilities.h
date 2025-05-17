@@ -267,7 +267,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WONDER_GUARD] =
     {
         .name = _("Wonder Guard"),
-        .description = COMPOUND_STRING("“Supereffective” hits."),
+        .description = COMPOUND_STRING("Only “Supereffective” hits."),
         .descriptionTwoLines = COMPOUND_STRING(
             "The Pokémon's mysterious power only\n"
             "lets supereffective moves hit it."),
@@ -3008,7 +3008,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_GOOD_AS_GOLD] =
     {
         .name = _("Good as Gold"),
-        .description = COMPOUND_STRING("Avoids status problems."),
+        .description = COMPOUND_STRING("Avoids status moves."),
         .descriptionTwoLines = COMPOUND_STRING(
             "A body of pure gold grants immunity\n"
             "to other Pokémon's status moves."),
