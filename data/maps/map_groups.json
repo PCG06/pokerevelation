@@ -625,6 +625,7 @@
   "gMapGroup_RevelationMaps": [
     "RevelationMap_Lobby",
     "RevelationMap_EntryPoint",
-    "RevelationMap_ChallengersArena"
+    "RevelationMap_ChallengersArena",
+    "RevelationMap_HallOfFame"
   ]
 }

@@ -1,0 +1,54 @@
+const LOCALID_CHAMPION = 1
+
+mapscripts RevelationMap_HallOfFame_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_REV_STATE, 4 {
+			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+		}
+	]
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_REV_STATE, 4 {
+			setvar(VAR_REV_STATE, 5)
+			call(RevelationMap_HallOfFame_EventScript_EnterHallOfFame)
+		}
+    ]
+}
+
+script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
+	lockall
+	applymovement(LOCALID_CHAMPION, moves(walk_up * 6))
+	applymoveplayer(moves(walk_up * 6))
+	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
+	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
+	msgbox("Yashas: This room…\p"
+	        "This is where we keep records of\n"
+	        "Pokémon that prevailed through\l"
+	        "harsh battles.\p"
+	        "It is here that the League Champions\n"
+	        "are honored.", MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_CHAMPION, moves(walk_up * 5))
+	applymoveplayer(moves(walk_up * 5))
+	delay(20)
+	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
+	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
+	msgbox("Yashas: Come on, let's record your\n"
+            "name as a Trainer who triumphed over\l"
+            "the Pokémon League, and the names of\l"
+            "the partners who battled with you.", MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterUp)
+	applymoveplayer(Common_Movement_WalkInPlaceFasterUp)
+	delay(20)
+	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	delay(40)
+	setvar(VAR_TEMP_1, 1)
+	// call(EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags) // <- We don't need this because there's no story
+	setrespawn(HEAL_LOCATION_REVELATION_LOBBY)
+	fadescreenspeed(FADE_TO_BLACK, 24)
+	special(GameClear)
+	waitstate
+	releaseall
+	end
+}

@@ -28,11 +28,10 @@ script RevelationMap_ChallengersArea_PlayerEnters {
 			"Tournament!", MSGBOX_AUTOCLOSE)
 	delay(16)
 	applymoveplayer(moves(walk_up * 2, walk_left * 4, walk_up * 3, walk_right * 3))
-	msgbox("Announcer: On the left side, we have a\n"
-			"new Trainer challenging the Strong 6!\p"
-			"This Trainer's name is {PLAYER},\n"
-			"from Littleroot Town, Hoenn!\l"
-			"Good luck to you, Trainer!", MSGBOX_AUTOCLOSE)
+	msgbox("Announcer: On the left, entering the\n"
+			"arena to take on the Strong 6…\p"
+			"It's {PLAYER} from Littleroot Town,\n"
+			"Hoenn! Good luck!", MSGBOX_AUTOCLOSE)
 	delay(16)
 	// Trainer fights
 	call(RevelationMap_ChallengersArea_FightManvitha)
@@ -40,96 +39,186 @@ script RevelationMap_ChallengersArea_PlayerEnters {
 
 script RevelationMap_ChallengersArea_FightManvitha {
 	addobject(LOCALID_CHALLENGER_1)
-	applymove(LOCALID_CHALLENGER_1, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Manvitha: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_MANVITHA, "Defeat text…")
-	msgbox("Manvitha: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_1, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Manvitha: The sun always shines on\n"
+			"the battlefield when I'm around.\l"
+			"Let's see if you can handle the heat!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MANVITHA, "I wasn't expecting that…") // Sun team
+	msgbox("Manvitha: Not bad at all.\n"
+			"You've got real potential.\l"
+			"Keep that fire burning!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his first\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 2!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_1, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: {PLAYER} claims Round 1!\n"
+			"The crowd is loving this!\l"
+			"Next up, Round 2!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_1, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_1)
 	delay(60)
 	call(RevelationMap_ChallengersArea_FightKevin)
 }
 
 script RevelationMap_ChallengersArea_FightKevin {
+	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_CHALLENGER_2)
-	applymove(LOCALID_CHALLENGER_2, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_KEVIN, "Defeat text…")
-	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_2, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Kevin: The forecast calls for rain…\n"
+			"And pain for anyone who stands\l"
+			"in my way!\p"
+			"Let's make this interesting.", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_KEVIN, "Well played!") // Rain team
+	msgbox("Kevin: You earned that win.\n"
+			"My storms couldn't wash you away.\l"
+			"Impressive!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his second\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 3!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_2, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: {PLAYER} takes Round 2!\n"
+			"The tension is electric!\l"
+			"Onward to Round 3!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_2, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_2)
 	delay(60)
 	call(RevelationMap_ChallengersArea_FightLohith)
 }
 
 script RevelationMap_ChallengersArea_FightLohith {
+	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_CHALLENGER_3)
-	applymove(LOCALID_CHALLENGER_3, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_LOHITH, "Defeat text…")
-	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_3, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Lohith: Hope you're ready for this!\n"
+			"I don't hold back - not for anyone!\l"
+			"Prepare for total domination!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_LOHITH, "So close…") // Gen9 OU/Uber hyperoffence team
+	msgbox("Lohith: I gave it my best.\n"
+			"You're stronger than I anticipated.\l"
+			"Don't stop now!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his third\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 4!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_3, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: That's three wins for\n"
+			"{PLAYER}!\l"
+			"The crowd is going wild!\l"
+			"Round 4 awaits!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_3, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_3)
 	delay(60)
 	call(RevelationMap_ChallengersArea_FightAnmol)
 }
 
 script RevelationMap_ChallengersArea_FightAnmol {
+	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_CHALLENGER_4)
-	applymove(LOCALID_CHALLENGER_4, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_ANMOL, "Defeat text…")
-	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_4, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Anmol: Patience is a virtue…\n"
+			"And I have plenty to spare.\l"
+			"You're not getting past me.", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ANMOL, "What a battle…") // Gen9 OU/Uber stall team
+	msgbox("Anmol: That was intense.\n"
+			"You broke through my defenses…\l"
+			"I'll have to rethink my strategy.", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his fourth\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 5!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_4, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: {PLAYER} has conquered\n"
+			"Round 4!\l"
+			"The audience can't believe their eyes!\l"
+			"Two more to go!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_4, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_4)
 	delay(60)
 	call(RevelationMap_ChallengersArea_FightArshad)
 }
 
 script RevelationMap_ChallengersArea_FightArshad {
+	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_CHALLENGER_5)
-	applymove(LOCALID_CHALLENGER_5, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_ARSHAD, "Defeat text…")
-	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_5, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Arshad: The heat is on!\n"
+			"My team burns brighter than any other!\l"
+			"Let's see if you can take the heat!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ARSHAD, "You're better than I thought.") // Gen8 OU hyperoffence team
+	msgbox("Arshad: Great match!\n"
+			"You've got some serious firepower.\l"
+			"Don't let it burn out now!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his fifth\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 6!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_5, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: {PLAYER} now holds five\n"
+			"straight wins!\lThe crowd is on their feet!\lOne more victory to claim the title!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_5, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_5)
 	delay(60)
 	call(RevelationMap_ChallengersArea_FightMelwin)
 }
 
 script RevelationMap_ChallengersArea_FightMelwin {
+	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_CHALLENGER_6)
-	applymove(LOCALID_CHALLENGER_6, moves(walk_up * 2, walk_right * 4, walk_up * 3, walk_left * 3))
-	msgbox("Kevin: Before battle text!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_MELWIN, "Defeat text…")
-	msgbox("Kevin: After battle text.", MSGBOX_DEFAULT)
+	applymove(LOCALID_CHALLENGER_6, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Melwin: You made it this far…\n"
+			"But the real challenge starts now!\l"
+			"I won't go easy - not when the\l"
+			"championship is on the line!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MELWIN, "I gave it all I had…") // Annoying Gen9 hyperoffence team
+	msgbox("Melwin: You earned your spot.\n"
+			"I threw everything I had at you,\l"
+			"but you just wouldn't go down!\p"
+			"Now go claim your title.", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} gets his sixth\n"
-			"victory in the Revelation Tournament!\l"
-			"Now! On to Round 3!", MSGBOX_AUTOCLOSE)
-	applymove(LOCALID_CHALLENGER_6, moves(walk_right * 3, walk_down * 3, walk_left * 4, walk_down * 2))
+	msgbox("Announcer: {PLAYER} has beaten all\n"
+			"six challengers!\p"
+			"That means… {PLAYER} wins the\n"
+			"Revelation Tournament!\l"
+			"What an incredible performance!", MSGBOX_AUTOCLOSE)
+	applymove(LOCALID_CHALLENGER_6, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
+	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_CHALLENGER_6)
 	delay(60)
+	waitse
+	call(RevelationMap_ChallengersArea_FightChampionYashas)
+}
+
+script RevelationMap_ChallengersArea_FightChampionYashas {
+	playse(SE_APPLAUSE)
+	msgbox("Announcer: BUT…\p"
+			"A final opponent remains…\n"
+			"The very first Champion of the\l"
+			"Revelation Tournament!\p"
+			"Undefeated! Unmatched!\n"
+			"The Legendary Yashas!", MSGBOX_AUTOCLOSE)
+	waitse
+	fadenewbgm(MUS_VS_FRONTIER_BRAIN)
+	delay(6)
+	playse(SE_SLIDING_DOOR)
+	addobject(LOCALID_CHAMPION)
+	applymove(LOCALID_CHAMPION, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
+	msgbox("Yashas: I've watched your battles.\n"
+			"You've got skill, that's for sure.\l"
+			"But skill alone won't beat me.\p"
+			"Let's see if you've got what\n"
+			"it takes to be the best.", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_YASHAS, "Looks like I'm not No. 1 anymore…")
+	msgbox("Yashas: You're the real deal.\n"
+			"I haven't been pushed like that\l"
+			"in years.\p"
+			"The title of Champion is yours now.\n"
+			"Don't disappoint me.", MSGBOX_DEFAULT)
+	playse(SE_APPLAUSE)
+	call(RevelationMap_HallOfFame_Teleport)
 	end
+}
+
+script RevelationMap_HallOfFame_Teleport {
+	warp(MAP_REVELATION_MAP_HALL_OF_FAME, 7, 16)
+}
+
+movement RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium {
+	walk_up * 2,
+	walk_right * 4,
+	walk_up * 3,
+	walk_left * 3
+}
+
+movement RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit {
+	walk_right * 3,
+	walk_down * 3,
+	walk_left * 4,
+	walk_down * 2
 }

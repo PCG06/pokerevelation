@@ -1162,3 +1162,5 @@ Text_MonCryScript::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/dynmultichoices.inc"
+
+	.include "data/maps/RevelationMap_HallOfFame/scripts.inc"
