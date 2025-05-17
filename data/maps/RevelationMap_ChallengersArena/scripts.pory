@@ -4,7 +4,7 @@ const LOCALID_CHALLENGER_3 = 3
 const LOCALID_CHALLENGER_4 = 4
 const LOCALID_CHALLENGER_5 = 5
 const LOCALID_CHALLENGER_6 = 6
-const LOCALID_CHAMPION = 6
+const LOCALID_CHAMPION = 7
 
 mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
