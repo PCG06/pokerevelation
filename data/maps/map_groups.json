@@ -626,6 +626,14 @@
     "RevelationMap_Lobby",
     "RevelationMap_EntryPoint",
     "RevelationMap_ChallengersArena",
-    "RevelationMap_HallOfFame"
+    "RevelationMap_HallOfFame",
+    "RevelationMap_Gym1",
+    "RevelationMap_Gym2",
+    "RevelationMap_Gym3",
+    "RevelationMap_Gym4",
+    "RevelationMap_Gym5",
+    "RevelationMap_Gym6",
+    "RevelationMap_Gym7",
+    "RevelationMap_Gym8"
   ]
 }

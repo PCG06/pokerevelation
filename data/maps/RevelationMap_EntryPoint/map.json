@@ -28,56 +28,56 @@
       "x": 3,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM1",
       "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM2",
       "dest_warp_id": "0"
     },
     {
       "x": 13,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM3",
       "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM4",
       "dest_warp_id": "0"
     },
     {
       "x": 28,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM5",
       "dest_warp_id": "0"
     },
     {
       "x": 33,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM6",
       "dest_warp_id": "0"
     },
     {
       "x": 38,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM7",
       "dest_warp_id": "0"
     },
     {
       "x": 43,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
+      "dest_map": "MAP_REVELATION_MAP_GYM8",
       "dest_warp_id": "0"
     },
     {

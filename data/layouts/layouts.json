@@ -4450,6 +4450,86 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/RevelationMap_HallOfFame/border.bin",
       "blockdata_filepath": "data/layouts/RevelationMap_HallOfFame/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM1",
+      "name": "RevelationMap_Gym1_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RustboroGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym1/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym1/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM2",
+      "name": "RevelationMap_Gym2_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_DewfordGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym2/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym2/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM3",
+      "name": "RevelationMap_Gym3_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SootopolisGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym3/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym3/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM4",
+      "name": "RevelationMap_Gym4_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MossdeepGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym4/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym4/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM5",
+      "name": "RevelationMap_Gym5_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym5/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym5/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM6",
+      "name": "RevelationMap_Gym6_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym6/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym6/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM7",
+      "name": "RevelationMap_Gym7_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym7/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym7/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_GYM8",
+      "name": "RevelationMap_Gym8_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/RevelationMap_Gym8/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_Gym8/map.bin"
     }
   ]
 }

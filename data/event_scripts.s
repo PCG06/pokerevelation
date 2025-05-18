@@ -1164,3 +1164,19 @@ Text_MonCryScript::
 	.include "data/scripts/dynmultichoices.inc"
 
 	.include "data/maps/RevelationMap_HallOfFame/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym1/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym2/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym3/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym4/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym5/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym6/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym7/scripts.inc"
+
+	.include "data/maps/RevelationMap_Gym8/scripts.inc"
