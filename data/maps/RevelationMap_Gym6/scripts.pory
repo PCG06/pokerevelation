@@ -1,1 +1,30 @@
 mapscripts RevelationMap_Gym6_MapScripts {}
+
+script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
+    lock
+    faceplayer
+    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+        msgbox("Varun: Go to Challengers' Arena text", MSGBOX_NPC)
+    } elif (flag(FLAG_DEFEATED_VARUN) == true) {
+        msgbox("Varun: Defeated text!", MSGBOX_NPC)
+    } else {
+        msgbox("Varun: Before battle text!", MSGBOX_DEFAULT)
+        trainerbattle_no_intro(TRAINER_VARUN, "Defeat text…")
+        playfanfare(MUS_OBTAIN_BADGE)
+        message("{PLAYER} beat Varun!")
+        waitfanfare
+        waitmessage
+        msgbox("Varun: After battle text.", MSGBOX_AUTOCLOSE)
+        setflag(FLAG_DEFEATED_VARUN)
+        setvar(VAR_DEFEATED_VARUN, 1)
+        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+    }
+    release
+    end
+}
+
+script RevelationMap_Gym6_ScientistDarwin { // Electric-type Trainer
+	trainerbattle_single(TRAINER_DARWIN, "Darwin: Before battle text!", "Defeat text…")
+	msgbox("Darwin: After battle text.", MSGBOX_AUTOCLOSE)
+	end
+}

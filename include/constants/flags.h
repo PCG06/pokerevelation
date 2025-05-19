@@ -64,15 +64,15 @@
 #define FLAG_HIDE_CHALLENGER_5      0x30
 #define FLAG_HIDE_CHALLENGER_6      0x31
 #define FLAG_HIDE_CHAMPION          0x32
+#define FLAG_DEFEATED_JAKE          0x33
+#define FLAG_DEFEATED_REEVE         0x34
+#define FLAG_DEFEATED_PREM          0x35
+#define FLAG_DEFEATED_JAISON        0x36
+#define FLAG_DEFEATED_PRAJITH       0x37
+#define FLAG_DEFEATED_VARUN         0x38
+#define FLAG_DEFEATED_SNEHAL        0x39
+#define FLAG_DEFEATED_RAJESH        0x3A
 
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag

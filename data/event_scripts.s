@@ -591,6 +591,7 @@ gStdScripts_End::
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
+	call RevelationMap_HallOfFame_EventScript_SetFlagsAndVars
 	goto EventScript_ResetMrBriney
 	end
 

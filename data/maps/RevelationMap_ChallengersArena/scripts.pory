@@ -9,7 +9,7 @@ const LOCALID_CHAMPION = 7
 mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_REV_STATE, 3 {
-			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+			turnplayer(DIR_NORTH)
 		}
 	]
 	MAP_SCRIPT_ON_FRAME_TABLE [

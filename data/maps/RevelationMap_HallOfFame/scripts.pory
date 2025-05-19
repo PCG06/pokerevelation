@@ -3,7 +3,7 @@ const LOCALID_CHAMPION = 1
 mapscripts RevelationMap_HallOfFame_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_REV_STATE, 4 {
-			turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+			turnplayer(DIR_NORTH)
 		}
 	]
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -44,11 +44,58 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	delay(40)
 	setvar(VAR_TEMP_1, 1)
-	// call(EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags) // <- We don't need this because there's no story
+	setflag(FLAG_IS_CHAMPION)
+	call(RevelationMap_HallOfFame_EventScript_SetFlagsAndVars)
 	setrespawn(HEAL_LOCATION_REVELATION_LOBBY)
 	fadescreenspeed(FADE_TO_BLACK, 24)
 	special(GameClear)
 	waitstate
 	releaseall
 	end
+}
+
+script RevelationMap_HallOfFame_EventScript_SetFlagsAndVars {
+    setvar(VAR_GYM_DEFEATED_COUNTER, 0)
+	setvar(VAR_REV_STATE, 2)
+
+	clearflag(FLAG_DEFEATED_JAKE)
+	setvar(VAR_DEFEATED_JAKE, 0)
+	cleartrainerflag(TRAINER_PRAJESH)
+	cleartrainerflag(TRAINER_PAWAN)
+
+	clearflag(FLAG_DEFEATED_REEVE)
+	setvar(VAR_DEFEATED_REEVE, 0)
+	cleartrainerflag(TRAINER_PREMAL)
+	cleartrainerflag(TRAINER_HANSTON)
+
+	clearflag(FLAG_DEFEATED_PREM)
+	setvar(VAR_DEFEATED_PREM, 0)
+	cleartrainerflag(TRAINER_DON)
+	cleartrainerflag(TRAINER_RASHEL)
+
+	clearflag(FLAG_DEFEATED_JAISON)
+	setvar(VAR_DEFEATED_JAISON, 0)
+	cleartrainerflag(TRAINER_DARA)
+	cleartrainerflag(TRAINER_AKSHARA)
+
+	clearflag(FLAG_DEFEATED_PRAJITH)
+	setvar(VAR_DEFEATED_PRAJITH, 0)
+	cleartrainerflag(TRAINER_DELSON)
+	cleartrainerflag(TRAINER_GILSTON)
+
+	clearflag(FLAG_DEFEATED_VARUN)
+	setvar(VAR_DEFEATED_VARUN, 0)
+	cleartrainerflag(TRAINER_DARWIN)
+	cleartrainerflag(TRAINER_MONVISH)
+
+	clearflag(FLAG_DEFEATED_SNEHAL)
+	setvar(VAR_DEFEATED_SNEHAL, 0)
+	cleartrainerflag(TRAINER_ADITHYA)
+	cleartrainerflag(TRAINER_HANDAM)
+
+	clearflag(FLAG_DEFEATED_RAJESH)
+	setvar(VAR_DEFEATED_RAJESH, 0)
+	cleartrainerflag(TRAINER_DEON)
+	cleartrainerflag(TRAINER_RION)
+	return
 }

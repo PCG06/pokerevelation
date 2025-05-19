@@ -1,1 +1,30 @@
 mapscripts RevelationMap_Gym2_MapScripts {}
+
+script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
+    lock
+    faceplayer
+    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+        msgbox("Reeve: Go to Challengers' Arena text", MSGBOX_NPC)
+    } elif (flag(FLAG_DEFEATED_REEVE) == true) {
+        msgbox("Reeve: Defeated text!", MSGBOX_NPC)
+    } else {
+        msgbox("Reeve: Before battle text!", MSGBOX_DEFAULT)
+        trainerbattle_no_intro(TRAINER_REEVE, "Defeat text…")
+        playfanfare(MUS_OBTAIN_BADGE)
+        message("{PLAYER} beat Reeve!")
+        waitfanfare
+        waitmessage
+        msgbox("Reeve: After battle text.", MSGBOX_AUTOCLOSE)
+        setflag(FLAG_DEFEATED_REEVE)
+        setvar(VAR_DEFEATED_REEVE, 1)
+        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+    }
+    release
+    end
+}
+
+script RevelationMap_Gym2_BurglarPremal { // Dark-type Trainer
+	trainerbattle_single(TRAINER_PREMAL, "Premal: Before battle text!", "Defeat text…")
+	msgbox("Premal: After battle text.", MSGBOX_AUTOCLOSE)
+	end
+}

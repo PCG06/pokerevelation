@@ -1,1 +1,31 @@
 mapscripts RevelationMap_Gym5_MapScripts {}
+
+script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
+    lock
+    faceplayer
+    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+        msgbox("Prajith: Go to Challengers' Arena text", MSGBOX_NPC)
+    } elif (flag(FLAG_DEFEATED_PRAJITH) == true) {
+        msgbox("Prajith: Defeated text!", MSGBOX_NPC)
+    } else {
+        msgbox("Prajith: Before battle text!", MSGBOX_DEFAULT)
+        trainerbattle_no_intro(TRAINER_PRAJITH, "Defeat text…")
+        playfanfare(MUS_OBTAIN_BADGE)
+        message("{PLAYER} beat Prajith!")
+        waitfanfare
+        waitmessage
+        msgbox("Prajith: After battle text.", MSGBOX_AUTOCLOSE)
+        setflag(FLAG_DEFEATED_PRAJITH)
+        setvar(VAR_DEFEATED_PRAJITH, 1)
+        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+        setvar(VAR_DEFEATED_JAKE, 1)
+    }
+    release
+    end
+}
+
+script RevelationMap_Gym5_KindlerDelson { // Fire-type Trainer
+	trainerbattle_single(TRAINER_DELSON, "Delson: Before battle text!", "Defeat text…")
+	msgbox("Delson: After battle text.", MSGBOX_AUTOCLOSE)
+	end
+}
