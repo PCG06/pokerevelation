@@ -138,18 +138,18 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	special GameClear
+	call Common_EventScript_TrainerBattleMenu
 	release
 	end
 
 Debug_EventScript_Script_2::
-	cleartrainerflag TRAINER_TESTING
-	trainerbattle_no_intro TRAINER_TESTING, Text_Defeat
+	call LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
 	release
 	end
 
 Debug_EventScript_Script_3::
-	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
+	cleartrainerflag TRAINER_TESTING
+	trainerbattle_no_intro TRAINER_TESTING, Text_Defeat
 	release
 	end
 
