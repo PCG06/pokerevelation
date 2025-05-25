@@ -986,5 +986,5 @@ void MoveRelearnerShowHideCategoryIcon(s32 moveId)
 
 u32 CheckDynamicMoveRelearnerType(u32 chosenMove)
 {
-    return CheckDynamicMoveType(&gPlayerParty[sMoveRelearnerStruct->partyMon], chosenMove, 0);
+    return CheckDynamicMoveType(&gPlayerParty[sMoveRelearnerStruct->partyMon], chosenMove, 0, MON_OUTSIDE_BATTLE);
 }
