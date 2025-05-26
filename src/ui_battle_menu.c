@@ -196,7 +196,6 @@ enum WindowIds
 enum battler_TabIds
 {
     TAB_STATS,
-    TAB_ABILITIES,
     TAB_MOVES,
     TAB_STATUS,
     NUM_TABS,
@@ -255,7 +254,6 @@ static void PrintPartyTab(void);
 static void PrintFieldTab(void);
 static void PrintSideTab(u8 side);
 static void PrintStatsTab(void);
-static void PrintAbilityTab(void);
 static void PrintStatusTab(void);
 static void Task_MenuWaitFadeIn(u8 taskId);
 static void Task_MenuMain(u8 taskId);
@@ -916,7 +914,6 @@ void LoadTilemapFromMode(void)
             else
                 LZDecompressWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
             break;
-        case TAB_ABILITIES:
         case TAB_MOVES:
             if (sMenuDataPtr->isDoubleBattle)
                 LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Abilities, sBg1TilemapBuffer);
@@ -1037,15 +1034,10 @@ static void Menu_InitWindows(void)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-static const u8 sText_MyMenu[] = _("HP: {STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_HP[] = _("{STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_PP[] = _("PP: {STR_VAR_1}/{STR_VAR_2}");
 
-static const u8 sText_Ability[] = _("Ability:");
-static const u8 sText_Held_Item[] = _("Held Item:\n{STR_VAR_1}");
 static const u8 sText_None[]  = _("None");
-static const u8 sYourOpponentPokemonData[] = _("Your Opponent Pokémon Battle Data");
-static const u8 sYourPokemonData[] = _("Your Pokémon Battle Data");
 
 static const u8 sText_StatHP[]         = _("HP");
 static const u8 sText_Attack[]         = _("Atk");
@@ -1231,12 +1223,15 @@ const u8 sText_Title_PartyInfoSelect[]   = _("{A_BUTTON}Select {DPAD_UPDOWN}Swit
 const u8 sText_Title_PartyInfo[]         = _("{A_BUTTON}Info {B_BUTTON}Back {DPAD_NONE}Switch");
 const u8 sText_Title_Controllers[]       = _("{DPAD_UPDOWN}Switch {DPAD_LEFTRIGHT}Page");
 
-const u8 sText_Title_Type_One[]     = _("Type:\n{STR_VAR_1}");
-const u8 sText_Title_Type_Two[]     = _("Types:\n{STR_VAR_1}/ {STR_VAR_2}");
-const u8 sText_Title_Type_Three[]   = _("Types:\n{STR_VAR_1}/ {STR_VAR_2}/ {STR_VAR_3}");
+const u8 sText_Title_Type_One[]     = _("Type: {STR_VAR_1}");
+const u8 sText_Title_Type_Two[]     = _("Types: {STR_VAR_1}/ {STR_VAR_2}");
+const u8 sText_Title_Type_Three[]   = _("Types: {STR_VAR_1}/ {STR_VAR_2}/ {STR_VAR_3}");
 
 const u8 sText_Title_Nature[]        = _("Nature: {STR_VAR_1}\n(+{STR_VAR_2}, -{STR_VAR_3})");
 const u8 sText_Title_Nature_NoStat[] = _("Nature:\n{STR_VAR_1}");
+
+
+const u8 sText_Title_Ability[] = _("Ability: {STR_VAR_1}");
 
 const u8 sText_Title_Held_Item[]    = _("Held Item: {STR_VAR_1}");
 const u8 gText_NewLevelSymbol[] = _("{LV}{STR_VAR_1}");
@@ -1310,7 +1305,7 @@ static void PrintStatsTab(void)
             StringCopy(gStringVar3, gTypesInfo[gBattleMons[sMenuDataPtr->battlerId].types[2]].name);
     }   
 
-    switch(numtypes)
+    switch (numtypes)
     {
         case 1:
             StringExpandPlaceholders(gStringVar4, sText_Title_Type_One);
@@ -1319,14 +1314,20 @@ static void PrintStatsTab(void)
             StringExpandPlaceholders(gStringVar4, sText_Title_Type_Two);
         break;
         case 3:
-            StringExpandPlaceholders(gStringVar4, sText_Title_Type_Three);
+            StringExpandPlaceholders(gStringVar4, sText_Title_Type_Two);
         break;
     }
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
 
+    //Ability
+    y++;
+    StringCopy(gStringVar1, gAbilitiesInfo[gBattleMons[sMenuDataPtr->battlerId].ability].name);
+    StringExpandPlaceholders(gStringVar4, sText_Title_Ability);
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
+
     //Held Item
-    y = y +2;
-    if(gBattleMons[sMenuDataPtr->battlerId].item != ITEM_NONE)
+    y++;
+    if (gBattleMons[sMenuDataPtr->battlerId].item != ITEM_NONE)
         CopyItemName(gBattleMons[sMenuDataPtr->battlerId].item, gStringVar1);
     else
         StringCopy(gStringVar1, sText_None);
@@ -1505,7 +1506,7 @@ static void PrintStatsTab(void)
 
 const u8 sText_PrintAbilityTab_Ability[] = _("Ability");
 #define SPACE_BETWEEN_ABILITY_AND_NAME (8 * 8)
-static void PrintAbilityTab(void)
+static void UNUSED PrintAbilityTab(void)
 {
     u8 x, y, x2, y2;
     u8 windowId = WINDOW_1;
@@ -3368,7 +3369,6 @@ static u8 ShowSpeciesIconParty(u8 num, bool8 isEnemyParty, u8 x, u8 y)
 static const u8 tabColors[NUM_TABS] =
 {
     [TAB_STATS]             = MENU_COLOR_BLUE,
-    [TAB_ABILITIES]         = MENU_COLOR_RED,
     [TAB_MOVES]             = MENU_COLOR_GREEN,
     [TAB_STATUS]            = MENU_COLOR_YELLOW,
 };
@@ -3461,9 +3461,6 @@ static void PrintPage(void)
         {
         case TAB_STATS:
             PrintStatsTab();
-            break;
-        case TAB_ABILITIES:
-            PrintAbilityTab();
             break;
         case TAB_MOVES:
             PrintMoveTab();

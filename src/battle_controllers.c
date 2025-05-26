@@ -1586,6 +1586,12 @@ void BtlController_EmitDebugMenu(u32 battler, u32 bufferId)
     PrepareBufferDataTransfer(battler, bufferId, gBattleResources->transferBuffer, 1);
 }
 
+void BtlController_EmitBattleMenu(u32 battler, u32 bufferId)
+{
+    gBattleResources->transferBuffer[0] = CONTROLLER_BATTLEMENU;
+    PrepareBufferDataTransfer(battler, bufferId, gBattleResources->transferBuffer, 1);
+}
+
 // Standardized Controller functions
 
 // Can be used for all the controllers.
