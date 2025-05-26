@@ -622,21 +622,33 @@ static void CB2_EndScriptedWildBattle(void)
     }
 }
 
+const enum BattleEnvironments sOptionsBattleEnvironments[] =
+{
+    BATTLE_ENVIRONMENT_GRASS,
+    BATTLE_ENVIRONMENT_LONG_GRASS,
+    BATTLE_ENVIRONMENT_SAND,
+    BATTLE_ENVIRONMENT_UNDERWATER,
+    BATTLE_ENVIRONMENT_WATER,
+    BATTLE_ENVIRONMENT_POND,
+    BATTLE_ENVIRONMENT_MOUNTAIN,
+    BATTLE_ENVIRONMENT_CAVE,
+    BATTLE_ENVIRONMENT_BUILDING,
+    BATTLE_ENVIRONMENT_PLAIN,
+    BATTLE_ENVIRONMENT_SNOW,
+    BATTLE_ENVIRONMENT_ICE
+};
+
 enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 {
     u16 tileBehavior;
     s16 x, y;
 
-    u16 envVar = VarGet(VAR_BATTLE_ENVIRONMENT);
-
-    if (envVar)
+    if (gSaveBlock2Ptr->optionsBattleEnvironment)
     {
-        if (envVar == BATTLE_ENVIRONMENT_GRASS + 100) // i'm stupid, but y'know if it ain't broke don't fix it
-            return BATTLE_ENVIRONMENT_GRASS;
-        if (envVar == 12) // 12 means random environment
-            return Random32() % 12;
+        if (gSaveBlock2Ptr->optionsBattleEnvironment == 1) // 1 means random environment from the list
+            return sOptionsBattleEnvironments[Random32() % ARRAY_COUNT(sOptionsBattleEnvironments)];
         else
-            return envVar;
+            return sOptionsBattleEnvironments[gSaveBlock2Ptr->optionsBattleEnvironment - 2]; // first two options are default and random
     }
     else
     {

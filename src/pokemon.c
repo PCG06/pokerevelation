@@ -6087,7 +6087,7 @@ bool32 IsSpeciesInRegionalDex(u16 species)
         return TRUE;
 }
 
-const u16 sRandomMusic[8] =
+const u16 sOptionsBattleMusic[] =
 {
     MUS_VS_FRONTIER_BRAIN,
     MUS_VS_TRAINER,
@@ -6129,14 +6129,12 @@ u16 GetBattleBGM(void)
     {
         enum TrainerClassID trainerClass;
 
-        u16 musVar = VarGet(VAR_BATTLE_MUSIC);
-
-        if (musVar)
+        if (gSaveBlock2Ptr->optionsBattleMusic)
         {
-            if (musVar == 1) // 1 means random music from the list
-                return sRandomMusic[Random32() % ARRAY_COUNT(sRandomMusic)];
+            if (gSaveBlock2Ptr->optionsBattleMusic == 1) // 1 means random music from the list
+                return sOptionsBattleMusic[Random32() % ARRAY_COUNT(sOptionsBattleMusic)];
             else
-                return musVar;
+                return sOptionsBattleMusic[gSaveBlock2Ptr->optionsBattleMusic - 2]; // first two options are default and random
         }
         else // The default music
         {

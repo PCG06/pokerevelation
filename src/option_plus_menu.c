@@ -13,6 +13,7 @@
 #include "text.h"
 #include "text_window.h"
 #include "international_string_util.h"
+#include "string_util.h"
 #include "strings.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
@@ -51,6 +52,7 @@ enum
     MENUITEM_BATTLE_QUICKRUN,
     MENUITEM_BATTLE_DOUBLEBATTLE,
     MENUITEM_BATTLE_MOVEINFO,
+    MENUITEM_BATTLE_BATTLEENVIRONMENT,
     MENUITEM_BATTLE_CANCEL,
     MENUITEM_BATTLE_COUNT,
 };
@@ -59,6 +61,7 @@ enum
 enum
 {
     MENUITEM_SOUND_SOUNDMODE,
+    MENUITEM_SOUND_BATTLEMUSIC,
     MENUITEM_SOUND_BIKEMUSIC,
     MENUITEM_SOUND_SURFMUSIC,
     MENUITEM_SOUND_CANCEL,
@@ -179,7 +182,9 @@ static int ThreeOptions_ProcessInput(int selection);
 static int FourOptions_ProcessInput(int selection);
 static int UNUSED ElevenOptions_ProcessInput(int selection);
 static int Sound_ProcessInput(int selection);
+static int BattleMusic_ProcessInput(int selection);
 static int FrameType_ProcessInput(int selection);
+static int BattleEnvironment_ProcessInput(int selection);
 static const u8 *const OptionTextDescription(void);
 static const u8 *const OptionTextRight(u8 menuItem);
 static u8 MenuItemCount(void);
@@ -201,7 +206,9 @@ static void BagUse_DrawChoices(int selection, int y);
 static void QuickRun_DrawChoices(int selection, int y);
 static void DoubleBattle_DrawChoices(int selection, int y);
 static void MoveInfo_DrawChoices(int selection, int y);
+static void BattleEnvironment_DrawChoices(int selection, int y);
 static void SoundMode_DrawChoices(int selection, int y);
+static void BattleMusic_DrawChoices(int selection, int y);
 static void BikeMusic_DrawChoices(int selection, int y);
 static void SurfMusic_DrawChoices(int selection, int y);
 static void DrawBgWindowFrames(void);
@@ -266,12 +273,14 @@ static const MenuItemFunctions sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_QUICKRUN]     = {QuickRun_DrawChoices,       ThreeOptions_ProcessInput},
     [MENUITEM_BATTLE_DOUBLEBATTLE] = {DoubleBattle_DrawChoices,   TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_MOVEINFO]     = {MoveInfo_DrawChoices,       TwoOptions_ProcessInput},
+    [MENUITEM_BATTLE_BATTLEENVIRONMENT] = {BattleEnvironment_DrawChoices, BattleEnvironment_ProcessInput},
     [MENUITEM_BATTLE_CANCEL]       = {NULL, NULL},
 };
 
 static const MenuItemFunctions sItemFunctionsSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUNDMODE]    = {SoundMode_DrawChoices,       Sound_ProcessInput},
+    [MENUITEM_SOUND_BATTLEMUSIC]  = {BattleMusic_DrawChoices,     BattleMusic_ProcessInput},
     [MENUITEM_SOUND_BIKEMUSIC]    = {BikeMusic_DrawChoices,       TwoOptions_ProcessInput},
     [MENUITEM_SOUND_SURFMUSIC]    = {SurfMusic_DrawChoices,       TwoOptions_ProcessInput},
     [MENUITEM_SOUND_CANCEL]       = {NULL, NULL},
@@ -297,12 +306,14 @@ static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_QUICKRUN]      = gText_QuickRun,
     [MENUITEM_BATTLE_DOUBLEBATTLE]  = gText_DoubleBattles,
     [MENUITEM_BATTLE_MOVEINFO]      = gText_MoveInfo,
+    [MENUITEM_BATTLE_BATTLEENVIRONMENT] = gText_BattleEnvironment,
     [MENUITEM_BATTLE_CANCEL]        = gText_OptionMenuSave,
 };
 
 static const u8 *const sOptionMenuItemsNamesSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUNDMODE]  = gText_Sound,
+    [MENUITEM_SOUND_BATTLEMUSIC] = gText_BattleMusic,
     [MENUITEM_SOUND_BIKEMUSIC]  = gText_BikeMusic,
     [MENUITEM_SOUND_SURFMUSIC]  = gText_SurfMusic,
     [MENUITEM_SOUND_CANCEL]     = gText_OptionMenuSave,
@@ -350,6 +361,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_QUICKRUN:
         case MENUITEM_BATTLE_DOUBLEBATTLE:
         case MENUITEM_BATTLE_MOVEINFO:
+        case MENUITEM_BATTLE_BATTLEENVIRONMENT:
         case MENUITEM_BATTLE_CANCEL:
         case MENUITEM_BATTLE_COUNT:
             return TRUE;
@@ -358,6 +370,7 @@ static bool8 CheckConditions(int selection)
         switch(selection)
         {
         case MENUITEM_SOUND_SOUNDMODE:
+        case MENUITEM_SOUND_BATTLEMUSIC:
         case MENUITEM_SOUND_BIKEMUSIC:
         case MENUITEM_SOUND_SURFMUSIC:
         case MENUITEM_SOUND_CANCEL:
@@ -402,9 +415,11 @@ static const u8 sText_Desc_BattleSpeed_1x[]     = _("Battle animations will play
 static const u8 sText_Desc_BattleSpeed_2x[]     = _("Battle animations will play in 2x\n speed.");
 static const u8 sText_Desc_BattleSpeed_3x[]     = _("Battle animations will play in 3x\n speed.");
 static const u8 sText_Desc_BattleSpeed_4x[]     = _("Battle animations will play in 4x\n speed.");
+static const u8 sText_Desc_BattleEnvironment[]  = _("Choose the environment upon which\nbattles will take place.");
 
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
+static const u8 sText_Desc_BattleMusic[]        = _("Choose the theme to play during a\nbattle.");
 static const u8 sText_Desc_BikeMusicOn[]        = _("Bike theme music will play while\ncycling.");
 static const u8 sText_Desc_BikeMusicOff[]       = _("Normal route music continues while\ncycling.");
 static const u8 sText_Desc_SurfMusicOn[]        = _("Surf theme music will play\nwhile on water.");
@@ -430,12 +445,14 @@ static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][
     [MENUITEM_BATTLE_QUICKRUN]     = {sText_Desc_QuickRunOptionR,      sText_Desc_QuickRunOptionBA,      sText_Desc_QuickRunOptionOff,   sText_Empty},
     [MENUITEM_BATTLE_DOUBLEBATTLE] = {sText_Desc_DoubleBattles_On,    sText_Desc_DoubleBattles_Off,     sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_MOVEINFO]     = {sText_Desc_MoveInfo_On,          sText_Desc_MoveInfo_Off,          sText_Empty,                    sText_Empty},
+    [MENUITEM_BATTLE_BATTLEENVIRONMENT] = {sText_Desc_BattleEnvironment, sText_Empty,                     sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                      sText_Empty,                    sText_Empty},
 };
 
 static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][3] =
 {
     [MENUITEM_SOUND_SOUNDMODE]     = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,            sText_Empty},
+    [MENUITEM_SOUND_BATTLEMUSIC]   = {sText_Desc_BattleMusic,          sText_Empty,                       sText_Empty},
     [MENUITEM_SOUND_BIKEMUSIC]     = {sText_Desc_BikeMusicOn,          sText_Desc_BikeMusicOff,           sText_Empty},
     [MENUITEM_SOUND_SURFMUSIC]     = {sText_Desc_SurfMusicOn,          sText_Desc_SurfMusicOff,           sText_Empty},
     [MENUITEM_SOUND_CANCEL]        = {sText_Desc_Save,                 sText_Empty,                       sText_Empty},
@@ -463,12 +480,14 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledBattle[MENUITEM_BATTLE
     [MENUITEM_BATTLE_QUICKRUN]    = sText_Empty,
     [MENUITEM_BATTLE_DOUBLEBATTLE]  = sText_Empty,
     [MENUITEM_BATTLE_MOVEINFO]    = sText_Empty,
+    [MENUITEM_BATTLE_BATTLEENVIRONMENT] = sText_Empty,
     [MENUITEM_BATTLE_CANCEL]      = sText_Empty,
 };
 
 static const u8 *const sOptionMenuItemDescriptionsDisabledSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUNDMODE]   = sText_Empty,
+    [MENUITEM_SOUND_BATTLEMUSIC] = sText_Empty,
     [MENUITEM_SOUND_BIKEMUSIC]   = sText_Empty,
     [MENUITEM_SOUND_SURFMUSIC]   = sText_Empty,
     [MENUITEM_SOUND_CANCEL]      = sText_Empty,
@@ -485,11 +504,15 @@ static const u8 *const OptionTextDescription(void)
         if (menuItem >= MENUITEM_BATTLE_COUNT || !CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
         selection = sOptions->sel_battle[menuItem];
+        if (menuItem == MENUITEM_BATTLE_BATTLEENVIRONMENT)
+            selection = 0;
         return sOptionMenuItemDescriptionsBattle[menuItem][selection];
     case MENU_SOUND:
         if (menuItem >= MENUITEM_SOUND_COUNT || !CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledSound[menuItem];
         selection = sOptions->sel_sound[menuItem];
+        if (menuItem == MENUITEM_SOUND_BATTLEMUSIC)
+            selection = 0;
         return sOptionMenuItemDescriptionsSound[menuItem][selection];
     default:
     case MENU_GENERAL:
@@ -808,8 +831,10 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN]      = gSaveBlock2Ptr->optionsQuickRunButton;
         sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE]  = gSaveBlock2Ptr->optionsDoubleBattlesOff;
         sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO]      = gSaveBlock2Ptr->optionsShowBattleMoveInfoOff;
+        sOptions->sel_battle[MENUITEM_BATTLE_BATTLEENVIRONMENT] = gSaveBlock2Ptr->optionsBattleEnvironment;
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE]       = gSaveBlock2Ptr->optionsSound;
+        sOptions->sel_sound[MENUITEM_SOUND_BATTLEMUSIC]     = gSaveBlock2Ptr->optionsBattleMusic;
         sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC]       = gSaveBlock2Ptr->optionsBikeMusicOff;
         sOptions->sel_sound[MENUITEM_SOUND_SURFMUSIC]       = gSaveBlock2Ptr->optionsSurfMusicOff;
 
@@ -1045,8 +1070,10 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsQuickRunButton   = sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN];
     gSaveBlock2Ptr->optionsDoubleBattlesOff = sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE];
     gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO];
+    gSaveBlock2Ptr->optionsBattleEnvironment = sOptions->sel_battle[MENUITEM_BATTLE_BATTLEENVIRONMENT];
 
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE];
+    gSaveBlock2Ptr->optionsBattleMusic      = sOptions->sel_sound[MENUITEM_SOUND_BATTLEMUSIC];
     gSaveBlock2Ptr->optionsBikeMusicOff     = sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC];
     gSaveBlock2Ptr->optionsSurfMusicOff     = sOptions->sel_sound[MENUITEM_SOUND_SURFMUSIC];
 
@@ -1203,6 +1230,25 @@ static int Sound_ProcessInput(int selection)
     return selection;
 }
 
+static int BattleMusic_ProcessInput(int selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (selection < OPTIONS_BATTLE_MUSIC_COUNT - 1)
+            selection++;
+        else
+            selection = 0;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection != 0)
+            selection--;
+        else
+            selection = OPTIONS_BATTLE_MUSIC_COUNT - 1;
+    }
+    return selection;
+}
+
 static int FrameType_ProcessInput(int selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
@@ -1224,6 +1270,25 @@ static int FrameType_ProcessInput(int selection)
 
         LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
         LoadPalette(GetWindowFrameTilesPal(selection)->pal, 0x70, 0x20);
+    }
+    return selection;
+}
+
+static int BattleEnvironment_ProcessInput(int selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (selection < OPTIONS_BATTLE_ENVIRONMENT_COUNT - 1)
+            selection++;
+        else
+            selection = 0;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection != 0)
+            selection--;
+        else
+            selection = OPTIONS_BATTLE_ENVIRONMENT_COUNT - 1;
     }
     return selection;
 }
@@ -1458,6 +1523,34 @@ static void MoveInfo_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
+static void BattleEnvironment_DrawChoices(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_BATTLE_BATTLEENVIRONMENT);
+
+    static const u8 *const sBattleEnvironmentNames[] = {
+        gText_Default,
+        gText_Random,
+        gText_Grass,
+        gText_LongGrass,
+        gText_Sand,
+        gText_Underwater,
+        gText_Water,
+        gText_Pond,
+        gText_Mountain,
+        gText_Cave,
+        gText_Building,
+        gText_Plain,
+        gText_Snow,
+        gText_IceBg
+    };
+
+    if (selection >= ARRAY_COUNT(sBattleEnvironmentNames))
+        selection = 0;
+
+    DrawOptionMenuChoice(gText_FrameTypeNumber, 104, y, 0, active);
+    DrawOptionMenuChoice(sBattleEnvironmentNames[selection], 128, y, 1, active);
+}
+
 static void SoundMode_DrawChoices(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_SOUND_SOUNDMODE);
@@ -1467,6 +1560,31 @@ static void SoundMode_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_SoundMono, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1], active);
 }
+
+static void BattleMusic_DrawChoices(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_BATTLEMUSIC);
+
+    static const u8 *const sBattleMusicNames[] = {
+        gText_Default,
+        gText_Random,
+        gText_Frontier,
+        gText_Trainer,
+        gText_Rival,
+        gText_GymLeader,
+        gText_EliteFour,
+        gText_Champion,
+        gText_AquaMagma,
+        gText_Wild,
+    };
+
+    if (selection >= ARRAY_COUNT(sBattleMusicNames))
+        selection = 0;
+
+    DrawOptionMenuChoice(gText_VSMusic, 104, y, 0, active);
+    DrawOptionMenuChoice(sBattleMusicNames[selection], 128, y, 1, active);
+}
+
 
 static void BikeMusic_DrawChoices(int selection, int y)
 {

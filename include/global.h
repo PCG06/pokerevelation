@@ -593,7 +593,9 @@ struct SaveBlock2
              u16 optionsQuickRunButton:2; // OPTIONS_QUICK_RUN[R_BUTTON/B_BUTTON/OFF]
              u16 optionsDoubleBattlesOff:1; // whether all trainer battles should be doubles
              u16 optionsShowBattleMoveInfoOff:1; // whether to show battle move info
+             u16 optionsBattleEnvironment:4; // Specifies one of the 12 battle themes, plus 2 (1 default, 1 random) for battle
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
+             u8 optionsBattleMusic:4; // Specifies one of the 8 battle themes, plus 2 (1 default, 1 random) for battle
              u16 optionsBikeMusicOff:1; // whether cycling music is disabled
              u16 optionsSurfMusicOff:1; // whether surfing music is disabled
              u16 regionMapZoom:1; // whether the map is zoomed in

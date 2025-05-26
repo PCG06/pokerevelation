@@ -178,6 +178,10 @@
 #define OPTIONS_SOUND_MONO 0
 #define OPTIONS_SOUND_STEREO 1
 
+#define OPTIONS_BATTLE_MUSIC_COUNT 10
+
+#define OPTIONS_BATTLE_ENVIRONMENT_COUNT 14
+
 #define DIR_NONE        0
 #define DIR_SOUTH       1
 #define DIR_NORTH       2

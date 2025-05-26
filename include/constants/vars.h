@@ -266,8 +266,8 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_BATTLE_MUSIC                                 0x40F7
-#define VAR_BATTLE_ENVIRONMENT                           0x40F8
+#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
+#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
 #define VAR_BATTLES_WON                                  0x40F9
 #define VAR_BATTLES_LOST                                 0x40FA
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
