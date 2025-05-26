@@ -407,15 +407,15 @@ void UI_Battle_Menu_Init(MainCallback callback)
     sMenuDataPtr->numStatusInfo[B_POSITION_OPPONENT_RIGHT] = 0;
 
     SetUIBattler();
-    for(i = 0; i < NUM_SPRITES; i++)
+    for (i = 0; i < NUM_SPRITES; i++)
         sMenuDataPtr->spriteIds[i] = SPRITE_NONE;
     sMenuDataPtr->savedCallback = callback;
 
-    for(i = 0; i < NUM_FIELD_INFO; i++)
+    for (i = 0; i < NUM_FIELD_INFO; i++)
         sMenuDataPtr->fieldInfo[i] = NUM_FIELD_INFO;
 
     //Field Info
-    for(i = 0; i < NUM_FIELD_INFO; i++)
+    for (i = 0; i < NUM_FIELD_INFO; i++)
     {
         isExtraInfoShown = FALSE;
         switch (i)
@@ -458,37 +458,37 @@ void UI_Battle_Menu_Init(MainCallback callback)
     }
 
     //Player Side Info
-    for(i = 0; i < NUM_SIDE_INFO; i++)
+    for (i = 0; i < NUM_SIDE_INFO; i++)
     {
         isExtraInfoShown = FALSE;
         switch (i)
         {
         case SIDE_INFO_AURORA_VEIL:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_AURORA_VEIL)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_AURORA_VEIL)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_REFLECT:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_REFLECT)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_REFLECT)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_LIGHT_SCREEN:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_LIGHTSCREEN)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_LIGHTSCREEN)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TAILWIND:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TAILWIND)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TAILWIND)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SPIKES:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SPIKES)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SPIKES)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TOXIC_SPIKES:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TOXIC_SPIKES)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TOXIC_SPIKES)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEALTH_ROCK:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_STEALTH_ROCK)
+            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_STEALTH_ROCK)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEEL_SURGE:
@@ -529,65 +529,65 @@ void UI_Battle_Menu_Init(MainCallback callback)
     }
 
     //Enemy Side Info
-    for(i = 0; i < NUM_SIDE_INFO; i++)
+    for (i = 0; i < NUM_SIDE_INFO; i++)
     {
         isExtraInfoShown = FALSE;
         switch (i)
         {
         case SIDE_INFO_AURORA_VEIL:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_AURORA_VEIL)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_AURORA_VEIL)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_REFLECT:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_REFLECT)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_REFLECT)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_LIGHT_SCREEN:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_LIGHTSCREEN)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_LIGHTSCREEN)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TAILWIND:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_TAILWIND)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_TAILWIND)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SPIKES:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SPIKES)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SPIKES)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TOXIC_SPIKES:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_TOXIC_SPIKES)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_TOXIC_SPIKES)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEALTH_ROCK:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEALTH_ROCK)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEALTH_ROCK)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEEL_SURGE:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEELSURGE)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEELSURGE)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STICKY_WEB:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STICKY_WEB)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STICKY_WEB)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SAFEGUARD:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SAFEGUARD)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SAFEGUARD)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_MIST:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_MIST)
+            if (gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_MIST)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_RAINBOW:
-            if(gSideTimers[B_SIDE_OPPONENT].rainbowTimer)
+            if (gSideTimers[B_SIDE_OPPONENT].rainbowTimer)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SEA_OF_FIRE:
-            if(gSideTimers[B_SIDE_OPPONENT].seaOfFireTimer)
+            if (gSideTimers[B_SIDE_OPPONENT].seaOfFireTimer)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SWAMP:
-            if(gSideTimers[B_SIDE_OPPONENT].swampTimer)
+            if (gSideTimers[B_SIDE_OPPONENT].swampTimer)
                 isExtraInfoShown = TRUE;
             break;
         }
@@ -683,39 +683,39 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_YAWN:
-                if(gStatuses3[j] & STATUS3_YAWN)
+                if (gStatuses3[j] & STATUS3_YAWN)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_GRUDGE:
-                if(gStatuses3[j] & STATUS3_GRUDGE)
+                if (gStatuses3[j] & STATUS3_GRUDGE)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_GASTRO_ACID:
-                if(gStatuses3[j] & STATUS3_GASTRO_ACID)
+                if (gStatuses3[j] & STATUS3_GASTRO_ACID)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_EMBARGO:
-                if(gStatuses3[j] & STATUS3_EMBARGO)
+                if (gStatuses3[j] & STATUS3_EMBARGO)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SMACKED_DOWN:
-                if(gStatuses3[j] & STATUS3_SMACKED_DOWN)
+                if (gStatuses3[j] & STATUS3_SMACKED_DOWN)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_MIRACLE_EYED:
-                if(gStatuses3[j] & STATUS3_MIRACLE_EYED)
+                if (gStatuses3[j] & STATUS3_MIRACLE_EYED)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_HEAL_BLOCKED:
-                if(gStatuses3[j] & STATUS3_HEAL_BLOCK)
+                if (gStatuses3[j] & STATUS3_HEAL_BLOCK)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_AQUA_RING:
-                if(gStatuses3[j] & STATUS3_AQUA_RING)
+                if (gStatuses3[j] & STATUS3_AQUA_RING)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_MAGNET_RISE:
-                if(gStatuses3[j] & STATUS3_MAGNET_RISE)
+                if (gStatuses3[j] & STATUS3_MAGNET_RISE)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SEMI_INVULNERABLE:
@@ -723,7 +723,7 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_ELECTRIFIED:
-                if(gStatuses4[j] & STATUS4_ELECTRIFIED)
+                if (gStatuses4[j] & STATUS4_ELECTRIFIED)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_PROTOSYNTHESIS:
@@ -744,7 +744,7 @@ void UI_Battle_Menu_Init(MainCallback callback)
                 break;
             }
 
-            if(isExtraInfoShown && IsBattlerAlive(j))
+            if (isExtraInfoShown && IsBattlerAlive(j))
             {
                 sMenuDataPtr->BattlerStatus[sMenuDataPtr->numStatusInfo[j]][j] = i;
                 sMenuDataPtr->numStatusInfo[j]++;
@@ -921,7 +921,7 @@ void LoadTilemapFromMode(void)
                 LZDecompressWram(sMenu_Tilemap_Singles_Battler_Abilities, sBg1TilemapBuffer);
             break;
         default:
-            if(sMenuDataPtr->isDoubleBattle)
+            if (sMenuDataPtr->isDoubleBattle)
                 LZDecompressWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
             else
                 LZDecompressWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
@@ -1388,7 +1388,7 @@ static void PrintStatsTab(void)
                 statStage = DEFAULT_STAT_STAGE - statStage;
             }
 
-            for(j = 0; j < statStage; j++)
+            for (j = 0; j < statStage; j++)
             {
                 if (statStageUp)
                     BlitBitmapToWindow(windowId, sStatUpArrow, ((x + j) * 8) + x2, (y * 8), 8, 8);
@@ -1665,7 +1665,7 @@ static void PrintMoveInfo(u16 move, u8 x, u8 y, u8 moveIdx)
     {
     case MOVE_MODE_NORMAL:
         // Move Power ---------------------------------------------------------------------------------------------------
-        if(!isStatusMove)
+        if (!isStatusMove)
             ConvertIntToDecimalStringN(gStringVar1, movePower, STR_CONV_MODE_LEFT_ALIGN, 3);
         else
             StringCopy(gStringVar1, gText_Target_Nothing);
@@ -1709,7 +1709,7 @@ static void PrintMoveInfo(u16 move, u8 x, u8 y, u8 moveIdx)
         StringExpandPlaceholders(gStringVar4, gText_CurrentPP);
         AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
         //Stab
-        if(!isStatusMove) //No stab boost for status moves
+        if (!isStatusMove) //No stab boost for status moves
         {
             if (stab)
                 StringCopy(gStringVar1, gText_Boost_True);
@@ -2026,7 +2026,7 @@ static void PrintStatusTab(void)
                 StringCopy(gStringVar1, sText_Title_Status_Poison_Description);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
             }
-            else if(gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_BURN)
+            else if (gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_BURN)
             {
                 //Burn
                 StringCopy(gStringVar1, sText_Title_Status_Burn);
@@ -2036,7 +2036,7 @@ static void PrintStatusTab(void)
                 StringCopy(gStringVar1, sText_Title_Status_Burn_Description);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
             }
-            else if(gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_FREEZE)
+            else if (gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_FREEZE)
             {
                 //Freeze - Unused rn
                 StringCopy(gStringVar1, sText_Title_Status_Freeze);
@@ -2046,7 +2046,7 @@ static void PrintStatusTab(void)
                 StringCopy(gStringVar1, sText_Title_Status_Freeze_Description);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
             }
-            else if(gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_PARALYSIS)
+            else if (gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_PARALYSIS)
             {
                 //Paralysis
                 StringCopy(gStringVar1, sText_Title_Status_Paralysis);
@@ -2056,7 +2056,7 @@ static void PrintStatusTab(void)
                 StringCopy(gStringVar1, sText_Title_Status_Paralysis_Description);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
             }
-            else if(gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_TOXIC_POISON)
+            else if (gBattleMons[sMenuDataPtr->battlerId].status1 & STATUS1_TOXIC_POISON)
             {
                 //Toxic Poison
                 StringCopy(gStringVar1, sText_Title_Status_Bad_Poison);
@@ -2152,10 +2152,12 @@ static void PrintStatusTab(void)
             case STATUS_INFO_INFUATION:
             {
 
-                for(i = 0; i < gBattlersCount; i++){
+                for (i = 0; i < gBattlersCount; i++)
+                {
                     if ((gBattleMons[sMenuDataPtr->battlerId].status2 & STATUS2_INFATUATION) && 
                         (gBattleMons[sMenuDataPtr->battlerId].status2 & STATUS2_INFATUATED_WITH(i)) &&
-                        i != sMenuDataPtr->battlerId){
+                        i != sMenuDataPtr->battlerId)
+                        {
                             gBattleScripting.battler = i;
                             break;
                         }
@@ -2477,7 +2479,7 @@ static void PrintStatusTab(void)
                 printedInfo = TRUE;
             break;
         }
-        if(printedInfo)
+        if (printedInfo)
             y = y + MAX_DESCRIPTION_LINES + 2;
     }
 
@@ -2533,7 +2535,7 @@ static void PrintPartyTab(void)
     {
         x = 9 + ((partyIndex % 3) * 7); //PARTY_POKEMON_ICON_X / 8
 
-        if(partyIndex >= 6)
+        if (partyIndex >= 6)
         {
             u8 enemyIndex = partyIndex - 6;
             y = 13 + ((enemyIndex / 3) * 3); //PARTY_POKEMON_ICON_Y / 8
@@ -2548,7 +2550,7 @@ static void PrintPartyTab(void)
     CopyWindowToVram(windowId, 3);
 }
 
-//Weathers
+// Weathers
 const u8 sText_Title_Field_Weather[]                      = _("Weather: {STR_VAR_1}");
 const u8 sText_Title_Field_Weather_Rain[]                 = _("Rain");
 const u8 sText_Title_Field_Weather_Sun[]                  = _("Sun");
@@ -2558,7 +2560,7 @@ const u8 sText_Title_Field_Weather_Snow[]                 = _("Snow");
 const u8 sText_Title_Field_Weather_Strong_Winds[]         = _("Strong Winds");
 const u8 sText_Title_Field_Weather_Rain_Primal[]          = _("Primal Rain");
 const u8 sText_Title_Field_Weather_Sun_Primal[]           = _("Primal Sun");
-const u8 sText_Title_Field_Weather_EerieFog[]             = _("Eerie Fog");
+const u8 sText_Title_Field_Weather_Fog[]                  = _("Fog");
 
 const u8 sText_Title_Field_Weather_Description_Rain[]         = _("Strengthens Water-type moves by\n"
                                                                   "50% while weakening Fire-type\n"
@@ -2566,25 +2568,28 @@ const u8 sText_Title_Field_Weather_Description_Rain[]         = _("Strengthens W
 const u8 sText_Title_Field_Weather_Description_Sun[]          = _("Strengthens the power of Fire-type\n"
                                                                   "moves by 50% and weakens Water-type\n"
                                                                   "moves by 50%.");
-const u8 sText_Title_Field_Weather_Description_Sandstorm[]    = _("Any Pokémon that is not Beast, Earth\n"
-                                                                  "or Steel-type will be damaged for\n"
-                                                                  "1/16 of its maximum HP each turn.");
+const u8 sText_Title_Field_Weather_Description_Sandstorm[]    = _("Damages non-Rock, Ground, or\n"
+                                                                  "Steel-types each turn. Boosts the\n"
+                                                                  "Sp. Def of Rock-type Pokémon by 50%.");
 const u8 sText_Title_Field_Weather_Description_Hail[]         = _("Any Pokémon that is not Ice-type\n"
                                                                   "will be damaged each turn, Pokémon\n"
                                                                   "are twice as likely to get frostbite.");
-const u8 sText_Title_Field_Weather_Description_Strong_Winds[] = _("Causes Wind, Ice, and Rock-type\n"
-                                                                  "moves to deal neutral damage to \n"
-                                                                  "Flying-type Pokémon.");
+const u8 sText_Title_Field_Weather_Description_Snow[]         = _("Boosts the Defense of Ice-type\n"
+                                                                  "Pokémon by 50%.");
+const u8 sText_Title_Field_Weather_Description_Strong_Winds[] = _("Flying-type Pokémon lose their\n"
+                                                                  "weaknesses to Electric, Ice, and\n"
+                                                                  "Rock.");
 const u8 sText_Title_Field_Weather_Description_Primal_Rain[]  = _("Boosts the power of Water-type\n"
                                                                   "moves and protects Pokémon from\n"
                                                                   "Fire-type moves.");
-const u8 sText_Title_Field_Weather_Description_Primal_Sun[]  = _("Boosts the power of Fire-type\n"
-                                                                 "moves and protects Pokémon from\n"
-                                                                 "Water-type moves.");
-const u8 sText_Title_Field_Weather_Description_EerieFog[]    = _("Makes Ghost-type Pokémon harder\n"
-                                                                 "to hit and reduces stat gains for\n"
-                                                                 "non-Ghost and Psychic types.");
-//Terrains
+const u8 sText_Title_Field_Weather_Description_Primal_Sun[]   = _("Boosts the power of Fire-type\n"
+                                                                  "moves and protects Pokémon from\n"
+                                                                  "Water-type moves.");
+const u8 sText_Title_Field_Weather_Description_Fog[]          = _("Reduces the accuracy of all\n"
+                                                                  "moves by 30%, except those that\n"
+                                                                  "skip accuracy check.");
+
+// Terrains
 const u8 sText_Title_Field_Terrain[]                      = _("{STR_VAR_1} Terrain");
 const u8 sText_Title_Field_Terrain_Electric[]             = _("Electric");
 const u8 sText_Title_Field_Terrain_Psychic[]              = _("Psychic");
@@ -2592,18 +2597,18 @@ const u8 sText_Title_Field_Terrain_Misty[]                = _("Misty");
 const u8 sText_Title_Field_Terrain_Grassy[]               = _("Grassy");
 
 const u8 sText_Title_Field_Terrain_Description_Electric[]    = _("Pokémon on the ground won't fall\n"
-                                                                 "asleep. The power of Wind-type\n"
+                                                                 "asleep. The power of Electric-type\n"
                                                                  "moves is boosted.");
 const u8 sText_Title_Field_Terrain_Description_Psychic[]     = _("Pokémon on the ground won't be hit\n"
                                                                 "by priority moves. The power of\n"
-                                                                "Reason-type moves is boosted.");
+                                                                "Grass-type moves is boosted.");
 const u8 sText_Title_Field_Terrain_Description_Misty[]       = _("Pokémon on the ground won't get any\n"
                                                                  "status conditions. The power of\n"
-                                                                 "Heart-type moves is boosted.");
-const u8 sText_Title_Field_Terrain_Description_Grassy[]      = _("Increases the power of Nature-type\n"
+                                                                 "Dragon-type moves is reduced.");
+const u8 sText_Title_Field_Terrain_Description_Grassy[]      = _("Increases the power of Grass-type\n"
                                                                  "moves, Restores 1/16 HP to all\n"
                                                                  "Pokémon on the ground each turn.");
-//Rooms
+// Rooms
 const u8 sText_Title_Field_Trick_Room[]                      = _("Trick Room");
 const u8 sText_Title_Field_Room_Description_Trick[]          = _("The move order is reversed, slower\n"
                                                                  "Pokémon will attack before faster\n"
@@ -2623,10 +2628,10 @@ const u8 sText_Title_Field_Inverse_Room[]                   = _("Inverse Room:")
 const u8 sText_Title_Field_Inverse_Description[]            = _("The type effectiveness are inversed.\n"
                                                                 "Any type that would be resistant or\n"
                                                                 "immune to another type is now weak.");
-//Other
+// Other
 const u8 sText_Title_Field_Ion_Deluge[]                     = _("Ion Deluge");
 const u8 sText_Title_Field_Ion_Deluge_Description[]         = _("Causes all the Normal-type moves to\n"
-                                                                "become Electric-type instad,\n"
+                                                                "become Electric-type instead,\n"
                                                                 "including status moves.");
 const u8 sText_Title_Field_Quash[]                          = _("Quash");
 const u8 sText_Title_Field_Quash_Description[]              = _("Suppresses priority, stat boosts,\n"
@@ -2634,6 +2639,7 @@ const u8 sText_Title_Field_Quash_Description[]              = _("Suppresses prio
                                                                 "determining turn order.");
 const u8 sText_Title_Field_No_Effect[]                      = _("Field has no effect");
 const u8 sText_Title_Field_No_Effect_Description[]          = _("The field has no special effect.");
+
 static void PrintFieldTab(void)
 {
     u8 i;
@@ -2660,36 +2666,36 @@ static void PrintFieldTab(void)
     x2 = 0;
     y2 = -4;
 
-    if(sMenuDataPtr->numFields < maxLines)
+    if (sMenuDataPtr->numFields < maxLines)
         maxLines = sMenuDataPtr->numFields;
     
-    for(i = 0; i < maxLines; i++)
+    for (i = 0; i < maxLines; i++)
     {
         printedInfo = FALSE;
-        //switch(sMenuDataPtr->fieldInfo[(i ) % NUM_FIELD_INFO]){
+        //switch(sMenuDataPtr->fieldInfo[(i ) % NUM_FIELD_INFO])
         switch(sMenuDataPtr->fieldInfo[(i + sMenuDataPtr->currentFieldInfo) % sMenuDataPtr->numFields])
         {
             case FIELD_INFO_WEATHER:
                 //Title
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, sText_Title_Field_Weather);
-                if((gBattleWeather & B_WEATHER_RAIN) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL))
+                if ((gBattleWeather & B_WEATHER_RAIN) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Rain);
-                else if((gBattleWeather & B_WEATHER_SUN) && !(gBattleWeather & B_WEATHER_SUN_PRIMAL))
+                else if ((gBattleWeather & B_WEATHER_SUN) && !(gBattleWeather & B_WEATHER_SUN_PRIMAL))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Sun);
-                else if((gBattleWeather & B_WEATHER_SANDSTORM))
+                else if ((gBattleWeather & B_WEATHER_SANDSTORM))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Sandstorm);
-                else if((gBattleWeather & B_WEATHER_HAIL))
+                else if ((gBattleWeather & B_WEATHER_HAIL))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Hail);
-                else if((gBattleWeather & B_WEATHER_SNOW))
+                else if ((gBattleWeather & B_WEATHER_SNOW))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Snow);
-                else if((gBattleWeather & B_WEATHER_STRONG_WINDS))
+                else if ((gBattleWeather & B_WEATHER_STRONG_WINDS))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Strong_Winds);
-                else if((gBattleWeather & B_WEATHER_RAIN_PRIMAL))
+                else if ((gBattleWeather & B_WEATHER_RAIN_PRIMAL))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Rain_Primal);
-                else if((gBattleWeather & B_WEATHER_SUN_PRIMAL))
+                else if ((gBattleWeather & B_WEATHER_SUN_PRIMAL))
                     StringCopy(gStringVar1, sText_Title_Field_Weather_Sun_Primal);
                 else if (gBattleWeather & B_WEATHER_FOG)
-                    StringCopy(gStringVar1, sText_Title_Field_Weather_EerieFog);
+                    StringCopy(gStringVar1, sText_Title_Field_Weather_Fog);
                 else
                     StringCopy(gStringVar1, sText_Title_Field_None);
 
@@ -2721,9 +2727,9 @@ static void PrintFieldTab(void)
                     else if (gBattleWeather & B_WEATHER_HAIL)
                         StringCopy(gStringVar1, sText_Title_Field_Weather_Description_Hail);
                     else if (gBattleWeather & B_WEATHER_SNOW)
-                        StringCopy(gStringVar1, sText_Title_Field_Weather_Description_Hail);
+                        StringCopy(gStringVar1, sText_Title_Field_Weather_Description_Snow);
                     else if (gBattleWeather & B_WEATHER_FOG)
-                        StringCopy(gStringVar1, sText_Title_Field_Weather_Description_EerieFog);
+                        StringCopy(gStringVar1, sText_Title_Field_Weather_Description_Fog);
                     
                     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
                 }
@@ -2848,7 +2854,7 @@ static void PrintFieldTab(void)
                 printedInfo = TRUE;
             break;
         }
-        if(printedInfo)
+        if (printedInfo)
             y = y + MAX_DESCRIPTION_LINES + 2;
     }
 
@@ -2901,10 +2907,10 @@ const u8 sText_Title_Side_Stealth_Rock[]                   = _("Stealth Rock");
 const u8 sText_Title_Side_Stealth_Rock_Description[]       = _("Pokémon who switch in receive dmg,\n"
                                                                "the amount varies depending by the\n"
                                                                "effectiveness of Rock against it.");
-const u8 sText_Title_Side_Creeping_Thorns[]                = _("Creeping Thorns");
-const u8 sText_Title_Side_Creeping_Thorns_Description[]    = _("Pokémon who switch in receive dmg,\n"
+const u8 sText_Title_Side_Steelsurge[]                     = _("Steelsurge");
+const u8 sText_Title_Side_Steelsurge_Description[]         = _("Pokémon who switch in receive dmg,\n"
                                                                "the amount varies depending by the\n"
-                                                               "effectiveness of Grass against it.");
+                                                               "effectiveness of Steel against it.");
 const u8 sText_Title_Side_Sticky_Web[]                     = _("Sticky Web");
 const u8 sText_Title_Side_Sticky_Web_Description[]         = _("Pokémon who switch into the field\n"
                                                                "get their Speed stat lowered by\n"
@@ -2929,10 +2935,6 @@ const u8 sText_Title_Side_Swamp[]                           = _("Swamp");
 const u8 sText_Title_Side_Swamp_Description[]               = _("A deep swamp reduces the speed\n"
                                                                "stat of Pokémon on this side\n"
                                                                "by 75%.");
-const u8 sText_Title_Side_Smokescreen[ ]                   = _("Smokescreen");
-const u8 sText_Title_Side_Smokescreen_Description[]        = _("Reduces the chance to hit the\n"
-                                                               "user by 25%. Can be lifted by\n"
-                                                               "moves like Defog.");
 const u8 sText_Title_Side_No_Effect[]                       = _("No Effect");
 const u8 sText_Title_Side_No_Effect_Description[]           = _("This side has no special effect.");
 
@@ -2973,7 +2975,7 @@ static void PrintSideTab(u8 side)
     switch(side)
     {
     case B_SIDE_PLAYER:
-        if(sMenuDataPtr->numSideInfoPlayer < maxLines)
+        if (sMenuDataPtr->numSideInfoPlayer < maxLines)
             maxLines = sMenuDataPtr->numSideInfoPlayer;
         //sMenuDataPtr->currentSideInfoPlayer
         break;
@@ -3120,11 +3122,11 @@ static void PrintSideTab(u8 side)
             printedInfo = TRUE;
             break;
         case SIDE_INFO_STEEL_SURGE:
-            StringCopy(gStringVar1, sText_Title_Side_Creeping_Thorns);
+            StringCopy(gStringVar1, sText_Title_Side_Steelsurge);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
 
             //Description
-            StringCopy(gStringVar1, sText_Title_Side_Creeping_Thorns_Description);
+            StringCopy(gStringVar1, sText_Title_Side_Steelsurge_Description);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar1);
 
             printedInfo = TRUE;
@@ -3331,7 +3333,7 @@ static u8 ShowSpeciesIconParty(u8 num, bool8 isEnemyParty, u8 x, u8 y)
     u32 personality;
     u8 spriteId;
 
-    if(isEnemyParty)
+    if (isEnemyParty)
         party = gEnemyParty;
     else
         party = gPlayerParty;
@@ -3341,11 +3343,12 @@ static u8 ShowSpeciesIconParty(u8 num, bool8 isEnemyParty, u8 x, u8 y)
 
 	LoadMonIconPalette(species);
 
-    if(species == SPECIES_NONE)
+    if (species == SPECIES_NONE)
         return 0;
 
-    if(isEnemyParty){
-        if(sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_ENEMY + num] != SPRITE_NONE) //Already created
+    if (isEnemyParty)
+    {
+        if (sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_ENEMY + num] != SPRITE_NONE) //Already created
             return sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_ENEMY + num];
         
         sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_ENEMY + num] = CreateMonIcon(species, SpriteCB_PartyMons, x, y, 0, personality);
@@ -3354,7 +3357,7 @@ static u8 ShowSpeciesIconParty(u8 num, bool8 isEnemyParty, u8 x, u8 y)
         spriteId = sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_ENEMY + num];
     }
     else{
-        if(sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_PLAYER + num] != SPRITE_NONE) //Already created
+        if (sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_PLAYER + num] != SPRITE_NONE) //Already created
             return sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_PLAYER + num];
         
         sMenuDataPtr->spriteIds[SPRITE_ARR_ID_MON_ICON_1_PARTY_PLAYER + num] = CreateMonIcon(species, SpriteCB_PartyMons, x, y, 0, personality);
@@ -3649,7 +3652,7 @@ static void Task_MenuMain(u8 taskId)
             switch (sMenuDataPtr->tabId)
             {
             case TAB_MOVES:
-                if(sMenuDataPtr->moveModeId != NUM_MOVE_MODES - 1)
+                if (sMenuDataPtr->moveModeId != NUM_MOVE_MODES - 1)
                     sMenuDataPtr->moveModeId++;
                 else
                     sMenuDataPtr->moveModeId = 0;
@@ -3733,7 +3736,7 @@ static void Task_MenuMain(u8 taskId)
     {
         if (sMenuDataPtr->modeId == MODE_FIELD && sMenuDataPtr->fieldTabId == TAB_PARTY && sMenuDataPtr->partySelectorMode)
         {
-            if(sMenuDataPtr->partyMenuSelectorID_Y != 0)
+            if (sMenuDataPtr->partyMenuSelectorID_Y != 0)
                 sMenuDataPtr->partyMenuSelectorID_Y--;
             else
                 sMenuDataPtr->partyMenuSelectorID_Y = PARTY_TAB_NUM_MONS_Y - 1;
@@ -3743,14 +3746,14 @@ static void Task_MenuMain(u8 taskId)
         {
             if (sMenuDataPtr->isDoubleBattle)
             {
-                if(sMenuDataPtr->modeId != 0)
+                if (sMenuDataPtr->modeId != 0)
                     sMenuDataPtr->modeId--;
                 else
                     sMenuDataPtr->modeId = NUM_MODES - 1;
             }
             else
             {
-                if(sMenuDataPtr->modeId != MODE_BATTLER0)
+                if (sMenuDataPtr->modeId != MODE_BATTLER0)
                     sMenuDataPtr->modeId--;
                 else
                     sMenuDataPtr->modeId = MODE_BATTLER1;
@@ -3798,7 +3801,7 @@ static void Task_MenuMain(u8 taskId)
         case MODE_FIELD:
             if (sMenuDataPtr->fieldTabId == TAB_PARTY && sMenuDataPtr->partySelectorMode)
             {
-                if(sMenuDataPtr->partyMenuSelectorID_X < PARTY_TAB_NUM_MONS_X - 1)
+                if (sMenuDataPtr->partyMenuSelectorID_X < PARTY_TAB_NUM_MONS_X - 1)
                     sMenuDataPtr->partyMenuSelectorID_X++;
                 else
                     sMenuDataPtr->partyMenuSelectorID_X = 0;

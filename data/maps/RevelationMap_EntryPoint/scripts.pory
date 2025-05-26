@@ -131,7 +131,7 @@ script RevelationMap_EntryPoint_TriggerLadyAkshara { // Ice-type Trainer
 	emote(LOCALID_LADY, EMOTE_EXCLAM)
 	applymove(LOCALID_LADY, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_RASHEL, "Akshara: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
+	trainerbattle_single(TRAINER_AKSHARA, "Akshara: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
 	msgbox("Akshara:  After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
