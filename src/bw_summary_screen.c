@@ -44,6 +44,8 @@
 #include "text.h"
 #include "tv.h"
 #include "window.h"
+#include "battle_setup.h"
+#include "overworld.h"
 #include "constants/battle_move_effects.h"
 #include "constants/hold_effects.h"
 #include "constants/items.h"
@@ -3977,7 +3979,10 @@ static void PrintMonOTName(void)
     }
     else
     {
-        StringCopy(gStringVar1, sText_RentalPkmn);
+        if (GetCurrentRegionMapSectionId() == MAPSEC_REVELATION_MAPS)
+            StringCopy(gStringVar1, GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA));
+        else
+            StringCopy(gStringVar1, sText_RentalPkmn);
         PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM), gStringVar1, 12, 4, 0, 0);
     }
 }
