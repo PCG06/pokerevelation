@@ -141,9 +141,9 @@ TEST("Print mons")
         DebugPrintf("    \"height\": \"%d.%d m\",",  currSpecies->height / 10,  currSpecies->height % 10);
         DebugPrintf("    \"weight\": \"%d.%d kg\",",  currSpecies->weight / 10,  currSpecies->weight % 10);
         if (currSpecies->itemCommon)
-            DebugPrintf("    \"itemCommon\": \"%S\",", ItemId_GetName(currSpecies->itemCommon));
+            DebugPrintf("    \"itemCommon\": \"%S\",", GetItemName(currSpecies->itemCommon));
         if (currSpecies->itemRare)
-            DebugPrintf("    \"itemRare\": \"%S\",", ItemId_GetName(currSpecies->itemRare));
+            DebugPrintf("    \"itemRare\": \"%S\",", GetItemName(currSpecies->itemRare));
         DebugPrintf("    \"eggCycles\": %u,", currSpecies->eggCycles);
         DebugPrintf("    \"monCategory\": \"%S\",", currSpecies->categoryName);
         DebugPrintf("    \"natDexNum\": %u,", currSpecies->natDexNum);

@@ -1332,7 +1332,7 @@ static void PrintStatsTab(void)
     else
         StringCopy(gStringVar1, sText_None);
     StringExpandPlaceholders(gStringVar4, sText_Title_Held_Item);
-    //StringCopy(gStringVar1, ItemId_GetDescription(gBattleMons[sMenuDataPtr->battlerId].item));
+    //StringCopy(gStringVar1, GetItemDescription(gBattleMons[sMenuDataPtr->battlerId].item));
     StringExpandPlaceholders(gStringVar4, sText_Title_Held_Item);
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
 
