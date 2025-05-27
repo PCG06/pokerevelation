@@ -518,6 +518,13 @@ struct PokemonSets
     u16 moves[MAX_MON_MOVES];
 };
 
+struct OTStruct
+{
+    u8 id;
+    u8 name[TRAINER_NAME_LENGTH + 1];
+    u8 gender;
+};
+
 enum {
     AFFINE_NONE,
     AFFINE_TURN_UP,
@@ -654,6 +661,7 @@ extern const struct NatureInfo gNaturesInfo[];
 extern const u16 gTutorMoves[];
 #endif // P_TUTOR_MOVES_ARRAY
 extern const struct PokemonSets gPokemonSets[];
+extern const struct OTStruct gOTStruct[];
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);
@@ -661,8 +669,8 @@ void ZeroPlayerPartyMons(void);
 void ZeroEnemyPartyMons(void);
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature);
-void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter);
+void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature, u8 otIdType, u32 fixedOtId);
+void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter, u8 otIdType, u32 fixedOtId);
 void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality);
 void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId);

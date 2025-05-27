@@ -991,9 +991,10 @@
 	.endm
 
 	@ Gives Pokemon with a competitive set
-	.macro givemonset species:req
+	.macro givemonset species:req, otIdType=OT_ID_PLAYER_ID
 	callnative ScrCmd_givemonset, requests_effects=1
 	.2byte \species
+	.byte \otIdType
 	.endm
 
 	@ Gives the player a Pokémon of the specified species and level, and allows to customize extra parameters.

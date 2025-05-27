@@ -97,5 +97,14 @@ script RevelationMap_HallOfFame_EventScript_SetFlagsAndVars {
 	setvar(VAR_DEFEATED_RAJESH, 0)
 	cleartrainerflag(TRAINER_DEON)
 	cleartrainerflag(TRAINER_RION)
+
+	givemonset(SPECIES_MEWTWO_APOCALYPSE, OT_ID_REEVE)
+	givemonset(SPECIES_ZOJZION, OT_ID_VARUN)
+	givemonset(SPECIES_MANTISTRIKE, OT_ID_JAKE)
+	givemonset(SPECIES_PYROLIN, OT_ID_PRAJITH)
+	givemonset(SPECIES_STRATOSPIRA, OT_ID_SNEHAL)
+	givemonset(SPECIES_PHANTOMAR, OT_ID_PREM)
+	givemonset(SPECIES_LEVIADON, OT_ID_RAJESH)
+	givemonset(SPECIES_AMANISTE, OT_ID_JAISON)
 	return
 }

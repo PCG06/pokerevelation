@@ -119,7 +119,7 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 
     ZeroEnemyPartyMons();
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature(), OT_ID_PLAYER_ID, 0);
     else
         CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item)
@@ -137,7 +137,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     ZeroEnemyPartyMons();
 
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species1, level1, 32, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[0], species1, level1, 32, PickWildMonNature(), OT_ID_PLAYER_ID, 0);
     else
         CreateMon(&gEnemyParty[0], species1, level1, 32, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item1)
@@ -148,7 +148,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     }
 
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, PickWildMonNature(), OT_ID_PLAYER_ID, 0);
     else
         CreateMon(&gEnemyParty[1], species2, level2, 32, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item2)
@@ -334,7 +334,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel, u8 otIdType, u32 fixedOtId)
 {
     u16 nationalDexNum;
     int sentToPc;
@@ -357,9 +357,9 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     if ((gender == MON_MALE && genderRatio != MON_FEMALE && genderRatio != MON_GENDERLESS)
      || (gender == MON_FEMALE && genderRatio != MON_MALE && genderRatio != MON_GENDERLESS)
      || (gender == MON_GENDERLESS && genderRatio == MON_GENDERLESS))
-        CreateMonWithGenderNatureLetter(&mon, species, level, 32, gender, nature, 0);
+        CreateMonWithGenderNatureLetter(&mon, species, level, 32, gender, nature, 0, otIdType, fixedOtId);
     else
-        CreateMonWithNature(&mon, species, level, 32, nature);
+        CreateMonWithNature(&mon, species, level, 32, nature, otIdType, fixedOtId);
 
     // shininess
     if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
@@ -485,27 +485,28 @@ u32 ScriptGiveMon(u16 species, u8 level, u16 item)
                                 MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
 
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, FALSE, FALSE, NUMBER_OF_MON_TYPES, 0);
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, FALSE, FALSE, NUMBER_OF_MON_TYPES, 0, OT_ID_PLAYER_ID, 0);
 }
 
 u32 BirchCase_GiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
 {
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel);
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel, OT_ID_PLAYER_ID, 0);
 }
 
-static u32 GiveMonSet(u16 species)
+static u32 GiveMonSet(u16 species, u8 otIdType)
 {
     return ScriptGiveMonParameterized(0, PARTY_SIZE, species, MAX_LEVEL,
         (u16)gPokemonSets[species].item, ITEM_POKE_BALL, (u8)gPokemonSets[species].nature,
         CheckMonAbilitySlot(species, gPokemonSets[species].ability), MON_GENDERLESS, 
-        (u8 *)gPokemonSets[species].evs, (u8 *)gPokemonSets[species].ivs, (u16 *)gPokemonSets[species].moves, FALSE, FALSE, (u8)gPokemonSets[species].teraType, 0);
+        (u8 *)gPokemonSets[species].evs, (u8 *)gPokemonSets[species].ivs, (u16 *)gPokemonSets[species].moves, FALSE, FALSE, (u8)gPokemonSets[species].teraType, 0, otIdType, 0);
 }
 
 void ScrCmd_givemonset(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
+    u16 otIdType = ScriptReadByte(ctx);
 
-    gSpecialVar_Result = GiveMonSet(species);
+    gSpecialVar_Result = GiveMonSet(species, otIdType);
 }
 
 #define PARSE_FLAG(n, default_) (flags & (1 << (n))) ? VarGet(ScriptReadHalfword(ctx)) : (default_)
@@ -592,7 +593,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     else
         Script_RequestEffects(SCREFF_V1);
 
-    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel);
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel, OT_ID_PLAYER_ID, 0);
 }
 
 #undef PARSE_FLAG

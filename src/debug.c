@@ -3677,7 +3677,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
     //Nature
     if (nature == NUM_NATURES || nature == 0xFF)
         nature = Random() % NUM_NATURES;
-    CreateMonWithNature(&mon, species, level, USE_RANDOM_IVS, nature);
+    CreateMonWithNature(&mon, species, level, USE_RANDOM_IVS, nature, OT_ID_PLAYER_ID, 0);
 
     //Shininess
     SetMonData(&mon, MON_DATA_IS_SHINY, &isShiny);
