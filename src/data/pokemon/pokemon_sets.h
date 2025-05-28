@@ -14130,5 +14130,101 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .evs = {252, 0, 4, 252, 0, 0},
         .ivs = {31, 0, 31, 31, 31, 31},
         .moves = {MOVE_MALIGNANT_CHAIN, MOVE_HEX, MOVE_PARTING_SHOT, MOVE_RECOVER}
+    },
+
+    [SPECIES_MEWTWO_APOCALYPSE] = // Setup Sweeper
+    {
+        .name = _("Mewtwo-A"),
+        .item = ITEM_LIFE_ORB,
+        .ability = ABILITY_BERSERK,
+        .teraType = TYPE_DARK,
+        .nature = NATURE_MODEST,
+        .evs = {0, 0, 0, 252, 252, 4},
+        .ivs = {31, 0, 31, 31, 31, 31},
+        .moves = {MOVE_NASTY_PLOT, MOVE_DARK_PULSE, MOVE_FIREBALL, MOVE_RECOVER}
+    },
+
+    [SPECIES_ZOJZION] = // Bulky Pivot
+    {
+        .name = _("Zojzion"),
+        .item = ITEM_ASSAULT_VEST,
+        .ability = ABILITY_LEVITATE,
+        .teraType = TYPE_ELECTRIC,
+        .nature = NATURE_BOLD,
+        .evs = {252, 0, 252, 4, 0, 0},
+        .ivs = {31, 0, 31, 31, 31, 31},
+        .moves = {MOVE_SLUDGE_WAVE, MOVE_LIGHTNING_VORTEX, MOVE_OVERHEAT, MOVE_VOLT_SWITCH}
+    },
+
+    [SPECIES_MANTISTRIKE] = // Offensive Pivot
+    {
+        .name = _("Mantistrike"),
+        .item = ITEM_CHOICE_BAND,
+        .ability = ABILITY_TECHNICIAN,
+        .teraType = TYPE_WATER,
+        .nature = NATURE_ADAMANT,
+        .evs = {0, 252, 0, 252, 0, 4},
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .moves = {MOVE_STONE_EDGE, MOVE_JET_PUNCH, MOVE_SMASH_STRIKE, MOVE_FLIP_TURN}
+    },
+
+    [SPECIES_PYROLIN] = // Offensive Spinner
+    {
+        .name = _("Pyrolin"),
+        .item = ITEM_LEFTOVERS,
+        .ability = ABILITY_EARTH_EATER,
+        .teraType = TYPE_FIRE,
+        .nature = NATURE_ADAMANT,
+        .evs = {0, 252, 0, 252, 0, 4},
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_RAPID_SPIN, MOVE_DRILL_OUT}
+    },
+
+    [SPECIES_STRATOSPIRA] = // Offensive Pivot
+    {
+        .name = _("Stratospira"),
+        .item = ITEM_ASSAULT_VEST,
+        .ability = ABILITY_REGENERATOR,
+        .teraType = TYPE_STEEL,
+        .nature = NATURE_TIMID,
+        .evs = {0, 0, 0, 252, 252, 4},
+        .ivs = {31, 0, 31, 31, 31, 31},
+        .moves = {MOVE_FLASH_CANNON, MOVE_JETSTREAM_BLAST, MOVE_KNOCK_OFF, MOVE_U_TURN}
+    },
+
+    [SPECIES_PHANTOMAR] = // Offensive Pivot
+    {
+        .name = _("Phantomar"),
+        .item = ITEM_CHOICE_SCARF,
+        .ability = ABILITY_INTIMIDATE,
+        .teraType = TYPE_GHOST,
+        .nature = NATURE_ADAMANT,
+        .evs = {0, 252, 0, 252, 0, 4},
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .moves = {MOVE_SPECTRAL_WRATH, MOVE_EARTHQUAKE, MOVE_KNOCK_OFF, MOVE_U_TURN}
+    },
+
+    [SPECIES_LEVIADON] = // Mixed Offensive Pivot
+    {
+        .name = _("Leviadon"),
+        .item = ITEM_EJECT_PACK,
+        .ability = ABILITY_ROCK_HEAD,
+        .teraType = TYPE_WATER,
+        .nature = NATURE_NAUGHTY,
+        .evs = {0, 252, 0, 252, 4, 0},
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .moves = {MOVE_DRACO_METEOR, MOVE_DRACONIC_FURY, MOVE_WAVE_CRASH, MOVE_FLIP_TURN}
+    },
+
+    [SPECIES_AMANISTE] = // Bulky Setup Wall
+    {
+        .name = _("Amaniste"),
+        .item = ITEM_BLACK_SLUDGE,
+        .ability = ABILITY_PRANKSTER,
+        .teraType = TYPE_NORMAL,
+        .nature = NATURE_BOLD,
+        .evs = {252, 0, 252, 0, 0, 4},
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .moves = {MOVE_MOONBLAST, MOVE_TOXIC, MOVE_MYCO_SHIFT, MOVE_RECOVER}
     }
 };
