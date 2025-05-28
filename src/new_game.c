@@ -131,7 +131,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToSpawn(void)
 {
-    SetWarpDestination(MAP_GROUP(REVELATION_MAP_LOBBY), MAP_NUM(REVELATION_MAP_LOBBY), WARP_ID_NONE, 7, 6);
+    SetWarpDestination(MAP_GROUP(MAP_REVELATION_MAP_LOBBY), MAP_NUM(MAP_REVELATION_MAP_LOBBY), WARP_ID_NONE, 7, 6);
     WarpIntoMap();
 }
 

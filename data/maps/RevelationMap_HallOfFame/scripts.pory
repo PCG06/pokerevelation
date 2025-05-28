@@ -1,5 +1,3 @@
-const LOCALID_CHAMPION = 1
-
 mapscripts RevelationMap_HallOfFame_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_REV_STATE, 4 {
@@ -16,9 +14,9 @@ mapscripts RevelationMap_HallOfFame_MapScripts {
 
 script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	lockall
-	applymovement(LOCALID_CHAMPION, moves(walk_up * 6))
+	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, moves(walk_up * 6))
 	applymoveplayer(moves(walk_up * 6))
-	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
 	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
 	msgbox("Yashas: This room…\p"
 	        "This is where we keep records of\n"
@@ -27,17 +25,17 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	        "It is here that the League Champions\n"
 	        "are honored.", MSGBOX_DEFAULT)
 	closemessage
-	applymovement(LOCALID_CHAMPION, moves(walk_up * 5))
+	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, moves(walk_up * 5))
 	applymoveplayer(moves(walk_up * 5))
 	delay(20)
-	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, Common_Movement_WalkInPlaceFasterRight)
 	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
 	msgbox("Yashas: Come on, let's record your\n"
             "name as a Trainer who triumphed over\l"
             "the Pokémon League, and the names of\l"
             "the partners who battled with you.", MSGBOX_DEFAULT)
 	closemessage
-	applymovement(LOCALID_CHAMPION, Common_Movement_WalkInPlaceFasterUp)
+	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, Common_Movement_WalkInPlaceFasterUp)
 	applymoveplayer(Common_Movement_WalkInPlaceFasterUp)
 	delay(20)
 	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
