@@ -10613,6 +10613,7 @@ void SortBattlersBySpeed(u8 *battlers, bool32 slowToFast)
     }
 }
 
+
 void TryRestoreHeldItems(void)
 {
     u32 i;
@@ -10624,10 +10625,6 @@ void TryRestoreHeldItems(void)
         if (B_RESTORE_HELD_BATTLE_ITEMS >= GEN_9 || gBattleStruct->itemLost[B_SIDE_PLAYER][i].stolen || returnNPCItems)
         {
             u16 lostItem = gBattleStruct->itemLost[B_SIDE_PLAYER][i].originalItem;
-
-            // Check if the mon is not holding it
-            if (GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) != lostItem)
-                lostItem = ITEM_NONE;
 
             // Check if the lost item should be restored
             if ((lostItem != ITEM_NONE || returnNPCItems))
