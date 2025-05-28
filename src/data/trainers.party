@@ -6492,7 +6492,6 @@ Mugshot: Blue
 
 Archaludon (F) @ Leftovers  
 Ability: Stamina  
-Tera Type: Steel  
 EVs: 252 HP / 204 Def / 52 Spe  
 Bold Nature  
 IVs: 0 Atk  
@@ -6503,7 +6502,6 @@ IVs: 0 Atk
 
 Goodra-Hisui (F) @ Leftovers  
 Ability: Sap Sipper  
-Tera Type: Steel  
 EVs: 248 HP / 8 Def / 252 SpD  
 Careful Nature  
 - Heavy Slam  
@@ -6513,7 +6511,6 @@ Careful Nature
 
 Dragapult (F) @ Leftovers  
 Ability: Infiltrator  
-Tera Type: Dragon  
 EVs: 252 Atk / 4 Def / 252 Spe  
 Jolly Nature  
 - Dragon Dance  
@@ -6523,7 +6520,6 @@ Jolly Nature
 
 Latios (M) @ Choice Specs  
 Ability: Levitate  
-Tera Type: Dragon  
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -6534,7 +6530,6 @@ IVs: 0 Atk
 
 Hydreigon (F) @ Leftovers  
 Ability: Levitate  
-Tera Type: Dark  
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -6544,7 +6539,6 @@ IVs: 0 Atk
 - Nasty Plot  
 
 Leviadon @ Eject Pack  
-Ability: Rock Head  
 EVs: 252 Atk / 4 SpA / 252 Spe  
 Naughty Nature  
 - Draco Meteor  

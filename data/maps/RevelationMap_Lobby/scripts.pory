@@ -1,11 +1,8 @@
-const LOCALID_BIRCH = 1
-const LOCALID_ZIGGY = 2
-
 mapscripts RevelationMap_Lobby_MapScripts {}
 
 script RevelationMap_Lobby_Trigger0 {
 	lock
-	applymove(LOCALID_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_BIRCH, moves(face_right))
 	msgbox("Benny: Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
 	emoteplayer(EMOTE_EXCLAM)
 	turnplayer(DIR_SOUTH)
@@ -22,7 +19,7 @@ script RevelationMap_Lobby_Trigger0 {
 
 script RevelationMap_Lobby_Trigger1 {
 	lock
-	applymove(LOCALID_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_BIRCH, moves(face_right))
 	msgbox("Benny: {PLAYER},\n"
 			"once you go through that door,\l"
 			"you cannot return, for any reasons.\l"
@@ -42,9 +39,9 @@ script RevelationMap_Lobby_Trigger1 {
 script RevelationMap_Lobby_Zigzagoon {
 	lock
 	if (var(VAR_FACING) == DIR_NORTH) {
-		applymovement(LOCALID_ZIGGY, moves(jump_in_place_up_down))
+		applymovement(LOCALID_REVELATION_ZIGGY, moves(jump_in_place_up_down))
 	} else {
-		applymovement(LOCALID_ZIGGY, moves(jump_in_place_right_left))
+		applymovement(LOCALID_REVELATION_ZIGGY, moves(jump_in_place_right_left))
 	}
 	moncryscript(SPECIES_ZIGZAGOON, "Goon! Goon!", "Ziggy")
 	release

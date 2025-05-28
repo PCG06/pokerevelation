@@ -1,12 +1,3 @@
-const LOCALID_BUG_CATCHER = 1
-const LOCALID_SUPER_NERD = 2
-const LOCALID_HEX_MANIAC = 3
-const LOCALID_LADY = 4
-const LOCALID_BLACK_BELT = 5
-const LOCALID_GUITARIST = 6
-const LOCALID_FISHERMAN = 7
-const LOCALID_EXPERT = 8
-
 mapscripts RevelationMap_EntryPoint_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_REV_STATE, 2 {
@@ -50,8 +41,8 @@ mapscripts RevelationMap_EntryPoint_MapScripts {
 }
 
 script RevelationMap_EntryPoint_TriggerBugCatcherPawan { // Bug-type Trainer
-	emote(LOCALID_BUG_CATCHER, EMOTE_EXCLAM)
-	applymove(LOCALID_BUG_CATCHER, MoveLeftToPlayer)
+	emote(LOCALID_REVELATION_BUG_CATCHER, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_BUG_CATCHER, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
 	trainerbattle_single(TRAINER_PAWAN, "Pawan: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BugCatcherPawan)
 	msgbox("Pawan: After battle text.", MSGBOX_AUTOCLOSE)
@@ -60,7 +51,7 @@ script RevelationMap_EntryPoint_TriggerBugCatcherPawan { // Bug-type Trainer
 
 script RevelationMap_EntryPoint_BugCatcherPawan {
 	if (var(VAR_DEFEATED_JAKE) == 1) {
-		applymove(LOCALID_BUG_CATCHER, MoveRightToStand)
+		applymove(LOCALID_REVELATION_BUG_CATCHER, MoveRightToStand)
 		setvar(VAR_DEFEATED_JAKE, 2)
 	} elif (var(VAR_DEFEATED_JAKE) == 2) {
 		lock
@@ -76,8 +67,8 @@ script RevelationMap_EntryPoint_BugCatcherPawan {
 }
 
 script RevelationMap_EntryPoint_TriggerSuperNerdHanston { // Steel-type Trainer
-	emote(LOCALID_SUPER_NERD, EMOTE_EXCLAM)
-	applymove(LOCALID_SUPER_NERD, MoveLeftToPlayer)
+	emote(LOCALID_REVELATION_SUPER_NERD, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_SUPER_NERD, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
 	trainerbattle_single(TRAINER_HANSTON, "Hanston: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_SuperNerdHanston)
 	msgbox("Hanston:  After battle text.", MSGBOX_AUTOCLOSE)
@@ -86,7 +77,7 @@ script RevelationMap_EntryPoint_TriggerSuperNerdHanston { // Steel-type Trainer
 
 script RevelationMap_EntryPoint_SuperNerdHanston {
 	if (var(VAR_DEFEATED_REEVE) == 1) {
-		applymove(LOCALID_SUPER_NERD, MoveRightToStand)
+		applymove(LOCALID_REVELATION_SUPER_NERD, MoveRightToStand)
 		setvar(VAR_DEFEATED_REEVE, 2)
 	} elif (var(VAR_DEFEATED_REEVE) == 2) {
 		lock
@@ -102,8 +93,8 @@ script RevelationMap_EntryPoint_SuperNerdHanston {
 }
 
 script RevelationMap_EntryPoint_TriggerHexManiacRashel { // Psychic-type Trainer
-	emote(LOCALID_HEX_MANIAC, EMOTE_EXCLAM)
-	applymove(LOCALID_HEX_MANIAC, MoveLeftToPlayer)
+	emote(LOCALID_REVELATION_HEX_MANIAC, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_HEX_MANIAC, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
 	trainerbattle_single(TRAINER_RASHEL, "Rashel: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_HexManiacRashel)
 	msgbox("Rashel:  After battle text.", MSGBOX_AUTOCLOSE)
@@ -112,7 +103,7 @@ script RevelationMap_EntryPoint_TriggerHexManiacRashel { // Psychic-type Trainer
 
 script RevelationMap_EntryPoint_HexManiacRashel {
 	if (var(VAR_DEFEATED_PREM) == 1) {
-		applymove(LOCALID_HEX_MANIAC, MoveRightToStand)
+		applymove(LOCALID_REVELATION_HEX_MANIAC, MoveRightToStand)
 		setvar(VAR_DEFEATED_PREM, 2)
 	} elif (var(VAR_DEFEATED_PREM) == 2) {
 		lock
@@ -128,17 +119,17 @@ script RevelationMap_EntryPoint_HexManiacRashel {
 }
 
 script RevelationMap_EntryPoint_TriggerLadyAkshara { // Ice-type Trainer
-	emote(LOCALID_LADY, EMOTE_EXCLAM)
-	applymove(LOCALID_LADY, MoveLeftToPlayer)
+	emote(LOCALID_REVELATION_LADY, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_LADY, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_RASHEL, "Akshara: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
+	trainerbattle_single(TRAINER_AKSHARA, "Akshara: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
 	msgbox("Akshara:  After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
 script RevelationMap_EntryPoint_LadyAkshara {
 	if (var(VAR_DEFEATED_JAISON) == 1) {
-		applymove(LOCALID_LADY, MoveRightToStand)
+		applymove(LOCALID_REVELATION_LADY, MoveRightToStand)
 		setvar(VAR_DEFEATED_JAISON, 2)
 	} elif (var(VAR_DEFEATED_JAISON) == 2) {
 		lock
@@ -154,8 +145,8 @@ script RevelationMap_EntryPoint_LadyAkshara {
 }
 
 script RevelationMap_EntryPoint_TriggerBlackBeltGilston { // Fighting-type Trainer
-	emote(LOCALID_BLACK_BELT, EMOTE_EXCLAM)
-	applymove(LOCALID_BLACK_BELT, MoveRightToPlayer)
+	emote(LOCALID_REVELATION_BLACK_BELT, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_BLACK_BELT, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
 	trainerbattle_single(TRAINER_GILSTON, "Gilston: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BlackBeltGilston)
 	end
@@ -163,7 +154,7 @@ script RevelationMap_EntryPoint_TriggerBlackBeltGilston { // Fighting-type Train
 
 script RevelationMap_EntryPoint_BlackBeltGilston {
 	if (var(VAR_DEFEATED_PRAJITH) == 1) {
-		applymove(LOCALID_BLACK_BELT, MoveLeftToStand)
+		applymove(LOCALID_REVELATION_BLACK_BELT, MoveLeftToStand)
 		setvar(VAR_DEFEATED_PRAJITH, 2)
 	} elif (var(VAR_DEFEATED_PRAJITH) == 2) {
 		lock
@@ -179,8 +170,8 @@ script RevelationMap_EntryPoint_BlackBeltGilston {
 }
 
 script RevelationMap_EntryPoint_TriggerGuiratistMonvish { // Flying-type Trainer
-	emote(LOCALID_GUITARIST, EMOTE_EXCLAM)
-	applymove(LOCALID_GUITARIST, MoveRightToPlayer)
+	emote(LOCALID_REVELATION_GUITARIST, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_GUITARIST, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
 	trainerbattle_single(TRAINER_MONVISH, "Monvish: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_GuiratistMonvish)
 	end
@@ -188,7 +179,7 @@ script RevelationMap_EntryPoint_TriggerGuiratistMonvish { // Flying-type Trainer
 
 script RevelationMap_EntryPoint_GuiratistMonvish {
 	if (var(VAR_DEFEATED_VARUN) == 1) {
-		applymove(LOCALID_GUITARIST, MoveLeftToStand)
+		applymove(LOCALID_REVELATION_GUITARIST, MoveLeftToStand)
 		setvar(VAR_DEFEATED_VARUN, 2)
 	} elif (var(VAR_DEFEATED_VARUN) == 2) {
 		lock
@@ -204,8 +195,8 @@ script RevelationMap_EntryPoint_GuiratistMonvish {
 }
 
 script RevelationMap_EntryPoint_TriggerFishermanAdithya { // Water-type Trainer
-	emote(LOCALID_FISHERMAN, EMOTE_EXCLAM)
-	applymove(LOCALID_FISHERMAN, MoveRightToPlayer)
+	emote(LOCALID_REVELATION_FISHERMAN, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_FISHERMAN, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
 	trainerbattle_single(TRAINER_ADITHYA, "Adithya: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_FishermanAdithya)
 	end
@@ -213,7 +204,7 @@ script RevelationMap_EntryPoint_TriggerFishermanAdithya { // Water-type Trainer
 
 script RevelationMap_EntryPoint_FishermanAdithya {
 	if (var(VAR_DEFEATED_SNEHAL) == 1) {
-		applymove(LOCALID_FISHERMAN, MoveLeftToStand)
+		applymove(LOCALID_REVELATION_FISHERMAN, MoveLeftToStand)
 		setvar(VAR_DEFEATED_SNEHAL, 2)
 	} elif (var(VAR_DEFEATED_SNEHAL) == 2) {
 		lock
@@ -229,8 +220,8 @@ script RevelationMap_EntryPoint_FishermanAdithya {
 }
 
 script RevelationMap_EntryPoint_TriggerExpertRion { // Ground-type Trainer
-	emote(LOCALID_EXPERT, EMOTE_EXCLAM)
-	applymove(LOCALID_EXPERT, MoveRightToPlayer)
+	emote(LOCALID_REVELATION_EXPERT, EMOTE_EXCLAM)
+	applymove(LOCALID_REVELATION_EXPERT, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
 	trainerbattle_single(TRAINER_RION, "Rion: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_ExpertRion)
 	end
@@ -238,7 +229,7 @@ script RevelationMap_EntryPoint_TriggerExpertRion { // Ground-type Trainer
 
 script RevelationMap_EntryPoint_ExpertRion {
 	if (var(VAR_DEFEATED_RAJESH) == 1) {
-		applymove(LOCALID_EXPERT, MoveLeftToStand)
+		applymove(LOCALID_REVELATION_EXPERT, MoveLeftToStand)
 		setvar(VAR_DEFEATED_RAJESH, 2)
 	} elif (var(VAR_DEFEATED_RAJESH) == 2) {
 		lock

@@ -44,6 +44,8 @@
 #include "text.h"
 #include "tv.h"
 #include "window.h"
+#include "battle_setup.h"
+#include "overworld.h"
 #include "constants/battle_move_effects.h"
 #include "constants/hold_effects.h"
 #include "constants/items.h"
@@ -225,7 +227,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or Pokémon data
     u16 monAnimTimer; // tracks time between re-playing mon anims
     bool8 monAnimPlayed; // tracks if anim has been played at least once
-    u8 unk_filler4[2];
+    u8 isEnemyMon;
 } *sMonSummaryScreen = NULL;
 
 static EWRAM_DATA u8 sMoveSlotToReplace = 0;
@@ -298,6 +300,7 @@ static void GetMetLevelString(u8 *);
 static bool8 DoesMonOTMatchOwner(void);
 static bool8 DidMonComeFromGBAGames(void);
 static bool8 IsInGamePartnerMon(void);
+static bool8 IsEnemyMon(void);
 static void PrintEggOTName(void);
 static void PrintEggOTID(void);
 static void PrintEggState(void);
@@ -377,6 +380,8 @@ static void CB2_PssChangePokemonNickname(void);
 // const rom data
 
 static const u8 sMemoNatureTextColor[]                      = _("{COLOR DYNAMIC_COLOR2}{SHADOW DYNAMIC_COLOR3}");
+static const u8 sMemoHiddenNatureTextColor[]                = _(" ({COLOR BLUE}{SHADOW DARK_GRAY}");
+static const u8 sText_EndParentheses[]                      = _("{COLOR WHITE}{SHADOW DARK_GRAY})");
 static const u8 sMemoMiscTextColor[]                        = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
 static const u8 sStatsHPLayout[]                            = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sStatsHPIVEVLayout[]                        = _("{DYNAMIC 0}");
@@ -1715,6 +1720,11 @@ void ShowPokemonSummaryScreen_BW(u8 mode, void *mons, u8 monIndex, u8 maxMonInde
     else
         sMonSummaryScreen->isBoxMon = FALSE;
 
+    if (mode == SUMMARY_MODE_LOCK_ENEMY)
+        sMonSummaryScreen->isEnemyMon = TRUE;
+    else
+        sMonSummaryScreen->isEnemyMon = FALSE;
+
     switch (mode)
     {
     case SUMMARY_MODE_NORMAL:
@@ -1726,6 +1736,7 @@ void ShowPokemonSummaryScreen_BW(u8 mode, void *mons, u8 monIndex, u8 maxMonInde
         sMonSummaryScreen->maxPageIndex = pageCount - 1;
         break;
     case SUMMARY_MODE_LOCK_MOVES:
+    case SUMMARY_MODE_LOCK_ENEMY:
         sMonSummaryScreen->minPageIndex = 0;
         sMonSummaryScreen->maxPageIndex = pageCount - 1;
         sMonSummaryScreen->lockMovesFlag = TRUE;
@@ -3958,7 +3969,7 @@ static void HandleMonShinyIcon(bool8 isShiny)
 static void PrintMonOTName(void)
 {
     int windowId;
-    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
+    if (!InBattleFactory() && !InSlateportBattleTent() && !IsEnemyMon())
     {
         windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM);
         if (sMonSummaryScreen->summary.OTGender == 0)
@@ -3968,14 +3979,17 @@ static void PrintMonOTName(void)
     }
     else
     {
-        StringCopy(gStringVar1, sText_RentalPkmn);
+        if (GetCurrentRegionMapSectionId() == MAPSEC_REVELATION_MAPS)
+            StringCopy(gStringVar1, GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA));
+        else
+            StringCopy(gStringVar1, sText_RentalPkmn);
         PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM), gStringVar1, 12, 4, 0, 0);
     }
 }
 
 static void PrintMonOTID(void)
 {
-    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
+    if (!InBattleFactory() && !InSlateportBattleTent() && !IsEnemyMon())
     {
         ConvertIntToDecimalStringN(gStringVar1, (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
         PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM), gStringVar1, 12, 16, 0, 0);
@@ -4010,7 +4024,14 @@ static void BufferMonTrainerMemo(void)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sMemoMiscTextColor);
     BufferNatureString();
 
-    if (InBattleFactory() == TRUE || InSlateportBattleTent() == TRUE || IsInGamePartnerMon() == TRUE)
+    if (sum->mintNature != sum->nature)
+    {
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, sMemoHiddenNatureTextColor);
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNaturesInfo[sum->mintNature].name);
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(7, sText_EndParentheses);
+    }
+
+    if (InBattleFactory() || InSlateportBattleTent() || IsInGamePartnerMon() || IsEnemyMon())
     {
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, gText_XNature);
     }
@@ -4128,6 +4149,13 @@ static bool8 IsInGamePartnerMon(void)
     return FALSE;
 }
 
+static bool8 IsEnemyMon(void)
+{
+    if (sMonSummaryScreen->isEnemyMon == TRUE)
+        return TRUE;
+    return FALSE;
+}
+
 static void PrintEggOTName(void)
 {
     u32 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM);
@@ -4239,7 +4267,7 @@ static void PrintHeldItemName(void)
         && IsMultiBattle() == TRUE
         && (sMonSummaryScreen->curMonIndex == 1 || sMonSummaryScreen->curMonIndex == 4 || sMonSummaryScreen->curMonIndex == 5))
     {
-        text = ItemId_GetName(ITEM_ENIGMA_BERRY_E_READER);
+        text = GetItemName(ITEM_ENIGMA_BERRY_E_READER);
     }
     else if (sMonSummaryScreen->summary.item == ITEM_NONE)
     {

@@ -11690,7 +11690,6 @@ F_TRAINER_FEMALE |
             .lvl = 100,
             .nature = NATURE_BOLD,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .teraType = TYPE_STEEL,
             .moves = {
                 MOVE_BODY_PRESS,
                 MOVE_FLASH_CANNON,
@@ -11708,7 +11707,6 @@ F_TRAINER_FEMALE |
             .lvl = 100,
             .nature = NATURE_CAREFUL,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .teraType = TYPE_STEEL,
             .moves = {
                 MOVE_HEAVY_SLAM,
                 MOVE_KNOCK_OFF,
@@ -11726,7 +11724,6 @@ F_TRAINER_FEMALE |
             .lvl = 100,
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .teraType = TYPE_DRAGON,
             .moves = {
                 MOVE_DRAGON_DANCE,
                 MOVE_DRAGON_DARTS,
@@ -11744,7 +11741,6 @@ F_TRAINER_FEMALE |
             .lvl = 100,
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .teraType = TYPE_DRAGON,
             .moves = {
                 MOVE_LUSTER_PURGE,
                 MOVE_THUNDERBOLT,
@@ -11762,7 +11758,6 @@ F_TRAINER_FEMALE |
             .lvl = 100,
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .teraType = TYPE_DARK,
             .moves = {
                 MOVE_DARK_PULSE,
                 MOVE_EARTH_POWER,
@@ -11776,7 +11771,6 @@ F_TRAINER_FEMALE |
             .heldItem = ITEM_EJECT_PACK,
             .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_ROCK_HEAD,
             .lvl = 100,
             .nature = NATURE_NAUGHTY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -11796,7 +11790,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6561
+#line 6555
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -11819,7 +11813,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6574
+#line 6568
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -11842,7 +11836,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6587
+#line 6581
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -11881,7 +11875,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6608
+#line 6602
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -11912,7 +11906,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6625
+#line 6619
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -11943,7 +11937,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6642
+#line 6636
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -11974,7 +11968,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 6659
+#line 6653
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -12014,7 +12008,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6680
+#line 6674
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12038,7 +12032,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6693
+#line 6687
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12070,7 +12064,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6710
+#line 6704
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12102,7 +12096,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6727
+#line 6721
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12134,7 +12128,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6744
+#line 6738
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12166,7 +12160,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 6761
+#line 6755
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12197,7 +12191,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6778
+#line 6772
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12240,7 +12234,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6803
+#line 6797
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12282,7 +12276,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6827
+#line 6821
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12324,7 +12318,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6851
+#line 6845
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12366,7 +12360,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6875
+#line 6869
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12408,7 +12402,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6899
+#line 6893
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12450,7 +12444,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6923
+#line 6917
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12483,7 +12477,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6940
+#line 6934
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12507,7 +12501,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 6953
+#line 6947
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -12612,7 +12606,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7010
+#line 7004
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12636,7 +12630,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7023
+#line 7017
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12660,7 +12654,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7036
+#line 7030
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12684,7 +12678,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7049
+#line 7043
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12709,7 +12703,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7062
+#line 7056
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 1,
@@ -12734,7 +12728,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7075
+#line 7069
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -12759,7 +12753,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7088
+#line 7082
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -12802,7 +12796,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7109
+#line 7103
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12836,7 +12830,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7126
+#line 7120
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12870,7 +12864,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7143
+#line 7137
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12904,7 +12898,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7160
+#line 7154
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12938,7 +12932,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 7177
+#line 7171
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -12971,7 +12965,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7194
+#line 7188
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -12994,7 +12988,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7207
+#line 7201
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -13023,7 +13017,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7224
+#line 7218
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -13052,7 +13046,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7241
+#line 7235
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -13081,7 +13075,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7258
+#line 7252
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -13111,7 +13105,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7275
+#line 7269
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -13141,7 +13135,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7292
+#line 7286
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13173,7 +13167,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7309
+#line 7303
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13205,7 +13199,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7326
+#line 7320
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13237,7 +13231,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7343
+#line 7337
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13269,7 +13263,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 7360
+#line 7354
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13300,7 +13294,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7377
+#line 7371
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13323,7 +13317,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7390
+#line 7384
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13354,7 +13348,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7407
+#line 7401
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13380,7 +13374,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7421
+#line 7415
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13411,7 +13405,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7438
+#line 7432
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13434,7 +13428,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7451
+#line 7445
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13477,7 +13471,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 7476
+#line 7470
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13521,7 +13515,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 7501
+#line 7495
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -13564,7 +13558,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7526
+#line 7520
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13587,7 +13581,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7539
+#line 7533
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13610,7 +13604,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7552
+#line 7546
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -13633,7 +13627,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7565
+#line 7559
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13664,7 +13658,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7582
+#line 7576
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -13703,7 +13697,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7603
+#line 7597
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -13742,7 +13736,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7624
+#line 7618
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13773,7 +13767,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7641
+#line 7635
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13804,7 +13798,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7658
+#line 7652
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -13835,7 +13829,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CHAMPION_WALLACE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 7675
+#line 7669
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
@@ -13936,7 +13930,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7733
+#line 7727
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -13975,7 +13969,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7754
+#line 7748
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14014,7 +14008,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7775
+#line 7769
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14053,7 +14047,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7796
+#line 7790
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14092,7 +14086,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7817
+#line 7811
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14115,7 +14109,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7830
+#line 7824
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -14162,7 +14156,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7855
+#line 7849
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14185,7 +14179,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7868
+#line 7862
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -14216,7 +14210,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7885
+#line 7879
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14239,7 +14233,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7898
+#line 7892
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -14270,7 +14264,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7915
+#line 7909
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14309,7 +14303,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7936
+#line 7930
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -14356,7 +14350,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7961
+#line 7955
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -14403,7 +14397,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 7986
+#line 7980
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 4,
@@ -14450,7 +14444,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 8011
+#line 8005
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -14513,7 +14507,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8044
+#line 8038
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14552,7 +14546,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8065
+#line 8059
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -14583,7 +14577,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8082
+#line 8076
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14606,7 +14600,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8095
+#line 8089
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14629,7 +14623,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8108
+#line 8102
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14652,7 +14646,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8121
+#line 8115
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14675,7 +14669,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8134
+#line 8128
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14699,7 +14693,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8147
+#line 8141
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14723,7 +14717,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8160
+#line 8154
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -14763,7 +14757,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8181
+#line 8175
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14787,7 +14781,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8194
+#line 8188
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14811,7 +14805,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8207
+#line 8201
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14835,7 +14829,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8220
+#line 8214
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14858,7 +14852,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8233
+#line 8227
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14881,7 +14875,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8246
+#line 8240
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14904,7 +14898,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8259
+#line 8253
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14927,7 +14921,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8272
+#line 8266
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14950,7 +14944,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8285
+#line 8279
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14974,7 +14968,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8298
+#line 8292
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -14998,7 +14992,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8311
+#line 8305
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15022,7 +15016,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8324
+#line 8318
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15046,7 +15040,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8337
+#line 8331
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15070,7 +15064,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 8350
+#line 8344
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15093,7 +15087,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8363
+#line 8357
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15124,7 +15118,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 8380
+#line 8374
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15155,7 +15149,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8397
+#line 8391
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15178,7 +15172,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8410
+#line 8404
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15209,7 +15203,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8427
+#line 8421
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15240,7 +15234,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8444
+#line 8438
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15263,7 +15257,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8457
+#line 8451
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15286,7 +15280,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8470
+#line 8464
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15309,7 +15303,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8483
+#line 8477
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15333,7 +15327,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8496
+#line 8490
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15357,7 +15351,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8509
+#line 8503
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15389,7 +15383,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8526
+#line 8520
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15413,7 +15407,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8539
+#line 8533
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15437,7 +15431,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8552
+#line 8546
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15469,7 +15463,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8569
+#line 8563
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15493,7 +15487,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8582
+#line 8576
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15517,7 +15511,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8595
+#line 8589
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15541,7 +15535,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 8608
+#line 8602
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15564,7 +15558,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8621
+#line 8615
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15595,7 +15589,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8638
+#line 8632
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15626,7 +15620,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8655
+#line 8649
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15657,7 +15651,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8672
+#line 8666
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -15696,7 +15690,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8693
+#line 8687
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -15736,7 +15730,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 8714
+#line 8708
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15765,7 +15759,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8731
+#line 8725
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15788,7 +15782,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8744
+#line 8738
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15819,7 +15813,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8761
+#line 8755
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15842,7 +15836,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8774
+#line 8768
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -15881,7 +15875,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8795
+#line 8789
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -15904,7 +15898,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8808
+#line 8802
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15935,7 +15929,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8825
+#line 8819
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15966,7 +15960,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8842
+#line 8836
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -15997,7 +15991,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8859
+#line 8853
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16020,7 +16014,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8872
+#line 8866
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -16059,7 +16053,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8893
+#line 8887
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16090,7 +16084,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8910
+#line 8904
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16121,7 +16115,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8927
+#line 8921
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16152,7 +16146,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8944
+#line 8938
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16183,7 +16177,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8961
+#line 8955
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16214,7 +16208,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8978
+#line 8972
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16245,7 +16239,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 8995
+#line 8989
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16268,7 +16262,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9008
+#line 9002
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 1,
@@ -16291,7 +16285,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9021
+#line 9015
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 2,
@@ -16323,7 +16317,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 9038
+#line 9032
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 2,
         .party = (const struct TrainerMon[])
@@ -16362,7 +16356,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 9058
+#line 9052
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -16384,7 +16378,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9070
+#line 9064
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 3,
         .party = (const struct TrainerMon[])
@@ -16440,7 +16434,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9102
+#line 9096
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 2,
         .party = (const struct TrainerMon[])
@@ -16470,7 +16464,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9118
+#line 9112
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 4,
         .party = (const struct TrainerMon[])
@@ -16537,7 +16531,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9155
+#line 9149
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 4,
         .party = (const struct TrainerMon[])
@@ -16604,7 +16598,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9192
+#line 9186
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 4,
         .party = (const struct TrainerMon[])
@@ -16669,7 +16663,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 9227
+#line 9221
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 4,
         .party = (const struct TrainerMon[])
@@ -16738,7 +16732,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9264
+#line 9258
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16762,7 +16756,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9277
+#line 9271
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16786,7 +16780,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9290
+#line 9284
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16818,7 +16812,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9307
+#line 9301
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16842,7 +16836,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9320
+#line 9314
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -16866,7 +16860,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9333
+#line 9327
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16898,7 +16892,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9350
+#line 9344
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16930,7 +16924,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9367
+#line 9361
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16962,7 +16956,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 9384
+#line 9378
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -16994,7 +16988,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9401
+#line 9395
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17024,7 +17018,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9418
+#line 9412
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17056,7 +17050,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9435
+#line 9429
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17086,7 +17080,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9452
+#line 9446
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17116,7 +17110,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9469
+#line 9463
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17146,7 +17140,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9486
+#line 9480
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17190,7 +17184,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 9511
+#line 9505
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17234,7 +17228,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9536
+#line 9530
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17266,7 +17260,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9553
+#line 9547
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17290,7 +17284,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9566
+#line 9560
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17314,7 +17308,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9579
+#line 9573
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17346,7 +17340,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9596
+#line 9590
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17370,7 +17364,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9609
+#line 9603
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17402,7 +17396,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9626
+#line 9620
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17426,7 +17420,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9639
+#line 9633
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -17466,7 +17460,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9660
+#line 9654
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17490,7 +17484,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9673
+#line 9667
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17514,7 +17508,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9686
+#line 9680
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17538,7 +17532,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9699
+#line 9693
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17562,7 +17556,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9712
+#line 9706
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17594,7 +17588,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9729
+#line 9723
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17618,7 +17612,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9742
+#line 9736
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17650,7 +17644,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9759
+#line 9753
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17674,7 +17668,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9772
+#line 9766
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17698,7 +17692,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9785
+#line 9779
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17722,7 +17716,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9798
+#line 9792
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17754,7 +17748,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9815
+#line 9809
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17778,7 +17772,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9828
+#line 9822
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17810,7 +17804,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9845
+#line 9839
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17842,7 +17836,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9862
+#line 9856
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17874,7 +17868,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9879
+#line 9873
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17898,7 +17892,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9892
+#line 9886
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17922,7 +17916,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9905
+#line 9899
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -17946,7 +17940,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9918
+#line 9912
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -17978,7 +17972,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 9935
+#line 9929
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18018,7 +18012,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 9956
+#line 9950
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18062,7 +18056,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 9981
+#line 9975
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18106,7 +18100,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10006
+#line 10000
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18138,7 +18132,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10023
+#line 10017
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18170,7 +18164,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10040
+#line 10034
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18202,7 +18196,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10057
+#line 10051
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18241,7 +18235,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 10078
+#line 10072
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -18271,7 +18265,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10095
+#line 10089
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18303,7 +18297,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10112
+#line 10106
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18343,7 +18337,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10133
+#line 10127
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18383,7 +18377,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10154
+#line 10148
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18423,7 +18417,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 10175
+#line 10169
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18462,7 +18456,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10196
+#line 10190
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18493,7 +18487,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10213
+#line 10207
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18524,7 +18518,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10230
+#line 10224
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18555,7 +18549,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10247
+#line 10241
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18586,7 +18580,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10264
+#line 10258
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18617,7 +18611,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10281
+#line 10275
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18656,7 +18650,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10302
+#line 10296
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18687,7 +18681,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10319
+#line 10313
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18730,7 +18724,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10344
+#line 10338
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18773,7 +18767,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10369
+#line 10363
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18804,7 +18798,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10386
+#line 10380
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -18827,7 +18821,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10399
+#line 10393
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18858,7 +18852,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10416
+#line 10410
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18897,7 +18891,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10437
+#line 10431
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18928,7 +18922,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10454
+#line 10448
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -18967,7 +18961,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10475
+#line 10469
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -18998,7 +18992,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10492
+#line 10486
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -19037,7 +19031,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10513
+#line 10507
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -19076,7 +19070,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10534
+#line 10528
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -19115,7 +19109,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10555
+#line 10549
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -19154,7 +19148,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 10576
+#line 10570
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -19178,7 +19172,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 10589
+#line 10583
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19224,7 +19218,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 10614
+#line 10608
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -19247,7 +19241,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10627
+#line 10621
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -19277,7 +19271,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 10644
+#line 10638
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -19306,7 +19300,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 10661
+#line 10655
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19337,7 +19331,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10678
+#line 10672
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19369,7 +19363,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 10695
+#line 10689
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -19399,7 +19393,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 10712
+#line 10706
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19430,7 +19424,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10729
+#line 10723
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -19453,7 +19447,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 10742
+#line 10736
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19484,7 +19478,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10759
+#line 10753
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19515,7 +19509,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10776
+#line 10770
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19546,7 +19540,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 10793
+#line 10787
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -19585,7 +19579,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10814
+#line 10808
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19616,7 +19610,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10831
+#line 10825
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19647,7 +19641,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10848
+#line 10842
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19678,7 +19672,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 10865
+#line 10859
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -19709,7 +19703,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10882
+#line 10876
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -19794,7 +19788,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10931
+#line 10925
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -19817,7 +19811,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10944
+#line 10938
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -19856,7 +19850,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10965
+#line 10959
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -19895,7 +19889,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10986
+#line 10980
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 1,
@@ -19918,7 +19912,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 10999
+#line 10993
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -19957,7 +19951,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11020
+#line 11014
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -19996,7 +19990,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11041
+#line 11035
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -20019,7 +20013,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11054
+#line 11048
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20058,7 +20052,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11075
+#line 11069
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20098,7 +20092,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11096
+#line 11090
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -20122,7 +20116,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11109
+#line 11103
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20162,7 +20156,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11130
+#line 11124
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20202,7 +20196,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11151
+#line 11145
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -20226,7 +20220,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11164
+#line 11158
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20266,7 +20260,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11185
+#line 11179
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20306,7 +20300,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11206
+#line 11200
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -20330,7 +20324,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11219
+#line 11213
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20370,7 +20364,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11240
+#line 11234
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -20409,7 +20403,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11261
+#line 11255
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20472,7 +20466,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11294
+#line 11288
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -20495,7 +20489,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11307
+#line 11301
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -20538,7 +20532,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11332
+#line 11326
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20601,7 +20595,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11365
+#line 11359
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20664,7 +20658,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11398
+#line 11392
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20727,7 +20721,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11431
+#line 11425
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20791,7 +20785,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11464
+#line 11458
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20855,7 +20849,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11497
+#line 11491
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -20886,7 +20880,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 11514
+#line 11508
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -20910,7 +20904,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11527
+#line 11521
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -20974,7 +20968,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11560
+#line 11554
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -21038,7 +21032,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11593
+#line 11587
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -21102,7 +21096,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 11626
+#line 11620
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -21165,7 +21159,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11659
+#line 11653
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -21188,7 +21182,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11672
+#line 11666
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -21227,7 +21221,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11693
+#line 11687
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -21250,7 +21244,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11706
+#line 11700
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 1,
@@ -21273,7 +21267,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11719
+#line 11713
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -21296,7 +21290,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11732
+#line 11726
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 1,
@@ -21319,7 +21313,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11745
+#line 11739
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -21351,7 +21345,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11762
+#line 11756
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -21383,7 +21377,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11779
+#line 11773
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 3,
@@ -21423,7 +21417,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11800
+#line 11794
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -21455,7 +21449,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11817
+#line 11811
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -21487,7 +21481,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11834
+#line 11828
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -21519,7 +21513,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11851
+#line 11845
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -21551,7 +21545,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 11868
+#line 11862
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -21582,7 +21576,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11885
+#line 11879
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21605,7 +21599,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_AQUA,
-#line 11898
+#line 11892
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -21637,7 +21631,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
-#line 11915
+#line 11909
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -21669,7 +21663,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
-#line 11932
+#line 11926
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -21700,7 +21694,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 11949
+#line 11943
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -21731,7 +21725,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 11966
+#line 11960
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -21762,7 +21756,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 11983
+#line 11977
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21786,7 +21780,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 11996
+#line 11990
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21809,7 +21803,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 12009
+#line 12003
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21833,7 +21827,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 12022
+#line 12016
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21856,7 +21850,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 12035
+#line 12029
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21880,7 +21874,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 12048
+#line 12042
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -21920,7 +21914,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 12070
+#line 12064
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21943,7 +21937,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12083
+#line 12077
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21966,7 +21960,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 12096
+#line 12090
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -21990,7 +21984,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 12109
+#line 12103
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22013,7 +22007,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GENTLEMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_RICH,
-#line 12122
+#line 12116
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22037,7 +22031,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 12135
+#line 12129
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22060,7 +22054,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GENTLEMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_RICH,
-#line 12148
+#line 12142
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22083,7 +22077,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 12161
+#line 12155
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22107,7 +22101,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12174
+#line 12168
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22138,7 +22132,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12191
+#line 12185
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22161,7 +22155,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12204
+#line 12198
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22184,7 +22178,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12217
+#line 12211
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22207,7 +22201,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12230
+#line 12224
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22231,7 +22225,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 12243
+#line 12237
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22254,7 +22248,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12256
+#line 12250
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22285,7 +22279,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12273
+#line 12267
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22316,7 +22310,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 12290
+#line 12284
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -22348,7 +22342,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 12307
+#line 12301
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22372,7 +22366,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_AQUA,
-#line 12320
+#line 12314
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22403,7 +22397,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12337
+#line 12331
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -22450,7 +22444,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 12362
+#line 12356
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -22481,7 +22475,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12379
+#line 12373
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -22513,7 +22507,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12396
+#line 12390
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -22544,7 +22538,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12413
+#line 12407
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -22583,7 +22577,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 12434
+#line 12428
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -22623,7 +22617,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12455
+#line 12449
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22655,7 +22649,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12472
+#line 12466
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22687,7 +22681,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12489
+#line 12483
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22711,7 +22705,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12502
+#line 12496
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -22751,7 +22745,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12523
+#line 12517
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22783,7 +22777,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12540
+#line 12534
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22815,7 +22809,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12557
+#line 12551
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -22847,7 +22841,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12574
+#line 12568
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -22887,7 +22881,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12595
+#line 12589
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22911,7 +22905,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12608
+#line 12602
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -22951,7 +22945,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12629
+#line 12623
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -22975,7 +22969,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 12642
+#line 12636
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23006,7 +23000,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12659
+#line 12653
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23037,7 +23031,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12676
+#line 12670
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23084,7 +23078,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12701
+#line 12695
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23115,7 +23109,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12718
+#line 12712
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23146,7 +23140,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12735
+#line 12729
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23177,7 +23171,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12752
+#line 12746
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -23200,7 +23194,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12765
+#line 12759
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23231,7 +23225,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12782
+#line 12776
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -23254,7 +23248,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12795
+#line 12789
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23285,7 +23279,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12812
+#line 12806
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -23324,7 +23318,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 12833
+#line 12827
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23371,7 +23365,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12858
+#line 12852
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23402,7 +23396,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12875
+#line 12869
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -23441,7 +23435,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12896
+#line 12890
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23472,7 +23466,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12913
+#line 12907
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23503,7 +23497,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12930
+#line 12924
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -23542,7 +23536,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12951
+#line 12945
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -23565,7 +23559,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12964
+#line 12958
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23596,7 +23590,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12981
+#line 12975
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -23623,7 +23617,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 12996
+#line 12990
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23662,7 +23656,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13017
+#line 13011
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -23701,7 +23695,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13038
+#line 13032
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23748,7 +23742,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13063
+#line 13057
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23795,7 +23789,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13088
+#line 13082
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23842,7 +23836,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13113
+#line 13107
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -23889,7 +23883,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13138
+#line 13132
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23920,7 +23914,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13155
+#line 13149
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23951,7 +23945,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13172
+#line 13166
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -23982,7 +23976,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13189
+#line 13183
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24013,7 +24007,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13206
+#line 13200
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24044,7 +24038,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13223
+#line 13217
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24075,7 +24069,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13240
+#line 13234
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24107,7 +24101,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 13257
+#line 13251
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -24130,7 +24124,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 13270
+#line 13264
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -24160,7 +24154,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 13287
+#line 13281
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24204,7 +24198,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 13312
+#line 13306
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -24233,7 +24227,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 13329
+#line 13323
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 2,
@@ -24276,7 +24270,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 13354
+#line 13348
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 2,
@@ -24319,7 +24313,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 13379
+#line 13373
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 2,
@@ -24362,7 +24356,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CAMPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13404
+#line 13398
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -24394,7 +24388,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 13421
+#line 13415
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -24433,7 +24427,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13442
+#line 13436
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -24456,7 +24450,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13455
+#line 13449
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -24541,7 +24535,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13504
+#line 13498
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -24626,7 +24620,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13553
+#line 13547
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -24711,7 +24705,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_WALLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13602
+#line 13596
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -24796,7 +24790,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13651
+#line 13645
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -24843,7 +24837,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13676
+#line 13670
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -24890,7 +24884,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 13701
+#line 13695
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -24938,7 +24932,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 13726
+#line 13720
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -24986,7 +24980,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 13751
+#line 13745
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -25034,7 +25028,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 13776
+#line 13770
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -25081,7 +25075,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13801
+#line 13795
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -25120,7 +25114,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13822
+#line 13816
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25151,7 +25145,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13839
+#line 13833
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -25191,7 +25185,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 13860
+#line 13854
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25222,7 +25216,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 13877
+#line 13871
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25253,7 +25247,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 13894
+#line 13888
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -25276,7 +25270,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 13907
+#line 13901
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -25315,7 +25309,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 13928
+#line 13922
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25346,7 +25340,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 13945
+#line 13939
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25378,7 +25372,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 13962
+#line 13956
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -25401,7 +25395,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TWINS,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 13975
+#line 13969
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25432,7 +25426,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 13992
+#line 13986
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25475,7 +25469,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SR_AND_JR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 14017
+#line 14011
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25518,7 +25512,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14042
+#line 14036
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25561,7 +25555,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14067
+#line 14061
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25604,7 +25598,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14092
+#line 14086
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25647,7 +25641,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14117
+#line 14111
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25690,7 +25684,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14142
+#line 14136
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 2,
@@ -25733,7 +25727,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_OLD_COUPLE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14167
+#line 14161
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -25776,7 +25770,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14192
+#line 14186
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25807,7 +25801,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14209
+#line 14203
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25838,7 +25832,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14226
+#line 14220
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25869,7 +25863,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14243
+#line 14237
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25900,7 +25894,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14260
+#line 14254
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25931,7 +25925,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14277
+#line 14271
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25962,7 +25956,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14294
+#line 14288
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -25993,7 +25987,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 14311
+#line 14305
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -26040,7 +26034,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RICH_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_RICH,
-#line 14336
+#line 14330
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26073,7 +26067,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 14353
+#line 14347
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26105,7 +26099,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 14370
+#line 14364
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26129,7 +26123,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14383
+#line 14377
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26152,7 +26146,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_TUBER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14396
+#line 14390
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26183,7 +26177,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_TWINS,
-#line 14413
+#line 14407
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26216,7 +26210,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14430
+#line 14424
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26248,7 +26242,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 14447
+#line 14441
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26271,7 +26265,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14460
+#line 14454
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26294,7 +26288,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 14473
+#line 14467
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26317,7 +26311,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CAMPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 14486
+#line 14480
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26341,7 +26335,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 14499
+#line 14493
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26365,7 +26359,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14512
+#line 14506
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26388,7 +26382,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_KINDLER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 14525
+#line 14519
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26412,7 +26406,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14538
+#line 14532
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26443,7 +26437,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 14555
+#line 14549
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26474,7 +26468,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CAMPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 14572
+#line 14566
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26505,7 +26499,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 14589
+#line 14583
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26537,7 +26531,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14606
+#line 14600
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26568,7 +26562,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 14623
+#line 14617
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26592,7 +26586,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 14636
+#line 14630
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26615,7 +26609,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 14649
+#line 14643
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -26654,7 +26648,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14670
+#line 14664
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26677,7 +26671,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14683
+#line 14677
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26700,7 +26694,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14696
+#line 14690
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26723,7 +26717,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14709
+#line 14703
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26754,7 +26748,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14726
+#line 14720
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -26785,7 +26779,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14743
+#line 14737
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26808,7 +26802,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14756
+#line 14750
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26831,7 +26825,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14769
+#line 14763
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26854,7 +26848,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14782
+#line 14776
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26877,7 +26871,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14795
+#line 14789
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26900,7 +26894,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14808
+#line 14802
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26923,7 +26917,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14821
+#line 14815
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26946,7 +26940,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14834
+#line 14828
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26970,7 +26964,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14847
+#line 14841
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -26994,7 +26988,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14860
+#line 14854
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27018,7 +27012,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14873
+#line 14867
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27041,7 +27035,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14886
+#line 14880
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 4,
@@ -27089,7 +27083,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 14911
+#line 14905
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -27120,7 +27114,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 14928
+#line 14922
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -27159,7 +27153,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14949
+#line 14943
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27183,7 +27177,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 14962
+#line 14956
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27206,7 +27200,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 14975
+#line 14969
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27237,7 +27231,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 14992
+#line 14986
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27268,7 +27262,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 15009
+#line 15003
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27291,7 +27285,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15022
+#line 15016
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -27331,7 +27325,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 15043
+#line 15037
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -27370,7 +27364,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 15064
+#line 15058
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27402,7 +27396,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_GIRL,
-#line 15081
+#line 15075
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27433,7 +27427,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 15098
+#line 15092
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27464,7 +27458,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_CAMPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15115
+#line 15109
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27495,7 +27489,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_KINDLER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 15132
+#line 15126
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27527,7 +27521,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15149
+#line 15143
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27559,7 +27553,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15166
+#line 15160
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27590,7 +27584,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_NINJA_BOY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 15183
+#line 15177
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27622,7 +27616,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15200
+#line 15194
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27654,7 +27648,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15217
+#line 15211
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27686,7 +27680,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15234
+#line 15228
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27717,7 +27711,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 15251
+#line 15245
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27748,7 +27742,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15268
+#line 15262
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27780,7 +27774,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15285
+#line 15279
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27804,7 +27798,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15298
+#line 15292
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27828,7 +27822,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15311
+#line 15305
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27852,7 +27846,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15324
+#line 15318
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -27883,7 +27877,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15341
+#line 15335
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27906,7 +27900,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_KINDLER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 15354
+#line 15348
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -27938,7 +27932,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15371
+#line 15365
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -27961,7 +27955,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 15384
+#line 15378
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -27990,7 +27984,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 15400
+#line 15394
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -28021,7 +28015,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 15417
+#line 15411
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -28052,7 +28046,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15434
+#line 15428
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -28116,7 +28110,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15467
+#line 15461
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -28180,7 +28174,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 15500
+#line 15494
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -28212,7 +28206,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15517
+#line 15511
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -28244,7 +28238,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15534
+#line 15528
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -28276,7 +28270,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15551
+#line 15545
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -28350,7 +28344,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15592
+#line 15586
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -28438,7 +28432,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15641
+#line 15635
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -28526,7 +28520,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 15690
+#line 15684
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -28627,7 +28621,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15747
+#line 15741
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -28700,7 +28694,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15788
+#line 15782
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -28773,7 +28767,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15829
+#line 15823
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -28860,7 +28854,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15878
+#line 15872
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -28961,7 +28955,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15935
+#line 15929
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -29034,7 +29028,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 15976
+#line 15970
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -29121,7 +29115,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16025
+#line 16019
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -29208,7 +29202,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16074
+#line 16068
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -29310,7 +29304,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16131
+#line 16125
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -29385,7 +29379,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16172
+#line 16166
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -29474,7 +29468,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16221
+#line 16215
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -29577,7 +29571,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16278
+#line 16272
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -29679,7 +29673,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16335
+#line 16329
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 4,
@@ -29752,7 +29746,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16376
+#line 16370
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -29839,7 +29833,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16425
+#line 16419
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -29926,7 +29920,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16474
+#line 16468
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -30028,7 +30022,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16531
+#line 16525
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
         .partySize = 5,
@@ -30116,7 +30110,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16580
+#line 16574
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
         .partySize = 6,
@@ -30218,7 +30212,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16637
+#line 16631
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
         .partySize = 6,
@@ -30320,7 +30314,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16694
+#line 16688
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
         .partySize = 6,
@@ -30421,7 +30415,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16751
+#line 16745
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -30509,7 +30503,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16800
+#line 16794
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -30611,7 +30605,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16857
+#line 16851
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -30713,7 +30707,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 16914
+#line 16908
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -30815,7 +30809,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 16971
+#line 16965
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -30902,7 +30896,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17020
+#line 17014
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 5,
@@ -30989,7 +30983,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17069
+#line 17063
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -31090,7 +31084,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17126
+#line 17120
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 6,
@@ -31191,7 +31185,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-#line 17183
+#line 17177
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -31232,7 +31226,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 17206
+#line 17200
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31255,7 +31249,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_STEVEN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17219
+#line 17213
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
@@ -31374,7 +31368,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17283
+#line 17277
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31397,7 +31391,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_DOME_ACE_TUCKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17296
+#line 17290
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31420,7 +31414,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17309
+#line 17303
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31444,7 +31438,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17322
+#line 17316
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31467,7 +31461,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_FACTORY_HEAD_NOLAND,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17335
+#line 17329
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31491,7 +31485,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17348
+#line 17342
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31514,7 +31508,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17361
+#line 17355
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
@@ -31537,7 +31531,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17374
+#line 17368
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -31568,7 +31562,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17391
+#line 17385
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31607,7 +31601,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17412
+#line 17406
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31646,7 +31640,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17433
+#line 17427
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31685,7 +31679,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17454
+#line 17448
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31724,7 +31718,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17475
+#line 17469
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31763,7 +31757,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17496
+#line 17490
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31802,7 +31796,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SAILOR,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 17517
+#line 17511
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31841,7 +31835,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 17538
+#line 17532
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -31872,7 +31866,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 17555
+#line 17549
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31911,7 +31905,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 17576
+#line 17570
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31950,7 +31944,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 17597
+#line 17591
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -31989,7 +31983,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17618
+#line 17612
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -32020,7 +32014,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17635
+#line 17629
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32059,7 +32053,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17656
+#line 17650
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32098,7 +32092,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17677
+#line 17671
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32138,7 +32132,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 17698
+#line 17692
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -32170,7 +32164,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 17715
+#line 17709
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32210,7 +32204,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 17736
+#line 17730
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32250,7 +32244,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_COOL,
-#line 17757
+#line 17751
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32289,7 +32283,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17778
+#line 17772
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32328,7 +32322,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17799
+#line 17793
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32367,7 +32361,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17820
+#line 17814
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32406,7 +32400,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 17841
+#line 17835
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32445,7 +32439,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17862
+#line 17856
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -32476,7 +32470,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17879
+#line 17873
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32515,7 +32509,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17900
+#line 17894
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32554,7 +32548,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_HIKER,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 17921
+#line 17915
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -32594,7 +32588,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 17942
+#line 17936
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -32658,7 +32652,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 17975
+#line 17969
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -32722,7 +32716,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18008
+#line 18002
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -32786,7 +32780,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18041
+#line 18035
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -32850,7 +32844,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18074
+#line 18068
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -32882,7 +32876,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18091
+#line 18085
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32922,7 +32916,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18112
+#line 18106
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -32962,7 +32956,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 18133
+#line 18127
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -33002,7 +32996,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 18154
+#line 18148
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -33024,7 +33018,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
-#line 18166
+#line 18160
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 2,
         .party = (const struct TrainerMon[])
@@ -33054,7 +33048,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_GENTLEMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_RICH,
-#line 18182
+#line 18176
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -33076,7 +33070,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RED,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 18194
+#line 18188
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -33099,7 +33093,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 18206
+#line 18200
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -33121,7 +33115,7 @@ F_TRAINER_FEMALE |
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 18218
+#line 18212
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])
@@ -33144,7 +33138,7 @@ F_TRAINER_FEMALE |
         .encounterMusic_gender =
 F_TRAINER_FEMALE | 
             TRAINER_ENCOUNTER_MUSIC_MALE,
-#line 18230
+#line 18224
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .partySize = 1,
         .party = (const struct TrainerMon[])

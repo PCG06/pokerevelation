@@ -3,6 +3,7 @@
 #include "event_data.h"
 #include "move_relearner.h"
 #include "pokemon.h"
+#include "constants/pokemon.h"
 #include "test/overworld_script.h"
 #include "test/test.h"
 
@@ -17,7 +18,7 @@ TEST("Nature independent from Hidden Nature")
             PARAMETRIZE { nature = i; hiddenNature = j; }
         }
     }
-    CreateMonWithNature(&mon, SPECIES_WOBBUFFET, 100, 0, nature);
+    CreateMonWithNature(&mon, SPECIES_WOBBUFFET, 100, 0, nature, OT_ID_PLAYER_ID, 0);
     SetMonData(&mon, MON_DATA_HIDDEN_NATURE, &hiddenNature);
     EXPECT_EQ(GetNature(&mon), nature);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HIDDEN_NATURE), hiddenNature);

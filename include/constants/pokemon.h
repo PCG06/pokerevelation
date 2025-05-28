@@ -152,6 +152,14 @@
 #define OT_ID_PLAYER_ID       0
 #define OT_ID_PRESET          1
 #define OT_ID_RANDOM_NO_SHINY 2
+#define OT_ID_JAKE            3
+#define OT_ID_REEVE           4
+#define OT_ID_PREM            5
+#define OT_ID_JAISON          6
+#define OT_ID_PRAJITH         7
+#define OT_ID_VARUN           8
+#define OT_ID_SNEHAL          9
+#define OT_ID_RAJESH          10
 
 #define MON_GIVEN_TO_PARTY      0
 #define MON_GIVEN_TO_PC         1

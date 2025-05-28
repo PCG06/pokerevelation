@@ -12,9 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_REVELATION_BIRCH",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 5,
       "y": 3,
@@ -28,6 +29,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_REVELATION_ZIGGY",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
       "x": 4,
       "y": 3,
@@ -70,7 +72,5 @@
       "script": "RevelationMap_Lobby_Trigger1"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
