@@ -83,6 +83,7 @@ static u8 SetTentPtrsGetLevel(void);
 #include "data/battle_frontier/battle_frontier_trainer_mons.h"
 #include "data/battle_frontier/battle_frontier_trainers.h"
 #include "data/battle_frontier/battle_frontier_mons.h"
+#include "data/battle_frontier/battle_frontier_spreads.h"
 
 const u8 gTowerMaleFacilityClasses[30] =
 {
@@ -1566,9 +1567,15 @@ static void FillTentTrainerParty(u8 monsCount)
 
 void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32 otID, u32 flags, struct Pokemon *dst)
 {
-    u8 ball = (fmon->ball == 0xFF) ? Random() % POKEBALL_COUNT : fmon->ball;
+    u8 ball = Random() % POKEBALL_COUNT;
     u16 move;
-    u32 personality = 0, ability, friendship, j;
+    u32 personality = 0, friendship, j;
+    u32 ability = 0;
+    u16 species = 0;
+    u16 item;
+    u16 spreadCount = 0;
+    const struct BattleTowerSpread *spreads = NULL;
+    const struct BattleTowerSpread* spread = NULL;
 
     if (fmon->gender == TRAINER_MON_MALE)
     {
@@ -1579,8 +1586,25 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
         personality = GeneratePersonalityForGender(MON_FEMALE, fmon->species);
     }
 
+    if (FlagGet(FLAG_USE_LEGENDARIES)) 
+    {
+        spreadCount = TOTAL_LEGENDARY_SPREADS;
+        spreads = gFrontierLegendarySpreads;
+    } 
+    else
+    {
+        spreadCount = TOTAL_SPREADS;
+        spreads = gFrontierSpreads;
+    }
+    spread = &spreads[Random() % spreadCount];
+    species = spread->species;
+    item = spread->item;
+    ability = ConvertFrontierAbilityNumToAbility(spread->ability, species);
+
+
     ModifyPersonalityForNature(&personality, fmon->nature);
-    CreateMon(dst, fmon->species, level, fixedIV, TRUE, personality, OT_ID_PRESET, otID);
+    // CreateMon(dst, fmon->species, level, fixedIV, TRUE, personality, OT_ID_PRESET, otID);
+    CreateMon(dst, species, level,  fixedIV, TRUE, personality, OT_ID_PRESET, otID);
 
     friendship = MAX_FRIENDSHIP;
     // Give the chosen Pokémon its specified moves.
@@ -1596,77 +1620,131 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     }
 
     SetMonData(dst, MON_DATA_FRIENDSHIP, &friendship);
-    SetMonData(dst, MON_DATA_HELD_ITEM, &fmon->heldItem);
-
-    // try to set ability. Otherwise, random of non-hidden as per vanilla
-    if (fmon->ability != ABILITY_NONE)
-    {
-        const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[fmon->species];
-        u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
-        for (ability = 0; ability < maxAbilities; ++ability)
-        {
-            if (speciesInfo->abilities[ability] == fmon->ability)
-                break;
-        }
-        if (ability >= maxAbilities)
-            ability = 0;
-        SetMonData(dst, MON_DATA_ABILITY_NUM, &ability);
+    // Set ability and item from spread
+    SetMonData(dst, MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(dst, MON_DATA_HELD_ITEM, &item);
+    // Set moves from spread
+    for (j = 0; j < MAX_MON_MOVES; j++) {
+        SetMonMoveSlot(dst, spread->moves[j], j);
     }
+    // Set EVs from spread
+    if (spread->hpEv > 0)
+        SetMonData(dst, MON_DATA_HP_EV, &spread->hpEv);
+    if (spread->atkEv > 0) 
+        SetMonData(dst, MON_DATA_ATK_EV, &spread->atkEv);
+    if (spread->defEv > 0)
+        SetMonData(dst, MON_DATA_DEF_EV, &spread->defEv);
+    if (spread->spAtkEv > 0)
+        SetMonData(dst, MON_DATA_SPATK_EV, &spread->spAtkEv);
+    if (spread->spDefEv > 0)
+        SetMonData(dst, MON_DATA_SPDEF_EV, &spread->spDefEv);
+    if (spread->spdEv > 0)
+        SetMonData(dst, MON_DATA_SPEED_EV, &spread->spdEv);
 
-    if (fmon->ev != NULL)
-    {
-        SetMonData(dst, MON_DATA_HP_EV, &(fmon->ev[0]));
-        SetMonData(dst, MON_DATA_ATK_EV, &(fmon->ev[1]));
-        SetMonData(dst, MON_DATA_DEF_EV, &(fmon->ev[2]));
-        SetMonData(dst, MON_DATA_SPATK_EV, &(fmon->ev[3]));
-        SetMonData(dst, MON_DATA_SPDEF_EV, &(fmon->ev[4]));
-        SetMonData(dst, MON_DATA_SPEED_EV, &(fmon->ev[5]));
-    }
-
-    if (fmon->iv)
-        SetMonData(dst, MON_DATA_IVS, &(fmon->iv));
-
-    if (fmon->isShiny)
-    {
-        u32 data = TRUE;
-        SetMonData(dst, MON_DATA_IS_SHINY, &data);
-    }
-    if (fmon->dynamaxLevel > 0)
-    {
-        u32 data = fmon->dynamaxLevel;
-        SetMonData(dst, MON_DATA_DYNAMAX_LEVEL, &data);
-    }
-    if (fmon->gigantamaxFactor)
-    {
-        u32 data = fmon->gigantamaxFactor;
-        SetMonData(dst, MON_DATA_GIGANTAMAX_FACTOR, &data);
-    }
-    if (fmon->teraType)
-    {
-        u32 data = fmon->teraType;
-        SetMonData(dst, MON_DATA_TERA_TYPE, &data);
-    }
-
-
+    
+    u8 iv;
+    
+    iv = spread->hpIv;
+    SetMonData(dst, MON_DATA_HP_IV, &iv);
+    iv = spread->atkIv;
+    SetMonData(dst, MON_DATA_ATK_IV, &iv);
+    iv = spread->defIv;
+    SetMonData(dst, MON_DATA_DEF_IV, &iv);
+    iv = spread->spAtkIv;
+    SetMonData(dst, MON_DATA_SPATK_IV, &iv);
+    iv = spread->spDefIv;
+    SetMonData(dst, MON_DATA_SPDEF_IV, &iv);
+    iv = spread->spdIv;
+    SetMonData(dst, MON_DATA_SPEED_IV, &iv);
+    //CreateFacilityMon(&gFacilityTrainerMons[monId], level, fixedIV, otID, 0, dst);
     SetMonData(dst, MON_DATA_POKEBALL, &ball);
     CalculateMonStats(dst);
+}
+
+void CreateBattleFacilityMon(const struct BattleTowerSpread* spread, u16 level, u32 ability, u16 item, u8 fixedIV, u32 otID, u8 firstMonId, s32 i) {
+    u32 personality = 0;
+    s32 j;
+    u8 ball = Random() % POKEBALL_COUNT;
+    ModifyPersonalityForNature(&personality, spread->nature);
+    u16 species = spread->species;
+    CreateMon(&gEnemyParty[i + firstMonId], 
+                species,
+                level, 
+                fixedIV,
+                TRUE, 
+                personality,
+                otID,
+                OT_ID_PRESET);
+
+    // Set ability and item from spread
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HELD_ITEM, &item);
+    // Set moves from spread
+    for (j = 0; j < MAX_MON_MOVES; j++) {
+        SetMonMoveSlot(&gEnemyParty[i + firstMonId], spread->moves[j], j);
+    }
+    // Set EVs from spread
+    if (spread->hpEv > 0)
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HP_EV, &spread->hpEv);
+    if (spread->atkEv > 0) 
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ATK_EV, &spread->atkEv);
+    if (spread->defEv > 0)
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_DEF_EV, &spread->defEv);
+    if (spread->spAtkEv > 0)
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPATK_EV, &spread->spAtkEv);
+    if (spread->spDefEv > 0)
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPDEF_EV, &spread->spDefEv);
+    if (spread->spdEv > 0)
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPEED_EV, &spread->spdEv);
+
+    
+    u8 iv;
+    
+    iv = spread->hpIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HP_IV, &iv);
+    iv = spread->atkIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ATK_IV, &iv);
+    iv = spread->defIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_DEF_IV, &iv);
+    iv = spread->spAtkIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPATK_IV, &iv);
+    iv = spread->spDefIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPDEF_IV, &iv);
+    iv = spread->spdIv;
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPEED_IV, &iv);
+    //CreateFacilityMon(&gFacilityTrainerMons[monId], level, fixedIV, otID, 0, &gEnemyParty[i + firstMonId]);
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_POKEBALL, &ball);
+    CalculateMonStats(&gEnemyParty[i + firstMonId]);
 }
 
 static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
 {
     s32 i, j;
-    u16 chosenMonIndices[MAX_FRONTIER_PARTY_SIZE];
     u8 level = SetFacilityPtrsGetLevel();
     u8 fixedIV = 0;
-    u8 bfMonCount;
-    const u16 *monSet = NULL;
     u32 otID = 0;
+    u32 ability = ABILITY_NONE;
+    u16 species = 0;
+    u16 item;
+    u16 spreadCount = 0;
+    const struct BattleTowerSpread *spreads = NULL;
+    const struct BattleTowerSpread* spread = NULL;
+
+    if (FlagGet(FLAG_USE_LEGENDARIES))
+    {
+        spreadCount = TOTAL_LEGENDARY_SPREADS;
+        spreads = gFrontierLegendarySpreads;
+    }
+    else
+    {
+        spreadCount = TOTAL_SPREADS;
+        spreads = gFrontierSpreads;
+    }
 
     if (trainerId < FRONTIER_TRAINERS_COUNT)
     {
         // Normal battle frontier trainer.
         fixedIV = GetFrontierTrainerFixedIvs(trainerId);
-        monSet = gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].monSet;
     }
     else if (trainerId == TRAINER_EREADER)
     {
@@ -1706,23 +1784,21 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     // Attempt to fill the trainer's party with random Pokémon until 3 have been
     // successfully chosen. The trainer's party may not have duplicate Pokémon species
     // or duplicate held items.
-    for (bfMonCount = 0; monSet[bfMonCount] != 0xFFFF; bfMonCount++)
-        ;
     i = 0;
     otID = Random32();
     while (i != monCount)
     {
-        u16 monId = monSet[Random() % bfMonCount];
 
-        // "High tier" Pokémon are only allowed on open level mode
-        // 20 is not a possible value for level here
-        if ((level == FRONTIER_MAX_LEVEL_50 || level == 20) && monId > FRONTIER_MONS_HIGH_TIER)
-            continue;
+        spread = &spreads[Random() % spreadCount];
+        item = spread->item;
+        ability = ConvertFrontierAbilityNumToAbility(spread->ability, species);
+
+        // Ban mons based on streak count here
 
         // Ensure this Pokémon species isn't a duplicate.
         for (j = 0; j < i + firstMonId; j++)
         {
-            if (GetMonData(&gEnemyParty[j], MON_DATA_SPECIES, NULL) == gFacilityTrainerMons[monId].species)
+            if (GetMonData(&gEnemyParty[j], MON_DATA_SPECIES, NULL) == species)
                 break;
         }
         if (j != i + firstMonId)
@@ -1732,29 +1808,17 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
         for (j = 0; j < i + firstMonId; j++)
         {
             if (GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) != ITEM_NONE
-             && GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) == gFacilityTrainerMons[monId].heldItem)
+             && GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) == item)
                 break;
         }
         if (j != i + firstMonId)
             continue;
 
-        // Ensure this exact Pokémon index isn't a duplicate. This check doesn't seem necessary
-        // because the species and held items were already checked directly above.
-        for (j = 0; j < i; j++)
-        {
-            if (chosenMonIndices[j] == monId)
-                break;
-        }
-        if (j != i)
-            continue;
-
-        chosenMonIndices[i] = monId;
-
         // Place the chosen Pokémon into the trainer's party.
-        CreateFacilityMon(&gFacilityTrainerMons[monId], level, fixedIV, otID, 0, &gEnemyParty[i + firstMonId]);
+        // Create the Pokemon using spread data
 
-        // The Pokémon was successfully added to the trainer's party, so it's safe to move on to
-        // the next party slot.
+        CreateBattleFacilityMon(spread, level, ability, item, fixedIV, otID, firstMonId, i);
+        
         i++;
     }
 }
@@ -1799,19 +1863,28 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId)
     u8 level;
     u8 fixedIV;
     u32 otID;
+    u16 species = 0;
+    u16 spreadCount = 0;
+    const struct BattleTowerSpread *spreads = NULL;
+    const struct BattleTowerSpread* spread = NULL;
+
+    if (FlagGet(FLAG_USE_LEGENDARIES))
+    {
+        spreadCount = TOTAL_LEGENDARY_SPREADS;
+        spreads = gFrontierLegendarySpreads;
+    }
+    else
+    {
+        spreadCount = TOTAL_SPREADS;
+        spreads = gFrontierSpreads;
+    }
 
     if (trainerId < FRONTIER_TRAINERS_COUNT)
     {
-    // By mistake Battle Tower's Level 50 challenge number is used to determine the IVs for Battle Factory.
-    #ifdef BUGFIX
+        // By mistake Battle Tower's Level 50 challenge number is used to determine the IVs for Battle Factory.
         u8 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
         u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
         u8 challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / FRONTIER_STAGES_PER_CHALLENGE;
-    #else
-        u8 UNUSED lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
-        u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
-        u8 challengeNum = gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][FRONTIER_LVL_50] / FRONTIER_STAGES_PER_CHALLENGE;
-    #endif
         if (gSaveBlock2Ptr->frontier.curChallengeBattleNum < FRONTIER_STAGES_PER_CHALLENGE - 1)
             fixedIV = GetFactoryMonFixedIV(challengeNum, FALSE);
         else
@@ -1819,10 +1892,10 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId)
     }
     else if (trainerId == TRAINER_EREADER)
     {
-    #if FREE_BATTLE_TOWER_E_READER == FALSE
-        for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
-            CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i - firstMonId]);
-    #endif //FREE_BATTLE_TOWER_E_READER
+        #if FREE_BATTLE_TOWER_E_READER == FALSE
+            for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
+                CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i - firstMonId]);
+        #endif //FREE_BATTLE_TOWER_E_READER
         return;
     }
     else if (trainerId == TRAINER_FRONTIER_BRAIN)
@@ -1839,10 +1912,12 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId)
     otID = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
-        u16 monId = gFrontierTempParty[i];
-        CreateFacilityMon(&gFacilityTrainerMons[monId],
-                level, fixedIV, otID, FLAG_FRONTIER_MON_FACTORY,
-                &gEnemyParty[firstMonId + i]);
+        // u16 monId = gFrontierTempParty[i];
+        // CreateFacilityMon(&gFacilityTrainerMons[monId],
+        //         level, fixedIV, otID, FLAG_FRONTIER_MON_FACTORY,
+        //         &gEnemyParty[firstMonId + i]);
+        spread = &spreads[Random() % spreadCount];
+        CreateBattleFacilityMon(spread, level, ConvertFrontierAbilityNumToAbility(spread->ability, species), spread->item, fixedIV, otID, firstMonId, i);
     }
 }
 

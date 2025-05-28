@@ -26,6 +26,44 @@ struct BattleFrontierTrainer
     const u16 *monSet;
 };
 
+
+struct BattleTowerSpread
+{
+    u16 species;
+	u8 nature;
+	u32 hpIv : 5;
+	u32 atkIv : 5;
+	u32 defIv : 5;
+	u32 spdIv : 5;
+	u32 spAtkIv : 5;
+	u32 spDefIv : 5;
+	u8 hpEv;
+	u8 atkEv;
+	u8 defEv;
+	u8 spdEv;
+	u8 spAtkEv;
+	u8 spDefEv;
+	u16 item;
+	u16 moves[MAX_MON_MOVES];
+	u8 ability : 2;
+};
+
+enum FrontierSpreadAbilityNumbers
+{
+	FRONTIER_ABILITY_HIDDEN,
+	FRONTIER_ABILITY_1,
+	FRONTIER_ABILITY_2,
+};
+
+extern const struct BattleTowerSpread gFrontierSpreads[];
+extern const struct BattleTowerSpread gFrontierLegendarySpreads[];
+
+
+#define TOTAL_SPREADS ARRAY_COUNT(gFrontierSpreads)
+#define TOTAL_LEGENDARY_SPREADS ARRAY_COUNT(gFrontierLegendarySpreads)
+extern const u16 gNumFrontierSpreads;
+extern const u16 gNumFrontierLegendarySpreads;
+
 extern const u8 gTowerMaleFacilityClasses[30];
 extern const u16 gTowerMaleTrainerGfxIds[30];
 extern const u8 gTowerFemaleFacilityClasses[20];
@@ -78,5 +116,6 @@ bool32 ValidateBattleTowerRecord(u8 recordId); // unused
 void TrySetLinkBattleTowerEnemyPartyLevel(void);
 void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32 otID, u32 flags, struct Pokemon *dst);
 void FillPartnerParty(u16 trainerId);
+void CreateBattleFacilityMon(const struct BattleTowerSpread* spread, u16 level, u32 ability, u16 item, u8 fixedIV, u32 otID, u8 firstMonId, s32 i);
 
 #endif //GUARD_BATTLE_TOWER_H

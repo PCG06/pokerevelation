@@ -32,6 +32,7 @@
 #include "constants/battle_tent.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "frontier_util.h"
 
 // Select_ refers to the first Pokémon selection screen where you choose your initial 3 rental Pokémon.
 // Swap_   refers to the subsequent selection screens where you can swap a Pokémon with one from the beaten trainer
@@ -1743,7 +1744,7 @@ static void CreateFrontierFactorySelectableMons(u8 firstMonId)
     u8 i = 0;
     u8 ivs = 0;
     u8 level = 0;
-    u32 otId = 0;
+    u32 otID = 0;
     u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     u8 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     u8 challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / 7;
@@ -1756,20 +1757,15 @@ static void CreateFrontierFactorySelectableMons(u8 firstMonId)
         level = FRONTIER_MAX_LEVEL_50;
 
     rentalRank = GetNumPastRentalsRank(battleMode, lvlMode);
-    otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    otID = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
 
     for (i = 0; i < SELECTABLE_MONS_COUNT; i++)
     {
-        u16 monId = gSaveBlock2Ptr->frontier.rentalMons[i].monId;
-        sFactorySelectScreen->mons[i + firstMonId].monId = monId;
-        if (i < rentalRank)
-            ivs = GetFactoryMonFixedIV(challengeNum + 1, FALSE);
-        else
-            ivs = GetFactoryMonFixedIV(challengeNum, FALSE);
-
+        u16 monId = gSaveBlock2Ptr->frontier.rentalMons[i].monId; // Should this be changed to something else now that we load them from struct?
+        sFactorySelectScreen->mons[i + firstMonId].monId = monId;        
         CreateFacilityMon(&gFacilityTrainerMons[monId],
-                level, ivs, otId, FLAG_FRONTIER_MON_FACTORY,
-                &sFactorySelectScreen->mons[i + firstMonId].monData);
+                 level, ivs, otID, FLAG_FRONTIER_MON_FACTORY,
+                 &sFactorySelectScreen->mons[i + firstMonId].monData);
     }
 }
 
