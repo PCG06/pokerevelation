@@ -307,7 +307,7 @@ static const struct MenuAction sItemMenuActions[] = {
 #if I_BAG_SORT == TRUE
     [ACTION_BY_NAME]           = {COMPOUND_STRING("NAME"),      {ItemMenu_SortByName}},
     [ACTION_BY_TYPE]           = {COMPOUND_STRING("TYPE"),      {ItemMenu_SortByType}},
-    [ACTION_BY_AMOUNT]         = {COMPOUND_STRING("QUANT"),     {ItemMenu_SortByAmount}},
+    [ACTION_BY_AMOUNT]         = {COMPOUND_STRING("AMNT"),      {ItemMenu_SortByAmount}},
 #endif // I_BAG_SORT == TRUE
     [ACTION_DUMMY]             = {gText_EmptyString2, {NULL}}
 };

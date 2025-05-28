@@ -3512,8 +3512,22 @@ static const u16 sPlayerItems[] = {
     ITEM_ZOOM_LENS,
 };
 
+u8 GetItemQuantityTo100(u16 itemId)
+{
+    if (itemId == ITEM_NONE)
+        return 0;
+
+    u16 count = CountTotalItemQuantityInBag(itemId);
+    
+    if (count >= 100)
+        return 0;
+
+    return 100 - count;
+}
+
 void GivePlayerItems(void)
 {
+    u8 qty;
     u16 itemId;
 
     // Give TMs
@@ -3523,15 +3537,20 @@ void GivePlayerItems(void)
     }
 
     // Give Berries
-    for (itemId = FIRST_BERRY_INDEX; itemId < LAST_BERRY_INDEX; itemId++) // Ignore the last berry
+    for (itemId = FIRST_BERRY_INDEX; itemId < LAST_BERRY_INDEX; itemId++)
     {
-        AddBagItem(itemId, 100);
+        qty = GetItemQuantityTo100(itemId);
+        if (qty)
+            AddBagItem(itemId, qty);
     }
 
     // Give other relevant items
-    for (itemId = 0; itemId < ARRAY_COUNT(sPlayerItems); itemId++)
+    for (int i = 0; i < ARRAY_COUNT(sPlayerItems); i++)
     {
-        AddBagItem(sPlayerItems[itemId], 100);
+        itemId = sPlayerItems[i];
+        qty = GetItemQuantityTo100(itemId);
+        if (qty)
+            AddBagItem(itemId, qty);
     }
 }
 
