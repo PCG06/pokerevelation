@@ -45,7 +45,7 @@ struct BattleTowerSpread
 	u8 spDefEv;
 	u16 item;
 	u16 moves[MAX_MON_MOVES];
-	u8 ability : 2;
+	u16 ability;
 };
 
 enum FrontierSpreadAbilityNumbers

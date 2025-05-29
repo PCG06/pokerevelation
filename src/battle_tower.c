@@ -1599,7 +1599,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     spread = &spreads[Random() % spreadCount];
     species = spread->species;
     item = spread->item;
-    ability = ConvertFrontierAbilityNumToAbility(spread->ability, species);
+    ability = CheckMonAbilitySlot(species, spread->ability);
 
 
     ModifyPersonalityForNature(&personality, fmon->nature);
@@ -1791,7 +1791,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
 
         spread = &spreads[Random() % spreadCount];
         item = spread->item;
-        ability = ConvertFrontierAbilityNumToAbility(spread->ability, species);
+        ability = CheckMonAbilitySlot(species, spread->ability);
 
         // Ban mons based on streak count here
 
@@ -1917,7 +1917,7 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId)
         //         level, fixedIV, otID, FLAG_FRONTIER_MON_FACTORY,
         //         &gEnemyParty[firstMonId + i]);
         spread = &spreads[Random() % spreadCount];
-        CreateBattleFacilityMon(spread, level, ConvertFrontierAbilityNumToAbility(spread->ability, species), spread->item, fixedIV, otID, firstMonId, i);
+        CreateBattleFacilityMon(spread, level, CheckMonAbilitySlot(species, spread->ability), spread->item, fixedIV, otID, firstMonId, i);
     }
 }
 
