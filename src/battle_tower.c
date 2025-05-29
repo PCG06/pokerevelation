@@ -1648,7 +1648,8 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     CalculateMonStats(dst);
 }
 
-void CreateBattleFacilityMon(const struct BattleTowerSpread* spread, u16 level, u32 ability, u16 item, u8 fixedIV, u32 otID, u8 firstMonId, s32 i) {
+void CreateBattleFacilityMon(const struct BattleTowerSpread* spread, u16 level, u32 ability, u16 item, u8 fixedIV, u32 otID, u8 firstMonId, s32 i)
+{
     u32 personality = 0;
     s32 j;
     u8 ball = Random() % POKEBALL_COUNT;
