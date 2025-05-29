@@ -26,33 +26,15 @@ struct BattleFrontierTrainer
     const u16 *monSet;
 };
 
-
 struct BattleTowerSpread
 {
     u16 species;
 	u8 nature;
-	u32 hpIv : 5;
-	u32 atkIv : 5;
-	u32 defIv : 5;
-	u32 spdIv : 5;
-	u32 spAtkIv : 5;
-	u32 spDefIv : 5;
-	u8 hpEv;
-	u8 atkEv;
-	u8 defEv;
-	u8 spdEv;
-	u8 spAtkEv;
-	u8 spDefEv;
+    const u8 *ev;
+    u32 iv;
 	u16 item;
 	u16 moves[MAX_MON_MOVES];
 	u16 ability;
-};
-
-enum FrontierSpreadAbilityNumbers
-{
-	FRONTIER_ABILITY_HIDDEN,
-	FRONTIER_ABILITY_1,
-	FRONTIER_ABILITY_2,
 };
 
 extern const struct BattleTowerSpread gFrontierSpreads[];

@@ -2651,26 +2651,3 @@ void ClearEnemyPartyAfterChallenge()
         ZeroEnemyPartyMons();
     }
 }
-
-u32 ConvertFrontierAbilityNumToAbility(const u32 abilityNum, const u16 species)
-{
-	u32 ability = ABILITY_NONE;
-
-	switch (abilityNum)
-    {
-		case FRONTIER_ABILITY_1:
-			ability = GetAbilityBySpecies(species, 0);
-			break;
-		case FRONTIER_ABILITY_2:
-			ability = GetAbilityBySpecies(species, 1);
-			break;
-		case FRONTIER_ABILITY_HIDDEN:
-			ability = GetAbilityBySpecies(species, 2);
-			break;
-	}
-
-	if (ability == ABILITY_NONE)
-		ability = GetAbilityBySpecies(species, 1);
-
-	return ability;
-}

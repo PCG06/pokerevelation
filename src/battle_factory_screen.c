@@ -1747,8 +1747,8 @@ static void CreateFrontierFactorySelectableMons(u8 firstMonId)
     u32 otID = 0;
     u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     u8 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
-    u8 challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / 7;
-    u8 rentalRank = 0;
+    u8 UNUSED challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / 7;
+    u8 UNUSED rentalRank = 0;
 
     gFacilityTrainerMons = gBattleFrontierMons;
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)

@@ -1620,42 +1620,29 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     }
 
     SetMonData(dst, MON_DATA_FRIENDSHIP, &friendship);
+
     // Set ability and item from spread
     SetMonData(dst, MON_DATA_ABILITY_NUM, &ability);
     SetMonData(dst, MON_DATA_HELD_ITEM, &item);
-    // Set moves from spread
-    for (j = 0; j < MAX_MON_MOVES; j++) {
-        SetMonMoveSlot(dst, spread->moves[j], j);
-    }
-    // Set EVs from spread
-    if (spread->hpEv > 0)
-        SetMonData(dst, MON_DATA_HP_EV, &spread->hpEv);
-    if (spread->atkEv > 0) 
-        SetMonData(dst, MON_DATA_ATK_EV, &spread->atkEv);
-    if (spread->defEv > 0)
-        SetMonData(dst, MON_DATA_DEF_EV, &spread->defEv);
-    if (spread->spAtkEv > 0)
-        SetMonData(dst, MON_DATA_SPATK_EV, &spread->spAtkEv);
-    if (spread->spDefEv > 0)
-        SetMonData(dst, MON_DATA_SPDEF_EV, &spread->spDefEv);
-    if (spread->spdEv > 0)
-        SetMonData(dst, MON_DATA_SPEED_EV, &spread->spdEv);
 
-    
-    u8 iv;
-    
-    iv = spread->hpIv;
-    SetMonData(dst, MON_DATA_HP_IV, &iv);
-    iv = spread->atkIv;
-    SetMonData(dst, MON_DATA_ATK_IV, &iv);
-    iv = spread->defIv;
-    SetMonData(dst, MON_DATA_DEF_IV, &iv);
-    iv = spread->spAtkIv;
-    SetMonData(dst, MON_DATA_SPATK_IV, &iv);
-    iv = spread->spDefIv;
-    SetMonData(dst, MON_DATA_SPDEF_IV, &iv);
-    iv = spread->spdIv;
-    SetMonData(dst, MON_DATA_SPEED_IV, &iv);
+    // Set moves from spread
+    for (j = 0; j < MAX_MON_MOVES; j++)
+        SetMonMoveSlot(dst, spread->moves[j], j);
+
+    // Set IVs from spread
+    SetMonData(dst, MON_DATA_IVS, &spread->iv);
+
+    // Set EVs from spread
+    if (spread->ev != NULL)
+    {
+        SetMonData(dst, MON_DATA_HP_EV, &spread->ev[0]);
+        SetMonData(dst, MON_DATA_ATK_EV, &spread->ev[1]);
+        SetMonData(dst, MON_DATA_DEF_EV, &spread->ev[2]);
+        SetMonData(dst, MON_DATA_SPATK_EV, &spread->ev[3]);
+        SetMonData(dst, MON_DATA_SPDEF_EV, &spread->ev[4]);
+        SetMonData(dst, MON_DATA_SPEED_EV, &spread->ev[5]);
+    }
+
     //CreateFacilityMon(&gFacilityTrainerMons[monId], level, fixedIV, otID, 0, dst);
     SetMonData(dst, MON_DATA_POKEBALL, &ball);
     CalculateMonStats(dst);
@@ -1679,39 +1666,25 @@ void CreateBattleFacilityMon(const struct BattleTowerSpread* spread, u16 level, 
     // Set ability and item from spread
     SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ABILITY_NUM, &ability);
     SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HELD_ITEM, &item);
-    // Set moves from spread
-    for (j = 0; j < MAX_MON_MOVES; j++) {
-        SetMonMoveSlot(&gEnemyParty[i + firstMonId], spread->moves[j], j);
-    }
-    // Set EVs from spread
-    if (spread->hpEv > 0)
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HP_EV, &spread->hpEv);
-    if (spread->atkEv > 0) 
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ATK_EV, &spread->atkEv);
-    if (spread->defEv > 0)
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_DEF_EV, &spread->defEv);
-    if (spread->spAtkEv > 0)
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPATK_EV, &spread->spAtkEv);
-    if (spread->spDefEv > 0)
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPDEF_EV, &spread->spDefEv);
-    if (spread->spdEv > 0)
-        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPEED_EV, &spread->spdEv);
 
-    
-    u8 iv;
-    
-    iv = spread->hpIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HP_IV, &iv);
-    iv = spread->atkIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ATK_IV, &iv);
-    iv = spread->defIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_DEF_IV, &iv);
-    iv = spread->spAtkIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPATK_IV, &iv);
-    iv = spread->spDefIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPDEF_IV, &iv);
-    iv = spread->spdIv;
-    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPEED_IV, &iv);
+    // Set moves from spread
+    for (j = 0; j < MAX_MON_MOVES; j++)
+        SetMonMoveSlot(&gEnemyParty[i + firstMonId], spread->moves[j], j);
+
+    // Set IVs from spread
+    SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_IVS, &spread->iv);
+
+    // Set EVs from spread
+    if (spread->ev != NULL)
+    {
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_HP_EV, &spread->ev[0]);
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_ATK_EV, &spread->ev[1]);
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_DEF_EV, &spread->ev[2]);
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPATK_EV, &spread->ev[3]);
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPDEF_EV, &spread->ev[4]);
+        SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_SPEED_EV, &spread->ev[5]);
+    }
+
     //CreateFacilityMon(&gFacilityTrainerMons[monId], level, fixedIV, otID, 0, &gEnemyParty[i + firstMonId]);
     SetMonData(&gEnemyParty[i + firstMonId], MON_DATA_POKEBALL, &ball);
     CalculateMonStats(&gEnemyParty[i + firstMonId]);

@@ -25,6 +25,5 @@ u8 GetFrontierBrainMonNature(u8 monId);
 u8 GetFrontierBrainMonEvs(u8 monId, u8 evStatId);
 s32 GetFronterBrainSymbol(void);
 void ClearEnemyPartyAfterChallenge(void);
-u32 ConvertFrontierAbilityNumToAbility(const u32 abilityNum, const u16 species);
 
 #endif // GUARD_FRONTIER_UTIL_H
