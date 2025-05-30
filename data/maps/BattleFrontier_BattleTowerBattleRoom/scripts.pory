@@ -55,8 +55,6 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedOpponent::
 	applymovement LOCALID_TOWER_BATTLE_OPPONENT, BattleFrontier_BattleTowerBattleRoom_Movement_OpponentExit
 	waitmovement 0
 	removeobject LOCALID_TOWER_BATTLE_OPPONENT
-	frontier_getbrainstatus
-	call_if_ne VAR_RESULT, FRONTIER_BRAIN_NOT_READY, BattleFrontier_BattleTowerBattleRoom_EventScript_SecondAttendantEnter
 	applymovement LOCALID_TOWER_BATTLE_ATTENDANT_1, BattleFrontier_BattleTowerBattleRoom_Movement_AttendantApproachPlayer
 	waitmovement 0
 	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerBattleRoom_Movement_PlayerFaceAttendant
@@ -68,11 +66,11 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedOpponent::
 	waitfanfare
 	special HealPlayerParty
 BattleFrontier_BattleTowerBattleRoom_EventScript_AskReadyForOpponent::
-	frontier_getbrainstatus
-	copyvar VAR_TEMP_F, VAR_RESULT
-	goto_if_ne VAR_RESULT, FRONTIER_BRAIN_NOT_READY, BattleFrontier_BattleTowerBattleRoom_EventScript_MaidenUpNext
 	frontier_get FRONTIER_DATA_BATTLE_NUM
-	call BattleFrontier_BattleTowerBattleRoom_EventScript_ReadyForOpponent
+	addvar VAR_RESULT, 1
+	buffernumberstring STR_VAR_1, VAR_RESULT
+	message BattleFrontier_BattleTowerBattleRoom_Text_ReadyForOpponent
+	waitmessage
 	call BattleFrontier_EventScript_GetCantRecordBattle
 	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_BattleTowerBattleRoom_EventScript_AskReadyForOpponentNoRecord
 	multichoice 20, 8, MULTI_GO_ON_RETIRE, TRUE
@@ -153,7 +151,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_ReadyForOpponent::
 	case 6, BattleFrontier_BattleTowerBattleRoom_EventScript_ReadyFor7thOpponent
 
 BattleFrontier_BattleTowerBattleRoom_EventScript_ReadyFor2ndOpponent::
-	message BattleFrontier_BattleTowerBattleRoom_Text_ReadyFor2ndOpponent
+	message BattleFrontier_BattleTowerBattleRoom_Text_ReadyForOpponent
 	waitmessage
 	return
 
