@@ -2435,7 +2435,6 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
 {
     u8 confirmWindowId;
     u8 cancelWindowId;
-    u8 offset;
     u8 mainOffset;
 
     if (gPartyMenu.menuType != PARTY_MENU_TYPE_MULTI_SHOWCASE)
@@ -2452,17 +2451,14 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
             PutWindowTilemap(confirmWindowId);
             CopyWindowToVram(confirmWindowId, COPYWIN_GFX);
             cancelWindowId = AddWindow(&sMultiCancelButtonWindowTemplate);
-            offset = 0;
         }
         else if (gPartyMenu.layout == PARTY_LAYOUT_SINGLE)
         {
             cancelWindowId = AddWindow(&sCancelButtonWindowTemplate_equal);
-            offset = 3;
         }
         else
         {
             cancelWindowId = AddWindow(&sCancelButtonWindowTemplate);
-            offset = 3;
         }
         FillWindowPixelBuffer(cancelWindowId, PIXEL_FILL(0));
 
@@ -2470,12 +2466,12 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
         if (gPartyMenu.menuType != PARTY_MENU_TYPE_SPIN_TRADE)
         {
             mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel, 48);
-            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel);
+            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel);
         }
         else
         {
             mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel2, 48);
-            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel2);
+            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel2);
         }
         PutWindowTilemap(cancelWindowId);
         CopyWindowToVram(cancelWindowId, COPYWIN_GFX);
