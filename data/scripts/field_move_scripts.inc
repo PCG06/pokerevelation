@@ -342,6 +342,7 @@ EventScript_CantSurface::
 
 EventScript_EndSurface::
 	callnative SetFollowerNPCSurfSpriteAfterDive
+EventScript_NoSurface::
 	releaseall
 	end
 
