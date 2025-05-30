@@ -159,6 +159,7 @@ Debug_EventScript_Script_4::
 	end
 
 Debug_EventScript_Script_5::
+	warpsilent MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY, 6, 6
 	release
 	end
 
