@@ -1867,7 +1867,7 @@ static void GiveBattlePoints(void)
     s32 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
     s32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
-    s32 points;
+    s32 points, pointsGive = 1;
 
     switch (facility)
     {
@@ -1896,24 +1896,27 @@ static void GiveBattlePoints(void)
 
     if (challengeNum != 0)
         challengeNum--;
-    if (challengeNum >= ARRAY_COUNT(sBattlePointAwards[0][0]))
-        challengeNum = ARRAY_COUNT(sBattlePointAwards[0][0]) - 1;
 
-    points = sBattlePointAwards[facility][battleMode][challengeNum];
+    pointsGive *= (challengeNum ? (challengeNum / 10) + 1 : 0);
+
+    points = pointsGive;
+
     if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
-        points += 10;
+        points += 25;
+
     gSaveBlock2Ptr->frontier.battlePoints += points;
     ConvertIntToDecimalStringN(gStringVar1, points, STR_CONV_MODE_LEFT_ALIGN, 2);
+
     if (gSaveBlock2Ptr->frontier.battlePoints > MAX_BATTLE_FRONTIER_POINTS)
         gSaveBlock2Ptr->frontier.battlePoints = MAX_BATTLE_FRONTIER_POINTS;
 
     points = gSaveBlock2Ptr->frontier.cardBattlePoints;
-    points += sBattlePointAwards[facility][battleMode][challengeNum];
-    IncrementDailyBattlePoints(sBattlePointAwards[facility][battleMode][challengeNum]);
+    points += pointsGive;
+    IncrementDailyBattlePoints(pointsGive);
     if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
     {
-        points += 10;
-        IncrementDailyBattlePoints(10);
+        points += 25;
+        IncrementDailyBattlePoints(25);
     }
     if (points > 0xFFFF)
         points = 0xFFFF;

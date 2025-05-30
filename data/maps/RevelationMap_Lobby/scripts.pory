@@ -1,4 +1,23 @@
-mapscripts RevelationMap_Lobby_MapScripts {}
+mapscripts RevelationMap_Lobby_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_0x8000, 1 {
+			setvar(VAR_0x8000, 2)
+			turnplayer(DIR_NORTH)
+		}
+	]
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_0x8000, 2 {
+			setvar(VAR_0x8000, 0)
+			lock
+			special(LoadPlayerParty)
+			special(HealPlayerParty)
+			msgbox("Thank you for participating in the\n"
+					"Battle Tower Challenge!\p"
+					"We hope to see you again.", MSGBOX_NPC)
+			end
+		}
+	]
+}
 
 script RevelationMap_Lobby_Trigger0 {
 	lock
@@ -51,6 +70,69 @@ script RevelationMap_Lobby_Zigzagoon {
 
 script RevelationMap_Lobby_BattleTower_Teala {
 	lock
+	msgbox("Would you like to participate in the\n"
+			"Battle Tower Challenge?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		message("Which level do you wish to challenge?\n"
+				"Level 50 or Open Level?")
+		waitmessage
+		multichoice(17, 6, MULTI_LEVEL_MODE, FALSE)
+		switch (var(VAR_RESULT)) {
+			case FRONTIER_LVL_TENT:
+			case MULTI_B_PRESSED:
+				special(CloseLink)
+				msgbox("We look forward to seeing you on\n"
+					"another challenge!")
+				release
+				end
+		}
+		frontier_checkineligible
+		if (var(VAR_0x8004) == TRUE) {
+			msgbox("Hmm. It looks like your party is not\n"
+					"eligible for the Battle Tower.\p"
+					"Please bring three eligible Pokémon.", MSGBOX_AUTOCLOSE)
+		}
+		frontier_set(FRONTIER_DATA_LVL_MODE, VAR_RESULT)
+		message("Now please select the three eligible\n"
+				"Pokémon that are to be entered.")
+		special(SavePlayerParty)
+		fadescreen(FADE_TO_BLACK)
+		callnative(RemoveFollowingPokemon)
+		frontier_get(FRONTIER_DATA_LVL_MODE)
+		copyvar(VAR_0x8004, VAR_RESULT)
+		setvar(VAR_0x8005, FRONTIER_PARTY_SIZE)
+		special(ChoosePartyForBattleFrontier)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			special(LoadPlayerParty)
+			callnative(UpdateFollowingPokemon)
+			special(CloseLink)
+			msgbox("We look forward to seeing you on\n"
+				"another challenge!")
+			release
+			end
+		}
+		frontier_set(FRONTIER_DATA_SELECTED_MON_ORDER)
+		setvar(VAR_TEMP_CHALLENGE_STATUS, 0)
+		tower_init
+		tower_set(TOWER_DATA_WIN_STREAK_ACTIVE, TRUE)
+		frontier_set(FRONTIER_DATA_PAUSED, FALSE)
+		special(LoadPlayerParty)
+		closemessage
+		delay(2)
+		call(Common_EventScript_SaveGame)
+		setvar(VAR_TEMP_CHALLENGE_STATUS, 255)
+		incrementgamestat(GAME_STAT_ENTERED_BATTLE_TOWER)
+		setvar(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, TRUE)
+		special(SavePlayerParty)
+		setvar(VAR_0x8004, FRONTIER_UTIL_FUNC_SET_PARTY_ORDER)
+		setvar(VAR_0x8005, FRONTIER_PARTY_SIZE)
+		special(CallFrontierUtilFunc)
+		setvar(VAR_RESULT, 0)
+		setvar(VAR_TEMP_1, 0)
+		msgbox("Alright, here we go!", MSGBOX_AUTOCLOSE)
+		warp(MAP_BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM, 4, 8)
+	}
 	release
 }
 
