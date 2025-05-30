@@ -138,7 +138,7 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	call Common_EventScript_TrainerBattleMenu
+	setrespawn HEAL_LOCATION_REVELATION_LOBBY
 	release
 	end
 

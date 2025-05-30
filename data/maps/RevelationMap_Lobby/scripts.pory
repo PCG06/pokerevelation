@@ -17,6 +17,9 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			end
 		}
 	]
+	MAP_SCRIPT_ON_TRANSITION {
+		setrespawn(HEAL_LOCATION_REVELATION_LOBBY)
+	}
 }
 
 script RevelationMap_Lobby_Trigger0 {
