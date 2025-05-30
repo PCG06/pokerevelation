@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_REVELATION_MAP_LOBBY",
       "name": "RevelationMap_Lobby_Layout",
-      "width": 14,
+      "width": 15,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",

@@ -13,6 +13,7 @@ script RevelationMap_Lobby_Trigger0 {
 			"Please step back and choose your\l"
 			"Pokémon.", MSGBOX_AUTOCLOSE)
 	applymoveplayer(moves(walk_down, face_left))
+	goto(Common_EventScript_ChoosePkmnMenu)
 	release
 	end
 }
@@ -44,6 +45,23 @@ script RevelationMap_Lobby_Zigzagoon {
 		applymovement(LOCALID_REVELATION_ZIGGY, moves(jump_in_place_right_left))
 	}
 	moncryscript(SPECIES_ZIGZAGOON, "Goon! Goon!", "Ziggy")
+	release
+	end
+}
+
+script RevelationMap_Lobby_BattleTower_Teala {
+	lock
+	release
+}
+
+script RevelationMap_Lobby_Purrloin {
+	lock
+	if (var(VAR_FACING) == DIR_NORTH) {
+		applymovement(LOCALID_REVELATION_OGGY, moves(jump_in_place_up_down))
+	} else {
+		applymovement(LOCALID_REVELATION_OGGY, moves(jump_in_place_left_right))
+	}
+	moncryscript(SPECIES_PURRLOIN, "Purr!", "Oggy")
 	release
 	end
 }
