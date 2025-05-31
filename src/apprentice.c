@@ -1184,20 +1184,20 @@ static void SetSavedApprenticeTrainerGfxId(void)
     u8 objectEventGfxId;
     u8 class = gApprentices[gSaveBlock2Ptr->apprentices[0].id].facilityClass;
 
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleTrainers) && gTowerMaleTrainers[i].facilityClass != class; i++)
         ;
-    if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerMaleTrainers))
     {
-        objectEventGfxId = gTowerMaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerMaleTrainers[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
         return;
     }
 
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers) && gTowerFemaleTrainers[i].facilityClass != class; i++)
         ;
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
     {
-        objectEventGfxId = gTowerFemaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerFemaleTrainers[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
     }
 }
@@ -1208,20 +1208,20 @@ static void SetPlayerApprenticeTrainerGfxId(void)
     u8 objectEventGfxId;
     u8 class = gApprentices[PLAYER_APPRENTICE.id].facilityClass;
 
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleTrainers) && gTowerMaleTrainers[i].facilityClass != class; i++)
         ;
-    if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerMaleTrainers))
     {
-        objectEventGfxId = gTowerMaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerMaleTrainers[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
         return;
     }
 
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers) && gTowerFemaleTrainers[i].facilityClass != class; i++)
         ;
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
     {
-        objectEventGfxId = gTowerFemaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerFemaleTrainers[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
     }
 }

@@ -26,10 +26,14 @@ struct BattleFrontierTrainer
     const u16 *monSet;
 };
 
-extern const u8 gTowerMaleFacilityClasses[30];
-extern const u16 gTowerMaleTrainerGfxIds[30];
-extern const u8 gTowerFemaleFacilityClasses[20];
-extern const u16 gTowerFemaleTrainerGfxIds[20];
+struct TowerTrainersIds
+{
+    u8 facilityClass;
+    u16 gfxId;
+};
+
+extern const struct TowerTrainersIds gTowerMaleTrainers[30];
+extern const struct TowerTrainersIds gTowerFemaleTrainers[20];
 extern const struct TrainerMon gBattleFrontierMons[];
 extern const struct BattleFrontierTrainer gBattleFrontierTrainers[];
 extern const struct TrainerMon gSlateportBattleTentMons[];

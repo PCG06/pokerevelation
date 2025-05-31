@@ -84,120 +84,62 @@ static u8 SetTentPtrsGetLevel(void);
 #include "data/battle_frontier/battle_frontier_trainers.h"
 #include "data/battle_frontier/battle_frontier_mons.h"
 
-const u8 gTowerMaleFacilityClasses[30] =
+const struct TowerTrainersIds gTowerMaleTrainers[30] =
 {
-    FACILITY_CLASS_RUIN_MANIAC,
-    FACILITY_CLASS_TUBER_M,
-    FACILITY_CLASS_COOLTRAINER_M,
-    FACILITY_CLASS_RICH_BOY,
-    FACILITY_CLASS_POKEMANIAC,
-    FACILITY_CLASS_SWIMMER_M,
-    FACILITY_CLASS_BLACK_BELT,
-    FACILITY_CLASS_GUITARIST,
-    FACILITY_CLASS_KINDLER,
-    FACILITY_CLASS_CAMPER,
-    FACILITY_CLASS_BUG_MANIAC,
-    FACILITY_CLASS_PSYCHIC_M,
-    FACILITY_CLASS_GENTLEMAN,
-    FACILITY_CLASS_SCHOOL_KID_M,
-    FACILITY_CLASS_POKEFAN_M,
-    FACILITY_CLASS_EXPERT_M,
-    FACILITY_CLASS_YOUNGSTER,
-    FACILITY_CLASS_FISHERMAN,
-    FACILITY_CLASS_CYCLING_TRIATHLETE_M,
-    FACILITY_CLASS_RUNNING_TRIATHLETE_M,
-    FACILITY_CLASS_SWIMMING_TRIATHLETE_M,
-    FACILITY_CLASS_DRAGON_TAMER,
-    FACILITY_CLASS_BIRD_KEEPER,
-    FACILITY_CLASS_NINJA_BOY,
-    FACILITY_CLASS_SAILOR,
-    FACILITY_CLASS_COLLECTOR,
-    FACILITY_CLASS_PKMN_BREEDER_M,
-    FACILITY_CLASS_PKMN_RANGER_M,
-    FACILITY_CLASS_BUG_CATCHER,
-    FACILITY_CLASS_HIKER
+    {FACILITY_CLASS_RUIN_MANIAC,           OBJ_EVENT_GFX_HIKER},
+    {FACILITY_CLASS_TUBER_M,               OBJ_EVENT_GFX_TUBER_M},
+    {FACILITY_CLASS_COOLTRAINER_M,         OBJ_EVENT_GFX_MAN_3},
+    {FACILITY_CLASS_RICH_BOY,              OBJ_EVENT_GFX_RICH_BOY},
+    {FACILITY_CLASS_POKEMANIAC,            OBJ_EVENT_GFX_MANIAC},
+    {FACILITY_CLASS_SWIMMER_M,             OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M},
+    {FACILITY_CLASS_BLACK_BELT,            OBJ_EVENT_GFX_BLACK_BELT},
+    {FACILITY_CLASS_GUITARIST,             OBJ_EVENT_GFX_GUITARIST},
+    {FACILITY_CLASS_KINDLER,               OBJ_EVENT_GFX_KINDLER},
+    {FACILITY_CLASS_CAMPER,                OBJ_EVENT_GFX_CAMPER},
+    {FACILITY_CLASS_BUG_MANIAC,            OBJ_EVENT_GFX_MANIAC},
+    {FACILITY_CLASS_PSYCHIC_M,             OBJ_EVENT_GFX_PSYCHIC_M},
+    {FACILITY_CLASS_GENTLEMAN,             OBJ_EVENT_GFX_GENTLEMAN},
+    {FACILITY_CLASS_SCHOOL_KID_M,          OBJ_EVENT_GFX_SCHOOL_KID_M},
+    {FACILITY_CLASS_POKEFAN_M,             OBJ_EVENT_GFX_POKEFAN_M},
+    {FACILITY_CLASS_EXPERT_M,              OBJ_EVENT_GFX_EXPERT_M},
+    {FACILITY_CLASS_YOUNGSTER,             OBJ_EVENT_GFX_YOUNGSTER},
+    {FACILITY_CLASS_FISHERMAN,             OBJ_EVENT_GFX_FISHERMAN},
+    {FACILITY_CLASS_CYCLING_TRIATHLETE_M,  OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M},
+    {FACILITY_CLASS_RUNNING_TRIATHLETE_M,  OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M},
+    {FACILITY_CLASS_SWIMMING_TRIATHLETE_M, OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M},
+    {FACILITY_CLASS_DRAGON_TAMER,          OBJ_EVENT_GFX_DRAGON_TAMER},
+    {FACILITY_CLASS_BIRD_KEEPER,           OBJ_EVENT_GFX_BIRD_KEEPER},
+    {FACILITY_CLASS_NINJA_BOY,             OBJ_EVENT_GFX_NINJA_BOY},
+    {FACILITY_CLASS_SAILOR,                OBJ_EVENT_GFX_SAILOR},
+    {FACILITY_CLASS_COLLECTOR,             OBJ_EVENT_GFX_MANIAC},
+    {FACILITY_CLASS_PKMN_BREEDER_M,        OBJ_EVENT_GFX_MAN_4},
+    {FACILITY_CLASS_PKMN_RANGER_M,         OBJ_EVENT_GFX_CAMPER},
+    {FACILITY_CLASS_BUG_CATCHER,           OBJ_EVENT_GFX_BUG_CATCHER},
+    {FACILITY_CLASS_HIKER,                 OBJ_EVENT_GFX_HIKER}
 };
 
-const u8 gTowerFemaleFacilityClasses[20] =
+const struct TowerTrainersIds gTowerFemaleTrainers[20] =
 {
-    FACILITY_CLASS_AROMA_LADY,
-    FACILITY_CLASS_TUBER_F,
-    FACILITY_CLASS_COOLTRAINER_F,
-    FACILITY_CLASS_HEX_MANIAC,
-    FACILITY_CLASS_LADY,
-    FACILITY_CLASS_BEAUTY,
-    FACILITY_CLASS_PSYCHIC_F,
-    FACILITY_CLASS_SCHOOL_KID_F,
-    FACILITY_CLASS_POKEFAN_F,
-    FACILITY_CLASS_EXPERT_F,
-    FACILITY_CLASS_CYCLING_TRIATHLETE_F,
-    FACILITY_CLASS_RUNNING_TRIATHLETE_F,
-    FACILITY_CLASS_SWIMMING_TRIATHLETE_F,
-    FACILITY_CLASS_BATTLE_GIRL,
-    FACILITY_CLASS_PARASOL_LADY,
-    FACILITY_CLASS_SWIMMER_F,
-    FACILITY_CLASS_PICNICKER,
-    FACILITY_CLASS_PKMN_BREEDER_F,
-    FACILITY_CLASS_PKMN_RANGER_F,
-    FACILITY_CLASS_LASS
-};
-
-const u16 gTowerMaleTrainerGfxIds[30] =
-{
-    OBJ_EVENT_GFX_HIKER,
-    OBJ_EVENT_GFX_TUBER_M,
-    OBJ_EVENT_GFX_MAN_3,
-    OBJ_EVENT_GFX_RICH_BOY,
-    OBJ_EVENT_GFX_MANIAC,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M,
-    OBJ_EVENT_GFX_BLACK_BELT,
-    OBJ_EVENT_GFX_MAN_5,
-    OBJ_EVENT_GFX_MAN_5,
-    OBJ_EVENT_GFX_CAMPER,
-    OBJ_EVENT_GFX_MANIAC,
-    OBJ_EVENT_GFX_PSYCHIC_M,
-    OBJ_EVENT_GFX_GENTLEMAN,
-    OBJ_EVENT_GFX_SCHOOL_KID_M,
-    OBJ_EVENT_GFX_POKEFAN_M,
-    OBJ_EVENT_GFX_EXPERT_M,
-    OBJ_EVENT_GFX_YOUNGSTER,
-    OBJ_EVENT_GFX_FISHERMAN,
-    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M,
-    OBJ_EVENT_GFX_MAN_3,
-    OBJ_EVENT_GFX_MAN_5,
-    OBJ_EVENT_GFX_NINJA_BOY,
-    OBJ_EVENT_GFX_SAILOR,
-    OBJ_EVENT_GFX_MANIAC,
-    OBJ_EVENT_GFX_MAN_4,
-    OBJ_EVENT_GFX_CAMPER,
-    OBJ_EVENT_GFX_BUG_CATCHER,
-    OBJ_EVENT_GFX_HIKER
-};
-
-const u16 gTowerFemaleTrainerGfxIds[20] =
-{
-    OBJ_EVENT_GFX_WOMAN_2,
-    OBJ_EVENT_GFX_TUBER_F,
-    OBJ_EVENT_GFX_WOMAN_5,
-    OBJ_EVENT_GFX_HEX_MANIAC,
-    OBJ_EVENT_GFX_WOMAN_2,
-    OBJ_EVENT_GFX_BEAUTY,
-    OBJ_EVENT_GFX_LASS,
-    OBJ_EVENT_GFX_GIRL_3,
-    OBJ_EVENT_GFX_POKEFAN_F,
-    OBJ_EVENT_GFX_EXPERT_F,
-    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F,
-    OBJ_EVENT_GFX_GIRL_3,
-    OBJ_EVENT_GFX_WOMAN_5,
-    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F,
-    OBJ_EVENT_GFX_PICNICKER,
-    OBJ_EVENT_GFX_WOMAN_2,
-    OBJ_EVENT_GFX_PICNICKER,
-    OBJ_EVENT_GFX_LASS
+    {FACILITY_CLASS_AROMA_LADY,            OBJ_EVENT_GFX_WOMAN_2},
+    {FACILITY_CLASS_TUBER_F,               OBJ_EVENT_GFX_TUBER_F},
+    {FACILITY_CLASS_COOLTRAINER_F,         OBJ_EVENT_GFX_WOMAN_5},
+    {FACILITY_CLASS_HEX_MANIAC,            OBJ_EVENT_GFX_HEX_MANIAC},
+    {FACILITY_CLASS_LADY,                  OBJ_EVENT_GFX_WOMAN_2},
+    {FACILITY_CLASS_BEAUTY,                OBJ_EVENT_GFX_BEAUTY},
+    {FACILITY_CLASS_PSYCHIC_F,             OBJ_EVENT_GFX_LASS},
+    {FACILITY_CLASS_SCHOOL_KID_F,          OBJ_EVENT_GFX_GIRL_3},
+    {FACILITY_CLASS_POKEFAN_F,             OBJ_EVENT_GFX_POKEFAN_F},
+    {FACILITY_CLASS_EXPERT_F,              OBJ_EVENT_GFX_EXPERT_F},
+    {FACILITY_CLASS_CYCLING_TRIATHLETE_F,  OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F},
+    {FACILITY_CLASS_RUNNING_TRIATHLETE_F,  OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F},
+    {FACILITY_CLASS_SWIMMING_TRIATHLETE_F, OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F},
+    {FACILITY_CLASS_BATTLE_GIRL,           OBJ_EVENT_GFX_GIRL_3},
+    {FACILITY_CLASS_PARASOL_LADY,          OBJ_EVENT_GFX_WOMAN_5},
+    {FACILITY_CLASS_SWIMMER_F,             OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F},
+    {FACILITY_CLASS_PICNICKER,             OBJ_EVENT_GFX_PICNICKER},
+    {FACILITY_CLASS_PKMN_BREEDER_F,        OBJ_EVENT_GFX_WOMAN_2},
+    {FACILITY_CLASS_PKMN_RANGER_F,         OBJ_EVENT_GFX_PICNICKER},
+    {FACILITY_CLASS_LASS,                  OBJ_EVENT_GFX_LASS}
 };
 
 // Excludes the unused RS_FACILITY_CLASS_BOARDER_1 and _2
@@ -1098,14 +1040,14 @@ void SetBattleFacilityTrainerGfxId(u16 trainerId, u8 tempVarId)
     }
 
     // Search male classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleTrainers); i++)
     {
-        if (gTowerMaleFacilityClasses[i] == facilityClass)
+        if (gTowerMaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerMaleTrainers))
     {
-        trainerObjectGfxId = gTowerMaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerMaleTrainers[i].gfxId;
         switch (tempVarId)
         {
         case 0:
@@ -1122,14 +1064,14 @@ void SetBattleFacilityTrainerGfxId(u16 trainerId, u8 tempVarId)
     }
 
     // Search female classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers); i++)
     {
-        if (gTowerFemaleFacilityClasses[i] == facilityClass)
+        if (gTowerFemaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
     {
-        trainerObjectGfxId = gTowerFemaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerFemaleTrainers[i].gfxId;
         switch (tempVarId)
         {
         case 0:
@@ -1194,26 +1136,26 @@ u16 GetBattleFacilityTrainerGfxId(u16 trainerId)
     }
 
     // Search male classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleTrainers); i++)
     {
-        if (gTowerMaleFacilityClasses[i] == facilityClass)
+        if (gTowerMaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerMaleTrainers))
     {
-        trainerObjectGfxId = gTowerMaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerMaleTrainers[i].gfxId;
         return trainerObjectGfxId;
     }
 
     // Search female classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers); i++)
     {
-        if (gTowerFemaleFacilityClasses[i] == facilityClass)
+        if (gTowerFemaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
     {
-        trainerObjectGfxId = gTowerFemaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerFemaleTrainers[i].gfxId;
         return trainerObjectGfxId;
     }
     else
@@ -1534,12 +1476,12 @@ static bool8 IsFrontierTrainerFemale(u16 trainerId)
     }
 
     // Search female classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers); i++)
     {
-        if (gTowerFemaleFacilityClasses[i] == facilityClass)
+        if (gTowerFemaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
         return TRUE;
     else
         return FALSE;
@@ -2142,17 +2084,17 @@ static void SaveBattleTowerRecord(void)
     battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     if (gSaveBlock2Ptr->playerGender != MALE)
     {
-        class = gTowerFemaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] +
+        class = gTowerFemaleTrainers[(gSaveBlock2Ptr->playerTrainerId[0] +
                                        gSaveBlock2Ptr->playerTrainerId[1] +
                                        gSaveBlock2Ptr->playerTrainerId[2] +
-                                       gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleFacilityClasses)];
+                                       gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleTrainers)].facilityClass;
     }
     else
     {
-        class = gTowerMaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] +
+        class = gTowerMaleTrainers[(gSaveBlock2Ptr->playerTrainerId[0] +
                                      gSaveBlock2Ptr->playerTrainerId[1] +
                                      gSaveBlock2Ptr->playerTrainerId[2] +
-                                     gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleFacilityClasses)];
+                                     gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleTrainers)].facilityClass;
     }
     playerRecord->lvlMode = lvlMode;
     playerRecord->facilityClass = class;
@@ -2820,13 +2762,13 @@ static void UNUSED FillEReaderTrainerWithPlayerData(void)
 
     if (gSaveBlock2Ptr->playerGender != MALE)
     {
-        ereaderTrainer->facilityClass = gTowerFemaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
-                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleFacilityClasses)];
+        ereaderTrainer->facilityClass = gTowerFemaleTrainers[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
+                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleTrainers)].facilityClass;
     }
     else
     {
-        ereaderTrainer->facilityClass = gTowerMaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
-                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleFacilityClasses)];
+        ereaderTrainer->facilityClass = gTowerMaleTrainers[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
+                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleTrainers)].facilityClass;
     }
 
     CopyTrainerId(ereaderTrainer->trainerId, gSaveBlock2Ptr->playerTrainerId);
@@ -3509,26 +3451,26 @@ u16 FacilityClassToGraphicsId(u8 facilityClass)
     u8 i;
 
     // Search male classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleTrainers); i++)
     {
-        if (gTowerMaleFacilityClasses[i] == facilityClass)
+        if (gTowerMaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerMaleTrainers))
     {
-        trainerObjectGfxId = gTowerMaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerMaleTrainers[i].gfxId;
         return trainerObjectGfxId;
     }
 
     // Search female classes.
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses); i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleTrainers); i++)
     {
-        if (gTowerFemaleFacilityClasses[i] == facilityClass)
+        if (gTowerFemaleTrainers[i].facilityClass == facilityClass)
             break;
     }
-    if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
+    if (i != ARRAY_COUNT(gTowerFemaleTrainers))
     {
-        trainerObjectGfxId = gTowerFemaleTrainerGfxIds[i];
+        trainerObjectGfxId = gTowerFemaleTrainers[i].gfxId;
         return trainerObjectGfxId;
     }
     else
