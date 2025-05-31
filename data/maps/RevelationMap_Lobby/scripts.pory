@@ -13,7 +13,10 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			special(HealPlayerParty)
 			msgbox("Thank you for participating in the\n"
 					"Battle Tower Challenge!\p"
-					"We hope to see you again.", MSGBOX_NPC)
+					"We hope to see you again.", MSGBOX_DEFAULT)
+			forcesave
+			closemessage
+			turnplayer(DIR_SOUTH)
 			end
 		}
 	]
@@ -123,7 +126,7 @@ script RevelationMap_Lobby_BattleTower_Teala {
 		special(LoadPlayerParty)
 		closemessage
 		delay(2)
-		call(Common_EventScript_SaveGame)
+		forcesave
 		setvar(VAR_TEMP_CHALLENGE_STATUS, 255)
 		incrementgamestat(GAME_STAT_ENTERED_BATTLE_TOWER)
 		setvar(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, TRUE)
