@@ -627,62 +627,76 @@ u8 BattleSetup_GetEnvironmentId(void)
     u16 tileBehavior;
     s16 x, y;
 
-    if (I_FISHING_ENVIRONMENT >= GEN_4 && gIsFishingEncounter)
-        GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    u16 envVar = VarGet(VAR_BATTLE_ENVIRONMENT);
+
+    if (envVar)
+    {
+        if (envVar == BATTLE_ENVIRONMENT_GRASS + 100) // i'm stupid, but y'know if it ain't broke don't fix it
+            return BATTLE_ENVIRONMENT_GRASS;
+        if (envVar == 10) // 10 means random environment
+            return Random32() % 10;
+        else
+            return envVar;
+    }
     else
-        PlayerGetDestCoords(&x, &y);
-
-    tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
-
-    if (MetatileBehavior_IsTallGrass(tileBehavior))
-        return BATTLE_ENVIRONMENT_GRASS;
-    if (MetatileBehavior_IsLongGrass(tileBehavior))
-        return BATTLE_ENVIRONMENT_LONG_GRASS;
-    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
-        return BATTLE_ENVIRONMENT_SAND;
-
-    switch (gMapHeader.mapType)
     {
-    case MAP_TYPE_TOWN:
-    case MAP_TYPE_CITY:
-    case MAP_TYPE_ROUTE:
-        break;
-    case MAP_TYPE_UNDERGROUND:
-        if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
+        if (I_FISHING_ENVIRONMENT >= GEN_4 && gIsFishingEncounter)
+            GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+        else
+            PlayerGetDestCoords(&x, &y);
+
+        tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+
+        if (MetatileBehavior_IsTallGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_GRASS;
+        if (MetatileBehavior_IsLongGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_LONG_GRASS;
+        if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
+            return BATTLE_ENVIRONMENT_SAND;
+
+        switch (gMapHeader.mapType)
+        {
+        case MAP_TYPE_TOWN:
+        case MAP_TYPE_CITY:
+        case MAP_TYPE_ROUTE:
+            break;
+        case MAP_TYPE_UNDERGROUND:
+            if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
+                return BATTLE_ENVIRONMENT_BUILDING;
+            if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+                return BATTLE_ENVIRONMENT_POND;
+            return BATTLE_ENVIRONMENT_CAVE;
+        case MAP_TYPE_INDOOR:
+        case MAP_TYPE_SECRET_BASE:
             return BATTLE_ENVIRONMENT_BUILDING;
+        case MAP_TYPE_UNDERWATER:
+            return BATTLE_ENVIRONMENT_UNDERWATER;
+        case MAP_TYPE_OCEAN_ROUTE:
+            if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+                return BATTLE_ENVIRONMENT_WATER;
+            return BATTLE_ENVIRONMENT_PLAIN;
+        }
+        if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
+            return BATTLE_ENVIRONMENT_WATER;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_POND;
-        return BATTLE_ENVIRONMENT_CAVE;
-    case MAP_TYPE_INDOOR:
-    case MAP_TYPE_SECRET_BASE:
-        return BATTLE_ENVIRONMENT_BUILDING;
-    case MAP_TYPE_UNDERWATER:
-        return BATTLE_ENVIRONMENT_UNDERWATER;
-    case MAP_TYPE_OCEAN_ROUTE:
-        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-            return BATTLE_ENVIRONMENT_WATER;
-        return BATTLE_ENVIRONMENT_PLAIN;
-    }
-    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
-        return BATTLE_ENVIRONMENT_WATER;
-    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-        return BATTLE_ENVIRONMENT_POND;
-    if (MetatileBehavior_IsMountain(tileBehavior))
-        return BATTLE_ENVIRONMENT_MOUNTAIN;
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-    {
-        // Is BRIDGE_TYPE_POND_*?
-        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_ENVIRONMENT_POND;
+        if (MetatileBehavior_IsMountain(tileBehavior))
+            return BATTLE_ENVIRONMENT_MOUNTAIN;
+        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        {
+            // Is BRIDGE_TYPE_POND_*?
+            if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
+                return BATTLE_ENVIRONMENT_POND;
 
-        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
-            return BATTLE_ENVIRONMENT_WATER;
-    }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
-        return BATTLE_ENVIRONMENT_SAND;
-    if (GetSavedWeather() == WEATHER_SANDSTORM)
-        return BATTLE_ENVIRONMENT_SAND;
+            if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
+                return BATTLE_ENVIRONMENT_WATER;
+        }
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
+            return BATTLE_ENVIRONMENT_SAND;
+        if (GetSavedWeather() == WEATHER_SANDSTORM)
+            return BATTLE_ENVIRONMENT_SAND;
 
+    }
     return BATTLE_ENVIRONMENT_PLAIN;
 }
 

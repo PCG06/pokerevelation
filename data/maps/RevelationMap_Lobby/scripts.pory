@@ -1,13 +1,13 @@
 mapscripts RevelationMap_Lobby_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_0x8000, 1 {
-			setvar(VAR_0x8000, 2)
+		VAR_0x800B, 1 {
+			setvar(VAR_0x800B, 2)
 			turnplayer(DIR_NORTH)
 		}
 	]
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_0x8000, 2 {
-			setvar(VAR_0x8000, 0)
+		VAR_0x800B, 2 {
+			setvar(VAR_0x800B, 0)
 			lock
 			special(LoadPlayerParty)
 			special(HealPlayerParty)
@@ -27,7 +27,7 @@ mapscripts RevelationMap_Lobby_MapScripts {
 
 script RevelationMap_Lobby_Trigger0 {
 	lock
-	applymove(LOCALID_REVELATION_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
 	msgbox("Benny: Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
 	emoteplayer(EMOTE_EXCLAM)
 	turnplayer(DIR_SOUTH)
@@ -45,7 +45,7 @@ script RevelationMap_Lobby_Trigger0 {
 
 script RevelationMap_Lobby_Trigger1 {
 	lock
-	applymove(LOCALID_REVELATION_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
 	msgbox("Benny: {PLAYER},\n"
 			"once you go through that door,\l"
 			"you cannot return, for any reasons.\l"
@@ -65,9 +65,9 @@ script RevelationMap_Lobby_Trigger1 {
 script RevelationMap_Lobby_Zigzagoon {
 	lock
 	if (var(VAR_FACING) == DIR_NORTH) {
-		applymovement(LOCALID_REVELATION_ZIGGY, moves(jump_in_place_up_down))
+		applymovement(LOCALID_REVELATION_LOBBY_ZIGGY, moves(jump_in_place_up_down))
 	} else {
-		applymovement(LOCALID_REVELATION_ZIGGY, moves(jump_in_place_right_left))
+		applymovement(LOCALID_REVELATION_LOBBY_ZIGGY, moves(jump_in_place_right_left))
 	}
 	moncryscript(SPECIES_ZIGZAGOON, "Goon! Goon!", "Ziggy")
 	release
@@ -145,11 +145,147 @@ script RevelationMap_Lobby_BattleTower_Teala {
 script RevelationMap_Lobby_Purrloin {
 	lock
 	if (var(VAR_FACING) == DIR_NORTH) {
-		applymovement(LOCALID_REVELATION_OGGY, moves(jump_in_place_up_down))
+		applymovement(LOCALID_REVELATION_LOBBY_OGGY, moves(jump_in_place_up_down))
 	} else {
-		applymovement(LOCALID_REVELATION_OGGY, moves(jump_in_place_left_right))
+		applymovement(LOCALID_REVELATION_LOBBY_OGGY, moves(jump_in_place_left_right))
 	}
 	moncryscript(SPECIES_PURRLOIN, "Purr!", "Oggy")
+	release
+	end
+}
+
+script RevelationMap_Lobby_MusicChanger {
+	lock
+	faceplayer
+	message("Would you like to change the\n"
+			"battle music?")
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "VS. Frontier", "VS. Trainer", "VS. Rival", "VS. Gym Leader", "VS. Elite Four", "VS. Champion", "VS. Aqua/Magma", "VS. Wild", "Random!", "Default")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferstring(STR_VAR_1, "VS. Frontier")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_FRONTIER_BRAIN)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 1:
+			bufferstring(STR_VAR_1, "VS. Trainer")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_TRAINER)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 2:
+			bufferstring(STR_VAR_1, "VS. Rival")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_RIVAL)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 3:
+			bufferstring(STR_VAR_1, "VS. Gym Leader")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_GYM_LEADER)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 4:
+			bufferstring(STR_VAR_1, "VS. Elite Four")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_ELITE_FOUR)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 5:
+			bufferstring(STR_VAR_1, "VS. Champion")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_CHAMPION)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 6:
+			bufferstring(STR_VAR_1, "VS. Aqua/Magma")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_AQUA_MAGMA)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 7:
+			bufferstring(STR_VAR_1, "VS. Wild")
+			setvar(VAR_BATTLE_MUSIC, MUS_VS_WILD)
+			goto(RevelationMap_Lobby_MusicChanged)
+		case 8:
+			bufferstring(STR_VAR_1, "a random music")
+			setvar(VAR_BATTLE_MUSIC, 1)
+			goto(RevelationMap_Lobby_MusicChanged)
+		default:
+		case 9:
+			bufferstring(STR_VAR_1, "the default Trainer music")
+			setvar(VAR_BATTLE_MUSIC, 0)
+			goto(RevelationMap_Lobby_MusicChanged)
+	}
+	release
+	end
+}
+
+script RevelationMap_Lobby_MusicChanged {
+	playse(SE_SAVE)
+	waitse
+	msgbox("The battle music has been changed to\n"
+			"{STR_VAR_1}.\l"
+			"Enjoy the tunes!", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script RevelationMap_Lobby_EnvironmentChanger {
+	lock
+	faceplayer
+	message("Would you like to change the\n"
+			"battle environment?")
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Long Grass", "Sand", "Water", "Underwater", "Pond", "Mountain", "Cave", "Building", "Plain", "Random!", "Default")
+	closemessage
+	switch (var(VAR_RESULT)) {
+		case 0:
+			bufferstring(STR_VAR_1, "the grass")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_GRASS + 100) // because _GRASS is 0
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 1:
+			bufferstring(STR_VAR_1, "the long grass")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_LONG_GRASS)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 2:
+			bufferstring(STR_VAR_1, "the sand")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_SAND)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 3:
+			bufferstring(STR_VAR_1, "the water")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_WATER)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 4:
+			bufferstring(STR_VAR_1, "the underwater")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_UNDERWATER)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 5:
+			bufferstring(STR_VAR_1, "the pond")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_POND)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 6:
+			bufferstring(STR_VAR_1, "the mountain")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_MOUNTAIN)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 7:
+			bufferstring(STR_VAR_1, "the cave")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_CAVE)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 8:
+			bufferstring(STR_VAR_1, "the building")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_BUILDING)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 9:
+			bufferstring(STR_VAR_1, "the plain")
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_PLAIN)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		case 10:
+			bufferstring(STR_VAR_1, "a random environment")
+			setvar(VAR_BATTLE_ENVIRONMENT, 10)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+		default:
+		case 11:
+			bufferstring(STR_VAR_1, "the default environment")
+			setvar(VAR_BATTLE_ENVIRONMENT, 0)
+			goto(RevelationMap_Lobby_EnvironmentChanged)
+	}
+	release
+	end
+}
+
+script RevelationMap_Lobby_EnvironmentChanged {
+	playse(SE_SAVE)
+	waitse
+	msgbox("The battle environment has been changed\n"
+			"to {STR_VAR_1}.\l"
+			"Enjoy the terrain!", MSGBOX_AUTOCLOSE)
 	release
 	end
 }

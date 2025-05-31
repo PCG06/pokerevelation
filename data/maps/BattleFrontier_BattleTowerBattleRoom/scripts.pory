@@ -397,7 +397,7 @@ BattleFrontier_BattleTowerBattleRoom_Movement_AnabelEnter:
 	step_end
 
 BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobby::
-	setvar VAR_0x8000, 1
+	setvar VAR_0x800B, 1
 	warp MAP_REVELATION_MAP_LOBBY, 9, 5
 	waitstate
 	end

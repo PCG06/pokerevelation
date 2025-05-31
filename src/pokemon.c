@@ -6086,6 +6086,18 @@ bool32 IsSpeciesInRegionalDex(u16 species)
         return TRUE;
 }
 
+const u16 sRandomMusic[8] =
+{
+    MUS_VS_FRONTIER_BRAIN,
+    MUS_VS_TRAINER,
+    MUS_VS_RIVAL,
+    MUS_VS_GYM_LEADER,
+    MUS_VS_ELITE_FOUR,
+    MUS_VS_CHAMPION,
+    MUS_VS_AQUA_MAGMA,
+    MUS_VS_WILD
+};
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
@@ -6116,45 +6128,57 @@ u16 GetBattleBGM(void)
     {
         u8 trainerClass;
 
-        if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-            trainerClass = GetFrontierOpponentClass(TRAINER_BATTLE_PARAM.opponentA);
-        else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
-            trainerClass = TRAINER_CLASS_EXPERT;
-        else
-            trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+        u16 musVar = VarGet(VAR_BATTLE_MUSIC);
 
-        switch (trainerClass)
+        if (musVar)
         {
-        case TRAINER_CLASS_AQUA_LEADER:
-        case TRAINER_CLASS_MAGMA_LEADER:
-            return MUS_VS_AQUA_MAGMA_LEADER;
-        case TRAINER_CLASS_TEAM_AQUA:
-        case TRAINER_CLASS_TEAM_MAGMA:
-        case TRAINER_CLASS_AQUA_ADMIN:
-        case TRAINER_CLASS_MAGMA_ADMIN:
-            return MUS_VS_AQUA_MAGMA;
-        case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
-        case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
-        case TRAINER_CLASS_RIVAL:
+            if (musVar == 1) // 1 means random music from the list
+                return Random32() % ARRAY_COUNT(sRandomMusic);
+            else
+                return musVar;
+        }
+        else // The default music
+        {
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+                trainerClass = GetFrontierOpponentClass(TRAINER_BATTLE_PARAM.opponentA);
+            else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
+                trainerClass = TRAINER_CLASS_EXPERT;
+            else
+                trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+
+            switch (trainerClass)
+            {
+            case TRAINER_CLASS_AQUA_LEADER:
+            case TRAINER_CLASS_MAGMA_LEADER:
+                return MUS_VS_AQUA_MAGMA_LEADER;
+            case TRAINER_CLASS_TEAM_AQUA:
+            case TRAINER_CLASS_TEAM_MAGMA:
+            case TRAINER_CLASS_AQUA_ADMIN:
+            case TRAINER_CLASS_MAGMA_ADMIN:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_CLASS_LEADER:
+                return MUS_VS_GYM_LEADER;
+            case TRAINER_CLASS_CHAMPION:
+                return MUS_VS_CHAMPION;
+            case TRAINER_CLASS_RIVAL:
+                if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+                    return MUS_VS_RIVAL;
+                if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
+                    return MUS_VS_TRAINER;
                 return MUS_VS_RIVAL;
-            if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
+            case TRAINER_CLASS_ELITE_FOUR:
+                return MUS_VS_ELITE_FOUR;
+            case TRAINER_CLASS_SALON_MAIDEN:
+            case TRAINER_CLASS_DOME_ACE:
+            case TRAINER_CLASS_PALACE_MAVEN:
+            case TRAINER_CLASS_ARENA_TYCOON:
+            case TRAINER_CLASS_FACTORY_HEAD:
+            case TRAINER_CLASS_PIKE_QUEEN:
+            case TRAINER_CLASS_PYRAMID_KING:
+                return MUS_VS_FRONTIER_BRAIN;
+            default:
                 return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
-        case TRAINER_CLASS_ELITE_FOUR:
-            return MUS_VS_ELITE_FOUR;
-        case TRAINER_CLASS_SALON_MAIDEN:
-        case TRAINER_CLASS_DOME_ACE:
-        case TRAINER_CLASS_PALACE_MAVEN:
-        case TRAINER_CLASS_ARENA_TYCOON:
-        case TRAINER_CLASS_FACTORY_HEAD:
-        case TRAINER_CLASS_PIKE_QUEEN:
-        case TRAINER_CLASS_PYRAMID_KING:
-            return MUS_VS_FRONTIER_BRAIN;
-        default:
-            return MUS_VS_TRAINER;
+            }
         }
     }
     else
