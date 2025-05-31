@@ -109,25 +109,3 @@ static void CantUseSoftboiledOnMon(u8 taskId)
     ScheduleBgCopyTilemapToVram(2);
     gTasks[taskId].func = Task_ChooseNewMonForSoftboiled;
 }
-
-bool8 CanUseSoftBoiled(void)
-{
-    u8 i;
-    u8 userId = GetCursorSelectionMonId();
-    struct Pokemon *user = &gPlayerParty[userId];
-
-    if (GetMonData(user, MON_DATA_HP) <= GetMonData(user, MON_DATA_MAX_HP) / 5)
-        return FALSE;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        if (i == userId)
-            continue;
-
-        if (GetMonData(&gPlayerParty[i], MON_DATA_HP) > 0 &&
-            GetMonData(&gPlayerParty[i], MON_DATA_HP) < GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP))
-            return TRUE;
-    }
-
-    return FALSE;
-}
