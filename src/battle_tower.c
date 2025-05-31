@@ -22,6 +22,9 @@
 #include "link.h"
 #include "field_message_box.h"
 #include "tv.h"
+#include "battle_message.h"
+#include "line_break.h"
+#include "text.h"
 #include "battle_factory.h"
 #include "constants/abilities.h"
 #include "constants/apprentice.h"
@@ -1838,7 +1841,10 @@ static void GetOpponentIntroSpeech(void)
 #else
     if (trainerId < FRONTIER_TRAINERS_COUNT)
 #endif //FREE_BATTLE_TOWER_E_READER
+    {
         StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechBefore);
+        BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    }
     else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);
     else

@@ -7,6 +7,9 @@
 #include "frontier_util.h"
 #include "item.h"
 #include "string_util.h"
+#include "battle_message.h"
+#include "line_break.h"
+#include "text.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_palace.h"
@@ -160,7 +163,10 @@ static void SetPalaceOpponent(void)
 static void BufferOpponentIntroSpeech(void)
 {
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
+    {
         StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
+        BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    }
 }
 
 static void IncrementPalaceStreak(void)

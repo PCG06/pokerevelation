@@ -29,6 +29,9 @@
 #include "event_scripts.h"
 #include "graphics.h"
 #include "wild_encounter.h"
+#include "battle_message.h"
+#include "line_break.h"
+#include "text.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
 #include "constants/event_objects.h"
@@ -1683,16 +1686,19 @@ void SoftResetInBattlePyramid(void)
 void CopyPyramidTrainerSpeechBefore(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechBefore);
+    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 void CopyPyramidTrainerWinSpeech(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechWin);
+    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 void CopyPyramidTrainerLoseSpeech(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechLose);
+    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId)

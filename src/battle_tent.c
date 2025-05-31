@@ -11,6 +11,9 @@
 #include "battle_factory_screen.h"
 #include "frontier_util.h"
 #include "string_util.h"
+#include "battle_message.h"
+#include "line_break.h"
+#include "text.h"
 #include "constants/battle_tent.h"
 #include "constants/battle_tent_trainers.h"
 #include "constants/battle_tent_mons.h"
@@ -134,7 +137,10 @@ static void SetVerdanturfTentTrainerGfx(void)
 static void BufferVerdanturfTentTrainerIntro(void)
 {
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
+    {
         StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
+        BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    }
 }
 
 static void SaveVerdanturfTentChallenge(void)
