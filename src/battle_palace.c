@@ -160,7 +160,7 @@ static void SetPalaceOpponent(void)
 static void BufferOpponentIntroSpeech(void)
 {
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
-        FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
+        StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
 }
 
 static void IncrementPalaceStreak(void)

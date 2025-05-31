@@ -1707,7 +1707,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
     #endif //FREE_BATTLE_TOWER_E_READER
             CopyFrontierBrainText(FALSE);
         else if (trainerId < FRONTIER_TRAINERS_COUNT)
-            FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
+            StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechBefore);
         else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);
         else
@@ -1728,7 +1728,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         }
         else if (trainerId < FRONTIER_TRAINERS_COUNT)
         {
-            FrontierSpeechToString(gFacilityTrainers[trainerId].speechWin);
+            StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechWin);
         }
         else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         {
@@ -1758,7 +1758,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         }
         else if (trainerId < FRONTIER_TRAINERS_COUNT)
         {
-            FrontierSpeechToString(gFacilityTrainers[trainerId].speechLose);
+            StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechLose);
         }
         else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         {
