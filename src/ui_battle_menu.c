@@ -910,21 +910,21 @@ void LoadTilemapFromMode(void)
         {
         case TAB_STATS:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
             break;
         case TAB_MOVES:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Abilities, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Abilities, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Abilities, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Abilities, sBg1TilemapBuffer);
             break;
         default:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
             break;
         }
     }
@@ -934,17 +934,17 @@ void LoadTilemapFromMode(void)
         {
         case TAB_PARTY:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Party_Info, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Party_Info, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Party_Info, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Party_Info, sBg1TilemapBuffer);
             break;
         case TAB_FIELD:
         case TAB_PLAYER_SIDE:
         case TAB_ENEMY_SIDE:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
             break;
         }
     }
@@ -1002,9 +1002,9 @@ static bool8 Menu_LoadGraphics(void)
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
             sMenuDataPtr->gfxLoadState++;
         }
         break;
