@@ -310,7 +310,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
     },
 };
 
-static const u32 sMenuTiles[]      = INCBIN_U32("graphics/ui_battle_menu/tiles.4bpp.lz");
+static const u32 sMenuTiles[]      = INCBIN_U32("graphics/ui_battle_menu/tiles.4bpp.smol");
 static const u8 sStatDownArrow[]   = INCBIN_U8("graphics/ui_battle_menu/stat_down_arrow.4bpp");
 static const u8 sStatUpArrow[]     = INCBIN_U8("graphics/ui_battle_menu/stat_up_arrow.4bpp");
 static const u8 sCheck[]           = INCBIN_U8("graphics/ui_battle_menu/check.4bpp");
@@ -324,19 +324,19 @@ static const u16 sMenuPalette_Green[]  = INCBIN_U16("graphics/ui_battle_menu/pal
 static const u16 sMenuPalette_Red[]    = INCBIN_U16("graphics/ui_battle_menu/palette_red.gbapal");
 
 //Battler Tabs
-static const u32 sMenu_Tilemap_Singles_Battler_Status[]     = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_battler_status.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Battler_Status[]     = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_battler_status.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Battler_Status[]     = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_battler_status.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Battler_Status[]     = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_battler_status.bin.smolTM");
 //
-static const u32 sMenu_Tilemap_Singles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_battler_abilities.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_battler_abilities.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_battler_abilities.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_battler_abilities.bin.smolTM");
 //Field Tabs
-static const u32 sMenu_Tilemap_Singles_Field[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_field.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Field[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_field.bin.lz");
-static const u32 sMenu_Tilemap_Party_Info[]                 = INCBIN_U32("graphics/ui_battle_menu/tilemap_field_party.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Party_Info[]         = INCBIN_U32("graphics/ui_battle_menu/tilemap_doubles_field_party.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Field[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_field.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Field[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_field.bin.smolTM");
+static const u32 sMenu_Tilemap_Party_Info[]                 = INCBIN_U32("graphics/ui_battle_menu/tilemap_field_party.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Party_Info[]         = INCBIN_U32("graphics/ui_battle_menu/tilemap_doubles_field_party.bin.smolTM");
 //
-static const u32 sMenu_Tilemap_Singles_Speed[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_field_speed.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Speed[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_field_speed.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Speed[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_singles_field_speed.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Speed[]              = INCBIN_U32("graphics/ui_battle_menu/titlemap_doubles_field_speed.bin.smolTM");
 
 enum Colors
 {
