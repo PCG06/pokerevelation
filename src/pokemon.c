@@ -6133,7 +6133,7 @@ u16 GetBattleBGM(void)
         if (musVar)
         {
             if (musVar == 1) // 1 means random music from the list
-                return Random32() % ARRAY_COUNT(sRandomMusic);
+                return sRandomMusic[Random32() % ARRAY_COUNT(sRandomMusic)];
             else
                 return musVar;
         }
