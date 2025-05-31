@@ -267,12 +267,12 @@ script RevelationMap_Lobby_EnvironmentChanger {
 			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_PLAIN)
 			goto(RevelationMap_Lobby_EnvironmentChanged)
 		case 10:
-			bufferstring(STR_VAR_1, "a random environment")
+			bufferstring(STR_VAR_1, "a random")
 			setvar(VAR_BATTLE_ENVIRONMENT, 10)
 			goto(RevelationMap_Lobby_EnvironmentChanged)
 		default:
 		case 11:
-			bufferstring(STR_VAR_1, "the default environment")
+			bufferstring(STR_VAR_1, "the default")
 			setvar(VAR_BATTLE_ENVIRONMENT, 0)
 			goto(RevelationMap_Lobby_EnvironmentChanged)
 	}
@@ -284,7 +284,7 @@ script RevelationMap_Lobby_EnvironmentChanged {
 	playse(SE_SAVE)
 	waitse
 	msgbox("The battle environment has been changed\n"
-			"to {STR_VAR_1}.\l"
+			"to {STR_VAR_1} environment.\l"
 			"Enjoy the terrain!", MSGBOX_AUTOCLOSE)
 	release
 	end
