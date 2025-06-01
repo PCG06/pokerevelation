@@ -298,16 +298,36 @@ text Text_PleaseComeAgain {
 script RevelationMap_Lobby_EventScript_EventMoveRelearner {
 	lock
 	faceplayer
-	msgbox("Would you like to teach your Pokémon\n"
-			"some event moves?", MSGBOX_YESNO)
-	closemessage
-	if (var(VAR_RESULT) == NO) {
-		msgbox(Text_PleaseComeAgain, MSGBOX_DEFAULT)
+	special(ShowBattlePointsWindow)
+	if (specialvar(VAR_TEMP_1, GetFrontierBattlePoints) >= 15) {
+		msgbox("Hi, I'm the event moves relearner.\n"
+				"For just 15 Battle Points, I can\l"
+				"teach your Pokémon some exclusive\l"
+				"moves!\p"
+				"Would you like to learn some\n"
+				"exclusive moves?", MSGBOX_YESNO)
+	} else {
+		msgbox("Hi, I'm the event moves relearner.\p"
+				"…\n"
+				"It looks like you don't have enough\l"
+				"Battle Points to learn exclusive\l"
+				"moves.\p"
+				"Come back again when you have at\n"
+				"least 15 Battle Points.", MSGBOX_DEFAULT)
+				special(CloseBattlePointsWindow)
 		release
 		end
 	}
-	setflag(FLAG_EVENT_MOVE_RELEARNER)
-	goto(EventScript_ChooseMonForTeaching)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		setflag(FLAG_EVENT_MOVE_RELEARNER)
+		goto(EventScript_ChooseMonForTeaching)
+	} else {
+		msgbox(Text_PleaseComeAgain, MSGBOX_DEFAULT)
+		special(CloseBattlePointsWindow)
+		release
+		end
+	}
 }
 
 script EventScript_ChooseMonForTeaching {
@@ -320,6 +340,7 @@ script EventScript_ChooseMonForTeaching {
 		release
 		end
 	}
+	special(ShowBattlePointsWindow)
 	special(IsSelectedMonEgg)
 	if (var(VAR_RESULT) == TRUE) {
 		msgbox("Hunh? There isn't a single move that\n"
@@ -332,6 +353,7 @@ script EventScript_ChooseMonForTeaching {
 				"I can teach that Pokémon.", MSGBOX_DEFAULT)
 		goto(EventScript_ChooseMonForTeaching)
 	} else {
+		special(ShowBattlePointsWindow)
 		goto(EventScript_ChooseMoveToTeach)
 	}
 }
@@ -341,11 +363,16 @@ script EventScript_ChooseMoveToTeach {
 	special(TeachMoveRelearnerMove)
 	waitstate
 	if (var(VAR_0x8004) == 0) {
+		special(ShowBattlePointsWindow)
 		goto(EventScript_ChooseMonForTeaching)
 	}
+	setvar(VAR_0x8004, 15)
+	special(TakeFrontierBattlePoints)
+	special(ShowBattlePointsWindow)
 	clearflag(FLAG_EVENT_MOVE_RELEARNER)
-	msgbox("Enjoy your new move!\n"
+	msgbox("Thank you!\n"
 			"Please come again!", MSGBOX_DEFAULT)
+	special(CloseBattlePointsWindow)
 	release
 	end
 }
