@@ -289,3 +289,63 @@ script RevelationMap_Lobby_EnvironmentChanged {
 	release
 	end
 }
+
+text Text_PleaseComeAgain {
+	"Please come again if you change your\n"
+	"mind."
+}
+
+script RevelationMap_Lobby_EventScript_EventMoveRelearner {
+	lock
+	faceplayer
+	msgbox("Would you like to teach your Pokémon\n"
+			"some event moves?", MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Text_PleaseComeAgain, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	setflag(FLAG_EVENT_MOVE_RELEARNER)
+	goto(EventScript_ChooseMonForTeaching)
+}
+
+script EventScript_ChooseMonForTeaching {
+	msgbox("Which Pokémon needs teaching?", MSGBOX_DEFAULT)
+	special(ChooseMonForMoveRelearner)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		clearflag(FLAG_EVENT_MOVE_RELEARNER)
+		msgbox(Text_PleaseComeAgain, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	special(IsSelectedMonEgg)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox("Hunh? There isn't a single move that\n"
+				"I can teach an Egg.", MSGBOX_DEFAULT)
+		goto(EventScript_ChooseMonForTeaching)
+	}
+	if (var(VAR_0x8005) == NO) {
+		msgbox("Sorry…\p"
+				"It doesn't appear as if I have any move\n"
+				"I can teach that Pokémon.", MSGBOX_DEFAULT)
+		goto(EventScript_ChooseMonForTeaching)
+	} else {
+		goto(EventScript_ChooseMoveToTeach)
+	}
+}
+
+script EventScript_ChooseMoveToTeach {
+	msgbox("Which move should I teach?", MSGBOX_DEFAULT)
+	special(TeachMoveRelearnerMove)
+	waitstate
+	if (var(VAR_0x8004) == 0) {
+		goto(EventScript_ChooseMonForTeaching)
+	}
+	clearflag(FLAG_EVENT_MOVE_RELEARNER)
+	msgbox("Enjoy your new move!\n"
+			"Please come again!", MSGBOX_DEFAULT)
+	release
+	end
+}

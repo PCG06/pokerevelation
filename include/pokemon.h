@@ -472,6 +472,7 @@ struct SpeciesInfo /*0xC4*/
     const struct LevelUpMove *levelUpLearnset;
     const u16 *teachableLearnset;
     const u16 *eggMoveLearnset;
+    const u16 *eventLearnset;
     const struct Evolution *evolutions;
     const u16 *formSpeciesIdTable;
     const struct FormChange *formChangeTable;
@@ -791,6 +792,8 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon);
 u8 CanLearnTeachableMove(u16 species, u16 move);
 u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves);
 u32 GetNumberOfRelearnerMoves(struct Pokemon *mon);
+u32 GetRelearnerEventMoves(struct Pokemon *mon, u32 *moves);
+u32 GetNumberOfEventMoves(struct Pokemon *mon);
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
 u16 SpeciesToPokedexNum(u16 species);
 bool32 IsSpeciesInRegionalDex(u16 species);

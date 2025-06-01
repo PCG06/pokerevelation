@@ -7656,6 +7656,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sCacturneLevelUpLearnset,
         .teachableLearnset = sCacturneTeachableLearnset,
+        .eventLearnset = sCacturneEventLearnset,
     },
 #endif //P_FAMILY_CACNEA
 
@@ -12822,6 +12823,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sRayquazaLevelUpLearnset,
         .teachableLearnset = sRayquazaTeachableLearnset,
+        .eventLearnset = sRayquazaEventLearnset,
         .formSpeciesIdTable = sRayquazaFormSpeciesIdTable,
         .formChangeTable = sRayquazaFormChangeTable,
     },
@@ -12896,6 +12898,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sRayquazaLevelUpLearnset,
         .teachableLearnset = sRayquazaTeachableLearnset,
+        .eventLearnset = sRayquazaEventLearnset,
         .formSpeciesIdTable = sRayquazaFormSpeciesIdTable,
         .formChangeTable = sRayquazaFormChangeTable,
     },
@@ -12987,6 +12990,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sJirachiLevelUpLearnset,
         .teachableLearnset = sJirachiTeachableLearnset,
+        .eventLearnset = sJirachiEventLearnset,
     },
 #endif //P_FAMILY_JIRACHI
 

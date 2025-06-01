@@ -626,6 +626,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sGreninjaLevelUpLearnset,
         .teachableLearnset = sGreninjaTeachableLearnset,
+        .eventLearnset = sGreninjaEventLearnset,
         .formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
     },
 
@@ -687,6 +688,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sGreninjaLevelUpLearnset,
         .teachableLearnset = sGreninjaTeachableLearnset,
+        .eventLearnset = sGreninjaEventLearnset,
         .formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
         .formChangeTable = sGreninjaBattleBondFormChangeTable,
     },
@@ -746,6 +748,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         FOOTPRINT(Greninja)
         .levelUpLearnset = sGreninjaLevelUpLearnset,
         .teachableLearnset = sGreninjaTeachableLearnset,
+        .eventLearnset = sGreninjaEventLearnset,
         .formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
         .formChangeTable = sGreninjaBattleBondFormChangeTable,
     },

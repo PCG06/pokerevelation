@@ -555,6 +555,7 @@ static void DoMoveRelearnerMain(void)
         }
         break;
     case MENU_STATE_PRINT_GIVE_UP_PROMPT:
+        gSpecialVar_0x8004 = FALSE;
         sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
         break;
     case MENU_STATE_GIVE_UP_CONFIRM:
@@ -907,7 +908,10 @@ static void CreateLearnableMovesList(void)
     s32 i;
     u8 nickname[POKEMON_NAME_LENGTH + 1];
 
-    sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+    if (FlagGet(FLAG_EVENT_MOVE_RELEARNER))
+        sMoveRelearnerStruct->numMenuChoices = GetRelearnerEventMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+    else  
+        sMoveRelearnerStruct->numMenuChoices = GetRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
 
     for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)
     {

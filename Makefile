@@ -482,6 +482,11 @@ $(DATA_SRC_SUBDIR)/pokemon/pokemon_sets.h: $(POKESETS_DEPS)
 	python3 $(TOOLS_DIR)/pokemon_sets/convert_sets.py
 	python3 $(TOOLS_DIR)/pokemon_sets/missing_sets.py
 
+EVENTMOVES_DEPS :=  $(DATA_SRC_SUBDIR)/pokemon/event_learnsets.h
+
+$(DATA_SRC_SUBDIR)/pokemon/species_info.h: $(EVENTMOVES_DEPS)
+	python3 dev_scripts/revelation/event_moves.py
+
 # Linker script
 LD_SCRIPT := ld_script_modern.ld
 LD_SCRIPT_DEPS :=

@@ -878,6 +878,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 
 #include "data/pokemon/teachable_learnsets.h"
 #include "data/pokemon/egg_moves.h"
+#include "data/pokemon/event_learnsets.h"
 #include "data/pokemon/form_species_tables.h"
 #include "data/pokemon/form_change_tables.h"
 #include "data/pokemon/form_change_table_pointers.h"
@@ -3858,6 +3859,14 @@ const u16 *GetSpeciesEggMoves(u16 species)
     return learnset;
 }
 
+const u16 *GetSpeciesEventLearnset(u16 species)
+{
+    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].eventLearnset;
+    if (learnset == NULL)
+        return gSpeciesInfo[SPECIES_NONE].eventLearnset;
+    return learnset;
+}
+
 const struct Evolution *GetSpeciesEvolutions(u16 species)
 {
     const struct Evolution *evolutions = gSpeciesInfo[SanitizeSpeciesId(species)].evolutions;
@@ -5875,6 +5884,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     {
         u32 i, j;
         const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
+        const u16 *eventLearnset = GetSpeciesEventLearnset(species);
         for (i = 0; i < ARRAY_COUNT(sUniversalMoves); i++)
         {
             if (sUniversalMoves[i] == move)
@@ -5906,6 +5916,11 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
         for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
         {
             if (teachableLearnset[i] == move)
+                return TRUE;
+        }
+        for (i = 0; eventLearnset[i] != MOVE_UNAVAILABLE; i++)
+        {
+            if (eventLearnset[i] == move)
                 return TRUE;
         }
         return FALSE;
@@ -6034,7 +6049,6 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
             }
         }
     }
-    
 
     SortMovesAlphabetically(moves, numMoves);
     return numMoves;
@@ -6049,6 +6063,44 @@ u32 GetNumberOfRelearnerMoves(struct Pokemon *mon)
         return 0;
 
     return GetRelearnerMoves(mon, moves);
+}
+
+u32 GetRelearnerEventMoves(struct Pokemon *mon, u32 *moves)
+{
+    u16 learnedMoves[MAX_MON_MOVES];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u32 numMoves = 0;
+    u16 moveId;
+    u32 i, j;
+    const u16 *eventLearnset = GetSpeciesEventLearnset(species);
+
+    if (eventLearnset == sNoneEventLearnset)
+        return numMoves;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; eventLearnset[i] != MOVE_UNAVAILABLE; i++)
+    {
+        moveId = eventLearnset[i];
+        for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != moveId; j++);
+        if (j == MAX_MON_MOVES)
+            moves[numMoves++] = moveId;
+    }
+
+    SortMovesAlphabetically(moves, numMoves);
+    return numMoves;
+}
+
+u32 GetNumberOfEventMoves(struct Pokemon *mon)
+{
+    u32 moves[MAX_RELEARNER_MOVES];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+
+    if (species == SPECIES_EGG)
+        return 0;
+
+    return GetRelearnerEventMoves(mon, moves);
 }
 
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)

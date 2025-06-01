@@ -1090,10 +1090,20 @@ static void DisplayPartyPokemonDataForContest(u8 slot)
 
 static void DisplayPartyPokemonDataForRelearner(u8 slot)
 {
-    if (GetNumberOfRelearnerMoves(&gPlayerParty[slot]) == 0)
-        DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NOT_ABLE_2);
+    if (FlagGet(FLAG_EVENT_MOVE_RELEARNER))
+    {
+        if (GetNumberOfEventMoves(&gPlayerParty[slot]) == 0)
+            DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NOT_ABLE_2);
+        else
+            DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_ABLE_2);
+    }
     else
-        DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_ABLE_2);
+    {
+        if (GetNumberOfRelearnerMoves(&gPlayerParty[slot]) == 0)
+            DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NOT_ABLE_2);
+        else
+            DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_ABLE_2);
+    }
 }
 
 static void DisplayPartyPokemonDataForWirelessMinigame(u8 slot)
@@ -2985,7 +2995,6 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
 
     /*
     // Add field moves to action list
@@ -7962,7 +7971,12 @@ static void CB2_ChooseMonForMoveRelearner(void)
     if (gSpecialVar_0x8004 >= PARTY_SIZE)
         gSpecialVar_0x8004 = PARTY_NOTHING_CHOSEN;
     else
-        gSpecialVar_0x8005 = GetNumberOfRelearnerMoves(&gPlayerParty[gSpecialVar_0x8004]);
+    {
+        if (FlagGet(FLAG_EVENT_MOVE_RELEARNER))
+            gSpecialVar_0x8005 = GetNumberOfEventMoves(&gPlayerParty[gSpecialVar_0x8004]);
+        else
+            gSpecialVar_0x8005 = GetNumberOfRelearnerMoves(&gPlayerParty[gSpecialVar_0x8004]);
+    }
 
     gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(CB2_ReturnToField);

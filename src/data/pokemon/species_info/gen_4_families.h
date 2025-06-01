@@ -6706,6 +6706,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sHeatranLevelUpLearnset,
         .teachableLearnset = sHeatranTeachableLearnset,
+        .eventLearnset = sHeatranEventLearnset,
     },
 #endif //P_FAMILY_HEATRAN
 
@@ -7256,6 +7257,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
+        .eventLearnset = sDarkraiEventLearnset,
     },
 #endif //P_FAMILY_DARKRAI
 
@@ -7338,6 +7340,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sShayminLandLevelUpLearnset,
         .teachableLearnset = sShayminLandTeachableLearnset,
+        .eventLearnset = sShayminLandEventLearnset,
         .formSpeciesIdTable = sShayminFormSpeciesIdTable,
         .formChangeTable = sShayminFormChangeTable,
     },
@@ -7417,6 +7420,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sShayminSkyLevelUpLearnset,
         .teachableLearnset = sShayminSkyTeachableLearnset,
+        .eventLearnset = sShayminSkyEventLearnset,
         .formSpeciesIdTable = sShayminFormSpeciesIdTable,
         .formChangeTable = sShayminFormChangeTable,
     },
@@ -7496,6 +7500,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )                                                                           \
         .levelUpLearnset = sArceusLevelUpLearnset,                                  \
         .teachableLearnset = sArceusTeachableLearnset,                              \
+        .eventLearnset = sArceusEventLearnset,                                      \
         .formSpeciesIdTable = sArceusFormSpeciesIdTable,                            \
         .formChangeTable = sArceusFormChangeTable,                                  \
         .isMythical = TRUE,                                                         \

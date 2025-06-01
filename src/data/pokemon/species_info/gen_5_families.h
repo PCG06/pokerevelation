@@ -72,6 +72,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sVictiniLevelUpLearnset,
         .teachableLearnset = sVictiniTeachableLearnset,
+        .eventLearnset = sVictiniEventLearnset,
     },
 #endif //P_FAMILY_VICTINI
 
@@ -6601,6 +6602,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sZoroarkLevelUpLearnset,
         .teachableLearnset = sZoroarkTeachableLearnset,
+        .eventLearnset = sZoroarkEventLearnset,
         .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
     },
 
@@ -12806,6 +12808,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sZekromLevelUpLearnset,
         .teachableLearnset = sZekromTeachableLearnset,
+        .eventLearnset = sZekromEventLearnset,
     },
 #endif //P_FAMILY_ZEKROM
 
@@ -13426,6 +13429,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeloettaLevelUpLearnset,
         .teachableLearnset = sMeloettaTeachableLearnset,
+        .eventLearnset = sMeloettaEventLearnset,
         .formSpeciesIdTable = sMeloettaFormSpeciesIdTable,
         .formChangeTable = sMeloettaFormChangeTable,
     },
@@ -13506,6 +13510,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeloettaLevelUpLearnset,
         .teachableLearnset = sMeloettaTeachableLearnset,
+        .eventLearnset = sMeloettaEventLearnset,
         .formSpeciesIdTable = sMeloettaFormSpeciesIdTable,
         .formChangeTable = sMeloettaFormChangeTable,
     },
@@ -13571,6 +13576,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )                                                                           \
         .levelUpLearnset = sGenesectLevelUpLearnset,                                \
         .teachableLearnset = sGenesectTeachableLearnset,                            \
+        .eventLearnset = sGenesectEventLearnset,                                    \
         .formSpeciesIdTable = sGenesectFormSpeciesIdTable,                          \
         .formChangeTable = sGenesectFormChangeTable,                                \
         .isMythical = TRUE,                                                         \

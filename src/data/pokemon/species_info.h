@@ -149,6 +149,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sNoneLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
         .eggMoveLearnset = sNoneEggMoveLearnset,
+        .eventLearnset = sNoneEventLearnset,
     },
 
     #include "species_info/gen_1_families.h"
@@ -240,6 +241,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
+        .eventLearnset = sNoneEventLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
@@ -468,6 +470,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .perfectIVCount = NUM_STATS,
         .levelUpLearnset = sPyrolinLevelUpLearnset,
         .teachableLearnset = sPyrolinTeachableLearnset,
+        .eventLearnset = sPyrolinEventLearnset,
     },
 
     [SPECIES_STRATOSPIRA] =
