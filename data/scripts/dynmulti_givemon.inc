@@ -1,0 +1,1944 @@
+EventScript_ChoosePkmnMenu::
+	compare VAR_GOT_PARTY_PKMN, 6
+	goto_if_eq EventScript_ChoosePkmnMenu_2
+EventScript_ChoosePkmnMenu_1:
+	goto_if_set FLAG_GOT_PARTY_PKMN, EventScript_ChoosePkmnMenu_5
+	message EventScript_ChoosePkmnMenu_Text_1
+	copyvar VAR_0x8000, VAR_0x8001
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8000, DYN_MULTICHOICE_CB_NONE, EventScript_ChoosePkmnMenu_Text_2, EventScript_ChoosePkmnMenu_Text_3, EventScript_ChoosePkmnMenu_Text_4, EventScript_ChoosePkmnMenu_Text_5, EventScript_ChoosePkmnMenu_Text_6, EventScript_ChoosePkmnMenu_Text_7, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8001, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_ChoosePkmnMenu_9
+	case 1, EventScript_ChoosePkmnMenu_10
+	case 2, EventScript_ChoosePkmnMenu_11
+	case 3, EventScript_ChoosePkmnMenu_12
+	case 4, EventScript_ChoosePkmnMenu_13
+	case 5, EventScript_ChoosePkmnMenu_14
+	case 6, EventScript_ChoosePkmnMenu_15
+EventScript_ChoosePkmnMenu_15:
+	setvar VAR_0x8001, 0
+	msgbox EventScript_ChoosePkmnMenu_Text_9, MSGBOX_NPC
+EventScript_ChoosePkmnMenu_4:
+	release
+	end
+
+EventScript_ChoosePkmnMenu_2:
+	setflag FLAG_GOT_PARTY_PKMN
+	goto EventScript_ChoosePkmnMenu_1
+
+EventScript_ChoosePkmnMenu_5:
+	msgbox EventScript_ChoosePkmnMenu_Text_0, MSGBOX_NPC
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_9:
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_10:
+	goto EventScript_Group1Choices
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_11:
+	goto EventScript_Group2Choices
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_12:
+	goto EventScript_Group3Choices
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_13:
+	goto EventScript_Group4Choices
+	goto EventScript_ChoosePkmnMenu_4
+
+EventScript_ChoosePkmnMenu_14:
+	goto EventScript_Group5Choices
+	goto EventScript_ChoosePkmnMenu_4
+
+
+EventScript_YouWantThisPkmn::
+	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
+	showmonpic VAR_TEMP_TRANSFERRED_SPECIES, FALSE, 10, 3
+	msgbox EventScript_YouWantThisPkmn_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_YouWantThisPkmn_1
+	hidemonpic
+	return
+
+EventScript_YouWantThisPkmn_1:
+	goto EventScript_Givemonset
+	return
+
+
+EventScript_Givemonset::
+	playfanfare MUS_OBTAIN_ITEM
+	givemonset VAR_TEMP_TRANSFERRED_SPECIES
+	addvar VAR_GOT_PARTY_PKMN, 1
+	setvar VAR_REV_STATE, 1
+	setvar VAR_TEMP_0, 0
+	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
+EventScript_Givemonset_1:
+	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
+	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
+	message EventScript_Givemonset_Text_0
+	waitmessage
+	waitfanfare
+	setvar VAR_0x8001, 0
+	setvar VAR_0x8003, 0
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	hidemonpic
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_Givemonset_5
+EventScript_Givemonset_4:
+	goto EventScript_ChoosePkmnMenu
+	end
+
+EventScript_Givemonset_2:
+	setflag FLAG_SYS_POKEMON_GET
+	goto EventScript_Givemonset_1
+
+EventScript_Givemonset_5:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_Givemonset_4
+
+
+EventScript_ChooseStarterMenu::
+	message EventScript_ChooseStarterMenu_Text_0
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_ChooseStarterMenu_Text_1, EventScript_ChooseStarterMenu_Text_2, EventScript_ChooseStarterMenu_Text_3, EventScript_ChooseStarterMenu_Text_4, EventScript_ChooseStarterMenu_Text_5, EventScript_ChooseStarterMenu_Text_6, EventScript_ChooseStarterMenu_Text_7, EventScript_ChooseStarterMenu_Text_8, EventScript_ChooseStarterMenu_Text_9, EventScript_ChooseStarterMenu_Text_10, EventScript_ChooseStarterMenu_Text_11, EventScript_ChooseStarterMenu_Text_12, EventScript_ChooseStarterMenu_Text_13, EventScript_ChooseStarterMenu_Text_14, EventScript_ChooseStarterMenu_Text_15, EventScript_ChooseStarterMenu_Text_16, EventScript_ChooseStarterMenu_Text_17, EventScript_ChooseStarterMenu_Text_18, EventScript_ChooseStarterMenu_Text_19, EventScript_ChooseStarterMenu_Text_20, EventScript_ChooseStarterMenu_Text_21, EventScript_ChooseStarterMenu_Text_22, EventScript_ChooseStarterMenu_Text_23, EventScript_ChooseStarterMenu_Text_24, EventScript_ChooseStarterMenu_Text_25, EventScript_ChooseStarterMenu_Text_26, EventScript_ChooseStarterMenu_Text_27, EventScript_ChooseStarterMenu_Text_28, EventScript_ChooseStarterMenu_Text_29, EventScript_ChooseStarterMenu_Text_30, EventScript_ChooseStarterMenu_Text_31, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_ChooseStarterMenu_3
+	case 1, EventScript_ChooseStarterMenu_4
+	case 2, EventScript_ChooseStarterMenu_5
+	case 3, EventScript_ChooseStarterMenu_6
+	case 4, EventScript_ChooseStarterMenu_7
+	case 5, EventScript_ChooseStarterMenu_8
+	case 6, EventScript_ChooseStarterMenu_9
+	case 7, EventScript_ChooseStarterMenu_10
+	case 8, EventScript_ChooseStarterMenu_11
+	case 9, EventScript_ChooseStarterMenu_12
+	case 10, EventScript_ChooseStarterMenu_13
+	case 11, EventScript_ChooseStarterMenu_14
+	case 12, EventScript_ChooseStarterMenu_15
+	case 13, EventScript_ChooseStarterMenu_16
+	case 14, EventScript_ChooseStarterMenu_17
+	case 15, EventScript_ChooseStarterMenu_18
+	case 16, EventScript_ChooseStarterMenu_19
+	case 17, EventScript_ChooseStarterMenu_20
+	case 18, EventScript_ChooseStarterMenu_21
+	case 19, EventScript_ChooseStarterMenu_22
+	case 20, EventScript_ChooseStarterMenu_23
+	case 21, EventScript_ChooseStarterMenu_24
+	case 22, EventScript_ChooseStarterMenu_25
+	case 23, EventScript_ChooseStarterMenu_26
+	case 24, EventScript_ChooseStarterMenu_27
+	case 25, EventScript_ChooseStarterMenu_28
+	case 26, EventScript_ChooseStarterMenu_29
+	case 27, EventScript_ChooseStarterMenu_30
+	case 28, EventScript_ChooseStarterMenu_31
+	case 29, EventScript_ChooseStarterMenu_32
+	case 30, EventScript_ChooseStarterMenu_33
+	case 31, EventScript_ChooseStarterMenu_34
+EventScript_ChooseStarterMenu_34:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+EventScript_ChooseStarterMenu_1:
+	release
+	end
+
+EventScript_ChooseStarterMenu_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARIZARD
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLASTOISE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIKACHU
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEGANIUM
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPHLOSION_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERALIGATR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCEPTILE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BLAZIKEN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWAMPERT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORTERRA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INFERNAPE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMPOLEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EMBOAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHESNAUGHT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DECIDUEYE_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INCINEROAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PRIMARINA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RILLABOOM
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CINDERACE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_30:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INTELEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_31:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSCARADA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_32:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKELEDIRGE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+EventScript_ChooseStarterMenu_33:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAQUAVAL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChooseStarterMenu_1
+
+
+EventScript_Group1Choices::
+	message Text_SelectPkmn
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_Group1Choices_Text_0, EventScript_Group1Choices_Text_1, EventScript_Group1Choices_Text_2, EventScript_Group1Choices_Text_3, EventScript_Group1Choices_Text_4, EventScript_Group1Choices_Text_5, EventScript_Group1Choices_Text_6, EventScript_Group1Choices_Text_7, EventScript_Group1Choices_Text_8, EventScript_Group1Choices_Text_9, EventScript_Group1Choices_Text_10, EventScript_Group1Choices_Text_11, EventScript_Group1Choices_Text_12, EventScript_Group1Choices_Text_13, EventScript_Group1Choices_Text_14, EventScript_Group1Choices_Text_15, EventScript_Group1Choices_Text_16, EventScript_Group1Choices_Text_17, EventScript_Group1Choices_Text_18, EventScript_Group1Choices_Text_19, EventScript_Group1Choices_Text_20, EventScript_Group1Choices_Text_21, EventScript_Group1Choices_Text_22, EventScript_Group1Choices_Text_23, EventScript_Group1Choices_Text_24, EventScript_Group1Choices_Text_25, EventScript_Group1Choices_Text_26, EventScript_Group1Choices_Text_27, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_Group1Choices_2
+	case 1, EventScript_Group1Choices_3
+	case 2, EventScript_Group1Choices_4
+	case 3, EventScript_Group1Choices_5
+	case 4, EventScript_Group1Choices_6
+	case 5, EventScript_Group1Choices_7
+	case 6, EventScript_Group1Choices_8
+	case 7, EventScript_Group1Choices_9
+	case 8, EventScript_Group1Choices_10
+	case 9, EventScript_Group1Choices_11
+	case 10, EventScript_Group1Choices_12
+	case 11, EventScript_Group1Choices_13
+	case 12, EventScript_Group1Choices_14
+	case 13, EventScript_Group1Choices_15
+	case 14, EventScript_Group1Choices_16
+	case 15, EventScript_Group1Choices_17
+	case 16, EventScript_Group1Choices_18
+	case 17, EventScript_Group1Choices_19
+	case 18, EventScript_Group1Choices_20
+	case 19, EventScript_Group1Choices_21
+	case 20, EventScript_Group1Choices_22
+	case 21, EventScript_Group1Choices_23
+	case 22, EventScript_Group1Choices_24
+	case 23, EventScript_Group1Choices_25
+	case 24, EventScript_Group1Choices_26
+	case 25, EventScript_Group1Choices_27
+	case 26, EventScript_Group1Choices_28
+	case 27, EventScript_Group1Choices_29
+	case 28, EventScript_Group1Choices_30
+EventScript_Group1Choices_30:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+	return
+
+EventScript_Group1Choices_2:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ABSOL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AEGISLASH
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ALTARIA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AMBIPOM
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANNIHILAPE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARAQUANID
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCHALUDON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARMAROUGE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AZUMARILL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BARRASKEWDA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION_F
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BAXCALIBUR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELLIBOLT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRONZONG
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CERULEDGE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CLAWITZER
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CORVIKNIGHT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRAWDAUNT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DONDOZO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGAPULT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGONITE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUDUNSPARCE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ELECTIVIRE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ESPEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+EventScript_Group1Choices_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EXCADRILL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group1Choices
+	return
+
+
+EventScript_Group2Choices::
+	message Text_SelectPkmn
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_Group2Choices_Text_0, EventScript_Group2Choices_Text_1, EventScript_Group2Choices_Text_2, EventScript_Group2Choices_Text_3, EventScript_Group2Choices_Text_4, EventScript_Group2Choices_Text_5, EventScript_Group2Choices_Text_6, EventScript_Group2Choices_Text_7, EventScript_Group2Choices_Text_8, EventScript_Group2Choices_Text_9, EventScript_Group2Choices_Text_10, EventScript_Group2Choices_Text_11, EventScript_Group2Choices_Text_12, EventScript_Group2Choices_Text_13, EventScript_Group2Choices_Text_14, EventScript_Group2Choices_Text_15, EventScript_Group2Choices_Text_16, EventScript_Group2Choices_Text_17, EventScript_Group2Choices_Text_18, EventScript_Group2Choices_Text_19, EventScript_Group2Choices_Text_20, EventScript_Group2Choices_Text_21, EventScript_Group2Choices_Text_22, EventScript_Group2Choices_Text_23, EventScript_Group2Choices_Text_24, EventScript_Group2Choices_Text_25, EventScript_Group2Choices_Text_26, EventScript_Group2Choices_Text_27, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_Group2Choices_2
+	case 1, EventScript_Group2Choices_3
+	case 2, EventScript_Group2Choices_4
+	case 3, EventScript_Group2Choices_5
+	case 4, EventScript_Group2Choices_6
+	case 5, EventScript_Group2Choices_7
+	case 6, EventScript_Group2Choices_8
+	case 7, EventScript_Group2Choices_9
+	case 8, EventScript_Group2Choices_10
+	case 9, EventScript_Group2Choices_11
+	case 10, EventScript_Group2Choices_12
+	case 11, EventScript_Group2Choices_13
+	case 12, EventScript_Group2Choices_14
+	case 13, EventScript_Group2Choices_15
+	case 14, EventScript_Group2Choices_16
+	case 15, EventScript_Group2Choices_17
+	case 16, EventScript_Group2Choices_18
+	case 17, EventScript_Group2Choices_19
+	case 18, EventScript_Group2Choices_20
+	case 19, EventScript_Group2Choices_21
+	case 20, EventScript_Group2Choices_22
+	case 21, EventScript_Group2Choices_23
+	case 22, EventScript_Group2Choices_24
+	case 23, EventScript_Group2Choices_25
+	case 24, EventScript_Group2Choices_26
+	case 25, EventScript_Group2Choices_27
+	case 26, EventScript_Group2Choices_28
+	case 27, EventScript_Group2Choices_29
+	case 28, EventScript_Group2Choices_30
+EventScript_Group2Choices_30:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+	return
+
+EventScript_Group2Choices_2:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FARIGIRAF
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERROTHORN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLAREON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FROSLASS
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GARCHOMP
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GENGAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GHOLDENGO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLACEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLALIE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLISCOR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOGOAT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLURK
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRIMMSNARL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GYARADOS
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HATTERENE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HAWLUCHA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONCHAN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONLEE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONTOP
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOUNDSTONE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HYDREIGON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ILLUMISE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JOLTEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JYNX
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGAMBIT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+EventScript_Group2Choices_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGDRA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group2Choices
+	return
+
+
+EventScript_Group3Choices::
+	message Text_SelectPkmn
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_Group3Choices_Text_0, EventScript_Group3Choices_Text_1, EventScript_Group3Choices_Text_2, EventScript_Group3Choices_Text_3, EventScript_Group3Choices_Text_4, EventScript_Group3Choices_Text_5, EventScript_Group3Choices_Text_6, EventScript_Group3Choices_Text_7, EventScript_Group3Choices_Text_8, EventScript_Group3Choices_Text_9, EventScript_Group3Choices_Text_10, EventScript_Group3Choices_Text_11, EventScript_Group3Choices_Text_12, EventScript_Group3Choices_Text_13, EventScript_Group3Choices_Text_14, EventScript_Group3Choices_Text_15, EventScript_Group3Choices_Text_16, EventScript_Group3Choices_Text_17, EventScript_Group3Choices_Text_18, EventScript_Group3Choices_Text_19, EventScript_Group3Choices_Text_20, EventScript_Group3Choices_Text_21, EventScript_Group3Choices_Text_22, EventScript_Group3Choices_Text_23, EventScript_Group3Choices_Text_24, EventScript_Group3Choices_Text_25, EventScript_Group3Choices_Text_26, EventScript_Group3Choices_Text_27, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_Group3Choices_2
+	case 1, EventScript_Group3Choices_3
+	case 2, EventScript_Group3Choices_4
+	case 3, EventScript_Group3Choices_5
+	case 4, EventScript_Group3Choices_6
+	case 5, EventScript_Group3Choices_7
+	case 6, EventScript_Group3Choices_8
+	case 7, EventScript_Group3Choices_9
+	case 8, EventScript_Group3Choices_10
+	case 9, EventScript_Group3Choices_11
+	case 10, EventScript_Group3Choices_12
+	case 11, EventScript_Group3Choices_13
+	case 12, EventScript_Group3Choices_14
+	case 13, EventScript_Group3Choices_15
+	case 14, EventScript_Group3Choices_16
+	case 15, EventScript_Group3Choices_17
+	case 16, EventScript_Group3Choices_18
+	case 17, EventScript_Group3Choices_19
+	case 18, EventScript_Group3Choices_20
+	case 19, EventScript_Group3Choices_21
+	case 20, EventScript_Group3Choices_22
+	case 21, EventScript_Group3Choices_23
+	case 22, EventScript_Group3Choices_24
+	case 23, EventScript_Group3Choices_25
+	case 24, EventScript_Group3Choices_26
+	case 25, EventScript_Group3Choices_27
+	case 26, EventScript_Group3Choices_28
+	case 27, EventScript_Group3Choices_29
+	case 28, EventScript_Group3Choices_30
+EventScript_Group3Choices_30:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+	return
+
+EventScript_Group3Choices_2:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KLEAVOR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KOMMO_O
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KROOKODILE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LANTURN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LEAFEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILLIGANT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILLIGANT_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LINOONE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LOKIX
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUCARIO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUDICOLO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LUXRAY
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC_DUSK
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LYCANROC_MIDNIGHT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGMORTAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGNEZONE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MALAMAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MANTINE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAWILE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_METAGROSS
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILOTIC
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MIMIKYU
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NIDOKING
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NIDOQUEEN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+EventScript_Group3Choices_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NOIVERN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group3Choices
+	return
+
+
+EventScript_Group4Choices::
+	message Text_SelectPkmn
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_Group4Choices_Text_0, EventScript_Group4Choices_Text_1, EventScript_Group4Choices_Text_2, EventScript_Group4Choices_Text_3, EventScript_Group4Choices_Text_4, EventScript_Group4Choices_Text_5, EventScript_Group4Choices_Text_6, EventScript_Group4Choices_Text_7, EventScript_Group4Choices_Text_8, EventScript_Group4Choices_Text_9, EventScript_Group4Choices_Text_10, EventScript_Group4Choices_Text_11, EventScript_Group4Choices_Text_12, EventScript_Group4Choices_Text_13, EventScript_Group4Choices_Text_14, EventScript_Group4Choices_Text_15, EventScript_Group4Choices_Text_16, EventScript_Group4Choices_Text_17, EventScript_Group4Choices_Text_18, EventScript_Group4Choices_Text_19, EventScript_Group4Choices_Text_20, EventScript_Group4Choices_Text_21, EventScript_Group4Choices_Text_22, EventScript_Group4Choices_Text_23, EventScript_Group4Choices_Text_24, EventScript_Group4Choices_Text_25, EventScript_Group4Choices_Text_26, EventScript_Group4Choices_Text_27, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_Group4Choices_2
+	case 1, EventScript_Group4Choices_3
+	case 2, EventScript_Group4Choices_4
+	case 3, EventScript_Group4Choices_5
+	case 4, EventScript_Group4Choices_6
+	case 5, EventScript_Group4Choices_7
+	case 6, EventScript_Group4Choices_8
+	case 7, EventScript_Group4Choices_9
+	case 8, EventScript_Group4Choices_10
+	case 9, EventScript_Group4Choices_11
+	case 10, EventScript_Group4Choices_12
+	case 11, EventScript_Group4Choices_13
+	case 12, EventScript_Group4Choices_14
+	case 13, EventScript_Group4Choices_15
+	case 14, EventScript_Group4Choices_16
+	case 15, EventScript_Group4Choices_17
+	case 16, EventScript_Group4Choices_18
+	case 17, EventScript_Group4Choices_19
+	case 18, EventScript_Group4Choices_20
+	case 19, EventScript_Group4Choices_21
+	case 20, EventScript_Group4Choices_22
+	case 21, EventScript_Group4Choices_23
+	case 22, EventScript_Group4Choices_24
+	case 23, EventScript_Group4Choices_25
+	case 24, EventScript_Group4Choices_26
+	case 25, EventScript_Group4Choices_27
+	case 26, EventScript_Group4Choices_28
+	case 27, EventScript_Group4Choices_29
+	case 28, EventScript_Group4Choices_30
+EventScript_Group4Choices_30:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+	return
+
+EventScript_Group4Choices_2:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OBSTAGOON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PALOSSAND
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERRSERKER
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN_ALOLA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIDGEOT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLITOED
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLIWRATH
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU_ALOLA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROSERADE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FAN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FROST
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_HEAT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_MOW
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_WASH
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAMENCE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAZZLE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCIZOR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHARPEDO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIFTRY
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHUCKLE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKARMORY
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO_GALAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+EventScript_Group4Choices_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group4Choices
+	return
+
+
+EventScript_Group5Choices::
+	message Text_SelectPkmn
+	copyvar VAR_0x8002, VAR_0x8003
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE, EventScript_Group5Choices_Text_0, EventScript_Group5Choices_Text_1, EventScript_Group5Choices_Text_2, EventScript_Group5Choices_Text_3, EventScript_Group5Choices_Text_4, EventScript_Group5Choices_Text_5, EventScript_Group5Choices_Text_6, EventScript_Group5Choices_Text_7, EventScript_Group5Choices_Text_8, EventScript_Group5Choices_Text_9, EventScript_Group5Choices_Text_10, EventScript_Group5Choices_Text_11, EventScript_Group5Choices_Text_12, EventScript_Group5Choices_Text_13, EventScript_Group5Choices_Text_14, EventScript_Group5Choices_Text_15, EventScript_Group5Choices_Text_16, EventScript_Group5Choices_Text_17, EventScript_Group5Choices_Text_18, EventScript_Group5Choices_Text_19, EventScript_Group5Choices_Text_20, EventScript_Group5Choices_Text_21, EventScript_Group5Choices_Text_22, EventScript_Group5Choices_Text_23, EventScript_Group5Choices_Text_24, EventScript_Group5Choices_Text_25, EventScript_Group5Choices_Text_26, EventScript_Group5Choices_Text_27, EventScript_ChoosePkmnMenu_Text_8
+	copyvar VAR_0x8003, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EventScript_Group5Choices_2
+	case 1, EventScript_Group5Choices_3
+	case 2, EventScript_Group5Choices_4
+	case 3, EventScript_Group5Choices_5
+	case 4, EventScript_Group5Choices_6
+	case 5, EventScript_Group5Choices_7
+	case 6, EventScript_Group5Choices_8
+	case 7, EventScript_Group5Choices_9
+	case 8, EventScript_Group5Choices_10
+	case 9, EventScript_Group5Choices_11
+	case 10, EventScript_Group5Choices_12
+	case 11, EventScript_Group5Choices_13
+	case 12, EventScript_Group5Choices_14
+	case 13, EventScript_Group5Choices_15
+	case 14, EventScript_Group5Choices_16
+	case 15, EventScript_Group5Choices_17
+	case 16, EventScript_Group5Choices_18
+	case 17, EventScript_Group5Choices_19
+	case 18, EventScript_Group5Choices_20
+	case 19, EventScript_Group5Choices_21
+	case 20, EventScript_Group5Choices_22
+	case 21, EventScript_Group5Choices_23
+	case 22, EventScript_Group5Choices_24
+	case 23, EventScript_Group5Choices_25
+	case 24, EventScript_Group5Choices_26
+	case 25, EventScript_Group5Choices_27
+	case 26, EventScript_Group5Choices_28
+	case 27, EventScript_Group5Choices_29
+	case 28, EventScript_Group5Choices_30
+EventScript_Group5Choices_30:
+	setvar VAR_0x8003, 0
+	goto EventScript_ChoosePkmnMenu
+	return
+
+EventScript_Group5Choices_2:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_3:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNEASLER
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_4:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_5:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_STARAPTOR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_6:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SUDOWOODO
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_7:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWELLOW
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_8:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SYLVEON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_9:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TALONFLAME
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_10:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TATSUGIRI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_11:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEKISS
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_12:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORKOAL
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_13:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_14:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY_LOW_KEY
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_15:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANITAR
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_16:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANTRUM
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_17:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UMBREON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_18:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNOWN
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_19:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_20:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA_BLOODMOON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_21:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VAPOREON
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_22:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLBEAT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_23:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCARONA
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_24:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WAILORD
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_25:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WEAVILE
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_26:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WHIMSICOTT
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_27:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WYRDEER
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_28:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+EventScript_Group5Choices_29:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK_HISUI
+	call EventScript_YouWantThisPkmn
+	goto EventScript_Group5Choices
+	return
+
+
+EventScript_ChoosePkmnMenu_Text_0:
+	.string "Benny: You have chosen your Pokémon!\n"
+	.string "Start your adventure!$"
+
+EventScript_ChoosePkmnMenu_Text_1:
+	.string "Benny: Select a group of Pokémon.$"
+
+EventScript_ChoosePkmnMenu_Text_2:
+	.string "Starters$"
+
+EventScript_ChoosePkmnMenu_Text_3:
+	.string "Group 1 (A-E)$"
+
+EventScript_ChoosePkmnMenu_Text_4:
+	.string "Group 2 (F-K)$"
+
+EventScript_ChoosePkmnMenu_Text_5:
+	.string "Group 3 (K-N)$"
+
+EventScript_ChoosePkmnMenu_Text_6:
+	.string "Group 4 (O-S)$"
+
+EventScript_ChoosePkmnMenu_Text_7:
+	.string "Group 5 (S-Z)$"
+
+EventScript_ChoosePkmnMenu_Text_8:
+	.string "Back$"
+
+EventScript_ChoosePkmnMenu_Text_9:
+	.string "Benny: Talk to me when you're ready.$"
+
+EventScript_YouWantThisPkmn_Text_0:
+	.string "Benny: Do you want {STR_VAR_1}?$"
+
+EventScript_Givemonset_Text_0:
+	.string "Pokémon No: {STR_VAR_2}.\n"
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+EventScript_ChooseStarterMenu_Text_0:
+	.string "Benny: Please select your starter.$"
+
+EventScript_ChooseStarterMenu_Text_1:
+	.string "Venusaur$"
+
+EventScript_ChooseStarterMenu_Text_2:
+	.string "Charizard$"
+
+EventScript_ChooseStarterMenu_Text_3:
+	.string "Blastoise$"
+
+EventScript_ChooseStarterMenu_Text_4:
+	.string "Pikachu$"
+
+EventScript_ChooseStarterMenu_Text_5:
+	.string "Meganium$"
+
+EventScript_ChooseStarterMenu_Text_6:
+	.string "Typhlosion$"
+
+EventScript_ChooseStarterMenu_Text_7:
+	.string "Typhlosion-H$"
+
+EventScript_ChooseStarterMenu_Text_8:
+	.string "Feraligatr$"
+
+EventScript_ChooseStarterMenu_Text_9:
+	.string "Sceptile$"
+
+EventScript_ChooseStarterMenu_Text_10:
+	.string "Blaziken$"
+
+EventScript_ChooseStarterMenu_Text_11:
+	.string "Swampert$"
+
+EventScript_ChooseStarterMenu_Text_12:
+	.string "Torterra$"
+
+EventScript_ChooseStarterMenu_Text_13:
+	.string "Infernape$"
+
+EventScript_ChooseStarterMenu_Text_14:
+	.string "Empoleon$"
+
+EventScript_ChooseStarterMenu_Text_15:
+	.string "Serperior$"
+
+EventScript_ChooseStarterMenu_Text_16:
+	.string "Emboar$"
+
+EventScript_ChooseStarterMenu_Text_17:
+	.string "Samurott$"
+
+EventScript_ChooseStarterMenu_Text_18:
+	.string "Samurott-H$"
+
+EventScript_ChooseStarterMenu_Text_19:
+	.string "Chesnaught$"
+
+EventScript_ChooseStarterMenu_Text_20:
+	.string "Delphox$"
+
+EventScript_ChooseStarterMenu_Text_21:
+	.string "Greninja$"
+
+EventScript_ChooseStarterMenu_Text_22:
+	.string "Decidueye$"
+
+EventScript_ChooseStarterMenu_Text_23:
+	.string "Decidueye-H$"
+
+EventScript_ChooseStarterMenu_Text_24:
+	.string "Incineroar$"
+
+EventScript_ChooseStarterMenu_Text_25:
+	.string "Primarina$"
+
+EventScript_ChooseStarterMenu_Text_26:
+	.string "Rillaboom$"
+
+EventScript_ChooseStarterMenu_Text_27:
+	.string "Cinderace$"
+
+EventScript_ChooseStarterMenu_Text_28:
+	.string "Inteleon$"
+
+EventScript_ChooseStarterMenu_Text_29:
+	.string "Meowscarada$"
+
+EventScript_ChooseStarterMenu_Text_30:
+	.string "Skeledirge$"
+
+EventScript_ChooseStarterMenu_Text_31:
+	.string "Quaquaval$"
+
+EventScript_Group1Choices_Text_0:
+	.string "1. Absol$"
+
+EventScript_Group1Choices_Text_1:
+	.string "2. Aegislash$"
+
+EventScript_Group1Choices_Text_2:
+	.string "3. Aerodactyl$"
+
+EventScript_Group1Choices_Text_3:
+	.string "4. Altaria$"
+
+EventScript_Group1Choices_Text_4:
+	.string "5. Ambipom$"
+
+EventScript_Group1Choices_Text_5:
+	.string "6. Annihilape$"
+
+EventScript_Group1Choices_Text_6:
+	.string "7. Araquanid$"
+
+EventScript_Group1Choices_Text_7:
+	.string "8. Archaludon$"
+
+EventScript_Group1Choices_Text_8:
+	.string "9. Armarouge$"
+
+EventScript_Group1Choices_Text_9:
+	.string "10. Azumarill$"
+
+EventScript_Group1Choices_Text_10:
+	.string "11. Barraskewda$"
+
+EventScript_Group1Choices_Text_11:
+	.string "12. Basculegion$"
+
+EventScript_Group1Choices_Text_12:
+	.string "13. Basculegion-F$"
+
+EventScript_Group1Choices_Text_13:
+	.string "14. Baxcalibur$"
+
+EventScript_Group1Choices_Text_14:
+	.string "15. Bellibolt$"
+
+EventScript_Group1Choices_Text_15:
+	.string "16. Bronzong$"
+
+EventScript_Group1Choices_Text_16:
+	.string "17. Camerupt$"
+
+EventScript_Group1Choices_Text_17:
+	.string "18. Ceruledge$"
+
+EventScript_Group1Choices_Text_18:
+	.string "19. Clawitzer$"
+
+EventScript_Group1Choices_Text_19:
+	.string "20. Corviknight$"
+
+EventScript_Group1Choices_Text_20:
+	.string "21. Crawdaunt$"
+
+EventScript_Group1Choices_Text_21:
+	.string "22. Dondozo$"
+
+EventScript_Group1Choices_Text_22:
+	.string "23. Dragapult$"
+
+EventScript_Group1Choices_Text_23:
+	.string "24. Dragonite$"
+
+EventScript_Group1Choices_Text_24:
+	.string "25. Dudunsparce$"
+
+EventScript_Group1Choices_Text_25:
+	.string "26. Electivire$"
+
+EventScript_Group1Choices_Text_26:
+	.string "27. Espeon$"
+
+EventScript_Group1Choices_Text_27:
+	.string "28. Excadrill$"
+
+EventScript_Group2Choices_Text_0:
+	.string "29. Farigiraf$"
+
+EventScript_Group2Choices_Text_1:
+	.string "30. Ferrothorn$"
+
+EventScript_Group2Choices_Text_2:
+	.string "31. Flareon$"
+
+EventScript_Group2Choices_Text_3:
+	.string "32. Froslass$"
+
+EventScript_Group2Choices_Text_4:
+	.string "33. Garchomp$"
+
+EventScript_Group2Choices_Text_5:
+	.string "34. Gengar$"
+
+EventScript_Group2Choices_Text_6:
+	.string "35. Gholdengo$"
+
+EventScript_Group2Choices_Text_7:
+	.string "36. Glaceon$"
+
+EventScript_Group2Choices_Text_8:
+	.string "37. Glalie$"
+
+EventScript_Group2Choices_Text_9:
+	.string "38. Gliscor$"
+
+EventScript_Group2Choices_Text_10:
+	.string "39. Gogoat$"
+
+EventScript_Group2Choices_Text_11:
+	.string "40. Golurk$"
+
+EventScript_Group2Choices_Text_12:
+	.string "41. Goodra$"
+
+EventScript_Group2Choices_Text_13:
+	.string "42. Goodra-H$"
+
+EventScript_Group2Choices_Text_14:
+	.string "43. Grimmsnarl$"
+
+EventScript_Group2Choices_Text_15:
+	.string "44. Gyarados$"
+
+EventScript_Group2Choices_Text_16:
+	.string "45. Hatterene$"
+
+EventScript_Group2Choices_Text_17:
+	.string "46. Hawlucha$"
+
+EventScript_Group2Choices_Text_18:
+	.string "47. Hitmonchan$"
+
+EventScript_Group2Choices_Text_19:
+	.string "48. Hitmonlee$"
+
+EventScript_Group2Choices_Text_20:
+	.string "49. Hitmontop$"
+
+EventScript_Group2Choices_Text_21:
+	.string "50. Houndstone$"
+
+EventScript_Group2Choices_Text_22:
+	.string "51. Hydreigon$"
+
+EventScript_Group2Choices_Text_23:
+	.string "52. Illumise$"
+
+EventScript_Group2Choices_Text_24:
+	.string "53. Jolteon$"
+
+EventScript_Group2Choices_Text_25:
+	.string "54. Jynx$"
+
+EventScript_Group2Choices_Text_26:
+	.string "55. Kingambit$"
+
+EventScript_Group2Choices_Text_27:
+	.string "56. Kingdra$"
+
+EventScript_Group3Choices_Text_0:
+	.string "57. Kleavor$"
+
+EventScript_Group3Choices_Text_1:
+	.string "58. Kommo-o$"
+
+EventScript_Group3Choices_Text_2:
+	.string "59. Krookodile$"
+
+EventScript_Group3Choices_Text_3:
+	.string "60. Lanturn$"
+
+EventScript_Group3Choices_Text_4:
+	.string "61. Leafeon$"
+
+EventScript_Group3Choices_Text_5:
+	.string "62. Lilligant$"
+
+EventScript_Group3Choices_Text_6:
+	.string "63. Lilligant-H$"
+
+EventScript_Group3Choices_Text_7:
+	.string "64. Linoone$"
+
+EventScript_Group3Choices_Text_8:
+	.string "65. Lokix$"
+
+EventScript_Group3Choices_Text_9:
+	.string "66. Lucario$"
+
+EventScript_Group3Choices_Text_10:
+	.string "67. Ludicolo$"
+
+EventScript_Group3Choices_Text_11:
+	.string "68. Luxray$"
+
+EventScript_Group3Choices_Text_12:
+	.string "69. Lycanroc$"
+
+EventScript_Group3Choices_Text_13:
+	.string "70. Lycanroc-D$"
+
+EventScript_Group3Choices_Text_14:
+	.string "71. Lycanroc-M$"
+
+EventScript_Group3Choices_Text_15:
+	.string "72. Magmortar$"
+
+EventScript_Group3Choices_Text_16:
+	.string "73. Magnezone$"
+
+EventScript_Group3Choices_Text_17:
+	.string "74. Malamar$"
+
+EventScript_Group3Choices_Text_18:
+	.string "75. Mamoswine$"
+
+EventScript_Group3Choices_Text_19:
+	.string "76. Mantine$"
+
+EventScript_Group3Choices_Text_20:
+	.string "77. Mawile$"
+
+EventScript_Group3Choices_Text_21:
+	.string "78. Metagross$"
+
+EventScript_Group3Choices_Text_22:
+	.string "79. Mew$"
+
+EventScript_Group3Choices_Text_23:
+	.string "80. Milotic$"
+
+EventScript_Group3Choices_Text_24:
+	.string "81. Mimikyu$"
+
+EventScript_Group3Choices_Text_25:
+	.string "82. Nidoking$"
+
+EventScript_Group3Choices_Text_26:
+	.string "83. Nidoqueen$"
+
+EventScript_Group3Choices_Text_27:
+	.string "84. Noivern$"
+
+EventScript_Group4Choices_Text_0:
+	.string "85. Obstagoon$"
+
+EventScript_Group4Choices_Text_1:
+	.string "86. Palossand$"
+
+EventScript_Group4Choices_Text_2:
+	.string "87. Perrserker$"
+
+EventScript_Group4Choices_Text_3:
+	.string "88. Persian$"
+
+EventScript_Group4Choices_Text_4:
+	.string "89. Persian-A$"
+
+EventScript_Group4Choices_Text_5:
+	.string "90. Pidgeot$"
+
+EventScript_Group4Choices_Text_6:
+	.string "91. Politoed$"
+
+EventScript_Group4Choices_Text_7:
+	.string "92. Poliwrath$"
+
+EventScript_Group4Choices_Text_8:
+	.string "93. Raichu$"
+
+EventScript_Group4Choices_Text_9:
+	.string "94. Raichu-A$"
+
+EventScript_Group4Choices_Text_10:
+	.string "95. Roserade$"
+
+EventScript_Group4Choices_Text_11:
+	.string "96. Rotom$"
+
+EventScript_Group4Choices_Text_12:
+	.string "97. Rotom-Fan$"
+
+EventScript_Group4Choices_Text_13:
+	.string "98. Rotom-Frost$"
+
+EventScript_Group4Choices_Text_14:
+	.string "99. Rotom-Heat$"
+
+EventScript_Group4Choices_Text_15:
+	.string "100. Rotom-Mow$"
+
+EventScript_Group4Choices_Text_16:
+	.string "101. Rotom-Wash$"
+
+EventScript_Group4Choices_Text_17:
+	.string "102. Sableye$"
+
+EventScript_Group4Choices_Text_18:
+	.string "103. Salamence$"
+
+EventScript_Group4Choices_Text_19:
+	.string "104. Salazzle$"
+
+EventScript_Group4Choices_Text_20:
+	.string "105. Scizor$"
+
+EventScript_Group4Choices_Text_21:
+	.string "106. Sharpedo$"
+
+EventScript_Group4Choices_Text_22:
+	.string "107. Shiftry$"
+
+EventScript_Group4Choices_Text_23:
+	.string "108. Shuckle$"
+
+EventScript_Group4Choices_Text_24:
+	.string "109. Skarmory$"
+
+EventScript_Group4Choices_Text_25:
+	.string "110. Slowbro$"
+
+EventScript_Group4Choices_Text_26:
+	.string "111. Slowbro-G$"
+
+EventScript_Group4Choices_Text_27:
+	.string "112. Slowking$"
+
+EventScript_Group5Choices_Text_0:
+	.string "113. Slowking-G$"
+
+EventScript_Group5Choices_Text_1:
+	.string "114. Sneasler$"
+
+EventScript_Group5Choices_Text_2:
+	.string "115. Snorlax$"
+
+EventScript_Group5Choices_Text_3:
+	.string "116. Staraptor$"
+
+EventScript_Group5Choices_Text_4:
+	.string "117. Sudowoodo$"
+
+EventScript_Group5Choices_Text_5:
+	.string "118. Swellow$"
+
+EventScript_Group5Choices_Text_6:
+	.string "119. Sylveon$"
+
+EventScript_Group5Choices_Text_7:
+	.string "120. Talonflame$"
+
+EventScript_Group5Choices_Text_8:
+	.string "121. Tatsugiri$"
+
+EventScript_Group5Choices_Text_9:
+	.string "122. Togekiss$"
+
+EventScript_Group5Choices_Text_10:
+	.string "123. Torkoal$"
+
+EventScript_Group5Choices_Text_11:
+	.string "124. Toxtricity$"
+
+EventScript_Group5Choices_Text_12:
+	.string "125. Toxtricity-LK$"
+
+EventScript_Group5Choices_Text_13:
+	.string "126. Tyranitar$"
+
+EventScript_Group5Choices_Text_14:
+	.string "127. Tyrantrum$"
+
+EventScript_Group5Choices_Text_15:
+	.string "128. Umbreon$"
+
+EventScript_Group5Choices_Text_16:
+	.string "129. Unown$"
+
+EventScript_Group5Choices_Text_17:
+	.string "130. Ursaluna$"
+
+EventScript_Group5Choices_Text_18:
+	.string "131. Ursaluna-BM$"
+
+EventScript_Group5Choices_Text_19:
+	.string "132. Vaporeon$"
+
+EventScript_Group5Choices_Text_20:
+	.string "133. Volbeat$"
+
+EventScript_Group5Choices_Text_21:
+	.string "134. Volcarona$"
+
+EventScript_Group5Choices_Text_22:
+	.string "135. Wailord$"
+
+EventScript_Group5Choices_Text_23:
+	.string "136. Weavile$"
+
+EventScript_Group5Choices_Text_24:
+	.string "137. Whimsicott$"
+
+EventScript_Group5Choices_Text_25:
+	.string "138. Wyrdeer$"
+
+EventScript_Group5Choices_Text_26:
+	.string "139. Zoroark$"
+
+EventScript_Group5Choices_Text_27:
+	.string "140. Zoroark-H$"
+
+Text_SelectPkmn::
+	.string "Benny: Please select your Pokémon.$"

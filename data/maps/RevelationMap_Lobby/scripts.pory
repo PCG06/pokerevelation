@@ -39,9 +39,17 @@ script RevelationMap_Lobby_Trigger0 {
 			"Please step back and choose your\l"
 			"Pokémon.", MSGBOX_AUTOCLOSE)
 	applymoveplayer(moves(walk_down, face_left))
-	goto(Common_EventScript_ChoosePkmnMenu)
+	goto(RevelationMap_Lobby_EventScript_ProfPokemon)
 	release
 	end
+}
+
+script RevelationMap_Lobby_EventScript_ProfPokemon {
+	lock
+	faceplayer
+	setvar(VAR_0x8001, 0)
+	setvar(VAR_0x8003, 0)
+	goto(EventScript_ChoosePkmnMenu)
 }
 
 script RevelationMap_Lobby_Trigger1 {

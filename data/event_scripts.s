@@ -583,6 +583,15 @@ gStdScripts_End::
 	.include "data/maps/RevelationMap_Lobby/scripts.inc"
 	.include "data/maps/RevelationMap_EntryPoint/scripts.inc"
 	.include "data/maps/RevelationMap_ChallengersArena/scripts.inc"
+	.include "data/maps/RevelationMap_HallOfFame/scripts.inc"
+	.include "data/maps/RevelationMap_Gym1/scripts.inc"
+	.include "data/maps/RevelationMap_Gym2/scripts.inc"
+	.include "data/maps/RevelationMap_Gym3/scripts.inc"
+	.include "data/maps/RevelationMap_Gym4/scripts.inc"
+	.include "data/maps/RevelationMap_Gym5/scripts.inc"
+	.include "data/maps/RevelationMap_Gym6/scripts.inc"
+	.include "data/maps/RevelationMap_Gym7/scripts.inc"
+	.include "data/maps/RevelationMap_Gym8/scripts.inc"
 
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
@@ -1165,22 +1174,5 @@ Text_MonCryScript::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
-	.include "data/scripts/dynmultichoices.inc"
-
-	.include "data/maps/RevelationMap_HallOfFame/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym1/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym2/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym3/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym4/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym5/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym6/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym7/scripts.inc"
-
-	.include "data/maps/RevelationMap_Gym8/scripts.inc"
+	.include "data/scripts/dynmulti_givemon.inc"
+	.include "data/scripts/dynmulti_trainers.inc"
