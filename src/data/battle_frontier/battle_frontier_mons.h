@@ -1007,7 +1007,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_STEELY_SPIRIT,
+        .ability = ABILITY_SAND_VEIL,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_DUGTRIO_ALOLA_2] =
@@ -1377,7 +1377,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GRASSIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 30, 31, 30),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 0, 252, 252),
-        .ability = ABILITY_CORROSION,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VICTREEBEL_3] =
@@ -1387,7 +1387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BIG_ROOT,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 0, 252),
-        .ability = ABILITY_CORROSION,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_VICTREEBEL_4] =
@@ -1657,7 +1657,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_RECKLESS,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_DODRIO_2] =
@@ -1667,7 +1667,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FIGY_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_RECKLESS,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_DODRIO_3] =
@@ -1747,7 +1747,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_GOOEY,
+        .ability = ABILITY_STENCH,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MUK_3] =
@@ -1767,7 +1767,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_QUICK_CLAW,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_GOOEY,
+        .ability = ABILITY_STENCH,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MUK_ALOLA_1] =
@@ -2107,7 +2107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THICK_CLUB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_SKILL_LINK,
+        .ability = ABILITY_ROCK_HEAD,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MAROWAK_3] =
@@ -2127,7 +2127,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THICK_CLUB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_SKILL_LINK,
+        .ability = ABILITY_ROCK_HEAD,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MAROWAK_ALOLA_1] =
@@ -2227,7 +2227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(216, 252, 0, 40, 0, 0),
-        .ability = ABILITY_UNSEEN_FIST,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_HITMONCHAN_3] =
@@ -2427,7 +2427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_VICTORY_STAR,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_STARMIE_3] =
@@ -2447,7 +2447,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_VICTORY_STAR,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MR_MIME_1] =
@@ -2497,7 +2497,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_JYNX_2] =
@@ -2507,7 +2507,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_JYNX_3] =
@@ -2517,7 +2517,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ICY_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_JYNX_4] =
@@ -3037,7 +3037,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLYINIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 30, 30, 30),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_COMPETITIVE,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_ARTICUNO_3] =
@@ -3077,7 +3077,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_DEFIANT,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_ZAPDOS_3] =
@@ -3107,7 +3107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WHITE_HERB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_BERSERK,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MOLTRES_2] =
@@ -3117,7 +3117,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_BERSERK,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MOLTRES_3] =
@@ -3137,7 +3137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_BERSERK,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DRAGONITE_1] =
@@ -3187,7 +3187,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MEGANIUM_2] =
@@ -3197,7 +3197,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MEGANIUM_3] =
@@ -3207,7 +3207,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_MEGANIUM_4] =
@@ -3217,7 +3217,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BIG_ROOT,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 128, 0, 0, 128),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_TYPHLOSION_1] =
@@ -3227,7 +3227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FIGY_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_DROUGHT,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_TYPHLOSION_2] =
@@ -3237,7 +3237,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_DROUGHT,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_TYPHLOSION_3] =
@@ -3247,7 +3247,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_DROUGHT,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_TYPHLOSION_4] =
@@ -3257,7 +3257,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_DROUGHT,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_FERALIGATR_1] =
@@ -3307,7 +3307,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_HUSTLE,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_FURRET_2] =
@@ -3317,7 +3317,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_HUSTLE,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_FURRET_3] =
@@ -3387,7 +3387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 252, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_LEDIAN_2] =
@@ -3397,7 +3397,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_LEDIAN_3] =
@@ -3417,7 +3417,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLYING_GEM,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_ARIADOS_1] =
@@ -3427,7 +3427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_QUICK_CLAW,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_MERCILESS,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ARIADOS_2] =
@@ -3447,7 +3447,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EJECT_BUTTON,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_MERCILESS,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ARIADOS_4] =
@@ -3537,7 +3537,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_RINDO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_LIGHTNING_ROD,
+        .ability = ABILITY_VOLT_ABSORB,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_XATU_1] =
@@ -3647,7 +3647,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_TERRAIN_EXTENDER,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_TRIAGE,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_BELLOSSOM_3] =
@@ -3737,7 +3737,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ROCKY_HELMET,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_SAP_SIPPER,
+        .ability = ABILITY_STURDY,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_SUDOWOODO_4] =
@@ -3797,7 +3797,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLYING_GEM,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_SIMPLE,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_JUMPLUFF_2] =
@@ -3817,7 +3817,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BIG_ROOT,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 0, 252),
-        .ability = ABILITY_SIMPLE,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_JUMPLUFF_4] =
@@ -4327,7 +4327,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_STRONG_JAW,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GRANBULL_2] =
@@ -4537,7 +4537,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_GUTS,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_URSARING_3] =
@@ -4547,7 +4547,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EVIOLITE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_GUTS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_URSARING_4] =
@@ -4557,7 +4557,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_GUTS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MAGCARGO_1] =
@@ -4657,7 +4657,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SKILL_LINK,
+        .ability = ABILITY_SUCTION_CUPS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_OCTILLERY_3] =
@@ -4687,7 +4687,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
-        .ability = ABILITY_SKILL_LINK,
+        .ability = ABILITY_SUCTION_CUPS,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_DELIBIRD_1] =
@@ -4707,7 +4707,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_VITAL_SPIRIT,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_DELIBIRD_3] =
@@ -4717,7 +4717,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_VITAL_SPIRIT,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_DELIBIRD_4] =
@@ -4727,7 +4727,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_MACHO_BRACE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_VITAL_SPIRIT,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_MANTINE_1] =
@@ -4997,7 +4997,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_IAPAPA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_STANTLER_3] =
@@ -5017,7 +5017,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIGHT_CLAY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_SMEARGLE_1] =
@@ -5047,7 +5047,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_TRACE,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SMEARGLE_4] =
@@ -5057,7 +5057,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_TRACE,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SMEARGLE_5] =
@@ -5487,7 +5487,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_STRONG_JAW,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MIGHTYENA_3] =
@@ -5557,7 +5557,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BUGINIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_SERENE_GRACE,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_BEAUTIFLY_2] =
@@ -5567,7 +5567,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 30),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SERENE_GRACE,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_BEAUTIFLY_3] =
@@ -5887,7 +5887,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_SPINDA_3] =
@@ -5897,7 +5897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_SPINDA_4] =
@@ -5907,7 +5907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 4, 252, 0, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_PELIPPER_1] =
@@ -5957,7 +5957,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BUGINIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_COMPOUND_EYES,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MASQUERAIN_2] =
@@ -5977,7 +5977,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_COMPOUND_EYES,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MASQUERAIN_4] =
@@ -6007,7 +6007,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 252, 0, 0, 252),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_WATER_VEIL,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_WAILORD_3] =
@@ -6027,7 +6027,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHESTO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 4, 252),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_WATER_VEIL,
         .nature = NATURE_SASSY
     },
     [FRONTIER_MON_DELCATTY_1] =
@@ -6237,7 +6237,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLYINIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_WHISCASH_2] =
@@ -6247,7 +6247,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ZOOM_LENS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_WHISCASH_3] =
@@ -6267,7 +6267,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DAMP_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 4, 252),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_OBLIVIOUS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_LUVDISC_1] =
@@ -6277,7 +6277,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WATERIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_LUVDISC_2] =
@@ -6287,7 +6287,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DAMP_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LUVDISC_3] =
@@ -6297,7 +6297,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DAMP_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LUVDISC_4] =
@@ -6307,7 +6307,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_CRAWDAUNT_1] =
@@ -6367,7 +6367,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ENIGMA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_MULTISCALE,
+        .ability = ABILITY_MARVEL_SCALE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_MILOTIC_3] =
@@ -6377,7 +6377,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MULTISCALE,
+        .ability = ABILITY_MARVEL_SCALE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MILOTIC_4] =
@@ -6457,7 +6457,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THROAT_SPRAY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_FLYGON_4] =
@@ -6467,7 +6467,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_NAIVE
     },
     [FRONTIER_MON_HARIYAMA_1] =
@@ -6527,7 +6527,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLAME_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_FLARE_BOOST,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MANECTRIC_3] =
@@ -6617,7 +6617,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHESTO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_THICK_FAT,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_WALREIN_3] =
@@ -6627,7 +6627,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_THICK_FAT,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_WALREIN_4] =
@@ -6667,7 +6667,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FLAME_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_SAND_VEIL,
         .nature = NATURE_MILD
     },
     [FRONTIER_MON_CACTURNE_4] =
@@ -6677,7 +6677,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GHOSTIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_SAND_VEIL,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_GLALIE_1] =
@@ -6807,7 +6807,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_THICK_FAT,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_GRUMPIG_2] =
@@ -6827,7 +6827,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_THICK_FAT,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_GRUMPIG_4] =
@@ -6837,7 +6837,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_MAGO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_THICK_FAT,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_PLUSLE_1] =
@@ -6847,7 +6847,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_PLUSLE_2] =
@@ -6857,7 +6857,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 30),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_PLUSLE_3] =
@@ -6877,7 +6877,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 4, 0),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MINUN_1] =
@@ -6887,7 +6887,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_MINUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MINUN_2] =
@@ -6897,7 +6897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_MINUS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_MINUN_3] =
@@ -6917,7 +6917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_TERRAIN_EXTENDER,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_MINUS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MAWILE_1] =
@@ -6967,7 +6967,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EXPERT_BELT,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_HUGE_POWER,
+        .ability = ABILITY_PURE_POWER,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MEDICHAM_2] =
@@ -7107,7 +7107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 200, 60),
-        .ability = ABILITY_GOOEY,
+        .ability = ABILITY_LIQUID_OOZE,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_SWALOT_3] =
@@ -7127,7 +7127,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BLACK_SLUDGE,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 252, 0, 0, 252),
-        .ability = ABILITY_GOOEY,
+        .ability = ABILITY_LIQUID_OOZE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_TROPIUS_1] =
@@ -7157,7 +7157,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_STARF_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-        .ability = ABILITY_RIPEN,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_TROPIUS_4] =
@@ -7187,7 +7187,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_SOUNDPROOF,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_EXPLOUD_3] =
@@ -7207,7 +7207,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_SOUNDPROOF,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_HUNTAIL_1] =
@@ -7387,7 +7387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_SHEER_FORCE,
+        .ability = ABILITY_SHED_SKIN,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_SEVIPER_3] =
@@ -7407,7 +7407,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_SHEER_FORCE,
+        .ability = ABILITY_SHED_SKIN,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ZANGOOSE_1] =
@@ -7427,7 +7427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_IMMUNITY,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ZANGOOSE_3] =
@@ -7437,7 +7437,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(124, 132, 0, 252, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_IMMUNITY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_ZANGOOSE_4] =
@@ -7447,7 +7447,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BRIGHT_POWDER,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_IMMUNITY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_RELICANTH_1] =
@@ -7667,7 +7667,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_POWER_HERB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
-        .ability = ABILITY_SIMPLE,
+        .ability = ABILITY_SUCTION_CUPS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_CRADILY_3] =
@@ -7677,7 +7677,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_SIMPLE,
+        .ability = ABILITY_SUCTION_CUPS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_CRADILY_4] =
@@ -7697,7 +7697,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_BATTLE_ARMOR,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ARMALDO_2] =
@@ -7717,7 +7717,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_BATTLE_ARMOR,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ARMALDO_4] =
@@ -7737,7 +7737,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_BATTLE_ARMOR,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_GARDEVOIR_1] =
@@ -7917,7 +7917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_REGICE_3] =
@@ -7927,7 +7927,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ICY_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_REGICE_4] =
@@ -7937,7 +7937,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ICY_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 4, 0),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_REGISTEEL_1] =
@@ -7957,7 +7957,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHESTO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_REGISTEEL_3] =
@@ -7967,7 +7967,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_REGISTEEL_4] =
@@ -7977,7 +7977,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 128, 0, 0, 128),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_LATIAS_1] =
@@ -7987,7 +7987,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SERENE_GRACE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LATIAS_2] =
@@ -8047,7 +8047,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SERENE_GRACE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_LATIOS_3] =
@@ -8097,7 +8097,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_CHIMECHO_3] =
@@ -8107,7 +8107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_CHIMECHO_4] =
@@ -8117,7 +8117,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIGHT_CLAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 128, 0, 0, 128),
-        .ability = ABILITY_PRANKSTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_TORTERRA_1] =
@@ -8227,7 +8227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
-        .ability = ABILITY_DEFIANT,
+        .ability = ABILITY_TORRENT,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_EMPOLEON_4] =
@@ -8377,7 +8377,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_STRONG_JAW,
+        .ability = ABILITY_RIVALRY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_LUXRAY_3] =
@@ -8457,7 +8457,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_RECKLESS,
+        .ability = ABILITY_MOLD_BREAKER,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_RAMPARDOS_3] =
@@ -8507,7 +8507,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WEAKNESS_POLICY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_DAUNTLESS_SHIELD,
+        .ability = ABILITY_STURDY,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_BASTIODON_4] =
@@ -8517,7 +8517,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_DAUNTLESS_SHIELD,
+        .ability = ABILITY_STURDY,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_MOTHIM_1] =
@@ -8587,7 +8587,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THROAT_SPRAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_QUEENLY_MAJESTY,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VESPIQUEN_4] =
@@ -8597,7 +8597,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GHOSTIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_QUEENLY_MAJESTY,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_PACHIRISU_1] =
@@ -8607,7 +8607,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 252, 0, 0),
-        .ability = ABILITY_SERENE_GRACE,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_PACHIRISU_2] =
@@ -8647,7 +8647,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_TECHNICIAN,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_FLOATZEL_2] =
@@ -8657,7 +8657,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_MAGO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_TECHNICIAN,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_FLOATZEL_3] =
@@ -8897,7 +8897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MISMAGIUS_3] =
@@ -8907,7 +8907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MISMAGIUS_4] =
@@ -9027,7 +9027,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_POISONIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_POISON_TOUCH,
+        .ability = ABILITY_STENCH,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_SKUNTANK_4] =
@@ -9087,7 +9087,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_CHATOT_2] =
@@ -9097,7 +9097,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 30, 30, 30, 30, 30),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_CHATOT_3] =
@@ -9107,7 +9107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_CHATOT_4] =
@@ -9117,7 +9117,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THROAT_SPRAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_SPIRITOMB_1] =
@@ -9137,7 +9137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ZOOM_LENS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_BAD_DREAMS,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_SPIRITOMB_3] =
@@ -9327,7 +9327,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_SUPER_LUCK,
+        .ability = ABILITY_SNIPER,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_DRAPION_4] =
@@ -9337,7 +9337,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_POISONIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_SUPER_LUCK,
+        .ability = ABILITY_BATTLE_ARMOR,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_TOXICROAK_1] =
@@ -9387,7 +9387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WATMEL_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(188, 252, 0, 68, 0, 0),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_CARNIVINE_2] =
@@ -9397,7 +9397,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GRASSIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(188, 252, 0, 68, 0, 0),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_CARNIVINE_3] =
@@ -9407,7 +9407,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_CARNIVINE_4] =
@@ -9427,7 +9427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_WATER_BUBBLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_NAIVE
     },
     [FRONTIER_MON_LUMINEON_2] =
@@ -9437,7 +9437,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 248, 8, 0, 0),
-        .ability = ABILITY_WATER_BUBBLE,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_LUMINEON_3] =
@@ -9587,7 +9587,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(172, 252, 0, 84, 0, 0),
-        .ability = ABILITY_THICK_FAT,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_LICKILICKY_2] =
@@ -9597,7 +9597,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NORMALIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_THICK_FAT,
+        .ability = ABILITY_OWN_TEMPO,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_LICKILICKY_3] =
@@ -9767,7 +9767,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_SHEER_FORCE,
+        .ability = ABILITY_FLAME_BODY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MAGMORTAR_2] =
@@ -9777,7 +9777,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SHEER_FORCE,
+        .ability = ABILITY_FLAME_BODY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MAGMORTAR_3] =
@@ -9797,7 +9797,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_POISONIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SHEER_FORCE,
+        .ability = ABILITY_FLAME_BODY,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_TOGEKISS_1] =
@@ -9887,7 +9887,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SAP_SIPPER,
+        .ability = ABILITY_LEAF_GUARD,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_LEAFEON_2] =
@@ -9907,7 +9907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SAP_SIPPER,
+        .ability = ABILITY_LEAF_GUARD,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_LEAFEON_4] =
@@ -9917,7 +9917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_SAP_SIPPER,
+        .ability = ABILITY_LEAF_GUARD,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_GLACEON_1] =
@@ -9927,7 +9927,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 30),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_GLACEON_2] =
@@ -9937,7 +9937,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NORMALIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 30, 30, 30),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_GLACEON_3] =
@@ -9947,7 +9947,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 30),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_GLACEON_4] =
@@ -9957,7 +9957,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_ICE_SCALES,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_GLACEON_5] =
@@ -10107,7 +10107,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SCOPE_LENS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_MOXIE,
+        .ability = ABILITY_STEADFAST,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_GALLADE_2] =
@@ -10137,7 +10137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SALAC_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_MOXIE,
+        .ability = ABILITY_STEADFAST,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_GALLADE_5] =
@@ -10157,7 +10157,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_AIR_BALLOON,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(172, 0, 0, 84, 252, 0),
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_STURDY,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_PROBOPASS_2] =
@@ -10207,7 +10207,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EXPERT_BELT,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(212, 252, 44, 0, 0, 0),
-        .ability = ABILITY_IRON_FIST,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_DUSKNOIR_3] =
@@ -10237,7 +10237,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_PERISH_BODY,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_FROSLASS_2] =
@@ -10257,7 +10257,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_PERISH_BODY,
+        .ability = ABILITY_SNOW_CLOAK,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_FROSLASS_4] =
@@ -10287,7 +10287,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_COMATOSE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_UXIE_2] =
@@ -10297,7 +10297,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_COLBUR_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 40, 216, 0, 0),
-        .ability = ABILITY_COMATOSE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_UXIE_3] =
@@ -10327,7 +10327,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_COLBUR_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 240, 0, 0, 16),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MESPRIT_2] =
@@ -10337,7 +10337,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(208, 0, 0, 252, 0, 48),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MESPRIT_3] =
@@ -10387,7 +10387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_INFILTRATOR,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_AZELF_4] =
@@ -10397,7 +10397,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NORMAL_GEM,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_INFILTRATOR,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_HEATRAN_1] =
@@ -10447,7 +10447,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_STALL,
+        .ability = ABILITY_SLOW_START,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_REGIGIGAS_2] =
@@ -10457,7 +10457,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_STALL,
+        .ability = ABILITY_SLOW_START,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_REGIGIGAS_3] =
@@ -10467,7 +10467,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_STALL,
+        .ability = ABILITY_SLOW_START,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_REGIGIGAS_4] =
@@ -10487,7 +10487,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ROOM_SERVICE,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MAGICIAN,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_CRESSELIA_2] =
@@ -10517,7 +10517,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 4, 252),
-        .ability = ABILITY_MAGICIAN,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_SASSY
     },
     [FRONTIER_MON_SERPERIOR_1] =
@@ -10647,7 +10647,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_STAKEOUT,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_WATCHOG_2] =
@@ -10677,7 +10677,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_STAKEOUT,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_STOUTLAND_1] =
@@ -10857,7 +10857,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_GLUTTONY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SIMIPOUR_2] =
@@ -10867,7 +10867,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EXPERT_BELT,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_GLUTTONY,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_SIMIPOUR_3] =
@@ -10877,7 +10877,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_GLUTTONY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SIMIPOUR_4] =
@@ -10907,7 +10907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_FOREWARN,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MUSHARNA_3] =
@@ -10917,7 +10917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 8, 252),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_FOREWARN,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_MUSHARNA_4] =
@@ -11507,7 +11507,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 30, 30, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_DANCER,
+        .ability = ABILITY_CHLOROPHYLL,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LILLIGANT_5] =
@@ -11527,7 +11527,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIECHI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SPEED_BOOST,
+        .ability = ABILITY_RECKLESS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_BASCULIN_RED_STRIPED_2] =
@@ -11547,7 +11547,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_SPEED_BOOST,
+        .ability = ABILITY_RECKLESS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_BASCULIN_BLUE_STRIPED_1] =
@@ -11567,7 +11567,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_SPEED_BOOST,
+        .ability = ABILITY_ROCK_HEAD,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_KROOKODILE_1] =
@@ -11907,7 +11907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NONE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_KLUTZ,
+        .ability = ABILITY_DEFEATIST,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_ARCHEOPS_3] =
@@ -11927,7 +11927,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NONE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
-        .ability = ABILITY_KLUTZ,
+        .ability = ABILITY_DEFEATIST,
         .nature = NATURE_NAIVE
     },
     [FRONTIER_MON_GARBODOR_1] =
@@ -12157,7 +12157,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_COMPETITIVE,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SWANNA_4] =
@@ -12167,7 +12167,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WATERIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_COMPETITIVE,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_VANILLUXE_1] =
@@ -12267,7 +12267,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_EMOLGA_3] =
@@ -12277,7 +12277,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_EMOLGA_4] =
@@ -12287,7 +12287,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 4),
-        .ability = ABILITY_ELECTRIC_SURGE,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_ESCAVALIER_1] =
@@ -12537,7 +12537,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_STEELIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_MOTOR_DRIVE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_KLINKLANG_2] =
@@ -12547,7 +12547,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_OCCA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_MOTOR_DRIVE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_KLINKLANG_3] =
@@ -12567,7 +12567,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_MOTOR_DRIVE,
+        .ability = ABILITY_PLUS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_EELEKTROSS_1] =
@@ -12627,7 +12627,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LUM_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .ability = ABILITY_PSYCHIC_SURGE,
+        .ability = ABILITY_TELEPATHY,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_BEHEEYEM_3] =
@@ -12647,7 +12647,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GHOSTIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-        .ability = ABILITY_PSYCHIC_SURGE,
+        .ability = ABILITY_TELEPATHY,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_CHANDELURE_1] =
@@ -12657,7 +12657,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_SHADOW_TAG,
+        .ability = ABILITY_FLASH_FIRE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_CHANDELURE_2] =
@@ -12677,7 +12677,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WHITE_HERB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_SHADOW_TAG,
+        .ability = ABILITY_FLASH_FIRE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_CHANDELURE_4] =
@@ -12787,7 +12787,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ICY_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 4, 0),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_CRYOGONAL_2] =
@@ -12807,7 +12807,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_CRYOGONAL_4] =
@@ -12817,7 +12817,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIGHT_CLAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_FILTER,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_ACCELGOR_1] =
@@ -12867,7 +12867,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_WATER_ABSORB,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_STUNFISK_2] =
@@ -12877,7 +12877,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-        .ability = ABILITY_WATER_ABSORB,
+        .ability = ABILITY_STATIC,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_STUNFISK_3] =
@@ -13017,7 +13017,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GHOSTIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_POWER_SPOT,
+        .ability = ABILITY_IRON_FIST,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GOLURK_5] =
@@ -13027,7 +13027,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_POWER_SPOT,
+        .ability = ABILITY_IRON_FIST,
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_BISHARP_1] =
@@ -13097,7 +13097,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_STAMINA,
+        .ability = ABILITY_RECKLESS,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_BOUFFALANT_4] =
@@ -13217,7 +13217,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LAX_INCENSE,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_BERSERK,
+        .ability = ABILITY_GLUTTONY,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_HEATMOR_4] =
@@ -13227,7 +13227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_PETAYA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_BERSERK,
+        .ability = ABILITY_GLUTTONY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DURANT_1] =
@@ -13367,7 +13367,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_STEELIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_NO_GUARD,
+        .ability = ABILITY_JUSTIFIED,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_COBALION_3] =
@@ -13387,7 +13387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_AGUAV_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_NO_GUARD,
+        .ability = ABILITY_JUSTIFIED,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_TERRAKION_1] =
@@ -13427,7 +13427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(128, 252, 0, 128, 0, 0),
-        .ability = ABILITY_STEADFAST,
+        .ability = ABILITY_JUSTIFIED,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_VIRIZION_1] =
@@ -13437,7 +13437,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FIGHTINIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_NO_GUARD,
+        .ability = ABILITY_JUSTIFIED,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_VIRIZION_2] =
@@ -13447,7 +13447,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
-        .ability = ABILITY_NO_GUARD,
+        .ability = ABILITY_JUSTIFIED,
         .nature = NATURE_HASTY
     },
     [FRONTIER_MON_VIRIZION_3] =
@@ -13707,7 +13707,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_DELPHOX_3] =
@@ -13717,7 +13717,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_DELPHOX_4] =
@@ -13757,7 +13757,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_BATTLE_BOND,
+        .ability = ABILITY_TORRENT,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_GRENINJA_4] =
@@ -13897,7 +13897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_RIVALRY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_PYROAR_2] =
@@ -13917,7 +13917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WHITE_HERB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_ADAPTABILITY,
+        .ability = ABILITY_RIVALRY,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_PYROAR_4] =
@@ -14017,7 +14017,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_SAP_SIPPER,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GOGOAT_2] =
@@ -14027,7 +14027,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_SAP_SIPPER,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_GOGOAT_3] =
@@ -14037,7 +14037,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 0, 252),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_SAP_SIPPER,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_GOGOAT_4] =
@@ -14047,7 +14047,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 4),
-        .ability = ABILITY_GRASSY_SURGE,
+        .ability = ABILITY_SAP_SIPPER,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_PANGORO_1] =
@@ -14167,7 +14167,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 30, 30, 30),
         .ev = TRAINER_PARTY_EVS(12, 0, 0, 248, 248, 0),
-        .ability = ABILITY_PSYCHIC_SURGE,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MEOWSTIC_F_2] =
@@ -14187,7 +14187,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 30, 30, 30),
         .ev = TRAINER_PARTY_EVS(12, 0, 0, 248, 248, 0),
-        .ability = ABILITY_PSYCHIC_SURGE,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_AEGISLASH_1] =
@@ -14247,7 +14247,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_HEALER,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_AROMATISSE_3] =
@@ -14257,7 +14257,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIGHT_CLAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_HEALER,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_AROMATISSE_4] =
@@ -14687,7 +14687,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_MISTY_SURGE,
+        .ability = ABILITY_CHEEK_POUCH,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DEDENNE_2] =
@@ -14747,7 +14747,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIGHT_CLAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_MISTY_SURGE,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_CARBINK_4] =
@@ -14757,7 +14757,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MISTY_SURGE,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_GOODRA_1] =
@@ -14897,7 +14897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_HEATPROOF,
+        .ability = ABILITY_PICKUP,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_GOURGEIST_LARGE_1] =
@@ -14907,7 +14907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_HEATPROOF,
+        .ability = ABILITY_PICKUP,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GOURGEIST_SUPER_1] =
@@ -14917,7 +14917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_HEATPROOF,
+        .ability = ABILITY_PICKUP,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_GOURGEIST_SUPER_2] =
@@ -14977,7 +14977,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_FRISK,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_NOIVERN_2] =
@@ -15007,7 +15007,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_THROAT_SPRAY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_PUNK_ROCK,
+        .ability = ABILITY_FRISK,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DECIDUEYE_1] =
@@ -15227,7 +15227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 252, 0),
-        .ability = ABILITY_COMPOUND_EYES,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VIKAVOLT_2] =
@@ -15237,7 +15237,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BLUNDER_POLICY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_COMPOUND_EYES,
+        .ability = ABILITY_LEVITATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VIKAVOLT_3] =
@@ -15377,7 +15377,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_LYCANROC_MIDNIGHT_2] =
@@ -15607,7 +15607,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAT_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_CHLOROPHYLL,
+        .ability = ABILITY_LEAF_GUARD,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LURANTIS_3] =
@@ -15637,7 +15637,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_SHIINOTIC_2] =
@@ -15657,7 +15657,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_SHIINOTIC_4] =
@@ -15667,7 +15667,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 128, 0, 0, 128),
-        .ability = ABILITY_MAGIC_BOUNCE,
+        .ability = ABILITY_ILLUMINATE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_SALAZZLE_1] =
@@ -15917,7 +15917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_SHELL_ARMOR,
+        .ability = ABILITY_EMERGENCY_EXIT,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GOLISOPOD_2] =
@@ -15937,7 +15937,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
-        .ability = ABILITY_SHELL_ARMOR,
+        .ability = ABILITY_EMERGENCY_EXIT,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_GOLISOPOD_4] =
@@ -16137,7 +16137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_AGUAV_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_COMATOSE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_KOMALA_3] =
@@ -16157,7 +16157,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_QUICK_CLAW,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 0, 0),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_COMATOSE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_TURTONATOR_1] =
@@ -16167,7 +16167,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DRAGONIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_WEAK_ARMOR,
+        .ability = ABILITY_SHELL_ARMOR,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_TURTONATOR_2] =
@@ -16367,7 +16367,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_GHOSTIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
-        .ability = ABILITY_AFTERMATH,
+        .ability = ABILITY_STEELWORKER,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_DHELMISE_2] =
@@ -16387,7 +16387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BRIGHT_POWDER,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_AFTERMATH,
+        .ability = ABILITY_STEELWORKER,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_DHELMISE_4] =
@@ -17287,7 +17287,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EXPERT_BELT,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 30),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_TECHNICIAN,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_THIEVUL_4] =
@@ -17297,7 +17297,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BRIGHT_POWDER,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_TECHNICIAN,
+        .ability = ABILITY_RUN_AWAY,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_ELDEGOSS_1] =
@@ -18367,7 +18367,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_SOLID_ROCK,
+        .ability = ABILITY_POWER_SPOT,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_STONJOURNER_2] =
@@ -18377,7 +18377,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 252, 0, 0, 0),
-        .ability = ABILITY_SOLID_ROCK,
+        .ability = ABILITY_POWER_SPOT,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_STONJOURNER_3] =
@@ -18387,7 +18387,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WEAKNESS_POLICY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_SOLID_ROCK,
+        .ability = ABILITY_POWER_SPOT,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_STONJOURNER_4] =
@@ -19307,7 +19307,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_BAND,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 6, 0, 0),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_WYRDEER_2] =
@@ -19317,7 +19317,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SHED_SHELL,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_SCRAPPY,
+        .ability = ABILITY_INTIMIDATE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_WYRDEER_3] =
@@ -19357,7 +19357,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .ability = ABILITY_RATTLED,
+        .ability = ABILITY_SWIFT_SWIM,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_BASCULEGION_F_1] =
@@ -19427,7 +19427,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ROCKY_HELMET,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 6),
-        .ability = ABILITY_STEADFAST,
+        .ability = ABILITY_SWARM,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_KLEAVOR_5] =
@@ -19517,7 +19517,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIDE_LENS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(6, 0, 0, 252, 252, 0),
-        .ability = ABILITY_COMPETITIVE,
+        .ability = ABILITY_KEEN_EYE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_ZOROARK_HISUI_1] =
@@ -19697,7 +19697,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BRIGHT_POWDER,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 6),
-        .ability = ABILITY_OVERCOAT,
+        .ability = ABILITY_SAP_SIPPER,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_GOODRA_HISUI_3] =
@@ -19847,7 +19847,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 6, 252, 0, 0),
-        .ability = ABILITY_LONG_REACH,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_DECIDUEYE_HISUI_2] =
@@ -19867,7 +19867,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 6, 252, 0, 0),
-        .ability = ABILITY_LONG_REACH,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_DECIDUEYE_HISUI_4] =
@@ -19877,7 +19877,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 6, 252, 0, 0),
-        .ability = ABILITY_LONG_REACH,
+        .ability = ABILITY_OVERGROW,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_TYPHLOSION_HISUI_1] =
@@ -19887,7 +19887,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 6),
-        .ability = ABILITY_FLASH_FIRE,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_TYPHLOSION_HISUI_2] =
@@ -19897,7 +19897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .iv = TRAINER_PARTY_IVS(31, 0, 30, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 6),
-        .ability = ABILITY_FLASH_FIRE,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_TYPHLOSION_HISUI_3] =
@@ -19917,7 +19917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 6),
-        .ability = ABILITY_FLASH_FIRE,
+        .ability = ABILITY_BLAZE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SAMUROTT_HISUI_1] =
@@ -19927,7 +19927,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 6),
-        .ability = ABILITY_SHELL_ARMOR,
+        .ability = ABILITY_TORRENT,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_SAMUROTT_HISUI_2] =
@@ -19937,7 +19937,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 6, 252, 0, 0),
-        .ability = ABILITY_SHELL_ARMOR,
+        .ability = ABILITY_TORRENT,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_SAMUROTT_HISUI_3] =
@@ -19957,7 +19957,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 6, 0),
-        .ability = ABILITY_SHELL_ARMOR,
+        .ability = ABILITY_TORRENT,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_ENAMORUS_1] =
@@ -20117,7 +20117,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WEAKNESS_POLICY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_SYNCHRONIZE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_MEW_4] =
@@ -20127,7 +20127,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 252, 0, 0),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_SYNCHRONIZE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MEW_5] =
@@ -20137,7 +20137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 252, 0, 0),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_SYNCHRONIZE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MEW_6] =
@@ -20157,7 +20157,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ASSAULT_VEST,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MAGIC_GUARD,
+        .ability = ABILITY_SYNCHRONIZE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_LUGIA_1] =
@@ -20277,7 +20277,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_NATURAL_CURE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_CELEBI_3] =
@@ -20287,7 +20287,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_ROCKY_HELMET,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_NATURAL_CURE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_CELEBI_4] =
@@ -20317,7 +20317,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_REGENERATOR,
+        .ability = ABILITY_NATURAL_CURE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_KYOGRE_1] =
@@ -20517,7 +20517,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_NORMALIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SUPER_LUCK,
+        .ability = ABILITY_SERENE_GRACE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_JIRACHI_3] =
@@ -20557,7 +20557,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_TRACE,
+        .ability = ABILITY_SERENE_GRACE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DEOXYS_1] =
@@ -20577,7 +20577,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_LIMBER,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_RASH
     },
     [FRONTIER_MON_DEOXYS_ATTACK_2] =
@@ -20587,7 +20587,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_PSYCHIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_LIMBER,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_NAIVE
     },
     [FRONTIER_MON_DEOXYS_ATTACK_3] =
@@ -20597,7 +20597,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_LIMBER,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_NAIVE
     },
     [FRONTIER_MON_DEOXYS_DEFENSE_1] =
@@ -20787,7 +20787,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SOUL_HEART,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_MANAPHY_2] =
@@ -20797,7 +20797,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_MAGO_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SOUL_HEART,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MANAPHY_3] =
@@ -20827,7 +20827,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SALAC_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SOUL_HEART,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MANAPHY_6] =
@@ -20837,7 +20837,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_AGUAV_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_SOUL_HEART,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_MANAPHY_7] =
@@ -20857,7 +20857,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WATERIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_PHIONE_2] =
@@ -20867,7 +20867,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DAMP_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_PHIONE_3] =
@@ -20877,7 +20877,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_PHIONE_4] =
@@ -20897,7 +20897,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_DAMP_ROCK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_DRIZZLE,
+        .ability = ABILITY_HYDRATION,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_DARKRAI_1] =
@@ -20907,7 +20907,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
-        .ability = ABILITY_INFILTRATOR,
+        .ability = ABILITY_BAD_DREAMS,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_DARKRAI_2] =
@@ -20917,7 +20917,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_INFILTRATOR,
+        .ability = ABILITY_BAD_DREAMS,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_DARKRAI_3] =
@@ -21057,7 +21057,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_FOCUS_SASH,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_FLOWER_VEIL,
+        .ability = ABILITY_SERENE_GRACE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_VICTINI_1] =
@@ -21097,7 +21097,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_SYNCHRONIZE,
+        .ability = ABILITY_VICTORY_STAR,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_VICTINI_5] =
@@ -21147,7 +21147,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_FLASH_FIRE,
+        .ability = ABILITY_TURBOBLAZE,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_RESHIRAM_5] =
@@ -21207,7 +21207,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
-        .ability = ABILITY_LIGHTNING_ROD,
+        .ability = ABILITY_TERAVOLT,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_ZEKROM_6] =
@@ -21217,7 +21217,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_PETAYA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_LIGHTNING_ROD,
+        .ability = ABILITY_TERAVOLT,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_KYUREM_1] =
@@ -21227,7 +21227,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_EJECT_PACK,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 30, 30, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_REFRIGERATE,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_KYUREM_2] =
@@ -21237,7 +21237,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .ability = ABILITY_REFRIGERATE,
+        .ability = ABILITY_PRESSURE,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_KYUREM_3] =
@@ -21527,7 +21527,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_AGUAV_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .ability = ABILITY_AERILATE,
+        .ability = ABILITY_DARK_AURA,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_YVELTAL_3] =
@@ -21537,7 +21537,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .ability = ABILITY_AERILATE,
+        .ability = ABILITY_DARK_AURA,
         .nature = NATURE_RASH
     },
     [FRONTIER_MON_YVELTAL_4] =
@@ -21637,7 +21637,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_SASSY
     },
     [FRONTIER_MON_DIANCIE_2] =
@@ -21667,7 +21667,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SHUCA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 4, 252, 0, 0, 0),
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_CLEAR_BODY,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_DIANCIE_5] =
@@ -21797,7 +21797,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SPECS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
-        .ability = ABILITY_STEAM_ENGINE,
+        .ability = ABILITY_WATER_ABSORB,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VOLCANION_3] =
@@ -21807,7 +21807,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_SHUCA_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_STEAM_ENGINE,
+        .ability = ABILITY_WATER_ABSORB,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_VOLCANION_4] =
@@ -21827,7 +21827,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_STEAM_ENGINE,
+        .ability = ABILITY_WATER_ABSORB,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_SOLGALEO_1] =
@@ -21857,7 +21857,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_BATTLE_ARMOR,
+        .ability = ABILITY_FULL_METAL_BODY,
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_SOLGALEO_4] =
@@ -21867,7 +21867,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_BRIGHT_POWDER,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_BATTLE_ARMOR,
+        .ability = ABILITY_FULL_METAL_BODY,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_SOLGALEO_5] =
@@ -21887,7 +21887,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-        .ability = ABILITY_LEVITATE,
+        .ability = ABILITY_SHADOW_SHIELD,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_LUNALA_2] =
@@ -21937,7 +21937,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_MIRROR_ARMOR,
+        .ability = ABILITY_PRISM_ARMOR,
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_NECROZMA_2] =
@@ -21967,7 +21967,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_WIKI_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_MIRROR_ARMOR,
+        .ability = ABILITY_PRISM_ARMOR,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_NECROZMA_5] =
@@ -21977,7 +21977,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .ability = ABILITY_MIRROR_ARMOR,
+        .ability = ABILITY_PRISM_ARMOR,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_NECROZMA_DUSK_MANE_1] =
@@ -22127,7 +22127,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_SOUL_HEART,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_MAGEARNA_5] =
@@ -22137,7 +22137,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_SOUL_HEART,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_MAGEARNA_6] =
@@ -22167,7 +22167,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_CHOICE_SCARF,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_LONG_REACH,
+        .ability = ABILITY_TECHNICIAN,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MARSHADOW_3] =
@@ -22187,7 +22187,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_MARSHADIUM_Z,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .ability = ABILITY_LONG_REACH,
+        .ability = ABILITY_TECHNICIAN,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_MARSHADOW_5] =
@@ -22297,7 +22297,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
-        .ability = ABILITY_CLEAR_BODY,
+        .ability = ABILITY_IRON_FIST,
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_MELMETAL_5] =
@@ -22307,7 +22307,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
-        .ability = ABILITY_CLEAR_BODY,
+        .ability = ABILITY_IRON_FIST,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MELMETAL_6] =
