@@ -1120,13 +1120,9 @@ bool32 TryGenerateBattlePikeWildMon(bool8 checkKeenEyeIntimidate)
     pikeMonId = SpeciesToPikeMonId(pikeMonId);
 
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
-    {
         monLevel = 50;
-    }
     else
-    {
-        monLevel = FRONTIER_MAX_LEVEL_50 - wildMons[headerId][pikeMonId].levelDelta;
-    }
+        monLevel = 100;
 
     if (checkKeenEyeIntimidate == TRUE && !CanEncounterWildMon(monLevel))
         return FALSE;
@@ -1585,9 +1581,6 @@ static void SaveMonHeldItems(void)
 {
     u8 i;
     s32 j;
-
-
-    FlagSet(FLAG_FRONTIER_LEVEL);
 
     for (j = 0; j < PARTY_SIZE; j++)
         CalculateMonStats(&gPlayerParty[j]);

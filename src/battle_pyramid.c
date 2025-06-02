@@ -1138,8 +1138,6 @@ static void GetInBattlePyramid(void)
 static void UpdatePyramidLightRadius(void)
 {
     s32 j;
-    
-    FlagSet(FLAG_FRONTIER_LEVEL);
 
     for (j = 0; j < PARTY_SIZE; j++)
         CalculateMonStats(&gPlayerParty[j]);

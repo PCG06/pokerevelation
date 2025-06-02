@@ -1921,9 +1921,6 @@ void DoSpecialTrainerBattle(void)
 {
     s32 i, j;
 
-
-    FlagSet(FLAG_FRONTIER_LEVEL);
-
     for (j = 0; j < PARTY_SIZE; j++)
         CalculateMonStats(&gPlayerParty[j]);
     gBattleScripting.specialTrainerBattleType = gSpecialVar_0x8004;
@@ -3260,7 +3257,7 @@ u8 GetFrontierEnemyMonLevel(u8 lvlMode)
         level = FRONTIER_MAX_LEVEL_50;
         break;
     case FRONTIER_LVL_OPEN:
-        level = 50;
+        level = FRONTIER_MAX_LEVEL_OPEN;
         break;
     }
 
