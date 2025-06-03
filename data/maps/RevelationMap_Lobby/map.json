@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_REVELATION_LOBBY_BIRCH",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 5,
+      "x": 6,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -29,8 +29,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_REVELATION_LOBBY_ZIGGY",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "local_id": "LOCALID_REVELATION_LOBBY_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 4,
       "y": 3,
       "elevation": 0,
@@ -39,13 +39,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RevelationMap_Lobby_Zigzagoon",
+      "script": "RevelationMap_Lobby_BattleChanger",
       "flag": "0"
     },
     {
       "local_id": "LOCALID_REVELATION_LOBBY_TEALA",
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
-      "x": 9,
+      "x": 10,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -57,9 +57,23 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_REVELATION_LOBBY_WOMAN",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RevelationMap_Lobby_EventScript_EventMoveRelearner",
+      "flag": "0"
+    },
+    {
       "local_id": "LOCALID_REVELATION_LOBBY_OGGY",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PURRLOIN)",
-      "x": 10,
+      "x": 11,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -69,53 +83,11 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_Lobby_Purrloin",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_REVELATION_LOBBY_GUITARIST",
-      "graphics_id": "OBJ_EVENT_GFX_GUITARIST",
-      "x": 13,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "RevelationMap_Lobby_MusicChanger",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_REVELATION_LOBBY_HIKER",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 13,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "RevelationMap_Lobby_EnvironmentChanger",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_REVELATION_LOBBY_FAT_MAN",
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 13,
-      "y": 7,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "RevelationMap_Lobby_EventScript_EventMoveRelearner",
-      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 8,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
@@ -125,7 +97,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 7,
+      "x": 8,
       "y": 2,
       "elevation": 0,
       "var": "VAR_GOT_PARTY_PKMN",
@@ -134,7 +106,7 @@
     },
     {
       "type": "trigger",
-      "x": 7,
+      "x": 8,
       "y": 2,
       "elevation": 0,
       "var": "VAR_REV_STATE",

@@ -1,59 +1,58 @@
 EventScript_ChoosePkmnMenu::
 	compare VAR_GOT_PARTY_PKMN, 6
-	goto_if_eq EventScript_ChoosePkmnMenu_2
-EventScript_ChoosePkmnMenu_1:
-	goto_if_set FLAG_GOT_PARTY_PKMN, EventScript_ChoosePkmnMenu_5
+	goto_if_eq EventScript_ChoosePkmnMenu_4
+EventScript_ChoosePkmnMenu_3:
 	message EventScript_ChoosePkmnMenu_Text_1
 	copyvar VAR_0x8000, VAR_0x8001
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, VAR_0x8000, DYN_MULTICHOICE_CB_NONE, EventScript_ChoosePkmnMenu_Text_2, EventScript_ChoosePkmnMenu_Text_3, EventScript_ChoosePkmnMenu_Text_4, EventScript_ChoosePkmnMenu_Text_5, EventScript_ChoosePkmnMenu_Text_6, EventScript_ChoosePkmnMenu_Text_7, EventScript_ChoosePkmnMenu_Text_8
 	copyvar VAR_0x8001, VAR_RESULT
 	switch VAR_RESULT
-	case 0, EventScript_ChoosePkmnMenu_9
-	case 1, EventScript_ChoosePkmnMenu_10
-	case 2, EventScript_ChoosePkmnMenu_11
-	case 3, EventScript_ChoosePkmnMenu_12
-	case 4, EventScript_ChoosePkmnMenu_13
-	case 5, EventScript_ChoosePkmnMenu_14
-	case 6, EventScript_ChoosePkmnMenu_15
-EventScript_ChoosePkmnMenu_15:
+	case 0, EventScript_ChoosePkmnMenu_8
+	case 1, EventScript_ChoosePkmnMenu_9
+	case 2, EventScript_ChoosePkmnMenu_10
+	case 3, EventScript_ChoosePkmnMenu_11
+	case 4, EventScript_ChoosePkmnMenu_12
+	case 5, EventScript_ChoosePkmnMenu_13
+	case 6, EventScript_ChoosePkmnMenu_14
+EventScript_ChoosePkmnMenu_14:
 	setvar VAR_0x8001, 0
 	msgbox EventScript_ChoosePkmnMenu_Text_9, MSGBOX_NPC
-EventScript_ChoosePkmnMenu_4:
+EventScript_ChoosePkmnMenu_1:
 	release
 	end
 
 EventScript_ChoosePkmnMenu_2:
-	setflag FLAG_GOT_PARTY_PKMN
+	msgbox EventScript_ChoosePkmnMenu_Text_0, MSGBOX_NPC
 	goto EventScript_ChoosePkmnMenu_1
 
-EventScript_ChoosePkmnMenu_5:
-	msgbox EventScript_ChoosePkmnMenu_Text_0, MSGBOX_NPC
-	goto EventScript_ChoosePkmnMenu_4
+EventScript_ChoosePkmnMenu_4:
+	goto_if_unset FLAG_DEFEATED_BENNY, EventScript_ChoosePkmnMenu_2
+	goto EventScript_ChoosePkmnMenu_3
+
+EventScript_ChoosePkmnMenu_8:
+	goto EventScript_ChooseStarterMenu
+	goto EventScript_ChoosePkmnMenu_1
 
 EventScript_ChoosePkmnMenu_9:
-	goto EventScript_ChooseStarterMenu
-	goto EventScript_ChoosePkmnMenu_4
+	goto EventScript_Group1Choices
+	goto EventScript_ChoosePkmnMenu_1
 
 EventScript_ChoosePkmnMenu_10:
-	goto EventScript_Group1Choices
-	goto EventScript_ChoosePkmnMenu_4
+	goto EventScript_Group2Choices
+	goto EventScript_ChoosePkmnMenu_1
 
 EventScript_ChoosePkmnMenu_11:
-	goto EventScript_Group2Choices
-	goto EventScript_ChoosePkmnMenu_4
+	goto EventScript_Group3Choices
+	goto EventScript_ChoosePkmnMenu_1
 
 EventScript_ChoosePkmnMenu_12:
-	goto EventScript_Group3Choices
-	goto EventScript_ChoosePkmnMenu_4
+	goto EventScript_Group4Choices
+	goto EventScript_ChoosePkmnMenu_1
 
 EventScript_ChoosePkmnMenu_13:
-	goto EventScript_Group4Choices
-	goto EventScript_ChoosePkmnMenu_4
-
-EventScript_ChoosePkmnMenu_14:
 	goto EventScript_Group5Choices
-	goto EventScript_ChoosePkmnMenu_4
+	goto EventScript_ChoosePkmnMenu_1
 
 
 EventScript_YouWantThisPkmn::
@@ -73,24 +72,20 @@ EventScript_YouWantThisPkmn_1:
 EventScript_Givemonset::
 	playfanfare MUS_OBTAIN_ITEM
 	givemonset VAR_TEMP_TRANSFERRED_SPECIES
-	addvar VAR_GOT_PARTY_PKMN, 1
-	setvar VAR_REV_STATE, 1
-	setvar VAR_TEMP_0, 0
-	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
-EventScript_Givemonset_1:
-	buffernumberstring STR_VAR_2, VAR_GOT_PARTY_PKMN
-	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
-	message EventScript_Givemonset_Text_0
-	waitmessage
-	waitfanfare
 	setvar VAR_0x8001, 0
 	setvar VAR_0x8003, 0
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	hidemonpic
-	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_Givemonset_5
+	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_Givemonset_2
+EventScript_Givemonset_1:
+	goto_if_unset FLAG_DEFEATED_BENNY, EventScript_Givemonset_5
+	message EventScript_Givemonset_Text_1
 EventScript_Givemonset_4:
-	goto EventScript_ChoosePkmnMenu
+	waitmessage
+	waitfanfare
+	call Common_EventScript_NicknameGiftPokemon
+	closemessage
+	hidemonpic
+	goto_if_unset FLAG_DEFEATED_BENNY, EventScript_Givemonset_9
+EventScript_Givemonset_8:
 	end
 
 EventScript_Givemonset_2:
@@ -98,9 +93,15 @@ EventScript_Givemonset_2:
 	goto EventScript_Givemonset_1
 
 EventScript_Givemonset_5:
-	call Common_EventScript_GetGiftMonPartySlot
-	call Common_EventScript_NameReceivedPartyMon
+	addvar VAR_GOT_PARTY_PKMN, 1
+	setvar VAR_REV_STATE, 1
+	buffernumberstring STR_VAR_1, VAR_GOT_PARTY_PKMN
+	message EventScript_Givemonset_Text_0
 	goto EventScript_Givemonset_4
+
+EventScript_Givemonset_9:
+	goto EventScript_ChoosePkmnMenu
+	goto EventScript_Givemonset_8
 
 
 EventScript_ChooseStarterMenu::
@@ -1421,8 +1422,11 @@ EventScript_YouWantThisPkmn_Text_0:
 	.string "Benny: Do you want {STR_VAR_1}?$"
 
 EventScript_Givemonset_Text_0:
-	.string "Pokémon No: {STR_VAR_2}.\n"
-	.string "{PLAYER} received {STR_VAR_1}!$"
+	.string "Pokémon No: {STR_VAR_1}.\n"
+	.string "{PLAYER} received {STR_VAR_2}!$"
+
+EventScript_Givemonset_Text_1:
+	.string "{PLAYER} received {STR_VAR_2}!$"
 
 EventScript_ChooseStarterMenu_Text_0:
 	.string "Benny: Please select your starter.$"

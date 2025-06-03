@@ -50,13 +50,13 @@
 #define FLAG_DYNAMAX_BATTLE         0x23
 #define FLAG_TERA_ORB_CHARGED       0x24
 #define FLAG_TERA_ORB_NO_COST       0x25
-#define FLAG_SKY_BATTLE             0x26
-#define FLAG_NO_ENCOUNTER           0x27
-#define FLAG_NO_COLLISION           0x28
-#define FLAG_POKE_RIDER             0x29
+#define FLAG_NO_WHITEOUT            0x26
+#define FLAG_SKY_BATTLE             0x27
+#define FLAG_NO_ENCOUNTER           0x28
+#define FLAG_NO_COLLISION           0x29
 #define FLAG_MOVE_UNION_ROOM_CHECK  0x2A
 
-#define FLAG_GOT_PARTY_PKMN         0x2B
+#define FLAG_DEFEATED_BENNY         0x2B
 #define FLAG_HIDE_CHALLENGER_1      0x2C
 #define FLAG_HIDE_CHALLENGER_2      0x2D
 #define FLAG_HIDE_CHALLENGER_3      0x2E

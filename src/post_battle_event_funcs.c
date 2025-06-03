@@ -35,7 +35,7 @@ int GameClear(void)
 
     SetContinueGameWarpStatus();
 
-    VarSet(VAR_REV_STATE, 1); // Incase you want to redo the fights with the current team
+    VarSet(VAR_REV_STATE, 6);
     SetContinueGameWarpToHealLocation(HEAL_LOCATION_REVELATION_LOBBY);
 
     ribbonGet = FALSE;

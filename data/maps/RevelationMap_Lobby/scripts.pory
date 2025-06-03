@@ -6,6 +6,54 @@ mapscripts RevelationMap_Lobby_MapScripts {
 		}
 	]
 	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_REV_STATE, 6 {
+			setvar(VAR_REV_STATE, 1)
+			msgbox("Benny: Hey, {PLAYER}!", MSGBOX_AUTOCLOSE)
+			emote(OBJ_EVENT_ID_PLAYER, EMOTE_EXCLAM)
+			turnplayer(DIR_NORTH)
+			applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_left, face_down))
+			setmetatile(5, 4, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE) # Open counter barrier
+			special(DrawWholeMapView)
+			playse(SE_CLICK)
+			applymovement(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_down * 2, walk_right * 3, walk_down * 2))
+			delay(25)
+			setmetatile(5, 4, METATILE_PokemonCenter_CounterBarrier, TRUE) # Close counter barrier
+			special(DrawWholeMapView)
+			playse(SE_CLICK)
+			waitmovement(0)
+			msgbox("Benny: Congrats on becoming the new\n"
+					"Champion!\l"
+					"I knew you had it in you!\l"
+					"But, do you have what it takes\l"
+					"to beat me?", MSGBOX_DEFAULT)
+			setflag(B_FLAG_NO_WHITEOUT)
+			trainerbattle_no_intro(TRAINER_BENNY, "Well, you sure can!")
+			clearflag(B_FLAG_NO_WHITEOUT)
+			if (specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_WON) {
+				setflag(FLAG_DEFEATED_BENNY)
+				msgbox("Benny: That reminded me of the good\n"
+						"old days, when I was the Champion.\l"
+						"Thank you, {PLAYER}!\l"
+						"This was really inspiring!", MSGBOX_AUTOCLOSE)
+			} else {
+				msgbox("Benny: Ha!\n"
+						"Looks like I still got it in me.\l"
+						"Thank you for showing me that Pokémon\l"
+						"battling is for all ages!\l"
+						"This really refreshed me.", MSGBOX_AUTOCLOSE)
+			}
+			applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_up * 2, walk_left * 3))
+			setmetatile(5, 4, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE) # Open counter barrier
+			special(DrawWholeMapView)
+			playse(SE_CLICK)
+			applymovement(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_up * 2, walk_right, face_down))
+			delay(25)
+			setmetatile(5, 4, METATILE_PokemonCenter_CounterBarrier, TRUE) # Close counter barrier
+			special(DrawWholeMapView)
+			playse(SE_CLICK)
+			waitmovement(0)
+			end
+		}
 		VAR_0x800B, 2 {
 			setvar(VAR_0x800B, 0)
 			lock
@@ -47,9 +95,29 @@ script RevelationMap_Lobby_Trigger0 {
 script RevelationMap_Lobby_EventScript_ProfPokemon {
 	lock
 	faceplayer
-	setvar(VAR_0x8001, 0)
-	setvar(VAR_0x8003, 0)
-	goto(EventScript_ChoosePkmnMenu)
+	if (flag(FLAG_DEFEATED_BENNY) == true) {
+		message("Benny: Hey, {PLAYER}!\n"
+				"Are you here for battle or a Pokémon?")
+		waitmessage
+		dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Pokémon", "Battle", "See ya!")
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_0x8001, 0)
+				setvar(VAR_0x8003, 0)
+				goto(EventScript_ChoosePkmnMenu)
+			case 1:
+				msgbox("Alright, {PLAYER}!\n"
+						"No holding back!", MSGBOX_AUTOCLOSE)
+				trainerbattle_no_intro(TRAINER_BENNY, "This has been fun!")
+			default:
+			case 2:
+				msgbox("Have a good day!", MSGBOX_AUTOCLOSE)
+		}
+	} else {
+		setvar(VAR_0x8001, 0)
+		setvar(VAR_0x8003, 0)
+		goto(EventScript_ChoosePkmnMenu)
+	}
 }
 
 script RevelationMap_Lobby_Trigger1 {
@@ -69,18 +137,6 @@ script RevelationMap_Lobby_Trigger1 {
 		msgbox("Benny: Alright, take your time.", MSGBOX_AUTOCLOSE)
 		applymoveplayer(moves(walk_down))
 	}
-}
-
-script RevelationMap_Lobby_Zigzagoon {
-	lock
-	if (var(VAR_FACING) == DIR_NORTH) {
-		applymovement(LOCALID_REVELATION_LOBBY_ZIGGY, moves(jump_in_place_up_down))
-	} else {
-		applymovement(LOCALID_REVELATION_LOBBY_ZIGGY, moves(jump_in_place_right_left))
-	}
-	moncryscript(SPECIES_ZIGZAGOON, "Goon! Goon!", "Ziggy")
-	release
-	end
 }
 
 script RevelationMap_Lobby_BattleTower_Teala {
@@ -166,9 +222,26 @@ script RevelationMap_Lobby_Purrloin {
 	end
 }
 
-script RevelationMap_Lobby_MusicChanger {
+script RevelationMap_Lobby_BattleChanger {
 	lock
 	faceplayer
+	message("Hello, good sir!\n"
+			"What would you like to change in your\l"
+			"battles?")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 3, 0 DYN_MULTICHOICE_CB_NONE, "Music", "Environment", "See ya!")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(RevelationMap_Lobby_MusicChanger)
+		case 1:
+			goto(RevelationMap_Lobby_EnvironmentChanger)
+		default:
+		case 2:
+			msgbox("Have a good day!", MSGBOX_AUTOCLOSE)
+	}
+}
+
+script RevelationMap_Lobby_MusicChanger {
 	message("Would you like to change the\n"
 			"battle music?")
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "VS. Frontier", "VS. Trainer", "VS. Rival", "VS. Gym Leader", "VS. Elite Four", "VS. Champion", "VS. Aqua/Magma", "VS. Wild", "Random!", "Default")
@@ -231,8 +304,6 @@ script RevelationMap_Lobby_MusicChanged {
 }
 
 script RevelationMap_Lobby_EnvironmentChanger {
-	lock
-	faceplayer
 	message("Would you like to change the\n"
 			"battle environment?")
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Long Grass", "Sand", "Water", "Underwater", "Pond", "Mountain", "Cave", "Building", "Plain", "Random!", "Default")

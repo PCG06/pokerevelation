@@ -154,7 +154,7 @@ Debug_EventScript_Script_3::
 	end
 
 Debug_EventScript_Script_4::
-	warpsilent MAP_REVELATION_MAP_LOBBY, 7, 6
+	warpsilent MAP_REVELATION_MAP_LOBBY, 8, 8
 	release
 	end
 

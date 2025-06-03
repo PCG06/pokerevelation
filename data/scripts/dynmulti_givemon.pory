@@ -1,8 +1,5 @@
 script EventScript_ChoosePkmnMenu {
-	if (var(VAR_GOT_PARTY_PKMN) == 6) {
-		setflag(FLAG_GOT_PARTY_PKMN)
-	}
-	if (flag(FLAG_GOT_PARTY_PKMN) == true) {		
+	if (var(VAR_GOT_PARTY_PKMN) == 6 && !flag(FLAG_DEFEATED_BENNY)) {		
 		msgbox("Benny: You have chosen your Pokémon!\n"
 				"Start your adventure!", MSGBOX_NPC)
 	} else {
@@ -53,27 +50,28 @@ script EventScript_YouWantThisPkmn {
 script EventScript_Givemonset {
 	playfanfare(MUS_OBTAIN_ITEM)
 	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
-	addvar(VAR_GOT_PARTY_PKMN, 1)
-	setvar(VAR_REV_STATE, 1)
-	setvar(VAR_TEMP_0, 0)
+	setvar(VAR_0x8001, 0)
+	setvar(VAR_0x8003, 0)
 	if (!flag(FLAG_SYS_POKEMON_GET)) {
 		setflag(FLAG_SYS_POKEMON_GET)
 	}
-	buffernumberstring(STR_VAR_2, VAR_GOT_PARTY_PKMN)
-	bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
-	message("Pokémon No: {STR_VAR_2}.\n"
-			"{PLAYER} received {STR_VAR_1}!")
+	if (!flag(FLAG_DEFEATED_BENNY)) {
+		addvar(VAR_GOT_PARTY_PKMN, 1)
+		setvar(VAR_REV_STATE, 1)
+		buffernumberstring(STR_VAR_1, VAR_GOT_PARTY_PKMN)
+		message("Pokémon No: {STR_VAR_1}.\n"
+				"{PLAYER} received {STR_VAR_2}!")
+	} else {
+		message("{PLAYER} received {STR_VAR_2}!")
+	}
 	waitmessage
 	waitfanfare
-	setvar(VAR_0x8001, 0)
-	setvar(VAR_0x8003, 0)
-	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	call(Common_EventScript_NicknameGiftPokemon)
+	closemessage
 	hidemonpic
-	if (var(VAR_RESULT) == TRUE) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
+	if (!flag(FLAG_DEFEATED_BENNY)) {
+		goto(EventScript_ChoosePkmnMenu)
 	}
-	goto(EventScript_ChoosePkmnMenu)
 	end
 }
 
