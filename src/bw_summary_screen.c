@@ -5028,7 +5028,9 @@ static void SetMoveTypeIcons(void)
             SetTypeSpritePosAndPal(type, 8, 16 + (i * 28), i + SPRITE_ARR_ID_TYPE);
         }
         else
+        {
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
+        }
     }
 }
 
