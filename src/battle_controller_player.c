@@ -402,20 +402,17 @@ static void HandleInputChooseAction(u32 battler)
         }
         else if (B_QUICK_MOVE_CURSOR_TO_RUN || gSaveBlock2Ptr->optionsQuickRunButton == OPTIONS_QUICK_RUN_B_BUTTON)
         {
-            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) // If wild battle, pressing B moves cursor to "Run".
-            {
-                PlaySE(SE_SELECT);
-                ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
-                gActionSelectionCursor[battler] = 3;
-                ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
-            }
+            PlaySE(SE_SELECT);
+            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            gActionSelectionCursor[battler] = 3;
+            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(START_BUTTON))
     {
         SwapHpBarsWithHpText();
     }
-    else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(R_BUTTON))
+    else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(L_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
         PlayerBufferExecCompleted(battler);
@@ -435,12 +432,9 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsQuickRunButton == OPTIONS_QUICK_RUN_R_BUTTON)
     {
-        if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) // If wild battle, pressing R "Runs" away.
-        {
-            PlaySE(SE_SELECT);
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
-            PlayerBufferExecCompleted(battler);
-        }
+        PlaySE(SE_SELECT);
+        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
+        PlayerBufferExecCompleted(battler);
     }
 }
 
