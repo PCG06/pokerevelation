@@ -165,7 +165,7 @@ static void BufferOpponentIntroSpeech(void)
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
     {
         StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
-        BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+        BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
     }
 }
 

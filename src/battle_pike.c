@@ -1456,7 +1456,7 @@ static void BufferTrainerIntro(void)
         if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
         {
             StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
-            BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+            BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
         }
     }
     else if (gSpecialVar_0x8005 == 1)
@@ -1464,7 +1464,7 @@ static void BufferTrainerIntro(void)
         if (TRAINER_BATTLE_PARAM.opponentB < FRONTIER_TRAINERS_COUNT)
         {
             StringCopy(gStringVar4, gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentB].speechBefore);
-            BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+            BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
         }
     }
 }

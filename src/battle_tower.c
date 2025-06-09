@@ -1843,7 +1843,7 @@ static void GetOpponentIntroSpeech(void)
 #endif //FREE_BATTLE_TOWER_E_READER
     {
         StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechBefore);
-        BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+        BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
     }
     else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);

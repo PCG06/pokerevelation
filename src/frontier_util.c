@@ -1732,7 +1732,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         else if (trainerId < FRONTIER_TRAINERS_COUNT)
         {
             StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechWin);
-            BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+            BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
         }
         else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         {
@@ -1777,13 +1777,13 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
             {
                 trainerId = GetRecordedBattleApprenticeId();
                 FrontierSpeechToString(gApprentices[trainerId].speechLost);
-                BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+                BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
             }
             else
             {
                 trainerId = gSaveBlock2Ptr->apprentices[trainerId - TRAINER_RECORD_MIXING_APPRENTICE].id;
                 FrontierSpeechToString(gApprentices[trainerId].speechLost);
-                BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+                BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
             }
         }
         break;

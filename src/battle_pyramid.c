@@ -1684,19 +1684,19 @@ void SoftResetInBattlePyramid(void)
 void CopyPyramidTrainerSpeechBefore(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechBefore);
-    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 void CopyPyramidTrainerWinSpeech(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechWin);
-    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 void CopyPyramidTrainerLoseSpeech(u16 trainerId)
 {
     StringCopy(gStringVar4, gFacilityTrainers[trainerId].speechLose);
-    BreakStringAutomatic(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
+    BreakStringNaive(gStringVar4, BATTLE_MSG_MAX_WIDTH, BATTLE_MSG_MAX_LINES, FONT_NORMAL, TRUE);
 }
 
 u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId)
