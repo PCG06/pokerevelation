@@ -2087,7 +2087,7 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
         return 8;
-    else
+    else 
         return gFontNormalLatinGlyphWidths[glyphId];
 }
 

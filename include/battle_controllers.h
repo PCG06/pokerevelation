@@ -391,7 +391,6 @@ void SetControllerToLinkOpponent(u32 battler);
 
 // link partner
 void SetControllerToLinkPartner(u32 battler);
-
 void TrySetBattlerShadowSpriteCallback(u32 battler);
 
 bool32 TryShinyAnimAfterMonAnimUtil(u32 battler);
@@ -400,5 +399,8 @@ bool32 SwitchIn_WaitAndEndUtil(u32 battler);
 bool32 SwitchIn_HandleSoundAndEndUtil(u32 battler);
 bool32 SwitchIn_ShowHealthboxUtil(u32 battler);
 bool32 SwitchIn_TryShinyAnimUtil(u32 battler);
+
+// Battle Speed Up (Credit to Pokabbie)
+u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 
 #endif // GUARD_BATTLE_CONTROLLERS_H
