@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/RevelationMap_Gym8/border.bin",
       "blockdata_filepath": "data/layouts/RevelationMap_Gym8/map.bin"
+    },
+    {
+      "id": "LAYOUT_REVELATION_MAP_UNION_ROOM",
+      "name": "RevelationMap_UnionRoom_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/RevelationMap_UnionRoom/border.bin",
+      "blockdata_filepath": "data/layouts/RevelationMap_UnionRoom/map.bin"
     }
   ]
 }

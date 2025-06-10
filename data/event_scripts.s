@@ -581,6 +581,7 @@ gStdScripts_End::
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
 	.include "data/maps/RevelationMap_Lobby/scripts.inc"
+	.include "data/maps/RevelationMap_UnionRoom/scripts.inc"
 	.include "data/maps/RevelationMap_EntryPoint/scripts.inc"
 	.include "data/maps/RevelationMap_ChallengersArena/scripts.inc"
 	.include "data/maps/RevelationMap_HallOfFame/scripts.inc"

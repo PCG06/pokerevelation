@@ -69,6 +69,7 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			end
 		}
 	]
+	MAP_SCRIPT_ON_RESUME: CableClub_OnResume
 	MAP_SCRIPT_ON_TRANSITION {
 		setrespawn(HEAL_LOCATION_REVELATION_LOBBY)
 	}

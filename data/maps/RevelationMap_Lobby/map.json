@@ -92,6 +92,13 @@
       "elevation": 0,
       "dest_map": "MAP_REVELATION_MAP_ENTRY_POINT",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_REVELATION_MAP_UNION_ROOM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
