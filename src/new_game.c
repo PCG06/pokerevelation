@@ -100,6 +100,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->optionsBattleSpeed = OPTIONS_BATTLE_SPEED_1X;
+    gSaveBlock2Ptr->optionsUnitSystem = FALSE;
     gSaveBlock2Ptr->optionsDisableMatchCall = FALSE;
     gSaveBlock2Ptr->optionsDisableBagUse = FALSE;
     gSaveBlock2Ptr->optionsQuickRunButton = OPTIONS_QUICK_RUN_R_BUTTON;
