@@ -456,30 +456,30 @@ u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
             {
                 u16 move = GetMonData(mon, MON_DATA_MOVE1 + j);
                 if (formChanges[i].param1 == move)
-                    targetSpecies =  formChanges[i].targetSpecies;
+                    targetSpecies = formChanges[i].targetSpecies;
             }
             break;
 
         case FORM_CHANGE_BATTLE_GIGANTAMAX:
             if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR))
-                targetSpecies =  formChanges[i].targetSpecies;
+                targetSpecies = formChanges[i].targetSpecies;
             break;
 
         case FORM_CHANGE_BATTLE_TERASTALLIZATION:
             if (formChanges[i].param1 == GetMonData(mon, MON_DATA_TERA_TYPE))
-                targetSpecies =  formChanges[i].targetSpecies;
+                targetSpecies = formChanges[i].targetSpecies;
             break;
 
         case FORM_CHANGE_BATTLE_HP_PERCENT:
             if (formChanges[i].param1 == ability
                 && formChanges[i].param2 == HP_LOWER_EQ_THAN // the lower than form is always the cool one
                 && formChanges[i].param3 == 50) // unless its 25% for Wishiwashi
-                targetSpecies =  formChanges[i].targetSpecies;
+                targetSpecies = formChanges[i].targetSpecies;
             break;
 
         case FORM_CHANGE_BATTLE_SWITCH:
             if (formChanges[i].param1 == ability || formChanges[i].param1 == ABILITY_NONE)
-                targetSpecies =  formChanges[i].targetSpecies;
+                targetSpecies = formChanges[i].targetSpecies;
             break;
                 
         default:
