@@ -447,8 +447,7 @@ u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
         case FORM_CHANGE_BATTLE_ULTRA_BURST:
         case FORM_CHANGE_ITEM_HOLD:
         case FORM_CHANGE_BEGIN_BATTLE:
-            u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
-            if (formChanges[i].param1 == item)
+            if (formChanges[i].param1 == GetMonData(mon, MON_DATA_HELD_ITEM))
                 targetSpecies = formChanges[i].targetSpecies;
             break;
 
@@ -462,14 +461,12 @@ u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
             break;
 
         case FORM_CHANGE_BATTLE_GIGANTAMAX:
-            bool8 gmaxFactor = GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR);
-            if (gmaxFactor)
+            if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR))
                 targetSpecies =  formChanges[i].targetSpecies;
             break;
 
         case FORM_CHANGE_BATTLE_TERASTALLIZATION:
-            u8 teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
-            if (formChanges[i].param1 == teraType)
+            if (formChanges[i].param1 == GetMonData(mon, MON_DATA_TERA_TYPE))
                 targetSpecies =  formChanges[i].targetSpecies;
             break;
 

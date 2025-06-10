@@ -715,6 +715,7 @@ static bool8 OptionsMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, 
 void CB2_InitOptionPlusMenu(void)
 {
     u32 i;
+    u8 UNUSED taskId;
     switch (gMain.state)
     {
     default:
@@ -822,7 +823,7 @@ void CB2_InitOptionPlusMenu(void)
         gMain.state++;
         break;
     case 10:
-        u8 UNUSED taskId = CreateTask(Task_OptionMenuFadeIn, 0); // No idea, but sure, ig
+        taskId = CreateTask(Task_OptionMenuFadeIn, 0); // No idea, but sure, ig
         
         sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MENUITEM_GENERAL_COUNT - 1, 110, 110, 0);
 
