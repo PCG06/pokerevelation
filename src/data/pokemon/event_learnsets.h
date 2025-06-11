@@ -157,6 +157,8 @@ static const u16 sMachampEventLearnset[] =
 {
     MOVE_BULLET_PUNCH,
     MOVE_HEAVY_SLAM,
+    // CUstom
+    MOVE_MACH_PUNCH,
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_MACHOP
@@ -306,6 +308,24 @@ static const u16 sExeggutorEventLearnset[] =
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_EXEGGCUTE
+
+#if P_FAMILY_HITMONS
+static const u16 sHitmonchanEventLearnset[] =
+{
+    // Custom
+    MOVE_METEOR_MASH,
+    MOVE_SHADOW_PUNCH,
+    MOVE_UNAVAILABLE
+};
+
+static const u16 sHitmonleeEventLearnset[] =
+{
+    // Custom
+    MOVE_THUNDEROUS_KICK,
+    MOVE_TROP_KICK,
+    MOVE_UNAVAILABLE
+};
+#endif //P_FAMILY_HITMONS
 
 #if P_FAMILY_CUBONE
 static const u16 sMarowakEventLearnset[] =
@@ -576,6 +596,10 @@ static const u16 sAerodactylEventLearnset[] =
 {
     MOVE_AQUA_TAIL,
     MOVE_ROOST,
+    // Custom
+    MOVE_BRAVE_BIRD,
+    MOVE_HEAD_SMASH,
+    MOVE_WILD_CHARGE,
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_AERODACTYL
@@ -709,6 +733,9 @@ static const u16 sLanturnEventLearnset[] =
 {
     MOVE_AMNESIA,
     MOVE_SCREECH,
+    // Custom
+    MOVE_PARABOLIC_CHARGE,
+    MOVE_SPARKLING_ARIA,
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_CHINCHOU
@@ -1075,6 +1102,16 @@ static const u16 sCelebiEventLearnset[] =
 };
 #endif //P_FAMILY_CELEBI
 
+#if P_FAMILY_CARVANHA
+static const u16 sSharpedoEventLearnset[] =
+{
+    // Custom
+    MOVE_FISHIOUS_REND,
+    MOVE_JAW_LOCK,
+    MOVE_UNAVAILABLE
+};
+#endif //P_FAMILY_CARVANHA
+
 #if P_FAMILY_CACNEA
 static const u16 sCacturneEventLearnset[] =
 {
@@ -1116,6 +1153,15 @@ static const u16 sJirachiEventLearnset[] =
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_JIRACHI
+
+#if P_FAMILY_GIBLE
+static const u16 sGarchompEventLearnset[] =
+{
+    // Custom
+    MOVE_DRAGON_DANCE,
+    MOVE_UNAVAILABLE
+};
+#endif //P_FAMILY_GIBLE
 
 #if P_FAMILY_HEATRAN
 static const u16 sHeatranEventLearnset[] =
@@ -1180,6 +1226,15 @@ static const u16 sZoroarkEventLearnset[] =
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_ZORUA
+
+#if P_FAMILY_RESHIRAM
+static const u16 sReshiramEventLearnset[] =
+{
+    // Custom
+    MOVE_EARTH_POWER,
+    MOVE_UNAVAILABLE
+};
+#endif //P_FAMILY_RESHIRAM
 
 #if P_FAMILY_ZEKROM
 static const u16 sZekromEventLearnset[] =

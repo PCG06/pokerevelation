@@ -6484,6 +6484,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sSharpedoLevelUpLearnset,
         .teachableLearnset = sSharpedoTeachableLearnset,
+        .eventLearnset = sSharpedoEventLearnset,
         .formSpeciesIdTable = sSharpedoFormSpeciesIdTable,
         .formChangeTable = sSharpedoFormChangeTable,
     },
@@ -6555,6 +6556,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sSharpedoLevelUpLearnset,
         .teachableLearnset = sSharpedoTeachableLearnset,
+        .eventLearnset = sSharpedoEventLearnset,
         .formSpeciesIdTable = sSharpedoFormSpeciesIdTable,
         .formChangeTable = sSharpedoFormChangeTable,
     },

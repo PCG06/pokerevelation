@@ -12737,6 +12737,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sReshiramLevelUpLearnset,
         .teachableLearnset = sReshiramTeachableLearnset,
+        .eventLearnset = sReshiramEventLearnset,
     },
 #endif //P_FAMILY_RESHIRAM
 

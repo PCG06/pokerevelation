@@ -4357,6 +4357,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sGarchompLevelUpLearnset,
         .teachableLearnset = sGarchompTeachableLearnset,
+        .eventLearnset = sGarchompEventLearnset,
         .formSpeciesIdTable = sGarchompFormSpeciesIdTable,
         .formChangeTable = sGarchompFormChangeTable,
     },
@@ -4426,6 +4427,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sGarchompLevelUpLearnset,
         .teachableLearnset = sGarchompTeachableLearnset,
+        .eventLearnset = sGarchompEventLearnset,
         .formSpeciesIdTable = sGarchompFormSpeciesIdTable,
         .formChangeTable = sGarchompFormChangeTable,
     },

@@ -13642,6 +13642,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHitmonleeLevelUpLearnset,
         .teachableLearnset = sHitmonleeTeachableLearnset,
+        .eventLearnset = sHitmonleeEventLearnset,
     },
 
     [SPECIES_HITMONCHAN] =
@@ -13721,6 +13722,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHitmonchanLevelUpLearnset,
         .teachableLearnset = sHitmonchanTeachableLearnset,
+        .eventLearnset = sHitmonchanEventLearnset,
     },
 
 #if P_GEN_2_CROSS_EVOS
