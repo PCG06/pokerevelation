@@ -1779,6 +1779,11 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
 }
 
+static const u8 sMoveDescNeutralColors[3] = {14, TEXT_DYNAMIC_COLOR_4, TEXT_DYNAMIC_COLOR_6};
+static const u8 sMoveDescPositiveColors[3] = {14, TEXT_COLOR_GREEN, TEXT_COLOR_LIGHT_RED};
+static const u8 sMoveDescNegativeColors[3] = {14, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY};
+
+
 static void TryMoveSelectionDisplayMoveDescription(u32 battler)
 {
     if (!B_SHOW_MOVE_DESCRIPTION || gSaveBlock2Ptr->optionsShowBattleMoveInfoOff)
@@ -1788,31 +1793,12 @@ static void TryMoveSelectionDisplayMoveDescription(u32 battler)
         MoveSelectionDisplayMoveDescription(battler);
 }
 
-static u8 GetPowerWindowId(u16 power, u16 basePower)
-{
-    if (power > basePower)
-        return B_WIN_MOVE_PWR_POS;
-    else if (power < basePower)
-        return B_WIN_MOVE_PWR_NEG;
-    else
-        return B_WIN_MOVE_PWR;
-}
-
-static u8 GetAccuracyWindowId(u16 accuracy, u16 baseAccuracy)
-{
-    if (accuracy > baseAccuracy)
-        return B_WIN_MOVE_ACC_POS;
-    else if (accuracy < baseAccuracy)
-        return B_WIN_MOVE_ACC_NEG;
-    else
-        return B_WIN_MOVE_ACC;
-}
-
 static void MoveSelectionDisplayMoveDescription(u32 battler)
 {
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u32 movePower = GetMovePower(move);
+    u32 movePower = gMovesInfo[move].power;
+    u32 moveAccuracy = gMovesInfo[move].accuracy;
     u32 battlerDef = BATTLE_OPPOSITE(battler);
     u16 pwr = 0;
     u16 acc = 0;
@@ -1822,21 +1808,6 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     u32 holdEffectDef = GetBattlerHoldEffect(battlerDef, TRUE);
     u8 cat = GetBattleMoveCategory(move);
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-
-    s32 fixedBasePower = 0, n = 0;;
-    switch (GetMoveEffect(move))
-    {
-    case EFFECT_ROLLOUT:
-        n = gDisableStructs[battler].rolloutTimer - 1;
-        fixedBasePower = CalcRolloutBasePower(battler, movePower, n < 0 ? 5 : n);
-        break;
-    case EFFECT_FURY_CUTTER:
-        fixedBasePower = CalcFuryCutterBasePower(movePower, min(gDisableStructs[battler].furyCutterCounter + 1, 5));
-        break;
-    default:
-        fixedBasePower = 0;
-        break;
-    }
 
     // Initialize DamageContext struct
     struct DamageContext ctx = {
@@ -1848,7 +1819,6 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
         .randomFactor = FALSE, // Unused in this context
         .updateFlags = FALSE, // No special flags needed
         .weather = gBattleWeather,
-        .fixedBasePower = fixedBasePower,
         .abilityAtk = abilityAtk,
         .abilityDef = abilityDef,
         .holdEffectAtk = holdEffectAtk,
@@ -1886,7 +1856,6 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     StringAppend(gDisplayedStringBattle, acc_desc);
     StringAppend(gDisplayedStringBattle, gText_NewLine);
     StringAppend(gDisplayedStringBattle, GetMoveDescription(move));
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_DESCRIPTION);
 
     // Draw the main description box with a border
     LoadMessageBoxAndBorderGfx();
@@ -1914,26 +1883,26 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
         ConvertIntToDecimalStringN(acc_num, acc, STR_CONV_MODE_LEFT_ALIGN, 3);
     }
 
-    // Set colors based on configuration
+    // Choose text colors
+    const u8 *pwrColors = sMoveDescNeutralColors;
+    const u8 *accColors = sMoveDescNeutralColors;
+
     if (B_DYNAMIC_MOVE_INFO_COLORS)
     {
-        // Dynamic color display logic
-        BattlePutTextOnWindow(pwr_num, GetPowerWindowId(pwr, gMovesInfo[move].power));
-        BattlePutTextOnWindow(acc_num, GetAccuracyWindowId(acc, gMovesInfo[move].accuracy));
-        CopyWindowToVram(GetPowerWindowId(pwr, gMovesInfo[move].power), COPYWIN_GFX);
-        CopyWindowToVram(GetAccuracyWindowId(acc, gMovesInfo[move].accuracy), COPYWIN_GFX);
-    }
-    else
-    {
-        // Neutral color display only
-        FillWindowPixelBuffer(B_WIN_MOVE_PWR, PIXEL_FILL(0));
-        BattlePutTextOnWindow(pwr_num, B_WIN_MOVE_PWR);
-        CopyWindowToVram(B_WIN_MOVE_PWR, COPYWIN_GFX);
+        if (pwr > movePower)
+            pwrColors = sMoveDescPositiveColors;
+        else if (pwr < movePower)
+            pwrColors = sMoveDescNegativeColors;
 
-        FillWindowPixelBuffer(B_WIN_MOVE_ACC, PIXEL_FILL(0));
-        BattlePutTextOnWindow(acc_num, B_WIN_MOVE_ACC);
-        CopyWindowToVram(B_WIN_MOVE_ACC, COPYWIN_GFX);
+        if (acc > moveAccuracy)
+            accColors = sMoveDescPositiveColors;
+        else if (acc < moveAccuracy)
+            accColors = sMoveDescNegativeColors;
     }
+
+    // Print values inside the description window
+    AddTextPrinterParameterized3(B_WIN_MOVE_DESCRIPTION, FONT_NARROW, 76, 1, pwrColors, 0, pwr_num);
+    AddTextPrinterParameterized3(B_WIN_MOVE_DESCRIPTION, FONT_NARROW, 128, 1, accColors, 0, acc_num);
 
     // Draw the category icon as usual
     if (gCategoryIconSpriteId == 0xFF)
