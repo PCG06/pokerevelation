@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    if: github.actor != 'allcontributors[bot]'
     runs-on: ubuntu-latest
     env:
       GAME_VERSION: EMERALD
