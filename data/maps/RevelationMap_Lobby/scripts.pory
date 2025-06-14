@@ -306,7 +306,7 @@ script RevelationMap_Lobby_MusicChanged {
 script RevelationMap_Lobby_EnvironmentChanger {
 	message("Would you like to change the\n"
 			"battle environment?")
-	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Long Grass", "Sand", "Water", "Underwater", "Pond", "Mountain", "Cave", "Building", "Plain", "Random!", "Default")
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Long Grass", "Sand", "Water", "Underwater", "Icy", "Mountain", "Cave", "Building", "Plain", "Random!", "Default")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -331,7 +331,7 @@ script RevelationMap_Lobby_EnvironmentChanger {
 			goto(RevelationMap_Lobby_EnvironmentChanged)
 		case 5:
 			bufferstring(STR_VAR_1, "the pond")
-			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_POND)
+			setvar(VAR_BATTLE_ENVIRONMENT, BATTLE_ENVIRONMENT_POND) // Pond has been replaced with Icy
 			goto(RevelationMap_Lobby_EnvironmentChanged)
 		case 6:
 			bufferstring(STR_VAR_1, "the mountain")

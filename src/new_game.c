@@ -96,17 +96,19 @@ static void InitPlayerTrainerId(void)
 static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsInstantTextOff = FALSE;
+    gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_NORMAL;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->optionsBattleSpeed = OPTIONS_BATTLE_SPEED_1X;
-    gSaveBlock2Ptr->optionsUnitSystem = FALSE;
+    gSaveBlock2Ptr->optionsUnitSystem = OPTIONS_UNIT_SYSTEM_METRIC;
+    gSaveBlock2Ptr->optionsFollowersOff = TRUE;
     gSaveBlock2Ptr->optionsDisableMatchCall = FALSE;
-    gSaveBlock2Ptr->optionsDisableBagUse = FALSE;
+    gSaveBlock2Ptr->optionsDisableBagUse = TRUE;
     gSaveBlock2Ptr->optionsQuickRunButton = OPTIONS_QUICK_RUN_R_BUTTON;
     gSaveBlock2Ptr->optionsDoubleBattlesOff = TRUE;
     gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = FALSE;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBikeMusicOff = FALSE;
     gSaveBlock2Ptr->optionsSurfMusicOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
