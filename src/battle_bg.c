@@ -700,6 +700,24 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
         .palette = gBattleEnvironmentPalette_Plain,
     },
+
+    [BATTLE_ENVIRONMENT_SNOW] =
+    {
+        .tileset = gBattleEnvironmentTiles_Snow,
+        .tilemap = gBattleEnvironmentTilemap_Snow,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_Snow,
+    },
+
+    [BATTLE_ENVIRONMENT_ICE] =
+    {
+        .tileset = gBattleEnvironmentTiles_Ice,
+        .tilemap = gBattleEnvironmentTilemap_Ice,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_Ice,
+    },
 };
 
 void BattleInitBgsAndWindows(void)

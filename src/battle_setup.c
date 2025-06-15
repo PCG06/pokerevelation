@@ -632,8 +632,8 @@ enum BattleEnvironment BattleSetup_GetEnvironmentId(void)
     {
         if (envVar == BATTLE_ENVIRONMENT_GRASS + 100) // i'm stupid, but y'know if it ain't broke don't fix it
             return BATTLE_ENVIRONMENT_GRASS;
-        if (envVar == 10) // 10 means random environment
-            return Random32() % 10;
+        if (envVar == 12) // 12 means random environment
+            return Random32() % 12;
         else
             return envVar;
     }
