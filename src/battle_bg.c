@@ -764,12 +764,12 @@ void DrawMainBattleBackground(void)
         case SPECIES_GROUDON:
             DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Cave, (void*)(BG_CHAR_ADDR(2)));
             DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Cave, (void*)(BG_SCREEN_ADDR(26)));
-            LoadPalette(gBattleEnvironmentPalette_Groudon, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+            LoadPalette(gBattleEnvironmentPalette_Cave, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
             break;
         case SPECIES_KYOGRE:
-            DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Water, (void*)(BG_CHAR_ADDR(2)));
-            DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Water, (void*)(BG_SCREEN_ADDR(26)));
-            LoadPalette(gBattleEnvironmentPalette_Kyogre, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+            DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Underwater, (void*)(BG_CHAR_ADDR(2)));
+            DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Underwater, (void*)(BG_SCREEN_ADDR(26)));
+            LoadPalette(gBattleEnvironmentPalette_Underwater, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
             break;
         case SPECIES_RAYQUAZA:
             DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Rayquaza, (void*)(BG_CHAR_ADDR(2)));
@@ -785,25 +785,6 @@ void DrawMainBattleBackground(void)
     }
     else
     {
-        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-        {
-            enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-            if (trainerClass == TRAINER_CLASS_LEADER)
-            {
-                DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Building, (void *)(BG_CHAR_ADDR(2)));
-                DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
-                LoadPalette(gBattleEnvironmentPalette_BuildingLeader, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-                return;
-            }
-            else if (trainerClass == TRAINER_CLASS_CHAMPION)
-            {
-                DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void *)(BG_CHAR_ADDR(2)));
-                DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void *)(BG_SCREEN_ADDR(26)));
-                LoadPalette(gBattleEnvironmentPalette_StadiumWallace, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-                return;
-            }
-        }
-
         switch (GetCurrentMapBattleScene())
         {
         default:
