@@ -1226,7 +1226,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                 DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Cave, (void*)(BG_CHAR_ADDR(2)));
                 break;
             case SPECIES_KYOGRE:
-                DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Water, (void*)(BG_SCREEN_ADDR(2)));
+                DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Underwater, (void*)(BG_SCREEN_ADDR(2)));
                 break;
             }
         }
@@ -1290,7 +1290,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
             if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_GROUDON)
                 DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Cave, (void*)(BG_SCREEN_ADDR(26)));
             else
-                DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Water, (void *)(BG_SCREEN_ADDR(26)));
+                DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Underwater, (void *)(BG_SCREEN_ADDR(26)));
         }
         else
         {
