@@ -1303,6 +1303,7 @@ static void HandleBattleVariantEndParty(void)
 
 static void CB2_EndTrainerBattle(void)
 {
+    HealPlayerParty();
     HandleBattleVariantEndParty();
 
     if (FollowerNPCIsBattlePartner())
