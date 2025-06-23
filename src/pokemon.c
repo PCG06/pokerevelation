@@ -123,7 +123,7 @@ static const struct CombinedMove sCombinedMoves[2] =
 #define REGIONAL_TO_NATIONAL(name)     [REGIONAL_DEX_##name - 1] = NATIONAL_DEX_##name
 
 // Assigns all Regional Dex Indexes to a National Dex Index
-static const u16 sRegionalToNationalOrder[REGIONAL_DEX_COUNT - 1] =
+static const enum NationalDexOrder sRegionalToNationalOrder[REGIONAL_DEX_COUNT - 1] =
 {
     REGIONAL_TO_NATIONAL(BULBASAUR),
     REGIONAL_TO_NATIONAL(IVYSAUR),
@@ -5240,7 +5240,7 @@ bool8 IsMonPastEvolutionLevel(struct Pokemon *mon)
     return FALSE;
 }
 
-u16 NationalPokedexNumToSpecies(u16 nationalNum)
+u16 NationalPokedexNumToSpecies(enum NationalDexOrder nationalNum)
 {
     u16 species;
 
@@ -5258,7 +5258,7 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
     return GET_BASE_SPECIES_ID(species);
 }
 
-u16 NationalToRegionalOrder(u16 nationalNum)
+enum RegionalDexOrder NationalToRegionalOrder(enum NationalDexOrder nationalNum)
 {
     u16 regionalNum;
 
@@ -5276,7 +5276,7 @@ u16 NationalToRegionalOrder(u16 nationalNum)
     return regionalNum + 1;
 }
 
-u16 SpeciesToNationalPokedexNum(u16 species)
+enum NationalDexOrder SpeciesToNationalPokedexNum(u16 species)
 {
     species = SanitizeSpeciesId(species);
     if (!species)
@@ -5285,14 +5285,14 @@ u16 SpeciesToNationalPokedexNum(u16 species)
     return gSpeciesInfo[species].natDexNum;
 }
 
-u16 SpeciesToRegionalPokedexNum(u16 species)
+enum RegionalDexOrder SpeciesToRegionalPokedexNum(u16 species)
 {
     if (!species)
         return 0;
     return NationalToRegionalOrder(gSpeciesInfo[species].natDexNum);
 }
 
-u16 RegionalToNationalOrder(u16 regionalNum)
+enum NationalDexOrder RegionalToNationalOrder(enum RegionalDexOrder regionalNum)
 {
     if (!regionalNum || regionalNum >= REGIONAL_DEX_COUNT)
         return 0;
@@ -6744,7 +6744,7 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
         return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
 }
 
-void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
+void HandleSetPokedexFlag(enum NationalDexOrder nationalNum, u8 caseId, u32 personality)
 {
     u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT;
     if (!GetSetPokedexFlag(nationalNum, getFlagCaseId)) // don't set if it's already set
@@ -7013,7 +7013,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
                         // This is to prevent reverting to base form when giving the item to the corresponding form.
                         // Eg. Giving a Zap Plate to an Electric Arceus without an item (most likely to happen when using givemon)
                         bool32 currentItemForm = FALSE;
-                        for (int j = 0; formChanges[j].method != FORM_CHANGE_TERMINATOR; j++)
+                        for (u32 j = 0; formChanges[j].method != FORM_CHANGE_TERMINATOR; j++)
                         {
                             if (species == formChanges[j].targetSpecies
                                 && formChanges[j].param1 == heldItem
@@ -7399,7 +7399,7 @@ void HealBoxPokemon(struct BoxPokemon *boxMon)
     BoxMonRestorePP(boxMon);
 }
 
-u16 GetCryIdBySpecies(u16 species)
+enum PokemonCry GetCryIdBySpecies(u16 species)
 {
     species = SanitizeSpeciesId(species);
     if (P_CRIES_ENABLED == FALSE || gSpeciesInfo[species].cryId >= CRY_COUNT || gTestRunnerHeadless)
@@ -7550,6 +7550,20 @@ u32 GetTeraTypeFromPersonality(struct Pokemon *mon)
     return (GetMonData(mon, MON_DATA_PERSONALITY) & 0x1) == 0 ? types[0] : types[1];
 }
 
+struct Pokemon *GetSavedPlayerPartyMon(u32 index)
+{
+    return &gSaveBlock1Ptr->playerParty[index];
+}
+
+u8 *GetSavedPlayerPartyCount(void)
+{
+    return &gSaveBlock1Ptr->playerPartyCount;
+}
+
+void SavePlayerPartyMon(u32 index, struct Pokemon *mon)
+{
+    gSaveBlock1Ptr->playerParty[index] = *mon;
+}
 bool32 DoesSpeciesHaveSet(u16 species)
 {
     return (gPokemonSets[species].moves[0] > MOVE_POUND && gPokemonSets[species].ability > ABILITY_NONE) || species == SPECIES_EGG;
