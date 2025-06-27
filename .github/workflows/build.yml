@@ -31,6 +31,12 @@ jobs:
           MODERN: 1
           COMPARE: 0
         run: make -j${nproc} -O all
+        
+      - name: LTO
+        run: |
+          make tidy
+          make -j${nproc} LTO=1
+        # make tidy to purge previous build
 
       - name: Send build failure notification to Discord
         if: failure() && steps.rom.outcome == 'failure'
