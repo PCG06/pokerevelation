@@ -235,12 +235,12 @@
 
 #define FOREACH_HM(F) \
     F(CUT) \
-    F(FLY) \
-    F(SURF) \
+    F(TACKLE) \
+    F(POUND) \
     F(STRENGTH) \
     F(FLASH) \
     F(ROCK_SMASH) \
-    F(WATERFALL) \
+    F(SCRATCH) \
     F(DIVE)
 
 #define FOREACH_TMHM(F) \
