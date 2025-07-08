@@ -3552,7 +3552,7 @@ void GivePlayerItems(void)
     }
 
     // Give other relevant items
-    for (int i = 0; i < ARRAY_COUNT(sPlayerItems); i++)
+    for (u32 i = 0; i < ARRAY_COUNT(sPlayerItems); i++)
     {
         itemId = sPlayerItems[i];
         qty = GetItemQuantityTo100(itemId);

@@ -954,7 +954,7 @@ const u8 *GetItemDescription(u16 itemId)
 {
     if (GetItemPocket(SanitizeItemId(itemId)) == POCKET_TM_HM)
     {
-        FormatTextByWidth(tmStringVar, 100, FONT_SMALL_NARROW, gMovesInfo[gItemsInfo[itemId].secondaryId].description, 1);
+        FormatTextByWidth(tmStringVar, 100, FONT_SMALL_NARROW, gMovesInfo[ItemIdToBattleMoveId(itemId)].description, 1);
         return tmStringVar;
     }
     return gItemsInfo[SanitizeItemId(itemId)].description;
