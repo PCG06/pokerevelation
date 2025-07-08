@@ -13204,9 +13204,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_HIDDEN_POWER,
     },
 
-    [ITEM_TM_CUT] =
+    [ITEM_HM_CUT] =
     {
-        .name = _("TM231"),
+        .name = _("HM01"),
         .price = 0,
         .description = sPlaceholderDesc,
         .importance = 1,
@@ -13216,9 +13216,33 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_CUT,
     },
 
-    [ITEM_TM_STRENGTH] =
+    [ITEM_HM_FLY] =
     {
-        .name = _("TM232"),
+        .name = _("HM02"),
+        .price = 0,
+        .description = sPlaceholderDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FLY,
+    },
+
+    [ITEM_HM_SURF] =
+    {
+        .name = _("HM03"),
+        .price = 0,
+        .description = sPlaceholderDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SURF,
+    },
+
+    [ITEM_HM_STRENGTH] =
+    {
+        .name = _("HM04"),
         .price = 0,
         .description = sPlaceholderDesc,
         .importance = 1,
@@ -13228,9 +13252,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_STRENGTH,
     },
 
-    [ITEM_TM_FLASH] =
+    [ITEM_HM_FLASH] =
     {
-        .name = _("TM233"),
+        .name = _("HM05"),
         .price = 0,
         .description = sPlaceholderDesc,
         .importance = 1,
@@ -13240,9 +13264,9 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_FLASH,
     },
 
-    [ITEM_TM_ROCK_SMASH] =
+    [ITEM_HM_ROCK_SMASH] =
     {
-        .name = _("TM234"),
+        .name = _("HM06"),
         .price = 0,
         .description = sPlaceholderDesc,
         .importance = 1,
@@ -13252,9 +13276,21 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_ROCK_SMASH,
     },
 
-    [ITEM_TM_DIVE] =
+    [ITEM_HM_WATERFALL] =
     {
-        .name = _("TM235"),
+        .name = _("HM07"),
+        .price = 0,
+        .description = sPlaceholderDesc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_WATERFALL,
+    },
+
+    [ITEM_HM_DIVE] =
+    {
+        .name = _("HM08"),
         .price = 0,
         .description = sPlaceholderDesc,
         .importance = 1,
@@ -13263,40 +13299,6 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_DIVE,
     },
-
-    [ITEM_HM06] =
-    {
-        .name = _("HM06"),
-        .price = 0,
-        .description = sQuestionMarksDesc,
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_HM07] =
-    {
-        .name = _("TM235"),
-        .price = 0,
-        .description = sQuestionMarksDesc,
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_HM08] =
-    {
-        .name = _("TM235"),
-        .price = 0,
-        .description = sQuestionMarksDesc,
-        .importance = 1,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
 
 // Charms
 

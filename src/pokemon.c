@@ -6013,7 +6013,7 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
     }
 
     // TM moves
-    for (i = ITEM_TM01; i <= ITEM_TM235 && numMoves < MAX_RELEARNER_MOVES; i++)
+    for (i = ITEM_TM01; i <= ITEM_TM230 && numMoves < MAX_RELEARNER_MOVES; i++)
     {
         moveId = ItemIdToBattleMoveId(i);
         if (CanLearnTeachableMove(species, moveId))

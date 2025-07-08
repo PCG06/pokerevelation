@@ -231,11 +231,20 @@
     F(ALLURING_VOICE) \
     F(PSYCHIC_NOISE) \
     F(UPPER_HAND) \
-    F(HIDDEN_POWER) \
+    F(HIDDEN_POWER)
+
+#define FOREACH_HM(F) \
     F(CUT) \
+    F(FLY) \
+    F(SURF) \
     F(STRENGTH) \
     F(FLASH) \
     F(ROCK_SMASH) \
+    F(WATERFALL) \
     F(DIVE)
+
+#define FOREACH_TMHM(F) \
+    FOREACH_TM(F) \
+    FOREACH_HM(F)
 
 #endif

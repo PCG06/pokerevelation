@@ -884,7 +884,10 @@ void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)
 {
-    DisplayItemMessage(taskId, FONT_NORMAL, sText_BootedUpTM, BootUpSoundTMHM);
+    if (gSpecialVar_ItemId >= ITEM_HM01)
+        DisplayItemMessage(taskId, FONT_NORMAL, sText_BootedUpHM, BootUpSoundTMHM); // HM
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, sText_BootedUpTM, BootUpSoundTMHM); // TM
 }
 
 static void BootUpSoundTMHM(u8 taskId)

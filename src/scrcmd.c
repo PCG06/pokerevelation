@@ -3538,7 +3538,7 @@ void GivePlayerItems(void)
     u16 itemId;
 
     // Give TMs
-    for (itemId = ITEM_TM01; itemId <= ITEM_TM235; itemId++)
+    for (itemId = ITEM_TM01; itemId <= ITEM_TM230; itemId++)
     {
         AddBagItem(itemId, 1);
     }

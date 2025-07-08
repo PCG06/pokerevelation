@@ -235,9 +235,12 @@
 // - MOVE_UPPER_HAND                                   //
 // - MOVE_HIDDEN_POWER                                 //
 // - MOVE_CUT                                          //
+// - MOVE_FLY                                          //
+// - MOVE_SURF                                         //
 // - MOVE_STRENGTH                                     //
 // - MOVE_FLASH                                        //
 // - MOVE_ROCK_SMASH                                   //
+// - MOVE_WATERFALL                                    //
 // - MOVE_DIVE                                         //
 // *************************************************** //
 // Tutor moves found from map scripts:                 //
