@@ -233,15 +233,7 @@
     F(UPPER_HAND) \
     F(HIDDEN_POWER)
 
-#define FOREACH_HM(F) \
-    F(CUT) \
-    F(TACKLE) \
-    F(POUND) \
-    F(STRENGTH) \
-    F(FLASH) \
-    F(ROCK_SMASH) \
-    F(SCRATCH) \
-    F(DIVE)
+#define FOREACH_HM(F)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \
