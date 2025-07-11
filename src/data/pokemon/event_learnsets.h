@@ -189,12 +189,14 @@ static const u16 sSlowbroEventLearnset[] =
     MOVE_UNAVAILABLE
 };
 
+#if P_GEN_2_CROSS_EVOS
 static const u16 sSlowkingEventLearnset[] =
 {
     MOVE_BELLY_DRUM,
     MOVE_BLOCK,
     MOVE_UNAVAILABLE
 };
+#endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_SLOWPOKE
 
 #if P_FAMILY_MAGNEMITE
