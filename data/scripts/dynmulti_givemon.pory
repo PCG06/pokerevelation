@@ -4,10 +4,10 @@ script EventScript_ChoosePkmnMenu {
 				"Start your adventure!", MSGBOX_NPC)
 	} else {
 		message("Benny: Select a group of Pokémon.")
-		copyvar(VAR_0x8000, VAR_0x8001)
+		copyvar(VAR_TEMP_A, VAR_TEMP_B)
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 6, VAR_0x8000, DYN_MULTICHOICE_CB_NONE, "Starters", "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Back")
-		copyvar(VAR_0x8001, VAR_RESULT)
+		dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, "Starters", "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Back")
+		copyvar(VAR_TEMP_B, VAR_RESULT)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				goto(EventScript_ChooseStarterMenu)
@@ -23,7 +23,7 @@ script EventScript_ChoosePkmnMenu {
 				goto(EventScript_Group5Choices)
 			default:
 			case 6:
-				setvar(VAR_0x8001, 0)
+				setvar(VAR_TEMP_B, 0)
 				msgbox("Benny: Talk to me when you're ready.", MSGBOX_NPC)
 		}
 	}
@@ -50,8 +50,8 @@ script EventScript_YouWantThisPkmn {
 script EventScript_Givemonset {
 	playfanfare(MUS_OBTAIN_ITEM)
 	givemonset(VAR_TEMP_TRANSFERRED_SPECIES)
-	setvar(VAR_0x8001, 0)
-	setvar(VAR_0x8003, 0)
+	setvar(VAR_TEMP_B, 0)
+	setvar(VAR_TEMP_D, 0)
 	if (!flag(FLAG_SYS_POKEMON_GET)) {
 		setflag(FLAG_SYS_POKEMON_GET)
 	}
@@ -77,9 +77,9 @@ script EventScript_Givemonset {
 
 script EventScript_ChooseStarterMenu {
 	message("Benny: Please select your starter.")
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"Venusaur", "Charizard", "Blastoise", "Pikachu",
 		"Meganium", "Typhlosion", "Typhlosion-H", "Feraligatr",
 		"Sceptile", "Blaziken", "Swampert",
@@ -90,7 +90,7 @@ script EventScript_ChooseStarterMenu {
 		"Rillaboom", "Cinderace", "Inteleon",
 		"Meowscarada", "Skeledirge", "Quaquaval", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VENUSAUR)
@@ -218,7 +218,7 @@ script EventScript_ChooseStarterMenu {
 			goto(EventScript_ChooseStarterMenu)
 		default:
 		case 31:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 	release
@@ -227,16 +227,16 @@ script EventScript_ChooseStarterMenu {
 
 script EventScript_Group1Choices {
 	message(Text_SelectPkmn)
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"1. Absol", "2. Aegislash", "3. Aerodactyl", "4. Altaria", "5. Ambipom", "6. Annihilape",
 		"7. Araquanid", "8. Archaludon", "9. Armarouge", "10. Azumarill", "11. Barraskewda", "12. Basculegion",
 		"13. Basculegion-F", "14. Baxcalibur", "15. Bellibolt", "16. Bronzong", "17. Camerupt", "18. Ceruledge",
 		"19. Clawitzer", "20. Corviknight", "21. Crawdaunt", "22. Dondozo", "23. Dragapult", "24. Dragonite",
 		"25. Dudunsparce", "26. Electivire", "27. Espeon", "28. Excadrill", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ABSOL)
@@ -352,23 +352,23 @@ script EventScript_Group1Choices {
 			goto(EventScript_Group1Choices)
 		default:
 		case 28:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 }
 
 script EventScript_Group2Choices {
 	message(Text_SelectPkmn)
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"29. Farigiraf", "30. Ferrothorn", "31. Flareon", "32. Froslass", "33. Garchomp", "34. Gengar",
 		"35. Gholdengo", "36. Glaceon", "37. Glalie", "38. Gliscor", "39. Gogoat", "40. Golurk",
 		"41. Goodra", "42. Goodra-H", "43. Grimmsnarl", "44. Gyarados", "45. Hatterene", "46. Hawlucha",
 		"47. Hitmonchan", "48. Hitmonlee", "49. Hitmontop", "50. Houndstone", "51. Hydreigon", "52. Illumise",
 		"53. Jolteon", "54. Jynx", "55. Kingambit", "56. Kingdra", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FARIGIRAF)
@@ -484,23 +484,23 @@ script EventScript_Group2Choices {
 			goto(EventScript_Group2Choices)
 		default:
 		case 28:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 }
 
 script EventScript_Group3Choices {
 	message(Text_SelectPkmn)
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"57. Kleavor", "58. Kommo-o", "59. Krookodile", "60. Lanturn", "61. Leafeon", "62. Lilligant",
 		"63. Lilligant-H", "64. Linoone", "65. Lokix", "66. Lucario", "67. Ludicolo", "68. Luxray",
 		"69. Lycanroc", "70. Lycanroc-D", "71. Lycanroc-M", "72. Magmortar", "73. Magnezone", "74. Malamar",
 		"75. Mamoswine", "76. Mantine", "77. Mawile", "78. Metagross", "79. Mew", "80. Milotic",
 		"81. Mimikyu", "82. Nidoking", "83. Nidoqueen", "84. Noivern", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KLEAVOR)
@@ -616,23 +616,23 @@ script EventScript_Group3Choices {
 			goto(EventScript_Group3Choices)
 		default:
 		case 28:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 }
 
 script EventScript_Group4Choices {
 	message(Text_SelectPkmn)
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"85. Obstagoon", "86. Palossand", "87. Perrserker", "88. Persian", "89. Persian-A", "90. Pidgeot",
 		"91. Politoed", "92. Poliwrath", "93. Raichu", "94. Raichu-A", "95. Roserade", "96. Rotom",
 		"97. Rotom-Fan", "98. Rotom-Frost", "99. Rotom-Heat", "100. Rotom-Mow", "101. Rotom-Wash", "102. Sableye",
 		"103. Salamence", "104. Salazzle", "105. Scizor", "106. Sharpedo", "107. Shiftry", "108. Shuckle",
 		"109. Skarmory", "110. Slowbro", "111. Slowbro-G", "112. Slowking", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OBSTAGOON)
@@ -748,23 +748,23 @@ script EventScript_Group4Choices {
 			goto(EventScript_Group4Choices)
 		default:
 		case 28:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 }
 
 script EventScript_Group5Choices {
 	message(Text_SelectPkmn)
-	copyvar(VAR_0x8002, VAR_0x8003)
+	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 6, VAR_0x8002, DYN_MULTICHOICE_CB_NONE,
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
 		"113. Slowking-G", "114. Sneasler", "115. Snorlax", "116. Staraptor", "117. Sudowoodo", "118. Swellow",
 		"119. Sylveon", "120. Talonflame", "121. Tatsugiri", "122. Togekiss", "123. Torkoal", "124. Toxtricity",
 		"125. Toxtricity-LK", "126. Tyranitar", "127. Tyrantrum", "128. Umbreon", "129. Unown", "130. Ursaluna",
 		"131. Ursaluna-BM", "132. Vaporeon", "133. Volbeat", "134. Volcarona", "135. Wailord", "136. Weavile",
 		"137. Whimsicott", "138. Wyrdeer", "139. Zoroark", "140. Zoroark-H", "Back"
 	)
-	copyvar(VAR_0x8003, VAR_RESULT)
+	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR)
@@ -880,7 +880,7 @@ script EventScript_Group5Choices {
 			goto(EventScript_Group5Choices)
 		default:
 		case 28:
-			setvar(VAR_0x8003, 0)
+			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
 }

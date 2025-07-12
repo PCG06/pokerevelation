@@ -971,7 +971,7 @@ static void LoadBattleBg(u8 battleBgType, enum BattleEnvironment battleEnvironme
     case MAP_BATTLE_SCENE_FRONTIER:
         DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Building, (void*)(BG_CHAR_ADDR(2)));
         DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Building, (void*)(BG_SCREEN_ADDR(26)));
-        LoadPalette(gBattleEnvironmentPalette_Frontier, 0x20, 0x60);
+        LoadPalette(gBattleEnvironmentPalette_Building, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_LEADER:
         DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Building, (void*)(BG_CHAR_ADDR(2)));
