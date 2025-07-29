@@ -3521,7 +3521,7 @@ static const u16 sPlayerItems[] = {
     ITEM_ZOOM_LENS,
 };
 
-u8 GetItemQuantityTo100(u16 itemId)
+static u8 GetItemQuantityTo100(u16 itemId)
 {
     if (itemId == ITEM_NONE)
         return 0;
