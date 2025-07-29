@@ -2726,11 +2726,19 @@ static const u8 sBagMenuSortPokeBalls[] =
     ACTION_CANCEL,
 };
 
-static const u8 sBagMenuSortBerriesTMsHMs[] =
+static const u8 sBagMenuSortBerries[] =
 {
     ACTION_BY_NAME,
     ACTION_BY_AMOUNT,
     ACTION_BY_INDEX,
+    ACTION_CANCEL,
+};
+
+static const u8 sBagMenuSortTMsHMs[] =
+{
+    ACTION_BY_NAME,
+    ACTION_BY_INDEX,
+    ACTION_DUMMY,
     ACTION_CANCEL,
 };
 
@@ -2749,10 +2757,14 @@ static void AddBagSortSubMenu(void)
         gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortPokeBalls);
         break;
     case POCKET_BERRIES:
+        gBagMenu->contextMenuItemsPtr = sBagMenuSortBerries;
+        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortBerries, NELEMS(sBagMenuSortBerries));
+        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortBerries);
+        break;
     case POCKET_TM_HM:
-        gBagMenu->contextMenuItemsPtr = sBagMenuSortBerriesTMsHMs;
-        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortBerriesTMsHMs, NELEMS(sBagMenuSortBerriesTMsHMs));
-        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortBerriesTMsHMs);
+        gBagMenu->contextMenuItemsPtr = sBagMenuSortTMsHMs;
+        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortTMsHMs, NELEMS(sBagMenuSortTMsHMs));
+        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortTMsHMs);
         break;
     default:
         gBagMenu->contextMenuItemsPtr = sBagMenuSortItems;
