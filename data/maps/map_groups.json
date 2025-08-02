@@ -1,5 +1,6 @@
 {
   "group_order": [
+    "gMapGroup_RevelationMaps",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -33,8 +34,21 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124",
-    "gMapGroup_RevelationMaps"
+    "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_RevelationMaps": [
+    "RevelationMap_Lobby",
+    "RevelationMap_EntryPoint",
+    "RevelationMap_ChallengersArena",
+    "RevelationMap_HallOfFame",
+    "RevelationMap_Gym1",
+    "RevelationMap_Gym2",
+    "RevelationMap_Gym3",
+    "RevelationMap_Gym4",
+    "RevelationMap_Gym5",
+    "RevelationMap_Gym6",
+    "RevelationMap_Gym7",
+    "RevelationMap_Gym8"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -621,19 +635,5 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
-  ],
-  "gMapGroup_RevelationMaps": [
-    "RevelationMap_Lobby",
-    "RevelationMap_EntryPoint",
-    "RevelationMap_ChallengersArena",
-    "RevelationMap_HallOfFame",
-    "RevelationMap_Gym1",
-    "RevelationMap_Gym2",
-    "RevelationMap_Gym3",
-    "RevelationMap_Gym4",
-    "RevelationMap_Gym5",
-    "RevelationMap_Gym6",
-    "RevelationMap_Gym7",
-    "RevelationMap_Gym8"
   ]
 }

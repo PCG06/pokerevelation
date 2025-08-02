@@ -1390,19 +1390,14 @@ enum {
     WHITEOUT_CUTSCENE_HEAL_SCRIPT,
 };
 
-static const u8 *GenerateRecoveryMessage(u8 taskId)
+static const u8 *GenerateRecoveryMessage(void)
 {
     bool32 forfeitTrainer = DidPlayerForfeitNormalTrainerBattle();
-    bool32 destinationIsPlayersHouse = (gTasks[taskId].tIsPlayerHouse == TRUE);
 
-    if (forfeitTrainer && destinationIsPlayersHouse)
-        return gText_PlayerRegroupHome;
-    else if (forfeitTrainer && !destinationIsPlayersHouse)
-        return gText_PlayerRegroupCenter;
-    else if (!forfeitTrainer && destinationIsPlayersHouse)
-        return gText_PlayerScurriedBackHome;
+    if (forfeitTrainer)
+        return gText_PlayerForfeitedChallenge;
     else
-        return gText_PlayerScurriedToCenter;
+        return gText_PlayerLostChallenge;
 }
 
 static void Task_RushInjuredPokemonToCenter(u8 taskId)
@@ -1424,7 +1419,7 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
         break;
     case WHITEOUT_CUTSCENE_PRINT_MSG:
     {
-        const u8 *recoveryMessage = GenerateRecoveryMessage(taskId);
+        const u8 *recoveryMessage = GenerateRecoveryMessage();
 
         if (PrintWhiteOutRecoveryMessage(taskId, recoveryMessage, 2, 8))
         {

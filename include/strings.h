@@ -2426,6 +2426,8 @@ extern const u8 gText_AM[];
 extern const u8 gText_PM[];
 
 // FRLG whiteout
+extern const u8 gText_PlayerLostChallenge[];
+extern const u8 gText_PlayerForfeitedChallenge[];
 extern const u8 gText_PlayerScurriedToCenter[];
 extern const u8 gText_PlayerScurriedBackHome[];
 extern const u8 gText_PlayerRegroupCenter[];

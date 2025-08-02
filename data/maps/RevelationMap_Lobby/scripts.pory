@@ -479,3 +479,20 @@ script EventScript_ChooseMoveToTeach {
 	release
 	end
 }
+
+script RevelationMap_Lobby_EventScript_Whiteout {
+	forcesave
+	msgbox("Benny: Ah, {PLAYER}!\n"
+			"I was cheering for you…\l"
+			"I'm sorry, it didn't go as you'd expect\l"
+			"it to.\p"
+			"Benny: Now, would you like to reset your\n"
+			"challenge with a different team?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox("Benny: Alright, make sure to start a\n"
+				"new adventure.", MSGBOX_AUTOCLOSE)
+		callnative(0) // Soft resets the game. Thank you Hedara!
+	} else {
+		msgbox("Benny: Okay! Good luck, {PLAYER}!", MSGBOX_NPC)
+	}
+}
