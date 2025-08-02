@@ -193,7 +193,9 @@
       "x": 8,
       "y": 8,
       "respawn_map": "MAP_REVELATION_MAP_LOBBY",
-      "respawn_npc": "LOCALID_REVELATION_LOBBY_BIRCH"
+      "respawn_npc": "LOCALID_REVELATION_LOBBY_BIRCH",
+      "respawn_x": 6,
+      "respawn_y": 5
     }
   ]
 }
