@@ -7,12 +7,12 @@ mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_REV_STATE, 3 {
 			setvar(VAR_REV_STATE, 4)
-			call(RevelationMap_ChallengersArea_PlayerEnters)
+			call(RevelationMap_ChallengersArena_PlayerEnters)
 		}
 	]
 }
 
-script RevelationMap_ChallengersArea_PlayerEnters {
+script RevelationMap_ChallengersArena_PlayerEnters {
 	delay(8)
 	lock
 	playse(SE_APPLAUSE)
@@ -26,17 +26,17 @@ script RevelationMap_ChallengersArea_PlayerEnters {
 			"Hoenn! Good luck!", MSGBOX_AUTOCLOSE)
 	delay(16)
 	// Trainer fights
-	call(RevelationMap_ChallengersArea_ChoiceMenu1)
+	call(RevelationMap_ChallengersArena_ChoiceMenu1)
 }
 
-script RevelationMap_ChallengersArea_TriggerChoiceMenu {
+script RevelationMap_ChallengersArena_TriggerChoiceMenu {
 	lock
 	if (var(VAR_CHALLENGERS_BEAT) == 0) {
-		call(RevelationMap_ChallengersArea_ChoiceMenu1)
+		call(RevelationMap_ChallengersArena_ChoiceMenu1)
 	} elif (var(VAR_CHALLENGERS_BEAT) < 6) {
-		call(RevelationMap_ChallengersArea_ChoiceMenu2)
+		call(RevelationMap_ChallengersArena_ChoiceMenu2)
 	} else {
-		call(RevelationMap_ChallengersArea_ChoiceMenu3)
+		call(RevelationMap_ChallengersArena_ChoiceMenu3)
 	}
 	release
 	end
@@ -57,7 +57,7 @@ script EventScript_MovePlayerToPos {
 	}
 }
 
-script RevelationMap_ChallengersArea_ChoiceMenu1 {
+script RevelationMap_ChallengersArena_ChoiceMenu1 {
 	message("So, {PLAYER}!\n"
 			"Are you ready for the Revelation\l"
 			"Tournament?")
@@ -67,7 +67,7 @@ script RevelationMap_ChallengersArea_ChoiceMenu1 {
 		case 0:
 			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
-			goto(RevelationMap_ChallengersArea_FightManvitha)
+			goto(RevelationMap_ChallengersArena_FightManvitha)
 
 		default:
 		case 1:
@@ -78,7 +78,7 @@ script RevelationMap_ChallengersArea_ChoiceMenu1 {
 	}
 }
 
-script RevelationMap_ChallengersArea_ChoiceMenu2 {
+script RevelationMap_ChallengersArena_ChoiceMenu2 {
 	message("So, {PLAYER}!\n"
 			"Are you ready for the next round?")
 	waitmessage
@@ -89,15 +89,15 @@ script RevelationMap_ChallengersArea_ChoiceMenu2 {
 			call(EventScript_MovePlayerToPos)
 			switch (var(VAR_CHALLENGERS_BEAT)) {
 				case 1:
-					goto(RevelationMap_ChallengersArea_FightKevin)
+					goto(RevelationMap_ChallengersArena_FightKevin)
 				case 2:
-					goto(RevelationMap_ChallengersArea_FightLohith)
+					goto(RevelationMap_ChallengersArena_FightLohith)
 				case 3:
-					goto(RevelationMap_ChallengersArea_FightAnmol)
+					goto(RevelationMap_ChallengersArena_FightAnmol)
 				case 4:
-					goto(RevelationMap_ChallengersArea_FightArshad)
+					goto(RevelationMap_ChallengersArena_FightArshad)
 				case 5:
-					goto(RevelationMap_ChallengersArea_FightMelwin)
+					goto(RevelationMap_ChallengersArena_FightMelwin)
 			}
 
 		default:
@@ -109,7 +109,7 @@ script RevelationMap_ChallengersArea_ChoiceMenu2 {
 	}
 }
 
-script RevelationMap_ChallengersArea_ChoiceMenu3 {
+script RevelationMap_ChallengersArena_ChoiceMenu3 {
 	message("So, {PLAYER}!\n"
 			"Are you ready for the final battle?")
 	waitmessage
@@ -118,7 +118,7 @@ script RevelationMap_ChallengersArea_ChoiceMenu3 {
 		case 0:
 			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
-			call(RevelationMap_ChallengersArea_FightChampionYashas)
+			call(RevelationMap_ChallengersArena_FightChampionYashas)
 
 		default:
 		case 1:
@@ -129,7 +129,7 @@ script RevelationMap_ChallengersArea_ChoiceMenu3 {
 	}
 }
 
-script RevelationMap_ChallengersArea_FightManvitha {
+script RevelationMap_ChallengersArena_FightManvitha {
 	addobject(LOCALID_REVELATION_CHALLENGER_1)
 	applymove(LOCALID_REVELATION_CHALLENGER_1, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
 	msgbox("Manvitha: The sun always shines on\n"
@@ -152,7 +152,7 @@ script RevelationMap_ChallengersArea_FightManvitha {
 	end
 }
 
-script RevelationMap_ChallengersArea_FightKevin {
+script RevelationMap_ChallengersArena_FightKevin {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_2)
 	applymove(LOCALID_REVELATION_CHALLENGER_2, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
@@ -177,7 +177,7 @@ script RevelationMap_ChallengersArea_FightKevin {
 	end
 }
 
-script RevelationMap_ChallengersArea_FightLohith {
+script RevelationMap_ChallengersArena_FightLohith {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_3)
 	applymove(LOCALID_REVELATION_CHALLENGER_3, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
@@ -202,7 +202,7 @@ script RevelationMap_ChallengersArea_FightLohith {
 	end
 }
 
-script RevelationMap_ChallengersArea_FightAnmol {
+script RevelationMap_ChallengersArena_FightAnmol {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_4)
 	applymove(LOCALID_REVELATION_CHALLENGER_4, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
@@ -227,7 +227,7 @@ script RevelationMap_ChallengersArea_FightAnmol {
 	end
 }
 
-script RevelationMap_ChallengersArea_FightArshad {
+script RevelationMap_ChallengersArena_FightArshad {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_5)
 	applymove(LOCALID_REVELATION_CHALLENGER_5, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
@@ -250,7 +250,7 @@ script RevelationMap_ChallengersArea_FightArshad {
 	end
 }
 
-script RevelationMap_ChallengersArea_FightMelwin {
+script RevelationMap_ChallengersArena_FightMelwin {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_6)
 	applymove(LOCALID_REVELATION_CHALLENGER_6, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
@@ -274,12 +274,12 @@ script RevelationMap_ChallengersArea_FightMelwin {
 	removeobject(LOCALID_REVELATION_CHALLENGER_6)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
-	call(RevelationMap_ChallengersArea_IntroduceChampionYashas)
+	call(RevelationMap_ChallengersArena_IntroduceChampionYashas)
 	release
 	end
 }
 
-script RevelationMap_ChallengersArea_IntroduceChampionYashas {
+script RevelationMap_ChallengersArena_IntroduceChampionYashas {
 	lock
 	playse(SE_APPLAUSE)
 	msgbox("Announcer: BUT…\p"
@@ -289,12 +289,12 @@ script RevelationMap_ChallengersArea_IntroduceChampionYashas {
 			"Undefeated! Unmatched!\n"
 			"The Legendary Yashas!", MSGBOX_AUTOCLOSE)
 	waitse
-	goto(RevelationMap_ChallengersArea_ChoiceMenu3)
+	goto(RevelationMap_ChallengersArena_ChoiceMenu3)
 	release
 	end
 }
 
-script RevelationMap_ChallengersArea_FightChampionYashas {
+script RevelationMap_ChallengersArena_FightChampionYashas {
 	fadenewbgm(MUS_VS_FRONTIER_BRAIN)
 	delay(6)
 	playse(SE_SLIDING_DOOR)
