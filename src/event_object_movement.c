@@ -2224,6 +2224,8 @@ void UpdateFollowingPokemon(void)
      || !GetFollowerInfo(&species, &shiny, &female)
      || SpeciesToGraphicsInfo(species, shiny, female) == NULL
      || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, shiny, female)->oam->size > ST_OAM_SIZE_2)
+     || (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_REVELATION_MAP_CHALLENGERS_ARENA)
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_REVELATION_MAP_CHALLENGERS_ARENA))
      || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
      || PlayerHasFollowerNPC()
      || gSaveBlock2Ptr->optionsFollowersOff

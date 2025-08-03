@@ -265,6 +265,43 @@
       "dest_warp_id": "9"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_REV_STATE",
+      "var_value": "4",
+      "script": "RevelationMap_ChallengersArea_TriggerChoiceMenu"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_REV_STATE",
+      "var_value": "4",
+      "script": "RevelationMap_ChallengersArea_TriggerChoiceMenu"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_REV_STATE",
+      "var_value": "4",
+      "script": "RevelationMap_ChallengersArea_TriggerChoiceMenu"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_REV_STATE",
+      "var_value": "4",
+      "script": "RevelationMap_ChallengersArea_TriggerChoiceMenu"
+    }
+  ],
   "bg_events": []
 }

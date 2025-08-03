@@ -26,7 +26,107 @@ script RevelationMap_ChallengersArea_PlayerEnters {
 			"Hoenn! Good luck!", MSGBOX_AUTOCLOSE)
 	delay(16)
 	// Trainer fights
-	call(RevelationMap_ChallengersArea_FightManvitha)
+	call(RevelationMap_ChallengersArea_ChoiceMenu1)
+}
+
+script RevelationMap_ChallengersArea_TriggerChoiceMenu {
+	lock
+	if (var(VAR_CHALLENGERS_BEAT) == 0) {
+		call(RevelationMap_ChallengersArea_ChoiceMenu1)
+	} elif (var(VAR_CHALLENGERS_BEAT) < 6) {
+		call(RevelationMap_ChallengersArea_ChoiceMenu2)
+	} else {
+		call(RevelationMap_ChallengersArea_ChoiceMenu3)
+	}
+	release
+	end
+}
+
+script EventScript_MovePlayerToPos {
+	getplayerxy(VAR_0x800A, VAR_0x800B)
+	if (var(VAR_0x800A) == 8 && var(VAR_0x800B) == 5) {
+		applymoveplayer(moves(walk_down, face_right))
+	} elif (var(VAR_0x800A) == 8 && var(VAR_0x800B) == 7) {
+		applymoveplayer(moves(walk_up, face_right))
+	} elif (var(VAR_0x800A) == 9 && var(VAR_0x800B) == 6) {
+		applymoveplayer(moves(walk_left, face_right))
+	} elif (var(VAR_0x800A) == 7 && var(VAR_0x800B) == 6) {
+		applymoveplayer(moves(walk_right))
+	} else { # Just in case
+		applymoveplayer(moves(face_right))
+	}
+}
+
+script RevelationMap_ChallengersArea_ChoiceMenu1 {
+	message("So, {PLAYER}!\n"
+			"Are you ready for the Revelation\l"
+			"Tournament?")
+	waitmessage
+	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Battle", "Rest")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			goto(RevelationMap_ChallengersArea_FightManvitha)
+
+		default:
+		case 1:
+			msgbox("Okay, take your time.", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			release
+			end
+	}
+}
+
+script RevelationMap_ChallengersArea_ChoiceMenu2 {
+	message("So, {PLAYER}!\n"
+			"Are you ready for the next round?")
+	waitmessage
+	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Continue", "Rest")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			switch (var(VAR_CHALLENGERS_BEAT)) {
+				case 1:
+					goto(RevelationMap_ChallengersArea_FightKevin)
+				case 2:
+					goto(RevelationMap_ChallengersArea_FightLohith)
+				case 3:
+					goto(RevelationMap_ChallengersArea_FightAnmol)
+				case 4:
+					goto(RevelationMap_ChallengersArea_FightArshad)
+				case 5:
+					goto(RevelationMap_ChallengersArea_FightMelwin)
+			}
+
+		default:
+		case 1:
+			msgbox("Okay, take your time.", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			release
+			end
+	}
+}
+
+script RevelationMap_ChallengersArea_ChoiceMenu3 {
+	message("So, {PLAYER}!\n"
+			"Are you ready for the final battle?")
+	waitmessage
+	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Battle", "Rest")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			call(RevelationMap_ChallengersArea_FightChampionYashas)
+
+		default:
+		case 1:
+			msgbox("Okay, take your time.", MSGBOX_AUTOCLOSE)
+			call(EventScript_MovePlayerToPos)
+			release
+			end
+	}
 }
 
 script RevelationMap_ChallengersArea_FightManvitha {
@@ -47,7 +147,9 @@ script RevelationMap_ChallengersArea_FightManvitha {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_1)
 	delay(60)
-	call(RevelationMap_ChallengersArea_FightKevin)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	release
+	end
 }
 
 script RevelationMap_ChallengersArea_FightKevin {
@@ -70,7 +172,9 @@ script RevelationMap_ChallengersArea_FightKevin {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_2)
 	delay(60)
-	call(RevelationMap_ChallengersArea_FightLohith)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	release
+	end
 }
 
 script RevelationMap_ChallengersArea_FightLohith {
@@ -93,7 +197,9 @@ script RevelationMap_ChallengersArea_FightLohith {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_3)
 	delay(60)
-	call(RevelationMap_ChallengersArea_FightAnmol)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	release
+	end
 }
 
 script RevelationMap_ChallengersArea_FightAnmol {
@@ -116,7 +222,9 @@ script RevelationMap_ChallengersArea_FightAnmol {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_4)
 	delay(60)
-	call(RevelationMap_ChallengersArea_FightArshad)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	release
+	end
 }
 
 script RevelationMap_ChallengersArea_FightArshad {
@@ -137,7 +245,9 @@ script RevelationMap_ChallengersArea_FightArshad {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_5)
 	delay(60)
-	call(RevelationMap_ChallengersArea_FightMelwin)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	release
+	end
 }
 
 script RevelationMap_ChallengersArea_FightMelwin {
@@ -163,11 +273,14 @@ script RevelationMap_ChallengersArea_FightMelwin {
 	playse(SE_SLIDING_DOOR)
 	removeobject(LOCALID_REVELATION_CHALLENGER_6)
 	delay(60)
-	waitse
-	call(RevelationMap_ChallengersArea_FightChampionYashas)
+	addvar(VAR_CHALLENGERS_BEAT, 1)
+	call(RevelationMap_ChallengersArea_IntroduceChampionYashas)
+	release
+	end
 }
 
-script RevelationMap_ChallengersArea_FightChampionYashas {
+script RevelationMap_ChallengersArea_IntroduceChampionYashas {
+	lock
 	playse(SE_APPLAUSE)
 	msgbox("Announcer: BUT…\p"
 			"A final opponent remains…\n"
@@ -176,6 +289,12 @@ script RevelationMap_ChallengersArea_FightChampionYashas {
 			"Undefeated! Unmatched!\n"
 			"The Legendary Yashas!", MSGBOX_AUTOCLOSE)
 	waitse
+	goto(RevelationMap_ChallengersArea_ChoiceMenu3)
+	release
+	end
+}
+
+script RevelationMap_ChallengersArea_FightChampionYashas {
 	fadenewbgm(MUS_VS_FRONTIER_BRAIN)
 	delay(6)
 	playse(SE_SLIDING_DOOR)
