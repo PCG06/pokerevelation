@@ -1068,7 +1068,7 @@ static const u8 statorder[NUM_BATTLE_STATS] = {
 #define TAG_ICON_PARTY_PLAYER 4135
 #define TAG_ICON_PARTY_ENEMY  TAG_ICON_PARTY_PLAYER + PARTY_SIZE
 
-static const u32 gBattleFieldIconForest_Gfx[] = INCBIN_U32("graphics/ui_battle_menu/fields/forest.4bpp.lz");
+static const u32 gBattleFieldIconForest_Gfx[] = INCBIN_U32("graphics/ui_battle_menu/fields/forest.4bpp.smol");
 static const u16 gBattleFieldIconForest_Pal[] = INCBIN_U16("graphics/ui_battle_menu/fields/forest.gbapal");
 
 static const struct SpritePalette sBattleMenuFieldIconSpritePalette_Forest[] =
@@ -1127,7 +1127,7 @@ static void SpriteCB_PartyMons(struct Sprite *sprite)
         sprite->invisible = FALSE;
 }
 
-static const u32 gBattleSelector_Gfx[] = INCBIN_U32("graphics/ui_battle_menu/fields/selector.4bpp.lz");
+static const u32 gBattleSelector_Gfx[] = INCBIN_U32("graphics/ui_battle_menu/fields/selector.4bpp.smol");
 static const u16 gBattleSelector_Pal[] = INCBIN_U16("graphics/ui_battle_menu/fields/selector.gbapal");
 
 static const struct SpritePalette sBattleMenuSelectorSpritePalette[] =
