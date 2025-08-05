@@ -2024,7 +2024,7 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
             level = GetMonData(mon, MON_DATA_LEVEL);
             exp = GetMonData(mon, MON_DATA_EXP);
             currLevelExp = gExperienceTables[gSpeciesInfo[species].growthRate][level];
-            if (FlagGet(FLAG_FRONTIER_LEVEL))
+            if (FlagGet(FLAG_FRONTIER_LEVEL_50))
             {
                 currExpBarValue = 0;
             } 

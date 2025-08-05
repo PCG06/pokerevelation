@@ -1598,7 +1598,7 @@ static void RestoreMonHeldItems(void)
     u8 i;
     s32 j;
     
-    FlagClear(FLAG_FRONTIER_LEVEL);
+    FlagClear(FLAG_FRONTIER_LEVEL_50);
 
     for (j = 0; j < PARTY_SIZE; j++)
         CalculateMonStats(&gPlayerParty[j]);

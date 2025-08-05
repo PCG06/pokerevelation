@@ -59,7 +59,7 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			lock
 			special(LoadPlayerParty)
 			special(HealPlayerParty)
-			clearflag(FLAG_FRONTIER_LEVEL)
+			clearflag(FLAG_FRONTIER_LEVEL_50)
 			msgbox("Thank you for participating in the\n"
 					"Battle Tower Challenge!\p"
 					"We hope to see you again.", MSGBOX_DEFAULT)
@@ -156,12 +156,12 @@ script RevelationMap_Lobby_BattleTower_Teala {
 				"Would you like to participate?", MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			message("Which level do you wish to challenge?\n"
-					"Level 50 or Open Level?")
+					"Level 50 or Level 100?")
 			waitmessage
 			multichoice(17, 6, MULTI_LEVEL_MODE, FALSE)
 			switch (var(VAR_RESULT)) {
 				case FRONTIER_LVL_50:
-					setflag(FLAG_FRONTIER_LEVEL)
+					setflag(FLAG_FRONTIER_LEVEL_50)
 				case FRONTIER_LVL_TENT:
 				case MULTI_B_PRESSED:
 					special(CloseLink)
@@ -191,7 +191,7 @@ script RevelationMap_Lobby_BattleTower_Teala {
 				special(LoadPlayerParty)
 				callnative(UpdateFollowingPokemon)
 				special(CloseLink)
-				clearflag(FLAG_FRONTIER_LEVEL)
+				clearflag(FLAG_FRONTIER_LEVEL_50)
 				msgbox("We look forward to seeing you on\n"
 					"another challenge!")
 				release

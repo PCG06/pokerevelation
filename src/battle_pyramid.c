@@ -1190,7 +1190,7 @@ static void ClearPyramidPartyHeldItems(void)
     u16 item = 0;
     s32 g;
     
-    FlagClear(FLAG_FRONTIER_LEVEL);
+    FlagClear(FLAG_FRONTIER_LEVEL_50);
 
     for (g = 0; g < PARTY_SIZE; g++)
         CalculateMonStats(&gPlayerParty[g]);

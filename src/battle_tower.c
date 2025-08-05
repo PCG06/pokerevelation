@@ -1868,7 +1868,7 @@ static void HandleSpecialTrainerBattleEnd(void)
     case SPECIAL_BATTLE_PYRAMID:
         if (gSaveBlock2Ptr->frontier.battlesCount < 0xFFFFFF)
         {
-            FlagClear(FLAG_FRONTIER_LEVEL);
+            FlagClear(FLAG_FRONTIER_LEVEL_50);
 
             for (i = 0; i < PARTY_SIZE; i++)
                 CalculateMonStats(&gPlayerParty[i]);
@@ -1878,7 +1878,7 @@ static void HandleSpecialTrainerBattleEnd(void)
         }
         else
         {
-            FlagClear(FLAG_FRONTIER_LEVEL);
+            FlagClear(FLAG_FRONTIER_LEVEL_50);
 
             for (i = 0; i < PARTY_SIZE; i++)
                 CalculateMonStats(&gPlayerParty[i]);

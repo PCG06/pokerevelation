@@ -3516,7 +3516,7 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     u16 *dst;
     u8 i;
 
-    if (summary->level < MAX_LEVEL && !FlagGet(FLAG_FRONTIER_LEVEL))
+    if (summary->level < MAX_LEVEL && !FlagGet(FLAG_FRONTIER_LEVEL_50))
     {
         u32 expBetweenLevels = gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level + 1] - gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level];
         u32 expSinceLastLevel = summary->exp - gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level];
@@ -4470,7 +4470,7 @@ static void PrintExpPointsNextLevel(void)
     PrintTextOnWindow(windowIdExp, gStringVar1, 45, 4, 0, 0);
 
     // print exp to next level
-    if (sum->level < MAX_LEVEL && !FlagGet(FLAG_FRONTIER_LEVEL))
+    if (sum->level < MAX_LEVEL && !FlagGet(FLAG_FRONTIER_LEVEL_50))
         expToNextLevel = gExperienceTables[gSpeciesInfo[sum->species].growthRate][sum->level + 1] - sum->exp;
     else
         expToNextLevel = 0;

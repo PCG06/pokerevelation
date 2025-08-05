@@ -1909,7 +1909,7 @@ void CalculateMonStats(struct Pokemon *mon)
     s32 level = GetLevelFromMonExp(mon);
     s32 newMaxHP;
 
-    if (FlagGet(FLAG_FRONTIER_LEVEL) == TRUE)
+    if (FlagGet(FLAG_FRONTIER_LEVEL_50) == TRUE)
         level = 50;
     else
         level = 100;
