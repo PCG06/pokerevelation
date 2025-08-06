@@ -612,54 +612,55 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_CONFUSION:
-                if (gBattleMons[j].status2 & STATUS2_CONFUSION)
+                if (gBattleMons[j].volatiles.confusionTurns > 0)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_FUTURE_SIGHT:
                 if (gWishFutureKnock.futureSightCounter[j] != 0)
                     isExtraInfoShown = TRUE;
+                break;
             case STATUS_INFO_UPROAR:
-                if (gBattleMons[j].status2 & STATUS2_UPROAR)
+                if (gBattleMons[j].volatiles.uproarTurns > 0)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_BIDE:
-                if (gBattleMons[j].status2 & STATUS2_BIDE)
+                if (gBattleMons[j].volatiles.bideTurns > 0)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_INFUATION:
-                if (gBattleMons[j].status2 & STATUS2_INFATUATION)
+                if (gBattleMons[j].volatiles.infatuation)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_FOCUS_ENERGY:
-                if (gBattleMons[j].status2 & STATUS2_FOCUS_ENERGY)
+                if (gBattleMons[j].volatiles.focusEnergy)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_DRAGON_CHEER:
-                if (gBattleMons[j].status2 & STATUS2_DRAGON_CHEER)
+                if (gBattleMons[j].volatiles.dragonCheer)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_TRANSFORMED:
-                if (gBattleMons[j].status2 & STATUS2_TRANSFORMED)
+                if (gBattleMons[j].volatiles.transformed)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_ESCAPE_PREVENTION:
-                if (gBattleMons[j].status2 & STATUS2_ESCAPE_PREVENTION)
+                if (gBattleMons[j].volatiles.escapePrevention)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_CURSED:
-                if (gBattleMons[j].status2 & STATUS2_CURSED)
+                if (gBattleMons[j].volatiles.cursed)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_FORESIGHT:
-                if (gBattleMons[j].status2 & STATUS2_FORESIGHT)
+                if (gBattleMons[j].volatiles.foresight)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_DEFENSE_CURL:
-                if (gBattleMons[j].status2 & STATUS2_DEFENSE_CURL)
+                if (gBattleMons[j].volatiles.defenseCurl)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_TORMENT:
-                if (gBattleMons[j].status2 & STATUS2_TORMENT)
+                if (gBattleMons[j].volatiles.torment)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_LEECHSEED:
@@ -719,11 +720,11 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SEMI_INVULNERABLE:
-                if (gStatuses3[j] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER)
+                if (gBattleMons[j].volatiles.semiInvulnerable && gBattleMons[j].volatiles.semiInvulnerable != STATE_COMMANDER)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_ELECTRIFIED:
-                if (gStatuses4[j] & STATUS4_ELECTRIFIED)
+                if (gBattleMons[j].volatiles.electrified)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_PROTOSYNTHESIS:
@@ -735,11 +736,11 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                     break;
             case STATUS_INFO_COMMANDED:
-                if (gStatuses3[j] & STATUS3_COMMANDER)
+                if (gBattleMons[j].volatiles.semiInvulnerable == STATE_COMMANDER)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_WRAPPED:
-                if (gBattleMons[j].status2 & STATUS2_WRAPPED)
+                if (gBattleMons[j].volatiles.wrapped)
                     isExtraInfoShown = TRUE;
                 break;
             }
@@ -2124,7 +2125,7 @@ static void PrintStatusTab(void)
             /*//Turns Left
             StringCopy(gStringVar1, sText_Title_Field_Turns_Left);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 2), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
-            turnsLeft = gBattleMons[sMenuDataPtr->battlerId].status2 - STATUS2_UPROAR;
+            turnsLeft = gBattleMons[sMenuDataPtr->battlerId].volatiles.uproarTurns;
             ConvertIntToDecimalStringN(gStringVar1, turnsLeft, STR_CONV_MODE_LEFT_ALIGN, 4);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 3), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);*/
             
@@ -2140,7 +2141,7 @@ static void PrintStatusTab(void)
                 //Turns Left
                 StringCopy(gStringVar1, sText_Title_Field_Turns_Left);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 2), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
-                turnsLeft = gBattleMons[sMenuDataPtr->battlerId].status2 - STATUS2_BIDE;
+                turnsLeft = gBattleMons[sMenuDataPtr->battlerId].volatiles.bideTurns;
                 ConvertIntToDecimalStringN(gStringVar1, turnsLeft, STR_CONV_MODE_LEFT_ALIGN, 4);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 3), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
                 
@@ -2154,8 +2155,8 @@ static void PrintStatusTab(void)
 
                 for (i = 0; i < gBattlersCount; i++)
                 {
-                    if ((gBattleMons[sMenuDataPtr->battlerId].status2 & STATUS2_INFATUATION) && 
-                        (gBattleMons[sMenuDataPtr->battlerId].status2 & STATUS2_INFATUATED_WITH(i)) &&
+                    if ((gBattleMons[sMenuDataPtr->battlerId].volatiles.infatuation) && 
+                        (gBattleMons[sMenuDataPtr->battlerId].volatiles.infatuation == INFATUATED_WITH(i)) &&
                         i != sMenuDataPtr->battlerId)
                         {
                             gBattleScripting.battler = i;
