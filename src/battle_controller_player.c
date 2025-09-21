@@ -409,7 +409,7 @@ static void HandleInputChooseAction(u32 battler)
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
         BtlController_Complete(battler);
     }
-    else if (JOY_NEW(SELECT_BUTTON))
+    else if (B_BATTLE_INFO_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_BATTLE_MENU, 0);
         PlayerBufferExecCompleted(battler);

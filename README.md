@@ -17,14 +17,10 @@ Based off RHH's [pokeemerald-expansion](https://github.com/rh-hideout/pokeemeral
 - **Competitive focus**
     - No grinding needed!
     - All level 100!
-    - Customizable Moves, EVs and IVS!
     - Changeable abilities and natures!
     - Buyable Pokémon with complete sets! `*`
     - Dynamic move type, power and accuracy! `*`
 
-- **Story features:**
-    - There is NO story…
-    - Regional dex of 404 Pokémon from Generations 1-9!
     - Custom Gym Leaders!
     - A new Pokémon League gauntlet tournament called Revelation Tournament with 6 battles!
     - More below.
