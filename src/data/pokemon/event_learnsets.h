@@ -1035,6 +1035,15 @@ static const u16 sStantlerEventLearnset[] =
     MOVE_DISABLE,
     MOVE_UNAVAILABLE
 };
+
+#if P_GEN_8_CROSS_EVOS
+static const u16 sWyrdeerEventLearnset[] =
+{
+    MOVE_BITE,
+    MOVE_DISABLE,
+    MOVE_UNAVAILABLE
+};
+#endif //P_GEN_8_CROSS_EVOS
 #endif //P_FAMILY_STANTLER
 
 #if P_FAMILY_RAIKOU
@@ -1214,6 +1223,8 @@ static const u16 sVictiniEventLearnset[] =
     MOVE_FUSION_FLARE,
     MOVE_GLACIATE,
     MOVE_V_CREATE,
+    // Custom
+    MOVE_PSYCHIC_FANGS,
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_VICTINI
@@ -1228,6 +1239,15 @@ static const u16 sZoroarkEventLearnset[] =
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_ZORUA
+
+#if P_FAMILY_DEINO
+static const u16 sHydreigonEventLearnset[] =
+{
+    // Custom
+    MOVE_FICKLE_BEAM,
+    MOVE_UNAVAILABLE
+};
+#endif //P_FAMILY_DEINO
 
 #if P_FAMILY_RESHIRAM
 static const u16 sReshiramEventLearnset[] =

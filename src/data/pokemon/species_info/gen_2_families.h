@@ -7666,6 +7666,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sWyrdeerLevelUpLearnset,
         .teachableLearnset = sWyrdeerTeachableLearnset,
+        .eventLearnset = sWyrdeerEventLearnset,
     },
 #endif //P_GEN_8_CROSS_EVOS
 #endif //P_FAMILY_STANTLER
