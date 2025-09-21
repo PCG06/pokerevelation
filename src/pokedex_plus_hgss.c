@@ -598,8 +598,6 @@ static u16 NationalPokedexNumToSpeciesHGSS(u16 nationalNum);
 //Evo screen
 u32 GetSpeciesNameFontId(u32 nameWidth);
 u32 GetSpeciesNameWidthInChars(const u8 *speciesName);
-bool32 IsSpeciesAlcremie(u32 targetSpecies);
-bool32 IsItemSweet(u32 item);
 
 //Stat bars by DizzyEgg
 #define TAG_STAT_BAR 4097
@@ -6415,10 +6413,6 @@ static u8 PrintPreEvolutions(u8 taskId, u16 species)
 
     return numPreEvolutions;
 }
-
-#define EVO_SCREEN_LVL_DIGITS 2
-#define EVO_SCREEN_CRITS_DIGITS 1
-#define EVO_SCREEN_DMG_DIGITS 2
 
 u32 GetSpeciesNameFontId(u32 nameWidth)
 {
