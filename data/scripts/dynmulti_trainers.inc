@@ -4,6 +4,7 @@ Common_EventScript_TrainerBattleMenu::
 	message Common_EventScript_TrainerBattleMenu_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_TrainerBattleMenu_Text_1, Common_EventScript_TrainerBattleMenu_Text_2, Common_EventScript_TrainerBattleMenu_Text_3, Common_EventScript_TrainerBattleMenu_Text_4
+	closemessage
 	switch VAR_RESULT
 	case 0, Common_EventScript_TrainerBattleMenu_3
 	case 1, Common_EventScript_TrainerBattleMenu_4
@@ -35,6 +36,7 @@ EventScript_GymLeaderChoices::
 	message EventScript_GymLeaderChoices_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_GymLeaderChoices_Text_1, EventScript_GymLeaderChoices_Text_2, EventScript_GymLeaderChoices_Text_3, EventScript_GymLeaderChoices_Text_4, EventScript_GymLeaderChoices_Text_5, EventScript_GymLeaderChoices_Text_6, EventScript_GymLeaderChoices_Text_7, EventScript_GymLeaderChoices_Text_8, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_GymLeaderChoices_3
 	case 1, EventScript_GymLeaderChoices_4
@@ -88,6 +90,7 @@ EventScript_ChallengeGym1::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym1_Text_0, EventScript_ChallengeGym1_Text_1, EventScript_ChallengeGym1_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym1_2
 	case 1, EventScript_ChallengeGym1_3
@@ -186,6 +189,7 @@ EventScript_ChallengeGym2::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym2_Text_0, EventScript_ChallengeGym2_Text_1, EventScript_ChallengeGym2_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym2_2
 	case 1, EventScript_ChallengeGym2_3
@@ -284,6 +288,7 @@ EventScript_ChallengeGym3::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym3_Text_0, EventScript_ChallengeGym3_Text_1, EventScript_ChallengeGym3_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym3_2
 	case 1, EventScript_ChallengeGym3_3
@@ -382,6 +387,7 @@ EventScript_ChallengeGym4::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym4_Text_0, EventScript_ChallengeGym4_Text_1, EventScript_ChallengeGym4_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym4_2
 	case 1, EventScript_ChallengeGym4_3
@@ -480,6 +486,7 @@ EventScript_ChallengeGym5::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym5_Text_0, EventScript_ChallengeGym5_Text_1, EventScript_ChallengeGym5_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym5_2
 	case 1, EventScript_ChallengeGym5_3
@@ -578,6 +585,7 @@ EventScript_ChallengeGym6::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym6_Text_0, EventScript_ChallengeGym6_Text_1, EventScript_ChallengeGym6_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym6_2
 	case 1, EventScript_ChallengeGym6_3
@@ -676,6 +684,7 @@ EventScript_ChallengeGym7::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym7_Text_0, EventScript_ChallengeGym7_Text_1, EventScript_ChallengeGym7_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym7_2
 	case 1, EventScript_ChallengeGym7_3
@@ -774,6 +783,7 @@ EventScript_ChallengeGym8::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeGym8_Text_0, EventScript_ChallengeGym8_Text_1, EventScript_ChallengeGym8_Text_2, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeGym8_2
 	case 1, EventScript_ChallengeGym8_3
@@ -872,6 +882,7 @@ EventScript_ChallengeTrainers::
 	message EventScript_ChallengeTrainers_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengeTrainers_Text_1, EventScript_ChallengeTrainers_Text_2, EventScript_ChallengeTrainers_Text_3, EventScript_ChallengeTrainers_Text_4, EventScript_ChallengeTrainers_Text_5, EventScript_ChallengeTrainers_Text_6, EventScript_ChallengeTrainers_Text_7, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengeTrainers_2
 	case 1, EventScript_ChallengeTrainers_3
@@ -1065,6 +1076,7 @@ EventScript_ChallengePostgameTrainers::
 	message Text_WhichTrainerToChallenge
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, EventScript_ChallengePostgameTrainers_Text_0, EventScript_ChallengePostgameTrainers_Text_1, EventScript_GymLeaderChoices_Text_9
+	closemessage
 	switch VAR_RESULT
 	case 0, EventScript_ChallengePostgameTrainers_2
 	case 1, EventScript_ChallengePostgameTrainers_3

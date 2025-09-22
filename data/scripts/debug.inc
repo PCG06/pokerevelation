@@ -138,7 +138,7 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	call Common_EventScript_TrainerBattleMenu
+	setvar VAR_CHALLENGERS_BEAT, 1
 	release
 	end
 

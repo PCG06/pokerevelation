@@ -4,17 +4,21 @@ script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Prajith: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_PRAJITH}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_PRAJITH) == true) {
-        msgbox("Prajith: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_PRAJITH}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Prajith: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_PRAJITH}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_PRAJITH, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Prajith!")
         waitfanfare
         waitmessage
-        msgbox("Prajith: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_PRAJITH}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_PRAJITH)
         setvar(VAR_DEFEATED_PRAJITH, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
 }
 
 script RevelationMap_Gym5_KindlerDelson { // Fire-type Trainer
-	trainerbattle_single(TRAINER_DELSON, "Delson: Before battle text!", "Defeat text…")
-	msgbox("Delson: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_DELSON, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_DELSON}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }

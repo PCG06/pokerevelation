@@ -4,17 +4,21 @@ script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Snehal: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_SNEHAL}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_SNEHAL) == true) {
-        msgbox("Snehal: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_SNEHAL}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Snehal: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_SNEHAL}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_SNEHAL, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Snehal!")
         waitfanfare
         waitmessage
-        msgbox("Snehal: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_SNEHAL}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_SNEHAL)
         setvar(VAR_DEFEATED_SNEHAL, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
 }
 
 script RevelationMap_Gym7_BirdKeeperHandam { // Flying-type Trainer
-	trainerbattle_single(TRAINER_HANDAM, "Handam: Before battle text!", "Defeat text…")
-	msgbox("Handam: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_HANDAM, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_HANDAM}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }

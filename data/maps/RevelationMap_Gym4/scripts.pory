@@ -4,17 +4,21 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Jaison: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_JAISON}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_JAISON) == true) {
-        msgbox("Jaison: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_JAISON}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Jaison: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_JAISON}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_JAISON, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Jaison!")
         waitfanfare
         waitmessage
-        msgbox("Jaison: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_JAISON}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_JAISON)
         setvar(VAR_DEFEATED_JAISON, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 }
 
 script RevelationMap_Gym4_SchoolKidDara { // Fairy-type Trainer
-	trainerbattle_single(TRAINER_DARA, "Dara: Before battle text!", "Defeat text…")
-	msgbox("Dara: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_DARA, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_DARA}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }

@@ -4,17 +4,21 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Prem: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_PREM}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_PREM) == true) {
-        msgbox("Prem: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_PREM}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Prem: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_PREM}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_PREM, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Prem!")
         waitfanfare
         waitmessage
-        msgbox("Prem: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_PREM}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_PREM)
         setvar(VAR_DEFEATED_PREM, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 }
 
 script RevelationMap_Gym3_PsychicDon { // Ghost-type Trainer
-	trainerbattle_single(TRAINER_DON, "Don: Before battle text!", "Defeat text…")
-	msgbox("Don: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_DON, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_DON}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }

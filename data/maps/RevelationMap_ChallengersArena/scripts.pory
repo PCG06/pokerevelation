@@ -16,11 +16,13 @@ script RevelationMap_ChallengersArena_PlayerEnters {
 	delay(8)
 	lock
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: Welcome to the Revelation\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"Welcome to the Revelation\n"
 			"Tournament!", MSGBOX_AUTOCLOSE)
 	delay(16)
 	applymoveplayer(moves(walk_up * 2, walk_left * 4, walk_up * 3, walk_right * 3))
-	msgbox("Announcer: On the left, entering the\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"On the left, entering the\n"
 			"arena to take on the Strong 6…\p"
 			"It's {PLAYER} from Littleroot Town,\n"
 			"Hoenn! Good luck!", MSGBOX_AUTOCLOSE)
@@ -58,20 +60,24 @@ script EventScript_MovePlayerToPos {
 }
 
 script RevelationMap_ChallengersArena_ChoiceMenu1 {
-	message("So, {PLAYER}!\n"
+	message("{SPEAKER NAME_ANNOUNCER}"
+			"So, {PLAYER}!\n"
 			"Are you ready for the Revelation\l"
 			"Tournament?")
 	waitmessage
 	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Battle", "Rest")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_ANNOUNCER}"
+					"Okay, get ready!", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
 			goto(RevelationMap_ChallengersArena_FightManvitha)
 
 		default:
 		case 1:
-			msgbox("Okay, take your time.", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_ANNOUNCER}"
+					"Okay, take your time.", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
 			release
 			end
@@ -79,13 +85,16 @@ script RevelationMap_ChallengersArena_ChoiceMenu1 {
 }
 
 script RevelationMap_ChallengersArena_ChoiceMenu2 {
-	message("So, {PLAYER}!\n"
+	message("{SPEAKER NAME_ANNOUNCER}"
+			"So, {PLAYER}!\n"
 			"Are you ready for the next round?")
 	waitmessage
 	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Continue", "Rest")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_ANNOUNCER}"
+					"Okay, get ready!", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
 			switch (var(VAR_CHALLENGERS_BEAT)) {
 				case 1:
@@ -110,19 +119,23 @@ script RevelationMap_ChallengersArena_ChoiceMenu2 {
 }
 
 script RevelationMap_ChallengersArena_ChoiceMenu3 {
-	message("So, {PLAYER}!\n"
+	message("{SPEAKER NAME_ANNOUNCER}"
+			"So, {PLAYER}!\n"
 			"Are you ready for the final battle?")
 	waitmessage
 	dynmultichoice(20, 8, FALSE, 2, 1, DYN_MULTICHOICE_CB_NONE, "Battle", "Rest")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox("Okay, get ready!", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_ANNOUNCER}"
+					"Okay, get ready!", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
 			call(RevelationMap_ChallengersArena_FightChampionYashas)
 
 		default:
 		case 1:
-			msgbox("Okay, take your time.", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_ANNOUNCER}"
+					"Okay, take your time.", MSGBOX_AUTOCLOSE)
 			call(EventScript_MovePlayerToPos)
 			release
 			end
@@ -132,15 +145,18 @@ script RevelationMap_ChallengersArena_ChoiceMenu3 {
 script RevelationMap_ChallengersArena_FightManvitha {
 	addobject(LOCALID_REVELATION_CHALLENGER_1)
 	applymove(LOCALID_REVELATION_CHALLENGER_1, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Manvitha: The sun always shines on\n"
+	msgbox("{SPEAKER NAME_MANVITHA}"
+			"The sun always shines on\n"
 			"the battlefield when I'm around.\l"
 			"Let's see if you can handle the heat!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_MANVITHA, "I wasn't expecting that…") // Sun team
-	msgbox("Manvitha: Not bad at all.\n"
+	msgbox("{SPEAKER NAME_MANVITHA}"
+			"Not bad at all.\n"
 			"You've got real potential.\l"
 			"Keep that fire burning!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} claims Round 1!\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"{PLAYER} claims Round 1!\n"
 			"The crowd is loving this!\l"
 			"Next up, Round 2!", MSGBOX_AUTOCLOSE)
 	applymove(LOCALID_REVELATION_CHALLENGER_1, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
@@ -156,16 +172,19 @@ script RevelationMap_ChallengersArena_FightKevin {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_2)
 	applymove(LOCALID_REVELATION_CHALLENGER_2, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Kevin: The forecast calls for rain…\n"
+	msgbox("{SPEAKER NAME_KEVIN}"
+			"The forecast calls for rain…\n"
 			"And pain for anyone who stands\l"
 			"in my way!\p"
 			"Let's make this interesting.", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_KEVIN, "Well played!") // Rain team
-	msgbox("Kevin: You earned that win.\n"
+	msgbox("{SPEAKER NAME_KEVIN}"
+			"You earned that win.\n"
 			"My storms couldn't wash you away.\l"
 			"Impressive!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} takes Round 2!\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"{PLAYER} takes Round 2!\n"
 			"The tension is electric!\l"
 			"Onward to Round 3!", MSGBOX_AUTOCLOSE)
 	applymove(LOCALID_REVELATION_CHALLENGER_2, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
@@ -181,15 +200,18 @@ script RevelationMap_ChallengersArena_FightLohith {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_3)
 	applymove(LOCALID_REVELATION_CHALLENGER_3, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Lohith: Hope you're ready for this!\n"
+	msgbox("{SPEAKER NAME_LOHITH}"
+			"Hope you're ready for this!\n"
 			"I don't hold back - not for anyone!\l"
 			"Prepare for total domination!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_LOHITH, "So close…") // Gen9 OU/Uber hyperoffence team
-	msgbox("Lohith: I gave it my best.\n"
+	msgbox("{SPEAKER NAME_LOHITH}"
+			"I gave it my best.\n"
 			"You're stronger than I anticipated.\l"
 			"Don't stop now!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: That's three wins for\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"That's three wins for\n"
 			"{PLAYER}!\l"
 			"The crowd is going wild!\l"
 			"Round 4 awaits!", MSGBOX_AUTOCLOSE)
@@ -206,15 +228,18 @@ script RevelationMap_ChallengersArena_FightAnmol {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_4)
 	applymove(LOCALID_REVELATION_CHALLENGER_4, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Anmol: Patience is a virtue…\n"
+	msgbox("{SPEAKER NAME_ANMOL}"
+			"Patience is a virtue…\n"
 			"And I have plenty to spare.\l"
 			"You're not getting past me.", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_ANMOL, "What a battle…") // Gen9 OU/Uber stall team
-	msgbox("Anmol: That was intense.\n"
+	msgbox("{SPEAKER NAME_ANMOL}"
+			"That was intense.\n"
 			"You broke through my defenses…\l"
 			"I'll have to rethink my strategy.", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} has conquered\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"{PLAYER} has conquered\n"
 			"Round 4!\l"
 			"The audience can't believe their eyes!\l"
 			"Two more to go!", MSGBOX_AUTOCLOSE)
@@ -231,15 +256,18 @@ script RevelationMap_ChallengersArena_FightArshad {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_5)
 	applymove(LOCALID_REVELATION_CHALLENGER_5, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Arshad: The heat is on!\n"
+	msgbox("{SPEAKER NAME_ARSHAD}"
+			"The heat is on!\n"
 			"My team burns brighter than any other!\l"
 			"Let's see if you can take the heat!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_ARSHAD, "You're better than I thought.") // Gen8 OU hyperoffence team
-	msgbox("Arshad: Great match!\n"
+	msgbox("{SPEAKER NAME_ARSHAD}"
+			"Great match!\n"
 			"You've got some serious firepower.\l"
 			"Don't let it burn out now!", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} now holds five\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"{PLAYER} now holds five\n"
 			"straight wins!\lThe crowd is on their feet!\lOne more victory to claim the title!", MSGBOX_AUTOCLOSE)
 	applymove(LOCALID_REVELATION_CHALLENGER_5, RevelationMap_ChallengersArena_Movement_WalkFromStadiumToExit)
 	playse(SE_SLIDING_DOOR)
@@ -254,17 +282,20 @@ script RevelationMap_ChallengersArena_FightMelwin {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHALLENGER_6)
 	applymove(LOCALID_REVELATION_CHALLENGER_6, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Melwin: You made it this far…\n"
+	msgbox("{SPEAKER NAME_MELWIN}"
+			"You made it this far…\n"
 			"But the real challenge starts now!\l"
 			"I won't go easy - not when the\l"
 			"championship is on the line!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_MELWIN, "I gave it all I had…") // Annoying Gen9 hyperoffence team
-	msgbox("Melwin: You earned your spot.\n"
+	msgbox("{SPEAKER NAME_MELWIN}"
+			"You earned your spot.\n"
 			"I threw everything I had at you,\l"
 			"but you just wouldn't go down!\p"
 			"Now go claim your title.", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: {PLAYER} has beaten all\n"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"{PLAYER} has beaten all\n"
 			"six challengers!\p"
 			"That means… {PLAYER} wins the\n"
 			"Revelation Tournament!\l"
@@ -282,7 +313,8 @@ script RevelationMap_ChallengersArena_FightMelwin {
 script RevelationMap_ChallengersArena_IntroduceChampionYashas {
 	lock
 	playse(SE_APPLAUSE)
-	msgbox("Announcer: BUT…\p"
+	msgbox("{SPEAKER NAME_ANNOUNCER}"
+			"BUT…\p"
 			"A final opponent remains…\n"
 			"The very first Champion of the\l"
 			"Revelation Tournament!\p"
@@ -300,13 +332,15 @@ script RevelationMap_ChallengersArena_FightChampionYashas {
 	playse(SE_SLIDING_DOOR)
 	addobject(LOCALID_REVELATION_CHAMPION)
 	applymove(LOCALID_REVELATION_CHAMPION, RevelationMap_ChallengersArena_Movement_WalkFromEntranceToStadium)
-	msgbox("Yashas: I've watched your battles.\n"
+	msgbox("{SPEAKER NAME_YASHAS}"
+			"I've watched your battles.\n"
 			"You've got skill, that's for sure.\l"
 			"But skill alone won't beat me.\p"
 			"Let's see if you've got what\n"
 			"it takes to be the best.", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_YASHAS, "Looks like I'm not No. 1 anymore…")
-	msgbox("Yashas: You're the real deal.\n"
+	msgbox("{SPEAKER NAME_YASHAS}"
+			"You're the real deal.\n"
 			"I haven't been pushed like that\l"
 			"in years.\p"
 			"The title of Champion is yours now.\n"

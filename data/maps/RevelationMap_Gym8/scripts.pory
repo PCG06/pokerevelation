@@ -4,17 +4,21 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Rajesh: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_RAJESH}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_RAJESH) == true) {
-        msgbox("Rajesh: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_RAJESH}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Rajesh: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_RAJESH}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_RAJESH, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Rajesh!")
         waitfanfare
         waitmessage
-        msgbox("Rajesh: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_RAJESH}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_RAJESH)
         setvar(VAR_DEFEATED_RAJESH, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 }
 
 script RevelationMap_Gym8_BirdKeeperDeon { // Dragon-type Trainer
-	trainerbattle_single(TRAINER_DEON, "Deon: Before battle text!", "Defeat text…")
-	msgbox("Deon: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_DEON, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_DEON}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }

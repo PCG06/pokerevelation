@@ -8,7 +8,8 @@ mapscripts RevelationMap_Lobby_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_REV_STATE, 6 {
 			setvar(VAR_REV_STATE, 1)
-			msgbox("Benny: Hey, {PLAYER}!", MSGBOX_AUTOCLOSE)
+			msgbox("{SPEAKER NAME_BENNY}"
+					"Hey, {PLAYER}!", MSGBOX_AUTOCLOSE)
 			emote(OBJ_EVENT_ID_PLAYER, EMOTE_EXCLAM)
 			turnplayer(DIR_NORTH)
 			applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_left, face_down))
@@ -21,7 +22,8 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			special(DrawWholeMapView)
 			playse(SE_CLICK)
 			waitmovement(0)
-			msgbox("Benny: Congrats on becoming the new\n"
+			msgbox("{SPEAKER NAME_BENNY}"
+					"Congrats on becoming the new\n"
 					"Champion!\l"
 					"I knew you had it in you!\l"
 					"But, do you have what it takes\l"
@@ -31,12 +33,14 @@ mapscripts RevelationMap_Lobby_MapScripts {
 			clearflag(B_FLAG_NO_WHITEOUT)
 			if (specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_WON) {
 				setflag(FLAG_DEFEATED_BENNY)
-				msgbox("Benny: That reminded me of the good\n"
-						"old days, when I was the Champion.\l"
+				msgbox("{SPEAKER NAME_BENNY}"
+						"That reminded me of the good old days,\n"
+						"when I was the Champion.\l"
 						"Thank you, {PLAYER}!\l"
 						"This was really inspiring!", MSGBOX_AUTOCLOSE)
 			} else {
-				msgbox("Benny: Ha!\n"
+				msgbox("{SPEAKER NAME_BENNY}"
+						"Ha!\n"
 						"Looks like I still got it in me.\l"
 						"Thank you for showing me that Pokémon\l"
 						"battling is for all ages!\l"
@@ -77,10 +81,11 @@ mapscripts RevelationMap_Lobby_MapScripts {
 script RevelationMap_Lobby_Trigger0 {
 	lock
 	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
-	msgbox("Benny: Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
+	msgbox("{SPEAKER NAME_BENNY}"
+			"Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
 	emoteplayer(EMOTE_EXCLAM)
 	turnplayer(DIR_SOUTH)
-	msgbox("Benny: You have not chosen any Pokémon,\n"
+	msgbox("You have not chosen any Pokémon,\n"
 			"yet!\l"
 			"How do you plan on challenging the\l"
 			"Trainers inside, with your bare fists?\l"
@@ -96,20 +101,24 @@ script RevelationMap_Lobby_EventScript_ProfPokemon {
 	lock
 	faceplayer
 	if (flag(FLAG_DEFEATED_BENNY) == true) {
-		message("Benny: Hey, {PLAYER}!\n"
+		message("{SPEAKER NAME_BENNY}"
+				"Hey, {PLAYER}!\n"
 				"Are you here for battle or a Pokémon?")
 		waitmessage
 		dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Pokémon", "Battle", "See ya!")
+		closemessage
 		switch (var(VAR_RESULT)) {
 			case 0:
 				goto(RevelationMap_Lobby_SetUpPkmnMenu)
 			case 1:
-				msgbox("Alright, {PLAYER}!\n"
+				msgbox("{SPEAKER NAME_BENNY}"
+						"Alright, {PLAYER}!\n"
 						"No holding back!", MSGBOX_AUTOCLOSE)
 				trainerbattle_no_intro(TRAINER_BENNY, "This has been fun!")
 			default:
 			case 2:
-				msgbox("Have a good day!", MSGBOX_AUTOCLOSE)
+				msgbox("{SPEAKER NAME_BENNY}"
+						"Have a good day!", MSGBOX_AUTOCLOSE)
 		}
 	} else {
 		goto(RevelationMap_Lobby_SetUpPkmnMenu)
@@ -125,18 +134,21 @@ script RevelationMap_Lobby_SetUpPkmnMenu {
 script RevelationMap_Lobby_Trigger1 {
 	lock
 	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
-	msgbox("Benny: {PLAYER},\n"
+	msgbox("{SPEAKER NAME_BENNY}"
+			"{PLAYER},\n"
 			"once you go through that door,\l"
 			"you cannot return, for any reasons.\l"
 			"Incase you did something wrong,\l"
 			"you will have to start over.\p"
-			"Benny: So, {PLAYER}, are you absolutely\n"
-			"sure that you're ready?", MSGBOX_YESNO)
+			"So, {PLAYER}, are you absolutely sure\n"
+			"that you're ready?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == TRUE) {
-		msgbox("Benny: Good luck, {PLAYER}!", MSGBOX_AUTOCLOSE)
+		msgbox("{SPEAKER NAME_BENNY}"
+				"Good luck, {PLAYER}!", MSGBOX_AUTOCLOSE)
 		setvar(VAR_REV_STATE, 2)
 	} else {
-		msgbox("Benny: Alright, take your time.", MSGBOX_AUTOCLOSE)
+		msgbox("{SPEAKER NAME_BENNY}"
+				"Alright, take your time.", MSGBOX_AUTOCLOSE)
 		applymoveplayer(moves(walk_down))
 	}
 }
@@ -242,6 +254,7 @@ script RevelationMap_Lobby_BattleChanger {
 			"battles?")
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 3, 0 DYN_MULTICHOICE_CB_NONE, "Music", "Environment", "See ya!")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			goto(RevelationMap_Lobby_MusicChanger)
@@ -482,17 +495,20 @@ script EventScript_ChooseMoveToTeach {
 
 script RevelationMap_Lobby_EventScript_Whiteout {
 	forcesave
-	msgbox("Benny: Ah, {PLAYER}!\n"
+	msgbox("{SPEAKER NAME_BENNY}"
+			"Ah, {PLAYER}!\n"
 			"I was cheering for you…\l"
 			"I'm sorry, it didn't go as you'd expect\l"
 			"it to.\p"
-			"Benny: Now, would you like to reset your\n"
+			"Now, would you like to reset your\n"
 			"challenge with a different team?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		msgbox("Benny: Alright, make sure to start a\n"
+		msgbox("{SPEAKER NAME_BENNY}"
+				"Alright, make sure to start a\n"
 				"new adventure.", MSGBOX_AUTOCLOSE)
 		callnative(0) // Soft resets the game. Thank you Hedara!
 	} else {
-		msgbox("Benny: Okay! Good luck, {PLAYER}!", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_BENNY}"
+			"Okay! Good luck, {PLAYER}!", MSGBOX_NPC)
 	}
 }

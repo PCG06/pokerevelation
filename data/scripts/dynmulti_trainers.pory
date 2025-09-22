@@ -4,6 +4,7 @@ script Common_EventScript_TrainerBattleMenu {
 	message("Select a category of Trainers.")
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Gym Leaders", "Challenge Trainers", "Postgame Trainers", "Nevermind")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			goto(EventScript_GymLeaderChoices)
@@ -59,6 +60,7 @@ script EventScript_GymLeaderChoices {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE,
 		"1. Jake's Gym", "2. Reeve's Gym", "3. Prem's Gym", "4. Jaison's Gym", "5. Prajith's Gym", "6. Varun's Gym", "7. Snehal's Gym", "8. Rajesh's Gym", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			goto(EventScript_Gym1Trainers)
@@ -89,6 +91,7 @@ script EventScript_ChallengeGym1 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 	"Bug Catcher Pawan", "Camper Prajesh", "Leader Jake", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_PAWAN)) {
@@ -146,6 +149,7 @@ script EventScript_ChallengeGym2 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Super Nerd Hanston", "Burglar Premal", "Leader Reeve", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_HANSTON)) {
@@ -203,6 +207,7 @@ script EventScript_ChallengeGym3 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Psychic Rashel", "Psychic Don", "Leader Prem", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_RASHEL)) {
@@ -260,6 +265,7 @@ script EventScript_ChallengeGym4 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Lady Akshara", "School Kid Dara", "Leader Jaison", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_AKSHARA)) {
@@ -317,6 +323,7 @@ script EventScript_ChallengeGym5 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Black Belt Gilston", "Kindler Delson", "Leader Prajith", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_GILSTON)) {
@@ -374,6 +381,7 @@ script EventScript_ChallengeGym6 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Guitarist Monvish", "Scientist Darwin", "Leader Varun", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_MONVISH)) {
@@ -431,6 +439,7 @@ script EventScript_ChallengeGym7 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Fisherman Adithya", "Bird Keeper Handam", "Leader Snehal", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_ADITHYA)) {
@@ -488,6 +497,7 @@ script EventScript_ChallengeGym8 {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
 		"Expert Rion", "Dragon Tamer Deon", "Leader Rajesh", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_RION)) {
@@ -547,6 +557,7 @@ script EventScript_ChallengeTrainers {
 		"1. Challenger Manvitha", "2. Challenger Kevin", "3. Challenger Lohith",
 		"4. Challenger Anmol", "5. Challenger Arshad", "6. Challenger Melwin",
 		"7. Champion Bardar", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_MANVITHA)) {
@@ -664,6 +675,7 @@ script EventScript_ChallengePostgameTrainers {
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
 		"1. Professor Benny", "2. Master Aaron", "Back")
+	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
 			if (defeated(TRAINER_BENNY)) {

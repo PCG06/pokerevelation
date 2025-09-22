@@ -44,8 +44,9 @@ script RevelationMap_EntryPoint_TriggerBugCatcherPawan { // Bug-type Trainer
 	emote(LOCALID_REVELATION_BUG_CATCHER, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_BUG_CATCHER, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_PAWAN, "Pawan: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BugCatcherPawan)
-	msgbox("Pawan: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PAWAN, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BugCatcherPawan)
+	msgbox("{SPEAKER NAME_PAWAN}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -56,11 +57,13 @@ script RevelationMap_EntryPoint_BugCatcherPawan {
 	} elif (var(VAR_DEFEATED_JAKE) == 2) {
 		lock
 		faceplayer
-		msgbox("Pawan:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_PAWAN}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Pawan: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_PAWAN}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -70,8 +73,9 @@ script RevelationMap_EntryPoint_TriggerSuperNerdHanston { // Steel-type Trainer
 	emote(LOCALID_REVELATION_SUPER_NERD, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_SUPER_NERD, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_HANSTON, "Hanston: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_SuperNerdHanston)
-	msgbox("Hanston:  After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_HANSTON, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_SuperNerdHanston)
+	msgbox("{SPEAKER NAME_HANSTON}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -82,11 +86,13 @@ script RevelationMap_EntryPoint_SuperNerdHanston {
 	} elif (var(VAR_DEFEATED_REEVE) == 2) {
 		lock
 		faceplayer
-		msgbox("Hanston:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_HANSTON}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Hanston: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_HANSTON}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -96,8 +102,9 @@ script RevelationMap_EntryPoint_TriggerHexManiacRashel { // Psychic-type Trainer
 	emote(LOCALID_REVELATION_HEX_MANIAC, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_HEX_MANIAC, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_RASHEL, "Rashel: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_HexManiacRashel)
-	msgbox("Rashel:  After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_RASHEL, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_HexManiacRashel)
+	msgbox("{SPEAKER NAME_RASHEL}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -108,11 +115,13 @@ script RevelationMap_EntryPoint_HexManiacRashel {
 	} elif (var(VAR_DEFEATED_PREM) == 2) {
 		lock
 		faceplayer
-		msgbox("Rashel:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_RASHEL}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Rashel: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_RASHEL}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -122,8 +131,9 @@ script RevelationMap_EntryPoint_TriggerLadyAkshara { // Ice-type Trainer
 	emote(LOCALID_REVELATION_LADY, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_LADY, MoveLeftToPlayer)
 	turnplayer(DIR_EAST)
-	trainerbattle_single(TRAINER_AKSHARA, "Akshara: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
-	msgbox("Akshara:  After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_AKSHARA, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_LadyAkshara)
+	msgbox("{SPEAKER NAME_AKSHARA}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -134,11 +144,13 @@ script RevelationMap_EntryPoint_LadyAkshara {
 	} elif (var(VAR_DEFEATED_JAISON) == 2) {
 		lock
 		faceplayer
-		msgbox("Akshara:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_AKSHARA}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Akshara: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_AKSHARA}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -148,7 +160,9 @@ script RevelationMap_EntryPoint_TriggerBlackBeltGilston { // Fighting-type Train
 	emote(LOCALID_REVELATION_BLACK_BELT, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_BLACK_BELT, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
-	trainerbattle_single(TRAINER_GILSTON, "Gilston: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BlackBeltGilston)
+	trainerbattle_single(TRAINER_GILSTON, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_BlackBeltGilston)
+	msgbox("{SPEAKER NAME_GILSTON}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -159,11 +173,13 @@ script RevelationMap_EntryPoint_BlackBeltGilston {
 	} elif (var(VAR_DEFEATED_PRAJITH) == 2) {
 		lock
 		faceplayer
-		msgbox("Gilston:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_GILSTON}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Gilston: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_GILSTON}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -173,7 +189,9 @@ script RevelationMap_EntryPoint_TriggerGuiratistMonvish { // Flying-type Trainer
 	emote(LOCALID_REVELATION_GUITARIST, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_GUITARIST, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
-	trainerbattle_single(TRAINER_MONVISH, "Monvish: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_GuiratistMonvish)
+	trainerbattle_single(TRAINER_MONVISH, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_GuiratistMonvish)
+	msgbox("{SPEAKER NAME_MONVISH}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -184,11 +202,13 @@ script RevelationMap_EntryPoint_GuiratistMonvish {
 	} elif (var(VAR_DEFEATED_VARUN) == 2) {
 		lock
 		faceplayer
-		msgbox("Monvish:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_MONVISH}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Monvish: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_MONVISH}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -198,7 +218,9 @@ script RevelationMap_EntryPoint_TriggerFishermanAdithya { // Water-type Trainer
 	emote(LOCALID_REVELATION_FISHERMAN, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_FISHERMAN, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
-	trainerbattle_single(TRAINER_ADITHYA, "Adithya: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_FishermanAdithya)
+	trainerbattle_single(TRAINER_ADITHYA, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_FishermanAdithya)
+	msgbox("{SPEAKER NAME_ADITHYA}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -209,11 +231,13 @@ script RevelationMap_EntryPoint_FishermanAdithya {
 	} elif (var(VAR_DEFEATED_SNEHAL) == 2) {
 		lock
 		faceplayer
-		msgbox("Adithya:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_ADITHYA}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Adithya: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_ADITHYA}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end
@@ -223,7 +247,9 @@ script RevelationMap_EntryPoint_TriggerExpertRion { // Ground-type Trainer
 	emote(LOCALID_REVELATION_EXPERT, EMOTE_EXCLAM)
 	applymove(LOCALID_REVELATION_EXPERT, MoveRightToPlayer)
 	turnplayer(DIR_WEST)
-	trainerbattle_single(TRAINER_RION, "Rion: Before battle text!", "Defeat text…", RevelationMap_EntryPoint_ExpertRion)
+	trainerbattle_single(TRAINER_RION, "Before battle text!", "Defeat text…", RevelationMap_EntryPoint_ExpertRion)
+	msgbox("{SPEAKER NAME_RION}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -234,11 +260,13 @@ script RevelationMap_EntryPoint_ExpertRion {
 	} elif (var(VAR_DEFEATED_RAJESH) == 2) {
 		lock
 		faceplayer
-		msgbox("Rion:  After battle text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_RION}"
+            	"After battle text.", MSGBOX_NPC)
 	} else {
 		lock
 		faceplayer
-		msgbox("Rion: Random text.", MSGBOX_NPC)
+		msgbox("{SPEAKER NAME_RION}"
+            	"Random text.", MSGBOX_NPC)
 	}
 	release
 	end

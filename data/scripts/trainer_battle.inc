@@ -52,6 +52,7 @@ EventScript_DoNoIntroTrainerBattle::
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	special PlayTrainerEncounterMusic
 	dotrainerbattle
+	closemessage
 	gotopostbattlescript
 
 EventScript_TryDoRematchBattle::

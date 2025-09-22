@@ -4,17 +4,21 @@ script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
     lock
     faceplayer
     if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("Jake: Go to Challengers' Arena text", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_JAKE}"
+                "Go to Challengers' Arena text", MSGBOX_NPC)
     } elif (flag(FLAG_DEFEATED_JAKE) == true) {
-        msgbox("Jake: Defeated text!", MSGBOX_NPC)
+        msgbox("{SPEAKER NAME_JAKE}"
+                "Defeated text!", MSGBOX_NPC)
     } else {
-        msgbox("Jake: Before battle text!", MSGBOX_DEFAULT)
+        msgbox("{SPEAKER NAME_JAKE}"
+                "Before battle text!", MSGBOX_DEFAULT)
         trainerbattle_no_intro(TRAINER_JAKE, "Defeat text…")
         playfanfare(MUS_OBTAIN_BADGE)
         message("{PLAYER} beat Jake!")
         waitfanfare
         waitmessage
-        msgbox("Jake: After battle text.", MSGBOX_AUTOCLOSE)
+        msgbox("{SPEAKER NAME_JAKE}"
+                "After battle text.", MSGBOX_AUTOCLOSE)
         setflag(FLAG_DEFEATED_JAKE)
         setvar(VAR_DEFEATED_JAKE, 1)
         addvar(VAR_GYM_DEFEATED_COUNTER, 1)
@@ -24,7 +28,8 @@ script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
 }
 
 script RevelationMap_Gym1_CamperPrajesh { // Grass-type Trainer
-	trainerbattle_single(TRAINER_PRAJESH, "Prajesh: Before battle text!", "Defeat text…")
-	msgbox("Prajesh: After battle text.", MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PRAJESH, "Before battle text!", "Defeat text…")
+	msgbox("{SPEAKER NAME_PRAJESH}"
+            "After battle text.", MSGBOX_AUTOCLOSE)
 	end
 }
