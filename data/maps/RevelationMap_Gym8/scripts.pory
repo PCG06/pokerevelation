@@ -1,35 +1,39 @@
 mapscripts RevelationMap_Gym8_MapScripts {}
 
 script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_RAJESH}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_RAJESH) == true) {
-        msgbox("{SPEAKER NAME_RAJESH}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_RAJESH}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_RAJESH, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Rajesh!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_RAJESH}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_RAJESH)
-        setvar(VAR_DEFEATED_RAJESH, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_RAJESH}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_RAJESH) == true) {
+		msgbox("{SPEAKER NAME_RAJESH}"
+				format("You've already conquered my dragons.\p"
+				"There's nothing more I can test."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_RAJESH}"
+				format("Dragons are the peak of Pokémon strength, majestic, ancient, and feared by all.\p"
+				"If you want this badge, prove that your courage burns hotter than a dragon's fire!"), MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_RAJESH, "Impossible…\nMy dragons, brought to their knees…!")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Rajesh!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_RAJESH}"
+				format("You've tamed the storm of dragons itself.\p"
+				"That spirit is worthy of respect… and of this badge.\p"
+				"Carry it proudly, the path ahead will test you like never before!"), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_RAJESH)
+		setvar(VAR_DEFEATED_RAJESH, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym8_BirdKeeperDeon { // Dragon-type Trainer
-	trainerbattle_single(TRAINER_DEON, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_DEON, "Dragons are fierce, but I've\ntrained under Rajesh.\pYou'll need more than luck to break\nthrough!", "So this is the strength of a future Champion… impressive.")
 	msgbox("{SPEAKER NAME_DEON}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+			format("If you could beat me, maybe you really do stand a chance against Rajesh."), MSGBOX_AUTOCLOSE)
 	end
 }

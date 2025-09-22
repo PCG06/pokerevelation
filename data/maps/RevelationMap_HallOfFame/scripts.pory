@@ -9,7 +9,7 @@ mapscripts RevelationMap_HallOfFame_MapScripts {
 			setvar(VAR_REV_STATE, 5)
 			call(RevelationMap_HallOfFame_EventScript_EnterHallOfFame)
 		}
-    ]
+	]
 }
 
 script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
@@ -20,11 +20,11 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
 	msgbox("{SPEAKER NAME_YASHAS}"
 			"This room…\p"
-	        "This is where we keep records of\n"
-	        "Pokémon that prevailed through\l"
-	        "harsh battles.\p"
-	        "It is here that the League Champions\n"
-	        "are honored.", MSGBOX_DEFAULT)
+			"This is where we keep records of\n"
+			"Pokémon that prevailed through\l"
+			"harsh battles.\p"
+			"It is here that the League Champions\n"
+			"are honored.", MSGBOX_DEFAULT)
 	closemessage
 	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, moves(walk_up * 5))
 	applymoveplayer(moves(walk_up * 5))
@@ -33,9 +33,9 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	applymoveplayer(Common_Movement_WalkInPlaceFasterLeft)
 	msgbox("{SPEAKER NAME_YASHAS}"
 			"Come on, let's record your\n"
-            "name as a Trainer who triumphed over\l"
-            "the Pokémon League, and the names of\l"
-            "the partners who battled with you.", MSGBOX_DEFAULT)
+			"name as a Trainer who triumphed over\l"
+			"the Pokémon League, and the names of\l"
+			"the partners who battled with you.", MSGBOX_DEFAULT)
 	closemessage
 	applymovement(LOCALID_HALL_OF_FAME_CHAMPION, Common_Movement_WalkInPlaceFasterUp)
 	applymoveplayer(Common_Movement_WalkInPlaceFasterUp)
@@ -55,7 +55,7 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 }
 
 script RevelationMap_HallOfFame_EventScript_SetFlagsAndVars {
-    setvar(VAR_GYM_DEFEATED_COUNTER, 0)
+	setvar(VAR_GYM_DEFEATED_COUNTER, 0)
 	setvar(VAR_CHALLENGERS_BEAT, 0)
 	setvar(VAR_REV_STATE, 2)
 

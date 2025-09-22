@@ -1,35 +1,41 @@
 mapscripts RevelationMap_Gym3_MapScripts {}
 
 script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_PREM}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_PREM) == true) {
-        msgbox("{SPEAKER NAME_PREM}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_PREM}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_PREM, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Prem!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_PREM}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_PREM)
-        setvar(VAR_DEFEATED_PREM, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_PREM}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_PREM) == true) {
+		msgbox("{SPEAKER NAME_PREM}"
+				format("The spirits whisper of your victory…\p"
+				"There's nothing more I can test."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_PREM}"
+				format("Do you feel it? The chill in the air…\p"
+				"This Gym is where the living meet the spirits.\p"
+				"Don't be afraid, unless you should be."), MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_PREM, "Heh…\nYou've faced your fears and won…")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Prem!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_PREM}"
+				format("You were not shaken by the unknown.\p"
+				"That resolve is what truly frightens the spirits.\p"
+				"Take this Badge, and let it guide you through the shadows."), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_PREM)
+		setvar(VAR_DEFEATED_PREM, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym3_PsychicDon { // Ghost-type Trainer
-	trainerbattle_single(TRAINER_DON, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_DON, "The spirits speak to me…\pThey say your journey ends here!", "The voices…\nThey were wrong?")
 	msgbox("{SPEAKER NAME_DON}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+			format("The spirits are restless.\p"
+			"Perhaps they wanted you to win all along."), MSGBOX_AUTOCLOSE)
 	end
 }

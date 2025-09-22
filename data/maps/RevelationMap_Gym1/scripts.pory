@@ -1,35 +1,42 @@
 mapscripts RevelationMap_Gym1_MapScripts {}
 
 script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_JAKE}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_JAKE) == true) {
-        msgbox("{SPEAKER NAME_JAKE}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_JAKE}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_JAKE, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Jake!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_JAKE}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_JAKE)
-        setvar(VAR_DEFEATED_JAKE, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_JAKE}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_JAKE) == true) {
+		msgbox("{SPEAKER NAME_JAKE}"
+			format("Enjoying the victory? Good!\p"
+			"But remember, the road only gets steeper from here."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_JAKE}"
+			   format("So you've made it here already?\p"
+			   "Not bad for a rookie! But strength isn't just about speed.\p"
+			   "Like a Rock, you need to stand firm!\p"
+			   "Show me if you've got what it takes!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_JAKE, "Whoa!\nYou're tougher than I thought!")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Jake!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_JAKE}"
+				format("You really shook me up!\p"
+				"I guess even solid Rock can crack against the right strike.\p"
+				"Here, take this Badge. It'll mark the start of your climb!"), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_JAKE)
+		setvar(VAR_DEFEATED_JAKE, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym1_CamperPrajesh { // Grass-type Trainer
-	trainerbattle_single(TRAINER_PRAJESH, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_PRAJESH, "Don't think this Gym is just rocks!\nI'll show you how tough even Grass\lcan be!", "Guess I got… cut down.")
 	msgbox("{SPEAKER NAME_PRAJESH}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+	   format("Whew… I thought I had the advantage.\p"
+	   "Jake is way sturdier than me though!"), MSGBOX_AUTOCLOSE)
 	end
 }

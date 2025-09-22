@@ -1,35 +1,41 @@
 mapscripts RevelationMap_Gym5_MapScripts {}
 
 script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_PRAJITH}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_PRAJITH) == true) {
-        msgbox("{SPEAKER NAME_PRAJITH}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_PRAJITH}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_PRAJITH, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Prajith!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_PRAJITH}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_PRAJITH)
-        setvar(VAR_DEFEATED_PRAJITH, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_PRAJITH}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_PRAJITH) == true) {
+		msgbox("{SPEAKER NAME_PRAJITH}"
+				format("You've already felt my heat.\p"
+				"I won't burn you again."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_PRAJITH}"
+				format("The flames roar here!\p"
+				"Only trainers with courage can withstand the heat.\p"
+				"Step forward if you dare, let's see if you can handle fire!"), MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_PRAJITH, "Ahh!\nYou've doused my flames!")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Prajith!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_PRAJITH}"
+				format("The fire bends to your will.\p"
+				"That determination is hotter than any blaze.\p"
+				"Take this Badge, proof that you can endure any inferno!"), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_PRAJITH)
+		setvar(VAR_DEFEATED_PRAJITH, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym5_KindlerDelson { // Fire-type Trainer
-	trainerbattle_single(TRAINER_DELSON, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_DELSON, "My flames will scorch everything in\ntheir path!\pCan you handle the heat?", "Sparks… extinguished?!")
 	msgbox("{SPEAKER NAME_DELSON}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+			format("Wow… you really put out my fire.\p"
+			"Leader Prajith's flames will be even tougher!"), MSGBOX_AUTOCLOSE)
 	end
 }

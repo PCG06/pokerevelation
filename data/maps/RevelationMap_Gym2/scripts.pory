@@ -1,35 +1,41 @@
 mapscripts RevelationMap_Gym2_MapScripts {}
 
 script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_REEVE}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_REEVE) == true) {
-        msgbox("{SPEAKER NAME_REEVE}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_REEVE}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_REEVE, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Reeve!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_REEVE}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_REEVE)
-        setvar(VAR_DEFEATED_REEVE, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_REEVE}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_REEVE) == true) {
+		msgbox("{SPEAKER NAME_REEVE}"
+				format("You've already proven your courage.\p"
+				"I have nothing further to add."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_REEVE}"
+				format("So, you've found your way into the dark…\p"
+				"Most trainers stumble when the light fades.\p"
+				"Can you battle without fear? Let's see."), MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_REEVE, "Heh…\nYou cut through the darkness!")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Reeve!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_REEVE}"
+				format("Impressive. You didn't let the shadows fool you.\p"
+				"You fought with focus, even against the unknown.\p"
+				"Take this Badge… and let it remind you that even the dark can be conquered."), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_REEVE)
+		setvar(VAR_DEFEATED_REEVE, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym2_BurglarPremal { // Dark-type Trainer
-	trainerbattle_single(TRAINER_PREMAL, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_PREMAL, "Heh, darkness is perfect for someone\nlike me.\pLet's see if you can spot my tricks!", "What?! Outplayed in the dark?")
 	msgbox("{SPEAKER NAME_PREMAL}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+			format("Guess I'm not as slick as I thought.\p"
+			"Reeve's shadows are way tougher than mine."), MSGBOX_AUTOCLOSE)
 	end
 }

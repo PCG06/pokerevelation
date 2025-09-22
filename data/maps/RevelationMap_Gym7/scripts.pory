@@ -1,35 +1,41 @@
 mapscripts RevelationMap_Gym7_MapScripts {}
 
 script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
-    lock
-    faceplayer
-    if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
-        msgbox("{SPEAKER NAME_SNEHAL}"
-                "Go to Challengers' Arena text", MSGBOX_NPC)
-    } elif (flag(FLAG_DEFEATED_SNEHAL) == true) {
-        msgbox("{SPEAKER NAME_SNEHAL}"
-                "Defeated text!", MSGBOX_NPC)
-    } else {
-        msgbox("{SPEAKER NAME_SNEHAL}"
-                "Before battle text!", MSGBOX_DEFAULT)
-        trainerbattle_no_intro(TRAINER_SNEHAL, "Defeat text…")
-        playfanfare(MUS_OBTAIN_BADGE)
-        message("{PLAYER} beat Snehal!")
-        waitfanfare
-        waitmessage
-        msgbox("{SPEAKER NAME_SNEHAL}"
-                "After battle text.", MSGBOX_AUTOCLOSE)
-        setflag(FLAG_DEFEATED_SNEHAL)
-        setvar(VAR_DEFEATED_SNEHAL, 1)
-        addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-    }
-    release
-    end
+	lock
+	faceplayer
+	if (var(VAR_GYM_DEFEATED_COUNTER) == 8) {
+		msgbox("{SPEAKER NAME_SNEHAL}"
+				"Go to the Challengers' Arena!", MSGBOX_NPC)
+	} elif (flag(FLAG_DEFEATED_SNEHAL) == true) {
+		msgbox("{SPEAKER NAME_SNEHAL}"
+				format("Once you've flown this high…\p"
+				"there's nothing more I can show you."), MSGBOX_NPC)
+	} else {
+		msgbox("{SPEAKER NAME_SNEHAL}"
+				format("The sky is boundless, just like our potential.\p"
+				"But not everyone can ride the winds.\p"
+				"Show me, can you soar as high as I can?"), MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_SNEHAL, "You've clipped my wings…!")
+		playfanfare(MUS_OBTAIN_BADGE)
+		message("{PLAYER} beat Snehal!")
+		waitfanfare
+		waitmessage
+		msgbox("{SPEAKER NAME_SNEHAL}"
+				format("You rode the winds with grace and strength.\p"
+				"Few can rise this high without falling.\p"
+				"Take this Badge, it proves you can fly among the best."), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_SNEHAL)
+		setvar(VAR_DEFEATED_SNEHAL, 1)
+		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+	}
+	release
+	end
 }
 
 script RevelationMap_Gym7_BirdKeeperHandam { // Flying-type Trainer
-	trainerbattle_single(TRAINER_HANDAM, "Before battle text!", "Defeat text…")
+	trainerbattle_single(TRAINER_HANDAM, "My Flying-types will take you down\nfrom above!", "Grounded…? I can't believe it!")
 	msgbox("{SPEAKER NAME_HANDAM}"
-            "After battle text.", MSGBOX_AUTOCLOSE)
+			format("You've got talent.\p"
+			"But battling Snehal is like facing a storm in the sky."), MSGBOX_AUTOCLOSE)
 	end
 }
