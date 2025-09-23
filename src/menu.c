@@ -23,6 +23,7 @@
 #include "text_window.h"
 #include "window.h"
 #include "match_call.h"
+#include "overworld.h"
 #include "config/overworld.h"
 #include "constants/songs.h"
 
@@ -2272,11 +2273,8 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
         case SAVE_MENU_NAME:
             StringCopy(string, gSaveBlock2Ptr->playerName);
             break;
-        case SAVE_MENU_CAUGHT:
-            if (IsNationalPokedexEnabled())
-                string = ConvertIntToDecimalStringN(string, GetNationalPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 4);
-            else
-                string = ConvertIntToDecimalStringN(string, GetHoennPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 3);
+        case SAVE_MENU_HALL_OF_FAME:
+            string = ConvertIntToDecimalStringN(string, GetGameStat(GAME_STAT_ENTERED_HOF), STR_CONV_MODE_LEFT_ALIGN, 3);
             *string = EOS;
             break;
         case SAVE_MENU_PLAY_TIME:
@@ -2291,35 +2289,11 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             {
                 u16 battlesWon = VarGet(VAR_BATTLES_WON);
                 u16 battlesLost = VarGet(VAR_BATTLES_LOST);
+                u8 digitsW = (battlesWon  < 100 ? 2 : (battlesWon  < 1000 ? 3 : 4));
+                u8 digitsL = (battlesLost < 100 ? 2 : (battlesLost < 1000 ? 3 : 4));
 
-                if (battlesWon)
-                {
-                    if (battlesWon < 100)
-                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 2);
-                    else if (battlesWon < 1000)
-                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 3);
-                    else
-                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 4);
-                }
-                else
-                {
-                    ConvertIntToDecimalStringN(gStringVar1, 0, STR_CONV_MODE_LEADING_ZEROS, 2);
-                }
-
-                if (battlesLost)
-                {
-                    if (battlesLost < 100)
-                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 2);
-                    else if (battlesLost < 1000)
-                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 3);
-                    else
-                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 4);
-                }
-                else
-                {
-                    ConvertIntToDecimalStringN(gStringVar2, 0, STR_CONV_MODE_LEADING_ZEROS, 2);
-                }
-
+                ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, digitsW);
+                ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, digitsL);
                 StringAppend(gStringVar1, gText_Slash);
                 StringAppend(gStringVar1, gStringVar2);
                 StringCopy(string, gStringVar1);

@@ -1661,6 +1661,12 @@
 	.byte \stat
 	.endm
 
+	@ Stores the value of the specified game stat in VAR_RESULT
+	.macro getgamestat stat:req
+	callnative ScrCmd_getgamestat, requests_effects=1
+	.byte \stat
+	.endm
+
 	@ Sets the destination that using an Escape Rope or Dig will take the player to.
 	@ Warp commands can be given either the id of which warp location to go to on the destination map
 	@ or a pair of x/y coordinates to go to directly on the destination map.

@@ -774,6 +774,16 @@ bool8 ScrCmd_incrementgamestat(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_getgamestat(struct ScriptContext *ctx)
+{
+    u32 statId = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    gSpecialVar_Result = GetGameStat(statId);
+    return FALSE;
+}
+
 bool8 ScrCmd_animateflash(struct ScriptContext *ctx)
 {
     u32 level = ScriptReadByte(ctx);

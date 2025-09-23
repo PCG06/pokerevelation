@@ -45,9 +45,8 @@ script RevelationMap_HallOfFame_EventScript_EnterHallOfFame {
 	delay(40)
 	setvar(VAR_TEMP_1, 1)
 	setflag(FLAG_IS_CHAMPION)
-	addvar(VAR_HALL_OF_FAME, 1)
 	call(RevelationMap_HallOfFame_EventScript_SetFlagsAndVars)
-	if (var(VAR_HALL_OF_FAME) == 1) {
+	if (getgamestat(GAME_STAT_ENTERED_HOF) == 0) { // It'll be set to 1 after the game saves in HandleSavingData()
 		givemonset(SPECIES_MEWTWO_APOCALYPSE, OT_ID_REEVE)
 		givemonset(SPECIES_ZOJZION, OT_ID_VARUN)
 		givemonset(SPECIES_MANTISTRIKE, OT_ID_JAKE)
