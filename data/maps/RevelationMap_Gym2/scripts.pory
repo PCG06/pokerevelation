@@ -27,6 +27,7 @@ script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 		setflag(FLAG_DEFEATED_REEVE)
 		setvar(VAR_DEFEATED_REEVE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_HANSTON)
 	}
 	release
 	end

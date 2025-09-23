@@ -55,34 +55,36 @@
 #define FLAG_NO_ENCOUNTER           0x28
 #define FLAG_NO_COLLISION           0x29
 #define FLAG_MOVE_UNION_ROOM_CHECK  0x2A
+#define FLAG_FRONTIER_LEVEL_50      0x2B
+#define FLAG_EVENT_MOVE_RELEARNER   0x2C
 
-#define FLAG_DEFEATED_BENNY         0x2B
-#define FLAG_HIDE_CHALLENGER_1      0x2C
-#define FLAG_HIDE_CHALLENGER_2      0x2D
-#define FLAG_HIDE_CHALLENGER_3      0x2E
-#define FLAG_HIDE_CHALLENGER_4      0x2F
-#define FLAG_HIDE_CHALLENGER_5      0x30
-#define FLAG_HIDE_CHALLENGER_6      0x31
-#define FLAG_HIDE_CHAMPION          0x32
-#define FLAG_DEFEATED_JAKE          0x33
-#define FLAG_DEFEATED_REEVE         0x34
-#define FLAG_DEFEATED_PREM          0x35
-#define FLAG_DEFEATED_JAISON        0x36
-#define FLAG_DEFEATED_PRAJITH       0x37
-#define FLAG_DEFEATED_VARUN         0x38
-#define FLAG_DEFEATED_SNEHAL        0x39
-#define FLAG_DEFEATED_RAJESH        0x3A
+#define FLAG_DEFEATED_BENNY         0x2D
+#define FLAG_DEFEATED_JAKE          0x2E
+#define FLAG_DEFEATED_REEVE         0x2F
+#define FLAG_DEFEATED_PREM          0x30
+#define FLAG_DEFEATED_JAISON        0x31
+#define FLAG_DEFEATED_PRAJITH       0x32
+#define FLAG_DEFEATED_VARUN         0x33
+#define FLAG_DEFEATED_SNEHAL        0x34
+#define FLAG_DEFEATED_RAJESH        0x35
 
-#define FLAG_FRONTIER_LEVEL_50      0x3B
-#define FLAG_EVENT_MOVE_RELEARNER   0x3C
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_HIDE_PAWAN             0x36
+#define FLAG_HIDE_HANSTON           0x37
+#define FLAG_HIDE_RASHEL            0x38
+#define FLAG_HIDE_AKSHARA           0x39
+#define FLAG_HIDE_GILSTON           0x3A
+#define FLAG_HIDE_MONVISH           0x3B
+#define FLAG_HIDE_ADITHYA           0x3C
+#define FLAG_HIDE_RION              0x3D
+
+#define FLAG_HIDE_MANVITHA      0x3E
+#define FLAG_HIDE_KEVIN      0x3F
+#define FLAG_HIDE_LOHITH      0x40
+#define FLAG_HIDE_ANMOL      0x41
+#define FLAG_HIDE_ARSHAD      0x42
+#define FLAG_HIDE_MELWIN      0x43
+#define FLAG_HIDE_CHAMPION          0x44
+
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag

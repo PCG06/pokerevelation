@@ -27,6 +27,7 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 		setflag(FLAG_DEFEATED_VARUN)
 		setvar(VAR_DEFEATED_VARUN, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_MONVISH)
 	}
 	release
 	end

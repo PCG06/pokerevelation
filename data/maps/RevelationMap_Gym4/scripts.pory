@@ -27,6 +27,7 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 		setflag(FLAG_DEFEATED_JAISON)
 		setvar(VAR_DEFEATED_JAISON, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_AKSHARA)
 	}
 	release
 	end

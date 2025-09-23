@@ -26,6 +26,7 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 		setflag(FLAG_DEFEATED_RAJESH)
 		setvar(VAR_DEFEATED_RAJESH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_RION)
 	}
 	release
 	end

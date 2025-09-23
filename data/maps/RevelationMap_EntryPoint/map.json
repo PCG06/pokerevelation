@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_REVELATION_BUG_CATCHER",
@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_BugCatcherPawan",
-      "flag": "0"
+      "flag": "FLAG_HIDE_PAWAN"
     },
     {
       "local_id": "LOCALID_REVELATION_SUPER_NERD",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_SuperNerdHanston",
-      "flag": "0"
+      "flag": "FLAG_HIDE_HANSTON"
     },
     {
       "local_id": "LOCALID_REVELATION_HEX_MANIAC",
@@ -54,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_HexManiacRashel",
-      "flag": "0"
+      "flag": "FLAG_HIDE_RASHEL"
     },
     {
       "local_id": "LOCALID_REVELATION_LADY",
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_LadyAkshara",
-      "flag": "0"
+      "flag": "FLAG_HIDE_AKSHARA"
     },
     {
       "local_id": "LOCALID_REVELATION_BLACK_BELT",
@@ -82,12 +82,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_BlackBeltGilston",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GILSTON"
     },
     {
       "local_id": "LOCALID_REVELATION_GUITARIST",
       "graphics_id": "OBJ_EVENT_GFX_GUITARIST",
-      "x": 31,
+      "x": 32,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -96,7 +96,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_GuiratistMonvish",
-      "flag": "0"
+      "flag": "FLAG_HIDE_MONVISH"
     },
     {
       "local_id": "LOCALID_REVELATION_FISHERMAN",
@@ -110,7 +110,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_FishermanAdithya",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ADITHYA"
     },
     {
       "local_id": "LOCALID_REVELATION_EXPERT",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RevelationMap_EntryPoint_ExpertRion",
-      "flag": "0"
+      "flag": "FLAG_HIDE_RION"
     }
   ],
   "warp_events": [
@@ -199,10 +199,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

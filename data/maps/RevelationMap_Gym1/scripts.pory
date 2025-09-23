@@ -28,6 +28,7 @@ script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
 		setflag(FLAG_DEFEATED_JAKE)
 		setvar(VAR_DEFEATED_JAKE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_PAWAN)
 	}
 	release
 	end

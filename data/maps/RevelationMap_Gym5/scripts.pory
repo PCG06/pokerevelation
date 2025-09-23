@@ -27,6 +27,7 @@ script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
 		setflag(FLAG_DEFEATED_PRAJITH)
 		setvar(VAR_DEFEATED_PRAJITH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		clearflag(FLAG_HIDE_GILSTON)
 	}
 	release
 	end
