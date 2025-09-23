@@ -2258,9 +2258,6 @@ void BlitMenuInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
 
 void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
 {
-    s32 curFlag;
-    s32 flagCount;
-    u8 *endOfString;
     u8 *string = dest;
 
     *(string++) = EXT_CTRL_CODE_BEGIN;
@@ -2290,14 +2287,43 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
         case SAVE_MENU_LOCATION:
             GetMapNameGeneric(string, gMapHeader.regionMapSectionId);
             break;
-        case SAVE_MENU_BADGES:
-            for (curFlag = FLAG_BADGE01_GET, flagCount = 0, endOfString = string + 1; curFlag < FLAG_BADGE01_GET + NUM_BADGES; curFlag++)
+        case SAVE_MENU_BATTLES:
             {
-                if (FlagGet(curFlag))
-                    flagCount++;
+                u16 battlesWon = VarGet(VAR_BATTLES_WON);
+                u16 battlesLost = VarGet(VAR_BATTLES_LOST);
+
+                if (battlesWon)
+                {
+                    if (battlesWon < 100)
+                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 2);
+                    else if (battlesWon < 1000)
+                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 3);
+                    else
+                        ConvertIntToDecimalStringN(gStringVar1, battlesWon, STR_CONV_MODE_LEADING_ZEROS, 4);
+                }
+                else
+                {
+                    ConvertIntToDecimalStringN(gStringVar1, 0, STR_CONV_MODE_LEADING_ZEROS, 2);
+                }
+
+                if (battlesLost)
+                {
+                    if (battlesLost < 100)
+                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 2);
+                    else if (battlesLost < 1000)
+                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 3);
+                    else
+                        ConvertIntToDecimalStringN(gStringVar2, battlesLost, STR_CONV_MODE_LEADING_ZEROS, 4);
+                }
+                else
+                {
+                    ConvertIntToDecimalStringN(gStringVar2, 0, STR_CONV_MODE_LEADING_ZEROS, 2);
+                }
+
+                StringAppend(gStringVar1, gText_Slash);
+                StringAppend(gStringVar1, gStringVar2);
+                StringCopy(string, gStringVar1);
             }
-            *string = flagCount + CHAR_0;
-            *endOfString = EOS;
             break;
     }
 }

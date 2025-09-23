@@ -1323,6 +1323,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
+        VarSet(VAR_BATTLES_LOST, (VarGet(VAR_BATTLES_LOST) + 1));
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge() || FlagGet(B_FLAG_NO_WHITEOUT))
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
@@ -1330,10 +1331,12 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (DidPlayerForfeitNormalTrainerBattle())
     {
-            SetMainCallback2(CB2_WhiteOut);
+        VarSet(VAR_BATTLES_LOST, (VarGet(VAR_BATTLES_LOST) + 1));
+        SetMainCallback2(CB2_WhiteOut);
     }
     else
     {
+        VarSet(VAR_BATTLES_WON, (VarGet(VAR_BATTLES_WON) + 1));
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         DowngradeBadPoison();
         if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE && !InTrainerHillChallenge())

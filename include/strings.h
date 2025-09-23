@@ -240,6 +240,7 @@ extern const u8 gText_SaveError[];
 extern const u8 gText_SavingDontTurnOffPower[];
 extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
+extern const u8 gText_WinsSlashLosses[];
 extern const u8 gText_SavingPokedex[];
 extern const u8 gText_SavingTime[];
 

@@ -242,7 +242,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .bg = 0,
     .tilemapLeft = 1,
     .tilemapTop = 1,
-    .width = 14,
+    .width = 16,
     .height = 10,
     .paletteNum = 15,
     .baseBlock = 8
@@ -1422,14 +1422,14 @@ static void ShowSaveInfoWindow(void)
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
     BufferSaveMenuText(SAVE_MENU_NAME, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x80);
     PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
 
     // Print badge count
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    BufferSaveMenuText(SAVE_MENU_BATTLES, gStringVar4, color);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x80);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
@@ -1438,7 +1438,7 @@ static void ShowSaveInfoWindow(void)
         yOffset += 16;
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
-        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x80);
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
     }
 
@@ -1446,7 +1446,7 @@ static void ShowSaveInfoWindow(void)
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL);
     BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x80);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
