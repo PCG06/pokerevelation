@@ -223,10 +223,10 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_BUFFERBOXNAME                 ScrCmd_bufferboxname,               requests_effects=1  @ 0xc6
 	script_cmd_table_entry SCR_OP_TEXTCOLOR                     ScrCmd_nop1,                        requests_effects=1  @ 0xc7
 	script_cmd_table_entry SCR_OP_LOADHELP                      ScrCmd_nop1,                        requests_effects=1  @ 0xc8
-	script_cmd_table_entry SCR_OP_UNLOADHELP                    ScrCmd_nop1,                        requests_effects=1  @ 0xc9
-	script_cmd_table_entry SCR_OP_SIGNMSG                       ScrCmd_nop1,                        requests_effects=1  @ 0xca
-	script_cmd_table_entry SCR_OP_NORMALMSG                     ScrCmd_nop1,                        requests_effects=1  @ 0xcb
-	script_cmd_table_entry SCR_OP_COMPAREHIDDENVAR              ScrCmd_nop1,                        requests_effects=1  @ 0xcc
+	script_cmd_table_entry SCR_OP_UNLOADHELP                    ScrCmd_nop1,                        requests_effects=1  @ 0xc9	
+    script_cmd_table_entry SCR_OP_QUESTMENU                     ScrCmd_questmenu                    requests_effects=1  @ 0xca
+    script_cmd_table_entry SCR_OP_SUBQUESTMENU                  ScrCmd_subquestmenu                 requests_effects=1  @ 0xcb
+    script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate             requests_effects=1  @ 0xcc
 	script_cmd_table_entry SCR_OP_SETMODERNFATEFULENCOUNTER     ScrCmd_setmodernfatefulencounter,   requests_effects=1  @ 0xcd
 	script_cmd_table_entry SCR_OP_CHECKMODERNFATEFULENCOUNTER   ScrCmd_checkmodernfatefulencounter, requests_effects=1  @ 0xce
 	script_cmd_table_entry SCR_OP_TRYWONDERCARDSCRIPT           ScrCmd_trywondercardscript,         requests_effects=1  @ 0xcf
