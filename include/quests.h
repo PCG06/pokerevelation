@@ -68,6 +68,10 @@ enum QuestCases
 	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
 
+extern const struct SideQuest sSideQuests[];
+extern const struct SubQuest sSubQuests1[];
+extern const struct SubQuest sSubQuests2[];
+
 // functions
 void QuestMenu_Init(u8 a0, MainCallback callback);
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest);
