@@ -8,25 +8,31 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 				"Go to the Challengers' Arena!", MSGBOX_NPC)
 	} elif (flag(FLAG_DEFEATED_JAISON) == true) {
 		msgbox("{SPEAKER NAME_JAISON}"
-				format("You've already danced with my Fairies.\p"
-				"They say once is enough."), MSGBOX_NPC)
+				"You've already danced with my Fairies.\p"
+				"They say once is enough.", MSGBOX_NPC)
 	} else {
 		msgbox("{SPEAKER NAME_JAISON}"
-				format("The Fairy path is full of light and trickery…\p"
-				"Sparkles may dazzle, but behind them lies strength.\p"
-				"Can you keep up with my enchantments?"), MSGBOX_DEFAULT)
+				"The Fairy path is full of light and\n"
+				"trickery…\p"
+				"Sparkles may dazzle,\n"
+				"but behind them,\l"
+				"lies strength.\p"
+				"Can you keep up with my enchantments?", MSGBOX_DEFAULT)
 		trainerbattle_no_intro(TRAINER_JAISON, "Oh my!\nYou've broken the spell!")
 		playfanfare(MUS_OBTAIN_BADGE)
 		message("{PLAYER} beat Jaison!")
 		waitfanfare
 		waitmessage
 		msgbox("{SPEAKER NAME_JAISON}"
-				format("What a delightful display!\p"
-				"Your strength shines brighter than any fairy light.\p"
-				"Take this Badge, it's proof that magic favors you too."), MSGBOX_AUTOCLOSE)
+				"What a delightful display!\p"
+				"Your strength shines brighter than any\n"
+				"fairy light.\p"
+				"Take this Badge,\n"
+				"it's proof that magic favors you too.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_JAISON)
 		setvar(VAR_DEFEATED_JAISON, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_11_BEAT_JAISON)
 		clearflag(FLAG_HIDE_AKSHARA)
 	}
 	release
@@ -34,9 +40,14 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 }
 
 script RevelationMap_Gym4_SchoolKidDara { // Fairy-type Trainer
-	trainerbattle_single(TRAINER_DARA, "Fairy Pokémon are cute…\pbut they'll totally wreck you!", "Nooo… my sparkles faded!")
+	trainerbattle_single(TRAINER_DARA, "Fairy Pokémon are cute…\pbut they'll totally wreck you!", "Nooo… my sparkles faded!", RevelationMap_Gym4_SchoolKidDaraSubQuest)
 	msgbox("{SPEAKER NAME_DARA}"
-			format("You're strong…\p"
-			"But Jaison's fairies are even stronger though!"), MSGBOX_AUTOCLOSE)
+			"You're strong…\p"
+			"But Jaison's fairies are even stronger!", MSGBOX_AUTOCLOSE)
 	end
 }
+
+script RevelationMap_Gym4_SchoolKidDaraSubQuest {
+	completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_10_BEAT_DARA)
+}
+

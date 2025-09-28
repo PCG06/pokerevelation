@@ -49,7 +49,8 @@ script RevelationMap_EntryPoint_TriggerBugCatcherPawan { // Bug-type Trainer
         "Ah! My Pokémon got tangled up…", 
         RevelationMap_EntryPoint_BugCatcherPawan)
     msgbox("{SPEAKER NAME_PAWAN}"
-           format("You're stronger than I expected. I'll need to train harder!"), MSGBOX_AUTOCLOSE)
+           "You're stronger than I expected.\n"
+           "I'll need to train harder!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -57,16 +58,19 @@ script RevelationMap_EntryPoint_BugCatcherPawan {
     if (var(VAR_DEFEATED_JAKE) == 1) {
         applymove(LOCALID_REVELATION_BUG_CATCHER, MoveRightToStand)
         setvar(VAR_DEFEATED_JAKE, 2)
+        completesubquest(QUEST_1_BEAT_GYM_JAKE, SUB_QUEST_3_BEAT_PAWAN)
+        completequest(QUEST_1_BEAT_GYM_JAKE, FALSE)
     } elif (var(VAR_DEFEATED_JAKE) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_PAWAN}"
-               format("You've already proven your skill! Keep soaring higher!"), MSGBOX_NPC)
+               "You've already proven your skill!\n"
+               "Keep soaring higher!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_PAWAN}"
-               format("Hey! Don't ignore me!"), MSGBOX_NPC)
+               "Hey! Don't ignore me!", MSGBOX_NPC)
     }
     release
     end
@@ -81,7 +85,8 @@ script RevelationMap_EntryPoint_TriggerSuperNerdHanston { // Steel-type Trainer
         "No… my calculations were wrong…", 
         RevelationMap_EntryPoint_SuperNerdHanston)
     msgbox("{SPEAKER NAME_HANSTON}"
-           format("Impressive work. Even my defenses couldn't hold up!"), MSGBOX_AUTOCLOSE)
+           "Impressive work.\n"
+           "Even my defenses couldn't hold up!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -89,16 +94,18 @@ script RevelationMap_EntryPoint_SuperNerdHanston {
     if (var(VAR_DEFEATED_REEVE) == 1) {
         applymove(LOCALID_REVELATION_SUPER_NERD, MoveRightToStand)
         setvar(VAR_DEFEATED_REEVE, 2)
+        completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_6_BEAT_HANSTON)
+        completequest(QUEST_2_BEAT_GYM_REEVE, FALSE)
     } elif (var(VAR_DEFEATED_REEVE) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_HANSTON}"
-               format("You've already proven your brilliance!"), MSGBOX_NPC)
+               "You've already proven your brilliance!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_HANSTON}"
-               format("I need more data before I battle you!"), MSGBOX_NPC)
+               "I need more data before I battle you!", MSGBOX_NPC)
     }
     release
     end
@@ -113,7 +120,8 @@ script RevelationMap_EntryPoint_TriggerHexManiacRashel { // Psychic-type Trainer
         "Impossible… my powers were no match…", 
         RevelationMap_EntryPoint_HexManiacRashel)
     msgbox("{SPEAKER NAME_RASHEL}"
-           format("You've impressed me… Not many can face the unseen."), MSGBOX_AUTOCLOSE)
+           "You've impressed me…\n"
+           "Not many can face the unseen.", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -121,16 +129,19 @@ script RevelationMap_EntryPoint_HexManiacRashel {
     if (var(VAR_DEFEATED_PREM) == 1) {
         applymove(LOCALID_REVELATION_HEX_MANIAC, MoveRightToStand)
         setvar(VAR_DEFEATED_PREM, 2)
+        completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_9_BEAT_RASHEL)
+        completequest(QUEST_3_BEAT_GYM_PREM, FALSE)
     } elif (var(VAR_DEFEATED_PREM) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_RASHEL}"
-               format("The spirits have nothing more to teach you!"), MSGBOX_NPC)
+               "The spirits have nothing more to teach\n"
+               "you!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_RASHEL}"
-               format("Do you dare enter my psychic domain?"), MSGBOX_NPC)
+               "Do you dare enter my psychic domain?", MSGBOX_NPC)
     }
     release
     end
@@ -145,7 +156,8 @@ script RevelationMap_EntryPoint_TriggerLadyAkshara { // Ice-type Trainer
         "Argh… my ice has melted!", 
         RevelationMap_EntryPoint_LadyAkshara)
     msgbox("{SPEAKER NAME_AKSHARA}"
-           format("You've got warmth in your heart…and strength!"), MSGBOX_AUTOCLOSE)
+           "You've got warmth in your heart…\n"
+           "and strength!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -153,16 +165,18 @@ script RevelationMap_EntryPoint_LadyAkshara {
     if (var(VAR_DEFEATED_JAISON) == 1) {
         applymove(LOCALID_REVELATION_LADY, MoveRightToStand)
         setvar(VAR_DEFEATED_JAISON, 2)
+        completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_12_BEAT_AKSHARA)
+        completequest(QUEST_4_BEAT_GYM_JAISON, FALSE)
     } elif (var(VAR_DEFEATED_JAISON) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_AKSHARA}"
-               format("The ice has nothing more to teach you!"), MSGBOX_NPC)
+               "The ice has nothing more to teach you!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_AKSHARA}"
-               format("Brr… it's freezing here!"), MSGBOX_NPC)
+               "Brr… it's freezing here!", MSGBOX_NPC)
     }
     release
     end
@@ -177,7 +191,7 @@ script RevelationMap_EntryPoint_TriggerBlackBeltGilston { // Fighting-type Train
         "Ugh… you overpowered me!", 
         RevelationMap_EntryPoint_BlackBeltGilston)
     msgbox("{SPEAKER NAME_GILSTON}"
-           format("You've mastered both power and skill!"), MSGBOX_AUTOCLOSE)
+           "You've mastered both power and skill!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -185,16 +199,18 @@ script RevelationMap_EntryPoint_BlackBeltGilston {
     if (var(VAR_DEFEATED_PRAJITH) == 1) {
         applymove(LOCALID_REVELATION_BLACK_BELT, MoveLeftToStand)
         setvar(VAR_DEFEATED_PRAJITH, 2)
+        completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_15_BEAT_GILSTON)
+        completequest(QUEST_5_BEAT_GYM_PRAJITH, FALSE)
     } elif (var(VAR_DEFEATED_PRAJITH) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_GILSTON}"
-               format("You've already proven your might!"), MSGBOX_NPC)
+               "You've already proven your might!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_GILSTON}"
-               format("Prepare yourself for a fight!"), MSGBOX_NPC)
+               "Prepare yourself for a fight!", MSGBOX_NPC)
     }
     release
     end
@@ -209,7 +225,7 @@ script RevelationMap_EntryPoint_TriggerGuiratistMonvish { // Flying-type Trainer
         "Grounded… I can't believe it!", 
         RevelationMap_EntryPoint_GuiratistMonvish)
     msgbox("{SPEAKER NAME_MONVISH}"
-           format("You've got wings too! Keep soaring!"), MSGBOX_AUTOCLOSE)
+           "You've got wings too! Keep soaring!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -217,16 +233,18 @@ script RevelationMap_EntryPoint_GuiratistMonvish {
     if (var(VAR_DEFEATED_VARUN) == 1) {
         applymove(LOCALID_REVELATION_GUITARIST, MoveLeftToStand)
         setvar(VAR_DEFEATED_VARUN, 2)
+        completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_18_BEAT_MONVISH)
+        completequest(QUEST_6_BEAT_GYM_VARUN, FALSE)
     } elif (var(VAR_DEFEATED_VARUN) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_MONVISH}"
-               format("The sky's your limit!"), MSGBOX_NPC)
+               "The sky's your limit!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_MONVISH}"
-               format("Hey! Watch the skies!"), MSGBOX_NPC)
+               "Hey! Watch the skies!", MSGBOX_NPC)
     }
     release
     end
@@ -241,7 +259,8 @@ script RevelationMap_EntryPoint_TriggerFishermanAdithya { // Water-type Trainer
         "No… my Pokémon sank!", 
         RevelationMap_EntryPoint_FishermanAdithya)
     msgbox("{SPEAKER NAME_ADITHYA}"
-           format("You handled the currents well! Keep swimming forward!"), MSGBOX_AUTOCLOSE)
+           "You handled the currents well!\n"
+           "Keep swimming forward!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -249,16 +268,19 @@ script RevelationMap_EntryPoint_FishermanAdithya {
     if (var(VAR_DEFEATED_SNEHAL) == 1) {
         applymove(LOCALID_REVELATION_FISHERMAN, MoveLeftToStand)
         setvar(VAR_DEFEATED_SNEHAL, 2)
+        completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_21_BEAT_ADITHYA)
+        completequest(QUEST_7_BEAT_GYM_SNEHAL, FALSE)
     } elif (var(VAR_DEFEATED_SNEHAL) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_ADITHYA}"
-               format("The waters have nothing more to show you!"), MSGBOX_NPC)
+               "The waters have nothing more to show\n"
+               "you!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_ADITHYA}"
-               format("Splish splash… I'm ready to battle!"), MSGBOX_NPC)
+               "Splish splash… I'm ready to battle!", MSGBOX_NPC)
     }
     release
     end
@@ -273,7 +295,7 @@ script RevelationMap_EntryPoint_TriggerExpertRion { // Ground-type Trainer
         "No… the ground shook me!", 
         RevelationMap_EntryPoint_ExpertRion)
     msgbox("{SPEAKER NAME_RION}"
-           format("You've got solid footing well done!"), MSGBOX_AUTOCLOSE)
+           "You've got solid footing well done!", MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -281,16 +303,19 @@ script RevelationMap_EntryPoint_ExpertRion {
     if (var(VAR_DEFEATED_RAJESH) == 1) {
         applymove(LOCALID_REVELATION_EXPERT, MoveLeftToStand)
         setvar(VAR_DEFEATED_RAJESH, 2)
+        completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_24_BEAT_RION)
+        completequest(QUEST_8_BEAT_GYM_RAJESH, FALSE)
     } elif (var(VAR_DEFEATED_RAJESH) == 2) {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_RION}"
-               format("The ground has nothing more to teach you!"), MSGBOX_NPC)
+               "The ground has nothing more to teach\n"
+               "you!", MSGBOX_NPC)
     } else {
         lock
         faceplayer
         msgbox("{SPEAKER NAME_RION}"
-               format("The battlefield awaits your challenge!"), MSGBOX_NPC)
+               "The battlefield awaits your challenge!", MSGBOX_NPC)
     }
     release
     end

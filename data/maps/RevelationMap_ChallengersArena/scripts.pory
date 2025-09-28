@@ -7,6 +7,10 @@ mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_REV_STATE, 3 {
 			setvar(VAR_REV_STATE, 4)
+            startquest(QUEST_9_BEAT_CHALLENGERS_ARENA, FALSE)
+            startquest(QUEST_10_THE_REVELATION_CHAMPION, FALSE)
+	        startquest(QUEST_11_THE_MONOTYPE_MASOCHIST, FALSE)
+	        startquest(QUEST_12_THE_REGIONAL_REGAL, FALSE)
 			call(RevelationMap_ChallengersArena_PlayerEnters)
 		}
 	]
@@ -164,6 +168,7 @@ script RevelationMap_ChallengersArena_FightManvitha {
 	removeobject(LOCALID_REVELATION_CHALLENGER_1)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_25_BEAT_MANVITHA)
 	release
 	end
 }
@@ -192,6 +197,7 @@ script RevelationMap_ChallengersArena_FightKevin {
 	removeobject(LOCALID_REVELATION_CHALLENGER_2)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_26_BEAT_KEVIN)
 	release
 	end
 }
@@ -220,6 +226,7 @@ script RevelationMap_ChallengersArena_FightLohith {
 	removeobject(LOCALID_REVELATION_CHALLENGER_3)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_27_BEAT_LOHITH)
 	release
 	end
 }
@@ -248,6 +255,7 @@ script RevelationMap_ChallengersArena_FightAnmol {
 	removeobject(LOCALID_REVELATION_CHALLENGER_4)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_28_BEAT_ANMOL)
 	release
 	end
 }
@@ -274,6 +282,7 @@ script RevelationMap_ChallengersArena_FightArshad {
 	removeobject(LOCALID_REVELATION_CHALLENGER_5)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_29_BEAT_ARSHAD)
 	release
 	end
 }
@@ -305,6 +314,7 @@ script RevelationMap_ChallengersArena_FightMelwin {
 	removeobject(LOCALID_REVELATION_CHALLENGER_6)
 	delay(60)
 	addvar(VAR_CHALLENGERS_BEAT, 1)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_30_BEAT_MELWIN)
 	call(RevelationMap_ChallengersArena_IntroduceChampionYashas)
 	release
 	end
@@ -346,6 +356,9 @@ script RevelationMap_ChallengersArena_FightChampionYashas {
 			"The title of Champion is yours now.\n"
 			"Don't disappoint me.", MSGBOX_DEFAULT)
 	playse(SE_APPLAUSE)
+	completesubquest(QUEST_9_BEAT_CHALLENGERS_ARENA, SUB_QUEST_31_BEAT_YASHAS)
+	completequest(QUEST_9_BEAT_CHALLENGERS_ARENA, FALSE)
+	completequest(QUEST_10_THE_REVELATION_CHAMPION, FALSE)
 	call(RevelationMap_HallOfFame_Teleport)
 	end
 }

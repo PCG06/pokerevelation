@@ -1935,27 +1935,31 @@
     .endm
 
     @ Starts the specified quest.
-	.macro startquest quest:req
-	closemessage
-	delay 30
+	.macro startquest quest:req, popup=TRUE
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
-	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
-    bufferstring 1 gText_QuestActive
-	playfanfare MUS_LEVEL_UP
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
-	waitfanfare
+	.if \popup == TRUE
+		closemessage
+		delay 30
+		questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    	bufferstring 1 gText_QuestActive
+		playfanfare MUS_LEVEL_UP
+		msgbox gText_QuestAnnounce, MSGBOX_SIGN
+		waitfanfare
+	.endif
 	.endm
 
     @ Completes the specified quest.
-	.macro completequest quest:req
-	closemessage
-	delay 30
+	.macro completequest quest:req, popup=TRUE
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
-	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
-    bufferstring 1 gText_QuestComplete
-	playfanfare MUS_LEVEL_UP
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
-	waitfanfare
+	.if \popup == TRUE
+		closemessage
+		delay 30
+		questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    	bufferstring 1 gText_QuestComplete
+		playfanfare MUS_LEVEL_UP
+		msgbox gText_QuestAnnounce, MSGBOX_SIGN
+		waitfanfare
+	.endif
 	.endm
 
 	.macro goto_if_quest_inactive quest:req, dest:req

@@ -8,7 +8,7 @@ script EventScript_ChoosePkmnMenu {
 				"Select a group of Pokémon.")
 		copyvar(VAR_TEMP_A, VAR_TEMP_B)
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, "Starters", "Group 1 (A-E)", "Group 2 (F-K)", "Group 3 (K-N)", "Group 4 (O-S)", "Group 5 (S-Z)", "Back")
+		dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, "Starters", "Group 1 (A-F)", "Group 2 (F-K)", "Group 3 (K-O)", "Group 4 (P-S)", "Group 5 (S-Z)", "Back")
 		closemessage
 		copyvar(VAR_TEMP_B, VAR_RESULT)
 		switch (var(VAR_RESULT)) {
@@ -243,7 +243,7 @@ script EventScript_Group1Choices {
 		"7. Araquanid", "8. Archaludon", "9. Armarouge", "10. Azumarill", "11. Barraskewda", "12. Basculegion",
 		"13. Basculegion-F", "14. Baxcalibur", "15. Bellibolt", "16. Bronzong", "17. Camerupt", "18. Ceruledge",
 		"19. Clawitzer", "20. Corviknight", "21. Crawdaunt", "22. Dondozo", "23. Dragapult", "24. Dragonite",
-		"25. Dudunsparce", "26. Electivire", "27. Espeon", "28. Excadrill", "Back"
+		"25. Dudunsparce", "26. Electivire", "27. Espeon", "28. Excadrill", "29. Farigiraf", "Back"
 	)
 	closemessage
 	copyvar(VAR_TEMP_D, VAR_RESULT)
@@ -293,7 +293,7 @@ script EventScript_Group1Choices {
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group1Choices)
 		case 11:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BASCULEGION_M)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group1Choices)
 		case 12:
@@ -360,8 +360,12 @@ script EventScript_Group1Choices {
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EXCADRILL)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group1Choices)
-		default:
 		case 28:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FARIGIRAF)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group1Choices)
+		default:
+		case 29:
 			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
@@ -372,129 +376,133 @@ script EventScript_Group2Choices {
 	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
-		"29. Farigiraf", "30. Ferrothorn", "31. Flareon", "32. Froslass", "33. Garchomp", "34. Gengar",
-		"35. Gholdengo", "36. Glaceon", "37. Glalie", "38. Gliscor", "39. Gogoat", "40. Golurk",
-		"41. Goodra", "42. Goodra-H", "43. Grimmsnarl", "44. Gyarados", "45. Hatterene", "46. Hawlucha",
-		"47. Hitmonchan", "48. Hitmonlee", "49. Hitmontop", "50. Houndstone", "51. Hydreigon", "52. Illumise",
-		"53. Jolteon", "54. Jynx", "55. Kingambit", "56. Kingdra", "Back"
+		"30. Ferrothorn", "31. Flareon", "32. Froslass", "33. Garchomp", "34. Gengar", "35. Gholdengo",
+		"36. Glaceon", "37. Glalie", "38. Gliscor", "39. Gogoat", "40. Golurk", "41. Goodra",
+		"42. Goodra-H", "43. Grimmsnarl", "44. Gyarados", "45. Hatterene", "46. Hawlucha", "47. Hitmonchan",
+		"48. Hitmonlee", "49. Hitmontop", "50. Houndstone", "51. Hydreigon", "52. Illumise", "53. Indeedee",
+		"54. Indeedee-F", "55. Jolteon", "56. Jynx", "57. Kingambit", "58. Kingdra", "Back"
 	)
 	closemessage
 	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FARIGIRAF)
-			call(EventScript_YouWantThisPkmn)
-			goto(EventScript_Group2Choices)
-		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FERROTHORN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 2:
+		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLAREON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 3:
+		case 2:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FROSLASS)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 4:
+		case 3:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GARCHOMP)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 5:
+		case 4:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GENGAR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 6:
+		case 5:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GHOLDENGO)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 7:
+		case 6:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLACEON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 8:
+		case 7:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLALIE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 9:
+		case 8:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GLISCOR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 10:
+		case 9:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOGOAT)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 11:
+		case 10:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLURK)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 12:
+		case 11:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 13:
+		case 12:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOODRA_HISUI)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 14:
+		case 13:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRIMMSNARL)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 15:
+		case 14:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GYARADOS)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 16:
+		case 15:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HATTERENE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 17:
+		case 16:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HAWLUCHA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 18:
+		case 17:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONCHAN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 19:
+		case 18:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONLEE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 20:
+		case 19:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HITMONTOP)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 21:
+		case 20:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOUNDSTONE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 22:
+		case 21:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HYDREIGON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
-		case 23:
+		case 22:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ILLUMISE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
+		case 23:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INDEEDEE_M)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group2Choices)
 		case 24:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JOLTEON)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_INDEEDEE_F)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
 		case 25:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JYNX)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JOLTEON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
 		case 26:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGAMBIT)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JYNX)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
 		case 27:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGAMBIT)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group2Choices)
+		case 28:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KINGDRA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group2Choices)
 		default:
-		case 28:
+		case 29:
 			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
@@ -505,11 +513,11 @@ script EventScript_Group3Choices {
 	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
-		"57. Kleavor", "58. Kommo-o", "59. Krookodile", "60. Lanturn", "61. Leafeon", "62. Lilligant",
-		"63. Lilligant-H", "64. Linoone", "65. Lokix", "66. Lucario", "67. Ludicolo", "68. Luxray",
-		"69. Lycanroc", "70. Lycanroc-D", "71. Lycanroc-M", "72. Magmortar", "73. Magnezone", "74. Malamar",
-		"75. Mamoswine", "76. Mantine", "77. Mawile", "78. Metagross", "79. Mew", "80. Milotic",
-		"81. Mimikyu", "82. Nidoking", "83. Nidoqueen", "84. Noivern", "Back"
+		"59. Kleavor", "60. Kommo-o", "61. Krookodile", "62. Lanturn", "63. Leafeon", "64. Lilligant",
+		"65. Lilligant-H", "66. Linoone", "67. Lokix", "68. Lucario", "69. Ludicolo", "70. Luxray",
+		"71. Lycanroc", "72. Lycanroc-D", "73. Lycanroc-M", "74. Magmortar", "75. Magnezone", "76. Malamar",
+		"77. Mamoswine", "78. Mantine", "79. Mawile", "80. Metagross", "81. Mew", "82. Milotic",
+		"83. Mimikyu", "84. Nidoking", "85. Nidoqueen", "86. Noivern", "87. Obstagoon", "Back"
 	)
 	closemessage
 	copyvar(VAR_TEMP_D, VAR_RESULT)
@@ -626,8 +634,12 @@ script EventScript_Group3Choices {
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NOIVERN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group3Choices)
-		default:
 		case 28:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OBSTAGOON)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group3Choices)
+		default:
+		case 29:
 			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
@@ -638,129 +650,133 @@ script EventScript_Group4Choices {
 	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
-		"85. Obstagoon", "86. Palossand", "87. Perrserker", "88. Persian", "89. Persian-A", "90. Pidgeot",
-		"91. Politoed", "92. Poliwrath", "93. Raichu", "94. Raichu-A", "95. Roserade", "96. Rotom",
-		"97. Rotom-Fan", "98. Rotom-Frost", "99. Rotom-Heat", "100. Rotom-Mow", "101. Rotom-Wash", "102. Sableye",
-		"103. Salamence", "104. Salazzle", "105. Scizor", "106. Sharpedo", "107. Shiftry", "108. Shuckle",
-		"109. Skarmory", "110. Slowbro", "111. Slowbro-G", "112. Slowking", "Back"
+		"88. Palossand", "89. Perrserker", "90. Persian", "91. Persian-A", "92. Pidgeot", "93. Politoed",
+		"94. Poliwrath", "95. Raichu", "96. Raichu-A", "97. Roserade", "98. Rotom", "99. Rotom-Fan",
+		"100. Rotom-Frost", "101. Rotom-Heat", "102. Rotom-Mow", "103. Rotom-Wash", "104. Sableye", "105. Salamence",
+		"106. Salazzle", "107. Scizor", "108. Sharpedo", "109. Shiftry", "110. Shuckle", "111. Skarmory",
+		"112. Slowbro", "113. Slowbro-G", "114. Slowking", "115. Slowking-G", "116. Sneasler", "Back"
 	)
 	closemessage
 	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OBSTAGOON)
-			call(EventScript_YouWantThisPkmn)
-			goto(EventScript_Group4Choices)
-		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PALOSSAND)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 2:
+		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERRSERKER)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 3:
+		case 2:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 4:
+		case 3:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PERSIAN_ALOLA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 5:
+		case 4:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIDGEOT)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 6:
+		case 5:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLITOED)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 7:
+		case 6:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_POLIWRATH)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 8:
+		case 7:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 9:
+		case 8:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RAICHU_ALOLA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 10:
+		case 9:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROSERADE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 11:
+		case 10:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 12:
+		case 11:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FAN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 13:
+		case 12:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_FROST)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 14:
+		case 13:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_HEAT)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 15:
+		case 14:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_MOW)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 16:
+		case 15:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM_WASH)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 17:
+		case 16:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 18:
+		case 17:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAMENCE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 19:
+		case 18:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SALAZZLE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 20:
+		case 19:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCIZOR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 21:
+		case 20:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHARPEDO)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 22:
+		case 21:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIFTRY)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 23:
+		case 22:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHUCKLE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 24:
+		case 23:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SKARMORY)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 25:
+		case 24:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 26:
+		case 25:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWBRO_GALAR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		case 27:
+		case 26:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group4Choices)
-		default:
+		case 27:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group4Choices)
 		case 28:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNEASLER)
+			call(EventScript_YouWantThisPkmn)
+			goto(EventScript_Group4Choices)
+		default:
+		case 29:
 			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}
@@ -771,129 +787,121 @@ script EventScript_Group5Choices {
 	copyvar(VAR_TEMP_C, VAR_TEMP_D)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 5, VAR_TEMP_C, DYN_MULTICHOICE_CB_NONE,
-		"113. Slowking-G", "114. Sneasler", "115. Snorlax", "116. Staraptor", "117. Sudowoodo", "118. Swellow",
-		"119. Sylveon", "120. Talonflame", "121. Tatsugiri", "122. Togekiss", "123. Torkoal", "124. Toxtricity",
-		"125. Toxtricity-LK", "126. Tyranitar", "127. Tyrantrum", "128. Umbreon", "129. Unown", "130. Ursaluna",
-		"131. Ursaluna-BM", "132. Vaporeon", "133. Volbeat", "134. Volcarona", "135. Wailord", "136. Weavile",
-		"137. Whimsicott", "138. Wyrdeer", "139. Zoroark", "140. Zoroark-H", "Back"
+		"117. Snorlax", "118. Staraptor", "119. Sudowoodo", "120. Swellow", "121. Sylveon", "122. Talonflame",
+		"123. Tatsugiri", "124. Togekiss", "125. Torkoal", "126. Toxtricity", "127. Toxtricity-LK", "128. Tyranitar",
+		"129. Tyrantrum", "130. Umbreon", "131. Unown", "132. Ursaluna", "133. Ursaluna-BM", "134. Vaporeon",
+		"135. Volbeat", "136. Volcarona", "137. Wailord", "138. Weavile", "139. Whimsicott", "140. Wyrdeer",
+		"141. Zoroark", "142. Zoroark-H", "Back"
 	)
 	closemessage
 	copyvar(VAR_TEMP_D, VAR_RESULT)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SLOWKING_GALAR)
-			call(EventScript_YouWantThisPkmn)
-			goto(EventScript_Group5Choices)
-		case 1:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNEASLER)
-			call(EventScript_YouWantThisPkmn)
-			goto(EventScript_Group5Choices)
-		case 2:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 3:
+		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_STARAPTOR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 4:
+		case 2:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SUDOWOODO)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 5:
+		case 3:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWELLOW)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 6:
+		case 4:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SYLVEON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 7:
+		case 5:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TALONFLAME)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 8:
+		case 6:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TATSUGIRI)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 9:
+		case 7:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEKISS)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 10:
+		case 8:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TORKOAL)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 11:
+		case 9:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 12:
+		case 10:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOXTRICITY_LOW_KEY)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 13:
+		case 11:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANITAR)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 14:
+		case 12:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRANTRUM)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 15:
+		case 13:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UMBREON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 16:
+		case 14:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNOWN)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 17:
+		case 15:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 18:
+		case 16:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA_BLOODMOON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 19:
+		case 17:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VAPOREON)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 20:
+		case 18:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLBEAT)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 21:
+		case 19:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCARONA)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 22:
+		case 20:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WAILORD)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 23:
+		case 21:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WEAVILE)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 24:
+		case 22:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WHIMSICOTT)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 25:
+		case 23:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WYRDEER)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 26:
+		case 24:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
-		case 27:
+		case 25:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZOROARK_HISUI)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group5Choices)
 		default:
-		case 28:
+		case 26:
 			setvar(VAR_TEMP_D, 0)
 			goto(EventScript_ChoosePkmnMenu)
 	}

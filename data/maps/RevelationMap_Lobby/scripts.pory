@@ -75,6 +75,14 @@ mapscripts RevelationMap_Lobby_MapScripts {
 	]
 	MAP_SCRIPT_ON_TRANSITION {
 		setrespawn(HEAL_LOCATION_REVELATION_LOBBY)
+		startquest(QUEST_1_BEAT_GYM_JAKE, FALSE)
+		startquest(QUEST_2_BEAT_GYM_REEVE, FALSE)
+		startquest(QUEST_3_BEAT_GYM_PREM, FALSE)
+		startquest(QUEST_4_BEAT_GYM_JAISON, FALSE)
+		startquest(QUEST_5_BEAT_GYM_PRAJITH, FALSE)
+		startquest(QUEST_6_BEAT_GYM_VARUN, FALSE)
+		startquest(QUEST_7_BEAT_GYM_SNEHAL, FALSE)
+		startquest(QUEST_8_BEAT_GYM_RAJESH, FALSE)
 	}
 }
 

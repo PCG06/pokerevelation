@@ -8,25 +8,31 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 				"Go to the Challengers' Arena!", MSGBOX_NPC)
 	} elif (flag(FLAG_DEFEATED_VARUN) == true) {
 		msgbox("{SPEAKER NAME_VARUN}"
-				format("You've already felt my voltage once.\p"
-				"I won't shock you again."), MSGBOX_NPC)
+				"You've already felt my voltage once.\p"
+				"I won't shock you again.", MSGBOX_NPC)
 	} else {
 		msgbox("{SPEAKER NAME_VARUN}"
-				format("This Gym crackles with power!\p"
-				"Electricity is fast, fierce, and unstoppable.\p"
-				"Let's see if you can handle the current!"), MSGBOX_DEFAULT)
+				"This Gym crackles with power!\p"
+				"Electricity is fast, fierce, and\n"
+				"unstoppable.\p"
+				"Let's see if you can handle the\n"
+				"current!", MSGBOX_DEFAULT)
 		trainerbattle_no_intro(TRAINER_VARUN, "What?!\nYou overloaded my system!")
 		playfanfare(MUS_OBTAIN_BADGE)
 		message("{PLAYER} beat Varun!")
 		waitfanfare
 		waitmessage
 		msgbox("{SPEAKER NAME_VARUN}"
-				format("You're charged with real power.\p"
-				"Your strength lit up the battlefield brighter than any spark.\p"
-				"Take this Badge, proof that you can withstand any current!"), MSGBOX_AUTOCLOSE)
+				"You're charged with real power.\p"
+				"Your strength lit up the battlefield\n"
+				"brighter than any spark.\p"
+				"Take this Badge,\n"
+				"proof that you can withstand any\l"
+				"current!", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_VARUN)
 		setvar(VAR_DEFEATED_VARUN, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_17_BEAT_VARUN)
 		clearflag(FLAG_HIDE_MONVISH)
 	}
 	release
@@ -34,9 +40,14 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 }
 
 script RevelationMap_Gym6_ScientistDarwin { // Electric-type Trainer
-	trainerbattle_single(TRAINER_DARWIN, "Electricity is pure science!\pI'll show you its shocking potential!", "Impossible… My calculations were off!")
+	trainerbattle_single(TRAINER_DARWIN, "Electricity is pure science!\pI'll show you its shocking potential!", "Impossible… My calculations were off!", RevelationMap_Gym6_ScientistDarwinSubQuest)
 	msgbox("{SPEAKER NAME_DARWIN}"
-			format("Electric power is precise…\p"
-			"but battling adds variables I didn't predict."), MSGBOX_AUTOCLOSE)
+			"Electric power is precise…\p"
+			"but battling adds variables I didn't\n"
+			"predict.", MSGBOX_AUTOCLOSE)
 	end
+}
+
+script RevelationMap_Gym6_ScientistDarwinSubQuest {
+	completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_16_BEAT_DARWIN)
 }

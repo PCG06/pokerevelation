@@ -8,25 +8,31 @@ script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 				"Go to the Challengers' Arena!", MSGBOX_NPC)
 	} elif (flag(FLAG_DEFEATED_REEVE) == true) {
 		msgbox("{SPEAKER NAME_REEVE}"
-				format("You've already proven your courage.\p"
-				"I have nothing further to add."), MSGBOX_NPC)
+				"You've already proven your courage.\p"
+				"I have nothing further to add.", MSGBOX_NPC)
 	} else {
 		msgbox("{SPEAKER NAME_REEVE}"
-				format("So, you've found your way into the dark…\p"
-				"Most trainers stumble when the light fades.\p"
-				"Can you battle without fear? Let's see."), MSGBOX_DEFAULT)
+				"So, you've found your way into the dark…\p"
+				"Most trainers stumble when the ligh\n"
+				"fades.\p"
+				"Can you battle without fear? Let's see.", MSGBOX_DEFAULT)
 		trainerbattle_no_intro(TRAINER_REEVE, "Heh…\nYou cut through the darkness!")
 		playfanfare(MUS_OBTAIN_BADGE)
 		message("{PLAYER} beat Reeve!")
 		waitfanfare
 		waitmessage
 		msgbox("{SPEAKER NAME_REEVE}"
-				format("Impressive. You didn't let the shadows fool you.\p"
-				"You fought with focus, even against the unknown.\p"
-				"Take this Badge… and let it remind you that even the dark can be conquered."), MSGBOX_AUTOCLOSE)
+				"Impressive.\n"
+				"You didn't let the shadows fool you.\p"
+				"You fought with focus,\n"
+				"even against the unknown.\p"
+				"Take this Badge…\n"
+				"and let it remind you that even the\l"
+				"dark can be conquered.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_REEVE)
 		setvar(VAR_DEFEATED_REEVE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_5_BEAT_REEVE)
 		clearflag(FLAG_HIDE_HANSTON)
 	}
 	release
@@ -34,9 +40,14 @@ script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 }
 
 script RevelationMap_Gym2_BurglarPremal { // Dark-type Trainer
-	trainerbattle_single(TRAINER_PREMAL, "Heh, darkness is perfect for someone\nlike me.\pLet's see if you can spot my tricks!", "What?! Outplayed in the dark?")
+	trainerbattle_single(TRAINER_PREMAL, "Heh, darkness is perfect for someone\nlike me.\pLet's see if you can spot my tricks!", "What?! Outplayed in the dark?", RevelationMap_Gym2_BurglarPremalSubQuest)
 	msgbox("{SPEAKER NAME_PREMAL}"
-			format("Guess I'm not as slick as I thought.\p"
-			"Reeve's shadows are way tougher than mine."), MSGBOX_AUTOCLOSE)
+			"Guess I'm not as slick as I thought.\p"
+			"Reeve's shadows are way tougher than\n"
+			"mine.", MSGBOX_AUTOCLOSE)
 	end
+}
+
+script RevelationMap_Gym2_BurglarPremalSubQuest {
+	completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_4_BEAT_PREMAL)
 }

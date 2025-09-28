@@ -8,25 +8,32 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 				"Go to the Challengers' Arena!", MSGBOX_NPC)
 	} elif (flag(FLAG_DEFEATED_PREM) == true) {
 		msgbox("{SPEAKER NAME_PREM}"
-				format("The spirits whisper of your victory…\p"
-				"There's nothing more I can test."), MSGBOX_NPC)
+				"The spirits whisper of your victory…\p"
+				"There's nothing more I can test.", MSGBOX_NPC)
 	} else {
 		msgbox("{SPEAKER NAME_PREM}"
-				format("Do you feel it? The chill in the air…\p"
-				"This Gym is where the living meet the spirits.\p"
-				"Don't be afraid, unless you should be."), MSGBOX_DEFAULT)
+				"Do you feel it?\n"
+				"The chill in the air…\p"
+				"This Gym is where the living meet the\n"
+				"spirits.\p"
+				"Don't be afraid, unless you should be.", MSGBOX_DEFAULT)
 		trainerbattle_no_intro(TRAINER_PREM, "Heh…\nYou've faced your fears and won…")
 		playfanfare(MUS_OBTAIN_BADGE)
 		message("{PLAYER} beat Prem!")
 		waitfanfare
 		waitmessage
 		msgbox("{SPEAKER NAME_PREM}"
-				format("You were not shaken by the unknown.\p"
-				"That resolve is what truly frightens the spirits.\p"
-				"Take this Badge, and let it guide you through the shadows."), MSGBOX_AUTOCLOSE)
+				"You were not shaken by the unknown.\p"
+				"That resolve is what truly frightens\n"
+				"the spirits.\p"
+				"Take this Badge,\n"
+				"and let it guide you through the\l"
+				"shadows.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_PREM)
 		setvar(VAR_DEFEATED_PREM, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
+		completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_8_BEAT_PREM)
+		clearflag(FLAG_HIDE_HANSTON)
 		clearflag(FLAG_HIDE_RASHEL)
 	}
 	release
@@ -34,9 +41,14 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 }
 
 script RevelationMap_Gym3_PsychicDon { // Ghost-type Trainer
-	trainerbattle_single(TRAINER_DON, "The spirits speak to me…\pThey say your journey ends here!", "The voices…\nThey were wrong?")
+	trainerbattle_single(TRAINER_DON, "The spirits speak to me…\pThey say your journey ends here!", "The voices…\nThey were wrong?", RevelationMap_Gym3_PsychicDonSubQuest)
 	msgbox("{SPEAKER NAME_DON}"
-			format("The spirits are restless.\p"
-			"Perhaps they wanted you to win all along."), MSGBOX_AUTOCLOSE)
+			"The spirits are restless.\p"
+			"Perhaps they wanted you to win all\n"
+			"along.", MSGBOX_AUTOCLOSE)
 	end
+}
+
+script RevelationMap_Gym3_PsychicDonSubQuest {
+	completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_7_BEAT_DON)
 }

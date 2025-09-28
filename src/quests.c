@@ -1,5 +1,6 @@
 #include "global.h"
 #include "strings.h"
+#include "battle_main.h"
 #include "bg.h"
 #include "data.h"
 #include "decompress.h"
@@ -1000,22 +1001,33 @@ static void AssignCancelNameAndId(u8 numRow)
 
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
+    u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
+    u8 index = uniqueId / 8; //8 bits per byte
+    u8 bit = uniqueId % 8;
+    u8 mask = 1 << bit;
 
-	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
-	u8  index = uniqueId / 8; //8 bits per byte
-	u8	bit = uniqueId % 8;
-	u8	mask = 1 << bit;
+    DebugPrintf("QuestMenu_GetSetSubquestState: quest=%d, childQuest=%d, uniqueId=%d, index=%d, bit=%d", 
+                quest, childQuest, uniqueId, index, bit);
 
-	switch (caseId)
-	{
-		case FLAG_GET_COMPLETED:
-			return gSaveBlock2Ptr->subQuests[index] & mask;
-		case FLAG_SET_COMPLETED:
-			gSaveBlock2Ptr->subQuests[index] |= mask;
-			return 1;
-	}
+    switch (caseId)
+    {
+        case FLAG_GET_COMPLETED:
+        {
+            u8 result = gSaveBlock2Ptr->subQuests[index] & mask;
+            DebugPrintf("GET_COMPLETED: current value=%d", result);
+            return result;
+        }
+        case FLAG_SET_COMPLETED:
+        {
+            u8 oldValue = gSaveBlock2Ptr->subQuests[index];
+            gSaveBlock2Ptr->subQuests[index] |= mask;
+            u8 newValue = gSaveBlock2Ptr->subQuests[index];
+            DebugPrintf("SET_COMPLETED: old=%d, new=%d, mask=%d", oldValue, newValue, mask);
+            return 1;
+        }
+    }
 
-	return -1;
+    return -1;
 }
 
 u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)

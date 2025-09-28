@@ -1,7 +1,16 @@
 #include "constants/quests.h"
 
-static const u8 sText_Caught[] = _("Caught");
-static const u8 sText_Found[] = _("Found");
+static const u8 sText_Defeated[] = _("Defeated");
+static const u8 sText_Revelation[] = _("REVELATION");
+static const u8 sText_JakesGym[] = _("Jake's Gym, REVELATION");
+static const u8 sText_ReevesGym[] = _("Reeve's Gym, REVELATION");
+static const u8 sText_PremsGym[] = _("Prem's Gym, REVELATION");
+static const u8 sText_JaisonsGym[] = _("Jaison's Gym, REVELATION");
+static const u8 sText_PrajithsGym[] = _("Prajith's Gym, REVELATION");
+static const u8 sText_VarunsGym[] = _("Varun's Gym, REVELATION");
+static const u8 sText_SnehalsGym[] = _("Snehal's Gym, REVELATION");
+static const u8 sText_RajeshsGym[] = _("Rajesh's Gym, REVELATION");
+static const u8 sText_ChallengersArena[] = _("Challengers' Arena, REVELATION");
 
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////BEGIN QUEST CUSTOMIZATION//////////////////////////////
@@ -9,396 +18,199 @@ static const u8 sText_Found[] = _("Found");
 //Declaration of side quest structures. Edits to quests are made here.
 const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-    [QUEST_1] =
+    [QUEST_1_BEAT_GYM_JAKE] =
     {
-        .name = COMPOUND_STRING("Side Quest 1"),
+        .name = COMPOUND_STRING("Beat Jake's Gym"),
         .desc = COMPOUND_STRING(
-                    "Description 1"),
+                    "Secure your badge by defeating\n"
+                    "Prajesh, Jake and Pawan!"),
         .donedesc = COMPOUND_STRING(
-                    "Completed Quest 1"),
-        .map = COMPOUND_STRING("Map 1"),
-        .sprite = OBJ_EVENT_GFX_PROF_BIRCH,
+                    "Secured Badge 1 by defeating\n"
+                    "Prajesh, Jake and Pawan!"),
+        .map = sText_JakesGym,
+        .sprite = OBJ_EVENT_GFX_ROXANNE,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests1,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_2_BEAT_GYM_REEVE] =
+    {
+        .name = COMPOUND_STRING("Beat Reeve's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Premal, Reeve and Hanston!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 2 by defeating\n"
+                    "Premal, Reeve and Hanston!"),
+        .map = sText_ReevesGym,
+        .sprite = OBJ_EVENT_GFX_BRAWLY,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests2,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_3_BEAT_GYM_PREM] =
+    {
+        .name = COMPOUND_STRING("Beat Prem's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Don, Prem and Rashel!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 3 by defeating\n"
+                    "Don, Prem and Rashel!"),
+        .map = sText_PremsGym,
+        .sprite = OBJ_EVENT_GFX_WATTSON,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests3,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_4_BEAT_GYM_JAISON] =
+    {
+        .name = COMPOUND_STRING("Beat Jaison's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Dara, Jaison and Akshara!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 4 by defeating\n"
+                    "Dara, Jaison and Akshara!"),
+        .map = sText_JaisonsGym,
+        .sprite = OBJ_EVENT_GFX_FLANNERY,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests4,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_5_BEAT_GYM_PRAJITH] =
+    {
+        .name = COMPOUND_STRING("Beat Prajith's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Delson, Prajith and Gilston!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 5 by defeating\n"
+                    "Delson, Prajith and Gilston!"),
+        .map = sText_PrajithsGym,
+        .sprite = OBJ_EVENT_GFX_NORMAN,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests5,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_6_BEAT_GYM_VARUN] =
+    {
+        .name = COMPOUND_STRING("Beat Varun's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Darwin, Varun and Monvish!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 6 by defeating\n"
+                    "Darwin, Varun and Monvish!"),
+        .map = sText_VarunsGym,
+        .sprite = OBJ_EVENT_GFX_WINONA,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests6,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_7_BEAT_GYM_SNEHAL] =
+    {
+        .name = COMPOUND_STRING("Beat Snehal's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Handam, Snehal and Adithya!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 7 by defeating\n"
+                    "Handam, Snehal and Adithya!"),
+        .map = sText_SnehalsGym,
+        .sprite = OBJ_EVENT_GFX_TATE,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests7,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_8_BEAT_GYM_RAJESH] =
+    {
+        .name = COMPOUND_STRING("Beat Rajesh's Gym"),
+        .desc = COMPOUND_STRING(
+                    "Secure your badge by defeating\n"
+                    "Deon, Rajesh and Rion!"),
+        .donedesc = COMPOUND_STRING(
+                    "Secured Badge 8 by defeating\n"
+                    "Deon, Rajesh and Rion!"),
+        .map = sText_RajeshsGym,
+        .sprite = OBJ_EVENT_GFX_JUAN,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests8,
+        .numSubquests = GYM_SUBQUESTS_COUNT
+    },
+
+    [QUEST_9_BEAT_CHALLENGERS_ARENA] =
+    {
+        .name = COMPOUND_STRING("Beat the Challengers"),
+        .desc = COMPOUND_STRING(
+                    "Prove your might by overcoming\n"
+                    "every rival in the arena!"),
+        .donedesc = COMPOUND_STRING(
+                    "All challengers have fallen before\n"
+                    "your strength!"),
+        .map = COMPOUND_STRING("Challengers' Arena, REVELATION"),
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .subquests = sSubQuests9,
+        .numSubquests = CHALLENGERS_SUBQUEST_COUNT
+    },
+
+    [QUEST_10_THE_REVELATION_CHAMPION] =
+    {
+        .name = COMPOUND_STRING("The Revelation Champion"),
+        .desc = COMPOUND_STRING(
+                    "Defeat every Gym and the\n"
+                    "Challengers to claim your title!"),
+        .donedesc = COMPOUND_STRING(
+                    "Defeated all Gyms and Challengers\n"
+                    "crowned the Revelation Champion!\n"),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_WALLACE,
         .spritetype = OBJECT,
         .subquests = NULL,
         .numSubquests = 0
     },
-    [QUEST_2] =
+
+    [QUEST_11_THE_MONOTYPE_MASOCHIST] =
     {
-        .name = COMPOUND_STRING("Side Quest 2"),
+        .name = COMPOUND_STRING("The Monotype Masochist"),
         .desc = COMPOUND_STRING(
-                    "Description 2"),
+                    "Defeat the Revelation Tournament \n"
+                    "with Pokémon of a specific type."),
         .donedesc = COMPOUND_STRING(
-                    "Completed Quest 2"),
-        .map = COMPOUND_STRING("Map 2"),
+                    "Defeated the Revelation Tournament \n"
+                    "with Pokémon of a specific type."),
+        .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_WALLY,
         .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
+        .subquests = sSubQuests11,
+        .numSubquests = MONOTYPE_SUBQUEST_COUNT
     },
-    [QUEST_3] =
+
+    [QUEST_12_THE_REGIONAL_REGAL] =
     {
-        .name = COMPOUND_STRING("Side Quest 3"),
+        .name = COMPOUND_STRING("The Regional Regal"),
         .desc = COMPOUND_STRING(
-                    "Description 3"),
+                    "Defeat the Revelation Tournament\n"
+                    "with Pokémon from a specific\n"
+                    "region."),
         .donedesc = COMPOUND_STRING(
-                    "Completed Quest 3"),
-        .map = COMPOUND_STRING("Map 3"),
+                    "Defeated the Revelation Tournament\n"
+                    "with Pokémon from a specific\n"
+                    "region."),
+        .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_WALLY,
         .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_4] =
-    {
-        .name = COMPOUND_STRING("Side Quest 4"),
-        .desc = COMPOUND_STRING(
-                    "Description 4"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 4"),
-        .map = COMPOUND_STRING("Map 4"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_5] =
-    {
-        .name = COMPOUND_STRING("Side Quest 5"),
-        .desc = COMPOUND_STRING(
-                    "Description 5"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 5"),
-        .map = COMPOUND_STRING("Map 5"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_6] =
-    {
-        .name = COMPOUND_STRING("Side Quest 6"),
-        .desc = COMPOUND_STRING(
-                    "Description 6"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 6"),
-        .map = COMPOUND_STRING("Map 6"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_7] =
-    {
-        .name = COMPOUND_STRING("Side Quest 7"),
-        .desc = COMPOUND_STRING(
-                    "Description 7"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 7"),
-        .map = COMPOUND_STRING("Map 7"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_8] =
-    {
-        .name = COMPOUND_STRING("Side Quest 8"),
-        .desc = COMPOUND_STRING(
-                    "Description 8"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 8"),
-        .map = COMPOUND_STRING("Map 8"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_9] =
-    {
-        .name = COMPOUND_STRING("Side Quest 9"),
-        .desc = COMPOUND_STRING(
-                    "Description 9"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 9"),
-        .map = COMPOUND_STRING("Map 9"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_10] =
-    {
-        .name = COMPOUND_STRING("Side Quest 10"),
-        .desc = COMPOUND_STRING(
-                    "Description 10"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 10"),
-        .map = COMPOUND_STRING("Map 10"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_11] =
-    {
-        .name = COMPOUND_STRING("Side Quest 11"),
-        .desc = COMPOUND_STRING(
-                    "Description 11"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 11"),
-        .map = COMPOUND_STRING("Map 11"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_12] =
-    {
-        .name = COMPOUND_STRING("Side Quest 12"),
-        .desc = COMPOUND_STRING(
-                    "Description 12"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 12"),
-        .map = COMPOUND_STRING("Map 12"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_13] =
-    {
-        .name = COMPOUND_STRING("Side Quest 13"),
-        .desc = COMPOUND_STRING(
-                    "Description 13"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 13"),
-        .map = COMPOUND_STRING("Map 13"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_14] =
-    {
-        .name = COMPOUND_STRING("Side Quest 14"),
-        .desc = COMPOUND_STRING(
-                    "Description 14"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 14"),
-        .map = COMPOUND_STRING("Map 14"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_15] =
-    {
-        .name = COMPOUND_STRING("Side Quest 15"),
-        .desc = COMPOUND_STRING(
-                    "Description 15"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 15"),
-        .map = COMPOUND_STRING("Map 15"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_16] =
-    {
-        .name = COMPOUND_STRING("Side Quest 16"),
-        .desc = COMPOUND_STRING(
-                    "Description 16"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 16"),
-        .map = COMPOUND_STRING("Map 16"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_17] =
-    {
-        .name = COMPOUND_STRING("Side Quest 17"),
-        .desc = COMPOUND_STRING(
-                    "Description 17"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 17"),
-        .map = COMPOUND_STRING("Map 17"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_18] =
-    {
-        .name = COMPOUND_STRING("Side Quest 18"),
-        .desc = COMPOUND_STRING(
-                    "Description 18"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 18"),
-        .map = COMPOUND_STRING("Map 18"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_19] =
-    {
-        .name = COMPOUND_STRING("Side Quest 19"),
-        .desc = COMPOUND_STRING(
-                    "Description 19"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 19"),
-        .map = COMPOUND_STRING("Map 19"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_20] =
-    {
-        .name = COMPOUND_STRING("Side Quest 20"),
-        .desc = COMPOUND_STRING(
-                    "Description 20"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 20"),
-        .map = COMPOUND_STRING("Map 20"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_21] =
-    {
-        .name = COMPOUND_STRING("Side Quest 21"),
-        .desc = COMPOUND_STRING(
-                    "Description 21"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 21"),
-        .map = COMPOUND_STRING("Map 21"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_22] =
-    {
-        .name = COMPOUND_STRING("Side Quest 22"),
-        .desc = COMPOUND_STRING(
-                    "Description 22"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 22"),
-        .map = COMPOUND_STRING("Map 22"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_23] =
-    {
-        .name = COMPOUND_STRING("Side Quest 23"),
-        .desc = COMPOUND_STRING(
-                    "Description 23"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 23"),
-        .map = COMPOUND_STRING("Map 23"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_24] =
-    {
-        .name = COMPOUND_STRING("Side Quest 24"),
-        .desc = COMPOUND_STRING(
-                    "Description 24"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 24"),
-        .map = COMPOUND_STRING("Map 24"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_25] =
-    {
-        .name = COMPOUND_STRING("Side Quest 25"),
-        .desc = COMPOUND_STRING(
-                    "Description 25"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 25"),
-        .map = COMPOUND_STRING("Map 25"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_26] =
-    {
-        .name = COMPOUND_STRING("Side Quest 26"),
-        .desc = COMPOUND_STRING(
-                    "Description 26"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 26"),
-        .map = COMPOUND_STRING("Map 26"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_27] =
-    {
-        .name = COMPOUND_STRING("Side Quest 27"),
-        .desc = COMPOUND_STRING(
-                    "Description 27"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 27"),
-        .map = COMPOUND_STRING("Map 27"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_28] =
-    {
-        .name = COMPOUND_STRING("Side Quest 28"),
-        .desc = COMPOUND_STRING(
-                    "Description 28"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 28"),
-        .map = COMPOUND_STRING("Map 28"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_29] =
-    {
-        .name = COMPOUND_STRING("Side Quest 29"),
-        .desc = COMPOUND_STRING(
-                    "Description 29"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 29"),
-        .map = COMPOUND_STRING("Map 29"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
-    [QUEST_30] =
-    {
-        .name = COMPOUND_STRING("Side Quest 30"),
-        .desc = COMPOUND_STRING(
-                    "Description 30"),
-        .donedesc = COMPOUND_STRING(
-                    "Completed Quest 30"),
-        .map = COMPOUND_STRING("Map 30"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .subquests = NULL,
-        .numSubquests = 0
-    },
+        .subquests = sSubQuests12,
+        .numSubquests = MONOREGION_SUBQUEST_COUNT
+    }
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -408,341 +220,772 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
 //Declaration of subquest structures. Edits to subquests are made here.
-const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
+const struct SubQuest sSubQuests1[GYM_SUBQUESTS_COUNT] =
 {
     {
-        .id = SUB_QUEST_1,
-        .name = COMPOUND_STRING("Quest 1 Part 1"),
+        .id = SUB_QUEST_1_BEAT_PRAJESH,
+        .name = COMPOUND_STRING("Beat Prajesh"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 1"),
-        .map = COMPOUND_STRING("Map 1"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Grass-type specialist\n"
+                    "guarding Jake's Gym entrance."),
+        .map = sText_JakesGym,
+        .sprite = OBJ_EVENT_GFX_CAMPER,
         .spritetype = OBJECT,
-        .type = sText_Found
+        .type = sText_Defeated
     },
 
     {
-        .id = SUB_QUEST_2,
-        .name = COMPOUND_STRING("Quest 1 Part 2"),
+        .id = SUB_QUEST_2_BEAT_JAKE,
+        .name = COMPOUND_STRING("Beat Jake"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 2"),
-        .map = COMPOUND_STRING("Map 2"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Rock-type Gym Leader\n"
+                    "to earn the Badge."),
+        .map = sText_JakesGym,
+        .sprite = OBJ_EVENT_GFX_ROXANNE,
         .spritetype = OBJECT,
-        .type = sText_Found
+        .type = sText_Defeated
     },
 
     {
-        .id = SUB_QUEST_3,
-        .name = COMPOUND_STRING("Quest 1 Part 3"),
+        .id = SUB_QUEST_3_BEAT_PAWAN,
+        .name = COMPOUND_STRING("Beat Pawan"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 3"),
-        .map = COMPOUND_STRING("Map 3"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Bug-type trainer in\n"
+                    "the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_BUG_CATCHER,
         .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_4,
-        .name = COMPOUND_STRING("Quest 1 Part 4"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 4"),
-        .map = COMPOUND_STRING("Map 4"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_5,
-        .name = COMPOUND_STRING("Quest 1 Part 5"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 5"),
-        .map = COMPOUND_STRING("Map 5"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_6,
-        .name = COMPOUND_STRING("Quest 1 Part 6"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 6"),
-        .map = COMPOUND_STRING("Map 6"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_7,
-        .name = COMPOUND_STRING("Quest 1 Part 7"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 7"),
-        .map = COMPOUND_STRING("Map 7"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_8,
-        .name = COMPOUND_STRING("Quest 1 Part 8"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 8"),
-        .map = COMPOUND_STRING("Map 8"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_9,
-        .name = COMPOUND_STRING("Quest 1 Part 9"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 9"),
-        .map = COMPOUND_STRING("Map 9"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_10,
-        .name = COMPOUND_STRING("Quest 1 Part 10"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 10"),
-        .map = COMPOUND_STRING("Map 10"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
+        .type = sText_Defeated
+    }
 };
 
-const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
+const struct SubQuest sSubQuests2[GYM_SUBQUESTS_COUNT] =
 {
     {
-        .id = SUB_QUEST_11,
-        .name = COMPOUND_STRING("Quest 2 Part 1"),
+        .id = SUB_QUEST_4_BEAT_PREMAL,
+        .name = COMPOUND_STRING("Beat Premal"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 1"),
-        .map = COMPOUND_STRING("Map 1"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Dark-type specialist\n"
+                    "at Reeve's Gym entrance."),
+        .map = sText_ReevesGym,
+        .sprite = OBJ_EVENT_GFX_BURGLAR,
         .spritetype = OBJECT,
-        .type = sText_Found
+        .type = sText_Defeated
     },
 
     {
-        .id = SUB_QUEST_12,
-        .name = COMPOUND_STRING("Quest 2 Part 2"),
+        .id = SUB_QUEST_5_BEAT_REEVE,
+        .name = COMPOUND_STRING("Beat Reeve"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 2"),
-        .map = COMPOUND_STRING("Map 2"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Dark-type Gym Leader\n"
+                    "to earn the Badge."),
+        .map = sText_ReevesGym,
+        .sprite = OBJ_EVENT_GFX_BRAWLY,
         .spritetype = OBJECT,
-        .type = sText_Found
+        .type = sText_Defeated
     },
 
     {
-        .id = SUB_QUEST_13,
-        .name = COMPOUND_STRING("Quest 2 Part 3"),
+        .id = SUB_QUEST_6_BEAT_HANSTON,
+        .name = COMPOUND_STRING("Beat Hanston"),
         .desc = COMPOUND_STRING(
-                    "Description Sub 3"),
-        .map = COMPOUND_STRING("Map 3"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
+                    "Defeated the Steel-type trainer in\n"
+                    "the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_SUPER_NERD,
         .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_14,
-        .name = COMPOUND_STRING("Quest 2 Part 4"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 4"),
-        .map = COMPOUND_STRING("Map 4"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_15,
-        .name = COMPOUND_STRING("Quest 2 Part 5"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 5"),
-        .map = COMPOUND_STRING("Map 5"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_16,
-        .name = COMPOUND_STRING("Quest 2 Part 6"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 6"),
-        .map = COMPOUND_STRING("Map 6"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_17,
-        .name = COMPOUND_STRING("Quest 2 Part 7"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 7"),
-        .map = COMPOUND_STRING("Map 7"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_18,
-        .name = COMPOUND_STRING("Quest 2 Part 8"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 8"),
-        .map = COMPOUND_STRING("Map 8"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_19,
-        .name = COMPOUND_STRING("Quest 2 Part 9"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 9"),
-        .map = COMPOUND_STRING("Map 9"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_20,
-        .name = COMPOUND_STRING("Quest 2 Part 10"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 10"),
-        .map = COMPOUND_STRING("Map 10"),
-        .sprite = SPECIES_HO_OH,
-        .spritetype = PKMN,
-        .type = sText_Caught
-    },
-
-    {
-        .id = SUB_QUEST_21,
-        .name = COMPOUND_STRING("Quest 2 Part 11"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 11"),
-        .map = COMPOUND_STRING("Map 11"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_22,
-        .name = COMPOUND_STRING("Quest 2 Part 12"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 12"),
-        .map = COMPOUND_STRING("Map 12"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_23,
-        .name = COMPOUND_STRING("Quest 2 Part 13"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 13"),
-        .map = COMPOUND_STRING("Map 13"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_24,
-        .name = COMPOUND_STRING("Quest 2 Part 14"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 14"),
-        .map = COMPOUND_STRING("Map 14"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_25,
-        .name = COMPOUND_STRING("Quest 2 Part 15"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 15"),
-        .map = COMPOUND_STRING("Map 15"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_26,
-        .name = COMPOUND_STRING("Quest 2 Part 16"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 16"),
-        .map = COMPOUND_STRING("Map 16"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_27,
-        .name = COMPOUND_STRING("Quest 2 Part 17"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 17"),
-        .map = COMPOUND_STRING("Map 17"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_28,
-        .name = COMPOUND_STRING("Quest 2 Part 18"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 18"),
-        .map = COMPOUND_STRING("Map 18"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_29,
-        .name = COMPOUND_STRING("Quest 2 Part 19"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 19"),
-        .map = COMPOUND_STRING("Map 19"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
-
-    {
-        .id = SUB_QUEST_30,
-        .name = COMPOUND_STRING("Quest 2 Part 20"),
-        .desc = COMPOUND_STRING(
-                    "Description Sub 20"),
-        .map = COMPOUND_STRING("Map 20"),
-        .sprite = OBJ_EVENT_GFX_WALLY,
-        .spritetype = OBJECT,
-        .type = sText_Found
-    },
+        .type = sText_Defeated
+    }
 };
+
+const struct SubQuest sSubQuests3[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_7_BEAT_DON,
+        .name = COMPOUND_STRING("Beat Don"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Ghost-type specialist\n"
+                    "at Prem's Gym entrance."),
+        .map = sText_PremsGym,
+        .sprite = OBJ_EVENT_GFX_PSYCHIC_M,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_8_BEAT_PREM,
+        .name = COMPOUND_STRING("Beat Prem"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Ghost-type Gym Leader\n"
+                    "to earn the Badge."),
+        .map = sText_PremsGym,
+        .sprite = OBJ_EVENT_GFX_WATTSON,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_9_BEAT_RASHEL,
+        .name = COMPOUND_STRING("Beat Rashel"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Psychic-type trainer\n"
+                    "in the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_HEX_MANIAC,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests4[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_10_BEAT_DARA,
+        .name = COMPOUND_STRING("Beat Dara"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Fairy-type specialist\n"
+                    "at Jaison's Gym entrance."),
+        .map = sText_JaisonsGym,
+        .sprite = OBJ_EVENT_GFX_SCHOOL_KID_F,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_11_BEAT_JAISON,
+        .name = COMPOUND_STRING("Beat Jaison"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Fairy-type Gym Leader\n"
+                    "to earn the Badge."),
+        .map = sText_JaisonsGym,
+        .sprite = OBJ_EVENT_GFX_FLANNERY,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_12_BEAT_AKSHARA,
+        .name = COMPOUND_STRING("Beat Akshara"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Ice-type trainer in\n"
+                    "the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_WOMAN_2,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests5[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_13_BEAT_DELSON,
+        .name = COMPOUND_STRING("Beat Delson"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Fire-type specialist\n"
+                    "at Prajith's Gym entrance."),
+        .map = sText_PrajithsGym,
+        .sprite = OBJ_EVENT_GFX_KINDLER,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_14_BEAT_PRAJITH,
+        .name = COMPOUND_STRING("Beat Prajith"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Fire-type Gym Leader\n"
+                    "to earn the Badge."),
+        .map = sText_PrajithsGym,
+        .sprite = OBJ_EVENT_GFX_NORMAN,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_15_BEAT_GILSTON,
+        .name = COMPOUND_STRING("Beat Gilston"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Fighting-type trainer\n"
+                    "in the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_BLACK_BELT,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests6[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_16_BEAT_DARWIN,
+        .name = COMPOUND_STRING("Beat Darwin"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Electric-type expert\n"
+                    "at Varun's Gym entrance."),
+        .map = sText_VarunsGym,
+        .sprite = OBJ_EVENT_GFX_SCIENTIST_2,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_17_BEAT_VARUN,
+        .name = COMPOUND_STRING("Beat Varun"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Electric-type Leader\n"
+                    "to earn the Badge."),
+        .map = sText_VarunsGym,
+        .sprite = OBJ_EVENT_GFX_WINONA,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_18_BEAT_MONVISH,
+        .name = COMPOUND_STRING("Beat Monvish"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Flying-type trainer\n"
+                    "in the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_GUITARIST,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests7[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_19_BEAT_HANDAM,
+        .name = COMPOUND_STRING("Beat Handam"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Flying-type expert\n"
+                    "at Snehal's Gym entrance."),
+        .map = sText_SnehalsGym,
+        .sprite = OBJ_EVENT_GFX_BIRD_KEEPER,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_20_BEAT_SNEHAL,
+        .name = COMPOUND_STRING("Beat Snehal"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Flying-type Leader\n"
+                    "to earn the Badge."),
+        .map = sText_SnehalsGym,
+        .sprite = OBJ_EVENT_GFX_TATE,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_21_BEAT_ADITHYA,
+        .name = COMPOUND_STRING("Beat Adithya"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Water-type trainer\n"
+                    "in the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_FISHERMAN,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests8[GYM_SUBQUESTS_COUNT] =
+{
+    {
+        .id = SUB_QUEST_22_BEAT_DEON,
+        .name = COMPOUND_STRING("Beat Deon"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Dragon-type expert\n"
+                    "at Rajesh's Gym entrance."),
+        .map = sText_RajeshsGym,
+        .sprite = OBJ_EVENT_GFX_DRAGON_TAMER,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_23_BEAT_RAJESH,
+        .name = COMPOUND_STRING("Beat Rajesh"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Dragon-type Leader\n"
+                    "to earn the Badge."),
+        .map = sText_RajeshsGym,
+        .sprite = OBJ_EVENT_GFX_JUAN,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_24_BEAT_RION,
+        .name = COMPOUND_STRING("Beat Rion"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Ground-type trainer\n"
+                    "in the Revelation area."),
+        .map = sText_Revelation,
+        .sprite = OBJ_EVENT_GFX_EXPERT_M,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
+{
+    {
+        .id = SUB_QUEST_25_BEAT_MANVITHA,
+        .name = COMPOUND_STRING("Beat Manvitha"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the sun team specialist\n"
+                    "with solar-powered strategies."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_WOMAN_5,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_26_BEAT_KEVIN,
+        .name = COMPOUND_STRING("Beat Kevin"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the rain team specialist\n"
+                    "with torrential tactics."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_27_BEAT_LOHITH,
+        .name = COMPOUND_STRING("Beat Lohith"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the modern offense team\n"
+                    "with relentless aggression."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_28_BEAT_ANMOL,
+        .name = COMPOUND_STRING("Beat Anmol"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the defensive specialist\n"
+                    "with impenetrable strategies."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_29_BEAT_ARSHAD,
+        .name = COMPOUND_STRING("Beat Arshad"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the classic offense team\n"
+                    "with proven aggressive tactics."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_30_BEAT_MELWIN,
+        .name = COMPOUND_STRING("Beat Melwin"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the tricky offense team\n"
+                    "with unpredictable strategies."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_31_BEAT_YASHAS,
+        .name = COMPOUND_STRING("Beat Yashas"),
+        .desc = COMPOUND_STRING(
+                    "Defeated the Revelation expert\n"
+                    "with exclusive regional team."),
+        .map = sText_ChallengersArena,
+        .sprite = OBJ_EVENT_GFX_WALLY,
+        .spritetype = OBJECT,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests11[MONOTYPE_SUBQUEST_COUNT] =
+{
+    {
+        .id = SUB_QUEST_32_MONOTYPE_NORMAL,
+        .name = COMPOUND_STRING("Normal"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Normal-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_NORMAL_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_33_MONOTYPE_FIGHTING,
+        .name = COMPOUND_STRING("Fighting"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Fighting-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_FIGHTING_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_34_MONOTYPE_FLYING,
+        .name = COMPOUND_STRING("Flying"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Flying-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_FLYING_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_35_MONOTYPE_POISON,
+        .name = COMPOUND_STRING("Poison"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Poison-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_POISON_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_36_MONOTYPE_GROUND,
+        .name = COMPOUND_STRING("Ground"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Ground-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_GROUND_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_37_MONOTYPE_ROCK,
+        .name = COMPOUND_STRING("Rock"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Rock-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_ROCK_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_38_MONOTYPE_BUG,
+        .name = COMPOUND_STRING("Bug"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Bug-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_BUG_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_39_MONOTYPE_GHOST,
+        .name = COMPOUND_STRING("Ghost"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Ghost-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_GHOST_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_40_MONOTYPE_STEEL,
+        .name = COMPOUND_STRING("Steel"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Steel-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_STEEL_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_41_MONOTYPE_FIRE,
+        .name = COMPOUND_STRING("Fire"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Fire-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_FIRE_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_42_MONOTYPE_WATER,
+        .name = COMPOUND_STRING("Water"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Water-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_WATER_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_43_MONOTYPE_GRASS,
+        .name = COMPOUND_STRING("Grass"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Grass-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_GRASS_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_44_MONOTYPE_ELECTRIC,
+        .name = COMPOUND_STRING("Electric"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Electric-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_ELECTRIC_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_45_MONOTYPE_PSYCHIC,
+        .name = COMPOUND_STRING("Psychic"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Psychic-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_PSYCHIC_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_46_MONOTYPE_ICE,
+        .name = COMPOUND_STRING("Ice"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Ice-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_ICE_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_47_MONOTYPE_DRAGON,
+        .name = COMPOUND_STRING("Dragon"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Dragon-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_DRAGON_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_48_MONOTYPE_DARK,
+        .name = COMPOUND_STRING("Dark"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Dark-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_DARK_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_49_MONOTYPE_FAIRY,
+        .name = COMPOUND_STRING("Fairy"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Fairy-type Pokémon."),
+        .map = sText_Revelation,
+        .sprite = ITEM_FAIRY_TERA_SHARD,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    }
+};
+
+const struct SubQuest sSubQuests12[MONOREGION_SUBQUEST_COUNT] =
+{
+    {
+        .id = SUB_QUEST_50_REGION_KANTO,
+        .name = COMPOUND_STRING("Kanto"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Kanto region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_PEWTER_CRUNCHIES,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_51_REGION_JOHTO,
+        .name = COMPOUND_STRING("Johto"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Johto region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_RAGE_CANDY_BAR,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_52_REGION_HOENN,
+        .name = COMPOUND_STRING("Hoenn"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Hoenn region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_LAVA_COOKIE,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_53_REGION_SINNOH,
+        .name = COMPOUND_STRING("Sinnoh"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Sinnoh region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_OLD_GATEAU,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_54_REGION_UNOVA,
+        .name = COMPOUND_STRING("Unova"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Unova region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_CASTELIACONE,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_55_REGION_KALOS,
+        .name = COMPOUND_STRING("Kalos"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Kalos region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_LUMIOSE_GALETTE,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_56_REGION_ALOLA,
+        .name = COMPOUND_STRING("Alola"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Alola region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_BIG_MALASADA,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_57_REGION_GALAR,
+        .name = COMPOUND_STRING("Galar"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Galar region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_MAX_MUSHROOMS,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    },
+
+    {
+        .id = SUB_QUEST_58_REGION_PALDEA,
+        .name = COMPOUND_STRING("Paldea"),
+        .desc = COMPOUND_STRING(
+                    "Won the Revelation Tournament by\n"
+                    "only using Pokémon native to the\n"
+                    "Paldea region."),
+        .map = sText_Revelation,
+        .sprite = ITEM_FRESH_START_MOCHI,
+        .spritetype = ITEM,
+        .type = sText_Defeated
+    }
+};
+
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+/*
+TRAINER_PAWAN                         1 // Bug-type
+TRAINER_PRAJESH                       2 // Grass-type
+TRAINER_HANSTON                       3 // Steel-type
+TRAINER_PREMAL                        4 // Dark-type
+TRAINER_RASHEL                        5 // Psychic-type
+TRAINER_DON                           6 // Ghost-type
+TRAINER_AKSHARA                       7 // Ice-type
+TRAINER_DARA                          8 // Fairy-type
+TRAINER_GILSTON                       9 // Fighting-type
+TRAINER_DELSON                       11 // Fire-type
+TRAINER_MONVISH                      12 // Flying-type
+TRAINER_DARWIN                       13 // Electric-type
+TRAINER_ADITHYA                      14 // Water-type
+TRAINER_HANDAM                       15 // Flying-type
+TRAINER_RION                         16 // Ground-type
+TRAINER_DEON                         17 // Dragon-type
+
+TRAINER_JAKE                        265 // Rock-type
+TRAINER_REEVE                       266 // Dark-type
+TRAINER_PREM                        267 // Ghost-type
+TRAINER_JAISON                      268 // Fairy-type
+TRAINER_PRAJITH                     269 // Fire-type
+TRAINER_VARUN                       270 // Electric-type
+TRAINER_SNEHAL                      271 // Flying-type
+TRAINER_RAJESH                      272 // Dragon-type
+*/

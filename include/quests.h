@@ -69,8 +69,18 @@ enum QuestCases
 };
 
 extern const struct SideQuest sSideQuests[];
+
 extern const struct SubQuest sSubQuests1[];
 extern const struct SubQuest sSubQuests2[];
+extern const struct SubQuest sSubQuests3[];
+extern const struct SubQuest sSubQuests4[];
+extern const struct SubQuest sSubQuests5[];
+extern const struct SubQuest sSubQuests6[];
+extern const struct SubQuest sSubQuests7[];
+extern const struct SubQuest sSubQuests8[];
+extern const struct SubQuest sSubQuests9[];
+extern const struct SubQuest sSubQuests11[];
+extern const struct SubQuest sSubQuests12[];
 
 // functions
 void QuestMenu_Init(u8 a0, MainCallback callback);
