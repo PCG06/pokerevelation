@@ -32,7 +32,7 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 		setflag(FLAG_DEFEATED_VARUN)
 		setvar(VAR_DEFEATED_VARUN, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_17_BEAT_VARUN)
+		completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_6_BEAT_VARUN)
 		clearflag(FLAG_HIDE_MONVISH)
 	}
 	release
@@ -49,5 +49,5 @@ script RevelationMap_Gym6_ScientistDarwin { // Electric-type Trainer
 }
 
 script RevelationMap_Gym6_ScientistDarwinSubQuest {
-	completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_16_BEAT_DARWIN)
+	completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_6_BEAT_DARWIN)
 }

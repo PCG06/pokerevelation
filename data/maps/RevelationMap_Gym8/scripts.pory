@@ -34,7 +34,7 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 		setflag(FLAG_DEFEATED_RAJESH)
 		setvar(VAR_DEFEATED_RAJESH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_23_BEAT_RAJESH)
+		completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_8_BEAT_RAJESH)
 		clearflag(FLAG_HIDE_RION)
 	}
 	release
@@ -42,14 +42,14 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 }
 
 script RevelationMap_Gym8_BirdKeeperDeon { // Dragon-type Trainer
-	trainerbattle_single(TRAINER_DEON, "Dragons are fierce, but I've\ntrained under Rajesh.\pYou'll need more than luck to break\nthrough!", "So this is the strength of a future Champion… impressive.", RevelationMap_Gym8_BirdKeeperDeonSubQuest)
+	trainerbattle_single(TRAINER_DEON, "Dragons are fierce, but I've\ntrained under Rajesh.\pYou'll need more than luck to break\nthrough!", "So this is the strength of a future\nChampion…\limpressive.", RevelationMap_Gym8_BirdKeeperDeonSubQuest)
 	msgbox("{SPEAKER NAME_DEON}"
 			"If you could beat me,\n"
-			"maybe you really do stand a chance\n"
+			"maybe you really do stand a chance\l"
 			"against Rajesh.", MSGBOX_AUTOCLOSE)
 	end
 }
 
 script RevelationMap_Gym8_BirdKeeperDeonSubQuest {
-	completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_22_BEAT_DEON)
+	completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_8_BEAT_DEON)
 }

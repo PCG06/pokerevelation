@@ -1001,33 +1001,21 @@ static void AssignCancelNameAndId(u8 numRow)
 
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
-    u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
-    u8 index = uniqueId / 8; //8 bits per byte
-    u8 bit = uniqueId % 8;
-    u8 mask = 1 << bit;
+	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
+	u8  index = uniqueId / 8; // 8 bits per byte
+	u8	bit = uniqueId % 8;
+	u8	mask = 1 << bit;
 
-    DebugPrintf("QuestMenu_GetSetSubquestState: quest=%d, childQuest=%d, uniqueId=%d, index=%d, bit=%d", 
-                quest, childQuest, uniqueId, index, bit);
+	switch (caseId)
+	{
+		case FLAG_GET_COMPLETED:
+			return gSaveBlock2Ptr->subQuests[index] & mask;
+		case FLAG_SET_COMPLETED:
+			gSaveBlock2Ptr->subQuests[index] |= mask;
+			return 1;
+	}
 
-    switch (caseId)
-    {
-        case FLAG_GET_COMPLETED:
-        {
-            u8 result = gSaveBlock2Ptr->subQuests[index] & mask;
-            DebugPrintf("GET_COMPLETED: current value=%d", result);
-            return result;
-        }
-        case FLAG_SET_COMPLETED:
-        {
-            u8 oldValue = gSaveBlock2Ptr->subQuests[index];
-            gSaveBlock2Ptr->subQuests[index] |= mask;
-            u8 newValue = gSaveBlock2Ptr->subQuests[index];
-            DebugPrintf("SET_COMPLETED: old=%d, new=%d, mask=%d", oldValue, newValue, mask);
-            return 1;
-        }
-    }
-
-    return -1;
+	return -1;
 }
 
 u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
@@ -2192,4 +2180,270 @@ void QuestMenu_ResetMenuSaveData(void)
 	       sizeof(gSaveBlock2Ptr->questData));
 	memset(&gSaveBlock2Ptr->subQuests, 0,
 	       sizeof(gSaveBlock2Ptr->subQuests));
+}
+
+static void CompleteMonotypeSubquest(u8 type)
+{
+    u8 subquest;
+    
+    switch (type)
+    {
+        case TYPE_NORMAL:   subquest = SUB_QUEST_11_MONOTYPE_NORMAL;   break;
+        case TYPE_FIGHTING: subquest = SUB_QUEST_11_MONOTYPE_FIGHTING; break;
+        case TYPE_FLYING:   subquest = SUB_QUEST_11_MONOTYPE_FLYING;   break;
+        case TYPE_POISON:   subquest = SUB_QUEST_11_MONOTYPE_POISON;   break;
+        case TYPE_GROUND:   subquest = SUB_QUEST_11_MONOTYPE_GROUND;   break;
+        case TYPE_ROCK:     subquest = SUB_QUEST_11_MONOTYPE_ROCK;     break;
+        case TYPE_BUG:      subquest = SUB_QUEST_11_MONOTYPE_BUG;      break;
+        case TYPE_GHOST:    subquest = SUB_QUEST_11_MONOTYPE_GHOST;    break;
+        case TYPE_STEEL:    subquest = SUB_QUEST_11_MONOTYPE_STEEL;    break;
+        case TYPE_FIRE:     subquest = SUB_QUEST_11_MONOTYPE_FIRE;     break;
+        case TYPE_WATER:    subquest = SUB_QUEST_11_MONOTYPE_WATER;    break;
+        case TYPE_GRASS:    subquest = SUB_QUEST_11_MONOTYPE_GRASS;    break;
+        case TYPE_ELECTRIC: subquest = SUB_QUEST_11_MONOTYPE_ELECTRIC; break;
+        case TYPE_PSYCHIC:  subquest = SUB_QUEST_11_MONOTYPE_PSYCHIC;  break;
+        case TYPE_ICE:      subquest = SUB_QUEST_11_MONOTYPE_ICE;      break;
+        case TYPE_DRAGON:   subquest = SUB_QUEST_11_MONOTYPE_DRAGON;   break;
+        case TYPE_DARK:     subquest = SUB_QUEST_11_MONOTYPE_DARK;     break;
+        case TYPE_FAIRY:    subquest = SUB_QUEST_11_MONOTYPE_FAIRY;    break;
+        default: 
+            DebugPrintf("Invalid type %d, cannot complete subquest", type);
+            return;
+    }
+    
+    DebugPrintf("COMPLETING subquest for type %S", gTypesInfo[type].name);
+    QuestMenu_GetSetSubquestState(QUEST_11_THE_MONOTYPE_MASOCHIST, FLAG_SET_COMPLETED, subquest);
+}
+
+void QuestMenu_SetMonotypePkmnQuest(void)
+{
+    if (gPlayerPartyCount == 0)
+        return;
+
+    if (QuestMenu_GetSetQuestState(QUEST_11_THE_MONOTYPE_MASOCHIST, FLAG_GET_COMPLETED))
+        return;
+
+    DebugPrintf("=== Starting Monotype quest check ===");
+    DebugPrintf("Party count: %d", gPlayerPartyCount);
+
+    // Get the first Pokemon's types as potential targets
+    u16 firstSpecies = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES);
+    if (firstSpecies == SPECIES_NONE)
+    {
+        DebugPrintf("Slot 0 is empty, returning");
+        return;
+    }
+
+    u8 firstType1 = gSpeciesInfo[firstSpecies].types[0];
+    u8 firstType2 = gSpeciesInfo[firstSpecies].types[1];
+    
+    DebugPrintf("First Pokemon (slot 0): %S", gSpeciesInfo[firstSpecies].speciesName);
+    DebugPrintf("First Pokemon Type 1: %S", gTypesInfo[firstType1].name);
+    DebugPrintf("First Pokemon Type 2: %S", gTypesInfo[firstType2].name);
+    DebugPrintf("");
+
+    // We need to check which types ALL Pokemon share
+    // Check first type of first Pokemon
+    DebugPrintf("--- [TYPE 1] Checking if ALL Pokemon have %S ---", gTypesInfo[firstType1].name);
+    bool8 allHaveType1 = TRUE;
+    
+    for (u8 i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species == SPECIES_NONE)
+        {
+            DebugPrintf("Slot %d: Empty (skipping)", i);
+            continue;
+        }
+
+        u8 t1 = gSpeciesInfo[species].types[0];
+        u8 t2 = gSpeciesInfo[species].types[1];
+        
+        bool8 hasType = (t1 == firstType1 || t2 == firstType1);
+        
+        DebugPrintf("Slot %d: %S (Type1: %S, Type2: %S) - Has %S? %s", i, gSpeciesInfo[species].speciesName, gTypesInfo[t1].name, gTypesInfo[t2].name, gTypesInfo[firstType1].name, hasType ? "YES" : "NO");
+
+        if (!hasType)
+        {
+            allHaveType1 = FALSE;
+            DebugPrintf("This Pokemon breaks the chain for %S!", gTypesInfo[firstType1].name);
+        }
+    }
+    
+    DebugPrintf("Result: All have %S? %s", gTypesInfo[firstType1].name, allHaveType1 ? "YES" : "NO");
+    DebugPrintf("");
+
+    // Check second type of first Pokemon (only if it exists and is different from type1)
+    bool8 allHaveType2 = FALSE;
+    if (firstType2 != TYPE_NONE && firstType2 != firstType1)
+    {
+        DebugPrintf("--- [TYPE 2] Checking if ALL Pokemon have %S ---", gTypesInfo[firstType2].name);
+        allHaveType2 = TRUE;
+        
+        for (u8 i = 0; i < gPlayerPartyCount; i++)
+        {
+            u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+            if (species == SPECIES_NONE)
+                continue;
+
+            u8 t1 = gSpeciesInfo[species].types[0];
+            u8 t2 = gSpeciesInfo[species].types[1];
+            
+            bool8 hasType = (t1 == firstType2 || t2 == firstType2);
+            
+            DebugPrintf("Slot %d: %S - Has %S? %s", i, gSpeciesInfo[species].speciesName, gTypesInfo[firstType2].name, hasType ? "YES" : "NO");
+
+            if (!hasType)
+            {
+                allHaveType2 = FALSE;
+                DebugPrintf("This Pokemon breaks the chain for %S!", gTypesInfo[firstType2].name);
+            }
+        }
+        
+        DebugPrintf("Result: All have %S? %s\n", gTypesInfo[firstType2].name, allHaveType2 ? "YES" : "NO");
+    }
+
+    // Complete subquests based on results
+    DebugPrintf("=== Final Results ===");
+    
+    if (allHaveType1)
+    {
+        DebugPrintf("SUBQUEST COMPLETE - ALL Pokemon share type %S", gTypesInfo[firstType1].name);
+        CompleteMonotypeSubquest(firstType1);
+    }
+    else
+    {
+        DebugPrintf("SUBQUEST INCOMPLETE - NOT all Pokemon share type %S", gTypesInfo[firstType1].name);
+    }
+
+    if (firstType2 != TYPE_NONE && firstType2 != firstType1)
+    {
+        if (allHaveType2)
+        {
+            DebugPrintf("SUBQUEST COMPLETE - ALL Pokemon share type %S", gTypesInfo[firstType2].name);
+            CompleteMonotypeSubquest(firstType2);
+        }
+        else
+        {
+            DebugPrintf("SUBQUEST INCOMPLETE - NOT all Pokemon share type %S", gTypesInfo[firstType2].name);
+        }
+    }
+
+    DebugPrintf("\n=== Checking if entire quest should be marked complete ===");
+    
+    // Check if all subquests are complete
+    for (u8 i = 0; i < MONOTYPE_SUBQUEST_COUNT; i++)
+    {
+        if (!QuestMenu_GetSetSubquestState(QUEST_11_THE_MONOTYPE_MASOCHIST, FLAG_GET_COMPLETED, i))
+            return;
+    }
+    QuestMenu_GetSetQuestState(QUEST_11_THE_MONOTYPE_MASOCHIST, FLAG_SET_COMPLETED);
+}
+
+void QuestMenu_SetMonoregionPkmnQuest(void)
+{
+    if (gPlayerPartyCount == 0)
+        return;
+
+    if (QuestMenu_GetSetQuestState(QUEST_12_THE_REGIONAL_REGAL, FLAG_GET_COMPLETED))
+        return;
+
+    struct
+    {
+        enum NationalDexOrder start;
+        enum NationalDexOrder end;
+        u8 subquest;
+    } sRegions[] =
+    {
+        {NATIONAL_DEX_BULBASAUR,   NATIONAL_DEX_MEW,        SUB_QUEST_12_REGION_KANTO},
+        {NATIONAL_DEX_CHIKORITA,   NATIONAL_DEX_CELEBI,     SUB_QUEST_12_REGION_JOHTO},
+        {NATIONAL_DEX_TREECKO,     NATIONAL_DEX_DEOXYS,     SUB_QUEST_12_REGION_HOENN},
+        {NATIONAL_DEX_TURTWIG,     NATIONAL_DEX_ARCEUS,     SUB_QUEST_12_REGION_SINNOH},
+        {NATIONAL_DEX_VICTINI,     NATIONAL_DEX_GENESECT,   SUB_QUEST_12_REGION_UNOVA},
+        {NATIONAL_DEX_CHESPIN,     NATIONAL_DEX_VOLCANION,  SUB_QUEST_12_REGION_KALOS},
+        {NATIONAL_DEX_ROWLET,      NATIONAL_DEX_MELMETAL,   SUB_QUEST_12_REGION_ALOLA},
+        {NATIONAL_DEX_GROOKEY,     NATIONAL_DEX_ENAMORUS,   SUB_QUEST_12_REGION_GALAR},
+        {NATIONAL_DEX_SPRIGATITO,  NATIONAL_DEX_IRON_CROWN, SUB_QUEST_12_REGION_PALDEA}
+    };
+    u8 regionCount = ARRAY_COUNT(sRegions);
+    
+    DebugPrintf("=== Starting Monoregion quest check ===");
+    DebugPrintf("Party count: %d", gPlayerPartyCount);
+   
+    // Get the first Pokemon's species and find its region
+    u16 firstSpecies = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES);
+
+    if (firstSpecies == SPECIES_NONE)
+        return;
+   
+    u16 firstDexNum = SpeciesToNationalPokedexNum(firstSpecies);
+    u8 targetRegion = 0xFF;
+    
+    DebugPrintf("First Pokemon: Species %d, Dex Num %d", firstSpecies, firstDexNum);
+   
+    // Find which region the first Pokemon belongs to
+    for (u8 regionIdx = 0; regionIdx < regionCount; regionIdx++)
+    {
+        DebugPrintf("Checking region %d: Range %d-%d", regionIdx, sRegions[regionIdx].start, sRegions[regionIdx].end);
+        
+        if (firstDexNum >= sRegions[regionIdx].start && firstDexNum <= sRegions[regionIdx].end)
+        {
+            targetRegion = regionIdx;
+            DebugPrintf("Target region index: %d", targetRegion);
+            break;
+        }
+    }
+    
+    if (targetRegion == 0xFF)
+	{
+		DebugPrintf("Target region failed");
+        return;
+	}
+
+    DebugPrintf("\nTarget region: %d (Dex range %d-%d)", targetRegion, sRegions[targetRegion].start, sRegions[targetRegion].end);
+    
+    // Check if all Pokemon in the party are from the same region
+    bool8 allFromSameRegion = TRUE;
+    for (u8 i = 1; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species == SPECIES_NONE)
+            continue;
+       
+        u16 nationalDexNum = SpeciesToNationalPokedexNum(species);
+        
+        DebugPrintf("Slot %d: Species %d, Dex %d", i, species, nationalDexNum);
+        
+        if (nationalDexNum < sRegions[targetRegion].start || nationalDexNum > sRegions[targetRegion].end)
+        {
+            allFromSameRegion = FALSE;
+            DebugPrintf("^^^ CHAIN BROKEN! Pokemon at slot %d (Dex %d) is NOT from target region %d ^^^", i, nationalDexNum, targetRegion);
+            break;
+        }
+    }
+
+    DebugPrintf("=== Results ===");
+    DebugPrintf("All Pokemon from region %d? %s", targetRegion, allFromSameRegion ? "YES" : "NO");
+   
+    // If all Pokemon are from the target region, complete that subquest
+    if (allFromSameRegion)
+    {
+        u8 subquest = sRegions[targetRegion].subquest;
+        DebugPrintf(">>> ALL Pokemon are from region %d, completing subquest %d <<<", targetRegion, subquest);
+        QuestMenu_GetSetSubquestState(QUEST_12_THE_REGIONAL_REGAL, FLAG_SET_COMPLETED, subquest);
+    }
+    else
+    {
+        DebugPrintf("NOT all Pokemon from region %d - NO SUBQUEST", targetRegion);
+    }
+    
+    DebugPrintf("");
+    DebugPrintf("=== Checking if entire quest should be marked complete ===");
+    
+    for (u8 i = 0; i < MONOREGION_SUBQUEST_COUNT; i++)
+    {
+        if (!QuestMenu_GetSetSubquestState(QUEST_12_THE_REGIONAL_REGAL, FLAG_GET_COMPLETED, i))
+            return;
+    }
+    QuestMenu_GetSetQuestState(QUEST_12_THE_REGIONAL_REGAL, FLAG_SET_COMPLETED);
 }

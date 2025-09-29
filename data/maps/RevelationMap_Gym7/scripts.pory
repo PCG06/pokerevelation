@@ -31,7 +31,7 @@ script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
 		setflag(FLAG_DEFEATED_SNEHAL)
 		setvar(VAR_DEFEATED_SNEHAL, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_20_BEAT_SNEHAL)
+		completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_7_BEAT_SNEHAL)
 		clearflag(FLAG_HIDE_ADITHYA)
 	}
 	release
@@ -48,5 +48,5 @@ script RevelationMap_Gym7_BirdKeeperHandam { // Flying-type Trainer
 }
 
 script RevelationMap_Gym7_BirdKeeperHandamSubQuest {
-	completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_19_BEAT_HANDAM)
+	completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_7_BEAT_HANDAM)
 }

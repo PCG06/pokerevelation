@@ -58,7 +58,7 @@ script RevelationMap_EntryPoint_BugCatcherPawan {
     if (var(VAR_DEFEATED_JAKE) == 1) {
         applymove(LOCALID_REVELATION_BUG_CATCHER, MoveRightToStand)
         setvar(VAR_DEFEATED_JAKE, 2)
-        completesubquest(QUEST_1_BEAT_GYM_JAKE, SUB_QUEST_3_BEAT_PAWAN)
+        completesubquest(QUEST_1_BEAT_GYM_JAKE, SUB_QUEST_1_BEAT_PAWAN)
         completequest(QUEST_1_BEAT_GYM_JAKE, FALSE)
     } elif (var(VAR_DEFEATED_JAKE) == 2) {
         lock
@@ -94,7 +94,7 @@ script RevelationMap_EntryPoint_SuperNerdHanston {
     if (var(VAR_DEFEATED_REEVE) == 1) {
         applymove(LOCALID_REVELATION_SUPER_NERD, MoveRightToStand)
         setvar(VAR_DEFEATED_REEVE, 2)
-        completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_6_BEAT_HANSTON)
+        completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_2_BEAT_HANSTON)
         completequest(QUEST_2_BEAT_GYM_REEVE, FALSE)
     } elif (var(VAR_DEFEATED_REEVE) == 2) {
         lock
@@ -129,7 +129,7 @@ script RevelationMap_EntryPoint_HexManiacRashel {
     if (var(VAR_DEFEATED_PREM) == 1) {
         applymove(LOCALID_REVELATION_HEX_MANIAC, MoveRightToStand)
         setvar(VAR_DEFEATED_PREM, 2)
-        completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_9_BEAT_RASHEL)
+        completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_3_BEAT_RASHEL)
         completequest(QUEST_3_BEAT_GYM_PREM, FALSE)
     } elif (var(VAR_DEFEATED_PREM) == 2) {
         lock
@@ -165,7 +165,7 @@ script RevelationMap_EntryPoint_LadyAkshara {
     if (var(VAR_DEFEATED_JAISON) == 1) {
         applymove(LOCALID_REVELATION_LADY, MoveRightToStand)
         setvar(VAR_DEFEATED_JAISON, 2)
-        completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_12_BEAT_AKSHARA)
+        completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_4_BEAT_AKSHARA)
         completequest(QUEST_4_BEAT_GYM_JAISON, FALSE)
     } elif (var(VAR_DEFEATED_JAISON) == 2) {
         lock
@@ -199,7 +199,7 @@ script RevelationMap_EntryPoint_BlackBeltGilston {
     if (var(VAR_DEFEATED_PRAJITH) == 1) {
         applymove(LOCALID_REVELATION_BLACK_BELT, MoveLeftToStand)
         setvar(VAR_DEFEATED_PRAJITH, 2)
-        completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_15_BEAT_GILSTON)
+        completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_5_BEAT_GILSTON)
         completequest(QUEST_5_BEAT_GYM_PRAJITH, FALSE)
     } elif (var(VAR_DEFEATED_PRAJITH) == 2) {
         lock
@@ -233,7 +233,7 @@ script RevelationMap_EntryPoint_GuiratistMonvish {
     if (var(VAR_DEFEATED_VARUN) == 1) {
         applymove(LOCALID_REVELATION_GUITARIST, MoveLeftToStand)
         setvar(VAR_DEFEATED_VARUN, 2)
-        completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_18_BEAT_MONVISH)
+        completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_6_BEAT_MONVISH)
         completequest(QUEST_6_BEAT_GYM_VARUN, FALSE)
     } elif (var(VAR_DEFEATED_VARUN) == 2) {
         lock
@@ -268,7 +268,7 @@ script RevelationMap_EntryPoint_FishermanAdithya {
     if (var(VAR_DEFEATED_SNEHAL) == 1) {
         applymove(LOCALID_REVELATION_FISHERMAN, MoveLeftToStand)
         setvar(VAR_DEFEATED_SNEHAL, 2)
-        completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_21_BEAT_ADITHYA)
+        completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_7_BEAT_ADITHYA)
         completequest(QUEST_7_BEAT_GYM_SNEHAL, FALSE)
     } elif (var(VAR_DEFEATED_SNEHAL) == 2) {
         lock
@@ -303,7 +303,7 @@ script RevelationMap_EntryPoint_ExpertRion {
     if (var(VAR_DEFEATED_RAJESH) == 1) {
         applymove(LOCALID_REVELATION_EXPERT, MoveLeftToStand)
         setvar(VAR_DEFEATED_RAJESH, 2)
-        completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_24_BEAT_RION)
+        completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_8_BEAT_RION)
         completequest(QUEST_8_BEAT_GYM_RAJESH, FALSE)
     } elif (var(VAR_DEFEATED_RAJESH) == 2) {
         lock

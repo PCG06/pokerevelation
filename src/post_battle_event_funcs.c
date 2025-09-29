@@ -5,6 +5,7 @@
 #include "hall_of_fame.h"
 #include "load_save.h"
 #include "overworld.h"
+#include "quests.h"
 #include "script_pokemon_util.h"
 #include "tv.h"
 #include "constants/heal_locations.h"
@@ -34,6 +35,9 @@ int GameClear(void)
         SetGameStat(GAME_STAT_FIRST_HOF_PLAY_TIME, (gSaveBlock2Ptr->playTimeHours << 16) | (gSaveBlock2Ptr->playTimeMinutes << 8) | gSaveBlock2Ptr->playTimeSeconds);
 
     SetContinueGameWarpStatus();
+
+    QuestMenu_SetMonotypePkmnQuest();
+    QuestMenu_SetMonoregionPkmnQuest();
 
     VarSet(VAR_REV_STATE, 6);
     SetContinueGameWarpToHealLocation(HEAL_LOCATION_REVELATION_LOBBY);

@@ -32,7 +32,7 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 		setflag(FLAG_DEFEATED_JAISON)
 		setvar(VAR_DEFEATED_JAISON, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_11_BEAT_JAISON)
+		completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_4_BEAT_JAISON)
 		clearflag(FLAG_HIDE_AKSHARA)
 	}
 	release
@@ -48,6 +48,6 @@ script RevelationMap_Gym4_SchoolKidDara { // Fairy-type Trainer
 }
 
 script RevelationMap_Gym4_SchoolKidDaraSubQuest {
-	completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_10_BEAT_DARA)
+	completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_4_BEAT_DARA)
 }
 

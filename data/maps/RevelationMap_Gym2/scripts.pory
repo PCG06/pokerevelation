@@ -32,7 +32,7 @@ script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 		setflag(FLAG_DEFEATED_REEVE)
 		setvar(VAR_DEFEATED_REEVE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_5_BEAT_REEVE)
+		completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_2_BEAT_REEVE)
 		clearflag(FLAG_HIDE_HANSTON)
 	}
 	release
@@ -49,5 +49,5 @@ script RevelationMap_Gym2_BurglarPremal { // Dark-type Trainer
 }
 
 script RevelationMap_Gym2_BurglarPremalSubQuest {
-	completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_4_BEAT_PREMAL)
+	completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_2_BEAT_PREMAL)
 }

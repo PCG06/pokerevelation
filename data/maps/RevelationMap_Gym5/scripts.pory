@@ -31,7 +31,7 @@ script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
 		setflag(FLAG_DEFEATED_PRAJITH)
 		setvar(VAR_DEFEATED_PRAJITH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
-		completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_14_BEAT_PRAJITH)
+		completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_5_BEAT_PRAJITH)
 		clearflag(FLAG_HIDE_GILSTON)
 	}
 	release
@@ -48,5 +48,5 @@ script RevelationMap_Gym5_KindlerDelson { // Fire-type Trainer
 }
 
 script RevelationMap_Gym5_KindlerDelsonSubQuest {
-	completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_13_BEAT_DELSON)
+	completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_5_BEAT_DELSON)
 }

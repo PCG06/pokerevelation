@@ -73,6 +73,7 @@ EventScript_YouWantThisPkmn_1:
 EventScript_Givemonset::
 	playfanfare MUS_OBTAIN_ITEM
 	givemonset VAR_TEMP_TRANSFERRED_SPECIES
+	addvar VAR_GOT_PARTY_PKMN, 1
 	setvar VAR_TEMP_B, 0
 	setvar VAR_TEMP_D, 0
 	closemessage
@@ -95,7 +96,6 @@ EventScript_Givemonset_2:
 	goto EventScript_Givemonset_1
 
 EventScript_Givemonset_5:
-	addvar VAR_GOT_PARTY_PKMN, 1
 	setvar VAR_REV_STATE, 1
 	buffernumberstring STR_VAR_1, VAR_GOT_PARTY_PKMN
 	message EventScript_Givemonset_Text_0
