@@ -14,6 +14,7 @@ static u16 sErrorStatus;
 static struct SiiRtcInfo sRtc;
 static u8 sProbeResult;
 static u16 sSavedIme;
+static u8 gLastRtcSecond;
 
 // iwram common
 COMMON_DATA struct Time gLocalTime = {0};
@@ -463,4 +464,22 @@ enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay)
 enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay)
 {
     return timeOfDay == TIME_MORNING ? TIME_NIGHT : timeOfDay - 1;
+}
+
+u8 RtcSecondChange(void)
+{
+    u8 currentRtcSecond;
+
+    RtcGetInfo(&sRtc);
+    currentRtcSecond = ConvertBcdToBinary(sRtc.second);
+
+    if (gLastRtcSecond != currentRtcSecond)
+    {
+        gLastRtcSecond = currentRtcSecond;
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
