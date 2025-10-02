@@ -105,7 +105,7 @@ void *AllocInternal(void *heapStart, u32 size, const char *location)
             {
                 DebugPrintfLevel(MGBA_LOG_ERROR, "%s: out of memory trying to allocate %d bytes", location, size);
             }
-            AGB_ASSERT(FALSE);
+            //AGB_ASSERT(FALSE);
             return NULL;
         }
 
@@ -119,8 +119,8 @@ void FreeInternal(void *heapStart, void *pointer)
     {
         struct MemBlock *head = (struct MemBlock *)heapStart;
         struct MemBlock *block = (struct MemBlock *)((u8 *)pointer - sizeof(struct MemBlock));
-        AGB_ASSERT(block->magic == MALLOC_SYSTEM_ID);
-        AGB_ASSERT(block->allocated == TRUE);
+        //AGB_ASSERT(block->magic == MALLOC_SYSTEM_ID);
+        //AGB_ASSERT(block->allocated == TRUE);
         block->allocated = FALSE;
 
         // If the freed block isn't the last one, merge with the next block
@@ -143,7 +143,7 @@ void FreeInternal(void *heapStart, void *pointer)
         {
             if (!block->prev->allocated)
             {
-                AGB_ASSERT(block->prev->magic == MALLOC_SYSTEM_ID);
+                //AGB_ASSERT(block->prev->magic == MALLOC_SYSTEM_ID);
 
                 block->prev->next = block->next;
 

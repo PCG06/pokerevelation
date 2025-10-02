@@ -2422,12 +2422,30 @@ static void PlayerHandleBattleDebug(u32 battler)
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
 }
 
+static void Controller_WaitForStatusMenu(u32 battler)
+{
+    DebugPrintf("Check 3");
+    if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
+    {
+        PlayerBufferExecCompleted(battler);
+    }
+}
+
+static void Controller_WaitToTransitionStatusMenu(u32 battler)
+{
+    DebugPrintf("Check 2 - active=%d", gPaletteFade.active);
+    if(!gPaletteFade.active)
+    {
+        UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);
+        gBattlerControllerFuncs[battler] = Controller_WaitForStatusMenu;
+    }
+}
+
 static void PlayerHandleBattleMenu(u32 battler)
 {
-    BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
-    FreeAllWindowBuffers();
-    UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);
-    gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+    DebugPrintf("Check 1");
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    gBattlerControllerFuncs[battler] = Controller_WaitToTransitionStatusMenu;
 }
 
 // Order based numerically, with EFFECTIVENESS_CANNOT_VIEW at 0 to always prioritize any other effectiveness during comparison
