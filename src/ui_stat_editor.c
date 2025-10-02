@@ -639,7 +639,7 @@ static void PrintMonStats()
     u16 currentStat;
     u8 text[2];
     u16 nature = GetNature(ReturnPartyMon());
-    u16 ability = GetMonAbility(ReturnPartyMon());
+    enum Ability ability = GetMonAbility(ReturnPartyMon());
     u16 level = GetMonData(ReturnPartyMon(), MON_DATA_LEVEL);
     u32 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
     u16 gender = GetGenderFromSpeciesAndPersonality(sStatEditorDataPtr->speciesID, personality);

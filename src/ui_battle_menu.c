@@ -1512,7 +1512,7 @@ static void UNUSED PrintAbilityTab(void)
     u8 x, y, x2, y2;
     u8 windowId = WINDOW_1;
     u8 colorIdx = FONT_BLACK;
-    u16 ability = gBattleMons[sMenuDataPtr->battlerId].ability;
+    enum Ability ability = gBattleMons[sMenuDataPtr->battlerId].ability;
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 

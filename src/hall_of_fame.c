@@ -433,7 +433,7 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
 u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
-    u16 ability = GetMonAbility(mon);
+    enum Ability ability = GetMonAbility(mon);
     u16 targetSpecies = species;
     const struct FormChange *formChanges = GetSpeciesFormChanges(species);
 
