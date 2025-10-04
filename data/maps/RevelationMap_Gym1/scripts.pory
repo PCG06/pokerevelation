@@ -13,11 +13,11 @@ script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
 			"the road only gets steeper from here.", MSGBOX_NPC)
 	} else {
 		msgbox("{SPEAKER NAME_JAKE}"
-			   "So you've made it here already?\p"
-			   "Not bad for a rookie!\n"
-			   "But strength isn't just about speed.\p"
-			   "Like a Rock, you need to stand firm!\p"
-			   "Show me if you've got what it takes!", MSGBOX_AUTOCLOSE)
+				"So you've made it here already?\p"
+				"Not bad for a rookie!\n"
+				"But strength isn't just about speed.\p"
+				"Like a Rock, you need to stand firm!\p"
+				"Show me if you've got what it takes!", MSGBOX_AUTOCLOSE)
 		trainerbattle_no_intro(TRAINER_JAKE, "Whoa!\nYou're tougher than I thought!")
 		playfanfare(MUS_OBTAIN_BADGE)
 		message("{PLAYER} beat Jake!")

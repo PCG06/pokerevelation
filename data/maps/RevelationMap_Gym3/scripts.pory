@@ -33,7 +33,6 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 		setvar(VAR_DEFEATED_PREM, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_3_BEAT_PREM)
-		clearflag(FLAG_HIDE_HANSTON)
 		clearflag(FLAG_HIDE_RASHEL)
 	}
 	release

@@ -7,10 +7,10 @@ mapscripts RevelationMap_ChallengersArena_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_REV_STATE, 3 {
 			setvar(VAR_REV_STATE, 4)
-            startquest(QUEST_9_BEAT_CHALLENGERS_ARENA, FALSE)
-            startquest(QUEST_10_THE_REVELATION_CHAMPION, FALSE)
-	        startquest(QUEST_11_THE_MONOTYPE_MASOCHIST, FALSE)
-	        startquest(QUEST_12_THE_REGIONAL_REGAL, FALSE)
+			startquest(QUEST_9_BEAT_CHALLENGERS_ARENA, FALSE)
+			startquest(QUEST_10_THE_REVELATION_CHAMPION, FALSE)
+			startquest(QUEST_11_THE_MONOTYPE_MASOCHIST, FALSE)
+			startquest(QUEST_12_THE_REGIONAL_REGAL, FALSE)
 			call(RevelationMap_ChallengersArena_PlayerEnters)
 		}
 	]

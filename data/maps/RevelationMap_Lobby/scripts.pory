@@ -122,6 +122,7 @@ script RevelationMap_Lobby_EventScript_ProfPokemon {
 				msgbox("{SPEAKER NAME_BENNY}"
 						"Alright, {PLAYER}!\n"
 						"No holding back!", MSGBOX_AUTOCLOSE)
+				setflag(B_FLAG_NO_WHITEOUT)
 				trainerbattle_no_intro(TRAINER_BENNY, "This has been fun!")
 			default:
 			case 2:
@@ -505,6 +506,9 @@ script EventScript_ChooseMoveToTeach {
 
 script RevelationMap_Lobby_EventScript_Whiteout {
 	forcesave
+	if (flag(FLAG_IS_CHAMPION) == TRUE) {
+		return
+	}
 	msgbox("{SPEAKER NAME_BENNY}"
 			"Ah, {PLAYER}!\n"
 			"I was cheering for you…\l"
