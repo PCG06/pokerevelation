@@ -1808,9 +1808,16 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
         {
             *slotPtr = PARTY_SIZE + 1;
         }
-        else if (*slotPtr == PARTY_SIZE + 1)
+        else if (*slotPtr == PARTY_SIZE)
         {
             *slotPtr = gPlayerPartyCount - 1;
+        }
+        else if (*slotPtr == PARTY_SIZE + 1)
+        {
+            if (sPartyMenuInternal->chooseHalf)
+                *slotPtr = PARTY_SIZE;
+            else
+                *slotPtr = gPlayerPartyCount - 1;
         }
         else if (*slotPtr > 0)
         {
@@ -1822,6 +1829,8 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
     case MENU_DIR_RIGHT:
         if (*slotPtr == PARTY_SIZE + 1)
             *slotPtr = 0;
+        else if (sPartyMenuInternal->chooseHalf && *slotPtr == gPlayerPartyCount - 1)
+            *slotPtr = PARTY_SIZE;
         else if (*slotPtr + 1 < gPlayerPartyCount)
             (*slotPtr)++;
         else

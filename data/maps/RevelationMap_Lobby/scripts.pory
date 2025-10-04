@@ -195,6 +195,8 @@ script RevelationMap_Lobby_BattleTower_Teala {
 				msgbox("Hmm. It looks like your party is not\n"
 						"eligible for the Battle Tower.\p"
 						"Please bring three eligible Pokémon.", MSGBOX_AUTOCLOSE)
+				release
+				end
 			}
 			frontier_set(FRONTIER_DATA_LVL_MODE, VAR_RESULT)
 			message("Now please select the three eligible\n"
