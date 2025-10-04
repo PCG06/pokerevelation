@@ -22855,8 +22855,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_DRILL_OUT] =
     {
         .name = COMPOUND_STRING("Drill Out"),
-        .description = sUTurnDescription,
-        .effect = EFFECT_HIT_ESCAPE,
+        .description = COMPOUND_STRING(
+            "Drills around to clear\n"
+            "hazards, then switches out."),
+        .effect = EFFECT_DRILL_OUT,
         .power = 75,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -22865,7 +22867,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .battleAnimScript = gBattleAnimMove_UTurn,
+        .battleAnimScript = gBattleAnimMove_DrillOut,
     },
 
     [MOVE_MYCO_SHIFT] =

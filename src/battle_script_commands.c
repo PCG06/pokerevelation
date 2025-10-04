@@ -6685,7 +6685,7 @@ static void Cmd_moveend(void)
                         continue;
 
                     // Hit escape moves activate before Eject Pack for user
-                    if (moveEffect == EFFECT_HIT_ESCAPE && gBattlerAttacker == battler)
+                    if ((moveEffect == EFFECT_HIT_ESCAPE || moveEffect == EFFECT_DRILL_OUT) && gBattlerAttacker == battler)
                         continue;
 
                     gBattleScripting.battler = battler;
@@ -6703,7 +6703,7 @@ static void Cmd_moveend(void)
                 gBattleScripting.moveendState++;
             break;
         case MOVEEND_HIT_ESCAPE:
-            if (moveEffect == EFFECT_HIT_ESCAPE
+            if ((moveEffect == EFFECT_HIT_ESCAPE || moveEffect == EFFECT_DRILL_OUT)
              && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
              && IsBattlerTurnDamaged(gBattlerTarget)
              && IsBattlerAlive(gBattlerAttacker)
@@ -9166,7 +9166,7 @@ static void RemoveAllTerrains(void)
     }                                                       \
 }
 
-static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
+static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear, u32 effect)
 {
     if (!AreAnyHazardsOnSide(side))
         return FALSE;
@@ -9180,7 +9180,9 @@ static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
             {
                 gBattleStruct->numHazards[side]--;
                 gBattleCommunication[MULTISTRING_CHOOSER] = hazardType;
-                BattleScriptCall(BattleScript_DefogClearHazards);
+                // Hacky workarounds :D
+                if (effect != EFFECT_DRILL_OUT)
+                    BattleScriptCall(BattleScript_DefogClearHazards);
             }
             else
             {
@@ -9214,7 +9216,7 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
         {
             gBattlerAttacker = i; // For correct battle string. Ally's / Foe's
-            if (DefogClearHazards(saveBattler, i, clear))
+            if (DefogClearHazards(saveBattler, i, clear, EFFECT_DEFOG))
                 return TRUE;
         }
         if (gBattleWeather & B_WEATHER_FOG)
@@ -9244,7 +9246,7 @@ static bool32 TryTidyUpClear(u32 battlerAtk, bool32 clear)
     for (i = 0; i < NUM_BATTLE_SIDES; i++)
     {
         gBattlerAttacker = i; // For correct battle string. Ally's / Foe's
-        if (DefogClearHazards(saveBattler, i, clear))
+        if (DefogClearHazards(saveBattler, i, clear, EFFECT_DRILL_OUT))
             return TRUE;
     }
 

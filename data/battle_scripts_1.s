@@ -2475,6 +2475,7 @@ BattleScript_EffectHit_RetFromCritCalc::
 BattleScript_Hit_RetFromAtkAnimation::
 	attackanimation
 	waitanimation
+BattleScript_Hit_RetFromEffectivenessSound::
 	effectivenesssound
 	hitanimation BS_TARGET
 	waitstate
@@ -9066,6 +9067,36 @@ BattleScript_NaturePowerAttackstring::
 	waitmessage B_WAIT_TIME_LONG
 	setcalledmove
 	return
+
+BattleScript_EffectDrillOut::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	saveattacker
+	savetarget
+	trytidyup FALSE, BattleScript_EffectDrillOut2
+	restoreattacker
+	restoretarget
+	call BattleScript_Hit_RetFromEffectivenessSound @ Lazy way of skipping animation for the second time
+	tryfaintmon BS_TARGET
+	moveendall
+	end
+
+BattleScript_EffectDrillOut2::
+	trytidyup TRUE, NULL
+	waitmessage B_WAIT_TIME_LONG
+	restoreattacker
+	restoretarget
+	call BattleScript_Hit_RetFromEffectivenessSound
+	tryfaintmon BS_TARGET
+	printstring STRINGID_CLEAREDALLHAZARDS
+	waitmessage B_WAIT_TIME_LONG
+	moveendall
+	end
 
 BattleScript_EffectMycoShift::
 	attackcanceler

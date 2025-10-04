@@ -14177,7 +14177,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_ADAMANT,
         .evs = {0, 252, 0, 252, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_RAPID_SPIN, MOVE_DRILL_OUT}
+        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_DRILL_OUT}
     },
 
     [SPECIES_STRATOSPIRA] = // Offensive Pivot

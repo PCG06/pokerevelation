@@ -62631,6 +62631,7 @@ static const u16 sPyrolinTeachableLearnset[] = {
     MOVE_SCORCHING_SANDS,
     MOVE_STEEL_BEAM,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SWORDS_DANCE,
     MOVE_WILD_CHARGE,
     MOVE_UNAVAILABLE,
 };

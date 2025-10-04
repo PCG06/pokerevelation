@@ -98642,7 +98642,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_FIRE_LASH"
+        "Move": "MOVE_PYRO_BALL"
       },
       {
         "Level": 1,
@@ -98650,7 +98650,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_RAPID_SPIN"
+        "Move": "MOVE_SWORDS_DANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -98678,6 +98678,7 @@
       "MOVE_RETURN",
       "MOVE_SECRET_POWER",
       "MOVE_SUBSTITUTE",
+      "MOVE_SWORDS_DANCE",
       "MOVE_TERA_BLAST",
       "MOVE_PROTECT"
     ],

@@ -1296,6 +1296,8 @@ static const u16 sGreninjaEventLearnset[] =
 #if P_REVELATION_MONS
 static const u16 sPyrolinEventLearnset[] =
 {
+    // Custom
+    MOVE_FIRE_LASH,
     MOVE_GIGATON_HAMMER,
     MOVE_V_CREATE,
     MOVE_UNAVAILABLE

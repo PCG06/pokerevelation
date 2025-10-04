@@ -20163,7 +20163,7 @@ static const struct LevelUpMove sPyrolinLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_DRILL_OUT),
     LEVEL_UP_MOVE( 1, MOVE_PYRO_BALL),
     LEVEL_UP_MOVE( 1, MOVE_KNOCK_OFF),
-    LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
+    LEVEL_UP_MOVE( 1, MOVE_SWORDS_DANCE),
     LEVEL_UP_END
 };
 

@@ -1032,6 +1032,7 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
     switch (GetMoveEffect(move))
     {
     case EFFECT_HIT_ESCAPE:
+    case EFFECT_DRILL_OUT:
         if (CountUsablePartyMons(battlerAtk) != 0 && ShouldPivot(battlerAtk, battlerDef, abilityDef, move, gAiThinkingStruct->movesetIndex))
             return TRUE;
         break;
@@ -1872,6 +1873,7 @@ bool32 IsHazardClearingMove(u32 move)
     {
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
+    case EFFECT_DRILL_OUT:
         return TRUE;
     case EFFECT_DEFOG:
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
@@ -2878,6 +2880,7 @@ bool32 IsSwitchOutEffect(enum BattleMoveEffects effect)
     case EFFECT_BATON_PASS:
     case EFFECT_CHILLY_RECEPTION:
     case EFFECT_SHED_TAIL:
+    case EFFECT_DRILL_OUT:
         return TRUE;
     default:
         return FALSE;
@@ -4046,6 +4049,7 @@ static u32 GetAIEffectGroup(enum BattleMoveEffects effect)
         break;
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
+    case EFFECT_DRILL_OUT:
         aiEffect |= AI_EFFECT_CLEAR_HAZARDS;
         break;
     case EFFECT_BRICK_BREAK:
