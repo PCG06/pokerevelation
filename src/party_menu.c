@@ -1764,6 +1764,8 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
         {
             if (sPartyMenuInternal->chooseHalf)
                 *slotPtr = PARTY_SIZE;
+            else if (gPlayerPartyCount <= 1)
+                *slotPtr = 0;
             else
                 *slotPtr = gPlayerPartyCount - 1 - (gPlayerPartyCount % 2);
         }
@@ -1772,6 +1774,10 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
             *slotPtr = gPlayerPartyCount - 1 - (gPlayerPartyCount % 2);
         }
         else if (*slotPtr == 0 || *slotPtr == 1)
+        {
+            *slotPtr = PARTY_SIZE + 1; 
+        }
+        else if (*slotPtr >= gPlayerPartyCount && *slotPtr < PARTY_SIZE)
         {
             *slotPtr = PARTY_SIZE + 1;
         }
