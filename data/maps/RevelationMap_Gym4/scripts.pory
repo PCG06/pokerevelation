@@ -30,6 +30,7 @@ script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 				"Take this Badge,\n"
 				"it's proof that magic favors you too.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_JAISON)
+		setflag(FLAG_BADGE04_GET)
 		setvar(VAR_DEFEATED_JAISON, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_4_BEAT_GYM_JAISON, SUB_QUEST_4_BEAT_JAISON)

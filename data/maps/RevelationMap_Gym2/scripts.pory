@@ -30,6 +30,7 @@ script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 				"and let it remind you that even the\l"
 				"dark can be conquered.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_REEVE)
+		setflag(FLAG_BADGE02_GET)
 		setvar(VAR_DEFEATED_REEVE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_2_BEAT_GYM_REEVE, SUB_QUEST_2_BEAT_REEVE)

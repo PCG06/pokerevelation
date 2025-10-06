@@ -30,6 +30,7 @@ script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
 				"Here, take this Badge.\n"
 				"It'll mark the start of your climb!", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_JAKE)
+		setflag(FLAG_BADGE01_GET)
 		setvar(VAR_DEFEATED_JAKE, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_1_BEAT_GYM_JAKE, SUB_QUEST_1_BEAT_JAKE)

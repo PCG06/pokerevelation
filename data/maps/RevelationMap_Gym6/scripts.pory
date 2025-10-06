@@ -30,6 +30,7 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 				"proof that you can withstand any\l"
 				"current!", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_VARUN)
+		setflag(FLAG_BADGE06_GET)
 		setvar(VAR_DEFEATED_VARUN, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_6_BEAT_VARUN)

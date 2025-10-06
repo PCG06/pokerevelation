@@ -29,6 +29,7 @@ script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
 				"Take this Badge,\n"
 				"it proves you can fly among the best.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_SNEHAL)
+		setflag(FLAG_BADGE07_GET)
 		setvar(VAR_DEFEATED_SNEHAL, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_7_BEAT_GYM_SNEHAL, SUB_QUEST_7_BEAT_SNEHAL)

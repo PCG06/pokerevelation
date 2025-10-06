@@ -30,6 +30,7 @@ script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 				"and let it guide you through the\l"
 				"shadows.", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_PREM)
+		setflag(FLAG_BADGE03_GET)
 		setvar(VAR_DEFEATED_PREM, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_3_BEAT_GYM_PREM, SUB_QUEST_3_BEAT_PREM)

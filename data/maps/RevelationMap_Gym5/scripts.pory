@@ -29,6 +29,7 @@ script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
 				"Take this Badge,\n"
 				"proof that you can endure any inferno!", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_PRAJITH)
+		setflag(FLAG_BADGE05_GET)
 		setvar(VAR_DEFEATED_PRAJITH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_5_BEAT_GYM_PRAJITH, SUB_QUEST_5_BEAT_PRAJITH)

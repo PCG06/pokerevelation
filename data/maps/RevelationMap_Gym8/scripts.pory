@@ -32,6 +32,7 @@ script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 				"the path ahead will test you like\l"
 				"never before!", MSGBOX_AUTOCLOSE)
 		setflag(FLAG_DEFEATED_RAJESH)
+		setflag(FLAG_BADGE08_GET)
 		setvar(VAR_DEFEATED_RAJESH, 1)
 		addvar(VAR_GYM_DEFEATED_COUNTER, 1)
 		completesubquest(QUEST_8_BEAT_GYM_RAJESH, SUB_QUEST_8_BEAT_RAJESH)
