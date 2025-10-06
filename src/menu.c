@@ -2287,8 +2287,8 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             break;
         case SAVE_MENU_BATTLES:
             {
-                u16 battlesWon = VarGet(VAR_BATTLES_WON);
-                u16 battlesLost = VarGet(VAR_BATTLES_LOST);
+                u16 battlesWon = gSaveBlock3Ptr->battlesWon;
+                u16 battlesLost = gSaveBlock3Ptr->battlesLost;
                 u8 digitsW = (battlesWon  < 100 ? 2 : (battlesWon  < 1000 ? 3 : 4));
                 u8 digitsL = (battlesLost < 100 ? 2 : (battlesLost < 1000 ? 3 : 4));
 

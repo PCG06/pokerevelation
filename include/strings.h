@@ -1988,6 +1988,10 @@ extern const u8 gText_Round2Results[];
 extern const u8 gText_ContestantsMonWon[];
 
 // Trainer Card
+extern const u8 gText_Battles[];
+extern const u8 gText_WinRate[];
+extern const u8 gText_BattleTowerStreak[];
+extern const u8 gText_Lv50Lv100[];
 extern const u8 gText_LinkCableBattles[];
 extern const u8 gText_LinkBattles[];
 extern const u8 gText_WaitingTrainerFinishReading[];
