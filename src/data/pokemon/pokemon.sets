@@ -12187,16 +12187,16 @@ Hardy Nature
 - Pound
 
 === Indeedee ===
-=== TODO: Set ===
-Indeedee-M @ None
-Ability: None
+=== Psychic Terrain Offense ===
+Indeedee-M @ Terrain Extender
+Ability: Psychic Surge
 Tera Type: Normal
-EVs: 252 HP / 252 Atk / 4 Def
-Hardy Nature
-- Pound
-- Pound
-- Pound
-- Pound
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Expanding Force
+- Dazzling Gleam
+- Hyper Voice
+- Healing Wish
 
 === Indeedee-F ===
 === Terrain Setter ===
@@ -12601,16 +12601,16 @@ Timid Nature
 - Flip Turn
 
 === Sneasler ===
-=== Choice Band (Poison) ===
-Sneasler @ Choice Band
-Ability: Poison Touch
+=== Unburden ===
+Sneasler @ Air Balloon
+Ability: Unburden
 Tera Type: Normal
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Close Combat
 - Dire Claw
-- Throat Chop
-- U-turn
+- Acrobatics
+- Swords Dance
 
 === Overqwil ===
 === Rain Sweeper ===
@@ -13902,17 +13902,17 @@ Hardy Nature
 - Pound
 
 === Gholdengo ===
-=== Thunder Wave (Steel) ===
-Gholdengo @ Heavy-Duty Boots
+=== Scarf Offense ===
+Gholdengo @ Choice Scarf
 Ability: Good as Gold
 Tera Type: Normal
-EVs: 232 HP / 48 SpA / 124 SpD / 104 Spe
+EVs:252 SpA / 4 SpD / 252 Spe
 IVs: 0 Atk
 Modest Nature
-- Thunder Wave
-- Hex
 - Make It Rain
-- Recover
+- Thunderbolt
+- Shadow Ball
+- Dazzling Gleam
 
 === Wo-Chien ===
 === Specially Defensive ===

@@ -12092,16 +12092,16 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .moves = {MOVE_POUND, MOVE_POUND, MOVE_POUND, MOVE_POUND}
     },
 
-    [SPECIES_INDEEDEE_M] = // TODO: Set
+    [SPECIES_INDEEDEE_M] = // Psychic Terrain Offense
     {
         .name = _("Indeedee"),
-        .item = ITEM_NONE,
-        .ability = ABILITY_NONE,
+        .item = ITEM_TERRAIN_EXTENDER,
+        .ability = ABILITY_PSYCHIC_SURGE,
         .teraType = TYPE_NORMAL,
-        .nature = NATURE_HARDY,
-        .evs = {252, 252, 4, 0, 0, 0},
+        .nature = NATURE_TIMID,
+        .evs = {0, 0, 0, 252, 252, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_POUND, MOVE_POUND, MOVE_POUND, MOVE_POUND}
+        .moves = {MOVE_EXPANDING_FORCE, MOVE_DAZZLING_GLEAM, MOVE_HYPER_VOICE, MOVE_HEALING_WISH}
     },
 
     [SPECIES_INDEEDEE_F] = // Terrain Setter
@@ -12500,16 +12500,16 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .moves = {MOVE_SHADOW_BALL, MOVE_SURF, MOVE_ICE_BEAM, MOVE_FLIP_TURN}
     },
 
-    [SPECIES_SNEASLER] = // Choice Band (Poison)
+    [SPECIES_SNEASLER] = // Unburden
     {
         .name = _("Sneasler"),
-        .item = ITEM_CHOICE_BAND,
-        .ability = ABILITY_POISON_TOUCH,
+        .item = ITEM_AIR_BALLOON,
+        .ability = ABILITY_UNBURDEN,
         .teraType = TYPE_NORMAL,
         .nature = NATURE_JOLLY,
         .evs = {0, 252, 0, 252, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_CLOSE_COMBAT, MOVE_DIRE_CLAW, MOVE_THROAT_CHOP, MOVE_U_TURN}
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_DIRE_CLAW, MOVE_ACROBATICS, MOVE_SWORDS_DANCE}
     },
 
     [SPECIES_OVERQWIL] = // Rain Sweeper
@@ -13784,16 +13784,16 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .moves = {MOVE_POUND, MOVE_POUND, MOVE_POUND, MOVE_POUND}
     },
 
-    [SPECIES_GHOLDENGO] = // Thunder Wave (Steel)
+    [SPECIES_GHOLDENGO] = // Scarf Offense
     {
         .name = _("Gholdengo"),
-        .item = ITEM_HEAVY_DUTY_BOOTS,
+        .item = ITEM_CHOICE_SCARF,
         .ability = ABILITY_GOOD_AS_GOLD,
         .teraType = TYPE_NORMAL,
         .nature = NATURE_MODEST,
-        .evs = {232, 0, 0, 104, 48, 124},
+        .evs = {0, 0, 0, 252, 252, 4},
         .ivs = {31, 0, 31, 31, 31, 31},
-        .moves = {MOVE_THUNDER_WAVE, MOVE_HEX, MOVE_MAKE_IT_RAIN, MOVE_RECOVER}
+        .moves = {MOVE_MAKE_IT_RAIN, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_DAZZLING_GLEAM}
     },
 
     [SPECIES_WO_CHIEN] = // Specially Defensive
@@ -14177,7 +14177,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_ADAMANT,
         .evs = {0, 252, 0, 252, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_DRILL_OUT}
+        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_RAPID_SPIN, MOVE_DRILL_OUT}
     },
 
     [SPECIES_STRATOSPIRA] = // Offensive Pivot
