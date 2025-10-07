@@ -22,6 +22,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "pokemon.h"
+#include "pokemon_summary_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "sound.h"
@@ -403,6 +404,7 @@ static void Task_StatEditorWaitFadeAndBail(u8 taskId)
 
 static void StatEditor_FadeAndBail(void)
 {
+    gLastViewedMonIndex = sStatEditorDataPtr->partyid;
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
     CreateTask(Task_StatEditorWaitFadeAndBail, 0);
     SetVBlankCallback(StatEditor_VBlankCB);
@@ -848,6 +850,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
     if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_PC_OFF);
+        gLastViewedMonIndex = sStatEditorDataPtr->partyid;
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_StatEditorTurnOff;
     }
