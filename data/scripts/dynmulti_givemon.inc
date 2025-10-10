@@ -952,7 +952,7 @@ EventScript_Group3Choices_23:
 	return
 
 EventScript_Group3Choices_24:
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISMAGIUS
 	call EventScript_YouWantThisPkmn
 	goto EventScript_Group3Choices
 	return
@@ -1792,7 +1792,7 @@ EventScript_Group3Choices_Text_21:
 	.string "80. Metagross$"
 
 EventScript_Group3Choices_Text_22:
-	.string "81. Mew$"
+	.string "81. Mismagius$"
 
 EventScript_Group3Choices_Text_23:
 	.string "82. Milotic$"

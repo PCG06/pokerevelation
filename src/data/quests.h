@@ -250,8 +250,8 @@ const struct SubQuest sSubQuests1[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_1_BEAT_PAWAN + QUEST_1_OFFSET,
         .name = COMPOUND_STRING("Beat Pawan"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Bug-type trainer in\n"
-                    "the Revelation area."),
+                    "Defeated the Bug-type Trainer\n"
+                    "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_BUG_CATCHER,
         .spritetype = OBJECT,
@@ -289,8 +289,8 @@ const struct SubQuest sSubQuests2[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_2_BEAT_HANSTON + QUEST_2_OFFSET,
         .name = COMPOUND_STRING("Beat Hanston"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Steel-type trainer in\n"
-                    "the Revelation area."),
+                    "Defeated the Steel-type Trainer\n"
+                    "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_SUPER_NERD,
         .spritetype = OBJECT,
@@ -328,7 +328,7 @@ const struct SubQuest sSubQuests3[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_3_BEAT_RASHEL + QUEST_3_OFFSET,
         .name = COMPOUND_STRING("Beat Rashel"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Psychic-type trainer\n"
+                    "Defeated the Psychic-type Trainer\n"
                     "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_HEX_MANIAC,
@@ -367,8 +367,8 @@ const struct SubQuest sSubQuests4[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_4_BEAT_AKSHARA + QUEST_4_OFFSET,
         .name = COMPOUND_STRING("Beat Akshara"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Ice-type trainer in\n"
-                    "the Revelation area."),
+                    "Defeated the Ice-type Trainer\n"
+                    "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_WOMAN_2,
         .spritetype = OBJECT,
@@ -406,7 +406,7 @@ const struct SubQuest sSubQuests5[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_5_BEAT_GILSTON + QUEST_5_OFFSET,
         .name = COMPOUND_STRING("Beat Gilston"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Fighting-type trainer\n"
+                    "Defeated the Fighting-type Trainer\n"
                     "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_BLACK_BELT,
@@ -421,7 +421,7 @@ const struct SubQuest sSubQuests6[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_6_BEAT_DARWIN + QUEST_6_OFFSET,
         .name = COMPOUND_STRING("Beat Darwin"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Electric-type expert\n"
+                    "Defeated the Poison-type expert\n"
                     "at Varun's Gym entrance."),
         .map = sText_VarunsGym,
         .sprite = OBJ_EVENT_GFX_SCIENTIST_2,
@@ -445,7 +445,7 @@ const struct SubQuest sSubQuests6[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_6_BEAT_MONVISH + QUEST_6_OFFSET,
         .name = COMPOUND_STRING("Beat Monvish"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Flying-type trainer\n"
+                    "Defeated the Normal-type Trainer\n"
                     "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_GUITARIST,
@@ -484,7 +484,7 @@ const struct SubQuest sSubQuests7[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_7_BEAT_ADITHYA + QUEST_7_OFFSET,
         .name = COMPOUND_STRING("Beat Adithya"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Water-type trainer\n"
+                    "Defeated the Water-type Trainer\n"
                     "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_FISHERMAN,
@@ -523,7 +523,7 @@ const struct SubQuest sSubQuests8[GYM_SUBQUESTS_COUNT] =
         .id = SUB_QUEST_8_BEAT_RION + QUEST_8_OFFSET,
         .name = COMPOUND_STRING("Beat Rion"),
         .desc = COMPOUND_STRING(
-                    "Defeated the Ground-type trainer\n"
+                    "Defeated the Ground-type Trainer\n"
                     "in the Revelation area."),
         .map = sText_Revelation,
         .sprite = OBJ_EVENT_GFX_EXPERT_M,
@@ -973,8 +973,8 @@ TRAINER_AKSHARA                       7 // Ice-type
 TRAINER_DARA                          8 // Fairy-type
 TRAINER_GILSTON                       9 // Fighting-type
 TRAINER_DELSON                       11 // Fire-type
-TRAINER_MONVISH                      12 // Flying-type
-TRAINER_DARWIN                       13 // Electric-type
+TRAINER_MONVISH                      12 // Normal-type
+TRAINER_DARWIN                       13 // Poison-type
 TRAINER_ADITHYA                      14 // Water-type
 TRAINER_HANDAM                       15 // Flying-type
 TRAINER_RION                         16 // Ground-type

@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym8_MapScripts {}
+mapscripts RevelationMap_Gym8_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_8_BEAT_GYM_RAJESH, FALSE)
+	}
+}
 
 script RevelationMap_Gym8_LeaderRajesh { // Dragon-type Gym
 	lock

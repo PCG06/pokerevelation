@@ -14263,9 +14263,9 @@ Tera Type: Dark
 EVs: 252 SpA / 4 SpD / 252 Spe  
 IVs: 0 Atk
 Modest Nature  
+- Fireball  
 - Nasty Plot  
 - Dark Pulse  
-- Fireball  
 - Recover  
 
 === Zojzion ===
@@ -14276,8 +14276,8 @@ Tera Type: Electric
 EVs: 252 HP / 252 Def / 4 Spe  
 IVs: 0 Atk
 Bold Nature  
-- Sludge Wave  
 - Lightning Vortex  
+- Sludge Wave  
 - Overheat  
 - Volt Switch  
 
@@ -14288,9 +14288,9 @@ Ability: Technician
 Tera Type: Water
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Smash Strike  
 - Stone Edge  
 - Jet Punch  
-- Smash Strike  
 - Flip Turn  
 
 === Pyrolin ===
@@ -14300,10 +14300,10 @@ Ability: Earth Eater
 Tera Type: Fire
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Drill Out  
 - Pyro Ball  
 - Knock Off  
 - Rapid Spin  
-- Drill Out  
 
 === Stratospira ===
 === Offensive Pivot ===
@@ -14313,8 +14313,8 @@ Tera Type: Steel
 EVs: 252 SpA / 4 SpD / 252 Spe  
 IVs: 0 Atk
 Timid Nature  
-- Flash Cannon  
 - Jetstream Blast  
+- Flash Cannon  
 - Knock Off  
 - U-turn  
 
@@ -14337,8 +14337,8 @@ Ability: Rock Head
 Tera Type: Water
 EVs: 252 Atk / 4 SpA / 252 Spe  
 Naughty Nature  
-- Draco Meteor  
 - Draconic Fury  
+- Draco Meteor  
 - Wave Crash  
 - Flip Turn  
 
@@ -14348,7 +14348,7 @@ Amaniste @ Black Sludge
 Ability: Prankster  
 EVs: 252 HP / 0 Atk / 252 Def / 4 SpD / 0 Spe  
 Bold Nature  
+- Myco Shift  
 - Moonblast  
 - Toxic  
-- Myco Shift  
 - Recover  

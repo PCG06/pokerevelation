@@ -14141,7 +14141,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_MODEST,
         .evs = {0, 0, 0, 252, 252, 4},
         .ivs = {31, 0, 31, 31, 31, 31},
-        .moves = {MOVE_NASTY_PLOT, MOVE_DARK_PULSE, MOVE_FIREBALL, MOVE_RECOVER}
+        .moves = {MOVE_FIREBALL, MOVE_NASTY_PLOT, MOVE_DARK_PULSE, MOVE_RECOVER}
     },
 
     [SPECIES_ZOJZION] = // Bulky Pivot
@@ -14153,7 +14153,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_BOLD,
         .evs = {252, 0, 252, 4, 0, 0},
         .ivs = {31, 0, 31, 31, 31, 31},
-        .moves = {MOVE_SLUDGE_WAVE, MOVE_LIGHTNING_VORTEX, MOVE_OVERHEAT, MOVE_VOLT_SWITCH}
+        .moves = {MOVE_LIGHTNING_VORTEX, MOVE_SLUDGE_WAVE, MOVE_OVERHEAT, MOVE_VOLT_SWITCH}
     },
 
     [SPECIES_MANTISTRIKE] = // Offensive Pivot
@@ -14165,7 +14165,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_ADAMANT,
         .evs = {0, 252, 0, 252, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_STONE_EDGE, MOVE_JET_PUNCH, MOVE_SMASH_STRIKE, MOVE_FLIP_TURN}
+        .moves = {MOVE_SMASH_STRIKE, MOVE_STONE_EDGE, MOVE_JET_PUNCH, MOVE_FLIP_TURN}
     },
 
     [SPECIES_PYROLIN] = // Offensive Spinner
@@ -14177,7 +14177,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_ADAMANT,
         .evs = {0, 252, 0, 252, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_RAPID_SPIN, MOVE_DRILL_OUT}
+        .moves = {MOVE_DRILL_OUT, MOVE_PYRO_BALL, MOVE_KNOCK_OFF, MOVE_RAPID_SPIN}
     },
 
     [SPECIES_STRATOSPIRA] = // Offensive Pivot
@@ -14189,7 +14189,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_TIMID,
         .evs = {0, 0, 0, 252, 252, 4},
         .ivs = {31, 0, 31, 31, 31, 31},
-        .moves = {MOVE_FLASH_CANNON, MOVE_JETSTREAM_BLAST, MOVE_KNOCK_OFF, MOVE_U_TURN}
+        .moves = {MOVE_JETSTREAM_BLAST, MOVE_FLASH_CANNON, MOVE_KNOCK_OFF, MOVE_U_TURN}
     },
 
     [SPECIES_PHANTOMAR] = // Offensive Pivot
@@ -14213,7 +14213,7 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_NAUGHTY,
         .evs = {0, 252, 0, 252, 4, 0},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_DRACO_METEOR, MOVE_DRACONIC_FURY, MOVE_WAVE_CRASH, MOVE_FLIP_TURN}
+        .moves = {MOVE_DRACONIC_FURY, MOVE_DRACO_METEOR, MOVE_WAVE_CRASH, MOVE_FLIP_TURN}
     },
 
     [SPECIES_AMANISTE] = // Bulky Setup Wall
@@ -14225,6 +14225,6 @@ const struct PokemonSets gPokemonSets[NUM_SPECIES] =
         .nature = NATURE_BOLD,
         .evs = {252, 0, 252, 0, 0, 4},
         .ivs = {31, 31, 31, 31, 31, 31},
-        .moves = {MOVE_MOONBLAST, MOVE_TOXIC, MOVE_MYCO_SHIFT, MOVE_RECOVER}
+        .moves = {MOVE_MYCO_SHIFT, MOVE_MOONBLAST, MOVE_TOXIC, MOVE_RECOVER}
     }
 };

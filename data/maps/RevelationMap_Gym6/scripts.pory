@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym6_MapScripts {}
+mapscripts RevelationMap_Gym6_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_6_BEAT_GYM_VARUN, FALSE)
+	}
+}
 
 script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 	lock
@@ -40,14 +44,15 @@ script RevelationMap_Gym6_LeaderVarun { // Electric-type Gym
 	end
 }
 
-script RevelationMap_Gym6_ScientistDarwin { // Electric-type Trainer
-	trainerbattle_single(TRAINER_DARWIN, "Electricity is pure science!\pI'll show you its shocking potential!", "Impossible… My calculations were off!", RevelationMap_Gym6_ScientistDarwinSubQuest)
+script RevelationMap_Gym6_ScientistDarwin { // Poison-type Trainer
+	trainerbattle_single(TRAINER_DARWIN, "Toxins are nature's chemistry!\pI'll show you the science of decay!", "My formula… it went bad…", RevelationMap_Gym6_ScientistDarwinSubQuest)
 	msgbox("{SPEAKER NAME_DARWIN}"
-			"Electric power is precise…\p"
-			"but battling adds variables I didn't\n"
-			"predict.", MSGBOX_AUTOCLOSE)
+			"Poison is unpredictable…\p"
+			"Just like the human body's reaction\n"
+			"to it.", MSGBOX_AUTOCLOSE)
 	end
 }
+
 
 script RevelationMap_Gym6_ScientistDarwinSubQuest {
 	completesubquest(QUEST_6_BEAT_GYM_VARUN, SUB_QUEST_6_BEAT_DARWIN)

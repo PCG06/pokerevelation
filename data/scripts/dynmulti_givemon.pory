@@ -516,7 +516,7 @@ script EventScript_Group3Choices {
 		"59. Kleavor", "60. Kommo-o", "61. Krookodile", "62. Lanturn", "63. Leafeon", "64. Lilligant",
 		"65. Lilligant-H", "66. Linoone", "67. Lokix", "68. Lucario", "69. Ludicolo", "70. Luxray",
 		"71. Lycanroc", "72. Lycanroc-D", "73. Lycanroc-M", "74. Magmortar", "75. Magnezone", "76. Malamar",
-		"77. Mamoswine", "78. Mantine", "79. Mawile", "80. Metagross", "81. Mew", "82. Milotic",
+		"77. Mamoswine", "78. Mantine", "79. Mawile", "80. Metagross", "81. Mismagius", "82. Milotic",
 		"83. Mimikyu", "84. Nidoking", "85. Nidoqueen", "86. Noivern", "87. Obstagoon", "Back"
 	)
 	closemessage
@@ -611,7 +611,7 @@ script EventScript_Group3Choices {
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group3Choices)
 		case 22:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISMAGIUS)
 			call(EventScript_YouWantThisPkmn)
 			goto(EventScript_Group3Choices)
 		case 23:

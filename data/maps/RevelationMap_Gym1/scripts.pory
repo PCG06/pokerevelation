@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym1_MapScripts {}
+mapscripts RevelationMap_Gym1_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_1_BEAT_GYM_JAKE, FALSE)
+	}
+}
 
 script RevelationMap_Gym1_LeaderJake { // Rock-type Gym
 	lock

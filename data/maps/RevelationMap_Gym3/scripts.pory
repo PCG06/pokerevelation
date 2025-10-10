@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym3_MapScripts {}
+mapscripts RevelationMap_Gym3_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_3_BEAT_GYM_PREM, FALSE)
+	}
+}
 
 script RevelationMap_Gym3_LeaderPrem { // Ghost-type Gym
 	lock

@@ -823,11 +823,8 @@ Music: Suspicious
 Battle Type: Singles
 AI: Smart Trainer
 
-
-
 Venusaur-Mega (M) @ Venusaurite  
 Ability: Thick Fat  
-Tera Type: Grass  
 EVs: 252 HP / 252 SpA / 4 SpD  
 Modest Nature  
 - Giga Drain  
@@ -837,7 +834,6 @@ Modest Nature
 
 Slowking-Galar (M) @ Assault Vest  
 Ability: Regenerator  
-Tera Type: Poison  
 EVs: 252 HP / 252 SpA / 4 SpD  
 Quiet Nature  
 IVs: 0 Atk  
@@ -848,7 +844,6 @@ IVs: 0 Atk
 
 Sneasler (M) @ Focus Sash  
 Ability: Unburden  
-Tera Type: Fighting  
 EVs: 4 HP / 252 Atk / 252 Spe  
 Adamant Nature  
 - Close Combat  
@@ -858,7 +853,6 @@ Adamant Nature
 
 Naganadel @ Choice Scarf  
 Ability: Beast Boost  
-Tera Type: Poison  
 EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
 - Draco Meteor  
@@ -868,7 +862,6 @@ Timid Nature
 
 Iron Moth @ Booster Energy  
 Ability: Quark Drive  
-Tera Type: Fire  
 EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -879,7 +872,6 @@ IVs: 0 Atk
 
 Toxtricity (M) @ Choice Specs  
 Ability: Punk Rock  
-Tera Type: Electric  
 EVs: 4 HP / 252 SpA / 252 Spe  
 Modest Nature  
 IVs: 0 Atk  
@@ -1553,28 +1545,28 @@ Mantistrike @ Choice Band
 Ability: Technician  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Smash Strike  
 - Stone Edge  
 - Jet Punch  
-- Smash Strike  
 - Flip Turn  
 
 Zojzion @ Assault Vest  
 Ability: Levitate  
 EVs: 252 HP / 252 Def / 4 Spe  
 Bold Nature  
-- Sludge Wave  
 - Lightning Vortex  
+- Sludge Wave  
 - Overheat  
-- Volt Switch  
+- Volt Switch   
 
 Pyrolin @ Leftovers  
 Ability: Earth Eater  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Drill Out  
 - Pyro Ball  
 - Knock Off  
 - Swords Dance  
-- Drill Out  
 
 Phantomar @ Choice Scarf  
 Ability: Intimidate  
@@ -1598,8 +1590,8 @@ Leviadon @ Eject Pack
 Ability: Rock Head  
 EVs: 252 Atk / 4 SpA / 252 Spe  
 Naughty Nature  
-- Draco Meteor  
 - Draconic Fury  
+- Draco Meteor  
 - Wave Crash  
 - Flip Turn  
 
@@ -6103,9 +6095,9 @@ Mantistrike @ Choice Band
 Ability: Technician  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Smash Strike  
 - Stone Edge  
 - Jet Punch  
-- Smash Strike  
 - Flip Turn  
 
 === TRAINER_REEVE ===
@@ -6168,9 +6160,9 @@ Mewtwo-Apocalypse @ Life Orb
 Ability: Berserk  
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe  
 Modest Nature  
+- Fireball  
 - Nasty Plot  
 - Dark Pulse  
-- Fireball  
 - Recover  
 
 === TRAINER_PREM ===
@@ -6300,9 +6292,9 @@ Amaniste @ Black Sludge
 Ability: Prankster  
 EVs: 252 HP / 0 Atk / 252 Def / 4 SpD / 0 Spe  
 Bold Nature  
+- Myco Shift  
 - Moonblast  
 - Toxic  
-- Myco Shift  
 - Recover  
 
 === TRAINER_PRAJITH ===
@@ -6365,10 +6357,10 @@ Pyrolin @ Leftovers
 Ability: Earth Eater  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
+- Drill Out  
 - Pyro Ball  
 - Knock Off  
 - Swords Dance  
-- Drill Out  
 
 === TRAINER_VARUN ===
 Name: Varun
@@ -6429,6 +6421,15 @@ IVs: 0 Atk
 - Will-O-Wisp  
 - Pain Split  
 
+Zojzion @ Assault Vest  
+Ability: Levitate  
+EVs: 252 HP / 252 Def / 4 Spe  
+Bold Nature  
+- Lightning Vortex  
+- Sludge Wave  
+- Overheat  
+- Volt Switch   
+
 === TRAINER_SNEHAL ===
 Name: Snehal
 Class: Leader
@@ -6488,8 +6489,8 @@ Stratospira @ Assault Vest
 Ability: Regenerator  
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
-- Flash Cannon  
 - Jetstream Blast  
+- Flash Cannon  
 - Knock Off  
 - U-turn  
 
@@ -6552,10 +6553,11 @@ IVs: 0 Atk
 - Nasty Plot  
 
 Leviadon @ Eject Pack  
+Ability: Rock Head  
 EVs: 252 Atk / 4 SpA / 252 Spe  
 Naughty Nature  
-- Draco Meteor  
 - Draconic Fury  
+- Draco Meteor  
 - Wave Crash  
 - Flip Turn  
 

@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym5_MapScripts {}
+mapscripts RevelationMap_Gym5_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_5_BEAT_GYM_PRAJITH, FALSE)
+	}
+}
 
 script RevelationMap_Gym5_LeaderPrajith { // Fire-type Gym
 	lock

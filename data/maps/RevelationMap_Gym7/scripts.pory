@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym7_MapScripts {}
+mapscripts RevelationMap_Gym7_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_7_BEAT_GYM_SNEHAL, FALSE)
+	}
+}
 
 script RevelationMap_Gym7_LeaderSnehal { // Flying-type Gym
 	lock

@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym2_MapScripts {}
+mapscripts RevelationMap_Gym2_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_2_BEAT_GYM_REEVE, FALSE)
+	}
+}
 
 script RevelationMap_Gym2_LeaderReeve { // Dark-type Gym
 	lock

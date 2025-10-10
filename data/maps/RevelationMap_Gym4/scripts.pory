@@ -1,4 +1,8 @@
-mapscripts RevelationMap_Gym4_MapScripts {}
+mapscripts RevelationMap_Gym4_MapScripts  {
+	MAP_SCRIPT_ON_TRANSITION {
+		startquest(QUEST_4_BEAT_GYM_JAISON, FALSE)
+	}
+}
 
 script RevelationMap_Gym4_LeaderJaison { // Fairy-type Gym
 	lock
