@@ -26735,3 +26735,53 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
+
+#if P_REVELATION_MONS
+    const u32 gMonFrontPic_MewtwoApocalypse[] = INCBIN_U32("graphics/pokemon/mewtwo/apocalypse/front.4bpp.smol");
+    const u32 gMonBackPic__MewtwoApocalypse[] = INCBIN_U32("graphics/pokemon/mewtwo/apocalypse/back.4bpp.smol");
+    const u16 gMonPalette_MewtwoApocalypse[] = INCBIN_U16("graphics/pokemon/mewtwo/apocalypse/normal.gbapal");
+    const u16 gMonShinyPalette__MewtwoApocalypse[] = INCBIN_U16("graphics/pokemon/mewtwo/apocalypse/shiny.gbapal");
+    const u8 gMonIcon_MewtwoApocalypse[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Zojzion[] = INCBIN_U32("graphics/pokemon/zojzion/front.4bpp.smol");
+    const u32 gMonBackPic_Zojzion[] = INCBIN_U32("graphics/pokemon/zojzion/back.4bpp.smol");
+    const u16 gMonPalette_Zojzion[] = INCBIN_U16("graphics/pokemon/zojzion/normal.gbapal");
+    const u16 gMonShinyPalette_Zojzion[] = INCBIN_U16("graphics/pokemon/zojzion/shiny.gbapal");
+    const u8 gMonIcon_Zojzion[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Mantistrike[] = INCBIN_U32("graphics/pokemon/mantistrike/front.4bpp.smol");
+    const u32 gMonBackPic_Mantistrike[] = INCBIN_U32("graphics/pokemon/mantistrike/back.4bpp.smol");
+    const u16 gMonPalette_Mantistrike[] = INCBIN_U16("graphics/pokemon/mantistrike/normal.gbapal");
+    const u16 gMonShinyPalette_Mantistrike[] = INCBIN_U16("graphics/pokemon/mantistrike/shiny.gbapal");
+    const u8 gMonIcon_Mantistrike[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Pyrolin[] = INCBIN_U32("graphics/pokemon/pyrolin/front.4bpp.smol");
+    const u32 gMonBackPic_Pyrolin[] = INCBIN_U32("graphics/pokemon/pyrolin/back.4bpp.smol");
+    const u16 gMonPalette_Pyrolin[] = INCBIN_U16("graphics/pokemon/pyrolin/normal.gbapal");
+    const u16 gMonShinyPalette_Pyrolin[] = INCBIN_U16("graphics/pokemon/pyrolin/shiny.gbapal");
+    const u8 gMonIcon_Pyrolin[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Stratospira[] = INCBIN_U32("graphics/pokemon/stratospira/front.4bpp.smol");
+    const u32 gMonBackPic_Stratospira[] = INCBIN_U32("graphics/pokemon/stratospira/back.4bpp.smol");
+    const u16 gMonPalette_Stratospira[] = INCBIN_U16("graphics/pokemon/stratospira/normal.gbapal");
+    const u16 gMonShinyPalette_Stratospira[] = INCBIN_U16("graphics/pokemon/stratospira/shiny.gbapal");
+    const u8 gMonIcon_Stratospira[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Phantomar[] = INCBIN_U32("graphics/pokemon/phantomar/front.4bpp.smol");
+    const u32 gMonBackPic_Phantomar[] = INCBIN_U32("graphics/pokemon/phantomar/back.4bpp.smol");
+    const u16 gMonPalette_Phantomar[] = INCBIN_U16("graphics/pokemon/phantomar/normal.gbapal");
+    const u16 gMonShinyPalette_Phantomar[] = INCBIN_U16("graphics/pokemon/phantomar/shiny.gbapal");
+    const u8 gMonIcon_Phantomar[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Leviadon[] = INCBIN_U32("graphics/pokemon/leviadon/front.4bpp.smol");
+    const u32 gMonBackPic_Leviadon[] = INCBIN_U32("graphics/pokemon/leviadon/back.4bpp.smol");
+    const u16 gMonPalette_Leviadon[] = INCBIN_U16("graphics/pokemon/leviadon/normal.gbapal");
+    const u16 gMonShinyPalette_Leviadon[] = INCBIN_U16("graphics/pokemon/leviadon/shiny.gbapal");
+    const u8 gMonIcon_Leviadon[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+
+    const u32 gMonFrontPic_Amaniste[] = INCBIN_U32("graphics/pokemon/amaniste/front.4bpp.smol");
+    const u32 gMonBackPic_Amaniste[] = INCBIN_U32("graphics/pokemon/amaniste/back.4bpp.smol");
+    const u16 gMonPalette_Amaniste[] = INCBIN_U16("graphics/pokemon/amaniste/normal.gbapal");
+    const u16 gMonShinyPalette_Amaniste[] = INCBIN_U16("graphics/pokemon/amaniste/shiny.gbapal");
+    const u8 gMonIcon_Amaniste[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
+#endif //P_REVELATION_MONS
