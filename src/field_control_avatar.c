@@ -45,6 +45,8 @@
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
 
+extern const u8 EventScript_PokeMenu[];
+
 COMMON_DATA u8 gSelectedObjectEvent = 0;
 
 static void GetPlayerPosition(struct MapPosition *);
@@ -155,6 +157,9 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
         }
     }
+
+    if ((heldKeys & L_BUTTON))
+        input->input_field_1_1 = TRUE;
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -242,6 +247,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         PlaySE(SE_WIN_OPEN);
         FreezeObjectEvents();
         Debug_ShowMainMenu();
+        return TRUE;
+    }
+
+    if (input->input_field_1_1)
+    {
+        PlaySE(SE_WIN_OPEN);
+        ScriptContext_SetupScript(EventScript_PokeMenu);
         return TRUE;
     }
 

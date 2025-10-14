@@ -48,6 +48,7 @@
 #include "text.h"
 #include "tilesets.h"
 #include "tv.h"
+#include "ui_stat_editor.h"
 #include "wallclock.h"
 #include "window.h"
 #include "constants/battle_frontier.h"
@@ -4367,12 +4368,24 @@ void SetHiddenNature(void)
     u32 hiddenNature = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+
+    u16 monNature = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE);
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    StringCopy(gStringVar2, gNaturesInfo[monNature].name);
+    
 }
 
 void SetAbility(void)
 {
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
+
+    u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    enum Ability monAbility = GetSpeciesAbility(species, ability);
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    StringCopy(gStringVar2, gAbilitiesInfo[monAbility].name);
 }
 
 void GetPokemonNameFeedback(void)
@@ -4387,4 +4400,45 @@ void GetPokemonNameFeedback(void)
     }
     gSpecialVar_Result = 0;
     return;
+}
+
+void OpenStatEditorCallback(void)
+{
+    FlagSet(FLAG_OVERWORLD_STAT_EDITOR);
+    CreateTask(Task_OpenStatEditorContinueScript, 0);
+}
+
+struct
+{
+    u8 type;
+    u32 iv;
+} const sHiddenPowerIVsTable[] =
+{
+    {TYPE_FIGHTING, TRAINER_PARTY_IVS(31, 31, 30, 30, 30, 30)},
+    {TYPE_FLYING,   TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30)},
+    {TYPE_POISON,   TRAINER_PARTY_IVS(31, 31, 30, 31, 30, 30)},
+    {TYPE_GROUND,   TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30)},
+    {TYPE_ROCK,     TRAINER_PARTY_IVS(31, 30, 30, 30, 31, 30)},
+    {TYPE_BUG,      TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30)},
+    {TYPE_GHOST,    TRAINER_PARTY_IVS(31, 31, 30, 31, 31, 30)},
+    {TYPE_STEEL,    TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 30)},
+    {TYPE_FIRE,     TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31)},
+    {TYPE_WATER,    TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 31)},
+    {TYPE_GRASS,    TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31)},
+    {TYPE_ELECTRIC, TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 31)},
+    {TYPE_PSYCHIC,  TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 31)},
+    {TYPE_ICE,      TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31)},
+    {TYPE_DRAGON,   TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 31)},
+    {TYPE_DARK,     TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)}
+};
+
+void SetHiddenPowerIVs(void)
+{
+    u32 type = gSpecialVar_Result;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IVS, &sHiddenPowerIVsTable[type].iv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    StringCopy(gStringVar2, gTypesInfo[sHiddenPowerIVsTable[type].type].name);
 }

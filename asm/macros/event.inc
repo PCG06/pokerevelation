@@ -2440,7 +2440,7 @@
 	@ Sets the Pokémon in \slot's Tera Type
 	.macro setteratype type:req, slot:req
 	callnative SetTeraType, requests_effects=1
-	.byte \type
+	.2byte \type
 	.2byte \slot
 	.endm
 

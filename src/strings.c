@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon.h"
 #include "rtc.h"
 #include "siirtc.h"
 #include "strings.h"
@@ -1420,3 +1421,48 @@ const u8 gText_CurrentTimeAMOff[] = _("Time: {STR_VAR_1} {STR_VAR_2} AM");
 const u8 gText_CurrentTimePM[] = _("Time: {STR_VAR_1}:{STR_VAR_2} PM");
 const u8 gText_CurrentTimePMOff[] = _("Time: {STR_VAR_1} {STR_VAR_2} PM");
 const u8 gText_Date[] = _("{STR_VAR_1} {STR_VAR_2}, {STR_VAR_3}");
+
+const u8 gText_Type_Normal[]   = _("Normal");
+const u8 gText_Type_Fighting[] = _("Fighting");
+const u8 gText_Type_Flying[]   = _("Flying");
+const u8 gText_Type_Poison[]   = _("Poison");
+const u8 gText_Type_Ground[]   = _("Ground");
+const u8 gText_Type_Rock[]     = _("Rock");
+const u8 gText_Type_Bug[]      = _("Bug");
+const u8 gText_Type_Ghost[]    = _("Ghost");
+const u8 gText_Type_Steel[]    = _("Steel");
+const u8 gText_Type_Fire[]     = _("Fire");
+const u8 gText_Type_Water[]    = _("Water");
+const u8 gText_Type_Grass[]    = _("Grass");
+const u8 gText_Type_Electric[] = _("Electric");
+const u8 gText_Type_Psychic[]  = _("Psychic");
+const u8 gText_Type_Ice[]      = _("Ice");
+const u8 gText_Type_Dragon[]   = _("Dragon");
+const u8 gText_Type_Dark[]     = _("Dark");
+const u8 gText_Type_Fairy[]    = _("Fairy");
+
+const u8 gText_Nature_Hardy[]   = _("Hardy        {COLOR RED}+Atk {COLOR BLUE}-Atk{COLOR DARK_GRAY}");
+const u8 gText_Nature_Lonely[]  = _("Lonely       {COLOR RED}+Atk {COLOR BLUE}-Def{COLOR DARK_GRAY}");
+const u8 gText_Nature_Brave[]   = _("Brave        {COLOR RED}+Atk {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
+const u8 gText_Nature_Adamant[] = _("Adamant      {COLOR RED}+Atk {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
+const u8 gText_Nature_Naughty[] = _("Naughty      {COLOR RED}+Atk {COLOR BLUE}-SpD{COLOR DARK_GRAY}");
+const u8 gText_Nature_Bold[]    = _("Bold         {COLOR RED}+Def {COLOR BLUE}-Atk{COLOR DARK_GRAY}");
+const u8 gText_Nature_Docile[]  = _("Docile       {COLOR RED}+Def {COLOR BLUE}-Def{COLOR DARK_GRAY}");
+const u8 gText_Nature_Relaxed[] = _("Relaxed      {COLOR RED}+Def {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
+const u8 gText_Nature_Impish[]  = _("Impish       {COLOR RED}+Def {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
+const u8 gText_Nature_Lax[]     = _("Lax          {COLOR RED}+Def {COLOR BLUE}-SpD{COLOR DARK_GRAY}");
+const u8 gText_Nature_Timid[]   = _("Timid        {COLOR RED}+Spe {COLOR BLUE}-Atk{COLOR DARK_GRAY}");
+const u8 gText_Nature_Hasty[]   = _("Hasty        {COLOR RED}+Spe {COLOR BLUE}-Def{COLOR DARK_GRAY}");
+const u8 gText_Nature_Serious[] = _("Serious      {COLOR RED}+Spe {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
+const u8 gText_Nature_Jolly[]   = _("Jolly        {COLOR RED}+Spe {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
+const u8 gText_Nature_Naive[]   = _("Naive        {COLOR RED}+Spe {COLOR BLUE}-SpD{COLOR DARK_GRAY}");
+const u8 gText_Nature_Modest[]  = _("Modest       {COLOR RED}+SpA {COLOR BLUE}-Atk{COLOR DARK_GRAY}");
+const u8 gText_Nature_Mild[]    = _("Mild         {COLOR RED}+SpA {COLOR BLUE}-Def{COLOR DARK_GRAY}");
+const u8 gText_Nature_Quiet[]   = _("Quiet        {COLOR RED}+SpA {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
+const u8 gText_Nature_Bashful[] = _("Bashful      {COLOR RED}+SpA {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
+const u8 gText_Nature_Rash[]    = _("Rash         {COLOR RED}+SpA {COLOR BLUE}-SpD{COLOR DARK_GRAY}");
+const u8 gText_Nature_Calm[]    = _("Calm         {COLOR RED}+SpD {COLOR BLUE}-Atk{COLOR DARK_GRAY}");
+const u8 gText_Nature_Gentle[]  = _("Gentle       {COLOR RED}+SpD {COLOR BLUE}-Def{COLOR DARK_GRAY}");
+const u8 gText_Nature_Sassy[]   = _("Sassy        {COLOR RED}+SpD {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
+const u8 gText_Nature_Careful[] = _("Careful      {COLOR RED}+SpD {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
+const u8 gText_Nature_Quirky[]  = _("Quirky       {COLOR RED}+SpD {COLOR BLUE}-SpD{COLOR DARK_GRAY}");

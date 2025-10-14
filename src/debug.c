@@ -963,6 +963,7 @@ static void DebugNativeStep_CloseDebugWindow(u8 taskId)
     RemoveWindow(gTasks[taskId].tSubWindowId);
     DestroyTask(taskId);
     UnfreezeObjectEvents();
+    ScriptContext_Enable();
     UnlockPlayerFieldControls();
 }
 
@@ -4050,6 +4051,10 @@ static void Debug_Display_FriendshipInfo(s32 oldFriendship, s32 newFriendship, u
     StringCopy(gStringVar3, gText_DigitIndicator[digit]);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Friendship:\n{STR_VAR_1} {RIGHT_ARROW} {STR_VAR_2}\n\n{STR_VAR_3}"));
     AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
+
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    ConvertIntToDecimalStringN(gStringVar2, newFriendship, STR_CONV_MODE_LEFT_ALIGN, 3);
 }
 
 static void DebugNativeStep_Party_SetFriendshipSelect(u8 taskId)
@@ -4059,6 +4064,7 @@ static void DebugNativeStep_Party_SetFriendshipSelect(u8 taskId)
         PlaySE(SE_SELECT);
         gTasks[taskId].tFriendship = gTasks[taskId].tInput;
         SetMonData(&gPlayerParty[gTasks[taskId].tPartyId], MON_DATA_FRIENDSHIP, &gTasks[taskId].tInput);
+        DebugNativeStep_CloseDebugWindow(taskId);
     }
     else if (JOY_NEW(B_BUTTON))
     {

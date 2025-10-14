@@ -4,6 +4,7 @@
 #include "main.h"
 
 void Task_OpenStatEditorFromStartMenu(u8 taskId);
+void Task_OpenStatEditorContinueScript(u8 taskId);
 void StatEditor_Init(MainCallback callback);
 
 #endif // GUARD_UI_MENU_H

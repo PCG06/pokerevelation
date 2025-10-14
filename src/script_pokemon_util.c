@@ -321,13 +321,17 @@ void CheckTeraType(struct ScriptContext *ctx)
 
 void SetTeraType(struct ScriptContext *ctx)
 {
-    u32 type = ScriptReadByte(ctx);
+    u32 type = VarGet(ScriptReadHalfword(ctx));
     u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     if (type < NUMBER_OF_MON_TYPES && partyIndex < PARTY_SIZE)
         SetMonData(&gPlayerParty[partyIndex], MON_DATA_TERA_TYPE, &type);
+    
+    GetMonData(&gPlayerParty[partyIndex], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    StringCopy(gStringVar2, gTypesInfo[type].name);
 }
 
 /* Creates a Pokemon via script
@@ -650,4 +654,36 @@ void Script_SetStatus1(struct ScriptContext *ctx)
     {
         SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status1);
     }
+}
+
+void GetAbilityNamesByVars(void)
+{
+    u32 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+
+    enum Ability ab0 = GetAbilityBySpecies(species, 0);
+    enum Ability ab1 = GetAbilityBySpecies(species, 1);
+    enum Ability ab2 = GetAbilityBySpecies(species, 2);
+
+    if (ab0 == ab1 && ab1 == ab2) // Has only 1 ability
+    {
+        gSpecialVar_0x8000 = FALSE;
+        gSpecialVar_0x8001 = FALSE;
+        gSpecialVar_0x8002 = FALSE;
+    }
+    else if (ab0 == ab1 && ab1 != ab2) // Has 1 ability and a hidden ability
+    {
+        gSpecialVar_0x8000 = TRUE;
+        gSpecialVar_0x8001 = FALSE;
+        gSpecialVar_0x8002 = TRUE;
+    }
+    else // Has 2 abilities and a hidden ability
+    {
+        gSpecialVar_0x8000 = TRUE;
+        gSpecialVar_0x8001 = TRUE;
+        gSpecialVar_0x8002 = TRUE;
+    }
+
+    StringCopy(gStringVar1, gAbilitiesInfo[ab0].name);
+    StringCopy(gStringVar2, gAbilitiesInfo[ab1].name);
+    StringCopy(gStringVar3, gAbilitiesInfo[ab2].name);
 }

@@ -1173,3 +1173,4 @@ Text_MonCryScript::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/dynmulti_givemon.inc"
 	.include "data/scripts/dynmulti_trainers.inc"
+	.include "data/scripts/dynmulti_pokemenu.inc"

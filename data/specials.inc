@@ -566,3 +566,5 @@ gSpecials::
 	def_special GetPokemonNameFeedback
 	def_special SetHiddenNature
 	def_special SetAbility
+	def_special SetHiddenPowerIVs
+	def_special OpenStatEditorCallback

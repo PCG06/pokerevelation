@@ -1,0 +1,20 @@
+Common_EventScript_MoveRelearner::
+	lock
+	faceplayer
+	setflag P_FLAG_SCRIPT_MOVE_RELEARNER
+	msgbox Text_ChooseAPartyPkmn, MSGBOX_AUTOCLOSE
+    special ChooseMonForMoveRelearner
+	waitstate
+	call_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, EventScript_PokeMenuMultichoice
+	call_if_eq VAR_0x8005, NO, MoveRelearner_EventScript_CantTeachMoveToPkmn
+MoveRelearner_EventScript_TeachWhichMove:
+	special TeachMoveRelearnerMove
+	waitstate
+	goto_if_eq VAR_0x8004, NO, EventScript_PokeMenuMultichoice
+	clearflag P_FLAG_SCRIPT_MOVE_RELEARNER
+	release
+	return
+
+MoveRelearner_EventScript_CantTeachMoveToPkmn:
+	msgbox MoveRelearner_Text_CantTeachMoveToPkmn, MSGBOX_AUTOCLOSE
+	goto EventScript_PokeMenuMultichoice

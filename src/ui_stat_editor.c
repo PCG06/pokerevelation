@@ -264,6 +264,16 @@ void Task_OpenStatEditorFromStartMenu(u8 taskId)
     }
 }
 
+void Task_OpenStatEditorContinueScript(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        StatEditor_Init(CB2_ReturnToFieldContinueScript);
+        DestroyTask(taskId);
+    }
+}
+
 // This is our main initialization function if you want to call the menu from elsewhere
 void StatEditor_Init(MainCallback callback)
 {
@@ -482,6 +492,8 @@ static void Task_StatEditorTurnOff(u8 taskId)
 
     if (!gPaletteFade.active)
     {
+        if (FlagGet(FLAG_OVERWORLD_STAT_EDITOR))
+            FlagClear(FLAG_OVERWORLD_STAT_EDITOR);
         SetMainCallback2(sStatEditorDataPtr->savedCallback);
         StatEditor_FreeResources();
         DestroyTask(taskId);
@@ -609,8 +621,11 @@ static void PrintTitleToWindowMainState()
     
     AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
 
-    BlitBitmapToWindow(WINDOW_1, sR_ButtonGfx, 75, (BUTTON_Y), 24, 8);
-    AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 102, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuLRButtonTextMain);
+    if (!FlagGet(FLAG_OVERWORLD_STAT_EDITOR))
+    {
+        BlitBitmapToWindow(WINDOW_1, sR_ButtonGfx, 75, (BUTTON_Y), 24, 8);
+        AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 102, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuLRButtonTextMain);
+    }
 
     BlitBitmapToWindow(WINDOW_1, sA_ButtonGfx, 160, (BUTTON_Y), 8, 8);
     AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 172, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuAButtonTextMain);
@@ -798,7 +813,7 @@ static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing th
     }
 }
 
-static void ReloadNewPokemon(u8 taskId)
+static void UNUSED ReloadNewPokemon(u8 taskId)
 {
     gSprites[sStatEditorDataPtr->monIconSpriteId].invisible = TRUE;
     FreeResourcesAndDestroySprite(&gSprites[sStatEditorDataPtr->monIconSpriteId], sStatEditorDataPtr->monIconSpriteId);
@@ -825,28 +840,33 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         return;
     }
-    if (JOY_NEW(L_BUTTON))
+    
+    if (!FlagGet(FLAG_OVERWORLD_STAT_EDITOR))
     {
-        u16 partyid = sStatEditorDataPtr->partyid;
-        if (partyid == 0)
-            partyid = 1;
-        else
-            partyid -= 1;
-        sStatEditorDataPtr->partyid = partyid;
-        PlaySE(SE_SELECT);
-        ReloadNewPokemon(taskId);
+        if (JOY_NEW(L_BUTTON))
+        {
+            u16 partyid = sStatEditorDataPtr->partyid;
+            if (partyid == 0)
+                partyid = 1;
+            else
+                partyid -= 1;
+            sStatEditorDataPtr->partyid = partyid;
+            PlaySE(SE_SELECT);
+            ReloadNewPokemon(taskId);
+        }
+        if (JOY_NEW(R_BUTTON))
+        {
+            u16 partyid = sStatEditorDataPtr->partyid;
+            if (partyid == gPlayerPartyCount - 1)
+                partyid = 0;
+            else
+                partyid += 1;
+            sStatEditorDataPtr->partyid = partyid;
+            PlaySE(SE_SELECT);
+            ReloadNewPokemon(taskId);
+        }
     }
-    if (JOY_NEW(R_BUTTON))
-    {
-        u16 partyid = sStatEditorDataPtr->partyid;
-        if (partyid == gPlayerPartyCount - 1)
-            partyid = 0;
-        else
-            partyid += 1;
-        sStatEditorDataPtr->partyid = partyid;
-        PlaySE(SE_SELECT);
-        ReloadNewPokemon(taskId);
-    }
+
     if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_PC_OFF);
