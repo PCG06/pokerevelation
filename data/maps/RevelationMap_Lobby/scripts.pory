@@ -518,3 +518,74 @@ script RevelationMap_Lobby_EventScript_Whiteout {
 			"Okay! Good luck, {PLAYER}!", MSGBOX_NPC)
 	}
 }
+
+script RevelationMap_Lobby_Tips {
+	setvar(VAR_TEMP_B, 0)
+	goto(RevelationMap_Lobby_TipsMultichoice)
+	release
+	end
+}
+
+script RevelationMap_Lobby_TipsMultichoice {
+	lock
+	message("Select a topic:")
+	copyvar(VAR_TEMP_A, VAR_TEMP_B)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, "Pokémon Selection", "Poké Menu", "Revelation Challenge", "Revelation Mons", "Battle Tower", "Event Moves", "Exit")
+	closemessage
+	copyvar(VAR_TEMP_B, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox("Prof. Benny allows you to select any 6\n"
+					"Pokémon from the provided list.\p"
+					"To get more Pokémon, complete the\n"
+					"game first!", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+		case 1:
+			msgbox("Press {L_BUTTON} to open the Poké Menu.\p"
+					"It has tools to help modify various\n"
+					"aspects of your Pokémon, such as stats,\l"
+					"abilities, moves, and more.", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+		case 2:
+			msgbox("The Revelation Challenge consists of\n"
+					"8 Gym Leaders, 6 Challengers, and\l"
+					"1 Champion.\p"
+					"Each Gym has 3 Trainers:\n"
+        			"a Gym Trainer, the first challenge,\l"
+        			"the Gym Leader, the ultimate challenge,\l"
+        			"and a Post-Gym Trainer, the final one.\p"
+					"Each of them specializes in one type,\n"
+					"representing all 18 types.\p"
+					"The Challengers focus on specific\n"
+					"strategies, such as rain or sun.\p"
+					"Your party is healed after every battle.", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+		case 3:
+			msgbox("Revelation Mons are newly discovered\n"
+					"species that are quite powerful.\p"
+					"They were caught by the Gym Leaders,\n"
+					"who use them as their ace Pokémon.\p"
+					"Lately, many more of their kind have\n"
+					"been discovered.", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+		case 4:
+			msgbox("The Battle Tower is an endless battle\n"
+					"gauntlet that rewards you with\l"
+					"increasing Battle Points (BP), which\l"
+					"can be used at the next counter.", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+		case 5:
+			msgbox("Event Moves are rare, limited moves\n"
+					"that cannot normally be taught to\l"
+					"Pokémon.\p"
+					"Each move costs 15 BP, requiring you to\n"
+					"play in the Battle Tower.", MSGBOX_AUTOCLOSE)
+			goto(RevelationMap_Lobby_TipsMultichoice)
+
+		default:
+		case 6:
+			release
+			end
+	}
+}
