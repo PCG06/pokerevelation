@@ -379,8 +379,7 @@ static void CB2_PssChangePokemonNickname(void);
 // const rom data
 
 static const u8 sMemoNatureTextColor[]                      = _("{COLOR DYNAMIC_COLOR2}{SHADOW DYNAMIC_COLOR3}");
-static const u8 sMemoHiddenNatureTextColor[]                = _(" ({COLOR BLUE}{SHADOW DARK_GRAY}");
-static const u8 sText_EndParentheses[]                      = _("{COLOR WHITE}{SHADOW DARK_GRAY})");
+static const u8 sMemoHiddenNatureText[]                     = _(" ({COLOR BLUE}{SHADOW DARK_GRAY}now, {STR_VAR_3}{COLOR WHITE}{SHADOW DARK_GRAY})");
 static const u8 sMemoMiscTextColor[]                        = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
 static const u8 sStatsHPLayout[]                            = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sStatsHPIVEVLayout[]                        = _("{DYNAMIC 0}");
@@ -4020,13 +4019,6 @@ static void BufferMonTrainerMemo(void)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sMemoMiscTextColor);
     BufferNatureString();
 
-    if (sum->mintNature != sum->nature)
-    {
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, sMemoHiddenNatureTextColor);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNaturesInfo[sum->mintNature].name);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(7, sText_EndParentheses);
-    }
-
     if (InBattleFactory() || InSlateportBattleTent() || IsInGamePartnerMon() || IsEnemyMon())
     {
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, gText_XNature);
@@ -4080,8 +4072,18 @@ static void PrintMonTrainerMemo(void)
 static void BufferNatureString(void)
 {
     struct PokemonSummaryScreenData *sumStruct = sMonSummaryScreen;
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gNaturesInfo[sumStruct->summary.mintNature].name);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, gText_EmptyString5);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gNaturesInfo[sumStruct->summary.nature].name);
+
+    if (sumStruct->summary.mintNature != sumStruct->summary.nature)
+    {
+        StringCopy(gStringVar3, gNaturesInfo[sumStruct->summary.mintNature].name);
+        StringExpandPlaceholders(gStringVar2, sMemoHiddenNatureText);
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, gStringVar2);
+    }
+    else
+    {
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, gText_EmptyString5);
+    }
 }
 
 static void GetMetLevelString(u8 *output)
