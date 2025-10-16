@@ -122,7 +122,7 @@ struct MonChoiceData{ // This is the format used to define a mon, everything lef
     u8 evs[6]; // use format {255, 255, 0, 0, 0, 0}
     u8 ivs[6]; // use format {31, 31, 31, 31, 31, 31}
     u16 moves[4]; // use format {MOVE_FIRE_BLAST, MOVE_SHEER_COLD, MOVE_NONE, MOVE_NONE}
-    bool8 isShinyExpansion; // only work in Expansion set to 0 otherwise or leave blank
+    enum ShinyMode shinyMode; // only work in Expansion set to 0 otherwise or leave blank
     bool8 ggMaxFactor;      // only work in Expansion set to 0 otherwise or leave blank
     u8 teraType;            // only work in Expansion set to 0 otherwise or leave blank
     u8 dmaxLevel;           // only work in Expansion set to 0 otherwise or leave blank
@@ -470,7 +470,7 @@ void BirchCase_GiveMon(void) // Function that calls the GiveMon function pulled 
                 sStarterChoices[sBirchCaseDataPtr->handPosition].item, sStarterChoices[sBirchCaseDataPtr->handPosition].ball, \
                 sStarterChoices[sBirchCaseDataPtr->handPosition].nature, sStarterChoices[sBirchCaseDataPtr->handPosition].abilityNum, \
                 sStarterChoices[sBirchCaseDataPtr->handPosition].gender, evs, ivs, moves, \
-                sStarterChoices[sBirchCaseDataPtr->handPosition].isShinyExpansion,sStarterChoices[sBirchCaseDataPtr->handPosition].ggMaxFactor, \
+                sStarterChoices[sBirchCaseDataPtr->handPosition].shinyMode, sStarterChoices[sBirchCaseDataPtr->handPosition].ggMaxFactor, \
                 sStarterChoices[sBirchCaseDataPtr->handPosition].teraType, sStarterChoices[sBirchCaseDataPtr->handPosition].dmaxLevel);
 }
 

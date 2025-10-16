@@ -1790,6 +1790,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .descriptionTwoLines = COMPOUND_STRING(
             "Protects the Pokémon from\n"
             "ball and bomb moves."),
+        .breakable = TRUE,
         .aiRating = 7,
     },
 

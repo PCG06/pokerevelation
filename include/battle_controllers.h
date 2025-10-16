@@ -443,4 +443,6 @@ void BtlController_HandleSwitchInShowSubstitute(u32 battler);
 u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 
 bool32 ShouldBattleRestrictionsApply(u32 battler);
+void FreeShinyStars(void);
+
 #endif // GUARD_BATTLE_CONTROLLERS_H

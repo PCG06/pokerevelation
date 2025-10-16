@@ -37,7 +37,6 @@
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_partner.h"
-#include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -1260,8 +1259,7 @@ static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
         gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim = FALSE;
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim = FALSE;
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim = FALSE;
-        FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
-        FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
+        FreeShinyStars();
 
         HandleLowHpMusicChange(GetBattlerMon(battler), battler);
 
@@ -1748,8 +1746,8 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     u16 acc = 0;
     u32 abilityAtk = GetBattlerAbility(battler);
     u32 abilityDef = GetBattlerAbility(battlerDef);
-    enum ItemHoldEffect holdEffectAtk = GetBattlerHoldEffect(battler);
-    enum ItemHoldEffect holdEffectDef = GetBattlerHoldEffect(battlerDef);
+    enum HoldEffect holdEffectAtk = GetBattlerHoldEffect(battler);
+    enum HoldEffect holdEffectDef = GetBattlerHoldEffect(battlerDef);
     u8 cat = GetBattleMoveCategory(move);
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
 
@@ -2099,7 +2097,7 @@ static void PlayerHandleChooseAction(u32 battler)
             else if (gAiBattleData->chosenTarget[B_POSITION_PLAYER_RIGHT] == B_POSITION_PLAYER_LEFT)
                 StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
             else if (gAiBattleData->chosenTarget[B_POSITION_PLAYER_RIGHT] == B_POSITION_PLAYER_RIGHT)
-                StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
+                StringAppend(gStringVar1, COMPOUND_STRING(" -{DOWN_ARROW}"));
         }
         else if (moveTarget == MOVE_TARGET_BOTH)
         {
