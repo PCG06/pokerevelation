@@ -235,18 +235,20 @@ script EventScript_MoveRelearner {
     special(ChooseMonForMoveRelearner)
 	waitstate
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		clearflag(FLAG_SCRIPT_MOVE_RELEARNER)
 		goto(EventScript_PokeMenuMultichoice)
 	}
 	if (var(VAR_0x8005) == NO) {
 		bufferpartymonnick(STR_VAR_1, VAR_0x8004)
 		msgbox("{STR_VAR_1} cannot learn new moves.", MSGBOX_AUTOCLOSE)
+		clearflag(FLAG_SCRIPT_MOVE_RELEARNER)
 		goto(EventScript_PokeMenuMultichoice)
 	}
 	special(TeachMoveRelearnerMove)
 	waitstate
 	if (var(VAR_0x8004) == NO) {
+		clearflag(FLAG_SCRIPT_MOVE_RELEARNER)
 		goto(EventScript_PokeMenuMultichoice)
 	}
-	clearflag(FLAG_SCRIPT_MOVE_RELEARNER)
 	goto(EventScript_PokeMenuMultichoice)
 }

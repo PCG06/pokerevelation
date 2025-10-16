@@ -306,21 +306,23 @@ EventScript_MoveRelearner_4:
 	compare VAR_0x8004, NO
 	goto_if_eq EventScript_MoveRelearner_8
 EventScript_MoveRelearner_7:
-	clearflag FLAG_SCRIPT_MOVE_RELEARNER
 	goto EventScript_PokeMenuMultichoice
 	return
 
 EventScript_MoveRelearner_2:
+	clearflag FLAG_SCRIPT_MOVE_RELEARNER
 	goto EventScript_PokeMenuMultichoice
 	goto EventScript_MoveRelearner_1
 
 EventScript_MoveRelearner_5:
 	bufferpartymonnick STR_VAR_1, VAR_0x8004
 	msgbox EventScript_MoveRelearner_Text_0, MSGBOX_AUTOCLOSE
+	clearflag FLAG_SCRIPT_MOVE_RELEARNER
 	goto EventScript_PokeMenuMultichoice
 	goto EventScript_MoveRelearner_4
 
 EventScript_MoveRelearner_8:
+	clearflag FLAG_SCRIPT_MOVE_RELEARNER
 	goto EventScript_PokeMenuMultichoice
 	goto EventScript_MoveRelearner_7
 

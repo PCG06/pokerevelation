@@ -463,12 +463,14 @@ script EventScript_ChooseMonForTeaching {
 	if (var(VAR_RESULT) == TRUE) {
 		msgbox("Hunh? There isn't a single move that\n"
 				"I can teach an Egg.", MSGBOX_DEFAULT)
+		clearflag(FLAG_EVENT_MOVE_RELEARNER)
 		goto(EventScript_ChooseMonForTeaching)
 	}
 	if (var(VAR_0x8005) == NO) {
 		msgbox("Sorry…\p"
 				"It doesn't appear as if I have any move\n"
 				"I can teach that Pokémon.", MSGBOX_DEFAULT)
+		clearflag(FLAG_EVENT_MOVE_RELEARNER)
 		goto(EventScript_ChooseMonForTeaching)
 	} else {
 		special(ShowBattlePointsWindow)
