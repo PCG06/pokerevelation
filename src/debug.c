@@ -4063,11 +4063,13 @@ static void DebugNativeStep_Party_SetFriendshipSelect(u8 taskId)
         PlaySE(SE_SELECT);
         gTasks[taskId].tFriendship = gTasks[taskId].tInput;
         SetMonData(&gPlayerParty[gTasks[taskId].tPartyId], MON_DATA_FRIENDSHIP, &gTasks[taskId].tInput);
+        gSpecialVar_Result = TRUE;
         DebugNativeStep_CloseDebugWindow(taskId);
     }
     else if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_SELECT);
+        gSpecialVar_Result = FALSE;
         DebugNativeStep_CloseDebugWindow(taskId);
         return;
     }

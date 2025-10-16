@@ -8,7 +8,7 @@ EventScript_PokeMenu::
 
 EventScript_PokeMenuMultichoice::
 	copyvar VAR_TEMP_A, VAR_TEMP_B
-	dynmultichoice 0, 0, FALSE, 8, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, EventScript_PokeMenuMultichoice_Text_0, EventScript_PokeMenuMultichoice_Text_1, EventScript_PokeMenuMultichoice_Text_2, EventScript_PokeMenuMultichoice_Text_3, EventScript_PokeMenuMultichoice_Text_4, EventScript_PokeMenuMultichoice_Text_5, EventScript_PokeMenuMultichoice_Text_6, EventScript_PokeMenuMultichoice_Text_7
+	dynmultichoice 0, 0, FALSE, 8, VAR_TEMP_A, DYN_MULTICHOICE_CB_NONE, EventScript_PokeMenuMultichoice_Text_0, EventScript_PokeMenuMultichoice_Text_1, EventScript_PokeMenuMultichoice_Text_2, EventScript_PokeMenuMultichoice_Text_3, EventScript_PokeMenuMultichoice_Text_4, EventScript_PokeMenuMultichoice_Text_5, EventScript_PokeMenuMultichoice_Text_6
 	copyvar VAR_TEMP_B, VAR_RESULT
 	switch VAR_RESULT
 	case 0, EventScript_PokeMenuMultichoice_2
@@ -18,8 +18,7 @@ EventScript_PokeMenuMultichoice::
 	case 4, EventScript_PokeMenuMultichoice_6
 	case 5, EventScript_PokeMenuMultichoice_7
 	case 6, EventScript_PokeMenuMultichoice_8
-	case 7, EventScript_PokeMenuMultichoice_9
-EventScript_PokeMenuMultichoice_9:
+EventScript_PokeMenuMultichoice_8:
 	setvar VAR_TEMP_B, 0
 	release
 	end
@@ -46,10 +45,6 @@ EventScript_PokeMenuMultichoice_6:
 
 EventScript_PokeMenuMultichoice_7:
 	call EventScript_SetFriendship
-	return
-
-EventScript_PokeMenuMultichoice_8:
-	call EventScript_SetTeraType
 	return
 
 
@@ -228,13 +223,19 @@ EventScript_SetFriendship::
 EventScript_SetFriendship_1:
 	callnative DebugNative_Party_SetFriendship
 	waitstate
-	msgbox EventScript_SetFriendship_Text_0, MSGBOX_AUTOCLOSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_SetFriendship_5
+EventScript_SetFriendship_4:
 	goto EventScript_PokeMenuMultichoice
 	return
 
 EventScript_SetFriendship_2:
 	goto EventScript_PokeMenuMultichoice
 	goto EventScript_SetFriendship_1
+
+EventScript_SetFriendship_5:
+	msgbox EventScript_SetFriendship_Text_0, MSGBOX_AUTOCLOSE
+	goto EventScript_SetFriendship_4
 
 
 EventScript_SetTeraType::
@@ -343,9 +344,6 @@ EventScript_PokeMenuMultichoice_Text_5:
 	.string "Set Friendship$"
 
 EventScript_PokeMenuMultichoice_Text_6:
-	.string "Set Tera type$"
-
-EventScript_PokeMenuMultichoice_Text_7:
 	.string "Exit$"
 
 EventScript_SetAbility_Text_0:
