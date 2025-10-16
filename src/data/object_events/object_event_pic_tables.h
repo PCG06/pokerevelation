@@ -1384,3 +1384,51 @@ static const struct SpriteFrameImage sPicTable_SchoolKidF[] = {
 static const struct SpriteFrameImage sPicTable_DragonTamer[] = {
     overworld_ascending_frames(gObjectEventPic_DragonTamer, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Jake[] = {
+    overworld_ascending_frames(gObjectEventPic_Jake, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Reeve[] = {
+    overworld_ascending_frames(gObjectEventPic_Reeve, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Prem[] = {
+    overworld_ascending_frames(gObjectEventPic_Prem, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Jaison[] = {
+    overworld_ascending_frames(gObjectEventPic_Jaison, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Prajith[] = {
+    overworld_ascending_frames(gObjectEventPic_Prajith, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Varun[] = {
+    overworld_ascending_frames(gObjectEventPic_Varun, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Snehal[] = {
+    overworld_ascending_frames(gObjectEventPic_Snehal, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Rajesh[] = {
+    overworld_ascending_frames(gObjectEventPic_Rajesh, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Prajesh[] = {
+    overworld_ascending_frames(gObjectEventPic_Prajesh, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Manvitha[] = {
+    overworld_ascending_frames(gObjectEventPic_Manvitha, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Yashas[] = {
+    overworld_ascending_frames(gObjectEventPic_Yashas, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Benny[] = {
+    overworld_ascending_frames(gObjectEventPic_Benny, 2, 4),
+};

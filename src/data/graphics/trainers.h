@@ -301,8 +301,42 @@ const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics
 const u32 gTrainerFrontPic_SuperNerd[] = INCBIN_U32("graphics/trainers/front_pics/super_nerd.4bpp.smol");
 const u16 gTrainerPalette_SuperNerd[] = INCBIN_U16("graphics/trainers/front_pics/super_nerd.gbapal");
 
-const u32 gTrainerFrontPic_Birch[] = INCBIN_U32("graphics/trainers/front_pics/birch.4bpp.smol");
-const u16 gTrainerPalette_Birch[] = INCBIN_U16("graphics/trainers/front_pics/birch.gbapal");
+const u32 gTrainerFrontPic_Jake[] = INCBIN_U32("graphics/trainers/front_pics/jake.4bpp.smol");
+const u16 gTrainerPalette_Jake[] = INCBIN_U16("graphics/trainers/front_pics/jake.gbapal");
+
+const u32 gTrainerFrontPic_Reeve[] = INCBIN_U32("graphics/trainers/front_pics/reeve.4bpp.smol");
+const u16 gTrainerPalette_Reeve[] = INCBIN_U16("graphics/trainers/front_pics/reeve.gbapal");
+
+const u32 gTrainerFrontPic_Prem[] = INCBIN_U32("graphics/trainers/front_pics/prem.4bpp.smol");
+const u16 gTrainerPalette_Prem[] = INCBIN_U16("graphics/trainers/front_pics/prem.gbapal");
+
+const u32 gTrainerFrontPic_Jaison[] = INCBIN_U32("graphics/trainers/front_pics/jaison.4bpp.smol");
+const u16 gTrainerPalette_Jaison[] = INCBIN_U16("graphics/trainers/front_pics/jaison.gbapal");
+
+const u32 gTrainerFrontPic_Prajith[] = INCBIN_U32("graphics/trainers/front_pics/prajith.4bpp.smol");
+const u16 gTrainerPalette_Prajith[] = INCBIN_U16("graphics/trainers/front_pics/prajith.gbapal");
+
+const u32 gTrainerFrontPic_Varun[] = INCBIN_U32("graphics/trainers/front_pics/varun.4bpp.smol");
+const u16 gTrainerPalette_Varun[] = INCBIN_U16("graphics/trainers/front_pics/varun.gbapal");
+
+const u32 gTrainerFrontPic_Snehal[] = INCBIN_U32("graphics/trainers/front_pics/snehal.4bpp.smol");
+const u16 gTrainerPalette_Snehal[] = INCBIN_U16("graphics/trainers/front_pics/snehal.gbapal");
+
+const u32 gTrainerFrontPic_Rajesh[] = INCBIN_U32("graphics/trainers/front_pics/rajesh.4bpp.smol");
+const u16 gTrainerPalette_Rajesh[] = INCBIN_U16("graphics/trainers/front_pics/rajesh.gbapal");
+
+const u32 gTrainerFrontPic_Prajesh[] = INCBIN_U32("graphics/trainers/front_pics/prajesh.4bpp.smol");
+const u16 gTrainerPalette_Prajesh[] = INCBIN_U16("graphics/trainers/front_pics/prajesh.gbapal");
+
+const u32 gTrainerFrontPic_Manvitha[] = INCBIN_U32("graphics/trainers/front_pics/manvitha.4bpp.smol");
+const u16 gTrainerPalette_Manvitha[] = INCBIN_U16("graphics/trainers/front_pics/manvitha.gbapal");
+
+const u32 gTrainerFrontPic_Yashas[] = INCBIN_U32("graphics/trainers/front_pics/yashas.4bpp.smol");
+const u16 gTrainerPalette_Yashas[] = INCBIN_U16("graphics/trainers/front_pics/yashas.gbapal");
+
+const u32 gTrainerFrontPic_Benny[] = INCBIN_U32("graphics/trainers/front_pics/benny.4bpp.smol");
+const u16 gTrainerPalette_Benny[] = INCBIN_U16("graphics/trainers/front_pics/benny.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -416,7 +450,18 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_BURGLAR, gTrainerFrontPic_Burglar, gTrainerPalette_Burglar),
     TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
     TRAINER_SPRITE(TRAINER_PIC_SUPER_NERD, gTrainerFrontPic_SuperNerd, gTrainerPalette_SuperNerd),
-    TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_Birch, gTrainerPalette_Birch),
+    TRAINER_SPRITE(TRAINER_PIC_JAKE, gTrainerFrontPic_Jake, gTrainerPalette_Jake),
+    TRAINER_SPRITE(TRAINER_PIC_REEVE, gTrainerFrontPic_Reeve, gTrainerPalette_Reeve),
+    TRAINER_SPRITE(TRAINER_PIC_PREM, gTrainerFrontPic_Prem, gTrainerPalette_Prem),
+    TRAINER_SPRITE(TRAINER_PIC_JAISON, gTrainerFrontPic_Jaison, gTrainerPalette_Jaison),
+    TRAINER_SPRITE(TRAINER_PIC_PRAJITH, gTrainerFrontPic_Prajith, gTrainerPalette_Prajith),
+    TRAINER_SPRITE(TRAINER_PIC_VARUN, gTrainerFrontPic_Varun, gTrainerPalette_Varun),
+    TRAINER_SPRITE(TRAINER_PIC_SNEHAL, gTrainerFrontPic_Snehal, gTrainerPalette_Snehal),
+    TRAINER_SPRITE(TRAINER_PIC_RAJESH, gTrainerFrontPic_Rajesh, gTrainerPalette_Rajesh),
+    TRAINER_SPRITE(TRAINER_PIC_PRAJESH, gTrainerFrontPic_Prajesh, gTrainerPalette_Prajesh),
+    TRAINER_SPRITE(TRAINER_PIC_MANVITHA, gTrainerFrontPic_Manvitha, gTrainerPalette_Manvitha),
+    TRAINER_SPRITE(TRAINER_PIC_YASHAS, gTrainerFrontPic_Yashas, gTrainerPalette_Yashas),
+    TRAINER_SPRITE(TRAINER_PIC_BENNY, gTrainerFrontPic_Benny, gTrainerPalette_Benny),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

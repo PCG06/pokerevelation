@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_REVELATION_CHALLENGER_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_MANVITHA",
       "x": 10,
       "y": 11,
       "elevation": 0,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_REVELATION_CHALLENGER_2",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 10,
       "y": 11,
       "elevation": 0,
@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_REVELATION_CHALLENGER_3",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 10,
       "y": 11,
       "elevation": 0,
@@ -58,7 +58,7 @@
     },
     {
       "local_id": "LOCALID_REVELATION_CHALLENGER_4",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 10,
       "y": 11,
       "elevation": 0,
@@ -86,7 +86,7 @@
     },
     {
       "local_id": "LOCALID_REVELATION_CHALLENGER_6",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 10,
       "y": 11,
       "elevation": 0,
@@ -100,7 +100,7 @@
     },
     {
       "local_id": "LOCALID_REVELATION_CHAMPION",
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
+      "graphics_id": "OBJ_EVENT_GFX_YASHAS",
       "x": 10,
       "y": 11,
       "elevation": 0,

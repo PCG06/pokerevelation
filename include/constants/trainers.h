@@ -111,8 +111,19 @@
 #define TRAINER_PIC_BURGLAR               93
 #define TRAINER_PIC_SCIENTIST             94
 #define TRAINER_PIC_SUPER_NERD            96
-#define TRAINER_PIC_BIRCH                 97
-#define TRAINER_PIC_COUNT                 98
+#define TRAINER_PIC_JAKE                  97
+#define TRAINER_PIC_REEVE                 98
+#define TRAINER_PIC_PREM                  99
+#define TRAINER_PIC_JAISON                100
+#define TRAINER_PIC_PRAJITH               101
+#define TRAINER_PIC_VARUN                 102
+#define TRAINER_PIC_SNEHAL                103
+#define TRAINER_PIC_RAJESH                104
+#define TRAINER_PIC_PRAJESH               105
+#define TRAINER_PIC_MANVITHA              106
+#define TRAINER_PIC_YASHAS                107
+#define TRAINER_PIC_BENNY                 108
+#define TRAINER_PIC_COUNT                 109
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -360,7 +371,9 @@ enum TrainerClassID
     TRAINER_CLASS_BURGLAR,
     TRAINER_CLASS_SCIENTIST,
     TRAINER_CLASS_SUPER_NERD,
+    TRAINER_CLASS_GARDENER,
     TRAINER_CLASS_PROFESSOR,
+    TRAINER_CLASS_CHALLENGER,
     TRAINER_CLASS_COUNT,
 };
 

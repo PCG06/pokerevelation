@@ -165,9 +165,9 @@ IVs: 0 Atk
 - Quiver Dance  
 
 === TRAINER_PRAJESH ===
-Name: Parjesh
-Class: Camper
-Pic: Camper
+Name: Prajesh
+Class: Gardener
+Pic: Prajesh
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -1142,8 +1142,8 @@ IVs: 20 Atk
 
 === TRAINER_MANVITHA ===
 Name: Manvitha
-Class: Cooltrainer
-Pic: Cooltrainer F
+Class: Challenger
+Pic: Manvitha
 Gender: Female
 Music: Elite Four
 Battle Type: Singles
@@ -1208,8 +1208,8 @@ Adamant Nature
 
 === TRAINER_KEVIN ===
 Name: Kevin
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Challenger
+Pic: Ninja Boy
 Gender: Male
 Music: Elite Four
 Battle Type: Singles
@@ -1273,8 +1273,8 @@ IVs: 0 Atk
 
 === TRAINER_LOHITH ===
 Name: Lohith
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Challenger
+Pic: Camper
 Gender: Male
 Music: Elite Four
 Battle Type: Singles
@@ -1339,8 +1339,8 @@ Jolly Nature
 
 === TRAINER_ANMOL ===
 Name: Anmol
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Challenger
+Pic: School Kid M
 Gender: Male
 Music: Elite Four
 Battle Type: Singles
@@ -1403,7 +1403,7 @@ Impish Nature
 
 === TRAINER_ARSHAD ===
 Name: Arshad
-Class: Cooltrainer
+Class: Challenger
 Pic: Cooltrainer M
 Gender: Male
 Music: Elite Four
@@ -1469,8 +1469,8 @@ Jolly Nature
 
 === TRAINER_MELWIN ===
 Name: Melwin
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Challenger
+Pic: Rich Boy
 Gender: Male
 Music: Elite Four
 Battle Type: Singles
@@ -1534,7 +1534,7 @@ Adamant Nature
 === TRAINER_YASHAS ===
 Name: Yashas
 Class: Champion
-Pic: Champion Wallace
+Pic: Yashas
 Gender: Male
 Music: Elite Four
 Battle Type: Singles
@@ -1598,7 +1598,7 @@ Naughty Nature
 === TRAINER_BENNY ===
 Name: Benny
 Class: Professor
-Pic: Birch
+Pic: Benny
 Gender: Male
 Music: Intense
 Battle Type: Singles
@@ -6038,7 +6038,7 @@ Jolly Nature
 === TRAINER_JAKE ===
 Name: Jake
 Class: Leader
-Pic: Leader Roxanne
+Pic: Jake
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6103,7 +6103,7 @@ Adamant Nature
 === TRAINER_REEVE ===
 Name: Reeve
 Class: Leader
-Pic: Leader Brawly
+Pic: Reeve
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6168,7 +6168,7 @@ Modest Nature
 === TRAINER_PREM ===
 Name: Prem
 Class: Leader
-Pic: Leader Wattson
+Pic: Prem
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6234,7 +6234,7 @@ Adamant Nature
 === TRAINER_JAISON ===
 Name: Jaison
 Class: Leader
-Pic: Leader Flannery
+Pic: Jaison
 Gender: Female
 Music: Female
 Battle Type: Singles
@@ -6300,7 +6300,7 @@ Bold Nature
 === TRAINER_PRAJITH ===
 Name: Prajith
 Class: Leader
-Pic: Leader Norman
+Pic: Prajith
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6365,7 +6365,7 @@ Adamant Nature
 === TRAINER_VARUN ===
 Name: Varun
 Class: Leader
-Pic: Leader Winona
+Pic: Varun
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6433,7 +6433,7 @@ Bold Nature
 === TRAINER_SNEHAL ===
 Name: Snehal
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Snehal
 Gender: Male
 Music: Male
 Battle Type: Singles
@@ -6497,7 +6497,7 @@ Timid Nature
 === TRAINER_RAJESH ===
 Name: Rajesh
 Class: Leader
-Pic: Leader Juan
+Pic: Rajesh
 Gender: Male
 Music: Male
 Battle Type: Singles

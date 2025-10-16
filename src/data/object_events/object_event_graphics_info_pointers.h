@@ -247,6 +247,18 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SuperNerd;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jake;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Reeve;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prem;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jaison;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prajith;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Varun;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Snehal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rajesh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prajesh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Manvitha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yashas;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Benny;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
@@ -506,6 +518,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SUPER_NERD] =               &gObjectEventGraphicsInfo_SuperNerd,
     [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
     [OBJ_EVENT_GFX_DRAGON_TAMER] =             &gObjectEventGraphicsInfo_DragonTamer,
+    [OBJ_EVENT_GFX_JAKE] =                     &gObjectEventGraphicsInfo_Jake,
+    [OBJ_EVENT_GFX_REEVE] =                    &gObjectEventGraphicsInfo_Reeve,
+    [OBJ_EVENT_GFX_PREM] =                     &gObjectEventGraphicsInfo_Prem,
+    [OBJ_EVENT_GFX_JAISON] =                   &gObjectEventGraphicsInfo_Jaison,
+    [OBJ_EVENT_GFX_PRAJITH] =                  &gObjectEventGraphicsInfo_Prajith,
+    [OBJ_EVENT_GFX_VARUN] =                    &gObjectEventGraphicsInfo_Varun,
+    [OBJ_EVENT_GFX_SNEHAL] =                   &gObjectEventGraphicsInfo_Snehal,
+    [OBJ_EVENT_GFX_RAJESH] =                   &gObjectEventGraphicsInfo_Rajesh,
+    [OBJ_EVENT_GFX_PRAJESH] =                  &gObjectEventGraphicsInfo_Prajesh,
+    [OBJ_EVENT_GFX_MANVITHA] =                 &gObjectEventGraphicsInfo_Manvitha,
+    [OBJ_EVENT_GFX_YASHAS] =                   &gObjectEventGraphicsInfo_Yashas,
+    [OBJ_EVENT_GFX_BENNY] =                    &gObjectEventGraphicsInfo_Benny,
+
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

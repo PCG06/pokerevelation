@@ -12,22 +12,21 @@ mapscripts RevelationMap_Lobby_MapScripts {
 					"Hey, {PLAYER}!", MSGBOX_AUTOCLOSE)
 			emote(OBJ_EVENT_ID_PLAYER, EMOTE_EXCLAM)
 			turnplayer(DIR_NORTH)
-			applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_left, face_down))
+			applymove(LOCALID_REVELATION_LOBBY_BENNY, moves(walk_left, face_down))
 			setmetatile(5, 4, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE) # Open counter barrier
 			special(DrawWholeMapView)
 			playse(SE_CLICK)
-			applymovement(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_down * 2, walk_right * 3, walk_down * 2))
+			applymovement(LOCALID_REVELATION_LOBBY_BENNY, moves(walk_down * 2, walk_right * 3, walk_down * 2))
 			delay(25)
 			setmetatile(5, 4, METATILE_PokemonCenter_CounterBarrier, TRUE) # Close counter barrier
 			special(DrawWholeMapView)
 			playse(SE_CLICK)
 			waitmovement(0)
 			msgbox("{SPEAKER NAME_BENNY}"
-					"Congrats on becoming the new\n"
-					"Champion!\l"
+					"Congrats on becoming the new Champion!\n"
 					"I knew you had it in you!\l"
-					"But, do you have what it takes\l"
-					"to beat me?", MSGBOX_DEFAULT)
+					"But, do you have what it takes to beat\l"
+					"me?", MSGBOX_DEFAULT)
 			setflag(B_FLAG_NO_WHITEOUT)
 			trainerbattle_no_intro(TRAINER_BENNY, "Well, you sure can!")
 			clearflag(B_FLAG_NO_WHITEOUT)
@@ -46,11 +45,11 @@ mapscripts RevelationMap_Lobby_MapScripts {
 						"battling is for all ages!\l"
 						"This really refreshed me.", MSGBOX_AUTOCLOSE)
 			}
-			applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_up * 2, walk_left * 3))
+			applymove(LOCALID_REVELATION_LOBBY_BENNY, moves(walk_up * 2, walk_left * 3))
 			setmetatile(5, 4, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE) # Open counter barrier
 			special(DrawWholeMapView)
 			playse(SE_CLICK)
-			applymovement(LOCALID_REVELATION_LOBBY_BIRCH, moves(walk_up * 2, walk_right, face_down))
+			applymovement(LOCALID_REVELATION_LOBBY_BENNY, moves(walk_up * 2, walk_right, face_down))
 			delay(25)
 			setmetatile(5, 4, METATILE_PokemonCenter_CounterBarrier, TRUE) # Close counter barrier
 			special(DrawWholeMapView)
@@ -80,7 +79,7 @@ mapscripts RevelationMap_Lobby_MapScripts {
 
 script RevelationMap_Lobby_Trigger0 {
 	lock
-	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_LOBBY_BENNY, moves(face_right))
 	msgbox("{SPEAKER NAME_BENNY}"
 			"Excuse me, {PLAYER}!", MSGBOX_DEFAULT)
 	emoteplayer(EMOTE_EXCLAM)
@@ -97,7 +96,7 @@ script RevelationMap_Lobby_Trigger0 {
 	end
 }
 
-script RevelationMap_Lobby_EventScript_ProfPokemon {
+script RevelationMap_Lobby_EventScript_ProfBenny {
 	lock
 	faceplayer
 	if (flag(FLAG_DEFEATED_BENNY) == true) {
@@ -134,7 +133,7 @@ script RevelationMap_Lobby_SetUpPkmnMenu {
 
 script RevelationMap_Lobby_Trigger1 {
 	lock
-	applymove(LOCALID_REVELATION_LOBBY_BIRCH, moves(face_right))
+	applymove(LOCALID_REVELATION_LOBBY_BENNY, moves(face_right))
 	msgbox("{SPEAKER NAME_BENNY}"
 			"{PLAYER},\n"
 			"once you go through that door,\l"
