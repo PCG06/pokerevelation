@@ -1,4 +1,4 @@
-EventScript_PokeMenu::
+Common_EventScript_PokeMenu::
 	lock
 	setvar VAR_TEMP_B, 0
 	goto EventScript_PokeMenuMultichoice

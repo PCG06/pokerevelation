@@ -1,6 +1,5 @@
 Common_EventScript_TrainerBattleMenu::
 	lock
-	faceplayer
 	message Common_EventScript_TrainerBattleMenu_Text_0
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Common_EventScript_TrainerBattleMenu_Text_1, Common_EventScript_TrainerBattleMenu_Text_2, Common_EventScript_TrainerBattleMenu_Text_3, Common_EventScript_TrainerBattleMenu_Text_4
@@ -11,7 +10,6 @@ Common_EventScript_TrainerBattleMenu::
 	case 2, Common_EventScript_TrainerBattleMenu_5
 	case 3, Common_EventScript_TrainerBattleMenu_6
 Common_EventScript_TrainerBattleMenu_6:
-	msgbox Common_EventScript_TrainerBattleMenu_Text_5, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1161,9 +1159,6 @@ Common_EventScript_TrainerBattleMenu_Text_3:
 Common_EventScript_TrainerBattleMenu_Text_4:
 	.string "Nevermind$"
 
-Common_EventScript_TrainerBattleMenu_Text_5:
-	.string "Come back when you're ready!$"
-
 EventScript_GymLeaderChoices_Text_0:
 	.string "Select a Gym.$"
 
@@ -1198,7 +1193,7 @@ EventScript_ChallengeGym1_Text_0:
 	.string "Bug Catcher Pawan$"
 
 EventScript_ChallengeGym1_Text_1:
-	.string "Camper Prajesh$"
+	.string "Gardener Prajesh$"
 
 EventScript_ChallengeGym1_Text_2:
 	.string "Leader Jake$"
@@ -1213,7 +1208,7 @@ EventScript_ChallengeGym2_Text_2:
 	.string "Leader Reeve$"
 
 EventScript_ChallengeGym3_Text_0:
-	.string "Psychic Rashel$"
+	.string "Hex Maniac Rashel$"
 
 EventScript_ChallengeGym3_Text_1:
 	.string "Psychic Don$"

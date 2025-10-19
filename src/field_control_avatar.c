@@ -45,7 +45,8 @@
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
 
-extern const u8 EventScript_PokeMenu[];
+extern const u8 Common_EventScript_PokeMenu[];
+extern const u8 Common_EventScript_TrainerBattleMenu[];
 
 COMMON_DATA u8 gSelectedObjectEvent = 0;
 
@@ -160,6 +161,15 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 
     if ((heldKeys & L_BUTTON))
         input->input_field_1_1 = TRUE;
+
+    if (FlagGet(FLAG_IS_CHAMPION))
+    {
+        if ((heldKeys & B_BUTTON) && input->pressedSelectButton)
+        {
+            input->input_field_1_3 = TRUE;
+            input->pressedSelectButton = FALSE;
+        }
+    }
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -253,7 +263,14 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->input_field_1_1)
     {
         PlaySE(SE_WIN_OPEN);
-        ScriptContext_SetupScript(EventScript_PokeMenu);
+        ScriptContext_SetupScript(Common_EventScript_PokeMenu);
+        return TRUE;
+    }
+
+    if (input->input_field_1_3)
+    {
+        PlaySE(SE_WIN_OPEN);
+        ScriptContext_SetupScript(Common_EventScript_TrainerBattleMenu);
         return TRUE;
     }
 

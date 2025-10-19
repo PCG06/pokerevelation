@@ -1,6 +1,5 @@
 script Common_EventScript_TrainerBattleMenu {
 	lock
-	faceplayer
 	message("Select a category of Trainers.")
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Gym Leaders", "Challenge Trainers", "Postgame Trainers", "Nevermind")
@@ -14,7 +13,6 @@ script Common_EventScript_TrainerBattleMenu {
 			goto(EventScript_PostgameTrainerChoices)
 		default:
 		case 3:
-			msgbox("Come back when you're ready!", MSGBOX_DEFAULT)
 			release
 			end
 	}
@@ -90,7 +88,7 @@ script EventScript_ChallengeGym1 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-	"Bug Catcher Pawan", "Camper Prajesh", "Leader Jake", "Back")
+	"Bug Catcher Pawan", "Gardener Prajesh", "Leader Jake", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -206,7 +204,7 @@ script EventScript_ChallengeGym3 {
 	message(Text_WhichTrainerToChallenge)
 	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE,
-		"Psychic Rashel", "Psychic Don", "Leader Prem", "Back")
+		"Hex Maniac Rashel", "Psychic Don", "Leader Prem", "Back")
 	closemessage
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -690,7 +688,7 @@ script EventScript_ChallengePostgameTrainers {
 				goto(EventScript_PostgameTrainerChoices)
 			}
 		case 1:
-			if (defeated(TRAINER_AARON)) {
+			if (defeated(TRAINER_AARON)) { // Unused in-game
 				msgbox(Text_YouHaveAlreadyDefeatedPostgameTrainer, MSGBOX_YESNO)
 				if (var(VAR_RESULT) == TRUE) {
 					trainerbattle_no_intro(TRAINER_AARON, Text_UghILost)

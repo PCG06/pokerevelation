@@ -28,7 +28,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 1 by defeating\n"
                     "Prajesh, Jake and Pawan!"),
         .map = sText_JakesGym,
-        .sprite = OBJ_EVENT_GFX_ROXANNE,
+        .sprite = OBJ_EVENT_GFX_JAKE,
         .spritetype = OBJECT,
         .subquests = sSubQuests1,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -44,7 +44,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 2 by defeating\n"
                     "Premal, Reeve and Hanston!"),
         .map = sText_ReevesGym,
-        .sprite = OBJ_EVENT_GFX_BRAWLY,
+        .sprite = OBJ_EVENT_GFX_REEVE,
         .spritetype = OBJECT,
         .subquests = sSubQuests2,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -60,7 +60,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 3 by defeating\n"
                     "Don, Prem and Rashel!"),
         .map = sText_PremsGym,
-        .sprite = OBJ_EVENT_GFX_WATTSON,
+        .sprite = OBJ_EVENT_GFX_PREM,
         .spritetype = OBJECT,
         .subquests = sSubQuests3,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -76,7 +76,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 4 by defeating\n"
                     "Dara, Jaison and Akshara!"),
         .map = sText_JaisonsGym,
-        .sprite = OBJ_EVENT_GFX_FLANNERY,
+        .sprite = OBJ_EVENT_GFX_JAISON,
         .spritetype = OBJECT,
         .subquests = sSubQuests4,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -92,7 +92,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 5 by defeating\n"
                     "Delson, Prajith and Gilston!"),
         .map = sText_PrajithsGym,
-        .sprite = OBJ_EVENT_GFX_NORMAN,
+        .sprite = OBJ_EVENT_GFX_PRAJITH,
         .spritetype = OBJECT,
         .subquests = sSubQuests5,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -108,7 +108,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 6 by defeating\n"
                     "Darwin, Varun and Monvish!"),
         .map = sText_VarunsGym,
-        .sprite = OBJ_EVENT_GFX_WINONA,
+        .sprite = OBJ_EVENT_GFX_VARUN,
         .spritetype = OBJECT,
         .subquests = sSubQuests6,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -124,7 +124,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 7 by defeating\n"
                     "Handam, Snehal and Adithya!"),
         .map = sText_SnehalsGym,
-        .sprite = OBJ_EVENT_GFX_TATE,
+        .sprite = OBJ_EVENT_GFX_SNEHAL,
         .spritetype = OBJECT,
         .subquests = sSubQuests7,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -140,7 +140,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Secured Badge 8 by defeating\n"
                     "Deon, Rajesh and Rion!"),
         .map = sText_RajeshsGym,
-        .sprite = OBJ_EVENT_GFX_JUAN,
+        .sprite = OBJ_EVENT_GFX_RAJESH,
         .spritetype = OBJECT,
         .subquests = sSubQuests8,
         .numSubquests = GYM_SUBQUESTS_COUNT
@@ -156,7 +156,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "All challengers have fallen before\n"
                     "your strength!"),
         .map = COMPOUND_STRING("Challengers' Arena, REVELATION"),
-        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .sprite = OBJ_EVENT_GFX_MANVITHA,
         .spritetype = OBJECT,
         .subquests = sSubQuests9,
         .numSubquests = CHALLENGERS_SUBQUEST_COUNT
@@ -172,7 +172,7 @@ const struct SideQuest sSideQuests[QUEST_COUNT] =
                     "Defeated all Gyms and Challengers\n"
                     "crowned the Revelation Champion!\n"),
         .map = sText_Revelation,
-        .sprite = OBJ_EVENT_GFX_WALLACE,
+        .sprite = OBJ_EVENT_GFX_YASHAS,
         .spritetype = OBJECT,
         .subquests = NULL,
         .numSubquests = 0
@@ -229,7 +229,7 @@ const struct SubQuest sSubQuests1[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Grass-type specialist\n"
                     "guarding Jake's Gym entrance."),
         .map = sText_JakesGym,
-        .sprite = OBJ_EVENT_GFX_CAMPER,
+        .sprite = OBJ_EVENT_GFX_PRAJESH,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -241,7 +241,7 @@ const struct SubQuest sSubQuests1[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Rock-type Gym Leader\n"
                     "to earn the Badge."),
         .map = sText_JakesGym,
-        .sprite = OBJ_EVENT_GFX_ROXANNE,
+        .sprite = OBJ_EVENT_GFX_JAKE,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -280,7 +280,7 @@ const struct SubQuest sSubQuests2[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Dark-type Gym Leader\n"
                     "to earn the Badge."),
         .map = sText_ReevesGym,
-        .sprite = OBJ_EVENT_GFX_BRAWLY,
+        .sprite = OBJ_EVENT_GFX_REEVE,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -319,7 +319,7 @@ const struct SubQuest sSubQuests3[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Ghost-type Gym Leader\n"
                     "to earn the Badge."),
         .map = sText_PremsGym,
-        .sprite = OBJ_EVENT_GFX_WATTSON,
+        .sprite = OBJ_EVENT_GFX_PREM,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -358,7 +358,7 @@ const struct SubQuest sSubQuests4[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Fairy-type Gym Leader\n"
                     "to earn the Badge."),
         .map = sText_JaisonsGym,
-        .sprite = OBJ_EVENT_GFX_FLANNERY,
+        .sprite = OBJ_EVENT_GFX_JAISON,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -397,7 +397,7 @@ const struct SubQuest sSubQuests5[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Fire-type Gym Leader\n"
                     "to earn the Badge."),
         .map = sText_PrajithsGym,
-        .sprite = OBJ_EVENT_GFX_NORMAN,
+        .sprite = OBJ_EVENT_GFX_PRAJITH,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -436,7 +436,7 @@ const struct SubQuest sSubQuests6[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Electric-type Leader\n"
                     "to earn the Badge."),
         .map = sText_VarunsGym,
-        .sprite = OBJ_EVENT_GFX_WINONA,
+        .sprite = OBJ_EVENT_GFX_VARUN,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -475,7 +475,7 @@ const struct SubQuest sSubQuests7[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Flying-type Leader\n"
                     "to earn the Badge."),
         .map = sText_SnehalsGym,
-        .sprite = OBJ_EVENT_GFX_TATE,
+        .sprite = OBJ_EVENT_GFX_SNEHAL,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -514,7 +514,7 @@ const struct SubQuest sSubQuests8[GYM_SUBQUESTS_COUNT] =
                     "Defeated the Dragon-type Leader\n"
                     "to earn the Badge."),
         .map = sText_RajeshsGym,
-        .sprite = OBJ_EVENT_GFX_JUAN,
+        .sprite = OBJ_EVENT_GFX_RAJESH,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -541,7 +541,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the sun team specialist\n"
                     "with solar-powered strategies."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_WOMAN_5,
+        .sprite = OBJ_EVENT_GFX_MANVITHA,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -553,7 +553,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the rain team specialist\n"
                     "with torrential tactics."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .sprite = OBJ_EVENT_GFX_NINJA_BOY,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -565,7 +565,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the modern offense team\n"
                     "with relentless aggression."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .sprite = OBJ_EVENT_GFX_CAMPER,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -577,7 +577,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the defensive specialist\n"
                     "with impenetrable strategies."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .sprite = OBJ_EVENT_GFX_SCHOOL_KID_M,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -601,7 +601,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the tricky offense team\n"
                     "with unpredictable strategies."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_MAN_3,
+        .sprite = OBJ_EVENT_GFX_RICH_BOY,
         .spritetype = OBJECT,
         .type = sText_Done
     },
@@ -613,7 +613,7 @@ const struct SubQuest sSubQuests9[CHALLENGERS_SUBQUEST_COUNT] =
                     "Defeated the Revelation expert\n"
                     "with exclusive regional team."),
         .map = sText_ChallengersArena,
-        .sprite = OBJ_EVENT_GFX_WALLACE,
+        .sprite = OBJ_EVENT_GFX_YASHAS,
         .spritetype = OBJECT,
         .type = sText_Done
     }
