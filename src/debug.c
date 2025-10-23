@@ -29,6 +29,7 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "item_icon.h"
+#include "item_use.h"
 #include "list_menu.h"
 #include "m4a.h"
 #include "main.h"
@@ -2062,6 +2063,17 @@ static void Debug_Display_ItemInfo(u32 itemId, u32 digit, u8 windowId)
 {
     StringCopy(gStringVar2, gText_DigitIndicator[digit]);
     u8* end = CopyItemName(itemId, gStringVar1);
+    u16 moveId = ItemIdToBattleMoveId(itemId);
+    if (moveId != MOVE_NONE)
+    {
+        end = StringCopy(end, gText_Space);
+        end = StringCopy(end, GetMoveName(moveId));
+    }
+    else if (CheckIfItemIsTMHMOrEvolutionStone(itemId) == 1)
+    {
+        end = StringCopy(end, COMPOUND_STRING(" None"));
+    } 
+
     WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     ConvertIntToDecimalStringN(gStringVar3, itemId, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
@@ -3027,6 +3039,9 @@ static void DebugAction_Give_MaxMoney(u8 taskId)
 static void DebugAction_Give_MaxCoins(u8 taskId)
 {
     SetCoins(MAX_COINS);
+
+    if (!CheckBagHasItem(ITEM_COIN_CASE, 1))
+        AddBagItem(ITEM_COIN_CASE, 1);
 }
 
 static void DebugAction_Give_MaxBattlePoints(u8 taskId)
