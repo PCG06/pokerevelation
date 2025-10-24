@@ -1171,6 +1171,7 @@ Text_MonCryScript::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/dynmulti_givemon.inc"
 	.include "data/scripts/dynmulti_trainers.inc"
 	.include "data/scripts/dynmulti_pokemenu.inc"
