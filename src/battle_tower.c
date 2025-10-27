@@ -1577,7 +1577,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
 
     if (fmon->isShiny)
     {
-        u32 data = TRUE;
+        bool32 data = TRUE;
         SetMonData(dst, MON_DATA_IS_SHINY, &data);
     }
     if (fmon->dynamaxLevel > 0)
@@ -1592,7 +1592,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     }
     if (fmon->teraType)
     {
-        u32 data = fmon->teraType;
+        enum Type data = fmon->teraType;
         SetMonData(dst, MON_DATA_TERA_TYPE, &data);
     }
 

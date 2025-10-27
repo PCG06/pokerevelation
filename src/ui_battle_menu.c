@@ -1460,6 +1460,7 @@ static void PrintStatsTab(void)
     {
         switch(gNaturesInfo[nature].statUp)
         {
+        default:
         case STAT_ATK:
             StringCopy(gStringVar2, sText_Attack);
             break;
@@ -1479,6 +1480,7 @@ static void PrintStatsTab(void)
 
         switch(gNaturesInfo[nature].statDown)
         {
+        default:
         case STAT_ATK:
             StringCopy(gStringVar3, sText_Attack);
             break;

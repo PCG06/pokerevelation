@@ -2049,7 +2049,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
             if (partyData[monIndex].isShiny)
             {
-                u32 data = TRUE;
+                bool32 data = TRUE;
                 SetMonData(&party[i], MON_DATA_IS_SHINY, &data);
             }
             if (partyData[monIndex].dynamaxLevel > 0)
@@ -2067,7 +2067,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             if (partyData[monIndex].teraType > 0)
             {
                 gBattleStruct->opponentMonCanTera |= 1 << i;
-                u32 data = partyData[monIndex].teraType;
+                enum Type data = partyData[monIndex].teraType;
                 SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
             }
             CalculateMonStats(&party[i]);
@@ -3181,8 +3181,8 @@ static void BattleStartClearSetData(void)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        gBattleStruct->usedHeldItems[i][B_SIDE_PLAYER] = 0;
-        gBattleStruct->usedHeldItems[i][B_SIDE_OPPONENT] = 0;
+        gBattleStruct->partyState[B_SIDE_PLAYER][i].usedHeldItem = ITEM_NONE;
+        gBattleStruct->partyState[B_SIDE_OPPONENT][i].usedHeldItem = ITEM_NONE;
         gBattleStruct->itemLost[B_SIDE_PLAYER][i].originalItem = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
         gBattleStruct->itemLost[B_SIDE_OPPONENT][i].originalItem = GetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM);
         gPartyCriticalHits[i] = 0;
@@ -3301,7 +3301,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     gLastHitBy[battler] = 0xFF;
 
     gBattleStruct->lastTakenMove[battler] = 0;
-    gBattleStruct->sameMoveTurns[battler] = 0;
+    gBattleStruct->metronomeItemCounter[battler] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][0] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][1] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][2] = 0;
@@ -3421,7 +3421,7 @@ const u8* FaintClearSetData(u32 battler)
     gLastHitBy[battler] = 0xFF;
 
     gBattleStruct->choicedMove[battler] = MOVE_NONE;
-    gBattleStruct->sameMoveTurns[battler] = 0;
+    gBattleStruct->metronomeItemCounter[battler] = 0;
     gBattleStruct->lastTakenMove[battler] = MOVE_NONE;
     gBattleStruct->lastTakenMoveFrom[battler][0] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][1] = 0;
@@ -3806,7 +3806,6 @@ static void DoBattleIntro(void)
         {
             gBattleStruct->eventsBeforeFirstTurnState = 0;
             gBattleStruct->switchInBattlerCounter = 0;
-            gBattleStruct->overworldWeatherDone = FALSE;
             Ai_InitPartyStruct(); // Save mons party counts, and first 2/4 mons on the battlefield.
 
             // mark all battlers as sent out
@@ -3896,32 +3895,19 @@ static void TryDoEventsBeforeFirstTurn(void)
         gBattleStruct->eventsBeforeFirstTurnState++;
         break;
     case FIRST_TURN_EVENTS_OVERWORLD_WEATHER:
-        if (!gBattleStruct->overworldWeatherDone
-         && AbilityBattleEffects(ABILITYEFFECT_SWITCH_IN_WEATHER, 0, 0, ABILITYEFFECT_SWITCH_IN_WEATHER, 0) != 0)
-        {
-            gBattleStruct->overworldWeatherDone = TRUE;
-            return;
-        }
         gBattleStruct->eventsBeforeFirstTurnState++;
+        if (TryFieldEffects(FIELD_EFFECT_OVERWORLD_WEATHER))
+            return;
         break;
     case FIRST_TURN_EVENTS_TERRAIN:
-        if (!gBattleStruct->terrainDone
-         && AbilityBattleEffects(ABILITYEFFECT_SWITCH_IN_TERRAIN, 0, 0, ABILITYEFFECT_SWITCH_IN_TERRAIN, 0) != 0)
-        {
-            gBattleStruct->terrainDone = TRUE;
-            return;
-        }
         gBattleStruct->eventsBeforeFirstTurnState++;
+        if (TryFieldEffects(FIELD_EFFECT_OVERWORLD_TERRAIN))
+            return;
         break;
     case FIRST_TURN_EVENTS_STARTING_STATUS:
-        if (!gBattleStruct->startingStatusDone
-         && gBattleStruct->startingStatus
-         && AbilityBattleEffects(ABILITYEFFECT_SWITCH_IN_STATUSES, 0, 0, ABILITYEFFECT_SWITCH_IN_STATUSES, 0) != 0)
-        {
-            gBattleStruct->startingStatusDone = TRUE;
-            return;
-        }
         gBattleStruct->eventsBeforeFirstTurnState++;
+        if (TryFieldEffects(FIELD_EFFECT_TRAINER_STATUSES))
+            return;
         break;
     case FIRST_TURN_EVENTS_TOTEM_BOOST:
         for (i = 0; i < gBattlersCount; i++)
@@ -4024,9 +4010,6 @@ static void TryDoEventsBeforeFirstTurn(void)
 
         for (i = 0; i < BATTLE_COMMUNICATION_ENTRIES_COUNT; i++)
             gBattleCommunication[i] = 0;
-
-        for (i = 0; i < gBattlersCount; i++)
-            gBattleMons[i].volatiles.flinched = FALSE;
 
         gBattleStruct->eventBlockCounter = 0;
         gBattleStruct->turnEffectsBattlerId = 0;
@@ -4882,7 +4865,7 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
         && ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_SPEED, battler)
         && IsOnPlayerSide(battler))
     {
-        speed = (speed * 110) / 100;
+        speed = uq4_12_multiply_by_int_half_down(GetBadgeBoostModifier(), speed);
     }
 
     // item effects
@@ -5913,9 +5896,9 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
-u32 TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
+enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
 {
-    u32 ateType = TYPE_NONE;
+    enum Type ateType = TYPE_NONE;
 
     switch (GetMoveEffect(move))
     {
@@ -5961,11 +5944,12 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
 }
 
 // Returns TYPE_NONE if type doesn't change.
-u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState state)
+enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState state)
 {
-    u32 moveType = GetMoveType(move);
+    enum Type moveType = GetMoveType(move);
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
-    u32 species, heldItem, type1, type2, type3;
+    u32 species, heldItem;
+    enum Type type1, type2, type3;
     enum Ability ability;
     enum HoldEffect holdEffect;
     enum Gimmick gimmick = GetActiveGimmick(battler);
@@ -6075,7 +6059,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
     case EFFECT_REVELATION_DANCE:
         if (gimmick != GIMMICK_Z_MOVE)
         {
-            u32 teraType;
+            enum Type teraType;
             if (gimmick == GIMMICK_TERA && ((teraType = GetMonData(mon, MON_DATA_TERA_TYPE)) != TYPE_STELLAR))
                 return teraType;
             else if (type1 != TYPE_MYSTERY && !(gDisableStructs[battler].roostActive && type1 == TYPE_FLYING))
@@ -6200,7 +6184,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
 
 void SetTypeBeforeUsingMove(u32 move, u32 battler)
 {
-    u32 moveType;
+    enum Type moveType;
     u32 heldItem = gBattleMons[battler].item;
     enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
 

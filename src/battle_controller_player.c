@@ -1686,7 +1686,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u32 type = GetMoveType(move);
+    enum Type type = GetMoveType(move);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
     if (effect == EFFECT_TERA_BLAST)
@@ -1741,8 +1741,8 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 {
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u32 movePower = gMovesInfo[move].power;
-    u32 moveAccuracy = gMovesInfo[move].accuracy;
+    u32 movePower = GetMovePower(move);
+    u32 moveAccuracy = GetMoveAccuracy(move);
     u32 battlerDef = BATTLE_OPPOSITE(battler);
     u16 pwr = 0;
     u16 acc = 0;
@@ -1750,7 +1750,7 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     u32 abilityDef = GetBattlerAbility(battlerDef);
     enum HoldEffect holdEffectAtk = GetBattlerHoldEffect(battler);
     enum HoldEffect holdEffectDef = GetBattlerHoldEffect(battlerDef);
-    u8 cat = GetBattleMoveCategory(move);
+    enum DamageCategory cat = GetBattleMoveCategory(move);
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
 
     // Initialize DamageContext struct
@@ -1779,8 +1779,15 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     }
     else
     {
-        pwr = gMovesInfo[move].power;
-        acc = gMovesInfo[move].accuracy;
+        pwr = movePower;
+        acc = moveAccuracy;
+    }
+
+    if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX || IsGimmickSelected(battler, GIMMICK_DYNAMAX))
+    {
+        pwr = GetMaxMovePower(move);
+        move = GetMaxMove(battler, move);
+        acc = 0;
     }
 
     u8 pwr_num[3], acc_num[3];

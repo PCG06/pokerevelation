@@ -1469,3 +1469,6 @@ const u8 gText_Nature_Gentle[]  = _("Gentle       {COLOR RED}+SpD {COLOR BLUE}-D
 const u8 gText_Nature_Sassy[]   = _("Sassy        {COLOR RED}+SpD {COLOR BLUE}-Spe{COLOR DARK_GRAY}");
 const u8 gText_Nature_Careful[] = _("Careful      {COLOR RED}+SpD {COLOR BLUE}-SpA{COLOR DARK_GRAY}");
 const u8 gText_Nature_Quirky[]  = _("Quirky       {COLOR RED}+SpD {COLOR BLUE}-SpD{COLOR DARK_GRAY}");
+
+const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
