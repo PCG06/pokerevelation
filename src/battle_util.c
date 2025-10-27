@@ -9461,6 +9461,261 @@ enum DamageCategory GetCategoryBasedOnStats(u32 battler)
         return DAMAGE_CATEGORY_PHYSICAL;
 }
 
+// Physical attack
+u32 GetBattleMonPhysicalAttackStat(u32 battler)
+{
+    u32 attack = gBattleMons[battler].attack;
+    u16 item = gBattleMons[battler].item;
+    u16 species = gBattleMons[battler].species;
+    enum HoldEffect holdEffect = GetItemHoldEffect(item);
+    enum Ability ability = GetBattlerAbility(battler);
+
+    u32 battlerBaseSpeciesId = GET_BASE_SPECIES_ID(species);
+
+    attack *= gStatStageRatios[gBattleMons[battler].statStages[STAT_ATK]][0];
+    attack /= gStatStageRatios[gBattleMons[battler].statStages[STAT_ATK]][1];
+
+    switch (ability)
+    {
+    case ABILITY_HUGE_POWER:
+    case ABILITY_PURE_POWER:
+        attack = uq4_12_multiply_half_down(attack, UQ_4_12(2.0));
+        break;
+
+    case ABILITY_HUSTLE:
+        attack = uq4_12_multiply_half_down(attack, UQ_4_12(1.5));
+        break;
+
+    case ABILITY_GUTS:
+        if (gBattleMons[battler].status1 & STATUS1_ANY)
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(1.5));
+        break;
+
+    case ABILITY_FLOWER_GIFT:
+        if (species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(1.5));
+        break;
+
+    case ABILITY_GORILLA_TACTICS:
+        attack = uq4_12_multiply(attack, UQ_4_12(1.5));
+        break;
+
+    case ABILITY_ORICHALCUM_PULSE:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+           attack = uq4_12_multiply(attack, UQ_4_12(1.3333));
+        break;
+
+    case ABILITY_SLOW_START:
+        if (gDisableStructs[battler].slowStartTimer != 0)
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(0.5));
+        break;
+
+    case ABILITY_DEFEATIST:
+        if (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP / 2))
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(0.5));
+        break;
+
+    default:
+        break;
+    }
+
+    if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+    {
+        switch (GetBattlerAbility(BATTLE_PARTNER(battler)))
+        {
+        case ABILITY_FLOWER_GIFT:
+            if (gBattleMons[BATTLE_PARTNER(battler)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battler), B_WEATHER_SUN))
+                attack = uq4_12_multiply_half_down(attack, UQ_4_12(1.5));
+            break;
+        default:
+            break;
+        }
+    }
+
+    if (!gBattleMons[battler].volatiles.tabletsOfRuin && IsRuinStatusActive(VOLATILE_TABLETS_OF_RUIN))
+        attack = uq4_12_multiply_half_down(attack, UQ_4_12(0.75));
+
+    switch (holdEffect)
+    {
+    case HOLD_EFFECT_THICK_CLUB:
+        if ((battlerBaseSpeciesId == SPECIES_CUBONE || battlerBaseSpeciesId == SPECIES_MAROWAK))
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(2.0));
+        break;
+
+    case HOLD_EFFECT_LIGHT_BALL:
+        if (battlerBaseSpeciesId == SPECIES_PIKACHU)
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(2.0));
+        break;
+
+    case HOLD_EFFECT_CHOICE_BAND:
+        if (GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+            attack = uq4_12_multiply_half_down(attack, UQ_4_12(1.5));
+        break;
+
+    default:
+        break;
+    }
+
+    return attack;
+}
+
+u32 GetBattleMonSpecialAttackStat(u32 battler)
+{
+    u32 spAttack = gBattleMons[battler].spAttack;
+    u16 item = gBattleMons[battler].item;
+    enum HoldEffect holdEffect = GetItemHoldEffect(item);
+    enum Ability ability = GetBattlerAbility(battler);
+
+    u32 battlerBaseSpeciesId = GET_BASE_SPECIES_ID(gBattleMons[battler].species);
+
+    spAttack *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPATK]][0];
+    spAttack /= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPATK]][1];
+
+    switch (ability)
+    {
+    case ABILITY_SOLAR_POWER:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+            spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(1.5));
+        break;
+
+    case ABILITY_PLUS:
+        if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+        {
+            enum Ability partnerAbility = GetBattlerAbility(BATTLE_PARTNER(battler));
+            if (partnerAbility == ABILITY_MINUS
+            || (B_PLUS_MINUS_INTERACTION >= GEN_5 && partnerAbility == ABILITY_PLUS))
+                spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(1.5));
+        }
+        break;
+
+    case ABILITY_MINUS:
+        if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+        {
+            enum Ability partnerAbility = GetBattlerAbility(BATTLE_PARTNER(battler));
+            if (partnerAbility == ABILITY_PLUS
+            || (B_PLUS_MINUS_INTERACTION >= GEN_5 && partnerAbility == ABILITY_MINUS))
+                spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(1.5));
+        }
+        break;
+
+    case ABILITY_HADRON_ENGINE:
+        if (IsBattlerTerrainAffected(battler, ability, holdEffect, STATUS_FIELD_ELECTRIC_TERRAIN))
+            spAttack = uq4_12_multiply(spAttack, UQ_4_12(1.3333));
+        break;
+
+    case ABILITY_DEFEATIST:
+        if (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP / 2))
+            spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(0.5));
+        break;
+
+    default:
+        break;
+    }
+
+    if (!gBattleMons[battler].volatiles.vesselOfRuin && IsRuinStatusActive(VOLATILE_VESSEL_OF_RUIN))
+        spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(0.75));
+
+    switch (holdEffect)
+    {
+    case HOLD_EFFECT_LIGHT_BALL:
+        if (battlerBaseSpeciesId == SPECIES_PIKACHU)
+            spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(2.0));
+        break;
+
+    case HOLD_EFFECT_CHOICE_SPECS:
+        if (GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+            spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(1.5));
+        break;
+    
+    case HOLD_EFFECT_DEEP_SEA_TOOTH:
+        if (gBattleMons[battler].species == SPECIES_CLAMPERL)
+            spAttack = uq4_12_multiply_half_down(spAttack, UQ_4_12(2.0));
+        break;
+
+    default:
+        break;
+    }
+
+    return spAttack;
+}
+
+u32 GetBattleMonSpeedStat(u32 battler)
+{
+    u32 speed = gBattleMons[battler].speed;
+    u16 item = gBattleMons[battler].item;
+    enum HoldEffect holdEffect = GetItemHoldEffect(item);
+    enum Ability ability = GetBattlerAbility(battler);
+
+    speed *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][0];
+    speed /= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][1];
+
+    switch (ability)
+    {
+    case ABILITY_SWIFT_SWIM:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_RAIN))
+            speed *= 2;
+        break;
+
+    case ABILITY_CHLOROPHYLL:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+            speed *= 2;
+        break;
+
+    case ABILITY_SAND_RUSH:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM))
+            speed *= 2;
+        break;
+
+    case ABILITY_SLUSH_RUSH:
+        if (IsBattlerWeatherAffected(battler, B_WEATHER_ICY_ANY))
+            speed *= 2;
+        break;
+
+    case ABILITY_SURGE_SURFER:
+        if (IsBattlerTerrainAffected(battler, ability, holdEffect, STATUS_FIELD_ELECTRIC_TERRAIN))
+            speed *= 2;
+        break;
+
+    case ABILITY_UNBURDEN:
+        if (gDisableStructs[battler].unburdenActive)
+            speed *= 2;
+        break;
+
+    case ABILITY_QUICK_FEET:
+        if (gBattleMons[battler].status1 & STATUS1_ANY)
+            speed = (speed * 150) / 100;
+        break;
+
+    case ABILITY_SLOW_START:
+        if (gDisableStructs[battler].slowStartTimer != 0)
+            speed /= 2;
+        break;
+
+    default:
+        break;
+    }
+
+    if (holdEffect == HOLD_EFFECT_MACHO_BRACE || holdEffect == HOLD_EFFECT_POWER_ITEM)
+        speed /= 2;
+    else if (holdEffect == HOLD_EFFECT_IRON_BALL)
+        speed /= 2;
+    else if (holdEffect == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+        speed = (speed * 150) / 100;
+    else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].volatiles.transformed))
+        speed *= 2;
+
+    if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
+        speed *= 2;
+
+    if (gBattleMons[battler].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
+        speed /= GetGenConfig(GEN_CONFIG_PARALYSIS_SPEED) >= GEN_7 ? 2 : 4;
+
+    if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SWAMP)
+        speed /= 4;
+
+    return speed;
+}
+
 static u32 GetFlingPowerFromItemId(u32 itemId)
 {
     if (gItemsInfo[itemId].pocket == POCKET_TM_HM)

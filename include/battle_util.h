@@ -425,4 +425,8 @@ bool32 IsAllowedToUseBag(void);
 bool32 IsAnyTargetTurnDamaged(u32 battlerAtk);
 bool32 IsMimikyuDisguised(u32 battler);
 
+u32 GetBattleMonPhysicalAttackStat(u32 battler);
+u32 GetBattleMonSpecialAttackStat(u32 battler);
+u32 GetBattleMonSpeedStat(u32 battler);
+
 #endif // GUARD_BATTLE_UTIL_H
