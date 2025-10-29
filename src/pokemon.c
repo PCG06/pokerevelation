@@ -99,9 +99,7 @@ EWRAM_DATA u16 gFollowerSteps = 0;
 EWRAM_DATA u32 gMonPersonality = 0;
 
 #include "data/abilities.h"
-#if P_TUTOR_MOVES_ARRAY
 #include "data/tutor_moves.h"
-#endif // P_TUTOR_MOVES_ARRAY
 
 // Used in an unreferenced function in RS.
 // Unreferenced here and in FRLG.
@@ -5810,96 +5808,25 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
     }
 }
 
-static const u16 sUniversalMoves[] =
-{
-    MOVE_BIDE,
-    MOVE_FRUSTRATION,
-    MOVE_HIDDEN_POWER,
-    MOVE_MIMIC,
-    MOVE_NATURAL_GIFT,
-    MOVE_RAGE,
-    MOVE_RETURN,
-    MOVE_SECRET_POWER,
-    MOVE_SUBSTITUTE,
-    MOVE_TERA_BLAST,
-};
-
 u8 CanLearnTeachableMove(u16 species, u16 move)
 {
-    if (move == MOVE_NONE)
-        return FALSE;
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
+    const u16 *eventLearnset = GetSpeciesEventLearnset(species);
 
     if (species == SPECIES_EGG)
         return FALSE;
-    else if (species == SPECIES_MEW)
+    for (u32 i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
-        switch (move)
-        {
-        case MOVE_BADDY_BAD:
-        case MOVE_BOUNCY_BUBBLE:
-        case MOVE_BUZZY_BUZZ:
-        case MOVE_DRAGON_ASCENT:
-        case MOVE_FLOATY_FALL:
-        case MOVE_FREEZY_FROST:
-        case MOVE_GLITZY_GLOW:
-        case MOVE_RELIC_SONG:
-        case MOVE_SAPPY_SEED:
-        case MOVE_SECRET_SWORD:
-        case MOVE_SIZZLY_SLIDE:
-        case MOVE_SPARKLY_SWIRL:
-        case MOVE_SPLISHY_SPLASH:
-        case MOVE_VOLT_TACKLE:
-        case MOVE_ZIPPY_ZAP:
-            return FALSE;
-        default:
+        if (teachableLearnset[i] == move)
             return TRUE;
-        }
     }
-    else
+    
+    for (u32 i = 0; eventLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
-        u32 i, j;
-        const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
-        const u16 *eventLearnset = GetSpeciesEventLearnset(species);
-        for (i = 0; i < ARRAY_COUNT(sUniversalMoves); i++)
-        {
-            if (sUniversalMoves[i] == move)
-            {
-                if (!gSpeciesInfo[species].tmIlliterate)
-                {
-                    if (move == MOVE_TERA_BLAST && GET_BASE_SPECIES_ID(species) == SPECIES_TERAPAGOS)
-                        return FALSE;
-                    if (GET_BASE_SPECIES_ID(species) == SPECIES_PYUKUMUKU && (move == MOVE_HIDDEN_POWER || move == MOVE_RETURN || move == MOVE_FRUSTRATION))
-                        return FALSE;
-                    return TRUE;
-                }
-                else
-                {
-                    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
-
-                    if (P_TM_LITERACY < GEN_6)
-                        return FALSE;
-
-                    for (j = 0; j < MAX_LEVEL_UP_MOVES && learnset[j].move != LEVEL_UP_MOVE_END; j++)
-                    {
-                        if (learnset[j].move == move)
-                            return TRUE;
-                    }
-                    return FALSE;
-                }
-            }
-        }
-        for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
-        {
-            if (teachableLearnset[i] == move)
-                return TRUE;
-        }
-        for (i = 0; eventLearnset[i] != MOVE_UNAVAILABLE; i++)
-        {
-            if (eventLearnset[i] == move)
-                return TRUE;
-        }
-        return FALSE;
+        if (eventLearnset[i] == move)
+            return TRUE;
     }
+    return FALSE;
 }
 
 static void SortMovesAlphabetically(u32 *moves, u32 numMoves)
@@ -5990,7 +5917,6 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
         }
     }
 
-#if P_TUTOR_MOVES_ARRAY
     // Tutor moves
     for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
     {
@@ -6002,7 +5928,6 @@ u32 GetRelearnerMoves(struct Pokemon *mon, u32 *moves)
                 moves[numMoves++] = moveId;
         }
     }
-#endif
 
     // Remove duplicates
     for (i = 0; i < numMoves; i++)
