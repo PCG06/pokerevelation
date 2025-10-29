@@ -8890,9 +8890,9 @@ BattleScript_MetronomeAttackstring::
 BattleScript_NaturePowerAttackstring::
 	printattackstring
 	pause B_WAIT_TIME_SHORT
+	setcalledmove
 	printstring STRINGID_NATUREPOWERTURNEDINTO
 	waitmessage B_WAIT_TIME_LONG
-	setcalledmove
 	return
 
 BattleScript_EffectDrillOut::
