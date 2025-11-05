@@ -672,6 +672,8 @@ static const u16 sMeganiumEventLearnset[] =
     MOVE_PETAL_DANCE,
     MOVE_SWORDS_DANCE,
     MOVE_LEECH_SEED,
+    // Custom
+    MOVE_DRAINING_KISS,
     MOVE_UNAVAILABLE
 };
 #endif //P_FAMILY_CHIKORITA

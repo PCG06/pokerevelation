@@ -1,6 +1,6 @@
 # Pokémon Revelation
 
-Based off RHH's [pokeemerald-expansion](https://github.com/rh-hideout/pokeemerald-expansion/) 1.12.2
+Based off RHH's [pokeemerald-expansion](https://github.com/rh-hideout/pokeemerald-expansion/) 1.13.3
 
 ## What features are included? (WIP)
 
