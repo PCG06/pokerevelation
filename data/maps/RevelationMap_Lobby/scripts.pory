@@ -513,7 +513,7 @@ script RevelationMap_Lobby_EventScript_Whiteout {
 		msgbox("{SPEAKER NAME_BENNY}"
 				"Alright, make sure to start a\n"
 				"new adventure.", MSGBOX_AUTOCLOSE)
-		callnative(0) // Soft resets the game. Thank you Hedara!
+		callnative(DeleteSaveDataAndSoftReset)
 	} else {
 		msgbox("{SPEAKER NAME_BENNY}"
 			"Okay! Good luck, {PLAYER}!", MSGBOX_NPC)

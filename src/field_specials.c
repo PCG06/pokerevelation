@@ -4369,6 +4369,12 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
+void DeleteSaveDataAndSoftReset(void)
+{
+    ClearSaveData();
+    DoSoftReset();
+}
+
 void SetHiddenNature(void)
 {
     u32 hiddenNature = gSpecialVar_Result;

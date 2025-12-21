@@ -147,7 +147,7 @@ Text_Defeat:
 	.string "Play YAEEH!$"
 
 Debug_EventScript_Script_1::
-	call Common_EventScript_TrainerBattleMenu
+	callnative DeleteSaveDataAndSoftReset
 	release
 	end
 
